@@ -1,0 +1,70 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "heading": 165.75,
+      "ctaBottom": 559.90625
+    },
+    {
+      "width": 1366,
+      "overflow": false,
+      "heading": 159.09375,
+      "ctaBottom": 553.25
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "heading": 149.09375,
+      "ctaBottom": 543.25
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "heading": 119.25,
+      "ctaBottom": 513.40625
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "heading": 123.1875,
+      "ctaBottom": 530.109375
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "heading": 124.171875,
+      "ctaBottom": 548.296875
+    },
+    {
+      "width": 360,
+      "overflow": false,
+      "heading": 124.171875,
+      "ctaBottom": 574.6875
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "heading": 124.171875,
+      "ctaBottom": 601.078125
+    }
+  ],
+  "errors": [],
+  "typography": [
+    {
+      "font": "Manrope",
+      "width": 1248,
+      "height": 165.75,
+      "text": "Your AI agent for marketing, sales and support."
+    },
+    {
+      "font": "DM Sans",
+      "width": 1248,
+      "height": 165.75,
+      "text": "Your AI agent for marketing, sales and support."
+    }
+  ],
+  "motion": "none",
+  "zoomOverflow": false,
+  "interactions": "16 features; 7 industries; 7 FAQs; takeover; workflow; dialog; mobile menu"
+}
