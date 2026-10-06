@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./polish.css";
 
 export const metadata: Metadata = {
   title: "Steps AI — Your AI agent for marketing, sales and support",
@@ -24,3 +25,4 @@ export default function RootLayout({
     </html>
   );
 }
+

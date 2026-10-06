@@ -43,3 +43,7 @@ Supply approved brand assets and current product screenshots if exact product-in
 ## Validation scope
 
 Browser checks cover 1440×900, 1366×768, 1280×800, 1024×768, 768×1024, 390×844, 360×800 and 320px widths; all feature, industry and FAQ states; takeover; workflow preview; modal Escape; mobile menu; reduced motion; enlarged text. Screenshots are in qa. TypeScript validation also runs. These checks do not establish formal WCAG conformance or real-world Core Web Vitals. No live product integrations are connected.
+
+## Revised visual direction
+The revision studied Calendly's live layered gradient stages through the browser. app/showcase.tsx and app/polish.css replace the flat product windows with a short animated brand-mark sequence, blue gradient light movement, channel controls, and separate campaign, calendar, CRM, knowledge and workflow mockups. Scroll entrances use IntersectionObserver; the background sequence stops within 4.5 seconds. Pause and replay controls are available on the hero. Product mockup text remains illustrative. The sixteen revised feature states were checked in the in-app browser. The original qa/results.json covers the first design pass; final browser observations cover the revised layouts. No continuous scroll pinning is enabled.
+
