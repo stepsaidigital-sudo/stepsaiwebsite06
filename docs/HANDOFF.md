@@ -47,3 +47,8 @@ Browser checks cover 1440×900, 1366×768, 1280×800, 1024×768, 768×1024, 390�
 ## Revised visual direction
 The revision studied Calendly's live layered gradient stages through the browser. app/showcase.tsx and app/polish.css replace the flat product windows with a short animated brand-mark sequence, blue gradient light movement, channel controls, and separate campaign, calendar, CRM, knowledge and workflow mockups. Scroll entrances use IntersectionObserver; the background sequence stops within 4.5 seconds. Pause and replay controls are available on the hero. Product mockup text remains illustrative. The sixteen revised feature states were checked in the in-app browser. The original qa/results.json covers the first design pass; final browser observations cover the revised layouts. No continuous scroll pinning is enabled.
 
+
+## Authoritative SEO copy
+The supplied Steps_AI_Homepage_Copy_v2 (2).docx.md (internally titled v3) is preserved in docs/seo-homepage-source.md. The website-copy region matches the existing marketing copy exactly, including punctuation and section order. Run npm run check:copy to enforce source fidelity and section order. Review notes and implementation guidance are not public website copy.
+
+The SEO appendix supplies route paths including /book-a-demo/, /pricing/, /case-studies/ and /integrations/. These supersede the earlier note about unspecified paths; the corresponding destination pages still need implementation and connection before launch.

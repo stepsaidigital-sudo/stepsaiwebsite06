@@ -1,0 +1,16 @@
+{
+  "source": "docs/seo-homepage-source.md",
+  "sectionOrder": [
+    "hero",
+    "journey",
+    "team",
+    "setup",
+    "business",
+    "testimonials",
+    "faq",
+    "final",
+    "footer"
+  ],
+  "marketingCopyMatchesPrevious": true,
+  "normalization": "Markdown heading/strong syntax and escaped heading periods only; words and punctuation preserved"
+}

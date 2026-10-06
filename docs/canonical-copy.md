@@ -1,7 +1,4 @@
-The following is the source of truth.
-
-Do not paraphrase it.
-Section labels are organisational; visible copy begins within each section.
+# Steps AI Homepage Copy
 
 ### Navigation
 
@@ -332,5 +329,3 @@ Account: Book a demo | Pricing | Sign up | Log in
 Company: About | Team | Founder’s note | Careers | Contact | Security
 
 Privacy policy | Terms of service
-
----
