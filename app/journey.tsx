@@ -1,8 +1,9 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
-import {Plus,Minus} from 'lucide-react';
+import {Plus,Minus,Megaphone,ShoppingBag,Headphones,RotateCcw} from 'lucide-react';
 import copy from './copy.json';
-import {ProductScene} from './showcase';
+import {JourneyScene} from './journey-scene';
+const stageIcons=[Megaphone,ShoppingBag,Headphones,RotateCcw];
 import {CustomerQuote} from './quote';
 
 // One product story. Native page scrolling advances the panel; no wheel interception.
@@ -43,13 +44,13 @@ export function Journey(){
   }
   return <div ref={runway} className={`journey-runway ${pinned?'is-pinned':''}`} data-current={current}>
     <div ref={frame} className="journey-frame">
-      <nav className="journey-tabs" aria-label="Customer journey">{copy.journey.stages.map((stage,i)=><button key={stage.label} aria-pressed={current===i} aria-controls={`journey-panel-${i}`} onClick={()=>select(i)}><span>0{i+1}</span>{stage.label}</button>)}</nav>
+      <nav className="journey-tabs" aria-label="Customer journey">{copy.journey.stages.map((stage,i)=>{const Icon=stageIcons[i];return <button key={stage.label} aria-pressed={current===i} aria-controls={`journey-panel-${i}`} onClick={()=>select(i)}><span className="journey-tab-icon"><Icon size={18}/></span><span className="journey-tab-name">{stage.label}</span><span className="journey-tab-number">0{i+1}</span></button>})}</nav>
       <div className="journey-panels">{copy.journey.stages.map((stage,index)=>{
         const feature=features[index];
         return <article key={stage.label} id={`journey-panel-${index}`} className={`journey-stage stage-${index} ${current===index?'is-active':''}`} aria-hidden={current!==index} inert={current!==index}>
           <div className="stage-copy"><h3>{stage.title}</h3><p className="stage-description">{stage.paragraphs[0]}</p><div className="features">{stage.items.map((item,i)=><div className={`feature ${feature===i?'active':''}`} key={item.title}><h4><button id={`feature-${index}-${i}`} aria-expanded={feature===i} aria-controls={`feature-panel-${index}-${i}`} onClick={()=>setFeatures(previous=>previous.map((value,j)=>j===index?i:value))}><span>{item.title}</span>{feature===i?<Minus size={18}/>:<Plus size={18}/>}</button></h4><div id={`feature-panel-${index}-${i}`} role="region" aria-labelledby={`feature-${index}-${i}`} hidden={feature!==i}><p>{item.paragraphs[0]}</p></div></div>)}</div>
           {stage.items[feature].paragraphs.length>2&&<CustomerQuote paragraphs={stage.items[feature].paragraphs.slice(1)} className="contextual"/>}</div>
-          <div className="stage-media"><ProductScene stage={index} index={feature}/></div>
+          <div className="stage-media"><JourneyScene stage={index} index={feature}/></div>
         </article>
       })}</div>
     </div>
