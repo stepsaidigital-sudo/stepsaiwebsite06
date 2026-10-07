@@ -6,3 +6,7 @@
 @media(max-width:700px){.integrations-showcase{padding:72px 0 48px}.integrations-intro{margin-bottom:42px}.integrations-intro h3{font-size:36px;max-width:420px}.integrations-intro p{font-size:16px}.integrations-intro .text-link{margin-top:26px}.integration-tile{width:88px;height:88px;border-radius:21px}.integration-tile img{width:49px;height:49px}.integration-tile:after{top:24px}.logo-ribbon+.logo-ribbon{margin-top:20px}.logo-track{animation-duration:95s}.ribbon-1 .logo-track{animation-duration:110s}.industry-selection-hint{margin:-10px 0 20px}}
 @media(prefers-reduced-motion:reduce){.logo-track{animation:none;transform:none}.logo-motion-control{display:none}.logo-ribbons{overflow-x:auto;mask-image:none}.logo-set[aria-hidden=true]{display:none}.logo-ribbons .ribbon-1{display:none}.industry-card-heading h3 svg{transition:none}}
 .integration-tile img[src$="calendly.svg"]{width:112px;height:112px}.integration-tile img[src$="woocommerce.svg"]{width:86px;height:70px}@media(max-width:700px){.integration-tile img[src$="calendly.svg"]{width:90px;height:90px}.integration-tile img[src$="woocommerce.svg"]{width:72px;height:55px}}
+
+/* Keep the shareable-agent card close to the integration rows. */
+.setup-section .integrations-showcase{padding-bottom:24px}.setup-section .agent-page{margin-top:0}.setup-section{padding-bottom:40px}
+@media(max-width:700px){.setup-section .integrations-showcase{padding-bottom:20px}.setup-section{padding-bottom:32px}}
