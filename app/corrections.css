@@ -12,3 +12,7 @@
 @media(min-width:1000px) and (max-height:820px){.journey-panels .primary-mock{display:none}.journey-panels .layered-demo{grid-template-columns:1fr;max-width:400px;margin:auto}.journey-panels .floating-chat{width:100%}.journey-panels .features{margin-top:12px}.journey-panels .feature button{padding:12px 0}.journey-panels .stage-copy>h3{font-size:1.8rem}.journey-panels .quote.contextual{margin-top:10px;padding-top:10px}}
 .journey-frame{scroll-margin-top:92px}
 @media(max-width:700px){.journey-frame{scroll-margin-top:74px}}
+
+/* Conversation-only mockups: native channel bubbles without app chrome. */
+.channel-chat .native-chat-body{padding:24px 18px;min-height:230px;border-radius:inherit}.journey-panels .channel-chat .native-chat-body{padding:20px 14px;min-height:200px}.channel-instagram .native-chat-body,.channel-messenger .native-chat-body{background:#fff}.channel-chat .native-message{max-width:92%}.hero-scene .channel-chat{border:5px solid #ffffffb8}.hero-scene .native-chat-body{min-height:270px;justify-content:center}
+
