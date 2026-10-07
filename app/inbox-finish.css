@@ -38,3 +38,18 @@
 @media(min-width:1100px) and (max-height:650px){.team-story-preview{padding:16px}.team-story .inbox-product{height:590px}.team-story-caption{margin-bottom:10px}}
 @media(max-width:700px){.team-story-preview{padding:12px;border-radius:22px}.team-story .ip-page{padding:16px 9px 9px}.team-story .ip-panel{display:block}.team-story .ip-message p{font-size:14px;padding:11px 13px}.team-story .ip-contact{padding:13px 10px}.team-story .ip-filters button{font-size:11px}.team-story .ip-story-screen h3{font-size:24px}.team-story-caption{font-size:10px}}
 @media(min-width:1100px){.team-story .ip-message{margin-bottom:12px}.team-story .ip-message p{font-size:16px;line-height:1.45;padding:11px 14px}.team-story .ip-message small{margin-bottom:5px}.team-story .ip-day{margin-bottom:12px}.team-story .ip-messages{padding:12px 18px}.team-story .ip-chat>header{min-height:64px;padding:12px 18px}.team-story .ip-page-heading p{max-width:none}}
+
+/* Readability pass: quiet backdrop, stronger content contrast. */
+.team-story.team-section{background:#f7f9fc}
+.team-story-preview{background:linear-gradient(140deg,#d5e8f1,#c2d8ed 60%,#d8ddeb);border-color:#bbcfe1;box-shadow:0 18px 44px -28px #23476c55,inset 0 1px 0 #fff}
+.team-story-caption{color:#355578}.team-story-caption i{background:#238364}.team-caption-controls button{background:#ffffff80;border-color:#92aac4;color:#294f78}.team-caption-controls button:focus-visible{outline-color:#234f81}
+.team-ambient-light{opacity:.32}.team-ambient-waves{opacity:.35}
+.team-story .inbox-product{border-color:#bdccdd;box-shadow:0 8px 24px #2a47661c;background:#fff}
+.team-story .ip-page,.team-story .ip-story-screen{background:#f9fafc}
+.team-story .ip-page-heading h3,.team-story .ip-story-screen h3{color:#172b43}
+.team-story .ip-page-heading p,.team-story .ip-contact p{color:#475c73}
+.team-story .ip-message p{color:#243b53;background:#e9eef4}.team-story .ip-ai p{background:#e0eafa;color:#163d6c}.team-story .ip-human p{background:#d5eadd;color:#194e35}
+.team-story .ip-contact strong,.team-story .ip-chat>header strong{color:#19334f}
+.team-story .ip-contact>span,.team-story .ip-chat>header p,.team-story .ip-message small{color:#425b76}
+.team-story .ip-message time,.team-story .ip-contact small,.team-story .ip-day,.team-story .ip-list-label{color:#61738a}
+.team-story .ip-record-grid dt,.team-story .ip-record-profile p,.team-story .ip-record-history p span,.team-story .ip-report-metrics small{color:#4c637d}

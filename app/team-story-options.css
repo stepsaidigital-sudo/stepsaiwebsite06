@@ -39,3 +39,15 @@
 @media(min-width:1100px) and (max-height:700px){.team-story-copy .section-intro{margin-bottom:16px}.team-story-copy .section-intro h2{font-size:30px}.team-story-step,.team-story-step.is-active{padding:11px 0}.team-story-copy .section-intro p{font-size:12px}.team-story-step p{font-size:12px}}
 @media(max-width:1099px){.team-story-copy{display:contents}.team-story-copy .section-intro{order:-1}.team-story-preview{order:0}.team-story-steps{order:1}}
 @media(min-width:1100px){.team-story-steps{align-items:stretch}.team-story-step,.team-story-step.is-active{width:100%;box-sizing:border-box}.team-story-step button{text-align:left}}
+
+@media(min-width:1100px){
+.team-story-copy .section-intro h2{color:#102d4b;font-weight:550}
+.team-story-copy .section-intro p{color:#4e657c;font-size:14px}
+.team-story-step h3{color:#526980;font-weight:500}
+.team-story-step.is-active h3{color:#123a65;font-weight:650}
+.team-story-icon{color:#607790}
+.team-story-step.is-active .team-story-icon{color:#174879}
+.team-story-step,.team-story-step.is-active{border-bottom-color:#cbd5e0}
+.team-story-step p{color:#425d78;font-size:14px}
+}
+@media(min-width:1100px) and (max-height:700px){.team-story-copy .section-intro p,.team-story-step p{font-size:13px}}
