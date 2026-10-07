@@ -4,6 +4,7 @@ import "./polish.css";
 import "./corrections.css";
 import "./industries.css";
 import "./reviews.css";
+import "./hero-channels.css";
 
 export const metadata: Metadata = {
   title: "Steps AI — Your AI agent for marketing, sales and support",
@@ -28,4 +29,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+
 

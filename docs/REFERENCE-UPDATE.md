@@ -8,3 +8,6 @@ Checks: canonical copy and section sequence passed; TypeScript passed; desktop 1
 
 Latest correction: channel mockups now show only the conversation area, as circled by the user. App headers, duplicate brand bars and message composers were removed; WhatsApp, Instagram and Messenger retain their respective bubble colours/backgrounds. Existing outer channel selectors/labels identify the platform.
 
+
+Hero revision: replaced the old three-part hero scene with a single reference-led split card and official channel icon controls. Desktop native scrolling advances WhatsApp, Instagram, Messenger, Website with the presentation pinned at 92px, then releases to the next SEO section. Smaller screens and reduced-motion settings use direct icon selection to keep long content readable. Supplied original logo is used unchanged at public/brands/steps-original.png in header, footer, hero labels and final invitation. Hero explanatory headings/descriptions reuse canonical feature text; existing SEO content remains unchanged. Verified 1265x720 desktop scroll through all four stages and release, plus 390x844 mobile icon switching and no horizontal overflow. Evidence: qa/hero-channel-desktop.jpg and qa/hero-channel-mobile.jpg.
+
