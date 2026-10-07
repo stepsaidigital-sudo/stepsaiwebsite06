@@ -42,3 +42,5 @@ import "./typography.css";
 import "./team-story.css";
 
 import "./inbox-finish.css";
+
+import "./team-story-options.css";
