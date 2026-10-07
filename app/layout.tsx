@@ -32,3 +32,5 @@ export default function RootLayout({
 
 
 
+
+import "./integrations.css";

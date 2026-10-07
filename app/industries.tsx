@@ -42,8 +42,9 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
   },[active]);
   return <section id="solutions" className="industry-showcase"><div className="container">
     <div className="section-intro"><h2>{copy.business.title}</h2><p>{copy.business.paragraphs[0]}</p></div>
+    <p className="industry-selection-hint">Select an industry to see it in action.</p>
     <div ref={row} className="industry-deck" data-active={active}>
-      {featured.map(({index,key},i)=>{const item=copy.business.items[index];return <article className={`industry-expand-card industry-${key} ${i===active?'is-selected':''}`} key={key} onPointerEnter={event=>{if(event.pointerType==='mouse')select(i)}}>
+      {featured.map(({index,key},i)=>{const item=copy.business.items[index];return <article className={`industry-expand-card industry-${key} ${i===active?'is-selected':''}`} key={key}>
         <div className="industry-card-skin" aria-hidden="true"/>
         <div className="industry-card-content"><div className="industry-card-heading"><h3><button aria-expanded={active===i} aria-controls={`industry-visual-${key}`} onClick={()=>select(i)} onFocus={()=>select(i)} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(i+(event.key==='ArrowRight'?1:3))%4;select(next);(row.current!.children[next].querySelector('button') as HTMLButtonElement).focus()}}}>{item.title}<ChevronRight size={18}/></button></h3><p>{item.paragraphs[1]}</p><p className="industry-customer-question">{item.paragraphs[0]}</p></div>
         <div className="industry-art"><div className="industry-arc" aria-hidden="true"/><div className="industry-active-visual" id={`industry-visual-${key}`} aria-hidden={active!==i}><IndustryMockup kind={key}/></div></div></div>
