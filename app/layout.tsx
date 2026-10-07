@@ -40,3 +40,5 @@ import "./inbox-preview.css";
 import "./journey-polish.css";
 import "./typography.css";
 import "./team-story.css";
+
+import "./inbox-finish.css";
