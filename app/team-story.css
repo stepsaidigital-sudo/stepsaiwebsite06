@@ -24,3 +24,31 @@
 @media(max-width:1099px){.team-story-frame{display:contents}}
 @media(min-width:1100px) and (max-height:650px){.team-story-frame{top:84px;height:calc(100svh - 96px);min-height:350px}.team-story .inbox-product{zoom:.65;height:600px}}
 @media(prefers-reduced-motion:reduce){.team-story-step{transition:none;transform:none}}
+
+/* Give the product preview a distinct backdrop and readable, purposeful detail. */
+.team-story-preview{padding:20px;border-radius:26px;background:radial-gradient(ellipse at 0% 0%,#488eb8 0%,transparent 65%),radial-gradient(ellipse at 100% 100%,#625b94 0%,transparent 70%),#173e70;box-shadow:0 22px 55px -30px #173b7280;border:1px solid #ffffff38}
+.team-story-caption{color:#edf5ff;font-size:12px}.team-story-caption i{background:#91e3c0}.team-story .inbox-product{border-color:#ffffffb3;box-shadow:0 10px 30px #071e4733}
+.team-story .ip-message p{font-size:17px;line-height:1.5;color:#243b53;padding:12px 14px;background:#eaf0f5}
+.team-story .ip-ai p{background:#dce8ff;color:#14396e}.team-story .ip-human p{background:#c9e8d4;color:#184c34}
+.team-story .ip-message small{font-size:12px;color:#44556c}.team-story .ip-message time{font-size:10px;color:#60738a}
+.team-story .ip-chat>header strong{font-size:17px;color:#213b5c}.team-story .ip-chat>header p{font-size:12px;color:#52677f}.team-story .ip-channel{font-size:10px;color:#365479;background:#e7eef8}
+.team-story .ip-contact strong{font-size:14px;color:#253e60}.team-story .ip-contact p{font-size:12px;color:#566b83}.team-story .ip-contact>span{font-size:10px;color:#52677f}.team-story .ip-contact small{font-size:10px;color:#61758b}.team-story .ip-contact em{font-size:9px}
+.team-story .ip-nav>div{font-size:12px;color:#50647d}.team-story .ip-nav .ip-nav-active{color:#174dba;background:#dce7ff}.team-story .ip-workspace strong{font-size:11px}.team-story .ip-page-heading p{font-size:12px;color:#52677f}.team-story .ip-page-heading h3{font-size:25px}
+.team-story .ip-filters button{font-size:10px;color:#4d6582}.team-story .ip-search input{font-size:12px}.team-story .ip-list-label{font-size:11px;color:#52677f}.team-story .ip-day{font-size:10px;color:#64768a}.team-story .ip-handoff{font-size:12px;color:#805414;background:#fff0cd}.team-story .ip-compose textarea{font-size:13px}.team-story .ip-compose button{font-size:12px}.team-story .ip-compose span{font-size:10px;color:#60738a}.team-story .ip-resolve{font-size:12px}.team-story .ip-tiny-avatar{width:20px;height:20px;font-size:10px}
+.team-story .ip-story-screen h3{font-size:29px;color:#183c67}.team-story .ip-story-screen h4{font-size:16px;color:#24466d}.team-story .ip-story-screen>.ip-demo-label{font-size:11px;color:#526881}.team-story .ip-record-profile p,.team-story .ip-record-tag{font-size:12px}.team-story .ip-record-grid small{font-size:11px;color:#59708c}.team-story .ip-record-grid dl{font-size:14px;gap:12px 6px}.team-story .ip-record-grid dt{color:#5a708a}.team-story .ip-record-grid dd{color:#213e61}.team-story .ip-record-ticket{font-size:14px}.team-story .ip-record-ticket p,.team-story .ip-record-ticket>span{font-size:12px}.team-story .ip-record-history p{font-size:12px}.team-story .ip-record-history p span{color:#5b7189}
+.team-story .ip-report-metrics small{font-size:13px;color:#506882}.team-story .ip-report-metrics strong{font-size:36px}.team-story .ip-bars{font-size:13px}.team-story .ip-bars>div,.team-story .ip-bars small{font-size:12px;color:#506882}.team-story .ip-report-topics p{font-size:14px;color:#294563}.team-story .ip-report-topics p>span{color:#617996}
+@media(min-width:1100px){.team-story .ip-page{padding:14px 12px}.team-story .ip-page-heading{margin-bottom:12px}.team-story .ip-panel{min-height:505px}.team-story .ip-messages{max-height:338px}.team-story .ip-story-screen{padding:18px 22px}.team-story .ip-story-screen h3{margin:12px 0 16px}.team-story .ip-report-metrics{margin:12px 0}.team-story .ip-record-grid{margin:12px 0}.team-story .ip-record-ticket{margin-bottom:14px}}
+@media(max-width:700px){.team-story-preview{padding:12px;border-radius:20px}.team-story .ip-message p{font-size:14px}.team-story .ip-record-grid dl{font-size:12px}.team-story .ip-report-metrics small{font-size:9px}.team-story .ip-report-metrics strong{font-size:23px}.team-story .ip-record-ticket>span{display:none}.team-story-caption{font-size:10px}.team-story .ip-record-history p{font-size:10px}}
+
+.team-story-preview{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#519bd6,#1c5293 58%,#173c72)}
+.team-ambient{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;border-radius:inherit}
+.team-ambient-light{position:absolute;inset:-35%;background:radial-gradient(ellipse at 35% 45%,#b2f0eac9,transparent 40%),radial-gradient(ellipse at 75% 65%,#a29ae873,transparent 42%);animation:team-light-drift 18s ease-in-out infinite alternate}
+.team-ambient-waves{position:absolute;inset:5% -3%;display:flex;gap:1.8%;align-items:center}
+.team-ambient-waves i{flex:1;height:70%;background:linear-gradient(180deg,#d5f8ff08,#d5f8ff73,#d5f8ff08);border-radius:999px;animation:team-wave-breathe 8s ease-in-out infinite;transform-origin:center;opacity:.3}
+.team-caption-controls{display:flex;align-items:center;gap:12px}.team-caption-controls button{display:grid;place-items:center;width:26px;height:26px;border:1px solid #ffffff55;background:#133c6e40;color:white;border-radius:50%;cursor:pointer}.team-caption-controls button:focus-visible{outline:2px solid white;outline-offset:3px}
+.is-motion-paused .team-ambient-light,.is-motion-paused .team-ambient-waves i{animation-play-state:paused}
+@keyframes team-light-drift{from{transform:translate(-4%,-3%) rotate(-8deg)}to{transform:translate(6%,5%) rotate(10deg)}}
+@keyframes team-wave-breathe{0%,100%{transform:scaleY(.5);opacity:.2}50%{transform:scaleY(1);opacity:.48}}
+@media(prefers-reduced-motion:reduce){.team-ambient-light,.team-ambient-waves i{animation:none}.team-caption-controls button{display:none}}
+.team-story-preview{top:auto;}
+@media(min-width:1100px){.team-story .ip-main{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#b7c8dc transparent}.team-story .ip-list{max-height:505px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#b7c8dc transparent}}
