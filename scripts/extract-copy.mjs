@@ -19,7 +19,7 @@ if(process.argv.includes('--check')){
   if(JSON.stringify(previous)!==JSON.stringify(data))throw new Error('Marketing copy differs from the SEO specialist source. Run extraction only for an approved source update.');
   const page=fs.readFileSync('app/page.tsx','utf8');
   if(data.journey.stages.length!==4||data.journey.stages.some(s=>s.items.length!==4)||data.business.items.length!==7||data.testimonials.items.length!==4||data.faq.items.length!==7)throw new Error('Required homepage content is missing.');
-  if(!page.includes('<Journey/>')||!page.includes('className="industry-cards"'))throw new Error('Shared journey or visible industry grid missing.');
+  if(!page.includes('<Journey/>')||!page.includes('<Industries onOpen={onOpen}/>'))throw new Error('Shared journey or visible industry grid missing.');
   const components=['<Hero onOpen','<ProductJourney onOpen','<TeamOverview/>','<Setup onOpen','<BusinessFit onOpen','<Testimonials onOpen','<FAQ onOpen','<section className="final-section"','<Footer onOpen'];
   let last=-1;for(const name of components){const position=page.indexOf(name,last+1);if(position<last||position<0)throw new Error('Homepage section order changed: '+name);last=position;}
   console.log('PASS: exact SEO copy and required section order. 16 features, 7 industries, 4 main testimonials, 7 FAQs.');

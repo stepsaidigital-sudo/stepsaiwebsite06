@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./polish.css";
 import "./corrections.css";
+import "./industries.css";
+import "./reviews.css";
 
 export const metadata: Metadata = {
   title: "Steps AI — Your AI agent for marketing, sales and support",

@@ -1,0 +1,8 @@
+# Generated visual assets
+
+Generated with the built-in image generation tool. Images are illustrative and are not real customer portraits. Output paths are relative to the site root.
+
+- public/industries/ecommerce.png — Premium studio still life for a small ecommerce product card. One sculptural cream ceramic vase beside a smaller pale sand ceramic bowl, matte tactile surfaces, warm ivory tabletop and pale beige background, soft side daylight, exquisite editorial product photography, close composition, no text, no logos, no people. Square image.
+- public/industries/healthcare.png — Editorial portrait photo for a fictional clinic appointment UI mockup. Friendly Indian woman physician in her early thirties wearing a white coat over a pale blue blouse, small stethoscope, natural smile, softly blurred bright contemporary clinic background, waist-up, centred, soft daylight, polished authentic photography, no text, no logos. Square image.
+- public/industries/education.png — Editorial lifestyle photo for a fictional online learning course UI mockup. Indian woman university student in her early twenties studying with laptop and notebook at a sunny minimalist campus library, friendly focused expression, shoulder-length dark hair, blue shirt, warm daylight, candid professional photography, clean framing, no text, no logos. Square image.
+- public/industries/realestate.png — Architectural editorial photo for a fictional real estate property listing UI mockup. Beautiful contemporary Indian urban home, cream stone and warm wood facade, elegant balcony and landscaped courtyard with tropical plants, soft morning light, refined understated premium home photography, eye-level three-quarter view, no people, no text, no logos. Square image.
