@@ -1,31 +1,23 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
-import {Inbox,Users,Headphones,ChartNoAxesCombined,Pause,Play} from 'lucide-react';
+import {Inbox,ChartNoAxesCombined,MessageCircleQuestion,Headphones,Pause,Play,RotateCcw} from 'lucide-react';
 import copy from './copy.json';
-import {FocusedInbox as InboxPreview} from './focused-inbox';
-const labels=['Unified inbox','CRM','Human handoff','Insights'];
-const icons=[Inbox,Users,Headphones,ChartNoAxesCombined];
-export function TeamStory(){
- const [active,setActive]=useState(0);
- const [motionPaused,setMotionPaused]=useState(false);
- const root=useRef<HTMLDivElement>(null);
- useEffect(()=>{
-  const media=matchMedia('(min-width: 1100px)');
-  let frame=0;
-  const update=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{
-   if(!media.matches||!root.current||(root.current.contains(document.activeElement)&&['INPUT','TEXTAREA'].includes(document.activeElement?.tagName||'')))return;
-   const rect=root.current.getBoundingClientRect();
-   const frameHeight=root.current.querySelector('.team-story-frame')!.getBoundingClientRect().height;
-   const distance=Math.max(1,rect.height-frameHeight);
-   const progress=Math.max(0,Math.min(.999, (96-rect.top)/distance));
-   const index=Math.floor(progress*4);
-   setActive(index);
-  })};
-  window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
-  return()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',update);window.removeEventListener('resize',update)};
- },[]);
- return <section id="team" className="team-section team-story"><div className="container"><div className="team-story-layout" ref={root}><div className="team-story-frame">
-  <div className={`team-story-preview ${motionPaused?'is-motion-paused':''}`}><div className="team-ambient" aria-hidden="true"><div className="team-ambient-light"/><div className="team-ambient-waves">{Array.from({length:12},(_,i)=><i key={i} style={{animationDelay:`${i*-.7}s`}}/>)}</div></div><div className="team-story-tabs" aria-label="Explore the workspace">{labels.map((label,i)=><button key={label} aria-pressed={active===i} onClick={()=>setActive(i)}><span>0{i+1}</span>{label}</button>)}</div><div className="team-story-caption"><span><i/>One workspace, every conversation</span><div className="team-caption-controls"><button aria-label={motionPaused?'Play background motion':'Pause background motion'} aria-pressed={motionPaused} onClick={()=>setMotionPaused(!motionPaused)}>{motionPaused?<Play size={13}/>:<Pause size={13}/>}</button><b>0{active+1} / 04</b></div></div><InboxPreview stage={active}/></div>
-  <div className="team-story-copy"><div className="section-intro"><h2>{copy.team.title}</h2></div><div className="team-story-steps">{copy.team.items.map((item,i)=>{const Icon=icons[i];return <article className={`team-story-step ${active===i?'is-active':''}`} key={item.title}><button aria-pressed={active===i} onClick={()=>setActive(i)}><span className="team-story-icon"><Icon size={22}/></span><span className="team-story-number">0{i+1}</span><h3>{item.title}</h3></button><span className="team-story-progress" aria-hidden="true"/></article>})}</div></div>
- </div></div></div></section>
+import {ProductStage} from './product-story';
+const states=[
+ {key:'conversations',title:'Customer conversations, together',icon:Inbox,transition:'inbox-to-activity',duration:2500},
+ {key:'activity',title:'Performance at a glance',icon:ChartNoAxesCombined,transition:'internal-scroll',duration:2500},
+ {key:'questions',title:'Understand what customers ask',icon:MessageCircleQuestion,transition:'conversation-handoff',duration:2500},
+ {key:'handoff',title:'Your team steps in when needed',icon:Headphones,transition:'soft-reset',duration:2500}
+];
+export function TeamStory(){return <StorySection/>}
+export function StorySection(){
+ const root=useRef<HTMLElement>(null),elapsed=useRef(0);
+ const [current,setCurrent]=useState(0),[cycle,setCycle]=useState(0),[paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[pageVisible,setPageVisible]=useState(true),[reduced,setReduced]=useState(false);
+ const [manual,setManual]=useState(false);
+ const running=visible&&pageVisible&&!paused&&!reduced;
+ useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>setReduced(media.matches);update();media.addEventListener('change',update);const visibility=()=>setPageVisible(!document.hidden);document.addEventListener('visibilitychange',visibility);const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.15});if(root.current)observer.observe(root.current);return()=>{media.removeEventListener('change',update);document.removeEventListener('visibilitychange',visibility);observer.disconnect()}},[]);
+ useEffect(()=>{if(!running)return;let frame=0,last=performance.now();const tick=(now:number)=>{elapsed.current+=Math.min(now-last,80);last=now;if(elapsed.current>=states[current].duration){elapsed.current=0;setCurrent((current+1)%states.length);if(current===3)setCycle(v=>v+1);return}frame=requestAnimationFrame(tick)};frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame)},[current,running]);
+ const select=(index:number)=>{elapsed.current=0;setCurrent(index);setPaused(true);setManual(true)};
+ return <section id="team" ref={root} className="product-story"><div className="container ps-layout"><div className="ps-copy"><h2>{copy.team.title}</h2><div className="ps-features" aria-label="Product tour scenes">{states.map((state,index)=>{const Icon=state.icon;return <button key={state.key} aria-pressed={current===index} onClick={()=>select(index)}><Icon size={21}/><span>{state.title}</span><small>0{index+1}</small></button>})}</div><p className="ps-playback-note">{reduced?'Choose a feature to explore.':paused?'Tour paused. Explore a feature or press play.':'A short tour, one story at a time.'}</p></div><div className="ps-visual"><div className="ps-frame-header"><span><i/>One workspace, every conversation</span><div><button aria-label={paused?'Play product tour':'Pause product tour'} disabled={reduced} onClick={()=>{setManual(false);setPaused(v=>!v)}}>{paused?<Play size={14}/>:<Pause size={14}/>}</button><button aria-label="Replay product tour" onClick={()=>{setManual(false);elapsed.current=0;setCurrent(0);setCycle(v=>v+1);setPaused(false)}}><RotateCcw size={14}/></button><b>0{current+1} / 04</b></div></div><ProductStage current={current} cycle={cycle} running={running} reduced={reduced||manual}/><div className="ps-timeline" aria-hidden="true">{states.map((state,index)=><i key={`${cycle}-${current}-${state.key}`} className={index===current?'is-current':index<current?'is-complete':''}><span style={{animationPlayState:running?'running':'paused'}}/></i>)}</div></div></div></section>
 }
+
