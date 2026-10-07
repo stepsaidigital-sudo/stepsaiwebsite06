@@ -16,3 +16,26 @@
 .team-story-step.is-active p{display:block}
 .team-story-progress{display:none}.team-story-step.is-active .team-story-progress{display:block;width:38px;margin:15px 0 0 41px;background:#f8b403;height:2px}
 }
+
+/* Editorial title and quiet, divided feature rows inspired by the supplied reference. */
+@media(min-width:1100px){
+.team-story-frame{grid-template-columns:390px minmax(0,1fr);gap:44px}
+.team-story-copy{grid-column:1;grid-row:1;min-width:0}
+.team-story-copy .section-intro{margin:0 0 25px;max-width:none;text-align:left}
+.team-story-copy .section-intro h2{font-family:Newsreader,Georgia,serif;font-size:35px;line-height:1.04;letter-spacing:-.035em;font-weight:500;margin:0 0 13px;color:#153655}
+.team-story-copy .section-intro p{font-size:13px;line-height:1.65;color:#697e93;margin:0}
+.team-story-steps{gap:0;display:flex}
+.team-story-step,.team-story-step.is-active{padding:14px 0;border:0;border-bottom:1px solid #d5dee7;border-radius:0;background:transparent;box-shadow:none}
+.team-story-step button{grid-template-columns:24px minmax(0,1fr);gap:11px}
+.team-story-number{display:none}
+.team-story-icon,.team-story-step.is-active .team-story-icon{width:24px;height:24px;border:0;border-radius:0;background:none;box-shadow:none;color:#8a98a7}
+.team-story-icon svg{width:20px;height:20px;stroke-width:1.8}
+.team-story-step.is-active .team-story-icon{color:#163e69}
+.team-story-step h3{font-size:16px;line-height:1.35;color:#7c8c9b;font-weight:500}
+.team-story-step.is-active h3{color:#153b63;font-weight:600}
+.team-story-step p{margin:10px 0 0;font-size:13px;line-height:1.65;color:#5c738b}
+.team-story-step.is-active .team-story-progress{display:none}
+}
+@media(min-width:1100px) and (max-height:700px){.team-story-copy .section-intro{margin-bottom:16px}.team-story-copy .section-intro h2{font-size:30px}.team-story-step,.team-story-step.is-active{padding:11px 0}.team-story-copy .section-intro p{font-size:12px}.team-story-step p{font-size:12px}}
+@media(max-width:1099px){.team-story-copy{display:contents}.team-story-copy .section-intro{order:-1}.team-story-preview{order:0}.team-story-steps{order:1}}
+@media(min-width:1100px){.team-story-steps{align-items:stretch}.team-story-step,.team-story-step.is-active{width:100%;box-sizing:border-box}.team-story-step button{text-align:left}}
