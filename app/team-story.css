@@ -52,3 +52,22 @@
 @media(prefers-reduced-motion:reduce){.team-ambient-light,.team-ambient-waves i{animation:none}.team-caption-controls button{display:none}}
 .team-story-preview{top:auto;}
 @media(min-width:1100px){.team-story .ip-main{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#b7c8dc transparent}.team-story .ip-list{max-height:505px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#b7c8dc transparent}}
+
+/* Focus each marketing preview on the product content, without application chrome. */
+.team-story .inbox-product{display:block!important}
+.team-story .ip-sidebar,.team-story .ip-topbar{display:none}
+.team-story .ip-main{height:100%;min-width:0}
+.team-story .ip-page{padding:20px;height:100%;display:flex;flex-direction:column;box-sizing:border-box}
+.team-story .ip-stage-1 .ip-page,.team-story .ip-stage-3 .ip-page{display:none}
+.team-story .ip-page-heading{margin-bottom:18px;flex:none}
+.team-story .ip-page-heading p{max-width:none}
+.team-story .ip-panel{flex:1;min-height:0;grid-template-columns:28% minmax(0,1fr)}
+.team-story .ip-list{max-height:none;min-height:0;overflow-y:auto}
+.team-story .ip-chat{min-height:0}
+.team-story .ip-messages{max-height:none;min-height:0;overflow-y:auto}
+.team-story .ip-compose{flex:none}
+.team-story .ip-story-screen{min-height:100%;box-sizing:border-box;padding:24px 28px}
+.team-story .ip-record-profile{padding:22px}
+.team-story .ip-record-grid article{padding:22px}
+.team-story .ip-report-metrics article{padding:20px}
+@media(max-width:700px){.team-story .ip-page{padding:16px 10px}.team-story .ip-panel{display:block}.team-story .ip-chat{min-height:500px}.team-story .ip-messages{max-height:390px}.team-story .ip-story-screen{padding:20px 14px}.team-story .ip-record-grid article{padding:14px}.team-story .ip-report-metrics article{padding:12px 7px}}
