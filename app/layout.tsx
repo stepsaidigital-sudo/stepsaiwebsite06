@@ -38,3 +38,4 @@ import "./integrations.css";
 import "./inbox-preview.css";
 
 import "./journey-polish.css";
+import "./typography.css";
