@@ -52,3 +52,5 @@ The revision studied Calendly's live layered gradient stages through the browser
 The supplied Steps_AI_Homepage_Copy_v2 (2).docx.md (internally titled v3) is preserved in docs/seo-homepage-source.md. The website-copy region matches the existing marketing copy exactly, including punctuation and section order. Run npm run check:copy to enforce source fidelity and section order. Review notes and implementation guidance are not public website copy.
 
 The SEO appendix supplies route paths including /book-a-demo/, /pricing/, /case-studies/ and /integrations/. These supersede the earlier note about unspecified paths; the corresponding destination pages still need implementation and connection before launch.
+
+The 7 October revision supersedes the previous journey and industry layout notes. See REVISION-AUDIT.md: one scroll-switching product frame, all seven industry cards visible, full testimonial expansion, and distinct channel mockups with official Meta logo files.

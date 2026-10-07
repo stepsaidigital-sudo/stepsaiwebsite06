@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "North & Pine",
+    "quote": "“The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be.”",
+    "attribution": "Maya Patel | Head of E-commerce | North & Pine"
+  },
+  {
+    "brand": "LatticeFlow Labs",
+    "quote": "“Our sales team has a lot more context before they speak to someone now. We can already see what they were asking about, what they’re trying to solve, company size, and sometimes which integrations matter to them. It makes the first call feel like a continuation of the conversation.”",
+    "attribution": "Rachel Morgan | VP of Growth | LatticeFlow Labs"
+  },
+  {
+    "brand": "Casa Noma",
+    "quote": "“Monday mornings are noticeably quieter now. We used to open WhatsApp to a wall of delivery, stock, and sizing questions from the weekend, and someone would spend the first hour or two just working through them. Most of those get answered as they come in now. The team really only gets involved when a customer needs something more specific.”",
+    "attribution": "Sofia Alvarez | Customer Operations Manager | Casa Noma"
+  },
+  {
+    "brand": "Aster & Row",
+    "quote": "“A lot of our customers shop and message us after hours. StepsAI handles most of those questions now, so we’re not coming back every morning to a backlog. For a team of six, that’s been really useful.”",
+    "attribution": "Priya Shah | Founder | Aster & Row"
+  },
+  {
+    "brand": "Nivara",
+    "quote": "“Size, stock, shipping, and returns were probably half of our daily messages. We had saved replies for most of them because the team was answering the same questions all day. StepsAI handles most of those conversations now, and support has a lot more time for the customers who actually need help.”",
+    "attribution": "Arjun Mehta | E-commerce Manager | Nivara"
+  },
+  {
+    "brand": "RelayDesk",
+    "quote": "“We get a lot of questions from people who are interested but not ready to talk to sales yet. StepsAI handles that part really well. By the time someone books with us, they’ve usually already checked pricing, integrations, and whether we can support their use case.”",
+    "attribution": "Kevin Morales | Sales Director | RelayDesk"
+  },
+  {
+    "brand": "Sunday Form",
+    "quote": "“Our Instagram inbox used to be a mess during launches. People asking if something was still in stock, when it would ship, whether we had another size. Now most of those questions get answered without someone from our team sitting in DMs all day.”",
+    "attribution": "Nina Kapoor | E-commerce Lead | Sunday Form"
+  },
+  {
+    "brand": "Stacklane",
+    "quote": "“Our help center is pretty big, and customers weren’t finding half of what was already there. Now they just ask the question normally and get the relevant answer. Support still handles the harder stuff, but we get far fewer tickets asking for information that was already sitting in our docs.”",
+    "attribution": "Jonathan Reed | VP, Customer Success | Stacklane"
+  },
+  {
+    "brand": "Mysa Living",
+    "quote": "“StepsAI is good at the questions that don’t fit neatly into filters. People will say what they need, their budget, maybe what they’ve bought before, and StepsAI can point them to a few products that actually make sense.”",
+    "attribution": "Anika Rao | Head of Digital | Mysa Living"
+  },
+  {
+    "brand": "Northstar SaaS",
+    "quote": "“We were losing good inquiries because people would ask a few questions and leave without filling out the form. Now StepsAI gets the details while they’re already talking and passes the lead into our CRM with the conversation attached.”",
+    "attribution": "Ryan Collins | Growth Lead | Northstar SaaS"
+  }
+]

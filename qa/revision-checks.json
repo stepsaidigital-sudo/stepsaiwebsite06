@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-07",
+  "featureStates": [
+    {
+      "current": "0",
+      "expanded": "true",
+      "feature": 0,
+      "pinned": true,
+      "stage": 0,
+      "visible": 1
+    },
+    {
+      "current": "0",
+      "expanded": "true",
+      "feature": 1,
+      "pinned": true,
+      "stage": 0,
+      "visible": 1
+    },
+    {
+      "current": "0",
+      "expanded": "true",
+      "feature": 2,
+      "pinned": true,
+      "stage": 0,
+      "visible": 1
+    },
+    {
+      "current": "0",
+      "expanded": "true",
+      "feature": 3,
+      "pinned": true,
+      "stage": 0,
+      "visible": 1
+    },
+    {
+      "current": "1",
+      "expanded": "true",
+      "feature": 0,
+      "pinned": true,
+      "stage": 1,
+      "visible": 1
+    },
+    {
+      "current": "1",
+      "expanded": "true",
+      "feature": 1,
+      "pinned": true,
+      "stage": 1,
+      "visible": 1
+    },
+    {
+      "current": "1",
+      "expanded": "true",
+      "feature": 2,
+      "pinned": true,
+      "stage": 1,
+      "visible": 1
+    },
+    {
+      "current": "1",
+      "expanded": "true",
+      "feature": 3,
+      "pinned": true,
+      "stage": 1,
+      "visible": 1
+    },
+    {
+      "current": "2",
+      "expanded": "true",
+      "feature": 0,
+      "pinned": true,
+      "stage": 2,
+      "visible": 1
+    },
+    {
+      "current": "2",
+      "expanded": "true",
+      "feature": 1,
+      "pinned": true,
+      "stage": 2,
+      "visible": 1
+    },
+    {
+      "current": "2",
+      "expanded": "true",
+      "feature": 2,
+      "pinned": true,
+      "stage": 2,
+      "visible": 1
+    },
+    {
+      "current": "2",
+      "expanded": "true",
+      "feature": 3,
+      "pinned": true,
+      "stage": 2,
+      "visible": 1
+    },
+    {
+      "current": "3",
+      "expanded": "true",
+      "feature": 0,
+      "pinned": true,
+      "stage": 3,
+      "visible": 1
+    },
+    {
+      "current": "3",
+      "expanded": "true",
+      "feature": 1,
+      "pinned": true,
+      "stage": 3,
+      "visible": 1
+    },
+    {
+      "current": "3",
+      "expanded": "true",
+      "feature": 2,
+      "pinned": true,
+      "stage": 3,
+      "visible": 1
+    },
+    {
+      "current": "3",
+      "expanded": "true",
+      "feature": 3,
+      "pinned": true,
+      "stage": 3,
+      "visible": 1
+    }
+  ],
+  "desktopScrollVerified": true,
+  "sectionHeadings": [
+    "Your AI agent for marketing, sales and support.",
+    "Engage. Convert. Support. Bring customers back.",
+    "See the conversations, customers and results in one place.",
+    "Set it up for the way your business works.",
+    "See what it can do for your business.",
+    "See what changes for your customers and your team.",
+    "A few answers before you book a demo.",
+    "See your customer conversations handled by Steps AI."
+  ],
+  "industryCards": 7,
+  "widthsWithoutOverflow": [
+    1440,
+    1366,
+    390,
+    320
+  ],
+  "mobileStageSelection": true,
+  "officialLogoImagesLoaded": true
+}
