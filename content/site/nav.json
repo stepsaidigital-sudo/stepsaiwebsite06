@@ -1,0 +1,208 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "nav",
+  "menus": [
+    {
+      "label": "Product",
+      "columns": [
+        {
+          "title": "Features",
+          "style": "tiles",
+          "items": [
+            {
+              "label": "WhatsApp broadcast",
+              "href": "/features/whatsapp-broadcast/",
+              "body": "Personalised WhatsApp campaigns"
+            },
+            {
+              "label": "Unified inbox",
+              "href": "/features/unified-inbox/",
+              "body": "Every conversation in one place"
+            },
+            {
+              "label": "CRM",
+              "href": "/features/crm/",
+              "body": "Customer records and tickets"
+            },
+            {
+              "label": "Analytics",
+              "href": "/features/analytics/",
+              "body": "See what customers ask"
+            },
+            {
+              "label": "Agent skills",
+              "href": "/features/skills/",
+              "body": "Actions and rules for your agent"
+            },
+            {
+              "label": "Workflow builder",
+              "href": "/features/workflow-builder/",
+              "body": "Follow-ups without code"
+            }
+          ]
+        },
+        {
+          "title": "Channels",
+          "style": "links",
+          "items": [
+            {
+              "label": "Website chatbot",
+              "href": "/channels/website-chatbot/",
+              "body": ""
+            },
+            {
+              "label": "WhatsApp chatbot",
+              "href": "/channels/whatsapp-chatbot/",
+              "body": ""
+            },
+            {
+              "label": "Instagram chatbot",
+              "href": "/channels/instagram-chatbot/",
+              "body": ""
+            },
+            {
+              "label": "Messenger chatbot",
+              "href": "/channels/messenger-chatbot/",
+              "body": ""
+            },
+            {
+              "label": "Chat page",
+              "href": "/channels/chat-page/",
+              "body": ""
+            },
+            {
+              "label": "Integrations",
+              "href": "/integrations/",
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Solutions",
+      "columns": [
+        {
+          "title": "By job",
+          "style": "tiles",
+          "items": [
+            {
+              "label": "AI sales agent",
+              "href": "/use-cases/ai-sales-agent/",
+              "body": "Help customers choose and buy"
+            },
+            {
+              "label": "AI support agent",
+              "href": "/use-cases/ai-support-agent/",
+              "body": "Answer questions at any hour"
+            },
+            {
+              "label": "AI lead capture agent",
+              "href": "/use-cases/ai-lead-capture-agent/",
+              "body": "Collect details in the chat"
+            },
+            {
+              "label": "AI booking agent",
+              "href": "/use-cases/ai-booking-agent/",
+              "body": "Book appointments and demos"
+            },
+            {
+              "label": "AI marketing agent",
+              "href": "/use-cases/ai-marketing-agent/",
+              "body": "Campaigns and comment replies"
+            }
+          ]
+        },
+        {
+          "title": "By industry",
+          "style": "links",
+          "items": [
+            {
+              "label": "Ecommerce",
+              "href": "/industries/ecommerce/",
+              "body": ""
+            },
+            {
+              "label": "Healthcare",
+              "href": "/industries/healthcare/",
+              "body": ""
+            },
+            {
+              "label": "Education",
+              "href": "/industries/education/",
+              "body": ""
+            },
+            {
+              "label": "Real estate",
+              "href": "/industries/real-estate/",
+              "body": ""
+            },
+            {
+              "label": "Travel and hospitality",
+              "href": "/industries/travel-and-hospitality/",
+              "body": ""
+            },
+            {
+              "label": "SaaS",
+              "href": "/industries/saas/",
+              "body": ""
+            },
+            {
+              "label": "Financial services",
+              "href": "/industries/financial-services/",
+              "body": ""
+            },
+            {
+              "label": "All industries",
+              "href": "/industries/",
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Resources",
+      "columns": [
+        {
+          "title": "Learn",
+          "style": "tiles",
+          "items": [
+            {
+              "label": "Blog",
+              "href": "/blog/",
+              "body": "Guides for growing teams"
+            },
+            {
+              "label": "Customer stories",
+              "href": "/case-studies/",
+              "body": "How businesses use Steps AI"
+            },
+            {
+              "label": "Compare",
+              "href": "/compare/",
+              "body": "Steps AI and the alternatives"
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "style": "tiles",
+          "items": [
+            {
+              "label": "Help centre",
+              "href": "/help/",
+              "body": "Setup guides and answers"
+            },
+            {
+              "label": "Developer docs",
+              "href": "https://docs.stepsai.co",
+              "body": "Technical documentation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

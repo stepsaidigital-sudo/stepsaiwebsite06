@@ -47,7 +47,7 @@ function visit(value, path, file) {
 }
 
 // JSON imports widen string literals, so the type check cannot see these.
-const kinds = ['feature', 'channel', 'usecase', 'industry', 'hub', 'pricing', 'content'];
+const kinds = ['feature', 'channel', 'usecase', 'industry', 'hub', 'pricing', 'content', 'nav'];
 for (const file of files) {
   const data = JSON.parse(readFileSync(file, 'utf8'));
   const name = relative(root, file);

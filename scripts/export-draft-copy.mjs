@@ -20,6 +20,7 @@ const files = [];
 function routeOf(file, data) {
   const [folder, name] = relative(contentDir, file).split(/[\\/]/);
   if (routes[folder]) return `${routes[folder]}${data.slug}/`;
+  if (folder === 'site') return `(site ${name.replace('.json', '')})`;
   if (folder === 'hubs') return `/${name.replace('.json', '')}/`;
   return `/${name.replace('.json', '')}/`;
 }
