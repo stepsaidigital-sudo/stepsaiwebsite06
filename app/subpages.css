@@ -7,6 +7,9 @@
 .sp-section+.sp-section{padding-top:24px}
 .sp-intro{margin-bottom:44px}
 
+/* Headings use the homepage's Newsreader serif (see typography.css). */
+.sp-hero-copy h1,.sp-faq h2,.sp-good h2,.sp-prose h2,.sp-theatre .channel-explanation h3{font-family:'Newsreader',Georgia,serif;font-weight:500;font-optical-sizing:auto;letter-spacing:-.035em;line-height:1.08}
+
 /* Hero: the homepage's gradient stage, laid out as copy plus mockup. */
 .sp-hero{background:linear-gradient(140deg,#fcfcfc 0%,#c4ecfc 62%,#2c9cfa80 135%);border-bottom:1px solid var(--line);padding:72px 0 88px;position:relative;overflow:hidden}
 .sp-hero::after{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-180px;border-radius:50%;background:radial-gradient(circle,#f8b40326 0%,transparent 68%);pointer-events:none}
@@ -174,7 +177,30 @@
   .sp-broadcast-report i::after{transition:none}
 }
 
-/* Audience picker rows (feature step mockup). */
-.sp-broadcast-row small{display:block;font-size:.6875rem;margin-top:2px}
-.sp-broadcast-row.sp-picked{border-color:var(--blue);background:#c4ecfc66}
-.sp-broadcast-row.sp-picked svg:last-child{color:var(--blue)}
+
+/* How it works theatre: homepage channel-theatre classes, plus the pieces a
+   step needs (h3 title, sender-aligned chat slots, product window rows). */
+.sp-theatre{margin-top:0}
+.sp-theatre .channel-explanation h3{font-size:clamp(28px,3.1vw,43px);max-width:390px;margin-bottom:18px}
+.sp-theatre .channel-icon-tabs button>svg{width:20px;height:20px;color:#2b4f75}
+.sp-theatre .live-message-slot.sp-slot-agent{justify-content:flex-end}
+.sp-theatre .live-message-slot.sp-slot-customer{justify-content:flex-start}
+.sp-theatre .scene-context .context-orb{width:56px;height:56px}
+.sp-theatre .scene-context .context-orb .channel-logo{width:26px;height:26px}
+.sp-scene-window .native-chat-header{padding:11px 13px}
+.sp-scene-window .native-chat-header>svg,.sp-scene-window .native-chat-header>.channel-logo{color:#2b4f75}
+.sp-scene-body{display:grid;gap:8px;padding:13px;background:#fbfcfd}
+.sp-scene-row{display:grid;grid-template-columns:18px 1fr auto;gap:9px;align-items:center;min-height:40px;padding:8px 11px;border:1px solid #e3e8ee;border-radius:11px;background:#fff;font-size:12px;color:#33475b;transition:opacity 200ms var(--ease),transform 300ms var(--ease),border-color 300ms,background-color 300ms}
+.sp-scene-row>svg{color:#5f7a92}
+.sp-scene-row strong{font-weight:600;color:var(--navy);display:flex}
+.sp-scene-row.is-picked{border-color:#7fc4f9;background:#eef8ff}
+.sp-scene-row.is-picked>svg,.sp-scene-row.is-picked strong svg{color:var(--blue)}
+.sp-template-bubble{justify-self:end;max-width:92%;padding:9px 11px;border-radius:8px 0 8px 8px;background:#d9fdd3;color:#111b21;font-size:12px;line-height:1.45;box-shadow:0 1px 1px #00000012;transition:opacity 200ms var(--ease),transform 300ms var(--ease)}
+.sp-template-bubble b{padding:0 3px;border-radius:4px;background:#fff6d1;transition:background-color 400ms}
+.sp-template-bubble b.is-filled{background:transparent;padding:0}
+@media(max-width:759px){
+  .sp-theatre .channel-explanation h3{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-scene-row,.sp-template-bubble{transition:none}
+}
