@@ -38,8 +38,16 @@ export function Header({ onOpen, onHome = true }: Open & Place) {
     document.addEventListener('keydown', esc);
     return () => document.removeEventListener('keydown', esc);
   }, [open]);
+  // The floating pill lifts slightly once the page has scrolled.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 8);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
   const close = () => setOpen(false);
-  return <header className="site-header"><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}>{['Product', 'Solutions', 'Resources', 'Pricing'].map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} after={close} />)}<span className="nav-spacer" /><button onClick={() => { close(); onOpen('Log in'); }}>Log in</button><Action onOpen={onOpen} /></nav></div></header>;
+  return <header className={scrolled ? 'site-header is-scrolled' : 'site-header'}><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}>{['Product', 'Solutions', 'Resources', 'Pricing'].map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} after={close} />)}<span className="nav-spacer" /><button onClick={() => { close(); onOpen('Log in'); }}>Log in</button><Action onOpen={onOpen} /></nav></div></header>;
 }
 
 export function Footer({ onOpen, onHome = true }: Open & Place) {

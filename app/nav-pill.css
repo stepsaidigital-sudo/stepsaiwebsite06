@@ -1,0 +1,40 @@
+/* Floating pill navigation, shared by the homepage and every subpage. Loaded
+   last so it restyles the header rules in globals.css and polish.css without
+   editing them. Base rules first, breakpoints after, widest to narrowest. */
+
+.site-header{top:0;padding-top:14px;background:none;border-bottom:0;backdrop-filter:none;pointer-events:none}
+.site-header .header-inner{pointer-events:auto;position:relative;width:calc(100% - 48px);max-width:1120px;height:64px;gap:44px;padding:0 9px 0 24px;border-radius:999px;background:rgb(252 252 252 / 82%);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line);box-shadow:0 1px 2px #0c34740a,0 10px 30px #0c347412;transition:box-shadow 260ms var(--ease),background-color 260ms var(--ease),border-color 260ms}
+.site-header.is-scrolled .header-inner{background:rgb(252 252 252 / 92%);border-color:rgb(12 52 116 / 18%);box-shadow:0 2px 4px #0c34740d,0 18px 44px #0c34741f}
+.site-header .brand{font-size:1.625rem}
+.site-header .brand-original{width:40px;height:24px}
+.site-header .brand-ai{font-size:1rem}
+
+.site-header .nav{gap:4px}
+.site-header .nav>a,.site-header .nav>button:not(.button){padding:9px 15px;border-radius:999px;transition:background-color 180ms var(--ease),color 180ms}
+.site-header .nav>a:hover,.site-header .nav>button:not(.button):hover{text-decoration:none;background:rgb(196 236 252 / 62%)}
+.site-header .nav .button{min-height:46px;padding:10px 22px;border-radius:999px;margin-left:6px}
+.site-header .nav-spacer{flex:1}
+
+@media(max-width:1150px){
+  .site-header .header-inner{gap:28px}
+}
+@media(max-width:900px){
+  .site-header .header-inner{gap:16px;padding-left:20px}
+  .site-header .nav>a,.site-header .nav>button:not(.button){padding:9px 11px}
+}
+@media(max-width:700px){
+  .site-header{padding-top:10px}
+  .site-header .header-inner{width:calc(100% - 24px);height:58px;padding:0 6px 0 18px}
+  .site-header .brand{font-size:1.5rem}
+  .site-header .nav{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;padding:10px;gap:2px;border-radius:24px;background:rgb(252 252 252 / 99.5%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 18px 44px #0c34741f}
+  .site-header .nav.open{display:flex;animation:pill-menu-in 220ms var(--ease)}
+  .site-header .nav>a,.site-header .nav>button:not(.button){border-radius:14px}
+  .site-header .nav .button{margin:8px 0 0}
+  .site-header .menu-toggle{border-radius:50%}
+  .site-header .menu-toggle:hover{background:rgb(196 236 252 / 62%)}
+}
+@keyframes pill-menu-in{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .site-header .header-inner{transition:none}
+  .site-header .nav.open{animation:none}
+}
