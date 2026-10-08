@@ -7,14 +7,16 @@ import { Action, type Open } from '@/components/site/shell';
 import { builtRoutes } from '@/components/site/routes';
 import type { Cta, Faq as FaqItem, Hero, Item, Quote, Related } from '@/content/types';
 
-// Fades a block in the first time it scrolls into view. Under reduced motion
-// the content is shown straight away.
+// Fades a block in the first time it scrolls into view. Blocks already on
+// screen at load, and everything under reduced motion, are shown straight
+// away so server-rendered content never blinks out and back in.
 export function Reveal({ children, className = '', as: Tag = 'div' }: { children: ReactNode; className?: string; as?: 'div' | 'section' | 'li' }) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.classList.add('sp-in'); return; }
+    const box = el.getBoundingClientRect();
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || (box.top < innerHeight && box.bottom > 0)) { el.classList.add('sp-in'); return; }
     el.classList.add('sp-reveal');
     const obs = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { el.classList.add('sp-in'); obs.disconnect(); } }, { threshold: 0.15 });
     obs.observe(el);

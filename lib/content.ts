@@ -10,6 +10,7 @@ import ecommerce from '@/content/industries/ecommerce.json';
 import industriesHub from '@/content/hubs/industries.json';
 import pricingPage from '@/content/pages/pricing.json';
 import aboutPage from '@/content/pages/about.json';
+import notFoundPage from '@/content/pages/not-found.json';
 
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
@@ -19,7 +20,7 @@ const useCases = { 'ai-sales-agent': aiSalesAgent } satisfies Record<string, Jso
 const industries = { ecommerce } satisfies Record<string, Json<IndustryPage>>;
 const hubs = { industries: industriesHub } satisfies Record<string, Json<HubPage>>;
 const pricing = pricingPage satisfies Json<PricingPage>;
-const pages = { about: aboutPage } satisfies Record<string, Json<ContentPage>>;
+const pages = { about: aboutPage, 'not-found': notFoundPage } satisfies Record<string, Json<ContentPage>>;
 
 function lookup<T>(pages: Record<string, unknown>) {
   return {

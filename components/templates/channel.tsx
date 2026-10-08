@@ -7,7 +7,7 @@ import { ContextCard, scenesFor, StepTheatre, TimedChat, type Scene } from '@/co
 import type { ChannelPage } from '@/content/types';
 
 type Line = { from: 'customer' | 'agent'; text: string; at: number };
-const chat = (channel: string, lines: Line[]) => (t: number) => <TimedChat channel={channel} time={t} lines={lines} />;
+const chat = (channel: string, lines: Line[], t: number) => <TimedChat channel={channel} time={t} lines={lines} />;
 
 // Animated scenes for "What your agent does", keyed by channel slug. Channels
 // without scenes show the jobs as a plain list. Sample data is fictional.
@@ -19,7 +19,7 @@ const scenes: Record<string, Scene[]> = {
         { from: 'customer', text: 'Hi, do you deliver on Sundays?', at: 500 },
         { from: 'agent', text: 'We deliver Monday to Saturday. Orders placed on Sunday go out on Monday morning.', at: 2400 },
         { from: 'customer', text: 'Perfect, thank you.', at: 4300 },
-      ])(t)}</>,
+      ], t)}</>,
     },
     {
       tab: 'Products', icon: <ShoppingBag size={20} />, label: 'Help them choose', result: 'Checkout link shared in the chat',
@@ -27,7 +27,7 @@ const scenes: Record<string, Scene[]> = {
         { from: 'customer', text: 'Is the ceramic vase available in cream?', at: 500 },
         { from: 'agent', text: 'Yes, the cream vase is in stock. I have added it to your cart.', at: 2400 },
         { from: 'agent', text: 'Here is your checkout link whenever you are ready.', at: 4200 },
-      ])(t)}</>,
+      ], t)}</>,
     },
     {
       tab: 'Orders', icon: <Truck size={20} />, label: 'After they buy', result: 'Order status from your delivery tool',
@@ -35,7 +35,7 @@ const scenes: Record<string, Scene[]> = {
         { from: 'customer', text: 'Where is my order? It is #1042.', at: 500 },
         { from: 'agent', text: 'Your order has shipped and is out for delivery today.', at: 2400 },
         { from: 'customer', text: 'Great, I will be home.', at: 4300 },
-      ])(t)}</>,
+      ], t)}</>,
     },
     {
       tab: 'Handoff', icon: <Headphones size={20} />, label: 'When a person is needed', result: 'Moved to your shared inbox',
@@ -43,7 +43,7 @@ const scenes: Record<string, Scene[]> = {
         { from: 'customer', text: 'I would like to change the address on my order.', at: 500 },
         { from: 'agent', text: 'I will pass this to our team so they can update it for you.', at: 2400 },
         { from: 'agent', text: 'Hi, this is Sam from the team. I can help with that.', at: 4400 },
-      ])(t)}</>,
+      ], t)}</>,
     },
   ],
 };

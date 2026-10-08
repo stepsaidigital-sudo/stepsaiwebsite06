@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { ArrowDown, Check, CheckCheck, Pause, Play, RotateCcw } from 'lucide-react';
 import { channelKind } from '@/app/channel-chat';
 import type { Item } from '@/content/types';
@@ -24,23 +24,28 @@ export function scenesFor(scenes: Scene[] | undefined, items: unknown[]) {
 export function StepTheatre({ items, scenes }: { items: Item[]; scenes: Scene[] }) {
   const [active, setActive] = useState(0);
   const [pinned, setPinned] = useState(false);
-  const [time, setTime] = useState(0), [paused, setPaused] = useState(false), [visible, setVisible] = useState(false), [reduced, setReduced] = useState(false);
+  const [paused, setPaused] = useState(false), [visible, setVisible] = useState(false), [reduced, setReduced] = useState(false);
   const [replay, setReplay] = useState(0);
+  // The clock belongs to one step and one replay. A new step starts from zero
+  // on its first render, so it never flashes the previous step's end state.
+  const key = `${active}-${replay}`;
+  const [clock, setClock] = useState({ key, t: 0 });
+  const time = reduced ? END : clock.key === key ? clock.t : 0;
   const runway = useRef<HTMLDivElement>(null), frame = useRef<HTMLDivElement>(null);
   const step = useRef(480);
   const count = items.length;
+  const uid = useId();
 
   useEffect(() => {
     const mq = matchMedia('(prefers-reduced-motion: reduce)'); const sync = () => setReduced(mq.matches); sync(); mq.addEventListener('change', sync);
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.3 }); observer.observe(frame.current!);
     return () => { observer.disconnect(); mq.removeEventListener('change', sync); };
   }, []);
-  useEffect(() => { setTime(reduced ? END : 0); }, [active, replay, reduced]);
   useEffect(() => {
     if (paused || !visible || reduced || time >= END) return;
-    const timer = window.setInterval(() => { if (!document.hidden) setTime(value => Math.min(END, value + 100)); }, 100);
+    const timer = window.setInterval(() => { if (!document.hidden) setClock(c => ({ key, t: Math.min(END, (c.key === key ? c.t : 0) + 100) })); }, 100);
     return () => window.clearInterval(timer);
-  }, [paused, visible, reduced, time >= END]);
+  }, [paused, visible, reduced, time >= END, key]);
 
   // Pin only when the whole panel fits the viewport, as on the homepage.
   useEffect(() => {
@@ -75,10 +80,10 @@ export function StepTheatre({ items, scenes }: { items: Item[]; scenes: Scene[] 
     if (pinned) window.scrollTo({ top: scrollY + runway.current!.getBoundingClientRect().top - 92 + i * step.current, behavior: 'instant' });
   };
 
-  return <div className={`channel-runway sp-theatre ${pinned ? 'channel-pinned' : ''}`} ref={runway}>
+  return <div className={`channel-runway sp-theatre ${pinned ? 'channel-pinned' : ''}`} ref={runway} style={{ '--steps': count } as CSSProperties}>
     <div ref={frame} className={`channel-theatre ${paused ? 'playback-paused' : ''}`}>
       <nav className="channel-icon-tabs" aria-label="Steps">{scenes.map((scene, i) =>
-        <button key={scene.tab} aria-pressed={active === i} aria-controls={`step-panel-${i}`} onClick={() => select(i)} onKeyDown={event => {
+        <button key={scene.tab} aria-pressed={active === i} aria-controls={`${uid}-panel-${i}`} onClick={() => select(i)} onKeyDown={event => {
           if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
           event.preventDefault();
           const next = (i + (event.key === 'ArrowRight' ? 1 : -1) + count) % count;
@@ -88,7 +93,7 @@ export function StepTheatre({ items, scenes }: { items: Item[]; scenes: Scene[] 
       <div className="channel-presentation">{items.map((item, i) => {
         const scene = scenes[i];
         const current = active === i;
-        return <article id={`step-panel-${i}`} key={item.title} className={`channel-presentation-panel panel-${i % 4} ${current ? 'is-current' : ''}`} aria-hidden={!current} inert={!current}>
+        return <article id={`${uid}-panel-${i}`} key={item.title} className={`channel-presentation-panel panel-${i % 4} ${current ? 'is-current' : ''}`} aria-hidden={!current} inert={!current}>
           <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i + 1}</span><span>{scene.label}</span></div><h3>{item.title}</h3><p>{item.body}</p></div>
           <div className="channel-demo-canvas"><span className="scene-illustration">Illustration</span>{scene.render(current ? time : 0)}<div className={`channel-demo-result ${time >= END - 800 && current ? 'result-arrived' : 'result-waiting'}`}><span><Check size={15} /></span>{scene.result}</div></div>
         </article>;

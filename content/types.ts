@@ -48,5 +48,5 @@ export type PricingPage = Status & {
 
 export type ContentPage = Status & {
   kind: 'content'; seo: Seo; hero: Hero;
-  sections: { title: string; paragraphs: string[]; items?: Item[] }[]; cta: Cta;
+  sections: { title: string; paragraphs: string[]; items?: (Item & { href?: string })[] }[]; cta: Cta;
 };

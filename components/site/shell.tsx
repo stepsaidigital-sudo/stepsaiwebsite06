@@ -24,12 +24,12 @@ function LabelLink({ label, onOpen, onHome, after }: Open & { label: string; onH
   return <button onClick={() => { after?.(); onOpen(label); }}>{label}</button>;
 }
 
-// The onOpen used by page content: a label with a built page navigates there,
-// anything else opens the preview notice.
+// The onOpen used by page content: a label with a built page or a homepage
+// section navigates there, anything else opens the preview notice.
 export function openOrGo(setRoute: (label: string) => void, onHome: boolean) {
   return (label: string) => {
     const { href } = resolveLabel(label, onHome);
-    if (href && !href.includes('#')) window.location.assign(href);
+    if (href) window.location.assign(href);
     else setRoute(label);
   };
 }
