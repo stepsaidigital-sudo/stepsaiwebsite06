@@ -1,0 +1,130 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "whatsapp-broadcast",
+  "seo": {
+    "title": "WhatsApp broadcast | Steps AI",
+    "description": "Send personalised WhatsApp campaigns to the right customers. Your AI agent answers every reply, and the conversation lands in your shared inbox."
+  },
+  "hero": {
+    "kicker": "WhatsApp broadcast",
+    "title": "Send WhatsApp campaigns your agent can follow up.",
+    "body": "Choose an approved template, pick your audience and schedule the send. When customers reply, your AI agent answers and your team sees every conversation in one inbox.",
+    "reassurance": "Approved WhatsApp templates. Cost shown before you send. Opt-outs respected.",
+    "channels": ["WhatsApp"]
+  },
+  "steps": {
+    "title": "Plan, send and follow up in one place.",
+    "intro": "A broadcast is not finished when it is delivered. Replies go straight to the agent you choose, so interested customers get an answer while they are still thinking about it.",
+    "items": [
+      {
+        "title": "Connect WhatsApp and choose your agent",
+        "body": "Connect your WhatsApp Business number through Meta, then choose which AI agent handles the replies to this campaign."
+      },
+      {
+        "title": "Pick a template and your audience",
+        "body": "Use a WhatsApp template that Meta has approved. Send it to a customer list, an uploaded CSV, your Shopify customers or everyone with a single tag."
+      },
+      {
+        "title": "Personalise and schedule",
+        "body": "Add each customer's name or an offer to the message, then send it now or schedule it for later. You see the estimated messaging cost before anything goes out."
+      },
+      {
+        "title": "Let your agent handle the replies",
+        "body": "Replies go back to your AI agent, which answers from your business information. Every conversation is saved to your shared inbox, and your team can step in at any point."
+      }
+    ]
+  },
+  "features": {
+    "title": "What you can do with a broadcast.",
+    "intro": "Everything you need to send a campaign and see what happened next.",
+    "items": [
+      {
+        "title": "Send to a saved list or CSV",
+        "body": "Upload a CSV or reuse a customer list you have already saved in Steps AI."
+      },
+      {
+        "title": "Reach your Shopify customers",
+        "body": "With Shopify connected, choose your store's customers as the audience without exporting a file first."
+      },
+      {
+        "title": "Target one tag at a time",
+        "body": "Send to everyone with a tag such as returning customer or event interest. Tags come from your customer records."
+      },
+      {
+        "title": "Personalise names and offers",
+        "body": "Fill in each customer's first name or a specific offer, so the message reads like it was written for them."
+      },
+      {
+        "title": "Check the cost before you send",
+        "body": "See the estimated WhatsApp messaging cost for the audience you picked, then decide whether to go ahead."
+      },
+      {
+        "title": "Track delivered, read and clicked",
+        "body": "See how many messages were delivered and read, and how many people clicked a link, for each broadcast."
+      },
+      {
+        "title": "Respect opt-outs automatically",
+        "body": "Customers who opt out are left out of future broadcasts, so you do not need to clean the list by hand."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "A single broadcast can currently go to up to 1,000 people.",
+      "Every broadcast uses a WhatsApp template, and Meta must approve the template before you can send it.",
+      "WhatsApp charges for template messages. The estimated cost is shown before you send."
+    ]
+  },
+  "faq": {
+    "title": "Questions about WhatsApp broadcast.",
+    "items": [
+      {
+        "q": "Do I need a WhatsApp Business account?",
+        "a": "Yes. You connect your WhatsApp Business number through Meta during setup. The same connection is used by your AI agent for everyday WhatsApp conversations."
+      },
+      {
+        "q": "Why does my message need an approved template?",
+        "a": "WhatsApp only lets businesses start a conversation with a template that Meta has reviewed. You write the template, submit it, and use it in broadcasts once it is approved."
+      },
+      {
+        "q": "What happens when a customer replies?",
+        "a": "The reply goes to the AI agent you chose for the campaign. It answers from your business information, and the conversation appears in your shared inbox so your team can take over."
+      },
+      {
+        "q": "How many people can I send a broadcast to?",
+        "a": "Up to 1,000 people per broadcast at the moment. For a larger audience, split it into more than one send."
+      },
+      {
+        "q": "Can customers stop receiving broadcasts?",
+        "a": "Yes. Customers who opt out are not included in later broadcasts."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "Unified inbox",
+        "href": "/features/unified-inbox/",
+        "body": "See every reply to your campaign next to the rest of the customer's conversations."
+      },
+      {
+        "label": "Workflow builder",
+        "href": "/features/workflow-builder/",
+        "body": "Decide what happens after someone replies, from a follow-up message to a handoff."
+      },
+      {
+        "label": "WhatsApp chatbot",
+        "href": "/channels/whatsapp-chatbot/",
+        "body": "Let your AI agent answer everyday WhatsApp questions, not only campaign replies."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See a WhatsApp broadcast with your own audience in mind.",
+    "body": "Book a demo and we will walk through a campaign, from the template to the replies your agent handles."
+  }
+}

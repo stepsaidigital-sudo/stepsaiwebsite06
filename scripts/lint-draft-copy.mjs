@@ -44,7 +44,15 @@ function visit(value, path, file) {
   }
 }
 
-for (const file of files) visit(JSON.parse(readFileSync(file, 'utf8')), '', relative(root, file));
+// JSON imports widen string literals, so the type check cannot see these.
+const kinds = ['feature', 'channel', 'usecase', 'industry', 'hub', 'pricing', 'content'];
+for (const file of files) {
+  const data = JSON.parse(readFileSync(file, 'utf8'));
+  const name = relative(root, file);
+  if (data.status !== 'draft' || data.source !== 'draft, pending specialist copy') problems.push(`${name}: status/source must mark the file as a draft`);
+  if (!kinds.includes(data.kind)) problems.push(`${name}: unknown kind: ${data.kind}`);
+  visit(data, '', name);
+}
 
 if (problems.length) {
   console.error(problems.join('\n'));
