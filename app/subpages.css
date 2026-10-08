@@ -15,7 +15,7 @@
 .sp-hero::after{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-180px;border-radius:50%;background:radial-gradient(circle,#f8b40326 0%,transparent 68%);pointer-events:none}
 .sp-main>.sp-hero:first-child{margin-top:-78px;padding-top:150px}
 .sp-hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;z-index:1}
-.sp-hero-inner:not(:has(.sp-hero-visual)){grid-template-columns:1fr;max-width:860px}
+.sp-hero-inner:not(:has(.sp-hero-visual)){grid-template-columns:minmax(0,820px)}
 .sp-hero-copy .eyebrow{justify-content:flex-start}
 .sp-hero-copy h1{font-size:clamp(40px,4.4vw,62px)}
 .sp-hero-copy .hero-description{margin:24px 0 22px;max-width:600px}
@@ -203,4 +203,21 @@
 }
 @media(prefers-reduced-motion:reduce){
   .sp-scene-row,.sp-template-bubble{transition:none}
+}
+
+/* Industry hero: the homepage industry card art, open on its selected state. */
+.sp-industry-stage{position:relative;display:grid;place-items:center;min-height:440px;padding:40px 24px;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 20% 110%,#2c9cfa,transparent 70%),radial-gradient(ellipse at 100% 100%,#f8b40370,transparent 80%),linear-gradient(#fcfcfc,#c4ecfc);box-shadow:0 22px 32px -22px #0c347440}
+.sp-industry-stage .industry-arc{top:-40px}
+.sp-industry-stage .industry-arc::after{display:none}
+.sp-industry-stage .industry-demo{position:relative;z-index:1}
+
+/* Customer question chips drift gently, out of step with each other. */
+.sp-chips-float li{animation:sp-drift 6s ease-in-out infinite alternate}
+.sp-chips-float li:nth-child(even){animation-duration:7.5s}
+@keyframes sp-drift{from{transform:translateY(-3px)}to{transform:translateY(4px)}}
+@media(max-width:700px){
+  .sp-industry-stage{min-height:360px;padding:28px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-chips-float li{animation:none}
 }

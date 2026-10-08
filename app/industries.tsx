@@ -7,7 +7,7 @@ import {ChannelLogo} from './channel-chat';
 const featured=[{index:0,key:'ecommerce'},{index:4,key:'healthcare'},{index:3,key:'education'},{index:2,key:'realestate'}];
 const remaining=[1,5,6];
 
-function IndustryMockup({kind}:{kind:string}){
+export function IndustryMockup({kind}:{kind:string}){
   return <div className={`industry-demo demo-${kind}`}>
     {kind==='ecommerce'?<><div className="industry-demo-bar"><ChannelLogo channel="WhatsApp"/><strong>Your store</strong><span>Shopping assistant</span></div><div className="commerce-product"><img loading="lazy" decoding="async" src="/industries/ecommerce.png" alt="Cream ceramic vase and bowl"/><div><small>Picked for you</small><strong>A little something<br/>for their new home.</strong><span><Check size={12}/> From your catalogue</span></div></div><div className="industry-demo-message">I can help you find a thoughtful gift.</div><div className="industry-demo-choice">Explore products <ArrowUpRight size={15}/></div></>:
     kind==='healthcare'?<><div className="industry-demo-bar"><CalendarDays size={18}/><strong>Your clinic</strong><span>Appointments</span></div><div className="clinic-profile"><img loading="lazy" decoding="async" src="/industries/healthcare.png" alt="Illustrative clinic doctor"/><div><small>Find a time that works</small><strong>Let’s plan your visit.</strong><span>Choose an available time</span></div></div><div className="appointment-date"><CalendarDays size={15}/><strong>Tuesday</strong><span>Available times</span></div><div className="industry-time-slots"><span>10:00 AM</span><span className="time-selected">2:30 PM <Check size={12}/></span><span>4:00 PM</span></div><div className="industry-demo-note">Clinic information. Booking help. One chat.</div></>:
