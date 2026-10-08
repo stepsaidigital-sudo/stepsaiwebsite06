@@ -37,7 +37,7 @@ export function PageHero({ hero, onOpen, visual }: Open & { hero: Hero; visual?:
   </div></section>;
 }
 
-export function SectionIntro({ eyebrow, title, intro }: { eyebrow?: string; title: string; intro?: string }) {
+export function SectionIntro({ eyebrow, title, intro }: { eyebrow?: ReactNode; title: string; intro?: string }) {
   return <div className="section-intro sp-intro">{eyebrow && <span className="section-kicker">{eyebrow}</span>}<h2>{title}</h2>{intro && <p>{intro}</p>}</div>;
 }
 

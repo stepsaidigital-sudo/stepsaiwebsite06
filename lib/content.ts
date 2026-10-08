@@ -4,11 +4,12 @@
 // and the exact literal fields (kind, status) are checked by lint:copy.
 import type { ChannelPage, FeaturePage, IndustryPage, UseCasePage } from '@/content/types';
 import whatsappBroadcast from '@/content/features/whatsapp-broadcast.json';
+import whatsappChatbot from '@/content/channels/whatsapp-chatbot.json';
 
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
 const features = { 'whatsapp-broadcast': whatsappBroadcast } satisfies Record<string, Json<FeaturePage>>;
-const channels = {} satisfies Record<string, Json<ChannelPage>>;
+const channels = { 'whatsapp-chatbot': whatsappChatbot } satisfies Record<string, Json<ChannelPage>>;
 const useCases = {} satisfies Record<string, Json<UseCasePage>>;
 const industries = {} satisfies Record<string, Json<IndustryPage>>;
 
