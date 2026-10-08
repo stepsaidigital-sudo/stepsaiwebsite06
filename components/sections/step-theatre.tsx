@@ -12,6 +12,15 @@ export type Scene = { tab: string; icon: ReactNode; label: string; result: strin
 
 const END = 6500;
 
+// Scenes live in code and copy lives in JSON, so they can drift apart when the
+// copy changes. Templates use the theatre only when the counts still match.
+export function scenesFor(scenes: Scene[] | undefined, items: unknown[]) {
+  if (!scenes) return undefined;
+  if (scenes.length === items.length) return scenes;
+  if (process.env.NODE_ENV !== 'production') console.warn(`StepTheatre: ${scenes.length} scenes for ${items.length} items, showing a list instead.`);
+  return undefined;
+}
+
 export function StepTheatre({ items, scenes }: { items: Item[]; scenes: Scene[] }) {
   const [active, setActive] = useState(0);
   const [pinned, setPinned] = useState(false);

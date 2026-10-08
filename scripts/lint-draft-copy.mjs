@@ -8,13 +8,15 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const contentDir = join(root, 'content');
 const testimonials = JSON.parse(readFileSync(join(root, 'app', 'testimonials.json'), 'utf8'));
 
-const banned = ['seamless', 'seamlessly', 'powerful', 'unlock', 'ai-powered', 'cutting-edge', 'supercharge', 'transform', 'frictionless', 'robust', 'leverage', 'omnichannel', 'next-generation', 'game-changing'];
+// Word stems, so inflections such as "transforms", "unlocking" or
+// "supercharged" and spaced or hyphenated forms are caught too.
+const banned = ['seamless', 'powerful', 'unlock', 'ai[- ]powered', 'cutting[- ]edge', 'supercharg', 'transform', 'frictionless', 'robust', 'leverag', 'omni[- ]?channel', 'next[- ]generation', 'game[- ]changing'];
 const rules = [
   [/—/, 'em dash'],
   [/!/, 'exclamation mark'],
   [/\b(salesforce|stripe)\b/i, 'unsupported integration'],
   [/1 credit\s*=\s*1/i, 'credit equals reply claim'],
-  [new RegExp(`(^|[^a-z-])(${banned.join('|')})(?![a-z-])`, 'i'), 'banned word'],
+  [new RegExp(`\\b(${banned.join('|')})\\w*`, 'i'), 'banned word'],
 ];
 
 const files = [];

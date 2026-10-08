@@ -3,7 +3,7 @@ import { CalendarDays, Check, FileSpreadsheet, Inbox, Megaphone, MessageSquare, 
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
 import { BroadcastMock, CtaBand, Faq, FeatureList, GoodToKnow, PageHero, RelatedCards, Reveal, SectionIntro, StepRows } from '@/components/sections';
-import { ContextCard, SceneRow, SceneWindow, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
+import { ContextCard, scenesFor, SceneRow, SceneWindow, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
 import type { FeaturePage } from '@/content/types';
 
 // Animated "How it works" scenes, keyed by feature slug. A feature without
@@ -60,7 +60,7 @@ const scenes: Record<string, Scene[]> = {
 };
 
 export function FeatureTemplate({ page }: { page: FeaturePage }) {
-  const pageScenes = scenes[page.slug];
+  const pageScenes = scenesFor(scenes[page.slug], page.steps.items);
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} visual={page.slug === 'whatsapp-broadcast' ? <BroadcastMock /> : undefined} />
     <section className="sp-section container"><SectionIntro eyebrow="How it works" title={page.steps.title} intro={page.steps.intro} />{pageScenes ? <StepTheatre items={page.steps.items} scenes={pageScenes} /> : <StepRows items={page.steps.items} />}</section>

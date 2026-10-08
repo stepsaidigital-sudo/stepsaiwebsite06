@@ -601,7 +601,7 @@ Status: draft, draft, pending specialist copy
 
 **Body:** Every plan includes your AI agent, trained on your own information. Paid plans add your channels, order tracking, human handoff and the tools that turn conversations into sales.
 
-**Reassurance:** Free plan with no time limit. Paid plans include unlimited agents. Cancel at the end of any billing period.
+**Reassurance:** Paid plans include unlimited agents. Cancel at the end of any billing period.
 
 ### Plans
 
@@ -710,9 +710,9 @@ Status: draft, draft, pending specialist copy
 
 #### Items
 
-**Q:** Is the free plan a trial?
+**Q:** What does the free plan include?
 
-**A:** No. The free plan has no time limit. It does not include channel connections, order tracking or human handoff, which start on Starter.
+**A:** One AI agent that answers from your website and documents. Channel connections, order tracking and human handoff start on Starter.
 
 **Q:** Does one credit equal one reply?
 

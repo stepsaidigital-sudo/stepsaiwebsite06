@@ -4,7 +4,7 @@ import { ChannelLogo } from '@/app/channel-chat';
 import { IndustryMockup } from '@/app/industries';
 import { SiteFrame } from '@/components/site/shell';
 import { CtaBand, Faq, FeatureList, GoodToKnow, LogoStrip, PageHero, QuoteCard, Reveal, SectionIntro } from '@/components/sections';
-import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
+import { ContextCard, scenesFor, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
 import type { IndustryPage } from '@/content/types';
 
 type Line = { from: 'customer' | 'agent'; text: string; at: number };
@@ -41,7 +41,7 @@ const scenes: Record<string, Scene[]> = {
 };
 
 export function IndustryTemplate({ page }: { page: IndustryPage }) {
-  const pageScenes = scenes[page.slug];
+  const pageScenes = scenesFor(scenes[page.slug], page.jobs.items);
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} visual={page.card && <div className="sp-industry-stage" aria-hidden="true"><div className="industry-arc" /><IndustryMockup kind={page.card} /></div>} />
     <section className="sp-section container"><SectionIntro eyebrow="What customers ask" title={page.questions.title} intro={page.questions.intro} /><Reveal><ul className="sp-chips sp-chips-float">{page.questions.items.map((item, i) => <li key={item.text} style={{ animationDelay: `${i * -1.3}s` }}><ChannelLogo channel={item.channel} /><span>{item.text}</span></li>)}</ul></Reveal></section>

@@ -10,7 +10,7 @@
     "kicker": "Pricing",
     "title": "Start free, then pay for what your agent does.",
     "body": "Every plan includes your AI agent, trained on your own information. Paid plans add your channels, order tracking, human handoff and the tools that turn conversations into sales.",
-    "reassurance": "Free plan with no time limit. Paid plans include unlimited agents. Cancel at the end of any billing period."
+    "reassurance": "Paid plans include unlimited agents. Cancel at the end of any billing period."
   },
   "plans": [
     {
@@ -101,8 +101,8 @@
     "title": "Questions about pricing.",
     "items": [
       {
-        "q": "Is the free plan a trial?",
-        "a": "No. The free plan has no time limit. It does not include channel connections, order tracking or human handoff, which start on Starter."
+        "q": "What does the free plan include?",
+        "a": "One AI agent that answers from your website and documents. Channel connections, order tracking and human handoff start on Starter."
       },
       {
         "q": "Does one credit equal one reply?",

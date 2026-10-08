@@ -3,7 +3,7 @@ import { BookOpen, Headphones, Package, ShoppingBag, Truck } from 'lucide-react'
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
 import { ChatMock, CtaBand, Faq, FeatureList, GoodToKnow, PageHero, RelatedCards, Reveal, SectionIntro, StepRows } from '@/components/sections';
-import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
+import { ContextCard, scenesFor, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
 import type { ChannelPage } from '@/content/types';
 
 type Line = { from: 'customer' | 'agent'; text: string; at: number };
@@ -58,7 +58,7 @@ const heroLines: Record<string, { from: 'customer' | 'agent'; text: string }[]> 
 };
 
 export function ChannelTemplate({ page }: { page: ChannelPage }) {
-  const pageScenes = scenes[page.slug];
+  const pageScenes = scenesFor(scenes[page.slug], page.jobs.items);
   const lines = heroLines[page.slug];
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} visual={lines && <ChatMock channel={page.channel} title="Your store" lines={lines} />} />
