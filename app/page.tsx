@@ -11,7 +11,7 @@ import {CustomerQuote as Quote} from './quote';
 import {ChannelLogo} from './channel-chat';
 import {ProductScene, ScrollPolish} from './showcase';
 import {HeroChannels} from './hero-channels';
-import {Action,Footer,Header,UnresolvedDialog,type Open} from '@/components/site/shell';
+import {Action,Footer,Header,UnresolvedDialog,openOrGo,type Open} from '@/components/site/shell';
 
 const stageIds=['engage','convert','support','return'];
 const channelIcons=[Globe,MessageSquare,Camera,MessageSquare];
@@ -25,7 +25,7 @@ function Setup({onOpen}:Open){return <section id="setup" className="setup-sectio
 function BusinessFit({onOpen}:Open){return <Industries onOpen={onOpen}/>}
 function Testimonials({onOpen}:Open){return <Reviews onOpen={onOpen}/>}
 function FAQ({onOpen}:Open){return <section id="faq" className="faq-section container"><div><span className="section-kicker">FAQ</span><h2>{copy.faq.title}</h2></div><div className="faq-list">{copy.faq.items.map((item,i)=><details key={item.title}><summary>{item.title}<Plus size={18}/></summary><p>{item.paragraphs[0]}</p>{i===6&&<button className="text-link" onClick={()=>onOpen('View pricing')}>View pricing</button>}</details>)}</div></section>}
-export default function Home(){const [route,setRoute]=useState('');return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header onOpen={setRoute}/><ScrollPolish/><main id="main"><Hero onOpen={setRoute}/><ProductJourney onOpen={setRoute}/><TeamOverview/><Setup onOpen={setRoute}/><BusinessFit onOpen={setRoute}/><Testimonials onOpen={setRoute}/><FAQ onOpen={setRoute}/><section className="final-section"><div className="container"><img className="final-original" src="/brands/steps-original.png" alt=""/><h2>{copy.final.title}</h2><p>{copy.final.paragraphs[0]}</p><Action onOpen={setRoute} className="yellow"/></div></section></main><Footer onOpen={setRoute}/>{route&&<UnresolvedDialog label={route} close={()=>setRoute('')}/>}</>}
+export default function Home(){const [route,setRoute]=useState('');const open=openOrGo(setRoute,true);return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header onOpen={setRoute}/><ScrollPolish/><main id="main"><Hero onOpen={open}/><ProductJourney onOpen={open}/><TeamOverview/><Setup onOpen={open}/><BusinessFit onOpen={open}/><Testimonials onOpen={open}/><FAQ onOpen={open}/><section className="final-section"><div className="container"><img className="final-original" src="/brands/steps-original.png" alt=""/><h2>{copy.final.title}</h2><p>{copy.final.paragraphs[0]}</p><Action onOpen={open} className="yellow"/></div></section></main><Footer onOpen={setRoute}/>{route&&<UnresolvedDialog label={route} close={()=>setRoute('')}/>}</>}
 
 
 

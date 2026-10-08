@@ -23,6 +23,16 @@ function LabelLink({ label, onOpen, onHome, after }: Open & { label: string; onH
   return <button onClick={() => { after?.(); onOpen(label); }}>{label}</button>;
 }
 
+// The onOpen used by page content: a label with a built page navigates there,
+// anything else opens the preview notice.
+export function openOrGo(setRoute: (label: string) => void, onHome: boolean) {
+  return (label: string) => {
+    const { href } = resolveLabel(label, onHome);
+    if (href && !href.includes('#')) window.location.assign(href);
+    else setRoute(label);
+  };
+}
+
 export function UnresolvedDialog({ label, close }: { label: string; close: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => { ref.current?.showModal(); return () => ref.current?.close(); }, []);
@@ -58,5 +68,6 @@ export function Footer({ onOpen, onHome = true }: Open & Place) {
 // destinations that are not built yet. Children receive onOpen via render prop.
 export function SiteFrame({ children }: { children: (onOpen: (label: string) => void) => React.ReactNode }) {
   const [route, setRoute] = useState('');
-  return <><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={setRoute} onHome={false} /><main id="main" className="sp-main">{children(setRoute)}</main><Footer onOpen={setRoute} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
+  const open = openOrGo(setRoute, false);
+  return <><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={setRoute} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={setRoute} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
 }
