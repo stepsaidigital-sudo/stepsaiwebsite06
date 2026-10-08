@@ -1,0 +1,54 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "About Steps AI",
+    "description": "Steps AI helps businesses answer every customer question with an AI agent that knows their business, and a team that can step in at any time."
+  },
+  "hero": {
+    "kicker": "About Steps AI",
+    "title": "A customer's question should never cost you the sale.",
+    "body": "Steps AI gives businesses an AI agent that answers customers on WhatsApp, Instagram, Messenger and their website. It works from your own information and hands over to your team when a person is needed."
+  },
+  "sections": [
+    {
+      "title": "Why we started.",
+      "paragraphs": [
+        "Most customers do not leave because they lost interest. They leave because nobody answered in time, or the answer they got did not help.",
+        "Steps AI was founded in 2024 by Reshmanth Jonnalagadda to close that gap for businesses that cannot staff every channel around the clock."
+      ]
+    },
+    {
+      "title": "What we believe.",
+      "paragraphs": [
+        "Three ideas shape every part of the product."
+      ],
+      "items": [
+        {
+          "title": "Answers come from your information",
+          "body": "Your agent replies from your website, documents and connected tools, not from guesses."
+        },
+        {
+          "title": "The action matters, not only the reply",
+          "body": "A good answer leads somewhere: a booking, a checkout link, an order update or a handover to your team."
+        },
+        {
+          "title": "Your team stays in control",
+          "body": "You decide what the agent can do, and your team can step into any conversation."
+        }
+      ]
+    },
+    {
+      "title": "Who it is for.",
+      "paragraphs": [
+        "Steps AI is built for online stores, clinics, schools, property teams and service businesses that get more customer messages than they can answer by hand. Most of our customers are in India.",
+        "Steps AI is a Meta Business Partner and a Shopify Partner."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "See what Steps AI could do for your business.",
+    "body": "Book a demo and we will walk through your customers' questions with you."
+  }
+}

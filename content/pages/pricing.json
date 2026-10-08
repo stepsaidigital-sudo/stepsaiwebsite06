@@ -1,0 +1,125 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "pricing",
+  "seo": {
+    "title": "Pricing | Steps AI",
+    "description": "Start free, then choose the plan that fits how many conversations your AI agent handles. Paid plans include order tracking, human handoff and every channel."
+  },
+  "hero": {
+    "kicker": "Pricing",
+    "title": "Start free, then pay for what your agent does.",
+    "body": "Every plan includes your AI agent, trained on your own information. Paid plans add your channels, order tracking, human handoff and the tools that turn conversations into sales.",
+    "reassurance": "Free plan with no time limit. Paid plans include unlimited agents. Cancel at the end of any billing period."
+  },
+  "plans": [
+    {
+      "name": "Free",
+      "for": "Try your agent on your website.",
+      "price": "To be confirmed",
+      "credits": "Monthly credits: To be confirmed",
+      "items": [
+        "One AI agent",
+        "Answers from your website and documents",
+        "Does not include channel connections, order tracking or human handoff"
+      ]
+    },
+    {
+      "name": "Starter",
+      "for": "Small teams answering customers on every channel.",
+      "price": "To be confirmed",
+      "credits": "Monthly credits: To be confirmed",
+      "items": [
+        "Unlimited agents",
+        "WhatsApp, Instagram, Messenger and website",
+        "Order tracking and human handoff",
+        "Workflows and WhatsApp broadcasting",
+        "All integrations",
+        "Ticketing and lead management"
+      ],
+      "featured": true
+    },
+    {
+      "name": "Growth",
+      "for": "Busier teams that want more control.",
+      "price": "To be confirmed",
+      "credits": "Monthly credits: To be confirmed",
+      "items": [
+        "Everything in Starter",
+        "Answer confidence scoring",
+        "Priority support"
+      ]
+    },
+    {
+      "name": "Scale",
+      "for": "Teams that rely on the numbers.",
+      "price": "To be confirmed",
+      "credits": "Monthly credits: To be confirmed",
+      "items": [
+        "Everything in Growth",
+        "Advanced and website analytics",
+        "Lead scoring",
+        "A dedicated account manager"
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "for": "Larger organisations and multiple brands.",
+      "price": "To be confirmed",
+      "credits": "Monthly credits: To be confirmed",
+      "items": [
+        "Everything in Scale",
+        "White labelling and multiple brands",
+        "SSO and SAML",
+        "API access"
+      ]
+    }
+  ],
+  "credits": {
+    "title": "How credits work.",
+    "intro": "A credit is not a reply. The number of credits a reply uses depends on the AI model you choose for your agent.",
+    "items": [
+      {
+        "title": "Choose the model for each agent",
+        "body": "A lighter model uses fewer credits per reply. A more capable model uses more. You decide per agent."
+      },
+      {
+        "title": "See your usage as it happens",
+        "body": "The usage screen shows the credits you have used this month and how many are left."
+      },
+      {
+        "title": "Top up with credit packs",
+        "body": "If you run low, buy an extra credit pack instead of changing your plan."
+      },
+      {
+        "title": "Credits reset each billing period",
+        "body": "Unused credits do not carry over to the next period, so pick the plan that fits a typical month."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions about pricing.",
+    "items": [
+      {
+        "q": "Is the free plan a trial?",
+        "a": "No. The free plan has no time limit. It does not include channel connections, order tracking or human handoff, which start on Starter."
+      },
+      {
+        "q": "Does one credit equal one reply?",
+        "a": "No. Each reply uses a number of credits that depends on the AI model your agent uses. The usage screen shows exactly what you have used."
+      },
+      {
+        "q": "What happens if I run out of credits?",
+        "a": "You can buy an extra credit pack or move to a larger plan. Credit packs expire at the end of the billing period."
+      },
+      {
+        "q": "Can I cancel at any time?",
+        "a": "Yes. Your plan stays active until the end of the current billing period."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Not sure which plan fits?",
+    "body": "Book a demo and we will look at your message volume with you before you choose."
+  }
+}

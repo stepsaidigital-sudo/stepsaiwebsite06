@@ -119,7 +119,7 @@
 .sp-plan-price strong{display:block;font-family:Manrope,Arial,sans-serif;font-size:1.25rem;font-weight:600}
 .sp-plan-price span{font-size:.8125rem;color:var(--muted)}
 .sp-plan.featured .sp-plan-price span{color:#fcfcfcb0}
-.sp-plan ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;flex:1}
+.sp-plan ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;flex:1;align-content:start}
 .sp-plan li{display:flex;gap:9px;font-size:.875rem;line-height:1.5;color:var(--muted)}
 .sp-plan li svg{color:var(--blue);margin-top:3px}
 .sp-plan.featured li svg{color:var(--yellow)}
@@ -220,4 +220,33 @@
 }
 @media(prefers-reduced-motion:reduce){
   .sp-chips-float li{animation:none}
+}
+
+/* Pricing usage mockup: meters fill once the card is in view. */
+.sp-usage{margin-top:32px;max-width:440px}
+.sp-usage-meter span{display:block;font-size:.75rem;color:var(--muted);margin-bottom:6px}
+.sp-usage-meter i{display:block;height:8px;border-radius:8px;background:var(--soft);position:relative;overflow:hidden}
+.sp-usage-meter i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--blue);border-radius:8px;transform-origin:left;transform:scaleX(0);transition:transform 1200ms var(--ease) 700ms}
+.sp-in .sp-usage-meter i::after{transform:scaleX(1)}
+.sp-usage-models{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.sp-usage-models div{padding:10px;border:1px solid var(--line);border-radius:10px;font-size:.75rem;line-height:1.35}
+.sp-usage-models strong{display:block;font-weight:600}
+.sp-usage-models small{color:var(--muted)}
+.sp-usage-models .is-picked{border-color:#7fc4f9;background:#eef8ff}
+
+/* About: belief cards are not links, so no arrow space. The section with
+   cards spans the container; its text keeps the prose measure. */
+.sp-prose:has(.sp-belief-cards){max-width:none}
+.sp-prose:has(.sp-belief-cards)>p{max-width:760px}
+.sp-belief-cards{grid-template-columns:repeat(3,1fr)}
+.sp-belief-cards .sp-card{padding-bottom:28px}
+.sp-belief-cards .sp-step-number{margin-bottom:16px}
+@media(max-width:900px){
+  .sp-belief-cards{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .sp-usage-models{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-usage-meter i::after{transition:none}
 }
