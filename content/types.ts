@@ -26,7 +26,7 @@ export type ChannelPage = Status & {
 
 export type UseCasePage = Status & {
   kind: 'usecase'; slug: string; seo: Seo; hero: Hero;
-  walkthrough: { title: string; intro: string; steps: { label: string; customer: string; agent: string; note: string }[] };
+  walkthrough: { title: string; intro: string; steps: { label: string; customer: string; agent: string; note: string; result?: string }[] };
   capabilities: Block; tools: { title: string; intro: string; names: string[] };
   quote?: Quote; goodToKnow: Notes; faq: FaqBlock; cta: Cta;
 };

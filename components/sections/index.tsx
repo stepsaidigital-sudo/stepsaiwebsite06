@@ -60,7 +60,9 @@ export function GoodToKnow({ title, items }: { title: string; items: string[] })
 }
 
 export function QuoteCard({ quote }: { quote: Quote }) {
-  return <Reveal className="sp-quote"><CustomerQuote paragraphs={[quote.excerpt, quote.attribution]} /></Reveal>;
+  // Shown in curly quotes like the homepage, so a full-length excerpt matches
+  // the original and does not offer a "Read full quote" duplicate.
+  return <Reveal className="sp-quote"><CustomerQuote paragraphs={[`“${quote.excerpt}”`, quote.attribution]} /></Reveal>;
 }
 
 export function Faq({ title, items }: { title: string; items: FaqItem[] }) {
