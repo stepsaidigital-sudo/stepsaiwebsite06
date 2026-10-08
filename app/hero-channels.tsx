@@ -20,8 +20,12 @@ function SceneContext({index}:{index:number}){return <div className={`scene-cont
 export function HeroChannels(){
   const [active,setActive]=useState(0);
   const [pinned,setPinned]=useState(false);
-  const [time,setTime]=useState(0),[paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
+  const [paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
   const [replay,setReplay]=useState(0);
+  // The clock is keyed to the channel and replay, so a new channel starts from zero on its first render.
+  const key=`${active}-${replay}`;
+  const [clock,setClock]=useState({key,t:0});
+  const time=reduced?12000:clock.key===key?clock.t:0;
   const runway=useRef<HTMLDivElement>(null),frame=useRef<HTMLDivElement>(null);
   const step=useRef(480);
   useEffect(()=>{
@@ -29,12 +33,11 @@ export function HeroChannels(){
     const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.3});observer.observe(frame.current!);
     return()=>{observer.disconnect();mq.removeEventListener('change',sync)};
   },[]);
-  useEffect(()=>{setTime(reduced?12000:0)},[active,replay,reduced]);
   useEffect(()=>{
     if(paused||!visible||reduced||time>=12000)return;
-    const timer=window.setInterval(()=>{if(!document.hidden)setTime(value=>Math.min(12000,value+100))},100);
+    const timer=window.setInterval(()=>{if(!document.hidden)setClock(c=>({key,t:Math.min(12000,(c.key===key?c.t:0)+100)}))},100);
     return()=>window.clearInterval(timer);
-  },[paused,visible,reduced,time>=12000]);
+  },[paused,visible,reduced,time>=12000,key]);
   useEffect(()=>{
     const outer=runway.current!,inner=frame.current!;
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
