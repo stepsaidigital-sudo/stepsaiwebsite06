@@ -33,26 +33,36 @@
 .js-typing i:nth-child(2){animation-delay:150ms}.js-typing i:nth-child(3){animation-delay:300ms}
 @keyframes js-dot{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-3px);opacity:1}}
 
-/* Instagram DM */
-.mk-ig{background:#fff;color:#000}
-.ig-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #efefef}
-.ig-head>div{flex:1;min-width:0;line-height:1.2}.ig-head strong{display:block;font-size:.875rem}.ig-head small{color:#737373}
-.ig-avatar{width:36px;height:36px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);display:grid}
-.ig-avatar span{border-radius:50%;background:#111;border:2px solid #fff;color:#fff;display:grid;place-items:center;font-size:.6875rem;font-weight:700}
-.ig-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:14px 16px;overflow:hidden}
-.ig-context{align-self:flex-end;display:flex;gap:10px;align-items:center;max-width:82%;padding:8px;border:1px solid #efefef;border-radius:16px;font-size:.8125rem}
-.ig-context small{color:#737373;display:block}
-.ig-post{flex:none;width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#f2d9c4,#d9b08c)}
-.ig-msg{max-width:78%;padding:9px 14px;border-radius:22px;font-size:.875rem;line-height:1.4}
-.ig-out{align-self:flex-end;color:#fff;background:linear-gradient(135deg,#a033ff 0%,#5b51f8 55%,#2f80ff 100%)}
-.ig-in{align-self:flex-start;background:#efefef}
-.ig-card{align-self:flex-start;width:62%;border:1px solid #efefef;border-radius:16px;overflow:hidden;font-size:.8125rem}
-.ig-card-art{display:block;height:84px;background:linear-gradient(135deg,#f6e7da,#e2bfa1)}
-.ig-card div{padding:8px 12px}.ig-card strong{display:block}.ig-card small{color:#737373}
-.ig-seen{align-self:flex-end;color:#737373;font-size:.6875rem;padding-right:4px}
-.ig-input{display:flex;align-items:center;gap:12px;margin:8px 12px 12px;padding:6px 14px 6px 6px;border-radius:999px;background:#efefef;color:#000}
-.ig-cam{width:32px;height:32px;border-radius:50%;background:#3797f0;color:#fff;display:grid;place-items:center}
-.ig-field{flex:1;color:#737373;font-size:.875rem}
+/* Steps AI shopping widget (matches the live product's Shopper widget) */
+.ws{background:#fff;color:#111827;font-family:'DM Sans',-apple-system,'Segoe UI',sans-serif}
+.ws-head{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #eef0f3;color:#4b5563;flex:none}
+.ws-head>div{flex:1;line-height:1.2}
+.ws-head strong{display:block;font-size:1rem;font-weight:600;color:#111827}
+.ws-head small{font-size:.75rem;color:#6b7280}
+.ws-av{position:relative;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#e5e7eb;color:#6b7280}
+.ws-av i{position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border-radius:50%;background:#10b981;border:2px solid #fff}
+.ws-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:14px 14px 8px;overflow:hidden}
+.ws-m{max-width:86%;padding:9px 13px;border-radius:16px;font-size:.78125rem;line-height:1.45}
+.ws-in{align-self:flex-start;background:#f1f2f4;color:#1f2937}
+.ws-in b{font-weight:700;color:#111827}
+.ws-out{align-self:flex-end;background:#38bdf8;color:#0b1b2b}
+.ws-showing{font-size:.6875rem;font-weight:600;color:#6b7280;margin-top:2px}
+.ws-card{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
+.ws-card img{width:56px;height:56px;border-radius:10px;object-fit:cover;background:#f3f0ea}
+.ws-crop{object-position:85% 80%}
+.ws-card strong{display:flex;align-items:center;gap:4px;font-size:.75rem;font-weight:600;text-decoration:underline;text-underline-offset:2px;color:#1f2937}
+.ws-price{display:flex;align-items:center;gap:6px;margin-top:2px}
+.ws-price b{font-size:.8125rem;color:#15803d}
+.ws-price s{font-size:.6875rem;color:#9ca3af}
+.ws-price em{font-style:normal;padding:1px 6px;border-radius:6px;background:#38bdf8;color:#0b1b2b;font-size:.625rem;font-weight:700}
+.ws-card small{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-size:.6875rem;color:#6b7280}
+.ws-add{display:inline-flex;align-items:center;gap:4px;padding:7px 10px;border-radius:9px;background:#9333ea;color:#fff;font-size:.6875rem;font-weight:600;white-space:nowrap}
+.ws-compose{display:flex;align-items:center;gap:8px;margin:6px 12px 4px;padding:6px 6px 6px 14px;border:1px solid #e5e7eb;border-radius:14px;color:#6b7280;flex:none}
+.ws-compose span{flex:1;font-size:.8125rem}
+.ws-compose i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid #e5e7eb;color:#4b5563}
+.ws-compose .ws-send{border-color:transparent;background:#e0f2fe;color:#7dd3fc}
+.ws-powered{display:block;text-align:center;padding-bottom:8px;font-size:.625rem;color:#6b7280;flex:none}
+.ws-powered b{color:#9f1239;letter-spacing:.04em}
 
 /* Website chat (Steps AI widget) */
 .mk-web{background:#f4f7fc;color:var(--navy)}

@@ -1,30 +1,36 @@
 'use client';
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
-import {Megaphone,ShoppingBag,Headphones,RotateCcw,Check,CheckCheck,GraduationCap,UserRound,CalendarCheck,Stethoscope,MoreHorizontal,MoreVertical,Paperclip,SendHorizontal,ChevronLeft,Phone,Video,Camera,Mic,MicOff,Image as ImageIcon,Smile,Volume2,Grid3x3,PhoneOff,BadgeCheck,ShoppingCart} from 'lucide-react';
+import {Megaphone,ShoppingBag,Headphones,RotateCcw,Check,CheckCheck,GraduationCap,UserRound,CalendarCheck,Stethoscope,MoreHorizontal,MoreVertical,Paperclip,SendHorizontal,ChevronLeft,Phone,Video,Camera,Mic,MicOff,Smile,Volume2,Grid3x3,PhoneOff,BadgeCheck,ShoppingCart,X,ArrowUpRight,Plus,Send} from 'lucide-react';
 import copy from './copy.json';
 
 const icons=[Megaphone,ShoppingBag,Headphones,RotateCcw];
 // Example customer messages, one per stage. The same line appears in the card's mockup.
-const quotes=['I saw your post. Could you send me the details?','Can I book a doctor’s appointment for Saturday morning?','Are admissions still open for the data science course?','I left something in my cart. Is it still available?'];
+const quotes=['Which one should I buy, the Dune or the Sol vase?','Can I book a doctor’s appointment for Saturday morning?','Are admissions still open for the data science course?','I left something in my cart. Is it still available?'];
 
 // One step of a mockup; --d is its entrance delay once the card is live.
 const style=(d:number)=>({'--d':`${d}ms`} as CSSProperties);
 const In=({d,className='',children}:{d:number;className?:string;children:ReactNode})=><div className={`js-in ${className}`} style={style(d)}>{children}</div>;
 const Typing=({d,className=''}:{d:number;className?:string})=><div className={`js-typing ${className}`} style={style(d)}><i/><i/><i/></div>;
 
-/* 01 Engage: an Instagram DM that starts from a comment on a post. */
-function InstagramMock(){
-  return <div className="mk mk-ig">
-    <div className="ig-head"><ChevronLeft size={22}/><span className="ig-avatar"><span>ys</span></span><div><strong>yourstore</strong><small>Active now</small></div><Phone size={20}/><Video size={22}/></div>
-    <div className="ig-body">
-      <In d={100} className="ig-context"><span className="ig-post"/><div><small>You commented on yourstore’s post</small><strong>“Details, please!”</strong></div></In>
-      <In d={700} className="ig-msg ig-out">{quotes[0]}</In>
-      <Typing d={1300} className="ig-msg ig-in"/>
-      <In d={2400} className="ig-msg ig-in">Of course! Here’s the new collection. Which piece caught your eye?</In>
-      <In d={3000} className="ig-card"><span className="ig-card-art"/><div><strong>The Weekend Collection</strong><small>yourstore.com</small></div></In>
-      <In d={3600} className="ig-seen">Seen</In>
+/* 01 Engage: the Steps AI shopping widget on a store website, comparing two products.
+   Matches the real widget: Shopper header, sky-blue customer bubbles, product cards, composer. */
+const wsProducts=[
+  {name:'Sol Ceramic Vase',price:'₹1,890',was:'₹2,690',off:'30% off',crop:true,note:'Wide, steady base. Made for everyday flowers on a bedside or dining table.'},
+  {name:'Dune Ceramic Vase',price:'₹2,450',was:'₹3,500',off:'30% off',crop:false,note:'A tall 32 cm silhouette for long stems and statement arrangements.'},
+];
+function StoreMock(){
+  return <div className="mk ws">
+    <div className="ws-head"><ChevronLeft size={20}/><span className="ws-av"><UserRound size={18}/><i/></span><div><strong>Shopper</strong><small>Active</small></div><ShoppingCart size={18}/><MoreHorizontal size={18}/><X size={18}/></div>
+    <div className="ws-body">
+      <In d={100} className="ws-m ws-in">Hello! Need help choosing?</In>
+      <In d={600} className="ws-m ws-out">{quotes[0]}</In>
+      <Typing d={1100} className="ws-m ws-in"/>
+      <In d={2100} className="ws-m ws-in">Go with the <b>Sol Ceramic Vase</b> at <b>₹1,890</b> for a bedside or dining table. The <b>Dune</b> is taller, made for long stems.</In>
+      <In d={2600} className="ws-showing">Showing 2 products</In>
+      {wsProducts.map((p,i)=><In key={p.name} d={2900+i*300} className="ws-card"><img className={p.crop?'ws-crop':''} src="/industries/ecommerce.png" alt=""/><div><strong>{p.name}<ArrowUpRight size={12}/></strong><span className="ws-price"><b>{p.price}</b><s>{p.was}</s><em>{p.off}</em></span><small>{p.note}</small></div><span className="ws-add"><Plus size={13}/>Add to cart</span></In>)}
     </div>
-    <div className="ig-input"><span className="ig-cam"><Camera size={17}/></span><span className="ig-field">Message…</span><Mic size={20}/><ImageIcon size={20}/><Smile size={20}/></div>
+    <div className="ws-compose"><span>Hop in! I’ll help you</span><i><Mic size={15}/></i><i className="ws-send"><Send size={14}/></i></div>
+    <small className="ws-powered">Powered by <b>STEPS AI</b></small>
   </div>;
 }
 
@@ -75,8 +81,8 @@ function WhatsAppMock(){
   </div>;
 }
 
-const mockups=[<InstagramMock key="ig"/>,<WebsiteMock key="web"/>,<CallMock key="call"/>,<WhatsAppMock key="wa"/>];
-const channels=['Instagram','Clinic website chat','Admissions phone call','WhatsApp'];
+const mockups=[<StoreMock key="store"/>,<WebsiteMock key="web"/>,<CallMock key="call"/>,<WhatsAppMock key="wa"/>];
+const channels=['Store website','Clinic website chat','Admissions phone call','WhatsApp'];
 
 export function Journey(){
   const stack=useRef<HTMLDivElement>(null);

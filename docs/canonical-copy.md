@@ -166,13 +166,13 @@ Start with your website, FAQs or documents. Reuse shared information across your
 
 Set its name, tone and instructions. Decide which questions it can handle and when it should call in your team.
 
-### Build the follow-up you need
+### Connect your channels
 
-Start with a template or connect steps in the visual builder. Ask questions, save answers, wait, send messages and choose different paths based on a reply.
+Add your agent to your website, WhatsApp, Instagram, Messenger and phone calls. One Meta login connects WhatsApp, Instagram and Messenger.
 
-### Test it before customers use it
+### Test it, then go live
 
-Preview answers and run test conversations. Check your workflows before switching them on.
+Run test conversations and preview answers. When you’re happy, switch it on and your agent starts answering on every channel you connected.
 
 ### Connect the tools you already use
 

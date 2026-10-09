@@ -18,3 +18,24 @@
 @media(min-width:760px) and (max-height:780px){.channel-theatre{padding-block:12px}.channel-icon-tabs{margin-bottom:4px}.channel-demo-canvas{min-height:350px;padding-top:24px}.conversation-playback{margin-top:5px}.channel-scroll-cue{margin-top:4px}.voice-transcript{padding:8px 12px}.voice-transcript p{font-size:10px}.voice-controls{margin-top:5px}.channel-demo-result{margin-top:8px}}
 @media(max-width:759px){.live-message-slot .native-message{font-size:11px!important}.channel-demo-canvas{min-height:380px}.conversation-playback{margin-top:17px}.voice-transcript p{font-size:12px}.voice-transcript{min-height:215px}.channel-scroll-cue{margin-top:14px}}
 @media(prefers-reduced-motion:reduce){.chat-typing i{animation:none}.voice-line,.message-arrived,.result-arrived{transition:none;transform:none}}
+
+/* Team review: the context card and chat window sit straight, not tilted. */
+.channel-demo-canvas .scene-context,.channel-demo-canvas .channel-demo-conversation{transform:none}
+
+/* While pinned on desktop the panel fills the space under the navbar, so no empty band
+   shows beneath it; the presentation and mockup area grow to use the room. */
+@media(min-width:1000px){
+  .channel-pinned .channel-theatre{min-height:calc(100vh - 104px);display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,3vh,32px);padding-block:clamp(16px,3vh,32px);background:radial-gradient(60% 70% at 0% 100%,#acf0dcd9 0%,transparent 60%),radial-gradient(60% 70% at 100% 100%,#b5a2f0b3 0%,transparent 62%),radial-gradient(70% 60% at 100% 0%,rgb(44 156 250 / 45%) 0%,transparent 65%),linear-gradient(120deg,#eef6fb 0%,#dcecfa 55%,#cfe3f8 100%)}
+  .channel-pinned .channel-presentation{max-width:1240px;width:100%}
+  .channel-pinned .channel-demo-canvas{min-height:clamp(320px,calc(100vh - 330px),460px)}
+  .channel-pinned .channel-demo-conversation{max-width:420px}
+  .channel-pinned .channel-explanation h2{font-size:clamp(34px,3.2vw,48px)}
+}
+
+/* Team review: no tilt and no staggered overlap. The context card and the chat sit in one
+   aligned column, same width, card on top, chat directly below. Applies to every channel. */
+.channel-demo-canvas .scene-context,.channel-demo-canvas .channel-demo-conversation{transform:none;rotate:none;width:100%;max-width:none;margin:0}
+.channel-demo-canvas .scene-context{margin-bottom:12px}
+.channel-demo-canvas .scene-context strong{max-width:none}
+.channel-demo-canvas .channel-demo-conversation{filter:none}
+.channel-demo-canvas .channel-demo-conversation .channel-chat{box-shadow:0 12px 28px -14px #1c354840}

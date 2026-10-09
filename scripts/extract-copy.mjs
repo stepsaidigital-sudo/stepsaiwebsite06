@@ -20,7 +20,7 @@ if(process.argv.includes('--check')){
   const page=fs.readFileSync('app/page.tsx','utf8');
   if(data.journey.stages.length!==4||data.journey.stages.some(s=>s.items.length!==4)||data.business.items.length!==7||data.testimonials.items.length!==4||data.faq.items.length!==7)throw new Error('Required homepage content is missing.');
   if(!page.includes('<Journey/>')||!page.includes('<Industries onOpen={onOpen}/>'))throw new Error('Shared journey or visible industry grid missing.');
-  const components=['<Hero onOpen','<ProductJourney onOpen','<TeamOverview/>','<Setup onOpen','<BusinessFit onOpen','<Testimonials onOpen','<FAQ onOpen','<section className="final-section"','<Footer onOpen'];
+  const components=['<Hero onOpen','<ProductJourney','<BusinessFit onOpen','<TeamOverview/>','<Setup onOpen','<Testimonials onOpen','<FAQ onOpen','<section className="final-section"','<Footer onOpen'];
   let last=-1;for(const name of components){const position=page.indexOf(name,last+1);if(position<last||position<0)throw new Error('Homepage section order changed: '+name);last=position;}
   console.log('PASS: exact SEO copy and required section order. 16 features, 7 industries, 4 main testimonials, 7 FAQs.');
   process.exit(0);
