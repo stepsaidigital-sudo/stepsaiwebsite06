@@ -1,0 +1,173 @@
+/* Engage · Convert · Support · Bring customers back: four cards that stack on scroll over a cool grey band.
+   Card chrome uses Steps AI brand colours; each mockup uses its own platform's look (Instagram, website chat, phone call, WhatsApp). */
+.journey-band{position:relative;isolation:isolate;overflow:clip;background:radial-gradient(55% 40% at 0% 0%,#fcfcfc 0%,transparent 70%),radial-gradient(60% 45% at 100% 25%,rgb(44 156 250 / 42%) 0%,transparent 70%),radial-gradient(70% 45% at 0% 70%,rgb(44 156 250 / 30%) 0%,transparent 70%),radial-gradient(45% 30% at 95% 98%,rgb(248 180 3 / 16%) 0%,transparent 70%),linear-gradient(170deg,#f4fbff 0%,#c4ecfc 38%,#9fd2fb 72%,#c4ecfc 100%)}
+/* Two soft glows drift slowly behind the cards, like the hero's ocean light. overflow:clip keeps sticky cards working. */
+.journey-band:before,.journey-band:after{content:'';position:absolute;z-index:-1;border-radius:50%;filter:blur(20px);pointer-events:none;animation:jb-drift 18s ease-in-out infinite alternate}
+.journey-band:before{width:70vw;height:60vw;left:-20vw;top:20%;background:radial-gradient(ellipse,#fcfcfc 0%,#c4ecfccc 40%,transparent 70%)}
+.journey-band:after{width:65vw;height:55vw;right:-22vw;top:50%;background:radial-gradient(ellipse,#0c347433 0%,#2c9cfa55 38%,transparent 69%);animation-duration:22s;animation-direction:alternate-reverse}
+@keyframes jb-drift{to{transform:translate3d(6vw,-8vh,0) scale(1.08)}}
+.journey-band .section-intro h2{color:var(--navy)}
+.js-stack{display:grid;gap:28px;padding-bottom:24px}
+.js-card{--top:calc(104px + var(--i) * 16px);position:sticky;top:var(--top);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:center;min-height:580px;padding:40px;background:linear-gradient(160deg,#ffffff 0%,#f7faff 100%);border:1px solid rgb(12 52 116 / 9%);border-radius:30px;box-shadow:0 1px 2px #0c347408,0 30px 70px -36px #0c347459;transform-origin:center top;zoom:var(--fit,1);transition:transform 500ms var(--ease),filter 500ms var(--ease)}
+.js-card.is-behind{transform:scale(.965);filter:brightness(.975)}
+.js-copy{min-width:0;padding-left:8px}
+.js-kicker{display:inline-flex;align-items:center;gap:10px;font-size:.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#52677f}
+.js-slash{color:#a9b6c6;font-weight:400}
+.js-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#e6f0ff;color:#1d5fb8;margin-right:6px}
+.js-copy h3{margin-top:26px;font-family:'Newsreader',Georgia,serif;font-size:clamp(32px,3.3vw,50px);font-weight:500;letter-spacing:-.035em;line-height:1.04;color:var(--navy);text-wrap:balance}
+.js-copy>p{margin-top:16px;font-size:1.0625rem;line-height:1.6;max-width:500px;color:#5d6f84}
+.js-quote{margin:26px 0 0;padding:16px 22px;border-left:4px solid #1d5fb8;background:linear-gradient(90deg,#eef4fd,#f6f9fe);border-radius:4px 14px 14px 4px}
+.js-quote p{margin:0;font-family:'Newsreader',Georgia,serif;font-size:1.3rem;line-height:1.3;color:var(--navy)}
+.js-quote cite{display:block;margin-top:6px;font-style:normal;font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:#7b8a9b}
+.js-chips{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.js-chips li{display:flex;align-items:center;gap:10px;min-height:46px;padding:7px 14px 7px 8px;border-radius:999px;border:1px solid rgb(12 52 116 / 10%);background:#fff;font-size:.8125rem;line-height:1.3;color:var(--navy)}
+.js-chips li>span{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#e6f0ff;color:#1d5fb8}
+
+/* Shared mockup frame */
+.js-mock{min-width:0;position:relative}
+.js-illus{position:absolute;right:14px;bottom:-22px;font-size:.6875rem;color:#7b8a9b}
+.mk{display:flex;flex-direction:column;height:506px;border-radius:24px;overflow:hidden;box-shadow:0 1px 2px #0c347410,0 24px 50px -28px #0c347466;font-family:'DM Sans',-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+.mk small{font-size:.6875rem}
+.js-typing{display:flex;gap:4px;align-items:center;opacity:0;max-height:0;padding-block:0!important;overflow:hidden}
+.js-typing i{width:6px;height:6px;border-radius:50%;background:#8696a7;animation:js-dot 900ms ease-in-out infinite}
+.js-typing i:nth-child(2){animation-delay:150ms}.js-typing i:nth-child(3){animation-delay:300ms}
+@keyframes js-dot{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-3px);opacity:1}}
+
+/* Instagram DM */
+.mk-ig{background:#fff;color:#000}
+.ig-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #efefef}
+.ig-head>div{flex:1;min-width:0;line-height:1.2}.ig-head strong{display:block;font-size:.875rem}.ig-head small{color:#737373}
+.ig-avatar{width:36px;height:36px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);display:grid}
+.ig-avatar span{border-radius:50%;background:#111;border:2px solid #fff;color:#fff;display:grid;place-items:center;font-size:.6875rem;font-weight:700}
+.ig-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:14px 16px;overflow:hidden}
+.ig-context{align-self:flex-end;display:flex;gap:10px;align-items:center;max-width:82%;padding:8px;border:1px solid #efefef;border-radius:16px;font-size:.8125rem}
+.ig-context small{color:#737373;display:block}
+.ig-post{flex:none;width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#f2d9c4,#d9b08c)}
+.ig-msg{max-width:78%;padding:9px 14px;border-radius:22px;font-size:.875rem;line-height:1.4}
+.ig-out{align-self:flex-end;color:#fff;background:linear-gradient(135deg,#a033ff 0%,#5b51f8 55%,#2f80ff 100%)}
+.ig-in{align-self:flex-start;background:#efefef}
+.ig-card{align-self:flex-start;width:62%;border:1px solid #efefef;border-radius:16px;overflow:hidden;font-size:.8125rem}
+.ig-card-art{display:block;height:84px;background:linear-gradient(135deg,#f6e7da,#e2bfa1)}
+.ig-card div{padding:8px 12px}.ig-card strong{display:block}.ig-card small{color:#737373}
+.ig-seen{align-self:flex-end;color:#737373;font-size:.6875rem;padding-right:4px}
+.ig-input{display:flex;align-items:center;gap:12px;margin:8px 12px 12px;padding:6px 14px 6px 6px;border-radius:999px;background:#efefef;color:#000}
+.ig-cam{width:32px;height:32px;border-radius:50%;background:#3797f0;color:#fff;display:grid;place-items:center}
+.ig-field{flex:1;color:#737373;font-size:.875rem}
+
+/* Website chat (Steps AI widget) */
+.mk-web{background:#f4f7fc;color:var(--navy)}
+.web-head{display:flex;align-items:center;gap:14px;padding:16px 20px}
+.web-head>div{flex:1;line-height:1.3}.web-head strong{display:block;font-size:1rem}
+.web-head small{display:flex;align-items:center;gap:6px;color:#5d6f84;font-size:.8125rem}
+.web-head small i{width:9px;height:9px;border-radius:50%;background:#22c55e}
+.web-avatar{width:46px;height:46px;border-radius:14px;background:#e6f0ff;color:#1d5fb8;display:grid;place-items:center}
+.web-body{flex:1;display:flex;flex-direction:column;gap:12px;margin:0 12px;padding:18px;background:#fff;border-radius:18px;overflow:hidden}
+.web-msg{max-width:84%;padding:11px 16px 8px;border-radius:18px;font-size:.9375rem;line-height:1.4}
+.web-msg small{display:flex;justify-content:flex-end;align-items:center;gap:4px;margin-top:3px;opacity:.75}
+.web-out{align-self:flex-end;color:#fff;background:linear-gradient(135deg,#1d5fb8,#0c3474);border-bottom-right-radius:6px}
+.web-in{align-self:flex-start;background:#f0f3f8;border-bottom-left-radius:6px}
+.web-slots{display:flex;gap:10px}
+.web-slots span{min-width:72px;text-align:center;padding:9px 16px;border-radius:999px;border:1px solid #d6e0ee;font-size:.9375rem;color:#1d5fb8;background:#fff}
+.web-done{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:16px;border:1px solid #c9ead6;background:linear-gradient(135deg,#f0faf4,#f7fcf9)}
+.web-done>div{flex:1;line-height:1.35}.web-done strong{display:block}.web-done span{display:block;color:#33475b}.web-done small{color:#5d6f84}
+.web-done time{align-self:flex-end;font-size:.6875rem;color:#7b8a9b}
+.web-tick{flex:none;width:38px;height:38px;border-radius:50%;background:#22a45d;color:#fff;display:grid;place-items:center}
+.web-input{display:flex;align-items:center;gap:12px;margin:12px;padding:6px 6px 6px 16px;border-radius:999px;background:#fff;color:#7b8a9b;font-size:.9375rem}
+.web-input>span:nth-child(2){flex:1}
+.web-send{width:42px;height:42px;border-radius:50%;background:#1d5fb8;color:#fff;display:grid;place-items:center}
+
+/* Phone call with the AI calling agent */
+.mk-call{background:linear-gradient(180deg,#0c3474 0%,#0a2a5e 100%);color:#fff}
+.call-head{display:flex;align-items:center;gap:12px;padding:18px 20px 8px}
+.call-head>div{flex:1;line-height:1.3}.call-head strong{display:block;font-size:.9375rem}
+.call-head small{display:flex;align-items:center;gap:6px;color:#c4ecfc}
+.call-head small i{width:8px;height:8px;border-radius:50%;background:#22c55e}
+.call-avatar{width:44px;height:44px;border-radius:50%;background:#2c9cfa;display:grid;place-items:center}
+.call-live{padding:4px 10px;border-radius:999px;background:rgb(34 197 94 / 18%);color:#86efac;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.call-wave{display:flex;align-items:center;justify-content:center;gap:4px;height:52px}
+.call-wave i{width:4px;border-radius:2px;background:#c4ecfc;opacity:.85;animation:call-wave 1.1s ease-in-out infinite}
+@keyframes call-wave{50%{transform:scaleY(.35)}}
+.call-body{flex:1;display:flex;flex-direction:column;gap:10px;margin:0 12px;padding:16px;border-radius:18px;background:#fff;color:var(--navy);overflow:hidden}
+.call-line span{display:block;font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#7b8a9b;margin-bottom:2px}
+.call-line p{margin:0;font-size:.9375rem;line-height:1.4;color:var(--navy)}
+.call-agent{padding-left:12px;border-left:3px solid #2c9cfa}
+.call-order{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;border:1px solid #e3e8ee;font-size:.8125rem}
+.call-order svg{color:#1d5fb8}.call-order>div{flex:1;min-width:0}.call-order strong{display:block}
+.call-track{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:7px 0 5px}
+.call-track i{height:5px;border-radius:3px;background:#2c9cfa}.call-track i:last-child{background:#e3e8ee}
+.call-order small{color:#7b8a9b}.call-order b{color:var(--navy)}
+.call-enquiry dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 18px;margin:6px 0 0}.call-enquiry dl div{min-width:0}.call-enquiry dt{font-size:.625rem;text-transform:uppercase;letter-spacing:.05em;color:#7b8a9b}.call-enquiry dd{margin:0;font-weight:600;color:var(--navy)}
+.call-ticket{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:#fff6dc;color:#7a5600;font-size:.75rem;font-weight:600}
+.call-controls{display:flex;justify-content:center;gap:18px;padding:14px}
+.call-controls span{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgb(255 255 255 / 14%)}
+.call-controls .call-end{background:#ef4444}
+
+/* WhatsApp */
+.mk-wa{background:#efeae2;color:#111b21}
+.wa-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#008069;color:#fff}
+.wa-head>div{flex:1;min-width:0;line-height:1.25}.wa-head strong{display:flex;align-items:center;gap:4px;font-size:.9375rem}.wa-head strong svg{color:#25d366;fill:#fff}
+.wa-avatar{width:36px;height:36px;border-radius:50%;background:#dfe5e7;color:#54656f;display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.wa-body{flex:1;display:flex;flex-direction:column;gap:6px;padding:10px 16px;overflow:hidden;background-color:#efeae2;background-image:radial-gradient(rgb(0 0 0 / 4.5%) 1px,transparent 1.4px);background-size:16px 16px}
+.wa-date{align-self:center;padding:4px 10px;border-radius:8px;background:#fff;color:#54656f;font-size:.6875rem;box-shadow:0 1px .5px #0b141a21}
+.wa-msg{position:relative;max-width:80%;padding:7px 10px 6px;border-radius:8px;font-size:.875rem;line-height:1.4;box-shadow:0 1px .5px #0b141a21}
+.wa-msg small{display:flex;justify-content:flex-end;align-items:center;gap:3px;margin-top:2px;color:#667781;font-size:.6875rem}
+.wa-msg small svg{color:#53bdeb}
+.wa-in{align-self:flex-start;background:#fff;border-top-left-radius:0}
+.wa-out{align-self:flex-end;background:#d9fdd3;border-top-right-radius:0}
+.wa-template{padding:4px 4px 0;max-width:78%}
+.wa-template p{margin:6px 8px 0}.wa-template small{padding:0 8px 6px}
+.wa-art{display:grid;place-items:center;height:50px;border-radius:6px;background:#e7f8ef;color:#008069}
+.wa-buttons{display:grid;border-top:1px solid #e9edef}
+.wa-buttons span{padding:6px;text-align:center;color:#00a884;font-weight:500;font-size:.8125rem}
+.wa-buttons span+span{border-top:1px solid #e9edef}
+.wa-link{display:block;margin-top:4px;color:#027eb5}
+.wa-system{align-self:center;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;background:#ffeecd;color:#54656f;font-size:.75rem}
+.wa-input{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f0f2f5}
+.wa-field{flex:1;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:999px;background:#fff;color:#54656f}
+.wa-field span{flex:1;color:#8696a0;font-size:.875rem}
+.wa-mic{width:42px;height:42px;border-radius:50%;background:#00a884;color:#fff;display:grid;place-items:center}
+
+/* Motion: steps wait hidden, then play in order once their card is live. Leaving the card resets them. */
+.js-in{opacity:0;transform:translateY(10px)}
+.js-card.is-live .js-in{animation:js-in 520ms var(--ease) forwards;animation-delay:var(--d)}
+@keyframes js-in{to{opacity:1;transform:none}}
+.js-card.is-live .js-typing{animation:js-typing 1100ms ease forwards;animation-delay:var(--d)}
+@keyframes js-typing{0%{opacity:0;max-height:0}15%,80%{opacity:1;max-height:40px;padding-block:11px!important}100%{opacity:0;max-height:0;margin-top:-8px}}
+.js-card.is-live .web-pick{animation:web-pick 400ms var(--ease) forwards;animation-delay:2900ms}
+@keyframes web-pick{to{background:#1d5fb8;color:#fff;border-color:#1d5fb8}}
+.js-card.is-live .call-now{animation:call-pulse 1.4s ease-in-out 3 2800ms}
+@keyframes call-pulse{50%{opacity:.35}}
+
+/* Short screens and tablets: plain stacked cards, no pinning. */
+.js-no-pin .js-card{position:relative;top:auto;zoom:1}.js-no-pin .js-card.is-behind{transform:none;filter:none}
+@media (max-width:1000px){
+  .js-card{position:relative;top:auto}
+  .js-card.is-behind{transform:none;filter:none}
+}
+@media (max-width:1000px){
+  .js-card{grid-template-columns:1fr;gap:40px;padding:32px;min-height:0;zoom:1}
+  .js-copy{padding-left:0}
+}
+@media (max-width:600px){
+  .js-stack{gap:18px}
+  .js-card{padding:24px 16px 36px;border-radius:24px}
+  .js-copy h3{margin-top:20px}
+  .js-quote p{font-size:1.125rem}
+  .js-chips{grid-template-columns:1fr}
+  .mk{height:auto;min-height:500px;border-radius:20px}
+  .web-slots span{min-width:0;padding:8px 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .journey-band:before,.journey-band:after{animation:none}
+  .js-card{position:relative;top:auto;transition:none;zoom:1}
+  .js-card.is-behind{transform:none;filter:none}
+  .js-in,.js-card.is-live .js-in{opacity:1;transform:none;animation:none}
+  .js-card .js-typing{display:none}
+  .web-pick{background:#1d5fb8;color:#fff;border-color:#1d5fb8}
+  .js-card.is-live .web-pick,.js-card.is-live .call-now,.js-typing i,.call-wave i{animation:none}
+}
+
+/* Section heading: centred, with its description shown (focused-inbox.css hides intro text site-wide). */
+.journey-band .section-intro{max-width:860px;margin-inline:auto;text-align:center}
+.journey-band .section-intro h2{margin-inline:auto;text-wrap:balance}
+.journey-band .section-intro p{display:block!important;margin:18px auto 0;max-width:620px;color:#33475b;text-wrap:balance}
