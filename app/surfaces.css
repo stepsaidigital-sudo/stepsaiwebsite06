@@ -1,0 +1,14 @@
+/* Homepage surface rhythm: sections alternate two calm surfaces (paper / warm mist) so every
+   boundary reads as a deliberate chapter break. Brand gradients stay inside feature bands and
+   art panels. Loaded last so it settles any older per-section backgrounds.
+   1 Hero paper · 2 Journey blue band · 3 Industries mist · 4 Team paper · 5 Setup mist
+   6 Campaigns paper · 7 Testimonials mist · 8 FAQ paper · 9 Final soft blue */
+:root{--surface-paper:#fcfcfc;--surface-mist:#f5f4f0}
+.industry-showcase{background:var(--surface-mist)}
+.product-story{background:var(--surface-paper)}
+/* Setup is a contained section: paint its band edge to edge without changing its layout. */
+.setup-section{background:var(--surface-mist);box-shadow:0 0 0 100vmax var(--surface-mist);clip-path:inset(0 -100vmax)}
+.setup-section .integration-tile{background:#fff}
+.broadcast{background:var(--surface-paper)}
+.reviews-showcase.rv{background:var(--surface-mist)}
+.rv-rows{mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}

@@ -1,0 +1,9 @@
+/* Homepage hero background: "Dynamic White Abstract Wavy Motion Background" by Chandresh Uike
+   (Pexels, free licence), streamed from the Pexels CDN. White wavy motion, no overlay; the plain
+   white page shows if it can't load. Video sits behind the hero and the navbar; text unchanged. */
+.hero{position:relative;clip-path:inset(-300px -100vmax 0)}
+.hero-video{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--paper)}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+body:has(.hero-video) .site-header:not(.is-scrolled) .header-inner{background:rgb(255 255 255 / 45%);border:1px solid rgb(255 255 255 / 70%);box-shadow:inset 0 1px 0 rgb(255 255 255 / 70%),0 8px 30px -18px rgb(12 52 116 / 30%);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
+.site-header .header-inner{transition:background-color 300ms var(--ease),border-color 300ms,box-shadow 300ms}
+@media(prefers-reduced-motion:reduce){.hero-video video{display:none}}

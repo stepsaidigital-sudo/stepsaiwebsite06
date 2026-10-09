@@ -40,9 +40,35 @@
 .channel-demo-canvas .channel-demo-conversation{filter:none}
 .channel-demo-canvas .channel-demo-conversation .channel-chat{box-shadow:0 12px 28px -14px #1c354840}
 
-/* Taller desktop screens: scale the pinned hero presentation so it fills the panel. */
-@media(min-width:1000px) and (min-height:820px){.channel-pinned{--hero-z:1.14}}
-@media(min-width:1000px) and (min-height:900px){.channel-pinned{--hero-z:1.24}}
-@media(min-width:1000px) and (min-height:980px){.channel-pinned{--hero-z:1.32}}
-@media(min-width:1000px) and (min-height:1080px){.channel-pinned{--hero-z:1.4}}
+/* Taller desktop screens: the pinned hero presentation scales by --hero-z, which
+   hero-channels.tsx computes from the room left (always fits, never below 1). */
 @media(min-width:1000px){.channel-pinned .channel-presentation{zoom:var(--hero-z,1);max-width:calc(1240px / var(--hero-z,1))}}
+
+/* Readability (audit 2026-10-09): nothing in the hero mockups below 12px; chat messages at 15px
+   like the real apps. Was: timestamps 7px, speaker labels 8px, labels 9px, messages 10px. */
+#showcase .channel-demo-canvas .live-message-slot .native-message{font-size:15px!important;line-height:1.45!important;padding:10px 14px!important;max-width:88%}
+#showcase .channel-demo-canvas .native-message small{font-size:12px;margin-top:4px}
+#showcase .channel-demo-canvas .native-chat-body{gap:10px}
+#showcase .channel-demo-canvas .scene-illustration{font-size:12px}
+#showcase .channel-demo-canvas .scene-context{padding:12px 14px;min-height:0}
+#showcase .channel-demo-canvas .scene-context img{width:56px;height:56px}
+#showcase .channel-demo-canvas .scene-context small,#showcase .channel-demo-canvas .scene-context div>span{font-size:12px}
+#showcase .channel-demo-canvas .scene-context strong{font-size:16px;max-width:none}
+#showcase .channel-demo-canvas .channel-demo-result{font-size:14px}
+#showcase .channel-demo-canvas .voice-call-label,#showcase .channel-demo-canvas .voice-call-label span,#showcase .channel-demo-canvas .voice-controls span{font-size:12px}
+#showcase .channel-demo-canvas .voice-line span{font-size:12px}
+#showcase .channel-demo-canvas .voice-line p{font-size:15px;line-height:1.45}
+
+/* Short laptop windows (about 700px): tighten spacing so the hero still pins, while keeping
+   readable sizes (messages 14px, labels 12px). */
+@media(min-width:760px) and (max-height:780px){
+  #showcase .channel-demo-canvas{padding:14px 16px;min-height:0}
+  #showcase .channel-demo-canvas .live-message-slot .native-message{font-size:14px!important;line-height:1.4!important;padding:7px 12px!important}
+  #showcase .channel-demo-canvas .native-message small{margin-top:2px}
+  #showcase .channel-demo-canvas .native-chat-body{gap:6px;padding:10px 12px;min-height:0}
+  #showcase .channel-demo-canvas .scene-context{padding:8px 12px;margin-bottom:8px}
+  #showcase .channel-demo-canvas .scene-context img{width:42px;height:42px}
+  #showcase .channel-demo-canvas .scene-context strong{font-size:15px}
+  #showcase .channel-demo-canvas .channel-demo-result{margin-top:6px}
+  #showcase .channel-presentation-panel{padding-block:4px}
+}

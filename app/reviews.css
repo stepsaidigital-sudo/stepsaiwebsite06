@@ -6,3 +6,43 @@
 
 #review-stage{scroll-margin-top:120px}
 
+
+/* Review strip: compact cards in two rows scrolling right to left. Readable sizes:
+   quotes 15px, names 14px, roles 13px. Base rules first, breakpoints after. */
+.rv{padding:72px 0 56px;overflow:clip}
+.rv-intro{max-width:760px;margin:0 auto 36px;text-align:center}
+.rv-intro p{display:block!important;margin:14px auto 0;color:#52677f}
+.rv-rows{display:grid;gap:16px;mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.rv-track{display:flex;width:max-content;animation:rv-scroll 70s linear infinite}
+.rv-row-1 .rv-track{animation-duration:80s;margin-left:-180px}
+.rv-set{display:flex;gap:16px;padding-right:16px}
+.rv-rows:hover .rv-track,.rv-rows[data-paused=true] .rv-track{animation-play-state:paused}
+.rv-card{display:flex;flex-direction:column;justify-content:space-between;gap:16px;width:360px;margin:0;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid rgb(12 52 116 / 8%);box-shadow:0 1px 2px #0c34740a,0 14px 30px -24px #0c347459}
+.rv-card blockquote{margin:0;font-size:.9375rem;line-height:1.55;color:#1f3a5c}
+.rv-card figcaption{display:flex;align-items:center;gap:12px}
+.rv-logo{width:38px;height:38px;flex:none;border-radius:11px;display:grid;place-items:center;background:#e6f0ff;color:#1d5fb8;font-size:.8125rem;font-weight:700;letter-spacing:.02em}
+.rv-card strong{display:block;font-size:.875rem;font-weight:600;color:var(--navy)}
+.rv-card small{display:block;font-size:.8125rem;color:#52677f}
+.rv-foot{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:22px}
+.rv-pause{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:999px;color:#52677f;font-size:.8125rem}
+.rv-pause:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@keyframes rv-scroll{to{transform:translateX(-50%)}}
+@media(max-width:700px){
+  .rv{padding:48px 0 40px}
+  .rv-card{width:290px;padding:18px}
+  .rv-row-1 .rv-track{margin-left:-120px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv-track{animation:none}
+  .rv-row{overflow-x:auto}
+  .rv-set[aria-hidden],.rv-set+.rv-set{display:none}
+  .rv-pause{display:none}
+}
+/* Calm surface and compact, equal-height cards. */
+.reviews-showcase.rv{background:var(--paper)}
+.rv .reviews-intro h2{color:var(--navy)}
+.rv .rv-intro p{color:#52677f}
+.rv-set{align-items:stretch}
+.rv-card{height:208px}
+.rv-card blockquote{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:700px){.rv-card{height:214px}}
