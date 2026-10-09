@@ -1,61 +1,112 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';
-import {Check,FileText,Globe,BookOpen,Settings2,GitBranch,Play,MessageSquare,Users,Send,Headphones,UserRound,ShieldCheck,FlaskConical} from 'lucide-react';
+import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
+import {Check,FileText,Globe,Settings2,GitBranch,Play,Pause,RotateCcw,MessageSquare,Users,Send,Headphones,ShieldCheck,Sparkles,Rocket,MousePointer2} from 'lucide-react';
 import copy from './copy.json';
 
-// "Set it up for the way your business works": the four setup features scroll
-// past while a sticky stage on the other side shows the matching product view.
+// "Set it up for the way your business works": the mirror of the team section.
+// An "Agent builder" app on the left plays through the four setup steps; the copy,
+// step list and tour controls on the right share the team section's ps-* styles.
 // Copy is the SEO specialist's, word for word. Mockup data is illustrative.
 
 const icons=[FileText,Settings2,GitBranch,Play];
+const steps=['Information','Personality','Follow-up','Test'];
+const DURATION=5000;
 
-function Workflow(){const [tested,setTested]=useState(false);return <div className="workflow"><div className="workflow-toolbar"><span><GitBranch size={18}/> Follow-up workflow</span><button onClick={()=>setTested(!tested)}><Play size={14}/>{tested?'Reset preview':'Test workflow'}</button></div><div className="workflow-canvas"><div className="workflow-node"><MessageSquare size={20}/><div><small>Trigger</small><strong>New customer enquiry</strong></div><Check size={16}/></div><span className="wire"/><div className="workflow-node"><Users size={20}/><div><small>Action</small><strong>Ask and save details</strong></div>{tested&&<Check size={16}/>}</div><span className="wire"/><div className="workflow-node condition"><GitBranch size={20}/><div><small>Condition</small><strong>Needs a person?</strong></div></div><div className="workflow-branches"><div><span>Yes</span><div className="workflow-node"><Headphones size={19}/><strong>Notify your team</strong></div></div><div><span>No</span><div className="workflow-node"><Send size={19}/><strong>Send a reply</strong></div></div></div></div><div className="workflow-status" role="status"><Check size={16}/>{tested?'Preview complete · sample enquiry routed to your team':'Preview the flow before switching it on'}</div></div>}
+// An element that animates in once its pane is current; --d is its delay.
+const A=({d,className='',children}:{d:number;className?:string;children?:ReactNode})=><div className={`sb-a ${className}`} style={{'--d':`${d}ms`} as CSSProperties}>{children}</div>;
+const Cursor=()=><span className="sb-cursor" aria-hidden="true"><MousePointer2 size={20}/></span>;
 
-function Window({icon:Icon,title,sub,children}:{icon:typeof FileText;title:string;sub:string;children:React.ReactNode}){return <div className="ss-window"><div className="ss-window-title"><span className="ss-window-icon"><Icon size={17}/></span><div><strong>{title}</strong><small>{sub}</small></div></div><div className="ss-window-body">{children}</div></div>}
+function SourcesPane(){
+  return <div className="sb-pane-inner">
+    <A d={0} className="sb-pane-title"><strong>Knowledge sources</strong><small>What your agent can answer from</small></A>
+    {[[Globe,'Website pages','yourstore.com'],[FileText,'FAQs','Returns, delivery and sizing'],[FileText,'Price list.pdf','Uploaded document']].map(([Icon,name,detail],i)=>{const I=Icon as typeof Globe;return <A key={name as string} d={200+i*250} className="sb-source"><span className="sb-source-icon"><I size={16}/></span><div><strong>{name as string}</strong><small>{detail as string}</small><span className="sb-progress"><i style={{'--d':`${400+i*450}ms`} as CSSProperties}/></span></div><span className="sb-synced" style={{'--d':`${1300+i*450}ms`} as CSSProperties}><Check size={13}/>Synced</span></A>})}
+    <A d={2900} className="sb-shared"><Users size={14}/>Shared with your Sales and Support agents</A>
+  </div>;
+}
 
-function Knowledge(){return <Window icon={BookOpen} title="Knowledge sources" sub="Shared across your agents">
-  {[[Globe,'Website pages','yourstore.com'],[FileText,'FAQs','Returns, delivery and sizing'],[FileText,'Documents','Price list.pdf']].map(([Icon,name,detail],i)=>{const I=Icon as typeof Globe;return <div key={name as string} className="ss-row" style={{animationDelay:`${120+i*160}ms`}}><I size={16}/><span>{name as string}<small>{detail as string}</small></span><Check size={15} className="ss-tick"/></div>})}
-  <div className="ss-chips" style={{animationDelay:'640ms'}}><span>Sales agent</span><span>Support agent</span><span>Booking agent</span></div>
-</Window>}
+function TonePane(){
+  return <div className="sb-pane-inner">
+    <A d={0} className="sb-pane-title"><strong>Agent settings</strong><small>Name, tone and instructions</small></A>
+    <A d={150} className="sb-field"><small>Name</small><span className="sb-input"><span className="sb-typed sb-typed-name">Ava</span></span></A>
+    <A d={350} className="sb-field"><small>Tone</small><span className="sb-segment"><i className="sb-thumb"/><span>Formal</span><span className="sb-picked">Friendly</span><span>Playful</span></span></A>
+    <A d={550} className="sb-field"><small>Instructions</small><span className="sb-input sb-area"><span className="sb-typed sb-typed-long">Keep answers short. Offer to book a call when someone asks about pricing.</span></span></A>
+    <A d={800} className="sb-rule"><Headphones size={15}/><span>Call in your team for refund requests</span><i className="sb-toggle"/></A>
+    <Cursor/>
+  </div>;
+}
 
-function Personality(){return <Window icon={UserRound} title="Agent settings" sub="Name, tone and instructions">
-  <div className="ss-field" style={{animationDelay:'120ms'}}><small>Name</small><strong>Ava</strong></div>
-  <div className="ss-field" style={{animationDelay:'260ms'}}><small>Tone</small><div className="ss-tone"><span>Formal</span><span className="is-picked">Friendly</span><span>Playful</span></div></div>
-  <div className="ss-field" style={{animationDelay:'400ms'}}><small>Instructions</small><p className="ss-typed">Keep answers short. Offer to book a call when someone asks about pricing.</p></div>
-  <div className="ss-rule" style={{animationDelay:'560ms'}}><Headphones size={16}/><span>Call in your team for refund requests</span><i className="ss-toggle"/></div>
-</Window>}
+function FlowPane(){
+  return <div className="sb-pane-inner sb-flow">
+    <A d={0} className="sb-pane-title"><strong>Follow-up workflow</strong><small>Runs after every new enquiry</small></A>
+    <A d={200} className="sb-node"><MessageSquare size={15}/><div><small>Trigger</small><strong>New customer enquiry</strong></div></A>
+    <i className="sb-wire" style={{'--d':'500ms'} as CSSProperties}/>
+    <A d={700} className="sb-node"><Users size={15}/><div><small>Action</small><strong>Ask and save details</strong></div></A>
+    <i className="sb-wire" style={{'--d':'1000ms'} as CSSProperties}/>
+    <A d={1200} className="sb-node sb-condition"><GitBranch size={15}/><div><small>Condition</small><strong>Needs a person?</strong></div></A>
+    <div className="sb-branches">
+      <A d={1700} className="sb-node sb-small"><Headphones size={14}/><div><small>Yes</small><strong>Notify your team</strong></div></A>
+      <A d={1900} className="sb-node sb-small"><Send size={14}/><div><small>No</small><strong>Send a reply</strong></div></A>
+    </div>
+    <A d={2900} className="sb-status"><Check size={14}/>Preview complete · sample enquiry routed to your team</A>
+  </div>;
+}
 
-function TestRun(){return <Window icon={FlaskConical} title="Test conversation" sub="Only you can see this">
-  <div className="ss-test-chat">
-    <div className="ss-bubble in" style={{animationDelay:'150ms'}}>Do you deliver to Pune?</div>
-    <div className="ss-bubble out" style={{animationDelay:'700ms'}}>Yes, we deliver to Pune in 3 to 5 working days.</div>
-  </div>
-  <div className="ss-checks"><span style={{animationDelay:'1200ms'}}><ShieldCheck size={15}/>Answer found in your FAQs</span><span style={{animationDelay:'1500ms'}}><Check size={15}/>Workflow test passed</span></div>
-</Window>}
+function TestPane(){
+  return <div className="sb-pane-inner">
+    <A d={0} className="sb-pane-title"><strong>Test conversation</strong><small>Only you can see this</small></A>
+    <div className="sb-chat">
+      <A d={250} className="sb-bubble sb-in">Do you deliver to Pune?</A>
+      <A d={900} className="sb-bubble sb-out">Yes, we deliver to Pune in 3 to 5 working days.</A>
+    </div>
+    <A d={1600} className="sb-check"><ShieldCheck size={14}/>Answer found in your FAQs</A>
+    <A d={1900} className="sb-check"><Check size={14}/>Workflow test passed</A>
+    <A d={2300} className="sb-golive"><Rocket size={15}/>Go live</A>
+    <Cursor/>
+  </div>;
+}
 
-const visuals=[<Knowledge key="k"/>,<Personality key="p"/>,<Workflow key="w"/>,<TestRun key="t"/>];
+const panes=[<SourcesPane key="s"/>,<TonePane key="t"/>,<FlowPane key="f"/>,<TestPane key="x"/>];
+
+function Builder({current}:{current:number}){
+  return <div className="sb">
+    <div className="sb-bar"><span className="sb-logo"><Sparkles size={15}/></span><strong>Agent builder</strong><span className="sb-pill"><i/>{current===3?'Ava · Ready':'Ava · Draft'}</span><span className="sb-dots" aria-hidden="true"><i/><i/><i/></span></div>
+    <div className="sb-main">
+      <nav className="sb-side" aria-hidden="true">{steps.map((step,i)=><span key={step} className={i<current?'is-done':i===current?'is-now':''}><b>{i<current?<Check size={12}/>:i+1}</b>{step}</span>)}<span className="sb-side-meter"><i style={{transform:`scaleY(${(current+1)/4})`}}/></span></nav>
+      <div className="sb-panes">{panes.map((pane,i)=><div key={i} aria-hidden={current!==i} inert={current!==i} className={`sb-pane setup-scene ${current===i?'is-current':i<current?'is-before':'is-after'}`}>{pane}</div>)}</div>
+    </div>
+  </div>;
+}
 
 export function SetupStory(){
   const items=copy.setup.items.slice(0,4);
-  const [active,setActive]=useState(0);
-  const refs=useRef<(HTMLElement|null)[]>([]);
+  const root=useRef<HTMLDivElement>(null),elapsed=useRef(0);
+  const [current,setCurrent]=useState(0),[cycle,setCycle]=useState(0),[paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[pageVisible,setPageVisible]=useState(true),[reduced,setReduced]=useState(false);
+  const running=visible&&pageVisible&&!paused&&!reduced;
   useEffect(()=>{
-    // The feature crossing the middle of the viewport is the active one.
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActive(Number((entry.target as HTMLElement).dataset.index))}),{rootMargin:'-45% 0px -45% 0px'});
-    refs.current.forEach(el=>el&&observer.observe(el));
-    return()=>observer.disconnect();
+    const media=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>setReduced(media.matches);update();media.addEventListener('change',update);
+    const visibility=()=>setPageVisible(!document.hidden);document.addEventListener('visibilitychange',visibility);
+    const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.25});observer.observe(root.current!);
+    return()=>{media.removeEventListener('change',update);document.removeEventListener('visibilitychange',visibility);observer.disconnect()};
   },[]);
-  const go=(i:number)=>{setActive(i);refs.current[i]?.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})};
-  return <div className="ss-grid" style={{['--ss-progress' as string]:`${(active+1)/items.length}`}}>
-    <ol className="ss-list">{items.map((item,i)=>{const Icon=icons[i];return <li key={item.title} ref={el=>{refs.current[i]=el}} data-index={i} className={`ss-feature ${active===i?'is-active':''}`}>
-      <div className="ss-card"><button className="ss-feature-head" onClick={()=>go(i)} aria-current={active===i?'step':undefined}><span className="ss-number">0{i+1}</span><Icon size={22}/><h3>{item.title}</h3></button>
-      <p>{item.paragraphs[0]}</p></div>
-      <div className="ss-inline-visual">{visuals[i]}</div>
-    </li>})}</ol>
-    <div className="ss-stage"><div className="ss-stage-inner">
-      <span className="ss-stage-label">Illustration</span>
-      {visuals.map((visual,i)=><div key={i} className={`ss-scene ${active===i?'is-current':''}`}>{active===i&&visual}</div>)}
-      <div className="ss-dots">{items.map((item,i)=><button key={item.title} tabIndex={-1} aria-label={`Show ${item.title}`} className={active===i?'active':''} onClick={()=>go(i)}/>)}</div>
-    </div></div>
-  </div>
+  useEffect(()=>{
+    // Advance one step every DURATION ms while the section is on screen, like the team tour.
+    if(!running)return;let frame=0,last=performance.now();
+    const tick=(now:number)=>{elapsed.current+=Math.min(now-last,80);last=now;if(elapsed.current>=DURATION){elapsed.current=0;setCurrent(c=>{if(c===3)setCycle(v=>v+1);return (c+1)%4});return}frame=requestAnimationFrame(tick)};
+    frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame);
+  },[current,running]);
+  const select=(i:number)=>{elapsed.current=0;setCurrent(i);setPaused(true)};
+  return <div ref={root} className={`setup-tour ps-layout ${visible&&pageVisible?'':'is-offscreen'}`}>
+    <div className="ps-copy">
+      <h2>{copy.setup.title}</h2>
+      <p className="setup-lead">{copy.setup.paragraphs[0]}</p>
+      <div className="ps-features" aria-label="Setup tour scenes">{items.map((item,i)=>{const Icon=icons[i];return <button key={item.title} aria-pressed={current===i} onClick={()=>select(i)}><Icon size={21}/><span>{item.title}</span><small>0{i+1}</small></button>})}</div>
+      <p className="setup-detail" key={current}>{items[current].paragraphs[0]}</p>
+      <p className="ps-playback-note">{reduced?'Choose a step to explore.':paused?'Tour paused. Explore a step or press play.':'A short tour, one step at a time.'}</p>
+    </div>
+    <div className="ps-visual setup-visual">
+      <div className="ps-frame-header"><span><i/>Your agent, set up your way</span><div><button aria-label={paused?'Play setup tour':'Pause setup tour'} disabled={reduced} onClick={()=>setPaused(v=>!v)}>{paused?<Play size={14}/>:<Pause size={14}/>}</button><button aria-label="Replay setup tour" onClick={()=>{elapsed.current=0;setCurrent(0);setCycle(v=>v+1);setPaused(false)}}><RotateCcw size={14}/></button><b>0{current+1} / 04</b></div></div>
+      <Builder key={cycle} current={current}/>
+      <div className="ps-timeline" aria-hidden="true">{items.map((item,i)=><i key={`${cycle}-${current}-${i}`} className={i===current?'is-current':i<current?'is-complete':''}><span style={{animationPlayState:running?'running':'paused',animationDuration:`${DURATION}ms`}}/></i>)}</div>
+    </div>
+  </div>;
 }
