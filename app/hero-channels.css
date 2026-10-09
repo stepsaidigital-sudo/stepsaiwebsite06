@@ -39,3 +39,10 @@
 .channel-demo-canvas .scene-context strong{max-width:none}
 .channel-demo-canvas .channel-demo-conversation{filter:none}
 .channel-demo-canvas .channel-demo-conversation .channel-chat{box-shadow:0 12px 28px -14px #1c354840}
+
+/* Taller desktop screens: scale the pinned hero presentation so it fills the panel. */
+@media(min-width:1000px) and (min-height:820px){.channel-pinned{--hero-z:1.14}}
+@media(min-width:1000px) and (min-height:900px){.channel-pinned{--hero-z:1.24}}
+@media(min-width:1000px) and (min-height:980px){.channel-pinned{--hero-z:1.32}}
+@media(min-width:1000px) and (min-height:1080px){.channel-pinned{--hero-z:1.4}}
+@media(min-width:1000px){.channel-pinned .channel-presentation{zoom:var(--hero-z,1);max-width:calc(1240px / var(--hero-z,1))}}

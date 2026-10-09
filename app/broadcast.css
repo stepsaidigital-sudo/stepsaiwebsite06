@@ -194,7 +194,7 @@
   .bc-tab.is-active{padding:12px 16px 16px}
   .bc-tab{padding:8px 16px}
 }
-@media(max-height:860px) and (min-width:901px){
+@media(max-height:800px) and (min-width:901px){
   .bc-phone{zoom:.84}
   .bc-copy h2{font-size:clamp(32px,3.2vw,46px)}
   .bc-tabs{margin-top:22px;gap:8px}
