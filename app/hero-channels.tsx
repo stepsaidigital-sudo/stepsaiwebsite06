@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
-import {ArrowDown,ArrowRight,Check,Phone,PhoneCall,Mic,Volume2,Pause,Play,RotateCcw} from 'lucide-react';
+import {ArrowRight,Check,Phone,PhoneCall,Mic,Volume2} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
 import {LiveConversation} from './live-conversation';
 import copy from './copy.json';
@@ -20,8 +20,9 @@ function SceneContext({index}:{index:number}){return <div className={`scene-cont
 export function HeroChannels(){
   const [active,setActive]=useState(0);
   const [pinned,setPinned]=useState(false);
-  const [paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
-  const [replay,setReplay]=useState(0);
+  // The pause/replay strip was removed from the hero; playback always runs while the panel is visible.
+  const paused=false,replay=0;
+  const [visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
   // The clock is keyed to the channel and replay, so a new channel starts from zero on its first render.
   const key=`${active}-${replay}`;
   const [clock,setClock]=useState({key,t:0});
@@ -72,7 +73,6 @@ export function HeroChannels(){
         <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i+1}</span><span>{['Start a conversation','Keep the interest going','Make help feel effortless','Welcome every visitor','Let the conversation flow'][i]}</span></div><h2>{item.title}</h2><p>{item.description}</p><a href="#product" className="channel-learn">Explore how it works <ArrowRight size={17}/></a></div>
         <div className={`channel-demo-canvas ${i===4?'is-voice':''}`}><span className="scene-illustration">Illustration</span>{i===4?<VoiceScene time={active===i?time:0} paused={paused||!visible||reduced}/>:<><SceneContext index={i}/><div className="channel-demo-conversation"><LiveConversation channel={item.name} question={item.question} answer={item.answer} time={active===i?time:0}/></div></>}<div className={`channel-demo-result ${time>=12000?'result-arrived':'result-waiting'}`} aria-hidden={time<12000}><span><Check size={15}/></span>{item.result}</div></div>
       </article>)}</div>
-      <div className="conversation-playback"><span>{time>=12000?'Conversation complete':paused?'Animation paused':'A conversation, step by step'}</span><button aria-label={paused?'Resume conversation animation':'Pause conversation animation'} onClick={()=>setPaused(!paused)}>{paused?<Play size={13}/>:<Pause size={13}/>}</button><button aria-label="Replay conversation" onClick={()=>{setReplay(value=>value+1);setPaused(false)}}><RotateCcw size={13}/></button></div><div className="channel-scroll-cue"><span>0{active+1} <i>/ 0{channels.length}</i></span><span>{pinned?'Scroll to explore channels':'Choose a channel above'} <ArrowDown size={14}/></span><div aria-hidden="true">{channels.map((c,i)=><i key={c.name} className={i===active?'active':''}/>)}</div></div>
     </div>
   </div>
 }

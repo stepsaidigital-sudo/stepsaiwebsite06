@@ -43,9 +43,9 @@ function WhatsAppScreen(){
         <div className="bcw-btn"><ExternalLink size={15}/>Shop the sale</div>
         <div className="bcw-btn"><CornerUpLeft size={15}/>Show me more</div>
       </B>
-      <B d={2400} className="bcw-b bcw-out bcw-tail">Show me more<small className="bcw-time">10:02 <CheckCheck size={15}/></small></B>
+      <B d={2400} className="bcw-b bcw-out">Show me more<small className="bcw-time">10:02 <CheckCheck size={15}/></small></B>
       <Typing d={3000} className="bcw-b bcw-in"/>
-      <B d={4100} className="bcw-b bcw-in bcw-tail">Here are this week’s best sellers. Any you like?<small className="bcw-time">10:02</small></B>
+      <B d={4100} className="bcw-b bcw-in">Here are this week’s best sellers. Any you like?<small className="bcw-time">10:02</small></B>
     </div>
     <div className="bcw-compose"><Plus size={24} strokeWidth={1.8}/><span className="bcw-field"><Sticker size={19} strokeWidth={1.7}/></span><Camera size={22} strokeWidth={1.8}/><Mic size={22} strokeWidth={1.8}/></div>
     <HomeBar/>
@@ -165,12 +165,13 @@ export function Broadcast(){
         <h2 id="broadcast-title">Send a campaign. Every reply lands with your agent.</h2>
         <p className="bc-lead">Broadcast on WhatsApp, turn Instagram comments into DMs and let your agent answer everyone who writes back.</p>
         <p className="bc-guide"><span className="bc-mouse" aria-hidden="true"><i/></span>{pinned?'Scroll to move through each channel, or pick one.':'Pick a channel to see it in action.'}</p>
-        <div className="bc-tabs" role="tablist" aria-label="Campaign channels">{tabs.map((t,i)=>{const Icon=t.icon;return <button key={t.key} role="tab" aria-selected={tab===i} aria-controls="bc-stage" className={`bc-tab ${tab===i?'is-active':''}`} onClick={()=>pick(i)}>
+        <div className="bc-tabs" role="tablist" aria-label="Campaign channels">{tabs.map((t,i)=>{const Icon=t.icon;return <button key={t.key} role="tab" aria-selected={tab===i} aria-controls="bc-stage" className={`bc-tab bc-tab-${i} ${tab===i?'is-active':''}`} onClick={()=>pick(i)}>
           <span className="bc-tab-icon"><Icon size={18}/></span><span className="bc-tab-text"><small>0{i+1}</small><strong>{t.title}</strong><span>{t.line}</span></span><span className="bc-tab-logo"><ChannelLogo channel={t.channel}/></span>
           <span className="bc-tab-bar"><i ref={el=>{bars.current[i]=el}}/></span>
         </button>})}</div>
       </div>
       <div className="bc-stage" id="bc-stage" role="tabpanel" aria-label={`${tabs[tab].title} example`}>
+        {tabs.map((t,i)=><span key={t.key} className={`bc-art bc-art-${i} ${tab===i?'is-on':''}`} aria-hidden="true"/>)}
         <div className="bc-phone" aria-hidden="true"><span className="bc-btn bc-btn-a"/><span className="bc-btn bc-btn-b"/><span className="bc-btn bc-btn-c"/><div className="bc-phone-core"><span className="ios-island"/>{screens.map((s,i)=><div key={i} className={`bc-screen ${tab===i?'is-active':''}`}>{s}</div>)}</div></div>
         <SideCards tab={tab}/>
         <span className="bc-illus">Illustration</span>

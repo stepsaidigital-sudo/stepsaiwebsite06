@@ -27,3 +27,30 @@
 .ps-questions footer,.ps-ownership{padding:0;border:0;background:transparent}
 @media(min-width:1100px){.ps-incoming strong,.ps-reply-preview header strong{font-size:13px}.ps-incoming p,.ps-mini-customer,.ps-mini-answer,.ps-human-scene p{font-size:13px}.ps-tag{font-size:9px}.ps-kpis small{font-size:10px}.ps-week-chart strong{font-size:12px}.ps-question>div:first-child{font-size:13px}.ps-human-scene small{font-size:10px}.ps-human-scene>header strong{font-size:13px}.ps-handoff-event{font-size:10px}.ps-stage-footer{font-size:9px}}
 .ps-stage{line-height:1.4}.ps-incoming strong,.ps-reply-preview header strong{line-height:1.4}.ps-tag{line-height:1.4}.ps-human-scene>header{line-height:1.4}
+
+/* Active tour row (team + setup sections): a clear filled panel so visitors can see
+   which feature the product window is showing. */
+.ps-features button{position:relative;padding-inline:14px;border-radius:12px;transition:background-color 350ms var(--ease),color 350ms,box-shadow 350ms,border-color 350ms}
+.ps-features button>svg{width:34px;height:34px;padding:7px;border-radius:10px;background:#eef3f8;color:#52677c;transition:background-color 350ms,color 350ms}
+.ps-features button:not([aria-pressed=true]):hover{background:rgb(12 52 116 / 4%)}
+.ps-features button[aria-pressed=true]{border-bottom-color:transparent;background:linear-gradient(90deg,#dcebfc 0%,#eef5fd 100%);box-shadow:inset 4px 0 0 #0c3474,0 10px 24px -18px rgb(12 52 116 / 55%);color:#0c3474;font-weight:650}
+.ps-features button[aria-pressed=true]>svg{background:#0c3474;color:#fff}
+.ps-features button[aria-pressed=true] small{padding:3px 8px;border-radius:999px;background:#0c3474;color:#fff;font-weight:700}
+.ps-features button:has(+ button[aria-pressed=true]){border-bottom-color:transparent}
+@media(prefers-reduced-motion:reduce){.ps-features button,.ps-features button>svg{transition:none}}
+
+/* Scroll-pinned tours (team + setup): the runway is tall, the panel sticks just below the
+   floating navbar and is vertically centred in the space left. */
+.product-story.is-pinned,.setup-runway.is-pinned{position:relative}
+.product-story.is-pinned{padding:0}
+.is-pinned>.ps-pin{position:sticky;top:0;height:100vh;display:flex;align-items:center;padding:88px 0 16px;box-sizing:border-box}
+.is-pinned>.ps-pin>.ps-layout,.is-pinned>.ps-pin>.container{width:100%}
+.setup-runway.is-pinned .setup-tour{margin-bottom:0}
+@media(max-height:780px){
+  .is-pinned>.ps-pin{padding-top:80px}
+  .is-pinned .ps-copy h2{font-size:clamp(28px,2.6vw,36px)}
+  .is-pinned .ps-features button{padding-block:10px}
+  .is-pinned .setup-lead{margin-bottom:12px;font-size:.9375rem}
+  .is-pinned .setup-detail{margin-top:10px;min-height:0;font-size:.875rem}
+  .is-pinned .ps-visual{zoom:.86}
+}

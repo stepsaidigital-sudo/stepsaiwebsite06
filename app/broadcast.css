@@ -57,17 +57,17 @@
 .bc-float{position:absolute;z-index:2;padding:14px 16px;border-radius:18px;background:#fff;color:var(--navy);border:1px solid rgb(12 52 116 / 8%);box-shadow:0 1px 2px #0c347410,0 24px 50px -24px #0c347466;opacity:0;transform:translateY(16px) scale(.96);transition:opacity 600ms var(--bc-ease),transform 800ms var(--bc-ease);pointer-events:none}
 .bc-float.is-on{opacity:1;transform:none;transition-delay:250ms}
 .bc-float-label{display:flex;align-items:center;gap:7px;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1d5fb8}
-.bc-composer{right:calc(50% + 120px);top:14%;width:214px;rotate:-3deg}
+.bc-composer{right:calc(50% + 120px);top:14%;width:214px}
 .bc-composer dl{margin:10px 0 12px;display:grid;gap:7px}
 .bc-composer dl div{display:flex;justify-content:space-between;gap:10px;font-size:.75rem}
 .bc-composer dt{color:#52677f}
 .bc-composer dd{margin:0;display:inline-flex;align-items:center;gap:4px;font-weight:600}
 .bc-send{display:flex;justify-content:center;align-items:center;gap:7px;padding:9px;border-radius:999px;background:var(--navy);color:#fcfcfc;font-size:.8125rem;font-weight:600}
 .bc-float.is-on .bc-send{animation:bc-press 300ms ease 1000ms,bc-ring 1.4s ease-out 1200ms}
-.bc-agent{left:calc(50% + 120px);bottom:22%;display:flex;align-items:center;gap:8px;font-size:.8125rem;font-weight:600;rotate:2deg}
+.bc-agent{left:calc(50% + 120px);bottom:22%;display:flex;align-items:center;gap:8px;font-size:.8125rem;font-weight:600}
 .bc-agent svg{color:#1d5fb8}
 .bc-float.bc-agent.is-on{transition-delay:3400ms}
-.bc-result{left:calc(50% + 120px);bottom:16%;display:flex;align-items:center;gap:12px;rotate:2deg;min-width:214px}
+.bc-result{left:calc(50% + 120px);bottom:16%;display:flex;align-items:center;gap:12px;min-width:214px}
 .bc-result strong{display:block;font-size:.875rem}
 .bc-result small{font-size:.75rem;color:#52677f}
 .bc-tick{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#22a45d;color:#fff;flex:none}
@@ -96,11 +96,6 @@
 .bcw-in{align-self:flex-start;background:#fff;border-bottom-left-radius:4px}
 .bcw-out{align-self:flex-end;background:#d9fdd3;border-bottom-right-radius:4px}
 .bcw-tpl b{font-weight:600}
-.bcw-tail.bcw-in{border-bottom-left-radius:16px;border-top-left-radius:4px}
-.bcw-tail.bcw-out{border-bottom-right-radius:16px;border-top-right-radius:4px}
-.bcw-tail::before{content:"";position:absolute;top:0;width:10px;height:13px}
-.bcw-tail.bcw-in::before{left:-7px;background:#fff;clip-path:polygon(100% 0,0 0,100% 100%)}
-.bcw-tail.bcw-out::before{right:-7px;background:#d9fdd3;clip-path:polygon(0 0,100% 0,0 100%)}
 .bcw-time{display:flex;justify-content:flex-end;align-items:center;gap:3px;margin-top:1px;font-size:11px;color:#667781}
 .bcw-time svg{color:#53bdeb}
 .bcw-tpl-wrap{align-self:flex-start;width:84%;display:grid;gap:2px}
@@ -234,3 +229,52 @@
   .bcp-sheet,.bc-screen.is-active .bcp-sheet{animation:none;transform:none}
   .bc-screen.is-active .c2d-track{animation:none;transform:translateX(-100%)}
 }
+
+/* Minimal pass, after the industries section: warm off-white surface, white cards, and the rich
+   colour kept to one art panel behind the phone that changes with the channel. */
+.broadcast{background:#f5f4f0}
+.broadcast::before,.broadcast::after{content:none}
+.bc-eyebrow{padding:0;border:0;background:none;color:#52677f;letter-spacing:.16em}
+.bc-lead{color:#52677f}
+.bc-guide{color:#52677f;font-weight:500}
+.bc-tab{background:#fff;border-color:transparent;box-shadow:none;border-radius:20px}
+.bc-tab:hover{border-color:rgb(12 52 116 / 10%);box-shadow:none}
+.bc-tab.is-active{color:var(--navy);background:#fff;border:1.5px solid #c4ecfc;box-shadow:0 1px 2px #0c34740a,0 22px 44px -30px #0c347459}
+.bc-tab-icon,.bc-tab.is-active .bc-tab-icon{background:#eef4fb;color:#1d5fb8;box-shadow:none}
+.bc-tab.is-active .bc-tab-icon{background:#e6f0ff}
+.bc-tab-text strong{color:#33475b}
+.bc-tab.is-active .bc-tab-text strong{color:var(--navy)}
+.bc-tab.is-active .bc-tab-text small{color:#1d5fb8}
+.bc-tab.is-active .bc-tab-text span{color:#52677f}
+.bc-tab-logo{background:#f5f4f0;box-shadow:none}
+.bc-tab.is-active .bc-tab-logo{background:#fff;box-shadow:0 0 0 1px rgb(12 52 116 / 8%)}
+.bc-tab.is-active .bc-tab-bar{background:#eef2f7}
+.bc-tab-bar i{background:linear-gradient(90deg,var(--navy),var(--blue))}
+
+/* Art panel behind the phone: one per channel, cross-fading. */
+.bc-art{position:absolute;inset:4% 6%;z-index:0;border-radius:32px;border:1px solid #fff;opacity:0;transition:opacity 700ms var(--bc-ease);pointer-events:none}
+.bc-art.is-on{opacity:1}
+.bc-art-0{background:radial-gradient(ellipse at 15% 100%,#2c9cfa90,transparent 70%),radial-gradient(ellipse at 100% 100%,#b9e3ba,transparent 80%),linear-gradient(#fcfcfc,#eaf5fd)}
+.bc-art-1{background:radial-gradient(ellipse at 0% 100%,#ad8ffc,transparent 75%),radial-gradient(ellipse at 100% 100%,#f8b40360,transparent 85%),#fcfcfc}
+.bc-art-2{background:radial-gradient(ellipse at 0% 100%,#f8b40390,transparent 75%),radial-gradient(ellipse at 100% 100%,#c4ecfc,transparent 85%),#fcfcfc}
+.bc-float{border-color:rgb(12 52 116 / 6%);box-shadow:0 1px 2px #0c34740a,0 18px 40px -26px #0c347466}
+.bc-phone{box-shadow:inset 0 0 0 1.5px #80858d,inset 0 0 0 4px #121316,0 40px 70px -40px rgb(12 52 116 / 55%)}
+.bc-illus{z-index:1}
+@media(max-width:900px){.bc-art{inset:0}}
+
+/* Active tab in the platform's own palette (WhatsApp green; Instagram's gradient for both
+   Instagram channels), matching the art panel behind the phone. Clean card: gradient border,
+   gradient icon chip and progress, nothing else. */
+.bc-tab{--g:linear-gradient(135deg,#25d366 0%,#128c7e 100%);--accent:#128c7e}
+.bc-tab-1,.bc-tab-2{--g:linear-gradient(45deg,#feda75 0%,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5 100%);--accent:#c13584}
+.bc-tab.is-active{border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--g) border-box;box-shadow:0 1px 2px #0c34740a,0 22px 44px -30px #0c347466}
+.bc-tab.is-active .bc-tab-icon{background:var(--g);color:#fff}
+.bc-tab.is-active .bc-tab-text small{color:var(--accent)}
+.bc-tab.is-active .bc-tab-bar{background:#f1f3f6}
+.bc-tab.is-active .bc-tab-bar i{background:var(--g)}
+.bc-tab:not(.is-active) .bc-tab-text strong{color:#52677f}
+.bc-tab:not(.is-active) .bc-tab-icon{background:#f3f5f8;color:#7b8a9b}
+
+/* Art panels in the same platform palettes. */
+.bc-art-0{background:radial-gradient(ellipse at 10% 100%,#25d36652,transparent 70%),radial-gradient(ellipse at 100% 100%,#128c7e33,transparent 75%),linear-gradient(#fcfcfc,#effaf3)}
+.bc-art-1,.bc-art-2{background:radial-gradient(ellipse at 0% 100%,#fa7e1e45,transparent 65%),radial-gradient(ellipse at 55% 110%,#d6297642,transparent 70%),radial-gradient(ellipse at 100% 60%,#962fbf38,transparent 70%),radial-gradient(ellipse at 100% 0%,#4f5bd52e,transparent 65%),#fcfcfc}

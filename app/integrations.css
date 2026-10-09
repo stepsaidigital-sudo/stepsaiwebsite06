@@ -10,3 +10,33 @@
 /* Keep the shareable-agent card close to the integration rows. */
 .setup-section .integrations-showcase{padding-bottom:24px}.setup-section .agent-page{margin-top:0}.setup-section{padding-bottom:40px}
 @media(max-width:700px){.setup-section .integrations-showcase{padding-bottom:20px}.setup-section{padding-bottom:32px}}
+
+/* Compact integrations: smaller rounded logo chips, no puzzle connectors, tighter rhythm so the
+   section reads as one focused block. Base rules first, then breakpoints (narrowest last). */
+.setup-section .integrations-showcase,.integrations-showcase{padding:56px 0 24px}
+.integrations-intro{margin:0 auto 32px}
+.integrations-intro h3{font-size:clamp(34px,3.4vw,48px);margin-bottom:14px}
+.integrations-intro p{font-size:1.0625rem}
+.integrations-intro .text-link{margin-top:14px;font-size:.9375rem}
+.logo-ribbons{max-width:980px;margin:0 auto;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.logo-ribbon+.logo-ribbon{margin-top:14px}
+.logo-set{gap:14px;padding-right:14px}
+.ribbon-1 .logo-track{margin-left:-43px}
+.integration-tile{width:72px;height:72px;border-radius:20px;background:#fff;border:1px solid rgb(12 52 116 / 8%);box-shadow:0 1px 2px #0c34740d,0 10px 24px -18px #0c347440}
+.integration-tile:after{content:none}
+.integration-tile img,.integration-tile img[src$="calendly.svg"],.integration-tile img[src$="woocommerce.svg"]{width:36px;height:36px;object-fit:contain}
+.integration-tile img[src$="woocommerce.svg"]{width:60px;height:60px}
+.integration-tile img[src$="calendly.svg"]{width:52px;height:52px}
+.integration-tile span{display:none}
+.logo-motion-control{margin-top:6px}
+@media(max-width:700px){
+  .setup-section .integrations-showcase,.integrations-showcase{padding:40px 0 16px}
+  .integrations-intro{margin-bottom:24px}
+  .integrations-intro h3{font-size:32px}
+  .integration-tile{width:60px;height:60px;border-radius:17px}
+  .integration-tile img,.integration-tile img[src$="calendly.svg"],.integration-tile img[src$="woocommerce.svg"]{width:30px;height:30px}
+  .integration-tile img[src$="woocommerce.svg"]{width:50px;height:50px}
+  .integration-tile img[src$="calendly.svg"]{width:44px;height:44px}
+  .logo-set{gap:10px;padding-right:10px}
+  .logo-ribbon+.logo-ribbon{margin-top:10px}
+}

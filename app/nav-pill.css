@@ -7,7 +7,7 @@
 .site-header.is-scrolled .header-inner{background:rgb(252 252 252 / 92%);border-color:rgb(12 52 116 / 18%);box-shadow:0 2px 4px #0c34740d,0 18px 44px #0c34741f}
 .site-header .brand{font-size:1.625rem}
 .site-header .brand-original{width:40px;height:24px}
-.site-header .brand-ai{font-size:1rem}
+
 
 .site-header .nav{gap:4px}
 .site-header .nav>a,.site-header .nav>button:not(.button){padding:9px 15px;border-radius:999px;transition:background-color 180ms var(--ease),color 180ms}

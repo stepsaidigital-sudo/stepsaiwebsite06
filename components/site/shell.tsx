@@ -9,7 +9,7 @@ export type Open = { onOpen: (label: string) => void };
 type Place = { onHome?: boolean };
 
 export function Brand({ onHome = true }: Place) {
-  return <a className="brand" href={onHome ? '#top' : '/'} aria-label="Steps AI home"><img className="brand-original" src="/brands/steps-original.png" alt="" /><span>steps<span className="brand-ai">ai</span></span></a>;
+  return <a className="brand" href={onHome ? '#top' : '/'} aria-label="Steps AI home"><img className="brand-original" src="/brands/steps-original.png" alt="" /><span>Steps AI</span></a>;
 }
 
 export function Action({ children = 'Book a demo', onOpen, className = '' }: Open & { children?: string; className?: string }) {

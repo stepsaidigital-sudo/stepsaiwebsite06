@@ -11,6 +11,6 @@
     "final",
     "footer"
   ],
-  "marketingCopyMatchesPrevious": true,
+  "marketingCopyMatchesPrevious": false,
   "normalization": "Markdown heading/strong syntax and escaped heading periods only; words and punctuation preserved"
 }
