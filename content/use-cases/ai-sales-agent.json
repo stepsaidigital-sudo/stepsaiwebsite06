@@ -1,0 +1,133 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-sales-agent",
+  "seo": {
+    "title": "AI sales agent for WhatsApp and Instagram | Steps AI",
+    "description": "Recommend products, check stock and share a checkout link in the chat. Your AI sales agent helps customers buy on WhatsApp, Instagram and your website."
+  },
+  "hero": {
+    "kicker": "AI sales agent",
+    "title": "Help customers choose and buy in the chat.",
+    "body": "Recommend products, check what is in stock and share a checkout link while the customer is still interested. Steps AI gives your store a sales agent that works from your own catalogue.",
+    "reassurance": "Recommendations from your catalogue. Only the discounts you set. Your team can step in.",
+    "channels": [
+      "WhatsApp",
+      "Instagram",
+      "Website"
+    ]
+  },
+  "walkthrough": {
+    "title": "One conversation, from question to checkout.",
+    "intro": "Here is how a typical sales conversation goes when a customer is not sure what to pick.",
+    "steps": [
+      {
+        "label": "Understand what they need",
+        "customer": "I need a gift for a friend who just moved. Budget is around 3,000.",
+        "agent": "Lovely. Do they prefer something practical or decorative?",
+        "note": "The agent asks a short question instead of sending a long list of products.",
+        "result": "Need understood in one question"
+      },
+      {
+        "label": "Recommend from your catalogue",
+        "customer": "Decorative, but something they will actually use.",
+        "agent": "The ceramic vase and the serving bowl set both fit your budget. Would you like to see them?",
+        "note": "Suggestions come only from the products in your connected store.",
+        "result": "Picked from your catalogue"
+      },
+      {
+        "label": "Check stock before suggesting",
+        "customer": "Is the vase available in cream?",
+        "agent": "Yes, the cream vase is in stock. Shall I add it to your cart?",
+        "note": "The agent checks stock in Shopify or WooCommerce, so it does not recommend something you cannot ship.",
+        "result": "Stock checked in your store"
+      },
+      {
+        "label": "Share a checkout link",
+        "customer": "Yes please.",
+        "agent": "Done. Here is your checkout link whenever you are ready.",
+        "note": "Customers pay on your own checkout page. Steps AI does not take payments in the chat.",
+        "result": "Checkout link sent in the chat"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your sales agent can do.",
+    "intro": "Everything it needs to turn a question into an order, and nothing you have not approved.",
+    "items": [
+      {
+        "title": "Recommend from your catalogue",
+        "body": "Your agent suggests products from your connected store based on what the customer tells it, such as budget, use or style."
+      },
+      {
+        "title": "Check stock in your store",
+        "body": "With Shopify or WooCommerce connected, the agent checks availability before it suggests a product."
+      },
+      {
+        "title": "Add to cart and share checkout",
+        "body": "On WhatsApp and Instagram, the agent can add items to a cart and send a checkout link. Payment happens on your checkout page."
+      },
+      {
+        "title": "Save lead details",
+        "body": "When a customer is not ready to buy, the agent saves their details to your Steps AI CRM, or to HubSpot if you use it."
+      },
+      {
+        "title": "Offer only your discounts",
+        "body": "The agent only mentions discounts you have set up. It will not invent an offer to close a sale."
+      },
+      {
+        "title": "Hand over to your team",
+        "body": "For a large order or a tricky question, the conversation moves to your shared inbox with the full history."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with the tools you use.",
+    "intro": "Connect your store and CRM so your agent works from real products and real stock.",
+    "names": [
+      "Shopify",
+      "WooCommerce",
+      "HubSpot",
+      "Google Drive",
+      "Notion"
+    ]
+  },
+  "quote": {
+    "excerpt": "StepsAI is good at the questions that don’t fit neatly into filters. People will say what they need, their budget, maybe what they’ve bought before, and StepsAI can point them to a few products that actually make sense.",
+    "attribution": "Anika Rao | Head of Digital | Mysa Living"
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Steps AI does not take payments. Customers complete their order on your checkout page.",
+      "Stock checks and checkout links need Shopify or WooCommerce connected.",
+      "Cart and checkout links work in WhatsApp and Instagram conversations."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI sales agent.",
+    "items": [
+      {
+        "q": "Will the agent recommend products I do not sell?",
+        "a": "No. Recommendations come from the products in your connected store, and the agent checks stock before suggesting one."
+      },
+      {
+        "q": "Can customers pay in the chat?",
+        "a": "Not inside the chat. The agent shares a checkout link, and customers pay on your own checkout page."
+      },
+      {
+        "q": "Can it offer discounts?",
+        "a": "Only the discounts you set up. It will not create an offer of its own."
+      },
+      {
+        "q": "What happens to customers who do not buy straight away?",
+        "a": "The agent can save their details to your Steps AI CRM or to HubSpot, so your team can follow up later."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your sales agent work with your own catalogue.",
+    "body": "Book a demo and we will walk through a sales conversation using products from your store."
+  }
+}

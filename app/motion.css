@@ -1,0 +1,9 @@
+/* Hero headline: words rise out of a soft blur one after another, then the yellow mark sweeps under "support." */
+.kinetic-title .kw{display:inline-block;opacity:0;transform:translateY(.38em);filter:blur(10px);animation:kw-in 900ms var(--ease) forwards;animation-delay:calc(var(--i) * 75ms + 120ms)}
+@keyframes kw-in{to{opacity:1;transform:none;filter:blur(0)}}
+.kinetic-title .highlight:after{transform-origin:left center;animation:hl-sweep 650ms var(--ease) both;animation-delay:calc(var(--i) * 75ms + 620ms)}
+@keyframes hl-sweep{from{transform:rotate(-1.5deg) scaleX(0)}to{transform:rotate(-1.5deg) scaleX(1)}}
+@media(prefers-reduced-motion:reduce){
+  .kinetic-title .kw{opacity:1;transform:none;filter:none;animation:none}
+  .kinetic-title .highlight:after{animation:none}
+}

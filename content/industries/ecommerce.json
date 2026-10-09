@@ -1,0 +1,135 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "ecommerce",
+  "card": "ecommerce",
+  "seo": {
+    "title": "AI agent for ecommerce stores | Steps AI",
+    "description": "Answer product, stock and order questions on WhatsApp, Instagram and your website. Recover carts and confirm cash on delivery orders with your AI agent."
+  },
+  "hero": {
+    "kicker": "Ecommerce",
+    "title": "Help shoppers choose, buy and track their orders.",
+    "body": "Answer product, size and stock questions, follow up abandoned carts and tell customers where their order is. Steps AI connects your store, your delivery tools and your customer messages.",
+    "reassurance": "Answers from your catalogue. Order updates from your delivery tools. Your team can step in.",
+    "channels": [
+      "WhatsApp",
+      "Instagram",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "The questions your customers ask every day.",
+    "intro": "Most of them have an answer in your store already. Your agent finds it and replies straight away.",
+    "items": [
+      {
+        "text": "Do you have this in a medium?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "Is the cream one back in stock?",
+        "channel": "Instagram"
+      },
+      {
+        "text": "Where is my order?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "Can I pay cash on delivery?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "How do I return something?",
+        "channel": "Website"
+      },
+      {
+        "text": "PRICE",
+        "channel": "Instagram"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles for your store.",
+    "intro": "From the first question to the return, the same agent keeps the conversation going.",
+    "items": [
+      {
+        "title": "Answer product, size and stock questions",
+        "body": "Your agent replies from your catalogue and checks stock in Shopify or WooCommerce before it suggests a product."
+      },
+      {
+        "title": "Tell customers where their order is",
+        "body": "With your store and a supported delivery tool connected, the agent shares the latest order status in the chat."
+      },
+      {
+        "title": "Recover carts and confirm COD orders",
+        "body": "For Shopify stores, send a WhatsApp reminder about an abandoned cart, and ask customers to confirm cash on delivery orders before you ship."
+      },
+      {
+        "title": "Turn Instagram comments into DMs",
+        "body": "When someone comments a word like PRICE or LINK on your post, your agent replies in their direct messages."
+      },
+      {
+        "title": "Answer return questions from your policy",
+        "body": "Add your returns and exchange pages, and your agent explains the steps using your own policy."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your store and delivery partners.",
+    "intro": "Connect the tools you already use so answers come from real products, stock and orders.",
+    "names": [
+      "Shopify",
+      "WooCommerce",
+      "Shiprocket",
+      "Delhivery",
+      "DTDC",
+      "iThink Logistics",
+      "WareIQ",
+      "Klaviyo"
+    ]
+  },
+  "quotes": [
+    {
+      "excerpt": "The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be.",
+      "attribution": "Maya Patel | Head of E-commerce | North & Pine"
+    },
+    {
+      "excerpt": "Size, stock, shipping, and returns were probably half of our daily messages. We had saved replies for most of them because the team was answering the same questions all day. StepsAI handles most of those conversations now, and support has a lot more time for the customers who actually need help.",
+      "attribution": "Arjun Mehta | E-commerce Manager | Nivara"
+    }
+  ],
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Abandoned cart reminders and COD confirmation are available for Shopify stores.",
+      "Order updates need your store and one of the supported delivery tools connected.",
+      "Steps AI does not take payments. Customers check out on your own store."
+    ]
+  },
+  "faq": {
+    "title": "Questions from ecommerce teams.",
+    "items": [
+      {
+        "q": "Which store platforms does Steps AI work with?",
+        "a": "Shopify and WooCommerce. Your agent uses them to answer product and stock questions and to share checkout links."
+      },
+      {
+        "q": "Which delivery tools are supported for order updates?",
+        "a": "Shiprocket, Delhivery, DTDC, iThink Logistics and WareIQ."
+      },
+      {
+        "q": "Can my agent handle returns?",
+        "a": "It can answer return and exchange questions using your policy pages, and hand the conversation to your team when a person needs to step in."
+      },
+      {
+        "q": "Does it work during sales and launches?",
+        "a": "Yes. Your agent answers each message as it arrives, so customers are not left waiting when message volumes rise."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your agent answer questions from your own store.",
+    "body": "Book a demo and we will show you product, order and return conversations built around your catalogue."
+  }
+}

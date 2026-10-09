@@ -7,6 +7,8 @@
   },
   "scripts": {
     "check:copy": "node scripts/extract-copy.mjs --check",
+    "lint:copy": "node scripts/lint-draft-copy.mjs",
+    "export:copy": "node scripts/export-draft-copy.mjs",
     "install:ci": "node scripts/install-ci.mjs",
     "dev": "node scripts/run-framework.mjs dev",
     "build": "node scripts/run-framework.mjs build",

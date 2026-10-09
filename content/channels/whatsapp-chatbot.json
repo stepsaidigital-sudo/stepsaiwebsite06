@@ -1,0 +1,135 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "channel",
+  "slug": "whatsapp-chatbot",
+  "channel": "WhatsApp",
+  "seo": {
+    "title": "WhatsApp chatbot for business | Steps AI",
+    "description": "Answer customer questions, share products and send order updates on WhatsApp. Your AI agent replies from your business information and hands over to your team when needed."
+  },
+  "hero": {
+    "kicker": "WhatsApp chatbot",
+    "title": "Answer customers on WhatsApp, day and night.",
+    "body": "Reply to questions, share products and send order updates where your customers already message you. Steps AI connects your WhatsApp Business number to an AI agent that knows your business.",
+    "reassurance": "Official WhatsApp Business API. Answers from your information. Your team can step in.",
+    "channels": [
+      "WhatsApp"
+    ]
+  },
+  "jobs": {
+    "title": "What your agent does on WhatsApp.",
+    "intro": "The same agent can answer a question, help someone choose and keep them updated after they buy.",
+    "items": [
+      {
+        "title": "Answer questions from your information",
+        "body": "Your agent replies using your website, documents and FAQs, so customers get an answer without waiting for opening hours."
+      },
+      {
+        "title": "Share products and a checkout link",
+        "body": "Send product cards from your catalogue, add items to a cart and share a checkout link in the chat."
+      },
+      {
+        "title": "Send order updates",
+        "body": "With Shopify and a supported delivery tool connected, your agent can tell customers where their order is."
+      },
+      {
+        "title": "Hand over to your team",
+        "body": "When a customer needs a person, the conversation moves to your shared inbox with everything said so far."
+      }
+    ]
+  },
+  "triggers": {
+    "title": "Start more conversations on WhatsApp.",
+    "intro": "Give customers an easy way in, then let your agent take it from there.",
+    "items": [
+      {
+        "title": "Reply to missed calls on WhatsApp",
+        "body": "When you miss a call, send the caller a WhatsApp message so the conversation can continue in the chat."
+      },
+      {
+        "title": "Offer starter questions",
+        "body": "Show a few common questions when someone opens the chat, such as delivery times or opening hours, so they can start with one tap."
+      },
+      {
+        "title": "Follow up click-to-WhatsApp ads",
+        "body": "When someone taps a click-to-WhatsApp ad, your agent picks up the conversation and guides them through the next steps."
+      },
+      {
+        "title": "Continue from a broadcast",
+        "body": "Replies to your WhatsApp campaigns go to your agent, so every interested customer gets a timely answer."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Get set up in three steps.",
+    "intro": "No code is needed. You can test your agent before customers see it.",
+    "items": [
+      {
+        "title": "Connect through Meta",
+        "body": "Connect your WhatsApp Business number using the official API. The same Meta connection also covers Instagram and Messenger."
+      },
+      {
+        "title": "Add your business information",
+        "body": "Point your agent at your website pages, documents and FAQs, and connect tools such as Shopify or a delivery partner."
+      },
+      {
+        "title": "Test it, then switch it on",
+        "body": "Try a few questions yourself, adjust the answers, and turn the agent on when you are happy with it."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "How many conversations you can start each day follows WhatsApp's messaging tiers for your number.",
+      "Messages that start a conversation use templates, and Meta must approve each template first.",
+      "Order updates need Shopify and one of the supported delivery tools: Shiprocket, Delhivery, DTDC, iThink Logistics or WareIQ."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the WhatsApp chatbot.",
+    "items": [
+      {
+        "q": "Do I need the WhatsApp Business API?",
+        "a": "Yes. Steps AI connects to your WhatsApp Business number through the official API, which you set up through Meta during onboarding."
+      },
+      {
+        "q": "What happens when the agent cannot answer?",
+        "a": "It hands the conversation to your team. The customer stays in the same chat, and your team sees the full conversation in the shared inbox."
+      },
+      {
+        "q": "Can customers pay inside WhatsApp?",
+        "a": "Your agent shares a checkout link from your store. Customers complete payment on your checkout page."
+      },
+      {
+        "q": "Does it work with Instagram and Messenger too?",
+        "a": "Yes. One Meta connection covers WhatsApp, Instagram and Messenger, and the same agent can answer on all three."
+      }
+    ]
+  },
+  "related": {
+    "title": "Other channels.",
+    "items": [
+      {
+        "label": "Instagram chatbot",
+        "href": "/channels/instagram-chatbot/",
+        "body": "Reply to direct messages and turn comments into conversations."
+      },
+      {
+        "label": "Messenger chatbot",
+        "href": "/channels/messenger-chatbot/",
+        "body": "Answer customers who message your Facebook page."
+      },
+      {
+        "label": "Website chatbot",
+        "href": "/channels/website-chatbot/",
+        "body": "Welcome visitors on your website and help them take the next step."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your agent answer on WhatsApp.",
+    "body": "Book a demo and we will show you a WhatsApp conversation built around your own products and questions."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Page not found | Steps AI",
+    "description": "The page you are looking for does not exist or has moved."
+  },
+  "hero": {
+    "kicker": "Page not found",
+    "title": "We could not find that page.",
+    "body": "The link may be out of date, or the page may have moved. Head back to the homepage, or explore what Steps AI can do for your business."
+  },
+  "sections": [
+    {
+      "title": "Popular pages.",
+      "paragraphs": [
+        "These are a good place to start."
+      ],
+      "items": [
+        {
+          "title": "WhatsApp broadcast",
+          "body": "Send personalised WhatsApp campaigns your agent can follow up.",
+          "href": "/features/whatsapp-broadcast/"
+        },
+        {
+          "title": "Industries",
+          "body": "See how an AI agent fits the way your business works.",
+          "href": "/industries/"
+        },
+        {
+          "title": "Pricing",
+          "body": "Start free, then choose the plan that fits.",
+          "href": "/pricing/"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Still looking for something?",
+    "body": "Book a demo and we will answer your questions directly."
+  }
+}

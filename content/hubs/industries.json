@@ -1,0 +1,63 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "hub",
+  "seo": {
+    "title": "Industries | Steps AI",
+    "description": "See how businesses in ecommerce, healthcare, education, real estate and more use an AI agent to answer customers and take the next step."
+  },
+  "hero": {
+    "kicker": "Industries",
+    "title": "An AI agent that fits the way your business works.",
+    "body": "Every industry gets different questions. Pick yours to see what your agent can answer, collect and arrange for your team.",
+    "reassurance": "Answers from your information. Built around your customers. Your team stays in control."
+  },
+  "cards": [
+    {
+      "label": "Ecommerce",
+      "href": "/industries/ecommerce/",
+      "body": "Recommend products, help with checkout and answer order questions.",
+      "built": true
+    },
+    {
+      "label": "Healthcare",
+      "href": "/industries/healthcare/",
+      "body": "Share clinic information, answer booking questions and collect appointment details.",
+      "built": false
+    },
+    {
+      "label": "Education",
+      "href": "/industries/education/",
+      "body": "Share course information, capture enquiries and book counselling.",
+      "built": false
+    },
+    {
+      "label": "Real estate",
+      "href": "/industries/real-estate/",
+      "body": "Ask about requirements, answer property questions and arrange a visit.",
+      "built": false
+    },
+    {
+      "label": "Travel and hospitality",
+      "href": "/industries/travel-and-hospitality/",
+      "body": "Answer questions about rooms, packages and policies. Collect travel enquiries and arrange a call with your team.",
+      "built": false
+    },
+    {
+      "label": "SaaS",
+      "href": "/industries/saas/",
+      "body": "Answer product questions, collect requirements and book a demo.",
+      "built": false
+    },
+    {
+      "label": "Financial services",
+      "href": "/industries/financial-services/",
+      "body": "Explain application requirements, collect enquiries and arrange a call with your team.",
+      "built": false
+    }
+  ],
+  "cta": {
+    "title": "Not sure which fits your business?",
+    "body": "Book a demo and we will show you how an AI agent would work with your customers and your tools."
+  }
+}

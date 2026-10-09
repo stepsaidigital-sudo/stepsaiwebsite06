@@ -1,0 +1,258 @@
+/* Subpage templates. Every class here is prefixed sp- so nothing collides with
+   the homepage layers loaded before it. Base rules first, breakpoints after,
+   widest to narrowest. */
+
+.sp-main{overflow-x:clip}
+.sp-section{padding:96px 0}
+.sp-section+.sp-section{padding-top:24px}
+.sp-intro{margin-bottom:44px}
+
+/* Headings use the homepage's Newsreader serif (see typography.css). */
+.sp-hero-copy h1,.sp-faq h2,.sp-good h2,.sp-prose h2,.sp-theatre .channel-explanation h3{font-family:'Newsreader',Georgia,serif;font-weight:500;font-optical-sizing:auto;letter-spacing:-.035em;line-height:1.08}
+
+/* Hero: the homepage's gradient stage, laid out as copy plus mockup. */
+.sp-hero{background:linear-gradient(140deg,#fcfcfc 0%,#c4ecfc 62%,#2c9cfa80 135%);border-bottom:1px solid var(--line);padding:72px 0 88px;position:relative;overflow:hidden}
+.sp-hero::after{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-180px;border-radius:50%;background:radial-gradient(circle,#f8b40326 0%,transparent 68%);pointer-events:none}
+.sp-main>.sp-hero:first-child{margin-top:-78px;padding-top:150px}
+.sp-hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;z-index:1}
+.sp-hero-inner:not(:has(.sp-hero-visual)){grid-template-columns:minmax(0,820px)}
+.sp-hero-copy .eyebrow{justify-content:flex-start}
+.sp-hero-copy h1{font-size:clamp(40px,4.4vw,62px)}
+.sp-hero-copy .hero-description{margin:24px 0 22px;max-width:600px}
+.sp-hero-copy .channels{justify-content:flex-start;flex-wrap:wrap;margin:0 0 26px}
+.sp-hero-copy .reassurance{margin:16px 0 0}
+.sp-hero-visual{display:flex;justify-content:center;min-width:0}
+.sp-hero-visual>*{width:100%;max-width:440px}
+
+/* Numbered steps, alternating copy and mockup when visuals are given. */
+.sp-steps{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.sp-step{display:grid;gap:56px;align-items:center;padding:34px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.sp-steps.has-visuals .sp-step{grid-template-columns:1fr 1fr}
+.sp-steps.has-visuals .sp-step:nth-child(even) .sp-step-copy{order:2}
+.sp-steps:not(.has-visuals){grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.sp-step-number{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--soft);font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:.875rem;margin-bottom:20px}
+.sp-step h3{font-size:1.5rem;margin-bottom:12px}
+.sp-step-visual{min-width:0;display:flex;justify-content:center}
+.sp-step-visual>*{width:100%;max-width:400px}
+
+/* Expandable feature list. */
+.sp-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.sp-feature{border:1px solid var(--line);border-radius:14px;background:#fff;transition:box-shadow 200ms var(--ease),border-color 200ms}
+.sp-feature:hover,.sp-feature[open]{border-color:#0c347440;box-shadow:0 10px 26px #0c347410}
+.sp-feature summary{display:flex;align-items:center;gap:12px;padding:20px 22px;cursor:pointer;list-style:none;font-weight:600;line-height:1.4}
+.sp-feature summary::-webkit-details-marker{display:none}
+.sp-feature summary>svg:first-child{color:var(--blue)}
+.sp-feature summary span{flex:1}
+.sp-feature-toggle{transition:transform 200ms var(--ease)}
+.sp-feature[open] .sp-feature-toggle{transform:rotate(45deg)}
+.sp-feature p{padding:0 22px 22px 52px;font-size:.9375rem}
+
+/* Good to know: the honest limit every page carries. */
+.sp-good{display:flex;gap:22px;padding:32px 34px;border-radius:18px;background:#f8b4031f;border:1px solid #f8b40366}
+.sp-good-icon{width:44px;height:44px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;flex-shrink:0}
+.sp-good h2{font-size:1.5rem;margin:6px 0 14px}
+.sp-good ul{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px}
+
+/* Customer quotes inside a navy card, like the homepage stories. */
+.sp-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.sp-quote .quote{height:100%;margin:0;padding:34px;border-radius:18px;background:var(--navy);color:var(--paper)}
+.sp-quote blockquote{margin:0;font-family:Manrope,Arial,sans-serif;font-size:1.25rem;line-height:1.5;letter-spacing:-.02em}
+.sp-quote figcaption{margin-top:20px;font-size:.875rem;color:#fcfcfcb8}
+.sp-quote details{margin-top:16px;font-size:.875rem}
+.sp-quote summary{cursor:pointer;color:var(--yellow)}
+.sp-quote details blockquote{font-size:.9375rem;margin-top:10px;color:#fcfcfcd9}
+
+/* FAQ reuses the homepage list styles. */
+.sp-faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.sp-faq h2{font-size:2.375rem}
+
+/* Related and overview cards. */
+.sp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.sp-card{position:relative;display:block;text-align:left;padding:28px 28px 56px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:transform 200ms var(--ease),box-shadow 200ms,border-color 200ms}
+.sp-card:hover{transform:translateY(-3px);border-color:#0c347440;box-shadow:0 14px 30px #0c347414}
+.sp-card h3{font-size:1.25rem;margin-bottom:10px}
+.sp-card p{font-size:.9375rem}
+.sp-card-arrow{position:absolute;left:28px;bottom:22px;width:30px;height:30px;border-radius:50%;background:var(--soft);display:grid;place-items:center;transition:background 200ms}
+.sp-card:hover .sp-card-arrow{background:var(--yellow)}
+
+/* Integration logos. */
+.sp-logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.sp-logos li{display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.9375rem;font-weight:500}
+.sp-logos img{width:28px;height:28px;object-fit:contain}
+.sp-logo-initial{width:28px;height:28px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-family:Manrope,Arial,sans-serif;font-weight:700;font-size:.8125rem}
+
+/* Two-column band: intro on one side, content on the other. */
+.sp-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.sp-split .sp-intro{margin-bottom:0;position:sticky;top:110px}
+
+/* Question chips for industry pages. */
+.sp-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.sp-chips li{display:flex;align-items:center;gap:10px;padding:12px 18px 12px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px #0c347408}
+.sp-chips .channel-logo{width:20px;height:20px}
+
+/* Mockups. */
+.sp-chat .native-chat-body{min-height:260px}
+.sp-chat .native-message{font-size:13px}
+.sp-broadcast{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px #0c347420;overflow:hidden;text-align:left}
+.sp-broadcast-body{padding:16px;display:grid;gap:10px}
+.sp-broadcast-row{display:grid;grid-template-columns:20px 1fr auto;gap:10px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:.8125rem}
+.sp-broadcast-row span{color:var(--muted)}
+.sp-broadcast-row strong{font-weight:600;text-align:right}
+.sp-broadcast-preview{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:10px;background:#efeae2}
+.sp-broadcast-preview p{margin:0;padding:9px 11px;border-radius:0 8px 8px 8px;background:#fff;color:#111b21;font-size:.8125rem;line-height:1.5}
+.sp-broadcast-preview .channel-logo{width:22px;height:22px}
+.sp-broadcast-report{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:4px}
+.sp-broadcast-report span{display:block;font-size:.6875rem;color:var(--muted);margin-bottom:6px}
+.sp-broadcast-report i{display:block;height:6px;border-radius:6px;background:var(--soft);position:relative;overflow:hidden}
+.sp-broadcast-report i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--blue);border-radius:6px;transform-origin:left;transform:scaleX(0);transition:transform 1200ms var(--ease) 1100ms}
+.sp-in .sp-broadcast-report i::after{transform:scaleX(1)}
+
+/* Pricing plans. */
+.sp-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;align-items:stretch}
+.sp-plan{display:flex;flex-direction:column;padding:28px 24px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.sp-plan.featured{background:var(--navy);color:var(--paper);border-color:var(--navy);box-shadow:0 24px 50px #0c347430}
+.sp-plan.featured p,.sp-plan.featured li{color:#fcfcfcd0}
+.sp-plan h3{font-size:1.375rem}
+.sp-plan-for{font-size:.875rem;margin-top:6px;min-height:44px}
+.sp-plan-price{margin:20px 0;padding:16px 0;border-block:1px solid var(--line)}
+.sp-plan.featured .sp-plan-price{border-color:#fcfcfc30}
+.sp-plan-price strong{display:block;font-family:Manrope,Arial,sans-serif;font-size:1.25rem;font-weight:600}
+.sp-plan-price span{font-size:.8125rem;color:var(--muted)}
+.sp-plan.featured .sp-plan-price span{color:#fcfcfcb0}
+.sp-plan ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;flex:1;align-content:start}
+.sp-plan li{display:flex;gap:9px;font-size:.875rem;line-height:1.5;color:var(--muted)}
+.sp-plan li svg{color:var(--blue);margin-top:3px}
+.sp-plan.featured li svg{color:var(--yellow)}
+.sp-plan .button{width:100%}
+
+/* Simple content pages. */
+.sp-prose{max-width:760px}
+.sp-prose+.sp-prose{margin-top:56px}
+.sp-prose h2{font-size:2rem;margin-bottom:18px}
+.sp-prose p{font-size:1.0625rem;margin-bottom:14px}
+.sp-prose .sp-cards{margin-top:24px}
+
+/* Motion: fade up on first view; chat lines and mockup rows stagger in. */
+.sp-reveal{opacity:0;transform:translateY(18px);transition:opacity 700ms var(--ease),transform 700ms var(--ease)}
+.sp-reveal.sp-in{opacity:1;transform:none}
+.sp-reveal .sp-line{opacity:0;transform:translateY(8px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
+.sp-reveal.sp-in .sp-line{opacity:1;transform:none}
+
+@media(max-width:1150px){
+  .sp-hero-inner{gap:40px}
+  .sp-step{gap:36px;padding:28px}
+  .sp-faq{gap:48px}
+}
+@media(max-width:900px){
+  .sp-hero-inner{grid-template-columns:1fr}
+  .sp-hero-visual>*{max-width:480px}
+  .sp-split{grid-template-columns:1fr;gap:32px}
+  .sp-split .sp-intro{position:static}
+}
+@media(max-width:700px){
+  .sp-section{padding:64px 0}
+  .sp-section+.sp-section{padding-top:16px}
+  .sp-hero{padding:44px 0 56px}
+  .sp-main>.sp-hero:first-child{margin-top:-68px;padding-top:112px}
+  .sp-hero-copy h1{font-size:clamp(34px,9vw,44px)}
+  .sp-hero-copy .channels{max-width:none}
+  .sp-steps.has-visuals .sp-step{grid-template-columns:1fr}
+  .sp-steps.has-visuals .sp-step:nth-child(even) .sp-step-copy{order:0}
+  .sp-step{padding:22px;gap:24px}
+  .sp-step h3{font-size:1.25rem}
+  .sp-features{grid-template-columns:1fr}
+  .sp-feature p{padding-left:22px}
+  .sp-good{flex-direction:column;gap:14px;padding:24px}
+  .sp-quote .quote{padding:26px}
+  .sp-quote blockquote{font-size:1.0625rem}
+  .sp-quotes{grid-template-columns:1fr}
+  .sp-faq{grid-template-columns:1fr;gap:20px}
+  .sp-faq h2{font-size:1.9375rem}
+  .sp-cards{grid-template-columns:1fr}
+  .sp-prose h2{font-size:1.625rem}
+  .sp-prose p{font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-reveal,.sp-reveal .sp-line{opacity:1;transform:none;transition:none}
+  .sp-broadcast-report i::after{transition:none}
+}
+
+
+/* How it works theatre: homepage channel-theatre classes, plus the pieces a
+   step needs (h3 title, sender-aligned chat slots, product window rows). */
+.sp-theatre{margin-top:0}
+/* Reserve roughly the pinned scroll length before the script measures it, so
+   the page below does not jump after load. Mirrors measure() in StepTheatre. */
+@media(min-width:760px) and (min-height:760px) and (prefers-reduced-motion:no-preference){
+  .sp-theatre{min-height:calc(640px + var(--steps, 4) * max(420px, 70vh))}
+  .sp-theatre.channel-pinned{min-height:0}
+}
+.sp-theatre .channel-explanation h3{font-size:clamp(28px,3.1vw,43px);max-width:390px;margin-bottom:18px}
+.sp-theatre .channel-icon-tabs button>svg{width:20px;height:20px;color:#2b4f75}
+.sp-theatre .live-message-slot.sp-slot-agent{justify-content:flex-end}
+.sp-theatre .live-message-slot.sp-slot-customer{justify-content:flex-start}
+.sp-theatre .scene-context .context-orb{width:56px;height:56px}
+.sp-theatre .scene-context .context-orb .channel-logo{width:26px;height:26px}
+.sp-scene-window .native-chat-header{padding:11px 13px}
+.sp-scene-window .native-chat-header>svg,.sp-scene-window .native-chat-header>.channel-logo{color:#2b4f75}
+.sp-scene-body{display:grid;gap:8px;padding:13px;background:#fbfcfd}
+.sp-scene-row{display:grid;grid-template-columns:18px 1fr auto;gap:9px;align-items:center;min-height:40px;padding:8px 11px;border:1px solid #e3e8ee;border-radius:11px;background:#fff;font-size:12px;color:#33475b;transition:opacity 200ms var(--ease),transform 300ms var(--ease),border-color 300ms,background-color 300ms}
+.sp-scene-row>svg{color:#5f7a92}
+.sp-scene-row strong{font-weight:600;color:var(--navy);display:flex}
+.sp-scene-row.is-picked{border-color:#7fc4f9;background:#eef8ff}
+.sp-scene-row.is-picked>svg,.sp-scene-row.is-picked strong svg{color:var(--blue)}
+.sp-template-bubble{justify-self:end;max-width:92%;padding:9px 11px;border-radius:8px 0 8px 8px;background:#d9fdd3;color:#111b21;font-size:12px;line-height:1.45;box-shadow:0 1px 1px #00000012;transition:opacity 200ms var(--ease),transform 300ms var(--ease)}
+.sp-template-bubble b{padding:0 3px;border-radius:4px;background:#fff6d1;transition:background-color 400ms}
+.sp-template-bubble b.is-filled{background:transparent;padding:0}
+@media(max-width:759px){
+  .sp-theatre .channel-explanation h3{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-scene-row,.sp-template-bubble{transition:none}
+}
+
+/* Industry hero: the homepage industry card art, open on its selected state. */
+.sp-industry-stage{position:relative;display:grid;place-items:center;min-height:440px;padding:40px 24px;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 20% 110%,#2c9cfa,transparent 70%),radial-gradient(ellipse at 100% 100%,#f8b40370,transparent 80%),linear-gradient(#fcfcfc,#c4ecfc);box-shadow:0 22px 32px -22px #0c347440}
+.sp-industry-stage .industry-arc{top:-40px}
+.sp-industry-stage .industry-arc::after{display:none}
+.sp-industry-stage .industry-demo{position:relative;z-index:1}
+
+/* Customer question chips drift gently, out of step with each other. */
+.sp-chips-float li{animation:sp-drift 6s ease-in-out infinite alternate}
+.sp-chips-float li:nth-child(even){animation-duration:7.5s}
+@keyframes sp-drift{from{transform:translateY(-3px)}to{transform:translateY(4px)}}
+@media(max-width:700px){
+  .sp-industry-stage{min-height:360px;padding:28px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-chips-float li{animation:none}
+}
+
+/* Pricing usage mockup: meters fill once the card is in view. */
+.sp-usage{margin-top:32px;max-width:440px}
+.sp-usage-meter span{display:block;font-size:.75rem;color:var(--muted);margin-bottom:6px}
+.sp-usage-meter i{display:block;height:8px;border-radius:8px;background:var(--soft);position:relative;overflow:hidden}
+.sp-usage-meter i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--blue);border-radius:8px;transform-origin:left;transform:scaleX(0);transition:transform 1200ms var(--ease) 700ms}
+.sp-in .sp-usage-meter i::after{transform:scaleX(1)}
+.sp-usage-models{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.sp-usage-models div{padding:10px;border:1px solid var(--line);border-radius:10px;font-size:.75rem;line-height:1.35}
+.sp-usage-models strong{display:block;font-weight:600}
+.sp-usage-models small{color:var(--muted)}
+.sp-usage-models .is-picked{border-color:#7fc4f9;background:#eef8ff}
+
+/* About: belief cards are not links, so no arrow space. The section with
+   cards spans the container; its text keeps the prose measure. */
+.sp-prose:has(.sp-belief-cards){max-width:none}
+.sp-prose:has(.sp-belief-cards)>p{max-width:760px}
+.sp-belief-cards{grid-template-columns:repeat(3,1fr)}
+.sp-belief-cards .sp-card{padding-bottom:28px}
+.sp-belief-cards .sp-step-number{margin-bottom:16px}
+@media(max-width:900px){
+  .sp-belief-cards{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .sp-usage-models{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .sp-usage-meter i::after{transition:none}
+}
