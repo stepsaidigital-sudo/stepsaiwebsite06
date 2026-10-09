@@ -44,7 +44,16 @@ export function HeroChannels(){
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
     const measure=()=>{
       step.current=Math.max(420,innerHeight*.7);
-      const fits=innerWidth>=760&&inner.offsetHeight+100<=innerHeight&&!reduced.matches;
+      // Decide pinning from the natural (unscaled) size, which pinning itself never changes.
+      // Measuring the pinned layout here made the hero flip pinned/unpinned in a loop (blinking).
+      const pres=inner.querySelector('.channel-presentation') as HTMLElement,tabs=inner.querySelector('.channel-icon-tabs') as HTMLElement;
+      const zoom=parseFloat(getComputedStyle(pres).zoom)||1;
+      const presNatural=pres.getBoundingClientRect().height/zoom;
+      const natural=tabs.offsetHeight+presNatural+60;
+      const fits=innerWidth>=760&&natural+100<=innerHeight&&!reduced.matches;
+      // Scale up into the room left on taller screens, never past what fits, never below 1.
+      const scale=fits&&innerWidth>=1000?Math.max(1,Math.min(1.4,(innerHeight-104-tabs.offsetHeight-125)/presNatural)):1;
+      outer.style.setProperty('--hero-z',scale.toFixed(3));
       setPinned(fits);
       outer.style.height=fits?`${inner.offsetHeight+step.current*channels.length}px`:'auto';
     };
