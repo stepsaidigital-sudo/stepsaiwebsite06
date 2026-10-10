@@ -1,0 +1,51 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-studies-hub",
+  "seo": {
+    "title": "Customer stories and case studies | Steps AI",
+    "description": "How ecommerce and SaaS teams use Steps AI as a sales, support, marketing, booking and lead capture agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies",
+    "title": "How businesses use Steps AI, in their own words.",
+    "body": "Ecommerce brands and SaaS teams share what changed after their AI agent started answering customers. Choose an agent to see the stories behind it.",
+    "reassurance": "Real customers. Their own words. Grouped by the job the agent does."
+  },
+  "agents": [
+    {
+      "slug": "ai-sales-agent",
+      "label": "AI sales agent",
+      "count": 2
+    },
+    {
+      "slug": "ai-support-agent",
+      "label": "AI support agent",
+      "count": 4
+    },
+    {
+      "slug": "ai-marketing-agent",
+      "label": "AI marketing agent",
+      "count": 1
+    },
+    {
+      "slug": "ai-receptionist",
+      "label": "AI receptionist",
+      "count": 0
+    },
+    {
+      "slug": "ai-booking-agent",
+      "label": "AI booking agent",
+      "count": 1
+    },
+    {
+      "slug": "ai-lead-capture-agent",
+      "label": "AI lead capture agent",
+      "count": 2
+    }
+  ],
+  "cta": {
+    "title": "Want a story like these for your business?",
+    "body": "Book a demo and we will show you the agent working with your own information."
+  }
+}

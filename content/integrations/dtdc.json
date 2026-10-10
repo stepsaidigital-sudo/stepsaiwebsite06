@@ -1,0 +1,122 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "dtdc",
+  "name": "DTDC",
+  "category": "Shipping",
+  "depth": "standard",
+  "seo": {
+    "title": "DTDC order tracking on WhatsApp and chat | Steps AI",
+    "description": "Connect DTDC to Steps AI so customers can check delivery status on WhatsApp, Instagram and your website without waiting for your team."
+  },
+  "hero": {
+    "kicker": "DTDC integration",
+    "title": "Let customers track DTDC deliveries in the chat.",
+    "body": "When a customer asks about a parcel, your agent checks DTDC and replies with the latest status.",
+    "reassurance": "Live shipment status. Every channel. Your team steps in when something goes wrong.",
+    "channels": [
+      "WhatsApp",
+      "Website",
+      "Instagram"
+    ]
+  },
+  "demo": {
+    "channel": "WhatsApp",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "When will my order 2087 arrive?"
+      },
+      {
+        "from": "agent",
+        "text": "It is with DTDC and out for delivery today."
+      }
+    ],
+    "lookup": {
+      "title": "DTDC · Shipment for order 2087",
+      "rows": [
+        [
+          "Status",
+          "Out for delivery"
+        ],
+        [
+          "Last update",
+          "Today, 9:40 AM"
+        ],
+        [
+          "Carrier",
+          "DTDC"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with DTDC connected.",
+    "intro": "Fewer \"where is my order\" messages for your team, and faster answers for customers.",
+    "items": [
+      {
+        "title": "Answer delivery questions instantly",
+        "body": "The agent checks the shipment in DTDC and replies with the latest status, any time of day."
+      },
+      {
+        "title": "Answer in the same chat",
+        "body": "Customers get the delivery update where they asked, so they do not have to search their email or call you."
+      },
+      {
+        "title": "Use the same answers on every channel",
+        "body": "Tracking works the same way on WhatsApp, Instagram, Messenger and your website."
+      },
+      {
+        "title": "Hand delivery problems to your team",
+        "body": "If a parcel is delayed or damaged, the agent can raise a ticket or pass the conversation to a person with the order details."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect DTDC in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect DTDC",
+        "body": "Open Resources, then Apps, and choose DTDC. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds DTDC to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Match orders to shipments",
+        "body": "Connect your store as well, so the agent can find the order first and then the shipment that belongs to it."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent shares the status that DTDC reports. It cannot change a delivery date or reroute a parcel.",
+      "Customers need an order number or the details your agent asks for, so it shares tracking only with the right person."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the DTDC integration.",
+    "items": [
+      {
+        "q": "Do I need a store connected as well as DTDC?",
+        "a": "Connecting Shopify or WooCommerce lets the agent match an order to its shipment. Ask us about your setup if you use a different store."
+      },
+      {
+        "q": "Which other carriers are supported?",
+        "a": "Steps AI connects with Shiprocket, Delhivery, DTDC, iThink Logistics and WareIQ."
+      },
+      {
+        "q": "What happens when the parcel has a problem?",
+        "a": "The agent can create a ticket or hand the conversation to your team, so a person follows it up."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with DTDC.",
+    "body": "Book a demo and we will walk through a real conversation using DTDC and your own information."
+  }
+}

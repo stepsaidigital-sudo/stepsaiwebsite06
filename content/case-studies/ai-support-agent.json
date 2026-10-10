@@ -1,0 +1,87 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-support-agent",
+  "agent": "AI support agent",
+  "agentPage": "/use-cases/ai-support-agent/",
+  "seo": {
+    "title": "AI support agent case studies | Steps AI",
+    "description": "See how North & Pine, Nivara, Casa Noma and Stacklane use Steps AI as an AI support agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies · AI support agent",
+    "title": "How support teams use an AI agent to clear repeat questions.",
+    "body": "Order status, delivery, sizing and help centre questions arrive all day. These teams let Steps AI answer them, so people can focus on the customers who need help."
+  },
+  "stories": [
+    {
+      "brand": "North & Pine",
+      "attribution": "Maya Patel | Head of E-commerce | North & Pine",
+      "excerpt": "The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be.",
+      "industry": "Ecommerce",
+      "tags": [
+        "Order status",
+        "Support queue"
+      ]
+    },
+    {
+      "brand": "Nivara",
+      "attribution": "Arjun Mehta | E-commerce Manager | Nivara",
+      "excerpt": "Size, stock, shipping, and returns were probably half of our daily messages. We had saved replies for most of them because the team was answering the same questions all day. StepsAI handles most of those conversations now, and support has a lot more time for the customers who actually need help.",
+      "industry": "Ecommerce",
+      "tags": [
+        "Size, stock, shipping, returns",
+        "Repeat questions"
+      ]
+    },
+    {
+      "brand": "Casa Noma",
+      "attribution": "Sofia Alvarez | Customer Operations Manager | Casa Noma",
+      "excerpt": "Monday mornings are noticeably quieter now. We used to open WhatsApp to a wall of delivery, stock, and sizing questions from the weekend, and someone would spend the first hour or two just working through them. Most of those get answered as they come in now. The team really only gets involved when a customer needs something more specific.",
+      "industry": "Ecommerce",
+      "tags": [
+        "WhatsApp",
+        "Delivery, stock and sizing"
+      ]
+    },
+    {
+      "brand": "Stacklane",
+      "attribution": "Jonathan Reed | VP, Customer Success | Stacklane",
+      "excerpt": "Our help center is pretty big, and customers weren’t finding half of what was already there. Now they just ask the question normally and get the relevant answer. Support still handles the harder stuff, but we get far fewer tickets asking for information that was already sitting in our docs.",
+      "industry": "SaaS",
+      "tags": [
+        "Help centre answers",
+        "Fewer tickets"
+      ]
+    }
+  ],
+  "capabilities": {
+    "title": "What the AI support agent does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Answer order and delivery questions",
+        "body": "The agent checks your store and shipping tools before it replies."
+      },
+      {
+        "title": "Answer from your help content",
+        "body": "Customers ask in their own words and get the relevant answer from your docs and FAQs."
+      },
+      {
+        "title": "Hand over the harder cases",
+        "body": "The agent raises a ticket or passes the conversation to your team with the history attached."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer."
+    ]
+  },
+  "cta": {
+    "title": "See the AI support agent work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}

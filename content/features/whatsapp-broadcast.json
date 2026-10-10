@@ -12,8 +12,32 @@
     "title": "Send WhatsApp campaigns your agent can follow up.",
     "body": "Choose an approved template, pick your audience and schedule the send. When customers reply, your AI agent answers and your team sees every conversation in one inbox.",
     "reassurance": "Approved WhatsApp templates. Cost shown before you send. Opt-outs respected.",
-    "channels": ["WhatsApp"]
+    "channels": [
+      "WhatsApp"
+    ],
+    "accent": [
+      "your",
+      "follow up."
+    ]
   },
+  "flow": [
+    {
+      "title": "Create",
+      "body": "Choose an approved template"
+    },
+    {
+      "title": "Audience",
+      "body": "Select or upload your contacts"
+    },
+    {
+      "title": "Schedule",
+      "body": "Send now or plan for later"
+    },
+    {
+      "title": "AI follow up",
+      "body": "Your agent handles replies and next steps"
+    }
+  ],
   "steps": {
     "title": "Plan, send and follow up in one place.",
     "intro": "A broadcast is not finished when it is delivered. Replies go straight to the agent you choose, so interested customers get an answer while they are still thinking about it.",
@@ -61,12 +85,20 @@
         "body": "See the estimated WhatsApp messaging cost for the audience you picked, then decide whether to go ahead."
       },
       {
-        "title": "Track delivered, read and clicked",
-        "body": "See how many messages were delivered and read, and how many people clicked a link, for each broadcast."
+        "title": "Track delivery and retry failures",
+        "body": "See how many messages were delivered, read or failed for each broadcast, and retry the recipients that can be sent again."
       },
       {
         "title": "Respect opt-outs automatically",
         "body": "Customers who opt out are left out of future broadcasts, so you do not need to clean the list by hand."
+      },
+      {
+        "title": "Use approved templates",
+        "body": "Pick from the WhatsApp templates Meta has approved for your number, so every send follows WhatsApp rules."
+      },
+      {
+        "title": "Let AI follow up on replies",
+        "body": "When someone replies, your AI agent answers from your business information and your team sees it in the shared inbox."
       }
     ]
   },
@@ -105,21 +137,25 @@
   },
   "related": {
     "title": "Works well with.",
+    "intro": "Connect your favourite tools to sync contacts, save conversations and take action.",
     "items": [
       {
-        "label": "Unified inbox",
-        "href": "/features/unified-inbox/",
-        "body": "See every reply to your campaign next to the rest of the customer's conversations."
+        "label": "Sync with your CRM",
+        "href": "/integrations/hubspot/",
+        "body": "Save new contacts from campaign replies to HubSpot.",
+        "logo": "hubspot"
       },
       {
-        "label": "Workflow builder",
+        "label": "Book meetings",
+        "href": "/integrations/google-calendar/",
+        "body": "Let your agent book calls and demos into your calendar.",
+        "logo": "google-calendar"
+      },
+      {
+        "label": "Send data to your tools",
         "href": "/features/workflow-builder/",
-        "body": "Decide what happens after someone replies, from a follow-up message to a handoff."
-      },
-      {
-        "label": "WhatsApp chatbot",
-        "href": "/channels/whatsapp-chatbot/",
-        "body": "Let your AI agent answer everyday WhatsApp questions, not only campaign replies."
+        "body": "Trigger actions in your existing tools with workflows.",
+        "logo": "webhook"
       }
     ]
   },

@@ -1,0 +1,109 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-booking-agent",
+  "hero": {
+    "kicker": "AI booking agent",
+    "title": "Book appointments in the chat, any time of day.",
+    "body": "Customers ask, your agent offers times from your calendar and confirms the booking. Clinics, tutors, salons and consultants get bookings without the back and forth.",
+    "reassurance": "Your own calendar. The details you need. One view of every booking.",
+    "channels": [
+      "WhatsApp",
+      "Website",
+      "Instagram"
+    ]
+  },
+  "seo": {
+    "title": "AI appointment booking agent | Steps AI",
+    "description": "Book appointments from WhatsApp, Instagram and your website into Google Calendar, Outlook Calendar, Calendly, Cal.com or Square Appointments."
+  },
+  "walkthrough": {
+    "title": "From a question to a confirmed booking.",
+    "intro": "A booking on WhatsApp.",
+    "steps": [
+      {
+        "label": "Answer the question",
+        "customer": "How long is a first consultation?",
+        "agent": "A first consultation is 45 minutes. Would you like to book one?",
+        "note": "The agent answers from your information first.",
+        "result": "Question answered"
+      },
+      {
+        "label": "Offer times",
+        "customer": "Yes, this week please.",
+        "agent": "Thursday has 11:00 or 3:30 free. Which suits you?",
+        "note": "Times come from your connected calendar.",
+        "result": "Times offered"
+      },
+      {
+        "label": "Confirm the booking",
+        "customer": "3:30, I am Priya.",
+        "agent": "You are booked for Thursday at 3:30, Priya. See you then.",
+        "note": "The appointment is added to your calendar.",
+        "result": "Booking confirmed"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your booking agent can do.",
+    "intro": "The skill and the calendar view work together.",
+    "items": [
+      {
+        "title": "Book into your calendar",
+        "body": "Google Calendar, Outlook Calendar, Calendly, Cal.com or Square Appointments."
+      },
+      {
+        "title": "Collect booking details",
+        "body": "Ask for name, email and other details you choose."
+      },
+      {
+        "title": "See every booking together",
+        "body": "The Calendar screen shows bookings from all connected calendars."
+      },
+      {
+        "title": "Answer before booking",
+        "body": "Prices, services and preparation questions get answered first."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your calendar.",
+    "intro": "Connect the calendar you already use.",
+    "names": [
+      "Google Calendar",
+      "Outlook Calendar",
+      "Calendly",
+      "Cal.com",
+      "Square Appointments"
+    ]
+  },
+  "quote": {
+    "excerpt": "We get a lot of questions from people who are interested but not ready to talk to sales yet. StepsAI handles that part really well. By the time someone books with us, they’ve usually already checked pricing, integrations, and whether we can support their use case.",
+    "attribution": "Kevin Morales | Sales Director | RelayDesk"
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Each booking skill uses one calendar provider.",
+      "Rescheduling and cancelling depend on what each calendar provider supports."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI booking agent.",
+    "items": [
+      {
+        "q": "Which calendars work?",
+        "a": "Google Calendar, Outlook Calendar, Calendly, Cal.com and Square Appointments."
+      },
+      {
+        "q": "Can customers book on Instagram?",
+        "a": "Yes. The booking skill works on every channel your agent uses."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the AI booking agent with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "outlook-calendar",
+  "name": "Outlook Calendar",
+  "category": "Calendars",
+  "depth": "standard",
+  "seo": {
+    "title": "Outlook Calendar booking chatbot for WhatsApp and your website | Steps AI",
+    "description": "Connect Outlook Calendar to Steps AI so your agent can book appointments in the chat on WhatsApp, Instagram, Messenger and your website."
+  },
+  "hero": {
+    "kicker": "Outlook Calendar integration",
+    "title": "Book appointments into Outlook Calendar from the chat.",
+    "body": "Your agent books customers into your Outlook Calendar from the chat, so your team sees new appointments where they already plan their day.",
+    "reassurance": "Bookings in your own calendar. The details you ask for. One view of every booking.",
+    "channels": [
+      "WhatsApp",
+      "Website",
+      "Instagram"
+    ]
+  },
+  "demo": {
+    "channel": "WhatsApp",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "Can I book a consultation this Thursday?"
+      },
+      {
+        "from": "agent",
+        "text": "Thursday has 11:00 or 3:30 free. Which suits you?"
+      },
+      {
+        "from": "customer",
+        "text": "3:30 please."
+      },
+      {
+        "from": "agent",
+        "text": "You are booked for Thursday at 3:30. A confirmation is on its way."
+      }
+    ],
+    "lookup": {
+      "title": "Outlook Calendar · New booking",
+      "rows": [
+        [
+          "When",
+          "Thursday, 3:30 PM"
+        ],
+        [
+          "Name",
+          "Priya S."
+        ],
+        [
+          "Email",
+          "Collected in chat"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Outlook Calendar connected.",
+    "intro": "Built for clinics, tutors, consultants and service businesses, where the agent is measured by the bookings it makes.",
+    "items": [
+      {
+        "title": "Book from any channel",
+        "body": "Customers book on WhatsApp, Instagram, Messenger or your website, and the appointment goes into Outlook Calendar."
+      },
+      {
+        "title": "Collect the details you need",
+        "body": "Choose which details to ask for before a booking, such as name, email, company or job title, and edit the wording."
+      },
+      {
+        "title": "Decide when the agent should book",
+        "body": "Describe in plain English when the booking skill should be used, and give examples of when it should not."
+      },
+      {
+        "title": "See every booking in one place",
+        "body": "The Calendar screen in Steps AI shows bookings from Google Calendar, Outlook Calendar, Calendly, Cal.com and Square Appointments together."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Outlook Calendar in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Outlook Calendar",
+        "body": "Open Resources, then Apps, and choose Outlook Calendar. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Outlook Calendar to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Add the booking skill to your agent",
+        "body": "In your agent's skills, switch on Book appointment, choose Outlook Calendar as the provider and pick the details to collect."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Each booking skill uses one calendar provider. You can connect several calendars and choose one per skill.",
+      "Booking works best when your calendar shows your real availability, so keep busy times blocked out."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Outlook Calendar integration.",
+    "items": [
+      {
+        "q": "Which calendars can I connect?",
+        "a": "Steps AI connects with Google Calendar, Outlook Calendar, Calendly, Cal.com and Square Appointments."
+      },
+      {
+        "q": "Can I use more than one calendar?",
+        "a": "Yes. Connect as many as you need. Each booking skill uses one of them, and the Calendar screen shows all of them together."
+      },
+      {
+        "q": "What details does the agent ask for?",
+        "a": "You choose. Name, email, company and job title can each be switched on or off, and you can edit how they are asked."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Outlook Calendar.",
+    "body": "Book a demo and we will walk through a real conversation using Outlook Calendar and your own information."
+  }
+}

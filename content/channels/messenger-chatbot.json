@@ -1,0 +1,122 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "channel",
+  "slug": "messenger-chatbot",
+  "channel": "Messenger",
+  "seo": {
+    "title": "Facebook Messenger AI chatbot | Steps AI",
+    "description": "Answer customers who message your Facebook page with an AI agent that knows your business and hands over to your team."
+  },
+  "hero": {
+    "kicker": "Messenger chatbot",
+    "title": "Answer every message to your Facebook page.",
+    "body": "Customers who message your Facebook page get an answer from your own information, any time of day. Your team sees every conversation in the shared inbox.",
+    "reassurance": "One Meta connection. The same agent as your other channels. Your team can step in.",
+    "channels": [
+      "Messenger"
+    ]
+  },
+  "jobs": {
+    "title": "What your agent does on Messenger.",
+    "intro": "The same answers and actions as on your website and WhatsApp.",
+    "items": [
+      {
+        "title": "Answer common questions",
+        "body": "Opening hours, prices, delivery and policies from your own information."
+      },
+      {
+        "title": "Help customers buy or book",
+        "body": "Recommend products, share a checkout link or book an appointment."
+      },
+      {
+        "title": "Capture leads",
+        "body": "Collect the details your team needs and save them to your CRM."
+      },
+      {
+        "title": "Hand over to your team",
+        "body": "Move the conversation to your shared inbox when a person is needed."
+      }
+    ]
+  },
+  "triggers": {
+    "title": "Why add Messenger.",
+    "intro": "Many customers still message the Facebook page first.",
+    "items": [
+      {
+        "title": "Cover your Facebook page",
+        "body": "Answer people who find you on Facebook without waiting for your team."
+      },
+      {
+        "title": "Keep one set of answers",
+        "body": "Edit your information once and every channel uses it."
+      },
+      {
+        "title": "See it all in one inbox",
+        "body": "Messenger conversations sit next to WhatsApp, Instagram and website chats."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Messenger once.",
+    "intro": "The same Meta connection covers WhatsApp and Instagram.",
+    "items": [
+      {
+        "title": "Connect through Meta",
+        "body": "Sign in to Meta and choose your Facebook page."
+      },
+      {
+        "title": "Choose the agent",
+        "body": "Pick which agent answers your page messages."
+      },
+      {
+        "title": "Test it, then go live",
+        "body": "Send a test message and check the answer before customers do."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "You need admin access to the Facebook page to connect it.",
+      "Messenger does not share state-level location for analytics."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Messenger chatbot.",
+    "items": [
+      {
+        "q": "Do I need a separate setup for Instagram and WhatsApp?",
+        "a": "No. One Meta connection covers all three."
+      },
+      {
+        "q": "Can I pause the agent on Messenger?",
+        "a": "Yes. A connected channel can be paused and resumed."
+      }
+    ]
+  },
+  "related": {
+    "title": "Other channels.",
+    "items": [
+      {
+        "label": "Website chatbot",
+        "href": "/channels/website-chatbot/",
+        "body": "Answer visitors on your website."
+      },
+      {
+        "label": "WhatsApp chatbot",
+        "href": "/channels/whatsapp-chatbot/",
+        "body": "Answer customers on WhatsApp."
+      },
+      {
+        "label": "Instagram chatbot",
+        "href": "/channels/instagram-chatbot/",
+        "body": "Reply to DMs and turn comments into conversations."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the Messenger chatbot with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

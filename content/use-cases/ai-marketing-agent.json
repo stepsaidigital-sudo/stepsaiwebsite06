@@ -1,0 +1,106 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-marketing-agent",
+  "hero": {
+    "kicker": "AI marketing agent",
+    "title": "Start conversations that turn into sales.",
+    "body": "Send WhatsApp campaigns, turn Instagram comments into DMs and follow up automatically. Every reply lands with your agent, so interest does not go cold.",
+    "reassurance": "Approved WhatsApp templates. Comment-to-DM. Replies answered by your agent.",
+    "channels": [
+      "WhatsApp",
+      "Instagram"
+    ]
+  },
+  "seo": {
+    "title": "AI marketing agent for WhatsApp and Instagram | Steps AI",
+    "description": "Send WhatsApp campaigns, turn Instagram comments into DMs and let your AI agent answer every reply."
+  },
+  "walkthrough": {
+    "title": "From a campaign to a conversation.",
+    "intro": "A new collection launch.",
+    "steps": [
+      {
+        "label": "Send the campaign",
+        "customer": "SIZE",
+        "agent": "Hi Priya, our new collection is in. Which size are you looking for?",
+        "note": "A WhatsApp campaign goes to customers with a tag such as returning customer.",
+        "result": "Campaign reply received"
+      },
+      {
+        "label": "Answer the reply",
+        "customer": "Medium in the linen shirt?",
+        "agent": "Medium is in stock. Here is the link to check out.",
+        "note": "Replies go to your agent instead of a dead end.",
+        "result": "Reply answered"
+      },
+      {
+        "label": "Catch comments too",
+        "customer": "PRICE",
+        "agent": "Thanks for your comment. I have sent the details to your DMs.",
+        "note": "Instagram comments with a keyword start a DM.",
+        "result": "Comment turned into a DM"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your marketing agent can do.",
+    "intro": "Campaigns and conversations in one place.",
+    "items": [
+      {
+        "title": "Send WhatsApp campaigns",
+        "body": "Approved templates, audiences from lists, CSV, Shopify or tags, and cost shown before you send."
+      },
+      {
+        "title": "Turn comments into DMs",
+        "body": "Keyword triggers on posts and Reels start a direct message."
+      },
+      {
+        "title": "Follow up automatically",
+        "body": "Workflows recover carts, confirm COD orders and win back customers."
+      },
+      {
+        "title": "See revenue from campaigns",
+        "body": "Shopify paid orders are attributed to WhatsApp campaigns."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your store and marketing tools.",
+    "intro": "Connect the tools your campaigns depend on.",
+    "names": [
+      "Shopify",
+      "WooCommerce",
+      "Klaviyo"
+    ]
+  },
+  "quote": {
+    "excerpt": "Our Instagram inbox used to be a mess during launches. People asking if something was still in stock, when it would ship, whether we had another size. Now most of those questions get answered without someone from our team sitting in DMs all day.",
+    "attribution": "Nina Kapoor | E-commerce Lead | Sunday Form"
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "A single WhatsApp campaign can currently go to up to 1,000 people.",
+      "Instagram broadcast campaigns are not available."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI marketing agent.",
+    "items": [
+      {
+        "q": "What happens when someone replies to a campaign?",
+        "a": "The reply goes to the agent you chose, which answers from your information. Your team sees it in the shared inbox."
+      },
+      {
+        "q": "Can it create WhatsApp templates?",
+        "a": "AI assist can help write templates and check them against Meta’s category rules before you submit them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the AI marketing agent with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

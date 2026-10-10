@@ -1,0 +1,45 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Founder’s note | Steps AI",
+    "description": "Why Steps AI exists: so that a customer’s question never costs a business the sale."
+  },
+  "hero": {
+    "kicker": "Founder’s note",
+    "title": "A customer’s question should never cost a business the sale.",
+    "body": "Steps AI was founded in 2024 by Reshmanth Jonnalagadda. This note explains why we built it and what we will not compromise on."
+  },
+  "sections": [
+    {
+      "title": "Why we built Steps AI.",
+      "paragraphs": [
+        "Small business owners answer the same questions all day. Where is my order. Do you ship here. Can I return this. They answer on the website, then on Instagram, then on WhatsApp, often late at night because that is when people shop.",
+        "Many have tried a chatbot and switched it off when it recited a return policy to someone asking about a parcel. We built Steps AI to check the order instead."
+      ]
+    },
+    {
+      "title": "What we will not compromise on.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "Real answers",
+          "body": "The agent looks things up in your store and tools instead of guessing from a web page."
+        },
+        {
+          "title": "Knowing when to stop",
+          "body": "When the agent does not know, it says so and passes the conversation to a person."
+        },
+        {
+          "title": "Honest pricing and limits",
+          "body": "We tell you what a reply costs and where Steps AI is not the right fit."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Talk to us about your business.",
+    "body": "Book a demo and we will walk through your customers’ questions with you."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "education",
+  "card": "education",
+  "quotes": [],
+  "cta": {
+    "title": "See Steps AI for education with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI chatbot for schools, colleges and coaching centres | Steps AI",
+    "description": "Answer course and admissions questions, capture enquiries and book counselling sessions on WhatsApp, Instagram and your website."
+  },
+  "hero": {
+    "kicker": "Education",
+    "title": "Turn course enquiries into admissions.",
+    "body": "Share course information, capture enquiries and book counselling. Students and parents get answers at the time they are looking, often in the evening.",
+    "reassurance": "Course answers from your information. Enquiries saved to your CRM. Counselling booked in the chat.",
+    "channels": [
+      "WhatsApp",
+      "Instagram",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What students and parents ask.",
+    "intro": "The same questions arrive every admission season.",
+    "items": [
+      {
+        "text": "What are the fees for this course?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "When does the next batch start?",
+        "channel": "Instagram"
+      },
+      {
+        "text": "Is there a scholarship?",
+        "channel": "Website"
+      },
+      {
+        "text": "Can I speak to a counsellor?",
+        "channel": "WhatsApp"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles for your institute.",
+    "intro": "From the first question to a booked counselling session.",
+    "items": [
+      {
+        "title": "Answer course questions",
+        "body": "Fees, duration, eligibility and batch dates from your brochures and website."
+      },
+      {
+        "title": "Capture enquiries",
+        "body": "Collect the student’s name, phone and course interest and save it to your CRM."
+      },
+      {
+        "title": "Book counselling",
+        "body": "Offer times from your counsellors’ calendar."
+      },
+      {
+        "title": "Follow up",
+        "body": "Send WhatsApp campaigns to enquiries when a new batch opens."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your tools.",
+    "intro": "Connect the calendars and documents you already use.",
+    "names": [
+      "Google Calendar",
+      "Google Drive",
+      "Google Sheets",
+      "HubSpot"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Keep fees and dates current in your documents, so the agent answers with the latest information."
+    ]
+  },
+  "faq": {
+    "title": "Questions for education.",
+    "items": [
+      {
+        "q": "Can it answer from our brochure?",
+        "a": "Yes. Upload your brochure or connect your website and the agent answers from it."
+      },
+      {
+        "q": "Can we message enquiries when admissions open?",
+        "a": "Yes. Send a WhatsApp campaign with an approved template to your saved enquiries."
+      }
+    ]
+  }
+}

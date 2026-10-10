@@ -1,0 +1,157 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "hubspot",
+  "name": "HubSpot",
+  "category": "CRM and support",
+  "depth": "deep",
+  "seo": {
+    "title": "HubSpot AI chatbot for lead capture | Steps AI",
+    "description": "Connect HubSpot to Steps AI so leads from WhatsApp, Instagram, Messenger and your website are saved to HubSpot with the details collected in the chat."
+  },
+  "hero": {
+    "kicker": "HubSpot integration",
+    "title": "Send every new lead from the chat to HubSpot.",
+    "body": "Your agent answers questions, asks for the details your team needs and saves the lead to HubSpot. Sales picks it up in the CRM they already use.",
+    "reassurance": "Leads saved where your team works. The fields you choose. Your sales process stays the same.",
+    "channels": [
+      "Website",
+      "WhatsApp",
+      "Instagram"
+    ]
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "We have 12 stores. Can your plan cover all of them?"
+      },
+      {
+        "from": "agent",
+        "text": "Yes. Could I take your name and work email so our team can share the right plan?"
+      },
+      {
+        "from": "customer",
+        "text": "Rahul, rahul@example.com"
+      },
+      {
+        "from": "agent",
+        "text": "Thanks Rahul. Our team will be in touch today."
+      }
+    ],
+    "lookup": {
+      "title": "HubSpot · New contact",
+      "rows": [
+        [
+          "Name",
+          "Rahul"
+        ],
+        [
+          "Email",
+          "rahul@example.com"
+        ],
+        [
+          "Source",
+          "Website chat"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with HubSpot connected.",
+    "intro": "If you already have a CRM, keep it. If you do not, the Steps AI CRM is built in.",
+    "items": [
+      {
+        "title": "Create contacts from conversations",
+        "body": "When a visitor shares their details, the agent saves them to HubSpot instead of leaving them in a chat log."
+      },
+      {
+        "title": "Ask for the details your team needs",
+        "body": "Collect name, email, company and job title, plus custom fields you define, before the lead is saved."
+      },
+      {
+        "title": "Capture leads on every channel",
+        "body": "Leads from WhatsApp, Instagram, Messenger and your website all end up in the same place."
+      },
+      {
+        "title": "Follow up on shoppers who did not buy",
+        "body": "A customer who is not ready yet is saved, so your team can follow up later."
+      }
+    ]
+  },
+  "walkthrough": {
+    "title": "From a first question to a lead in HubSpot.",
+    "intro": "A sales enquiry on your website.",
+    "steps": [
+      {
+        "label": "Answer the question",
+        "customer": "Do you work with multi-store brands?",
+        "agent": "Yes. One workspace can run separate agents for each store.",
+        "note": "The agent answers from your own information first.",
+        "result": "Question answered"
+      },
+      {
+        "label": "Ask for details",
+        "customer": "Interesting. What would it cost for 12 stores?",
+        "agent": "Our team can put that together. May I have your name, work email and company?",
+        "note": "Only the fields you set up are asked for.",
+        "result": "Details requested"
+      },
+      {
+        "label": "Save to HubSpot",
+        "customer": "Rahul, rahul@example.com, Nivara Retail.",
+        "agent": "Thank you Rahul. Our team will be in touch today.",
+        "note": "The contact is created in HubSpot with what was collected.",
+        "result": "Contact saved to HubSpot"
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect HubSpot in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect HubSpot",
+        "body": "Open Resources, then Apps, and choose HubSpot. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds HubSpot to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Add the customer creation skill",
+        "body": "Switch on the skill that creates a customer record, choose HubSpot and pick the fields to collect."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent saves what the customer shares in the chat. It does not identify anonymous visitors.",
+      "You can use HubSpot, the built-in Steps AI CRM, or both."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the HubSpot integration.",
+    "items": [
+      {
+        "q": "Do I need HubSpot to capture leads?",
+        "a": "No. Steps AI has a built-in CRM for customers, tickets and live requests. Connect HubSpot if your team already works there."
+      },
+      {
+        "q": "Which details are saved?",
+        "a": "The ones you choose: name, email, company, job title and any custom fields you add."
+      },
+      {
+        "q": "Does it work on WhatsApp and Instagram too?",
+        "a": "Yes. Leads from every connected channel can be saved to HubSpot."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with HubSpot.",
+    "body": "Book a demo and we will walk through a real conversation using HubSpot and your own information."
+  }
+}

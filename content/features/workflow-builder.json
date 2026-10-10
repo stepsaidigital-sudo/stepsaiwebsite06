@@ -1,0 +1,124 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "workflow-builder",
+  "seo": {
+    "title": "No-code workflow builder for WhatsApp and Shopify | Steps AI",
+    "description": "Recover carts, confirm COD orders, send updates and alert your team with ready-made workflows, or build your own without code."
+  },
+  "hero": {
+    "kicker": "Workflow builder",
+    "title": "Automate the follow-ups your team keeps forgetting.",
+    "body": "Start from a ready-made template, such as cart recovery or COD confirmation, or build your own from menus. Workflows run on events from your store, your chats and your forms.",
+    "reassurance": "Ready-made templates. Menus, not code. Drafts until you switch them on."
+  },
+  "steps": {
+    "title": "How a workflow comes together.",
+    "intro": "“You are not writing code, you are choosing from menus.”",
+    "items": [
+      {
+        "title": "Pick a template or start fresh",
+        "body": "Templates cover cart recovery, order updates, review requests, win-back and team alerts."
+      },
+      {
+        "title": "Choose the trigger",
+        "body": "Start on a message, a schedule, a form submission, a webhook or an event from a connected app such as Shopify."
+      },
+      {
+        "title": "Add the steps",
+        "body": "Wait, check a condition, send a WhatsApp or website message, send an email or call another tool."
+      },
+      {
+        "title": "Switch it on and watch the runs",
+        "body": "Workflows stay as drafts until you activate them. Run history shows what happened."
+      }
+    ]
+  },
+  "features": {
+    "title": "What you can automate.",
+    "intro": "Recovery, lifecycle messages and internal alerts.",
+    "items": [
+      {
+        "title": "Recover carts and checkouts",
+        "body": "Follow up on the website widget, by email or on WhatsApp when shoppers leave without paying."
+      },
+      {
+        "title": "Confirm cash on delivery orders",
+        "body": "Ask COD customers to confirm, and send a payment link to switch to prepaid."
+      },
+      {
+        "title": "Send order and shipping updates",
+        "body": "Confirm orders, share shipping updates and ask for a review after delivery."
+      },
+      {
+        "title": "Win back customers",
+        "body": "Reach customers who cancelled or have gone quiet, with a discount code you create."
+      },
+      {
+        "title": "Alert your team",
+        "body": "Notify your team about high-value orders and refunds."
+      },
+      {
+        "title": "Branch on conditions",
+        "body": "Compare values from earlier steps and take different paths."
+      },
+      {
+        "title": "Choose what happens on errors",
+        "body": "Fail, skip or retry each step."
+      },
+      {
+        "title": "Collect details with forms",
+        "body": "Link a public form to a workflow and act on each submission."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Most ready-made templates are built for Shopify stores.",
+      "WhatsApp messages sent by a workflow use templates approved by Meta."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the workflow builder.",
+    "items": [
+      {
+        "q": "Do I need a developer?",
+        "a": "No. Templates are the easiest start, and every step is chosen from menus. Webhooks and HTTP requests are there if your team wants them."
+      },
+      {
+        "q": "Does a workflow run as soon as I save it?",
+        "a": "No. Workflows save as drafts and only run once you switch them on."
+      },
+      {
+        "q": "Can I see what a workflow did?",
+        "a": "Yes. Run history shows each run, its progress and any errors."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "Shopify",
+        "href": "/integrations/shopify/",
+        "body": "Run workflows on orders, carts and fulfilment events."
+      },
+      {
+        "label": "WhatsApp broadcast",
+        "href": "/features/whatsapp-broadcast/",
+        "body": "Send one-off campaigns alongside automated follow-ups."
+      },
+      {
+        "label": "Agent skills",
+        "href": "/features/skills/",
+        "body": "Let the agent act during the conversation itself."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the workflow builder with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

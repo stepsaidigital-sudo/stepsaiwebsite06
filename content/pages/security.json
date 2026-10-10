@@ -1,0 +1,52 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Security | Steps AI",
+    "description": "How Steps AI keeps your workspace, connected apps and customer conversations under your control."
+  },
+  "hero": {
+    "kicker": "Security",
+    "title": "Your data, your customers, your control.",
+    "body": "Steps AI is built so you decide what the agent can read, where it can appear and when a person takes over."
+  },
+  "sections": [
+    {
+      "title": "Control over your agent.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "You choose the content",
+          "body": "The agent answers from the pages, files and apps you connect, and nothing else unless you switch on web search."
+        },
+        {
+          "title": "You choose where it appears",
+          "body": "Set allowed domains so your website widget only runs on your own sites."
+        },
+        {
+          "title": "Guardrails you set",
+          "body": "Personas can be told never to quote prices, give medical, legal or financial advice, or share internal details."
+        }
+      ]
+    },
+    {
+      "title": "Workspace and account protection.",
+      "paragraphs": [
+        "Each workspace is separated from every other workspace, and only its members can act on it. Connection secrets for telephony and other providers are kept out of logs.",
+        "Apps connect through the provider’s own sign-in, and you can switch any connection off."
+      ]
+    },
+    {
+      "title": "For larger teams.",
+      "paragraphs": [
+        "Enterprise plans add single sign-on with SSO and SAML, and a 99.9% uptime service level agreement.",
+        "If you end your plan, you can export your data for up to 30 days."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Have a security question?",
+    "body": "Book a call and we will answer it with you."
+  }
+}

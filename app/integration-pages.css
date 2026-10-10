@@ -1,0 +1,105 @@
+/* Integrations hub and per-app pages. Uses the tokens from globals.css and
+   the subpage building blocks from subpages.css. */
+
+.ig-logo{display:block;object-fit:contain;flex-shrink:0}
+
+/* Hero demo: Steps AI joined to the app, the chat, and the looked-up record. */
+.ig-demo{position:relative;display:flex;flex-direction:column;gap:14px}
+.ig-link-bar{display:flex;align-items:center;gap:10px;align-self:center;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;box-shadow:0 10px 24px #0c347410}
+.ig-node{display:inline-flex;align-items:center;gap:8px;font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:.875rem;padding:2px 8px 2px 2px}
+.ig-node img{border-radius:8px}
+.ig-wire{position:relative;width:64px;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0 6px,transparent 6px 11px);border-radius:2px}
+.ig-wire i{position:absolute;top:50%;left:0;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px #f8b40333;animation:ig-pulse 2.4s var(--ease) infinite}
+@keyframes ig-pulse{0%{left:0}50%{left:calc(100% - 8px)}100%{left:0}}
+.ig-lookup{position:relative;align-self:flex-end;margin:-34px -28px 0 0;width:min(300px,80%);padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 18px 40px #0c34741f;z-index:2}
+.ig-lookup-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ig-lookup-head strong{font-size:.875rem;font-family:Manrope,Arial,sans-serif;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ig-lookup-head small{font-size:.75rem;color:var(--muted)}
+.ig-lookup-row,.ig-lookup-ok{display:flex;justify-content:space-between;gap:12px;font-size:.8125rem;padding:6px 0;border-top:1px dashed var(--line)}
+.ig-lookup-row span{color:var(--muted)}
+.ig-lookup-row strong{font-weight:600;text-align:right}
+.ig-lookup-ok{justify-content:flex-start;align-items:center;gap:6px;color:#1a7f4b;font-weight:600;font-size:.75rem}
+.sp-in .ig-lookup-row,.sp-in .ig-lookup-ok{animation:ig-tick 500ms var(--ease) both}
+.sp-reveal:not(.sp-in) .ig-lookup-row,.sp-reveal:not(.sp-in) .ig-lookup-ok{opacity:0}
+@keyframes ig-tick{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.ig-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;font-size:.875rem;color:var(--muted)}
+.ig-crumbs a{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--navy)}
+.ig-crumbs a:hover{text-decoration:underline}
+.ig-crumbs strong{color:var(--navy);font-weight:600}
+
+/* Use cases on an app page. */
+.ig-uses{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.ig-use{padding:26px 26px 28px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:transform 200ms var(--ease),box-shadow 200ms}
+.ig-use:hover{transform:translateY(-3px);box-shadow:0 14px 30px #0c347414}
+.ig-use-n{display:inline-grid;place-items:center;min-width:36px;height:28px;padding:0 8px;border-radius:999px;background:var(--soft);font-family:Manrope,Arial,sans-serif;font-weight:700;font-size:.75rem;margin-bottom:16px}
+.ig-use h3{font-size:1.1875rem;margin-bottom:8px}
+.ig-use p{font-size:.9375rem}
+.ig-orb{background:#fff!important}
+
+/* App cards, shared by the hub directory and related apps. */
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.ig-card{position:relative;display:flex;gap:16px;align-items:flex-start;padding:20px 44px 20px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;transition:transform 200ms var(--ease),box-shadow 200ms,border-color 200ms}
+.ig-card:hover{transform:translateY(-3px);border-color:#0c347440;box-shadow:0 14px 30px #0c347414}
+.ig-card-logo{width:52px;height:52px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;background:#fff;flex-shrink:0}
+.ig-card-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ig-card-text strong{font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:-.02em}
+.ig-card-text small{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+.ig-card-text span{font-size:.875rem;color:var(--muted);margin-top:4px;line-height:1.5}
+.ig-card-arrow{position:absolute;top:18px;right:16px;color:var(--muted);transition:transform 200ms var(--ease),color 200ms}
+.ig-card:hover .ig-card-arrow{transform:translate(2px,-2px);color:var(--navy)}
+.ig-all{margin-top:28px;display:inline-flex;align-items:center;gap:6px;font-weight:600}
+
+/* Hub hero: apps orbiting the Steps AI mark. */
+.ig-cloud{position:relative;aspect-ratio:1;max-width:420px!important}
+.ig-cloud::before,.ig-cloud::after{content:"";position:absolute;inset:20%;border:1px dashed #0c347426;border-radius:50%}
+.ig-cloud::after{inset:8%}
+.ig-cloud-core{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:26px;background:#fff;display:grid;place-items:center;box-shadow:0 18px 40px #0c347426;z-index:1}
+.ig-cloud-item{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 10px 24px #0c34741a;transform:rotate(var(--a)) translateY(calc(var(--r) * -1)) rotate(calc(var(--a) * -1));animation:ig-float 6s ease-in-out infinite alternate}
+@keyframes ig-float{from{translate:0 -4px}to{translate:0 4px}}
+
+/* Hub directory. */
+.ig-filters{position:sticky;top:96px;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px;margin:0 -10px 36px;background:linear-gradient(var(--paper) 70%,transparent);scrollbar-width:none}
+.ig-filters::-webkit-scrollbar{display:none}
+.ig-filters button{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.875rem;font-weight:600;transition:background 160ms,color 160ms,border-color 160ms}
+.ig-filters button small{font-size:.75rem;color:var(--muted)}
+.ig-filters button:hover{border-color:#0c347440}
+.ig-filters button.is-active{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.ig-filters button.is-active small{color:#fcfcfcb3}
+.ig-group+.ig-group{margin-top:44px}
+.ig-group .ig-card-text small{display:none}
+.ig-card-logo .ig-logo{width:38px;height:38px}
+.ig-group h3{font-size:1.25rem;margin-bottom:16px}
+
+/* Jobs band on the hub. */
+.ig-jobs-band{background:#f5f4f0;border-block:1px solid var(--line);padding:96px 0!important;margin-top:72px}
+.ig-jobs{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.ig-job{padding:28px;border-radius:18px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.ig-job h3{font-size:1.25rem;margin-bottom:8px}
+.ig-job p{font-size:.9375rem;margin-bottom:20px}
+.ig-job-apps{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.ig-job-apps a{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 6px 6px;border:1px solid var(--line);border-radius:999px;font-size:.8125rem;font-weight:600;background:var(--paper);transition:border-color 160ms,background 160ms}
+.ig-job-apps a:hover{border-color:var(--navy);background:#fff}
+.ig-job-apps img{border-radius:6px}
+
+.ig-custom{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:36px 40px;border-radius:22px;background:linear-gradient(120deg,#fff 0%,var(--soft) 140%);border:1px solid var(--line)}
+.ig-custom h2{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(28px,2.6vw,38px);letter-spacing:-.03em;margin-bottom:8px}
+.ig-custom .button{gap:8px;flex-shrink:0}
+
+@media (max-width:1100px){
+  .ig-lookup{margin-right:0}
+}
+@media (max-width:700px){
+
+  .ig-lookup{margin:-20px 0 0;width:100%}
+  .ig-uses,.ig-jobs{grid-template-columns:1fr}
+  .ig-custom{flex-direction:column;align-items:flex-start;padding:28px 24px}
+  .ig-cloud{max-width:320px!important;margin-inline:auto}
+  .ig-cloud-item{width:44px;height:44px;margin:-22px 0 0 -22px;transform:rotate(var(--a)) translateY(calc(var(--r) * -.72)) rotate(calc(var(--a) * -1))}
+  .ig-filters{top:72px}
+  .ig-jobs-band{padding:64px 0!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .ig-wire i,.ig-cloud-item{animation:none}
+  .sp-in .ig-lookup-row,.sp-in .ig-lookup-ok{animation:none}
+}

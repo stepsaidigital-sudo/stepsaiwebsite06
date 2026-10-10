@@ -1,0 +1,67 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-lead-capture-agent",
+  "agent": "AI lead capture agent",
+  "agentPage": "/use-cases/ai-lead-capture-agent/",
+  "seo": {
+    "title": "AI lead capture agent case studies | Steps AI",
+    "description": "See how Northstar SaaS and LatticeFlow Labs use Steps AI as an AI lead capture agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies · AI lead capture agent",
+    "title": "How growth teams use an AI agent to capture better leads.",
+    "body": "Visitors ask a few questions and leave before filling in a form. These teams use Steps AI to collect details during the conversation and pass richer leads to sales."
+  },
+  "stories": [
+    {
+      "brand": "Northstar SaaS",
+      "attribution": "Ryan Collins | Growth Lead | Northstar SaaS",
+      "excerpt": "We were losing good inquiries because people would ask a few questions and leave without filling out the form. Now StepsAI gets the details while they’re already talking and passes the lead into our CRM with the conversation attached.",
+      "industry": "SaaS",
+      "tags": [
+        "Lead capture",
+        "CRM handover"
+      ]
+    },
+    {
+      "brand": "LatticeFlow Labs",
+      "attribution": "Rachel Morgan | VP of Growth | LatticeFlow Labs",
+      "excerpt": "Our sales team has a lot more context before they speak to someone now. We can already see what they were asking about, what they’re trying to solve, company size, and sometimes which integrations matter to them. It makes the first call feel like a continuation of the conversation.",
+      "industry": "SaaS",
+      "tags": [
+        "Lead context",
+        "Sales handover"
+      ]
+    }
+  ],
+  "capabilities": {
+    "title": "What the AI lead capture agent does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Collect details in the conversation",
+        "body": "The agent asks for the details your team needs while the visitor is already talking."
+      },
+      {
+        "title": "Save leads to your CRM",
+        "body": "Leads go to the built-in Steps AI CRM or to HubSpot."
+      },
+      {
+        "title": "Give sales the context",
+        "body": "Your team sees what the visitor asked about before the first call."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer."
+    ]
+  },
+  "cta": {
+    "title": "See the AI lead capture agent work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}

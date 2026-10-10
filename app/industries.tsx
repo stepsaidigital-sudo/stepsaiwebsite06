@@ -1,4 +1,5 @@
 'use client';
+import { SplitWords } from '@/components/site/motion';
 import {useLayoutEffect,useRef,useState} from 'react';
 import {ArrowUpRight,Check,CalendarDays,MessageSquare,BookOpen,MapPin,ChevronRight} from 'lucide-react';
 import copy from './copy.json';
@@ -41,7 +42,7 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
     return()=>animations.current.forEach(animation=>animation.cancel());
   },[active]);
   return <section id="solutions" className="industry-showcase"><div className="container">
-    <div className="section-intro"><h2>{copy.business.title}</h2><p>{copy.business.paragraphs[0]}</p></div>
+    <div className="section-intro"><h2 aria-label={copy.business.title}><SplitWords text={copy.business.title}/></h2><p>{copy.business.paragraphs[0]}</p></div>
     <p className="industry-selection-hint">Select an industry to see it in action.</p>
     <div ref={row} className="industry-deck" data-active={active}>
       {featured.map(({index,key},i)=>{const item=copy.business.items[index];return <article className={`industry-expand-card industry-${key} ${i===active?'is-selected':''}`} key={key} onPointerEnter={event=>{if(event.pointerType==='mouse'&&matchMedia('(hover: hover) and (pointer: fine)').matches)select(i)}} onClick={()=>select(i)}>

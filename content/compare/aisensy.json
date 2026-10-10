@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "compare",
+  "slug": "aisensy",
+  "competitor": "AiSensy",
+  "seo": {
+    "title": "Steps AI vs AiSensy: an honest comparison | Steps AI",
+    "description": "Compare Steps AI and AiSensy: channels, order lookups, pricing model and where each one is the better fit."
+  },
+  "hero": {
+    "kicker": "Steps AI vs AiSensy",
+    "title": "Steps AI vs AiSensy: marketing sends or full conversations.",
+    "body": "AiSensy is a WhatsApp marketing platform that many Indian brands use for broadcasts and campaigns. Steps AI sends WhatsApp campaigns as well, and its agent answers the replies, checks orders and books appointments across every channel.",
+    "reassurance": "Where we fit. Where they fit. How to switch."
+  },
+  "glance": {
+    "title": "At a glance.",
+    "intro": "How Steps AI and AiSensy compare on the questions owners ask most.",
+    "rows": [
+      {
+        "label": "What it is",
+        "steps": "An AI agent that answers customers and checks real records before it replies",
+        "them": "A WhatsApp marketing platform for broadcasts and campaigns"
+      },
+      {
+        "label": "Channels",
+        "steps": "Website, WhatsApp, Instagram and Messenger from one Meta connection, plus phone calls",
+        "them": "WhatsApp first, with Instagram on some plans"
+      },
+      {
+        "label": "Order and delivery questions",
+        "steps": "Checks orders in Shopify or WooCommerce and shipments with five Indian carriers",
+        "them": "Through flows and connected apps you set up"
+      },
+      {
+        "label": "How you pay",
+        "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
+        "them": "Monthly plans plus WhatsApp conversation charges"
+      },
+      {
+        "label": "What happens after the answer",
+        "steps": "Books appointments, creates tickets, saves leads and hands over to a person",
+        "them": "Sends campaigns and runs the chatbot flows you build"
+      }
+    ]
+  },
+  "ours": {
+    "title": "When Steps AI is the better fit.",
+    "intro": "Choose Steps AI if these sound like you.",
+    "items": [
+      {
+        "title": "Replies matter as much as sends",
+        "body": "When a customer answers a campaign, the Steps AI agent picks up the conversation instead of leaving it waiting."
+      },
+      {
+        "title": "You need help beyond WhatsApp",
+        "body": "The same agent answers on your website, Instagram and Messenger."
+      },
+      {
+        "title": "You want order and delivery answers",
+        "body": "The agent checks Shopify, WooCommerce and five Indian carriers before it replies."
+      }
+    ]
+  },
+  "theirs": {
+    "title": "When AiSensy may suit you better.",
+    "intro": "We would rather you pick the right tool than the wrong one.",
+    "items": [
+      {
+        "title": "High-volume campaigns come first",
+        "body": "Steps AI campaigns are currently capped at 1,000 messages per send, which may not suit very large lists."
+      },
+      {
+        "title": "You run click-to-WhatsApp ads at scale",
+        "body": "Ad tools are a focus for WhatsApp marketing platforms. Ask us where Steps AI is on ads today."
+      }
+    ]
+  },
+  "switching": {
+    "title": "Moving from AiSensy to Steps AI.",
+    "intro": "Most businesses are answering real customers within a day.",
+    "items": [
+      {
+        "title": "Paste your website address",
+        "body": "Steps AI reads your pages, FAQs and documents, so you do not have to rebuild your answers by hand."
+      },
+      {
+        "title": "Connect your channels and store",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger. Add Shopify or WooCommerce for order questions."
+      },
+      {
+        "title": "Test it against your own questions",
+        "body": "Ask the questions your customers ask. Switch it on when you are happy with the answers."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "This comparison uses publicly available information about AiSensy as of October 2026. Check their site for current plans and features.",
+      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about Steps AI and AiSensy.",
+    "items": [
+      {
+        "q": "Can I try Steps AI before I switch?",
+        "a": "Yes. You can start free with no card, test the agent against your own questions and switch when you are ready."
+      },
+      {
+        "q": "How is Steps AI priced?",
+        "a": "You pay per reply in credits. The number of credits a reply uses depends on the AI model you choose for your agent."
+      },
+      {
+        "q": "Can I run Steps AI alongside AiSensy?",
+        "a": "Yes, many businesses test both before deciding. Make sure only one tool replies on each channel at a time."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how Steps AI compares with AiSensy on your own questions.",
+    "body": "Book a demo and bring the questions your customers ask most."
+  }
+}

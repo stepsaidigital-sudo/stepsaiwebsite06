@@ -1,0 +1,104 @@
+/* Subpage motion system. Loaded last so it refines the base reveal in
+   subpages.css. Only transform, opacity and a light blur are animated. */
+
+:root{--m-ease:cubic-bezier(.16,1,.3,1)}
+
+/* Scroll entrance: rise, sharpen and settle, staggered by --d. */
+.sp-reveal{opacity:0;transform:translateY(34px) scale(.985);filter:blur(6px);transition:opacity 900ms var(--m-ease),transform 1000ms var(--m-ease),filter 800ms var(--m-ease);transition-delay:var(--d,0ms)}
+.sp-reveal.sp-in{opacity:1;transform:none;filter:none}
+/* Rows and list items travel less, so tables and lists read as a cascade. */
+.vs-row.sp-reveal,.sp-feature.sp-reveal,.faq-list>details.sp-reveal,.sp-logos li.sp-reveal{transform:translateY(16px)}
+.ig-crumbs.sp-reveal,.ig-filters.sp-reveal,.cs-tabs.sp-reveal{transform:translateY(10px);filter:none}
+/* The two fit columns on comparison pages come in from their own side. */
+.vs-fit-col.sp-reveal{transform:translateX(-40px)}
+.vs-fit-col+.vs-fit-col.sp-reveal{transform:translateX(40px)}
+.vs-fit-col.sp-reveal.sp-in{transform:none}
+
+/* Headings: each word rises out of a mask once its intro is in view. */
+.m-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.m-w>span{display:inline-block;transition:transform 900ms var(--m-ease);transition-delay:calc(var(--d,0ms) + var(--wi) * 45ms)}
+.sp-intro.sp-reveal .m-w>span{transform:translateY(105%)}
+.sp-intro.sp-reveal.sp-in .m-w>span{transform:none}
+.sp-intro.sp-reveal{filter:none;transform:none}
+.sp-intro.sp-reveal>p,.sp-intro.sp-reveal>.section-kicker{opacity:0;transform:translateY(14px);transition:opacity 800ms var(--m-ease) 250ms,transform 800ms var(--m-ease) 250ms}
+.sp-intro.sp-reveal.sp-in>p,.sp-intro.sp-reveal.sp-in>.section-kicker{opacity:1;transform:none}
+.sp-intro.sp-reveal>.section-kicker{transition-delay:0ms}
+
+/* Hero load: copy rises in order, the visual settles in after it. */
+@media (prefers-reduced-motion:no-preference){
+  .sp-hero-copy>*{animation:m-rise 900ms var(--m-ease) both}
+  .sp-hero-copy>:nth-child(2){animation-delay:90ms}
+  .sp-hero-copy>:nth-child(3){animation-delay:180ms}
+  .sp-hero-copy>:nth-child(4){animation-delay:260ms}
+  .sp-hero-copy>:nth-child(5){animation-delay:330ms}
+  .sp-hero-copy>:nth-child(6){animation-delay:400ms}
+  .sp-hero-visual{animation:m-settle 1200ms var(--m-ease) 200ms both}
+  /* Gentle drift while the hero scrolls away. */
+  .sp-hero-visual>*{transform:translateY(calc(var(--sy,0) * -0.08px))}
+  .sp-hero::after{transform:translateY(calc(var(--sy,0) * 0.25px))}
+}
+@keyframes m-rise{from{opacity:0;transform:translateY(26px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes m-settle{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
+
+/* Scroll progress along the top edge. */
+.m-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--blue),var(--yellow));transform-origin:0 50%;transform:scaleX(var(--p,0));pointer-events:none}
+
+/* Cursor light on cards. Hover lifts are already in each card's own styles. */
+.m-spot{isolation:isolate}
+.m-spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity 300ms;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),#2c9cfa1f,transparent 70%)}
+.m-spot:hover::after{opacity:1}
+.sp-feature.m-spot,.ig-use,.cs-story,.ig-job,.vs-fit-col,.sp-plan{position:relative}
+
+/* Magnetic closing button. */
+.final-section .button{transition:translate 400ms var(--m-ease),transform 160ms var(--ease),box-shadow 160ms}
+
+/* Drag rails. */
+.m-rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(320px,380px);gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none;padding:6px 2px 18px;cursor:grab;user-select:none}
+.m-rail::-webkit-scrollbar{display:none}
+.m-rail>*{scroll-snap-align:start}
+.m-rail.is-dragging{cursor:grabbing;scroll-snap-type:none}
+.m-rail.is-dragging *{pointer-events:none}
+.m-rail:focus-visible{outline-offset:2px}
+.m-rail .ig-card{height:100%}
+.m-rail-bar{display:flex;align-items:center;gap:14px;margin-top:10px}
+.m-rail-hint{font-size:.8125rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.m-rail-track{flex:1;height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.m-rail-track i{display:block;height:100%;background:var(--navy);transform-origin:0 50%;transition:transform 200ms linear}
+.m-rail-bar button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;transition:background 160ms,color 160ms,opacity 160ms}
+.m-rail-bar button:hover:not(:disabled){background:var(--navy);color:var(--paper)}
+.m-rail-bar button:disabled{opacity:.35;cursor:default}
+
+/* Draggable orbit on the integrations hub. */
+.ig-cloud{touch-action:pan-y;cursor:grab;user-select:none}
+.ig-cloud.is-dragging{cursor:grabbing}
+.ig-cloud .ig-cloud-item{transform:rotate(calc(var(--a) + var(--rot,0deg))) translateY(calc(var(--r) * -1)) rotate(calc((var(--a) + var(--rot,0deg)) * -1))}
+.ig-cloud-hint{position:absolute;left:50%;bottom:-6px;translate:-50% 0;font-size:.75rem;font-weight:600;color:var(--muted);background:#fffc;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.ig-cloud-core{transition:transform 400ms var(--m-ease)}
+.ig-cloud:hover .ig-cloud-core{transform:scale(1.04)}
+
+@media (max-width:700px){
+  .m-rail{grid-auto-columns:85%}
+  .m-rail-hint{display:none}
+  .ig-cloud .ig-cloud-item{transform:rotate(calc(var(--a) + var(--rot,0deg))) translateY(calc(var(--r) * -.72)) rotate(calc((var(--a) + var(--rot,0deg)) * -1))}
+  .vs-fit-col.sp-reveal,.vs-fit-col+.vs-fit-col.sp-reveal{transform:translateY(24px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .sp-reveal,.sp-intro.sp-reveal>p,.sp-intro.sp-reveal>.section-kicker,.sp-intro.sp-reveal .m-w>span{opacity:1;transform:none;filter:none;transition:none}
+  .m-progress{display:none}
+  .final-section .button{translate:none!important}
+}
+
+/* Above a rail the filters sit in place; only long directories keep them sticky. */
+.ig-filters:has(+ .m-rail-wrap){position:relative;top:auto}
+
+/* Homepage: headings rise word by word, driven by the existing ScrollPolish
+   reveal (.scroll-reveal / .in-view) or by the shared one (.sp-reveal / .sp-in). */
+.section-intro.scroll-reveal:not(.in-view) .m-w>span,
+.sp-reveal:not(.sp-in) .m-w>span{transform:translateY(105%)}
+.section-intro.in-view .m-w>span{transition-delay:calc(var(--wi) * 45ms + 120ms)}
+.final-section .container>.sp-reveal:not(:first-child){transition-delay:calc(var(--d,0ms) + 120ms)}
+.integrations-intro.sp-reveal,.logo-ribbons.sp-reveal{filter:none}
+@media (prefers-reduced-motion:reduce){
+  .section-intro.scroll-reveal .m-w>span,.sp-reveal .m-w>span{transform:none;transition:none}
+}

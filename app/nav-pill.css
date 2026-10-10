@@ -54,9 +54,9 @@
   .site-header .header-inner{gap:16px;padding-left:20px}
   .site-header .nav>a,.site-header .nav>button:not(.button){padding:9px 11px}
 }
-/* The inline links and menu triggers stop fitting inside the pill below ~860px, so the menu
+/* The inline links and menu triggers stop fitting inside the pill below ~1200px, so the menu
    button takes over here rather than at the 700px homepage breakpoint. */
-@media(max-width:880px){
+@media(max-width:1200px){
   .site-header .header-inner{justify-content:space-between}
   .site-header .menu-toggle{display:grid;border-radius:50%}
   .site-header .menu-toggle:hover{background:rgb(196 236 252 / 62%)}
@@ -87,3 +87,6 @@
   .mm-panel:not([hidden]){animation:none}
   .mm-trigger svg,.mm-tile{transition:none}
 }
+
+/* Labels never wrap inside the pill. */
+.site-header .brand,.site-header .mm-trigger,.site-header .nav>a,.site-header .nav>button,.site-header .nav .button{white-space:nowrap}

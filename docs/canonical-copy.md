@@ -320,12 +320,12 @@ Product: Features | Channels | Integrations
 
 Solutions: Industries | Use cases
 
-Resources: Customer stories | Compare | Blog | Help centre | Developer docs
+Resources: Customer stories | Blog | Help centre | Developer docs
 
-Partners: Partner program | Affiliate program | Hire an agency
+Partners: Partner with us | Hire an agency | Become an affiliate
+
+Compare: vs. Manychat | vs. Wati | vs. AiSensy | vs. Gorgias | vs. Chatbase | vs. Verifast | vs. Tidio
 
 Account: Book a demo | Pricing | Sign up | Log in
 
-Company: About | Team | Founder’s note | Careers | Contact | Security
-
-Privacy policy | Terms of service
+Company: About | Founder’s note | Careers | Team | Contact | Security | Privacy policy | Terms of service

@@ -1,0 +1,144 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "google-sheets",
+  "name": "Google Sheets",
+  "category": "Knowledge and data",
+  "depth": "deep",
+  "seo": {
+    "title": "Google Sheets AI chatbot and order sync | Steps AI",
+    "description": "Use a Google Sheet as a source for your AI agent and sync orders from a sheet into Steps AI. No store platform needed."
+  },
+  "hero": {
+    "kicker": "Google Sheets integration",
+    "title": "Run your agent from a Google Sheet.",
+    "body": "Many businesses keep prices, stock or orders in a spreadsheet. Connect the sheet and your agent can answer from it, and your orders can be synced into Steps AI without a store platform.",
+    "reassurance": "Pick a sheet in a few clicks. Clear sync results. No store platform required."
+  },
+  "demo": {
+    "channel": "WhatsApp",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "What is the price of the 5 kg rice bag?"
+      },
+      {
+        "from": "agent",
+        "text": "The 5 kg bag is 620. It is available for delivery this week."
+      }
+    ],
+    "lookup": {
+      "title": "Google Sheets · Price list",
+      "rows": [
+        [
+          "Row",
+          "Rice, 5 kg"
+        ],
+        [
+          "Price",
+          "620"
+        ],
+        [
+          "Available",
+          "Yes"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Google Sheets connected.",
+    "intro": "Useful when your business runs on spreadsheets instead of a store platform.",
+    "items": [
+      {
+        "title": "Use a sheet as a skill source",
+        "body": "Choose a sheet with the Google picker and your agent can use it to answer, for example price lists, stock lists or timetables."
+      },
+      {
+        "title": "Sync orders from a sheet",
+        "body": "Keep orders in a Google Sheet and sync them into Steps AI, so the agent can answer order questions."
+      },
+      {
+        "title": "See what changed on each sync",
+        "body": "Every sync shows how many rows were added, updated and skipped, with a clear message if something in the sheet needs fixing."
+      },
+      {
+        "title": "Update the sheet, not the agent",
+        "body": "Your team edits the spreadsheet as usual, and the agent works from the latest version after the next sync."
+      }
+    ]
+  },
+  "walkthrough": {
+    "title": "From a spreadsheet to answers in the chat.",
+    "intro": "How a business without an online store uses Google Sheets.",
+    "steps": [
+      {
+        "label": "Pick the sheet",
+        "customer": "Do you deliver to Kondapur?",
+        "agent": "Yes, we deliver to Kondapur on Tuesdays and Fridays.",
+        "note": "Delivery areas come from a sheet chosen with the Google picker.",
+        "result": "Answered from your sheet"
+      },
+      {
+        "label": "Answer a price question",
+        "customer": "How much is the 5 kg rice bag?",
+        "agent": "The 5 kg bag is 620.",
+        "note": "Prices are read from your price list sheet.",
+        "result": "Price from your sheet"
+      },
+      {
+        "label": "Answer about an order",
+        "customer": "Has order 318 gone out?",
+        "agent": "Order 318 is marked dispatched today.",
+        "note": "Orders synced from the sheet are available to the agent.",
+        "result": "Order found after sync"
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Google Sheets in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Google Sheets",
+        "body": "Open Resources, then Apps, and choose Google Sheets. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Google Sheets to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Choose the sheet and what it is for",
+        "body": "Use the Google picker to select the sheet, then use it as a skill source, an order sync, or both."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Keep column names consistent. If the sheet layout changes, the sync shows which rows were skipped and why.",
+      "Order answers reflect the last sync, so sync again after large changes."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Google Sheets integration.",
+    "items": [
+      {
+        "q": "Do I need Shopify or WooCommerce?",
+        "a": "No. Google Sheets works on its own, which suits businesses that keep orders and prices in a spreadsheet."
+      },
+      {
+        "q": "What happens if a row is wrong?",
+        "a": "The sync skips it and tells you, with counts of added, updated and skipped rows."
+      },
+      {
+        "q": "Can the agent edit my sheet?",
+        "a": "The agent reads from the sheet to answer. Your team keeps editing it as usual."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Google Sheets.",
+    "body": "Book a demo and we will walk through a real conversation using Google Sheets and your own information."
+  }
+}

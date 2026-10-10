@@ -1,0 +1,91 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "financial-services",
+  "card": null,
+  "quotes": [],
+  "cta": {
+    "title": "See Steps AI for financial services with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI chatbot for financial services enquiries | Steps AI",
+    "description": "Answer product and process questions, capture enquiries and book calls, with guardrails against financial advice."
+  },
+  "hero": {
+    "kicker": "Financial services",
+    "title": "Answer enquiries without giving advice.",
+    "body": "Explain your products and processes, capture enquiries and book calls with your advisers. Guardrails keep the agent from giving financial advice.",
+    "reassurance": "Product information only. Enquiries saved. Advisers for anything personal.",
+    "channels": [
+      "WhatsApp",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What customers ask.",
+    "intro": "Process questions your team answers every day.",
+    "items": [
+      {
+        "text": "What documents do I need?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "How long does approval take?",
+        "channel": "Website"
+      },
+      {
+        "text": "Can I speak to an adviser?",
+        "channel": "WhatsApp"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles.",
+    "intro": "Information and next steps, not advice.",
+    "items": [
+      {
+        "title": "Explain products and processes",
+        "body": "Eligibility, documents and timelines from your own information."
+      },
+      {
+        "title": "Capture enquiries",
+        "body": "Collect contact details and the product of interest."
+      },
+      {
+        "title": "Book adviser calls",
+        "body": "Offer times from your advisers’ calendars."
+      },
+      {
+        "title": "Pass personal questions to a person",
+        "body": "Anything that needs advice goes to your team."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your tools.",
+    "intro": "Connect your calendar and CRM.",
+    "names": [
+      "Google Calendar",
+      "Outlook Calendar",
+      "HubSpot"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Set the guardrail “never give financial advice” on your agent’s persona.",
+      "Check your regulator’s rules before collecting financial details in chat."
+    ]
+  },
+  "faq": {
+    "title": "Questions for financial services.",
+    "items": [
+      {
+        "q": "Will the agent give financial advice?",
+        "a": "Not if you set the guardrail. Advice questions can be passed to your advisers."
+      }
+    ]
+  }
+}

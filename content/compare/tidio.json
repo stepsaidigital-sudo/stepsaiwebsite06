@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "compare",
+  "slug": "tidio",
+  "competitor": "Tidio",
+  "seo": {
+    "title": "Steps AI vs Tidio: an honest comparison | Steps AI",
+    "description": "Compare Steps AI and Tidio: channels, order lookups, pricing model and where each one is the better fit."
+  },
+  "hero": {
+    "kicker": "Steps AI vs Tidio",
+    "title": "Steps AI vs Tidio: live chat with AI, or an AI agent.",
+    "body": "Tidio is a live chat tool with an AI assistant, Lyro, offered as an upgrade. In Steps AI, the agent is the product. It answers on every channel, checks your store and hands over to your team when needed.",
+    "reassurance": "Where we fit. Where they fit. How to switch."
+  },
+  "glance": {
+    "title": "At a glance.",
+    "intro": "How Steps AI and Tidio compare on the questions owners ask most.",
+    "rows": [
+      {
+        "label": "What it is",
+        "steps": "An AI agent that answers customers and checks real records before it replies",
+        "them": "A live chat and helpdesk tool with an AI assistant upgrade"
+      },
+      {
+        "label": "Channels",
+        "steps": "Website, WhatsApp, Instagram and Messenger from one Meta connection, plus phone calls",
+        "them": "Website chat, email, Instagram, Messenger and WhatsApp"
+      },
+      {
+        "label": "Order and delivery questions",
+        "steps": "Checks orders in Shopify or WooCommerce and shipments with five Indian carriers",
+        "them": "Ecommerce data through integrations such as Shopify"
+      },
+      {
+        "label": "How you pay",
+        "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
+        "them": "Base plans, with the AI assistant priced as an add-on"
+      },
+      {
+        "label": "What happens after the answer",
+        "steps": "Books appointments, creates tickets, saves leads and hands over to a person",
+        "them": "Live chat, tickets and AI answers"
+      }
+    ]
+  },
+  "ours": {
+    "title": "When Steps AI is the better fit.",
+    "intro": "Choose Steps AI if these sound like you.",
+    "items": [
+      {
+        "title": "You want AI included, not added on",
+        "body": "Every Steps AI plan is built around the agent. You pay per reply in credits."
+      },
+      {
+        "title": "You want order answers that are checked",
+        "body": "The agent looks up the order in your store before it replies."
+      },
+      {
+        "title": "You ship with Indian carriers",
+        "body": "Five Indian carriers connect directly for delivery questions."
+      }
+    ]
+  },
+  "theirs": {
+    "title": "When Tidio may suit you better.",
+    "intro": "We would rather you pick the right tool than the wrong one.",
+    "items": [
+      {
+        "title": "You want a long track record",
+        "body": "Tidio is a mature product used by a very large number of businesses, with many public reviews."
+      },
+      {
+        "title": "Live chat is your main way of working",
+        "body": "If your team prefers to answer most chats themselves, a live chat tool may suit you better."
+      }
+    ]
+  },
+  "switching": {
+    "title": "Moving from Tidio to Steps AI.",
+    "intro": "Most businesses are answering real customers within a day.",
+    "items": [
+      {
+        "title": "Paste your website address",
+        "body": "Steps AI reads your pages, FAQs and documents, so you do not have to rebuild your answers by hand."
+      },
+      {
+        "title": "Connect your channels and store",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger. Add Shopify or WooCommerce for order questions."
+      },
+      {
+        "title": "Test it against your own questions",
+        "body": "Ask the questions your customers ask. Switch it on when you are happy with the answers."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "This comparison uses publicly available information about Tidio as of October 2026. Check their site for current plans and features.",
+      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about Steps AI and Tidio.",
+    "items": [
+      {
+        "q": "Can I try Steps AI before I switch?",
+        "a": "Yes. You can start free with no card, test the agent against your own questions and switch when you are ready."
+      },
+      {
+        "q": "How is Steps AI priced?",
+        "a": "You pay per reply in credits. The number of credits a reply uses depends on the AI model you choose for your agent."
+      },
+      {
+        "q": "Can I run Steps AI alongside Tidio?",
+        "a": "Yes, many businesses test both before deciding. Make sure only one tool replies on each channel at a time."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how Steps AI compares with Tidio on your own questions.",
+    "body": "Book a demo and bring the questions your customers ask most."
+  }
+}

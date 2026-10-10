@@ -1,0 +1,130 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "channel",
+  "slug": "website-chatbot",
+  "channel": "Website",
+  "seo": {
+    "title": "AI website chatbot for any site | Steps AI",
+    "description": "Add an AI chatbot to your website in minutes. Works with WordPress, Wix, Webflow, Framer, Bubble and custom sites, with your branding."
+  },
+  "hero": {
+    "kicker": "Website chatbot",
+    "title": "Answer every website visitor, even at 11pm.",
+    "body": "Add a chat widget or an inline search bar to your site. Your agent answers from your pages and documents, helps shoppers buy and hands over to your team when needed.",
+    "reassurance": "One script or a plugin. Your logo and colours. Separate desktop and mobile settings.",
+    "channels": [
+      "Website"
+    ]
+  },
+  "jobs": {
+    "title": "What your agent does on your website.",
+    "intro": "The same agent you use everywhere, in a widget that matches your site.",
+    "items": [
+      {
+        "title": "Answer from your pages",
+        "body": "The agent reads your website, FAQs and documents and answers in plain language."
+      },
+      {
+        "title": "Suggest quick questions",
+        "body": "Show up to five quick questions so visitors know what to ask."
+      },
+      {
+        "title": "Help shoppers buy",
+        "body": "With Shopify connected, shoppers add items to a cart and check out from inside the chat."
+      },
+      {
+        "title": "Capture leads",
+        "body": "Collect the details your team needs during the conversation and save them to your CRM."
+      }
+    ]
+  },
+  "triggers": {
+    "title": "Make it fit your site.",
+    "intro": "Everything visitors see is yours to set.",
+    "items": [
+      {
+        "title": "Choose floating or inline",
+        "body": "Show a floating widget or an inline search bar, set separately for desktop and mobile."
+      },
+      {
+        "title": "Pick one of nine positions",
+        "body": "Keep the bubble clear of your add-to-cart button on mobile."
+      },
+      {
+        "title": "Set when it appears",
+        "body": "Show it straight away or after 5, 10 or 30 seconds, or one minute."
+      },
+      {
+        "title": "Match your brand",
+        "body": "Use your logo, colours, light or dark theme, and your own greeting."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Add it in a few minutes.",
+    "intro": "No developer needed for most sites.",
+    "items": [
+      {
+        "title": "Copy the script or install the plugin",
+        "body": "Use the universal script, a framework snippet, or the WordPress plugin, which avoids WordPress removing script tags."
+      },
+      {
+        "title": "Paste it into your site builder",
+        "body": "Guides cover Wix, Webflow, Framer, Bubble and WordPress."
+      },
+      {
+        "title": "Limit where it runs",
+        "body": "Add allowed domains so the widget only works on your own sites."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "If you leave allowed domains empty, the widget can be embedded on any website.",
+      "State-level visitor location in analytics is available for website chats only."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the website chatbot.",
+    "items": [
+      {
+        "q": "Does it work with WordPress?",
+        "a": "Yes. Install the ready-made plugin, so you do not have to paste code into WordPress."
+      },
+      {
+        "q": "Can I show it differently on mobile?",
+        "a": "Yes. Desktop and mobile display settings are separate."
+      },
+      {
+        "q": "Can customers buy in the chat?",
+        "a": "With Shopify connected, shoppers can add products to a cart, pick a size or colour and check out from the chat."
+      }
+    ]
+  },
+  "related": {
+    "title": "Other channels.",
+    "items": [
+      {
+        "label": "WhatsApp chatbot",
+        "href": "/channels/whatsapp-chatbot/",
+        "body": "Answer customers on WhatsApp."
+      },
+      {
+        "label": "Instagram chatbot",
+        "href": "/channels/instagram-chatbot/",
+        "body": "Reply to DMs and turn comments into conversations."
+      },
+      {
+        "label": "Messenger chatbot",
+        "href": "/channels/messenger-chatbot/",
+        "body": "Answer customers who message your Facebook page."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the website chatbot with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

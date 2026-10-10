@@ -1,0 +1,95 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "travel-and-hospitality",
+  "card": null,
+  "quotes": [],
+  "cta": {
+    "title": "See Steps AI for travel and hospitality with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI chatbot for hotels and travel businesses | Steps AI",
+    "description": "Answer guest and traveller questions, capture booking enquiries and hand over to your team on WhatsApp, Instagram and your website."
+  },
+  "hero": {
+    "kicker": "Travel and hospitality",
+    "title": "Answer guests before they book somewhere else.",
+    "body": "Travellers ask about rooms, packages, timings and policies at all hours. Your agent answers from your information, captures enquiries and passes bookings to your team.",
+    "reassurance": "Answers any time. Enquiries saved. Your team confirms the booking.",
+    "channels": [
+      "WhatsApp",
+      "Instagram",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What guests ask.",
+    "intro": "Often late at night, often on WhatsApp.",
+    "items": [
+      {
+        "text": "Is breakfast included?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "What time is check-in?",
+        "channel": "Website"
+      },
+      {
+        "text": "Do you have rooms for 12 to 14 March?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "Is the package price per person?",
+        "channel": "Instagram"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles.",
+    "intro": "The questions that come before every booking.",
+    "items": [
+      {
+        "title": "Answer property and package questions",
+        "body": "Rooms, amenities, timings and policies from your own information."
+      },
+      {
+        "title": "Capture booking enquiries",
+        "body": "Collect dates, guests and contact details for your team."
+      },
+      {
+        "title": "Hand over to your team",
+        "body": "Your team confirms availability and the booking."
+      },
+      {
+        "title": "Send offers on WhatsApp",
+        "body": "Reach past guests with an approved WhatsApp template."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your tools.",
+    "intro": "Connect your documents and CRM.",
+    "names": [
+      "Google Drive",
+      "Google Sheets",
+      "HubSpot"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Steps AI does not connect to hotel booking engines. Your team confirms availability and bookings."
+    ]
+  },
+  "faq": {
+    "title": "Questions for travel and hospitality.",
+    "items": [
+      {
+        "q": "Can the agent confirm a room booking?",
+        "a": "It collects the enquiry and passes it to your team, who confirm availability."
+      }
+    ]
+  }
+}

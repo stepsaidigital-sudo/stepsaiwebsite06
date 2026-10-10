@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "channel",
+  "slug": "chat-page",
+  "channel": "Website",
+  "seo": {
+    "title": "Shareable AI chat page, no website needed | Steps AI",
+    "description": "Create a branded page for your AI agent and share the link in your bio, ads or messages. No website needed."
+  },
+  "hero": {
+    "kicker": "Chat page",
+    "title": "No website yet? Share your agent’s page.",
+    "body": "Create a page with your logo, colours and AI agent. Share the link in your Instagram bio, WhatsApp status or ads, so customers can ask questions and get help.",
+    "reassurance": "No website needed. Your branding. Publish when you are ready.",
+    "channels": [
+      "Website"
+    ]
+  },
+  "jobs": {
+    "title": "What your chat page does.",
+    "intro": "A simple page that works like a front desk.",
+    "items": [
+      {
+        "title": "Answer from your information",
+        "body": "The same agent and knowledge as your other channels."
+      },
+      {
+        "title": "Show suggested questions",
+        "body": "Add up to five suggested questions to help visitors start."
+      },
+      {
+        "title": "Link to what matters",
+        "body": "Add link cards to your catalogue, booking page or socials."
+      },
+      {
+        "title": "Capture leads",
+        "body": "Show a lead popup that verifies visitors by email or phone code, and get an email for each verified lead."
+      }
+    ]
+  },
+  "triggers": {
+    "title": "Make it yours.",
+    "intro": "Preview every change before you publish.",
+    "items": [
+      {
+        "title": "Your logo and colours",
+        "body": "Set primary and background colours for light and dark themes."
+      },
+      {
+        "title": "Your welcome message",
+        "body": "Write the greeting and the placeholder visitors see."
+      },
+      {
+        "title": "Search-friendly details",
+        "body": "Set the page title and description for search engines."
+      },
+      {
+        "title": "Desktop and mobile preview",
+        "body": "Check both before you publish, and discard changes if you need to."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Publish your page.",
+    "intro": "No code and no hosting to arrange.",
+    "items": [
+      {
+        "title": "Create the page",
+        "body": "Open your agent’s Site settings and create a page."
+      },
+      {
+        "title": "Add your branding and links",
+        "body": "Upload your logo, choose colours and add link cards."
+      },
+      {
+        "title": "Publish and share",
+        "body": "Switch publishing on and share the public link."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The page shows a public link on the Steps AI domain. Custom domains are not set up from this screen today.",
+      "The lead popup shows a small “Powered by Steps AI” badge."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the chat page.",
+    "items": [
+      {
+        "q": "Do I need a website?",
+        "a": "No. The chat page is hosted for you, so you can share it straight away."
+      },
+      {
+        "q": "Where can I share the link?",
+        "a": "Anywhere you can paste a link, such as your Instagram bio, WhatsApp status, ads or emails."
+      }
+    ]
+  },
+  "related": {
+    "title": "Other channels.",
+    "items": [
+      {
+        "label": "Website chatbot",
+        "href": "/channels/website-chatbot/",
+        "body": "Answer visitors on your website."
+      },
+      {
+        "label": "WhatsApp chatbot",
+        "href": "/channels/whatsapp-chatbot/",
+        "body": "Answer customers on WhatsApp."
+      },
+      {
+        "label": "Instagram chatbot",
+        "href": "/channels/instagram-chatbot/",
+        "body": "Reply to DMs and turn comments into conversations."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your chat page with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

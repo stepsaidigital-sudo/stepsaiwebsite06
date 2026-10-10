@@ -1,0 +1,106 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-receptionist",
+  "hero": {
+    "kicker": "AI receptionist",
+    "title": "Answer every call, even when you cannot.",
+    "body": "Your AI receptionist answers phone calls in English, Hindi and Telugu. It answers questions, takes bookings, transfers to your team and turns after-hours calls into callback tickets.",
+    "reassurance": "Real phone calls. Three languages. A person when needed.",
+    "channels": [
+      "Website",
+      "WhatsApp"
+    ]
+  },
+  "seo": {
+    "title": "AI receptionist for phone calls in English, Hindi and Telugu | Steps AI",
+    "description": "Answer inbound calls with an AI receptionist that books appointments, transfers to your team and turns after-hours calls into callback tickets."
+  },
+  "walkthrough": {
+    "title": "One call, handled.",
+    "intro": "An inbound call to a clinic.",
+    "steps": [
+      {
+        "label": "Greet the caller",
+        "customer": "Hello, is the clinic open on Saturday?",
+        "agent": "Hello, yes, we are open on Saturday from 9 to 1. Would you like to book?",
+        "note": "Known callers are greeted by name.",
+        "result": "Question answered"
+      },
+      {
+        "label": "Book the visit",
+        "customer": "Yes, around 11 please.",
+        "agent": "Saturday at 11 is booked. You will get a confirmation.",
+        "note": "Bookings go into your connected calendar.",
+        "result": "Booking made"
+      },
+      {
+        "label": "Transfer when needed",
+        "customer": "Can I speak to the doctor about my report?",
+        "agent": "Of course, I will transfer you to the team now.",
+        "note": "Calls can be transferred to a person.",
+        "result": "Transferred"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your AI receptionist can do.",
+    "intro": "Voice calling is live on the web and on real phone calls.",
+    "items": [
+      {
+        "title": "Answer inbound calls",
+        "body": "Calls are routed to the right agent by the number dialled."
+      },
+      {
+        "title": "Speak three languages",
+        "body": "English, Hindi and Telugu, with a greeting you can preview."
+      },
+      {
+        "title": "Take messages after hours",
+        "body": "Calls outside business hours leave a voicemail that becomes a callback ticket."
+      },
+      {
+        "title": "Call leads back",
+        "body": "Run outbound call campaigns with qualification questions you set, and a do-not-call list that is always respected."
+      },
+      {
+        "title": "Keep a record",
+        "body": "Calls appear in the inbox with recordings stored."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your calendar.",
+    "intro": "Bookings go where your team already plans.",
+    "names": [
+      "Google Calendar",
+      "Outlook Calendar",
+      "Calendly"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "You connect a telephony provider from the dashboard.",
+      "Voice minutes are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI receptionist.",
+    "items": [
+      {
+        "q": "Which languages does it speak?",
+        "a": "English, Hindi and Telugu. You can also lock an agent to one language."
+      },
+      {
+        "q": "What happens outside business hours?",
+        "a": "Callers can leave a voicemail, which becomes a callback ticket for your team."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the AI receptionist with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

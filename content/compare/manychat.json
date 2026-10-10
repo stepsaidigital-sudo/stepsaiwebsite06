@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "compare",
+  "slug": "manychat",
+  "competitor": "Manychat",
+  "seo": {
+    "title": "Steps AI vs Manychat: an honest comparison | Steps AI",
+    "description": "Compare Steps AI and Manychat: channels, order lookups, pricing model and where each one is the better fit."
+  },
+  "hero": {
+    "kicker": "Steps AI vs Manychat",
+    "title": "Steps AI vs Manychat: flows or an agent that answers.",
+    "body": "Manychat is known for building automated flows on Instagram, WhatsApp and Messenger. Steps AI answers the questions customers actually ask, in their own words, and checks your store before it replies.",
+    "reassurance": "Where we fit. Where they fit. How to switch."
+  },
+  "glance": {
+    "title": "At a glance.",
+    "intro": "How Steps AI and Manychat compare on the questions owners ask most.",
+    "rows": [
+      {
+        "label": "What it is",
+        "steps": "An AI agent that answers customers and checks real records before it replies",
+        "them": "A flow builder for automated conversations and marketing on social channels"
+      },
+      {
+        "label": "Channels",
+        "steps": "Website, WhatsApp, Instagram and Messenger from one Meta connection, plus phone calls",
+        "them": "Instagram, WhatsApp, Messenger and more"
+      },
+      {
+        "label": "Order and delivery questions",
+        "steps": "Checks orders in Shopify or WooCommerce and shipments with five Indian carriers",
+        "them": "Built into flows you design and maintain"
+      },
+      {
+        "label": "How you pay",
+        "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
+        "them": "Plans are priced by the number of contacts"
+      },
+      {
+        "label": "What happens after the answer",
+        "steps": "Books appointments, creates tickets, saves leads and hands over to a person",
+        "them": "Follows the paths you build in each flow"
+      }
+    ]
+  },
+  "ours": {
+    "title": "When Steps AI is the better fit.",
+    "intro": "Choose Steps AI if these sound like you.",
+    "items": [
+      {
+        "title": "Customers go off-script",
+        "body": "Flows follow buttons and keywords. Steps AI understands a question written any way and answers from your information."
+      },
+      {
+        "title": "You want order answers, not menus",
+        "body": "The agent checks the order in your store instead of sending the customer down a menu."
+      },
+      {
+        "title": "You do not want to pay per contact",
+        "body": "Steps AI plans are based on credits used by replies, not on the size of your contact list."
+      }
+    ]
+  },
+  "theirs": {
+    "title": "When Manychat may suit you better.",
+    "intro": "We would rather you pick the right tool than the wrong one.",
+    "items": [
+      {
+        "title": "You run detailed Instagram growth campaigns",
+        "body": "Manychat has a long track record with creators and marketers building complex social flows."
+      },
+      {
+        "title": "You want every step scripted",
+        "body": "If you prefer to control each message in a fixed flow, a flow builder suits that way of working."
+      }
+    ]
+  },
+  "switching": {
+    "title": "Moving from Manychat to Steps AI.",
+    "intro": "Most businesses are answering real customers within a day.",
+    "items": [
+      {
+        "title": "Paste your website address",
+        "body": "Steps AI reads your pages, FAQs and documents, so you do not have to rebuild your answers by hand."
+      },
+      {
+        "title": "Connect your channels and store",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger. Add Shopify or WooCommerce for order questions."
+      },
+      {
+        "title": "Test it against your own questions",
+        "body": "Ask the questions your customers ask. Switch it on when you are happy with the answers."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "This comparison uses publicly available information about Manychat as of October 2026. Check their site for current plans and features.",
+      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about Steps AI and Manychat.",
+    "items": [
+      {
+        "q": "Can I try Steps AI before I switch?",
+        "a": "Yes. You can start free with no card, test the agent against your own questions and switch when you are ready."
+      },
+      {
+        "q": "How is Steps AI priced?",
+        "a": "You pay per reply in credits. The number of credits a reply uses depends on the AI model you choose for your agent."
+      },
+      {
+        "q": "Can I run Steps AI alongside Manychat?",
+        "a": "Yes, many businesses test both before deciding. Make sure only one tool replies on each channel at a time."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how Steps AI compares with Manychat on your own questions.",
+    "body": "Book a demo and bring the questions your customers ask most."
+  }
+}

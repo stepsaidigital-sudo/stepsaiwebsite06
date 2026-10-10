@@ -1,10 +1,11 @@
 'use client';
-import { useEffect, useRef, type ReactNode } from 'react';
+import { Fragment, useEffect, useRef, type ReactNode } from 'react';
 import { ArrowUpRight, CalendarDays, Check, CheckCheck, Info, Megaphone, Plus, Send, Users, FileText } from 'lucide-react';
 import { ChannelLogo, channelKind } from '@/app/channel-chat';
 import { CustomerQuote } from '@/app/quote';
 import { Action, type Open } from '@/components/site/shell';
 import { builtRoutes } from '@/components/site/routes';
+import { reveal } from '@/components/site/motion';
 import type { Cta, Faq as FaqItem, Hero, Item, Quote, Related } from '@/content/types';
 
 // Fades a block in the first time it scrolls into view. Blocks already on
@@ -12,16 +13,7 @@ import type { Cta, Faq as FaqItem, Hero, Item, Quote, Related } from '@/content/
 // away so server-rendered content never blinks out and back in.
 export function Reveal({ children, className = '', as: Tag = 'div' }: { children: ReactNode; className?: string; as?: 'div' | 'section' | 'li' }) {
   const ref = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const box = el.getBoundingClientRect();
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || (box.top < innerHeight && box.bottom > 0)) { el.classList.add('sp-in'); return; }
-    el.classList.add('sp-reveal');
-    const obs = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { el.classList.add('sp-in'); obs.disconnect(); } }, { threshold: 0.15 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  useEffect(() => reveal(ref.current!), []);
   return <Tag ref={ref as never} className={className}>{children}</Tag>;
 }
 
@@ -40,7 +32,7 @@ export function PageHero({ hero, onOpen, visual }: Open & { hero: Hero; visual?:
 }
 
 export function SectionIntro({ eyebrow, title, intro }: { eyebrow?: ReactNode; title: string; intro?: string }) {
-  return <div className="section-intro sp-intro">{eyebrow && <span className="section-kicker">{eyebrow}</span>}<h2>{title}</h2>{intro && <p>{intro}</p>}</div>;
+  return <div className="section-intro sp-intro">{eyebrow && <span className="section-kicker">{eyebrow}</span>}<h2 aria-label={title}>{title.split(' ').map((word, i) => <Fragment key={i}>{i > 0 && ' '}<span className="m-w" aria-hidden="true"><span style={{ ['--wi' as string]: i }}>{word}</span></span></Fragment>)}</h2>{intro && <p>{intro}</p>}</div>;
 }
 
 // Numbered steps. With visuals the rows alternate copy and mockup.
@@ -84,7 +76,7 @@ export function RelatedCards({ title, items, onOpen }: Open & { title: string; i
   })}</div></section>;
 }
 
-const logoFiles = new Set(['calendly', 'google-calendar', 'google-drive', 'hubspot', 'notion', 'shopify', 'woocommerce', 'zendesk']);
+const logoFiles = new Set(['airtable', 'cal-com', 'calendly', 'delhivery', 'dtdc', 'google-calendar', 'google-drive', 'google-sheets', 'hubspot', 'ithink-logistics', 'klaviyo', 'notion', 'outlook-calendar', 'outlook', 'shiprocket', 'shopify', 'slack', 'square-appointments', 'wareiq', 'woocommerce', 'zendesk']);
 const slugOf = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 export function LogoStrip({ names }: { names: string[] }) {
@@ -118,7 +110,7 @@ export function BroadcastMock() {
     <div className="sp-broadcast-body">
       {rows.map(([Icon, label, value], i) => <div key={label} className="sp-broadcast-row sp-line" style={{ transitionDelay: `${150 + i * 180}ms` }}><Icon size={17} /><span>{label}</span><strong>{value}</strong></div>)}
       <div className="sp-broadcast-preview sp-line" style={{ transitionDelay: '900ms' }}><ChannelLogo channel="WhatsApp" /><p>Hi <b>first_name</b>, our new collection is in. Reply SIZE and we will help you choose.</p></div>
-      <div className="sp-broadcast-report">{['Delivered', 'Read', 'Clicked'].map((label, i) => <div key={label}><span>{label}</span><i style={{ ['--w' as string]: `${[92, 68, 31][i]}%` }} /></div>)}</div>
+      <div className="sp-broadcast-report">{['Delivered', 'Read', 'Failed'].map((label, i) => <div key={label}><span>{label}</span><i style={{ ['--w' as string]: `${[92, 68, 4][i]}%` }} /></div>)}</div>
     </div>
   </Reveal>;
 }

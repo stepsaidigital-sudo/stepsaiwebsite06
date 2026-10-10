@@ -1,0 +1,120 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "skills",
+  "seo": {
+    "title": "AI agent skills: booking, tickets, leads and handoff | Steps AI",
+    "description": "Give your AI agent skills to book appointments, create tickets, save leads, hand over to your team and search the web, with rules you write in plain English."
+  },
+  "hero": {
+    "kicker": "Agent skills",
+    "title": "Give your agent skills that finish the job.",
+    "body": "Skills let your agent do more than answer. It can book an appointment, create a ticket, save a lead or hand the conversation to your team, following rules you write in plain English.",
+    "reassurance": "Ready-made skills. Rules in plain English. Custom skills when you need them."
+  },
+  "steps": {
+    "title": "How a skill works.",
+    "intro": "Every skill has the same simple parts.",
+    "items": [
+      {
+        "title": "Say when to use it",
+        "body": "Describe in plain English when the skill should be used, with examples of when it should and should not."
+      },
+      {
+        "title": "Choose what it collects",
+        "body": "Pick the details to ask for, such as name, email, phone or a photo."
+      },
+      {
+        "title": "Connect the app it needs",
+        "body": "Some skills use an app, such as a calendar for bookings. Others need nothing extra."
+      },
+      {
+        "title": "Decide what happens next",
+        "body": "Save the details to your CRM, notify your team or send them on to another tool."
+      }
+    ]
+  },
+  "features": {
+    "title": "Skills you can switch on.",
+    "intro": "Start with the ready-made skills and add your own.",
+    "items": [
+      {
+        "title": "Book appointments",
+        "body": "Book into Google Calendar, Outlook Calendar, Calendly, Cal.com or Square Appointments."
+      },
+      {
+        "title": "Create tickets",
+        "body": "Turn problems into tickets with the fields you require, and email the right people."
+      },
+      {
+        "title": "Save customers and leads",
+        "body": "Create a customer record from the conversation in your CRM or HubSpot."
+      },
+      {
+        "title": "Hand over to a person",
+        "body": "Set a wait time, a fallback message and who gets an email when a customer needs your team."
+      },
+      {
+        "title": "Search the web",
+        "body": "Optional. The agent checks your own information first and searches the web only when that does not cover it."
+      },
+      {
+        "title": "Calculate shipment landed cost",
+        "body": "For importers and sourcing agents, estimate freight, insurance and commission."
+      },
+      {
+        "title": "Build custom skills",
+        "body": "Create AI skills with your own instructions, or flow skills that collect details and call an app or a webhook."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Each booking skill uses one calendar provider. You can connect several and choose per skill.",
+      "Clear rules for when not to use a skill help the agent avoid using it by mistake."
+    ]
+  },
+  "faq": {
+    "title": "Questions about skills.",
+    "items": [
+      {
+        "q": "Do I need to write code?",
+        "a": "No. You describe when to use a skill in plain English and choose options from menus."
+      },
+      {
+        "q": "Can a skill send data to my own tools?",
+        "a": "Yes. A skill can follow up with a webhook, an HTTP request or an action in a connected app."
+      },
+      {
+        "q": "How does the agent decide to use a skill?",
+        "a": "It matches the customer’s intent to the rules and examples you write for each skill."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "Workflow builder",
+        "href": "/features/workflow-builder/",
+        "body": "Run follow-ups after a skill has been used."
+      },
+      {
+        "label": "Integrations",
+        "href": "/integrations/",
+        "body": "Connect the calendars and apps your skills use."
+      },
+      {
+        "label": "CRM",
+        "href": "/features/crm/",
+        "body": "See the records and tickets skills create."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See agent skills with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-booking-agent",
+  "agent": "AI booking agent",
+  "agentPage": "/use-cases/ai-booking-agent/",
+  "seo": {
+    "title": "AI booking agent case studies | Steps AI",
+    "description": "See how RelayDesk use Steps AI as an AI booking agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies · AI booking agent",
+    "title": "How teams use an AI agent before the first booked call.",
+    "body": "Prospects want answers before they book. Steps AI handles those questions, so by the time someone books, they already know whether you are the right fit."
+  },
+  "stories": [
+    {
+      "brand": "RelayDesk",
+      "attribution": "Kevin Morales | Sales Director | RelayDesk",
+      "excerpt": "We get a lot of questions from people who are interested but not ready to talk to sales yet. StepsAI handles that part really well. By the time someone books with us, they’ve usually already checked pricing, integrations, and whether we can support their use case.",
+      "industry": "SaaS",
+      "tags": [
+        "Pre-sales questions",
+        "Booked calls"
+      ]
+    }
+  ],
+  "capabilities": {
+    "title": "What the AI booking agent does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Book into your calendar",
+        "body": "Connect Google Calendar, Outlook Calendar, Calendly, Cal.com or Square Appointments."
+      },
+      {
+        "title": "Answer questions before booking",
+        "body": "Pricing, integrations and fit questions get answered in the chat first."
+      },
+      {
+        "title": "Collect the details you need",
+        "body": "Name, email, company and job title are collected before the booking is made."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer."
+    ]
+  },
+  "cta": {
+    "title": "See the AI booking agent work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}
