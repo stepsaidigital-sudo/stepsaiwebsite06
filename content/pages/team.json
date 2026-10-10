@@ -1,0 +1,36 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Team | Steps AI",
+    "description": "Meet the founder-led team behind Steps AI, the AI agent for customer questions on WhatsApp, Instagram, Messenger and the web."
+  },
+  "hero": {
+    "kicker": "Team",
+    "title": "The people behind Steps AI.",
+    "body": "Steps AI is a founder-led company, started in 2024 by Reshmanth Jonnalagadda. We are a Meta Business Partner and a Shopify Partner."
+  },
+  "sections": [
+    {
+      "title": "Founder.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "Reshmanth Jonnalagadda",
+          "body": "Founder. Started Steps AI in 2024 so that a customer’s question never costs a business the sale."
+        }
+      ]
+    },
+    {
+      "title": "The team.",
+      "paragraphs": [
+        "A small team across product, engineering and customer success works directly with the businesses that use Steps AI."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Talk to us about your business.",
+    "body": "Book a demo and we will walk through your customers’ questions with you."
+  }
+}

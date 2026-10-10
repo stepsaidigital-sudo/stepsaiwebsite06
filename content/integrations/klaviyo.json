@@ -1,0 +1,109 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "klaviyo",
+  "name": "Klaviyo",
+  "category": "Messaging and marketing",
+  "depth": "standard",
+  "seo": {
+    "title": "Klaviyo integration | Steps AI",
+    "description": "Connect Klaviyo to Steps AI so customers from WhatsApp, Instagram and website chats can be part of your Klaviyo email and SMS marketing."
+  },
+  "hero": {
+    "kicker": "Klaviyo integration",
+    "title": "Connect your chat conversations to Klaviyo.",
+    "body": "If your email and SMS marketing runs on Klaviyo, connect it so the customers your agent talks to can be part of your Klaviyo marketing.",
+    "reassurance": "Connected once. Used in skills and workflows. Your team stays informed."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "I would like to speak to someone about a bulk order."
+      },
+      {
+        "from": "agent",
+        "text": "Of course. I have let our team know and someone will join this chat shortly."
+      }
+    ],
+    "lookup": {
+      "title": "Klaviyo · From Steps AI",
+      "rows": [
+        [
+          "Event",
+          "Customer asked for a person"
+        ],
+        [
+          "Channel",
+          "Website chat"
+        ],
+        [
+          "Topic",
+          "Bulk order"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Klaviyo connected.",
+    "intro": "Use Klaviyo as a step in your workflows and agent skills.",
+    "items": [
+      {
+        "title": "Grow your marketing lists",
+        "body": "Customers who share their email in the chat can be added to your Klaviyo marketing."
+      },
+      {
+        "title": "Keep chat and email together",
+        "body": "Use what customers ask in the chat alongside the emails and texts you already send from Klaviyo."
+      },
+      {
+        "title": "Use it in workflows",
+        "body": "Add Klaviyo as a step in a workflow next to your store and messaging apps."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Klaviyo in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Klaviyo",
+        "body": "Open Resources, then Apps, and choose Klaviyo. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Klaviyo to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Use it in a workflow or skill",
+        "body": "Add a Klaviyo step to a workflow, or use it in a flow skill, and choose what it should do."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The actions available for Klaviyo depend on your setup. We will show you exactly what it can do in your demo.",
+      "Workflows save as drafts until you switch them on."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Klaviyo integration.",
+    "items": [
+      {
+        "q": "Where do I use Klaviyo after connecting it?",
+        "a": "In the workflow builder and in flow skills, where a connected app can be chosen as an action."
+      },
+      {
+        "q": "Do I need to write code?",
+        "a": "No. You choose steps from menus. Advanced options such as webhooks are there if your team wants them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Klaviyo.",
+    "body": "Book a demo and we will walk through a real conversation using Klaviyo and your own information."
+  }
+}

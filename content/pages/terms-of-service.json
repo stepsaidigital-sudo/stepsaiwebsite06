@@ -1,0 +1,28 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Terms of service | Steps AI",
+    "description": "The Steps AI terms of service."
+  },
+  "hero": {
+    "kicker": "Legal",
+    "title": "Terms of service.",
+    "body": "The full terms of service are being finalised and will be published on this page. The points below summarise how plans and billing work today."
+  },
+  "sections": [
+    {
+      "title": "Plans and billing in brief.",
+      "paragraphs": [
+        "You can cancel any time, and your plan stays active until the end of the current billing period.",
+        "Payments are not refunded. Credits do not carry over to the next period and cannot be refunded. Extra credit packs expire at the end of the billing cycle.",
+        "After your plan ends, you can export your data for up to 30 days."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Questions about the terms?",
+    "body": "Get in touch and we will answer them."
+  }
+}

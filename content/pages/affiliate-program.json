@@ -1,0 +1,46 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Affiliate program | Steps AI",
+    "description": "Recommend Steps AI to businesses that need an AI agent for customer questions, and earn commission on the customers you refer."
+  },
+  "hero": {
+    "kicker": "Become an affiliate",
+    "title": "Recommend Steps AI and earn on every customer you refer.",
+    "body": "If your audience runs online stores or service businesses, you can share Steps AI with them and earn commission when they become paying customers.",
+    "reassurance": "Simple to join. No setup work. Terms shared when you apply."
+  },
+  "sections": [
+    {
+      "title": "How it works.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "Apply",
+          "body": "Tell us about your audience and where you plan to share Steps AI."
+        },
+        {
+          "title": "Share your link",
+          "body": "Recommend Steps AI in your content, newsletter or community."
+        },
+        {
+          "title": "Earn commission",
+          "body": "Earn on the customers who sign up through you and move to a paid plan."
+        }
+      ]
+    },
+    {
+      "title": "Who it suits.",
+      "paragraphs": [
+        "Creators, consultants and communities whose audience includes small online stores, clinics, schools and service businesses.",
+        "If you want to set up and manage agents for clients yourself, the partner program is a better fit."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Apply to the affiliate program.",
+    "body": "Get in touch and we will share the current terms and your referral link."
+  }
+}

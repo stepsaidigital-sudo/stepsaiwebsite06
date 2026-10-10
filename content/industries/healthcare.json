@@ -1,0 +1,104 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "healthcare",
+  "card": "healthcare",
+  "quotes": [],
+  "cta": {
+    "title": "See Steps AI for healthcare with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI receptionist and chatbot for clinics | Steps AI",
+    "description": "Answer clinic questions and book appointments on WhatsApp, your website and phone calls, with guardrails against medical advice."
+  },
+  "hero": {
+    "kicker": "Healthcare",
+    "title": "Answer patients and fill your appointment book.",
+    "body": "Share clinic information, answer booking questions and collect appointment details on WhatsApp, your website and phone calls. Your agent never gives medical advice.",
+    "reassurance": "Clinic information only. Bookings in your calendar. Your team for anything clinical.",
+    "channels": [
+      "WhatsApp",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What patients ask every day.",
+    "intro": "Most of these never need a doctor to answer.",
+    "items": [
+      {
+        "text": "Are you open on Saturday?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "How much is a consultation?",
+        "channel": "Website"
+      },
+      {
+        "text": "Can I book for tomorrow?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "Where do I park?",
+        "channel": "Website"
+      },
+      {
+        "text": "Do I need to fast before the test?",
+        "channel": "WhatsApp"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles for your clinic.",
+    "intro": "The front desk work, around the clock.",
+    "items": [
+      {
+        "title": "Share clinic information",
+        "body": "Timings, fees, doctors, services and directions from your own information."
+      },
+      {
+        "title": "Book appointments",
+        "body": "Offer times from your calendar and confirm the booking."
+      },
+      {
+        "title": "Answer phone calls",
+        "body": "The AI receptionist answers calls in English, Hindi and Telugu and takes bookings."
+      },
+      {
+        "title": "Pass clinical questions to your team",
+        "body": "Anything medical goes to a person, with the conversation attached."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your calendar.",
+    "intro": "Bookings go where your team already plans.",
+    "names": [
+      "Google Calendar",
+      "Outlook Calendar",
+      "Calendly",
+      "Cal.com"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Set the guardrail “never give medical advice” on your agent’s persona.",
+      "Check your local rules on patient data before sharing health details in chat."
+    ]
+  },
+  "faq": {
+    "title": "Questions for clinics.",
+    "items": [
+      {
+        "q": "Will the agent give medical advice?",
+        "a": "Not if you set the guardrail. Medical questions can be passed to your team instead."
+      },
+      {
+        "q": "Can it book appointments on WhatsApp?",
+        "a": "Yes. The booking skill works on WhatsApp, your website and phone calls."
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-marketing-agent",
+  "agent": "AI marketing agent",
+  "agentPage": "/use-cases/ai-marketing-agent/",
+  "seo": {
+    "title": "AI marketing agent case studies | Steps AI",
+    "description": "See how Sunday Form use Steps AI as an AI marketing agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies · AI marketing agent",
+    "title": "How brands use an AI agent to keep up during launches.",
+    "body": "Launches bring a rush of questions in DMs. Steps AI answers stock, shipping and size questions as they come in, so the team is not sitting in the inbox all day."
+  },
+  "stories": [
+    {
+      "brand": "Sunday Form",
+      "attribution": "Nina Kapoor | E-commerce Lead | Sunday Form",
+      "excerpt": "Our Instagram inbox used to be a mess during launches. People asking if something was still in stock, when it would ship, whether we had another size. Now most of those questions get answered without someone from our team sitting in DMs all day.",
+      "industry": "Ecommerce",
+      "tags": [
+        "Instagram DMs",
+        "Product launches"
+      ]
+    }
+  ],
+  "capabilities": {
+    "title": "What the AI marketing agent does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Turn comments into conversations",
+        "body": "Reply to Instagram comments with a DM when someone uses a keyword such as PRICE or LINK."
+      },
+      {
+        "title": "Send WhatsApp campaigns",
+        "body": "Send personalised WhatsApp broadcasts, and replies come back to your agent."
+      },
+      {
+        "title": "Answer launch questions in DMs",
+        "body": "Stock, shipping and size questions get an answer while interest is high."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer."
+    ]
+  },
+  "cta": {
+    "title": "See the AI marketing agent work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}

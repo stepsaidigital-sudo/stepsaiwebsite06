@@ -1,5 +1,5 @@
 'use client';
-import { CalendarDays, Check, FileSpreadsheet, Inbox, Megaphone, MessageSquare, Send, ShoppingBag, Tag, Users } from 'lucide-react';
+import { BarChart3, CalendarDays, Check, Clock, FileSpreadsheet, GitBranch, Headphones, Inbox, Megaphone, MessageSquare, Send, ShoppingBag, Sparkles, Star, Tag, Ticket, UserPlus, Users } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
 import { BroadcastMock, CtaBand, Faq, FeatureList, GoodToKnow, PageHero, RelatedCards, Reveal, SectionIntro, StepRows } from '@/components/sections';
@@ -59,10 +59,45 @@ const scenes: Record<string, Scene[]> = {
   ],
 };
 
+// Hero product windows for features without a bespoke page. Illustrative,
+// with fictional sample data; rows tick in as the page loads.
+const heroVisuals: Record<string, React.ReactNode> = {
+  'unified-inbox': <SceneWindow icon={<Inbox size={18} />} title="Shared inbox" sub="All agents · Illustration">
+    <SceneRow show icon={<ChannelLogo channel="WhatsApp" />} label="Priya · Where is my order?" value="AI replied" />
+    <SceneRow show icon={<ChannelLogo channel="Instagram" />} label="Rahul · Is the cream one back?" value="AI replied" />
+    <SceneRow show icon={<Headphones size={15} />} label="Anu · Can I speak to someone?" value="Live request" picked />
+    <SceneRow show icon={<Star size={15} />} label="Meera · Bulk order for 40 pieces" value="Starred" />
+  </SceneWindow>,
+  crm: <SceneWindow icon={<Users size={18} />} title="Customers" sub="CRM · Illustration">
+    <SceneRow show icon={<UserPlus size={15} />} label="Meera Shah · Lumen Home" value="Website chat" />
+    <SceneRow show icon={<UserPlus size={15} />} label="Rahul Mehta" value="Instagram" />
+    <SceneRow show icon={<Ticket size={15} />} label="Ticket · Item arrived damaged" value="Open" picked />
+    <SceneRow show icon={<Headphones size={15} />} label="Live request · Bulk order" value="Assigned" />
+  </SceneWindow>,
+  analytics: <SceneWindow icon={<BarChart3 size={18} />} title="Performance" sub="Last 7 days · Illustration">
+    <SceneRow show icon={<MessageSquare size={15} />} label="Total chats" value="1,284" />
+    <SceneRow show icon={<Clock size={15} />} label="Avg AI response time" value="2.1s" />
+    <SceneRow show icon={<Sparkles size={15} />} label="Top question" value="Delivery times" picked />
+    <SceneRow show icon={<CalendarDays size={15} />} label="Busiest hour" value="9 to 11 PM" />
+  </SceneWindow>,
+  skills: <SceneWindow icon={<Sparkles size={18} />} title="Agent skills" sub="Sales agent · Illustration">
+    <SceneRow show icon={<CalendarDays size={15} />} label="Book appointment" value="Google Calendar" picked />
+    <SceneRow show icon={<Ticket size={15} />} label="Create ticket" value="On" />
+    <SceneRow show icon={<UserPlus size={15} />} label="Create customer" value="HubSpot" />
+    <SceneRow show icon={<Headphones size={15} />} label="Human handoff" value="30 seconds" />
+  </SceneWindow>,
+  'workflow-builder': <SceneWindow icon={<GitBranch size={18} />} title="Cart recovery" sub="Workflow · Active · Illustration">
+    <SceneRow show icon={<ShoppingBag size={15} />} label="When a cart is abandoned" value="Shopify" />
+    <SceneRow show icon={<Clock size={15} />} label="Wait" value="1 hour" />
+    <SceneRow show icon={<Check size={15} />} label="If not purchased" value="Condition" />
+    <SceneRow show icon={<Send size={15} />} label="Send WhatsApp reminder" value="Template" picked />
+  </SceneWindow>,
+};
+
 export function FeatureTemplate({ page }: { page: FeaturePage }) {
   const pageScenes = scenesFor(scenes[page.slug], page.steps.items);
   return <SiteFrame>{onOpen => <>
-    <PageHero hero={page.hero} onOpen={onOpen} visual={page.slug === 'whatsapp-broadcast' ? <BroadcastMock /> : undefined} />
+    <PageHero hero={page.hero} onOpen={onOpen} visual={page.slug === 'whatsapp-broadcast' ? <BroadcastMock /> : heroVisuals[page.slug] && <div className="sp-feature-hero">{heroVisuals[page.slug]}</div>} />
     <section className="sp-section container"><SectionIntro eyebrow="How it works" title={page.steps.title} intro={page.steps.intro} />{pageScenes ? <StepTheatre items={page.steps.items} scenes={pageScenes} /> : <StepRows items={page.steps.items} />}</section>
     <section className="sp-section container sp-split"><SectionIntro title={page.features.title} intro={page.features.intro} /><FeatureList items={page.features.items} /></section>
     <section className="sp-section container"><GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} /></section>

@@ -1,0 +1,120 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-support-agent",
+  "hero": {
+    "kicker": "AI support agent",
+    "title": "Answer support questions before they reach your team.",
+    "body": "Order status, delivery, returns and policy questions get an answer straight away. When a customer needs a person, the agent hands over with the full conversation.",
+    "reassurance": "Answers from your information. Order checks from your store. A person when needed.",
+    "channels": [
+      "WhatsApp",
+      "Website",
+      "Instagram"
+    ]
+  },
+  "seo": {
+    "title": "AI support agent for WhatsApp and web chat | Steps AI",
+    "description": "Answer order, delivery and policy questions automatically, create tickets and hand over to your team with the full conversation."
+  },
+  "walkthrough": {
+    "title": "One support conversation, start to finish.",
+    "intro": "What happens when a customer gets in touch about an order.",
+    "steps": [
+      {
+        "label": "Find the order",
+        "customer": "Hi, where is my order 2087?",
+        "agent": "Your order 2087 has shipped and is out for delivery today.",
+        "note": "The agent checks the order in your store and shipping tool.",
+        "result": "Order checked"
+      },
+      {
+        "label": "Answer the policy question",
+        "customer": "If it does not fit, can I return it?",
+        "agent": "Yes, unworn items can be returned within the period on our returns page. Shall I share the steps?",
+        "note": "Answers come from your own policy pages.",
+        "result": "Answered from your policy"
+      },
+      {
+        "label": "Raise a ticket",
+        "customer": "Actually the last one arrived damaged.",
+        "agent": "Sorry about that. Could you share a photo? I will open a ticket for our team.",
+        "note": "The ticket skill collects the fields you require, including photos.",
+        "result": "Ticket created"
+      },
+      {
+        "label": "Hand over to a person",
+        "customer": "Can I speak to someone?",
+        "agent": "Of course. I have passed this to our team and someone will join shortly.",
+        "note": "Your team claims the conversation in the shared inbox.",
+        "result": "Passed to your team"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your support agent can do.",
+    "intro": "Clear the repeat questions and keep your team for the rest.",
+    "items": [
+      {
+        "title": "Check orders and deliveries",
+        "body": "Look up orders in Shopify or WooCommerce and shipments with five Indian carriers."
+      },
+      {
+        "title": "Answer from your help content",
+        "body": "Use your website, FAQs and documents to answer in plain language."
+      },
+      {
+        "title": "Create tickets",
+        "body": "Collect order numbers, photos and other required fields, then notify the right people."
+      },
+      {
+        "title": "Hand over cleanly",
+        "body": "Set a wait time, a fallback message and email alerts for handoffs."
+      },
+      {
+        "title": "Answer missed calls on WhatsApp",
+        "body": "Reply to missed WhatsApp calls with a message so the customer is not left waiting."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your support tools.",
+    "intro": "Connect your store, carriers and helpdesk.",
+    "names": [
+      "Shopify",
+      "WooCommerce",
+      "Shiprocket",
+      "Delhivery",
+      "Zendesk"
+    ]
+  },
+  "quote": {
+    "excerpt": "The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be.",
+    "attribution": "Maya Patel | Head of E-commerce | North & Pine"
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Order tracking and human handoff start from the Starter plan.",
+      "The agent shares the status your store and carriers report. It cannot change a delivery."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI support agent.",
+    "items": [
+      {
+        "q": "What if the agent does not know the answer?",
+        "a": "It says so and passes the conversation to your team, rather than guessing."
+      },
+      {
+        "q": "Can it create tickets in Zendesk?",
+        "a": "Connect Zendesk to send tickets there, or keep them in the Steps AI CRM."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the AI support agent with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

@@ -1,4 +1,5 @@
 'use client';
+import { SplitWords } from '@/components/site/motion';
 import {useState} from 'react';
 import {ArrowRight,Pause,Play} from 'lucide-react';
 import copy from './copy.json';
@@ -25,7 +26,7 @@ export function Reviews({onOpen}:{onOpen:(label:string)=>void}){
   const half=Math.ceil(list.length/2);
   const rows=[list.slice(0,half),list.slice(half)];
   return <section id="stories" className="reviews-showcase rv"><div className="container">
-    <div className="section-intro reviews-intro rv-intro"><h2>{copy.testimonials.title}</h2><p>{copy.testimonials.paragraphs[0]}</p></div>
+    <div className="section-intro reviews-intro rv-intro"><h2 aria-label={copy.testimonials.title}><SplitWords text={copy.testimonials.title}/></h2><p>{copy.testimonials.paragraphs[0]}</p></div>
   </div>
     <div className="rv-rows" data-paused={paused} role="region" aria-label="Customer reviews">
       {rows.map((row,r)=><div className={`rv-row rv-row-${r}`} key={r}><div className="rv-track">

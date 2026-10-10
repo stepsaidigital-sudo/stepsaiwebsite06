@@ -49,6 +49,30 @@ const scenes: Record<string, Scene[]> = {
 };
 
 const heroLines: Record<string, { from: 'customer' | 'agent'; text: string }[]> = {
+  'website-chatbot': [
+    { from: 'customer', text: 'Do you ship to Pune?' },
+    { from: 'agent', text: 'Yes, we deliver across India. Orders to Pune usually arrive in 3 to 5 days.' },
+    { from: 'customer', text: 'Great. Is the linen shirt in stock in medium?' },
+    { from: 'agent', text: 'Yes, medium is in stock. Shall I add it to your cart?' },
+  ],
+  'instagram-chatbot': [
+    { from: 'customer', text: 'PRICE' },
+    { from: 'agent', text: 'Thanks for your comment. The ceramic vase is 1,450. Here is the link.' },
+    { from: 'customer', text: 'Does it come in cream?' },
+    { from: 'agent', text: 'Yes, cream is in stock. Would you like the link for that one?' },
+  ],
+  'messenger-chatbot': [
+    { from: 'customer', text: 'Are you open on Sunday?' },
+    { from: 'agent', text: 'We are open Sunday from 10 to 4. Would you like to book a visit?' },
+    { from: 'customer', text: 'Yes, around 11.' },
+    { from: 'agent', text: 'Sunday at 11 is booked. See you then.' },
+  ],
+  'chat-page': [
+    { from: 'customer', text: 'Hi, I found you on Instagram. What do you sell?' },
+    { from: 'agent', text: 'Handmade ceramics for the home. Would you like to see our new collection?' },
+    { from: 'customer', text: 'Yes please.' },
+    { from: 'agent', text: 'Here are three pieces customers love this month.' },
+  ],
   'whatsapp-chatbot': [
     { from: 'customer', text: 'Do you have this in a smaller size?' },
     { from: 'agent', text: 'Yes, the small one is in stock. Shall I add it to your cart?' },

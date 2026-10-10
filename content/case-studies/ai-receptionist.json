@@ -1,0 +1,51 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-receptionist",
+  "agent": "AI receptionist",
+  "agentPage": "/use-cases/ai-receptionist/",
+  "seo": {
+    "title": "AI receptionist case studies | Steps AI",
+    "description": "What an AI receptionist from Steps AI does on phone calls, with customer stories to follow."
+  },
+  "hero": {
+    "kicker": "Case studies · AI receptionist",
+    "title": "An AI receptionist that answers your calls.",
+    "body": "Steps AI can now answer phone calls in English, Hindi and Telugu. Customer stories for the AI receptionist are being gathered, and this page will share them as they come in."
+  },
+  "stories": [],
+  "capabilities": {
+    "title": "What the AI receptionist does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Answer inbound calls",
+        "body": "Calls are routed to the right agent by the number dialled, and known callers are greeted by name."
+      },
+      {
+        "title": "Take messages after hours",
+        "body": "Calls outside business hours leave a voicemail that becomes a callback ticket for your team."
+      },
+      {
+        "title": "Transfer to a person",
+        "body": "When a caller needs your team, the call can be transferred to a human."
+      },
+      {
+        "title": "Speak your customers’ language",
+        "body": "Voice works in English, Hindi and Telugu, on the web and on real phone calls."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer.",
+      "Voice minutes are billed as credits, and a telephony provider is connected from the dashboard."
+    ]
+  },
+  "cta": {
+    "title": "See the AI receptionist work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}

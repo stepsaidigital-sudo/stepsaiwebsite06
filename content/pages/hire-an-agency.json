@@ -1,0 +1,46 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Hire an agency to set up Steps AI | Steps AI",
+    "description": "Want help setting up your AI agent? We can introduce you to a Steps AI partner agency that sets up and manages it for you."
+  },
+  "hero": {
+    "kicker": "Hire an agency",
+    "title": "Get help setting up your AI agent.",
+    "body": "Steps AI is built to set up without code. If you would rather hand it to someone, we can introduce you to a partner agency that sets up and runs your agent for you.",
+    "reassurance": "Introductions by our team. Agencies that know the product. You stay the owner of your account."
+  },
+  "sections": [
+    {
+      "title": "What an agency can do for you.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "Prepare your knowledge",
+          "body": "Tidy your help pages, FAQs and documents so the agent answers well from day one."
+        },
+        {
+          "title": "Connect your channels and tools",
+          "body": "Set up WhatsApp, Instagram, Messenger, your website and integrations such as Shopify."
+        },
+        {
+          "title": "Build your workflows",
+          "body": "Switch on and adjust follow-ups such as abandoned cart and COD confirmation."
+        }
+      ]
+    },
+    {
+      "title": "How to get started.",
+      "paragraphs": [
+        "Book a call and tell us what you need. We will suggest a partner agency that fits your business and budget.",
+        "Agencies set their own fees, separate from your Steps AI plan."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Find an agency for your setup.",
+    "body": "Book a call and we will introduce you to a partner that fits your business."
+  }
+}

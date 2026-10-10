@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ArrowUpRight, BarChart3, BookOpen, CalendarCheck, ChevronDown, Code2, FileText, GitBranch, Inbox, LifeBuoy, Megaphone, Scale, ShoppingBag, Sparkles, Star, Headphones, Users, UserPlus } from 'lucide-react';
+import { ArrowUpRight, BarChart3, BookOpen, CalendarCheck, ChevronDown, Code2, FileText, GitBranch, Inbox, LifeBuoy, Megaphone, PhoneCall, Scale, ShoppingBag, Sparkles, Star, Headphones, Users, UserPlus } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import nav from '@/content/site/nav.json';
 import { builtRoutes } from './routes';
@@ -22,6 +22,7 @@ const tiles: Record<string, [ReactNode, string]> = {
   'AI lead capture agent': [<UserPlus key="i" size={19} />, 'lilac'],
   'AI booking agent': [<CalendarCheck key="i" size={19} />, 'yellow'],
   'AI marketing agent': [<Megaphone key="i" size={19} />, 'peach'],
+  'AI receptionist': [<PhoneCall key="i" size={19} />, 'mint'],
   Blog: [<FileText key="i" size={19} />, 'blue'],
   'Customer stories': [<Star key="i" size={19} />, 'yellow'],
   Compare: [<Scale key="i" size={19} />, 'lilac'],
@@ -62,7 +63,7 @@ export function MegaMenus({ onOpen, onNavigate }: { onOpen: (label: string) => v
   }, [active]);
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
-  const hoverable = () => matchMedia('(hover: hover) and (pointer: fine) and (min-width: 881px)').matches;
+  const hoverable = () => matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1201px)').matches;
   const later = (next: string | null, ms: number) => { window.clearTimeout(timer.current); timer.current = window.setTimeout(() => setActive(next), ms); };
   const done = () => { setActive(null); onNavigate(); };
 

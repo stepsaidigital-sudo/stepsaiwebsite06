@@ -1,0 +1,113 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "google-drive",
+  "name": "Google Drive",
+  "category": "Knowledge and data",
+  "depth": "standard",
+  "seo": {
+    "title": "Train an AI agent on Google Drive | Steps AI",
+    "description": "Connect Google Drive to Steps AI so your agent answers customers from your own Google Drive content on WhatsApp, Instagram, Messenger and your website."
+  },
+  "hero": {
+    "kicker": "Google Drive integration",
+    "title": "Answer customers from what is already in Google Drive.",
+    "body": "Connect the documents your team already keeps in Google Drive, such as policies, price lists and guides. Your agent uses them to answer customer questions.",
+    "reassurance": "Your own content. Connected once. Used by any agent you choose."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "What is your return policy for sale items?"
+      },
+      {
+        "from": "agent",
+        "text": "Sale items can be exchanged within 14 days. Refunds are not available on sale items."
+      }
+    ],
+    "lookup": {
+      "title": "Google Drive · Source used",
+      "rows": [
+        [
+          "Document",
+          "Returns and exchanges"
+        ],
+        [
+          "Section",
+          "Sale items"
+        ],
+        [
+          "Answer",
+          "From your content"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Google Drive connected.",
+    "intro": "Keep your information where your team already maintains it, and let the agent answer from it.",
+    "items": [
+      {
+        "title": "Answer from your documents",
+        "body": "Policies, guides and FAQs in Drive become answers your agent can give on every channel."
+      },
+      {
+        "title": "Keep one source of truth",
+        "body": "Update the document in Drive and the agent works from the new version, with no copy and paste."
+      },
+      {
+        "title": "Share across agents",
+        "body": "One connected folder can serve every agent in your workspace."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Google Drive in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Google Drive",
+        "body": "Open Resources, then Apps, and choose Google Drive. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Google Drive to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Choose what the agent can read",
+        "body": "Pick the pages, files or tables to use. They become workspace resources, so any agent can use them and one edit updates every agent."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent answers from the content you choose. Keep it up to date and the answers stay up to date.",
+      "Storage and processing limits depend on your plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Google Drive integration.",
+    "items": [
+      {
+        "q": "Does the agent use everything in my account?",
+        "a": "No. You choose what to connect, and the agent uses only that."
+      },
+      {
+        "q": "Can several agents use the same content?",
+        "a": "Yes. Connected content is a workspace resource, so you set it up once and any agent can use it."
+      },
+      {
+        "q": "What if a question is not covered?",
+        "a": "The agent can say it does not know and pass the conversation to your team. Web search is optional and off unless you switch it on."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Google Drive.",
+    "body": "Book a demo and we will walk through a real conversation using Google Drive and your own information."
+  }
+}

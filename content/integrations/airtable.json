@@ -1,0 +1,113 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "airtable",
+  "name": "Airtable",
+  "category": "Knowledge and data",
+  "depth": "standard",
+  "seo": {
+    "title": "Train an AI agent on Airtable | Steps AI",
+    "description": "Connect Airtable to Steps AI so your agent answers customers from your own Airtable content on WhatsApp, Instagram, Messenger and your website."
+  },
+  "hero": {
+    "kicker": "Airtable integration",
+    "title": "Answer customers from what is already in Airtable.",
+    "body": "Connect the tables your team keeps in Airtable, such as product lists, course schedules or property listings, and your agent can answer from them.",
+    "reassurance": "Your own content. Connected once. Used by any agent you choose."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "What is your return policy for sale items?"
+      },
+      {
+        "from": "agent",
+        "text": "Sale items can be exchanged within 14 days. Refunds are not available on sale items."
+      }
+    ],
+    "lookup": {
+      "title": "Airtable · Source used",
+      "rows": [
+        [
+          "Document",
+          "Returns and exchanges"
+        ],
+        [
+          "Section",
+          "Sale items"
+        ],
+        [
+          "Answer",
+          "From your content"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Airtable connected.",
+    "intro": "Keep your information where your team already maintains it, and let the agent answer from it.",
+    "items": [
+      {
+        "title": "Answer from structured data",
+        "body": "Lists such as products, courses, properties or opening times become answers the agent can look up."
+      },
+      {
+        "title": "Keep answers current",
+        "body": "Your team updates the table, and the agent works from what is there."
+      },
+      {
+        "title": "Use it in skills",
+        "body": "Combine Airtable with skills that collect details or book appointments."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Airtable in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Airtable",
+        "body": "Open Resources, then Apps, and choose Airtable. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Airtable to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Choose what the agent can read",
+        "body": "Pick the pages, files or tables to use. They become workspace resources, so any agent can use them and one edit updates every agent."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent answers from the content you choose. Keep it up to date and the answers stay up to date.",
+      "Storage and processing limits depend on your plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Airtable integration.",
+    "items": [
+      {
+        "q": "Does the agent use everything in my account?",
+        "a": "No. You choose what to connect, and the agent uses only that."
+      },
+      {
+        "q": "Can several agents use the same content?",
+        "a": "Yes. Connected content is a workspace resource, so you set it up once and any agent can use it."
+      },
+      {
+        "q": "What if a question is not covered?",
+        "a": "The agent can say it does not know and pass the conversation to your team. Web search is optional and off unless you switch it on."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Airtable.",
+    "body": "Book a demo and we will walk through a real conversation using Airtable and your own information."
+  }
+}

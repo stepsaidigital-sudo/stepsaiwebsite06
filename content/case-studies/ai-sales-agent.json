@@ -1,0 +1,67 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "case-study",
+  "slug": "ai-sales-agent",
+  "agent": "AI sales agent",
+  "agentPage": "/use-cases/ai-sales-agent/",
+  "seo": {
+    "title": "AI sales agent case studies | Steps AI",
+    "description": "See how Mysa Living and Aster & Row use Steps AI as an AI sales agent, in their own words."
+  },
+  "hero": {
+    "kicker": "Case studies · AI sales agent",
+    "title": "How stores use an AI sales agent to help customers choose.",
+    "body": "Customers describe what they need in their own words. These businesses use Steps AI to point shoppers to products that make sense, including after the team has gone home."
+  },
+  "stories": [
+    {
+      "brand": "Mysa Living",
+      "attribution": "Anika Rao | Head of Digital | Mysa Living",
+      "excerpt": "StepsAI is good at the questions that don’t fit neatly into filters. People will say what they need, their budget, maybe what they’ve bought before, and StepsAI can point them to a few products that actually make sense.",
+      "industry": "Ecommerce",
+      "tags": [
+        "Product recommendations",
+        "Budget and needs"
+      ]
+    },
+    {
+      "brand": "Aster & Row",
+      "attribution": "Priya Shah | Founder | Aster & Row",
+      "excerpt": "A lot of our customers shop and message us after hours. StepsAI handles most of those questions now, so we’re not coming back every morning to a backlog. For a team of six, that’s been really useful.",
+      "industry": "Ecommerce",
+      "tags": [
+        "After-hours questions",
+        "Small team"
+      ]
+    }
+  ],
+  "capabilities": {
+    "title": "What the AI sales agent does.",
+    "intro": "The capabilities behind these stories.",
+    "items": [
+      {
+        "title": "Recommend from your catalogue",
+        "body": "The agent suggests products from your connected store based on need, budget and style."
+      },
+      {
+        "title": "Check stock and share checkout",
+        "body": "With Shopify or WooCommerce connected, the agent checks availability and sends a checkout link."
+      },
+      {
+        "title": "Answer after hours",
+        "body": "Questions that arrive in the evening get an answer straight away instead of waiting for the morning."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "These stories are in each customer’s own words. Full case studies with figures will be added once they are confirmed with each customer."
+    ]
+  },
+  "cta": {
+    "title": "See the AI sales agent work for your business.",
+    "body": "Book a demo and we will walk through a real conversation using your own information."
+  }
+}

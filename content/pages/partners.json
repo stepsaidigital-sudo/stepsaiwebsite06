@@ -1,0 +1,48 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Partner program for agencies | Steps AI",
+    "description": "Agencies can offer AI agents to their clients with Steps AI. Unlimited agents on paid plans, one account and one bill, and commission on every client you bring."
+  },
+  "hero": {
+    "kicker": "Partner with us",
+    "title": "Offer AI agents to your clients without building them.",
+    "body": "Your clients are asking for AI. Steps AI gives your agency the agents, channels and integrations to deliver it, under one account you manage.",
+    "reassurance": "Unlimited agents on paid plans. One account, one bill. Commission on clients you bring."
+  },
+  "sections": [
+    {
+      "title": "Why agencies partner with Steps AI.",
+      "paragraphs": [
+        "Most agencies do not have AI infrastructure of their own. Steps AI becomes the platform you set up, run and charge for."
+      ],
+      "items": [
+        {
+          "title": "One agent per client",
+          "body": "Paid plans include unlimited agents, so each client gets their own agent, knowledge and channels."
+        },
+        {
+          "title": "Reporting per agent",
+          "body": "Account-level analytics show conversations, response times and tickets for each agent, ready for client reports."
+        },
+        {
+          "title": "Commission on every client",
+          "body": "Earn commission on the clients you bring to Steps AI. We share the full terms when you apply."
+        }
+      ]
+    },
+    {
+      "title": "Who it is for.",
+      "paragraphs": [
+        "Digital, marketing and ecommerce agencies that build websites, run social channels or manage Shopify stores for their clients.",
+        "If you would rather send us customers than run agents yourself, see the affiliate program."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Apply to become a partner.",
+    "body": "Book a call and we will walk through how the program works for your agency."
+  }
+}

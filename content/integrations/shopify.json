@@ -1,0 +1,219 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "shopify",
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "depth": "deep",
+  "seo": {
+    "title": "Shopify AI chatbot for WhatsApp, Instagram and your store | Steps AI",
+    "description": "Connect Shopify to Steps AI. Answer order questions, recommend products, add to cart and check out in the chat, and recover carts with ready-made workflows."
+  },
+  "hero": {
+    "kicker": "Shopify integration",
+    "title": "Answer order questions and sell in the chat with Shopify.",
+    "body": "Your agent checks real orders, stock and discounts in your Shopify store before it replies. Customers can choose a product, add it to a cart and check out without leaving the conversation.",
+    "reassurance": "Live store data. Checkout on your own Shopify checkout. Workflows ready to switch on.",
+    "channels": [
+      "Website",
+      "WhatsApp",
+      "Instagram"
+    ]
+  },
+  "demo": {
+    "channel": "WhatsApp",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "Hi, where is my order 1042?"
+      },
+      {
+        "from": "agent",
+        "text": "Your order 1042 was shipped yesterday and is on its way to you."
+      },
+      {
+        "from": "customer",
+        "text": "Great. Do you have the linen shirt in medium as well?"
+      },
+      {
+        "from": "agent",
+        "text": "Yes, medium is in stock. Shall I add it to your cart?"
+      }
+    ],
+    "lookup": {
+      "title": "Shopify · Order 1042",
+      "rows": [
+        [
+          "Status",
+          "Fulfilled"
+        ],
+        [
+          "Payment",
+          "Paid"
+        ],
+        [
+          "Items",
+          "2"
+        ],
+        [
+          "Fulfilment",
+          "Shipped"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Shopify connected.",
+    "intro": "Each one uses live data from your store, so the agent answers from what is true right now.",
+    "items": [
+      {
+        "title": "Answer where is my order",
+        "body": "The agent finds the order in Shopify and replies with its current status, on any channel the customer uses."
+      },
+      {
+        "title": "Recommend from your catalogue",
+        "body": "Suggestions come only from products in your store, and the agent leaves out anything that is out of stock."
+      },
+      {
+        "title": "Add to cart and check out in the chat",
+        "body": "Customers pick a size or colour, add items to a cart in the chat and get a checkout message. They can come back and finish the checkout later."
+      },
+      {
+        "title": "Mention only your active discounts",
+        "body": "Your Shopify discounts and promotions are synced to Steps AI, so the agent can tell customers about offers that are live and nothing else."
+      },
+      {
+        "title": "Recover abandoned carts and checkouts",
+        "body": "Switch on a ready-made workflow to follow up on WhatsApp, email or the website widget when a customer leaves without paying."
+      },
+      {
+        "title": "Reconfirm cash-on-delivery orders",
+        "body": "Ask COD customers to confirm before you ship, and send a payment link if they would rather pay now."
+      },
+      {
+        "title": "See revenue from conversations",
+        "body": "Paid Shopify orders are linked back to the WhatsApp campaign or agent conversation that led to them."
+      }
+    ]
+  },
+  "walkthrough": {
+    "title": "From a product question to a paid order.",
+    "intro": "A typical conversation on WhatsApp when a customer is ready to buy.",
+    "steps": [
+      {
+        "label": "Recommend a product",
+        "customer": "I need a shirt for a summer wedding. Something light.",
+        "agent": "The linen shirt in sand is a good fit and it is one of our lightest fabrics. Would you like to see it?",
+        "note": "The agent picks from products in your Shopify catalogue.",
+        "result": "Picked from your catalogue"
+      },
+      {
+        "label": "Check stock and size",
+        "customer": "Yes. Do you have it in medium?",
+        "agent": "Medium is in stock. I have added it to your cart.",
+        "note": "Stock comes from Shopify, so the agent does not offer a size you cannot ship.",
+        "result": "Stock checked in Shopify"
+      },
+      {
+        "label": "Share a live offer",
+        "customer": "Any discount running?",
+        "agent": "Yes, SUMMER10 gives you 10% off this week. It is applied at checkout.",
+        "note": "Only discounts synced from your store are mentioned.",
+        "result": "Active discount only"
+      },
+      {
+        "label": "Check out in the chat",
+        "customer": "Perfect, I will take it.",
+        "agent": "Here is your checkout. Tap to pay on our secure checkout page.",
+        "note": "Payment happens on your Shopify checkout. Steps AI does not take payments.",
+        "result": "Checkout sent in the chat"
+      }
+    ]
+  },
+  "workflows": {
+    "title": "Ready-made Shopify workflows.",
+    "intro": "Pick a template, check the wording and switch it on. Each one runs on events from your store.",
+    "items": [
+      {
+        "title": "Recover abandoned carts",
+        "body": "Follow up with shoppers who added items but did not check out, on the website widget, by email or on WhatsApp."
+      },
+      {
+        "title": "Follow up on unfinished checkouts",
+        "body": "Remind customers who started a checkout, with a one or two step email sequence."
+      },
+      {
+        "title": "Confirm orders and send updates",
+        "body": "Send an order confirmation, then a shipping update and a review request after delivery."
+      },
+      {
+        "title": "Reconfirm cash-on-delivery orders",
+        "body": "Check that COD customers still want the order before it ships, and offer a payment link to switch to prepaid."
+      },
+      {
+        "title": "Win back cancelled and quiet customers",
+        "body": "Reach customers who cancelled an order, or who have not bought in a while, with a message and a discount code you choose."
+      },
+      {
+        "title": "Alert your team about big orders",
+        "body": "Notify your team when an order is above the value you set, or when a refund comes in."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Shopify in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Shopify",
+        "body": "Open Resources, then Apps, and choose Shopify. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Shopify to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Choose what the agent can do",
+        "body": "Your products are indexed and your discounts imported. Then switch on the shopping features and any workflows you want."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Customers pay on your own Shopify checkout. Steps AI does not process payments.",
+      "Cart and checkout in the chat work on the website widget, WhatsApp and Instagram.",
+      "Workflow messages on WhatsApp use templates approved by Meta."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Shopify integration.",
+    "items": [
+      {
+        "q": "Can the agent see my orders?",
+        "a": "Yes. Once Shopify is connected and switched on, the agent can look up an order and share its status with the customer it belongs to."
+      },
+      {
+        "q": "Will it recommend products that are out of stock?",
+        "a": "No. The agent checks stock in Shopify and does not show products with zero or negative stock."
+      },
+      {
+        "q": "Can customers pay inside the chat?",
+        "a": "Customers build a cart in the chat and then pay on your Shopify checkout page. A checkout can be resumed later."
+      },
+      {
+        "q": "Does it work with my discount codes?",
+        "a": "Yes. Discounts and promotions are imported from Shopify and kept up to date, and the agent only mentions the ones that are active."
+      },
+      {
+        "q": "Can I see which sales came from the agent?",
+        "a": "Paid Shopify orders are attributed to WhatsApp campaigns and agent conversations, so you can see the revenue each one brought in."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Shopify.",
+    "body": "Book a demo and we will walk through a real conversation using Shopify and your own information."
+  }
+}

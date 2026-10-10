@@ -1,0 +1,109 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "outlook",
+  "name": "Outlook",
+  "category": "Messaging and marketing",
+  "depth": "standard",
+  "seo": {
+    "title": "Outlook integration | Steps AI",
+    "description": "Connect Microsoft Outlook to Steps AI and use it in workflows and skills to keep your team informed about tickets and leads."
+  },
+  "hero": {
+    "kicker": "Outlook integration",
+    "title": "Bring Steps AI into your team’s Outlook.",
+    "body": "Connect your Microsoft Outlook account so workflows and skills can use it, for example to let your team know about new tickets or leads by email.",
+    "reassurance": "Connected once. Used in skills and workflows. Your team stays informed."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "I would like to speak to someone about a bulk order."
+      },
+      {
+        "from": "agent",
+        "text": "Of course. I have let our team know and someone will join this chat shortly."
+      }
+    ],
+    "lookup": {
+      "title": "Outlook · From Steps AI",
+      "rows": [
+        [
+          "Event",
+          "Customer asked for a person"
+        ],
+        [
+          "Channel",
+          "Website chat"
+        ],
+        [
+          "Topic",
+          "Bulk order"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Outlook connected.",
+    "intro": "Use Outlook as a step in your workflows and agent skills.",
+    "items": [
+      {
+        "title": "Email your team about tickets",
+        "body": "Let the right people know by email when the agent raises a ticket or a customer asks for a person."
+      },
+      {
+        "title": "Share new leads",
+        "body": "Send your sales team the details of a new lead captured in the chat."
+      },
+      {
+        "title": "Use it in workflows",
+        "body": "Add Outlook as a step in a workflow alongside your store and other apps."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Outlook in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Outlook",
+        "body": "Open Resources, then Apps, and choose Outlook. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Outlook to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Use it in a workflow or skill",
+        "body": "Add a Outlook step to a workflow, or use it in a flow skill, and choose what it should do."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The actions available for Outlook depend on your setup. We will show you exactly what it can do in your demo.",
+      "Workflows save as drafts until you switch them on."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Outlook integration.",
+    "items": [
+      {
+        "q": "Where do I use Outlook after connecting it?",
+        "a": "In the workflow builder and in flow skills, where a connected app can be chosen as an action."
+      },
+      {
+        "q": "Do I need to write code?",
+        "a": "No. You choose steps from menus. Advanced options such as webhooks are there if your team wants them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Outlook.",
+    "body": "Book a demo and we will walk through a real conversation using Outlook and your own information."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "saas",
+  "card": null,
+  "quotes": [
+    {
+      "excerpt": "Our help center is pretty big, and customers weren’t finding half of what was already there. Now they just ask the question normally and get the relevant answer. Support still handles the harder stuff, but we get far fewer tickets asking for information that was already sitting in our docs.",
+      "attribution": "Jonathan Reed | VP, Customer Success | Stacklane"
+    },
+    {
+      "excerpt": "We get a lot of questions from people who are interested but not ready to talk to sales yet. StepsAI handles that part really well. By the time someone books with us, they’ve usually already checked pricing, integrations, and whether we can support their use case.",
+      "attribution": "Kevin Morales | Sales Director | RelayDesk"
+    }
+  ],
+  "cta": {
+    "title": "See Steps AI for saas with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI support and lead capture agent for SaaS | Steps AI",
+    "description": "Answer product questions from your docs, capture and qualify leads, and book demos for your sales team."
+  },
+  "hero": {
+    "kicker": "SaaS",
+    "title": "Answer product questions and book more demos.",
+    "body": "Your agent answers from your help centre and docs, qualifies visitors and books demos, so your sales and support teams start every conversation with context.",
+    "reassurance": "Answers from your docs. Leads with context. Demos in your calendar.",
+    "channels": [
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What prospects and customers ask.",
+    "intro": "Before they talk to sales, and after they sign up.",
+    "items": [
+      {
+        "text": "Do you integrate with HubSpot?",
+        "channel": "Website"
+      },
+      {
+        "text": "How is pricing calculated?",
+        "channel": "Website"
+      },
+      {
+        "text": "How do I reset my password?",
+        "channel": "Website"
+      },
+      {
+        "text": "Can I book a demo?",
+        "channel": "Website"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles.",
+    "intro": "Support and sales from the same agent.",
+    "items": [
+      {
+        "title": "Answer from your docs",
+        "body": "Help centre articles and documentation become answers."
+      },
+      {
+        "title": "Qualify leads",
+        "body": "Collect company size, use case and contact details."
+      },
+      {
+        "title": "Book demos",
+        "body": "Offer times from your sales team’s calendar."
+      },
+      {
+        "title": "Create support tickets",
+        "body": "Turn product issues into tickets for your team or Zendesk."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your tools.",
+    "intro": "Connect your docs, CRM and calendar.",
+    "names": [
+      "HubSpot",
+      "Zendesk",
+      "Notion",
+      "Google Calendar",
+      "Calendly"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Steps AI does not offer an API-first build. Enterprise plans include API access."
+    ]
+  },
+  "faq": {
+    "title": "Questions for SaaS teams.",
+    "items": [
+      {
+        "q": "Can it answer from our help centre?",
+        "a": "Yes. Connect your help centre website or documents, and the agent answers from them."
+      }
+    ]
+  }
+}

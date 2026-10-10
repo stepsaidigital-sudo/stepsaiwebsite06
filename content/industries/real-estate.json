@@ -1,0 +1,100 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "industry",
+  "slug": "real-estate",
+  "card": "realestate",
+  "quotes": [],
+  "cta": {
+    "title": "See Steps AI for real estate with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  },
+  "seo": {
+    "title": "AI chatbot for real estate enquiries and site visits | Steps AI",
+    "description": "Answer property questions, qualify buyers and book site visits on WhatsApp, Instagram and your website."
+  },
+  "hero": {
+    "kicker": "Real estate",
+    "title": "Qualify buyers and book site visits.",
+    "body": "Ask about budget and requirements, answer property questions and arrange a visit. Your sales team gets enquiries with the details already collected.",
+    "reassurance": "Answers from your listings. Requirements collected. Visits booked in your calendar.",
+    "channels": [
+      "WhatsApp",
+      "Instagram",
+      "Website"
+    ]
+  },
+  "questions": {
+    "title": "What buyers ask first.",
+    "intro": "Your team should spend time on visits, not repeat questions.",
+    "items": [
+      {
+        "text": "Is the 3BHK still available?",
+        "channel": "WhatsApp"
+      },
+      {
+        "text": "What is the price per square foot?",
+        "channel": "Instagram"
+      },
+      {
+        "text": "Is it ready to move in?",
+        "channel": "Website"
+      },
+      {
+        "text": "Can I visit this weekend?",
+        "channel": "WhatsApp"
+      }
+    ]
+  },
+  "jobs": {
+    "title": "What your agent handles for your projects.",
+    "intro": "From an ad click to a site visit.",
+    "items": [
+      {
+        "title": "Answer property questions",
+        "body": "Configurations, amenities and location details from your brochures and listings."
+      },
+      {
+        "title": "Ask about requirements",
+        "body": "Budget, size and timeline, saved as custom fields in your CRM."
+      },
+      {
+        "title": "Book site visits",
+        "body": "Offer visit slots from your sales team’s calendar."
+      },
+      {
+        "title": "Hand over hot leads",
+        "body": "Pass serious buyers to your team with the full conversation."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your tools.",
+    "intro": "Connect your listings, calendar and CRM.",
+    "names": [
+      "Google Calendar",
+      "Airtable",
+      "Google Sheets",
+      "HubSpot"
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Keep availability and prices current in your listings, so the agent does not offer sold units."
+    ]
+  },
+  "faq": {
+    "title": "Questions for real estate.",
+    "items": [
+      {
+        "q": "Can it answer from our project brochures?",
+        "a": "Yes. Upload your brochures or connect a sheet of listings."
+      },
+      {
+        "q": "Can it book site visits?",
+        "a": "Yes. The booking skill offers times from your connected calendar."
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "notion",
+  "name": "Notion",
+  "category": "Knowledge and data",
+  "depth": "standard",
+  "seo": {
+    "title": "Train an AI agent on Notion | Steps AI",
+    "description": "Connect Notion to Steps AI so your agent answers customers from your own Notion content on WhatsApp, Instagram, Messenger and your website."
+  },
+  "hero": {
+    "kicker": "Notion integration",
+    "title": "Answer customers from what is already in Notion.",
+    "body": "If your help articles, product notes or internal guides live in Notion, connect them and your agent can answer customers from the same pages your team uses.",
+    "reassurance": "Your own content. Connected once. Used by any agent you choose."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "What is your return policy for sale items?"
+      },
+      {
+        "from": "agent",
+        "text": "Sale items can be exchanged within 14 days. Refunds are not available on sale items."
+      }
+    ],
+    "lookup": {
+      "title": "Notion · Source used",
+      "rows": [
+        [
+          "Document",
+          "Returns and exchanges"
+        ],
+        [
+          "Section",
+          "Sale items"
+        ],
+        [
+          "Answer",
+          "From your content"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Notion connected.",
+    "intro": "Keep your information where your team already maintains it, and let the agent answer from it.",
+    "items": [
+      {
+        "title": "Turn Notion pages into answers",
+        "body": "Help articles and product notes become answers your agent gives on WhatsApp, Instagram, Messenger and your website."
+      },
+      {
+        "title": "Edit once, update everywhere",
+        "body": "Change a page in Notion and every agent that uses it works from the change."
+      },
+      {
+        "title": "Pick the pages that matter",
+        "body": "Connect only the pages meant for customers, and leave internal notes out."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Notion in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Notion",
+        "body": "Open Resources, then Apps, and choose Notion. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Notion to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Choose what the agent can read",
+        "body": "Pick the pages, files or tables to use. They become workspace resources, so any agent can use them and one edit updates every agent."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent answers from the content you choose. Keep it up to date and the answers stay up to date.",
+      "Storage and processing limits depend on your plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Notion integration.",
+    "items": [
+      {
+        "q": "Does the agent use everything in my account?",
+        "a": "No. You choose what to connect, and the agent uses only that."
+      },
+      {
+        "q": "Can several agents use the same content?",
+        "a": "Yes. Connected content is a workspace resource, so you set it up once and any agent can use it."
+      },
+      {
+        "q": "What if a question is not covered?",
+        "a": "The agent can say it does not know and pass the conversation to your team. Web search is optional and off unless you switch it on."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Notion.",
+    "body": "Book a demo and we will walk through a real conversation using Notion and your own information."
+  }
+}

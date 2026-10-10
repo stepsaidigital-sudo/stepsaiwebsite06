@@ -1,0 +1,169 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "woocommerce",
+  "name": "WooCommerce",
+  "category": "Ecommerce",
+  "depth": "deep",
+  "seo": {
+    "title": "WooCommerce AI chatbot for order tracking and sales | Steps AI",
+    "description": "Connect WooCommerce to Steps AI so your agent can answer order questions, recommend products, check stock and share checkout links on WhatsApp, Instagram and your website."
+  },
+  "hero": {
+    "kicker": "WooCommerce integration",
+    "title": "Give your WooCommerce store an agent that knows your orders.",
+    "body": "Your agent reads your product catalogue and order status from WooCommerce. It answers order questions, suggests products that are in stock and sends a checkout link while the customer is still interested.",
+    "reassurance": "Your products and orders. Checkout on your own site. No plugin code to write.",
+    "channels": [
+      "Website",
+      "WhatsApp",
+      "Instagram"
+    ]
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "Has my order 5521 shipped yet?"
+      },
+      {
+        "from": "agent",
+        "text": "Yes, order 5521 is marked completed and on its way. Anything else I can help with?"
+      },
+      {
+        "from": "customer",
+        "text": "Do you still have the green ceramic mug?"
+      },
+      {
+        "from": "agent",
+        "text": "Yes, it is in stock. Here is the link to check out."
+      }
+    ],
+    "lookup": {
+      "title": "WooCommerce · Order 5521",
+      "rows": [
+        [
+          "Status",
+          "Completed"
+        ],
+        [
+          "Items",
+          "3"
+        ],
+        [
+          "Product stock",
+          "In stock"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with WooCommerce connected.",
+    "intro": "The agent works from your store data, so customers get answers about your real products and orders.",
+    "items": [
+      {
+        "title": "Answer order status questions",
+        "body": "Customers ask about an order and the agent replies with the status from WooCommerce, on the website, WhatsApp or Instagram."
+      },
+      {
+        "title": "Recommend from your catalogue",
+        "body": "The agent suggests products from your store based on what the customer says, such as budget, use or style."
+      },
+      {
+        "title": "Check stock before suggesting",
+        "body": "Availability is checked in WooCommerce, so the agent does not recommend something you cannot ship."
+      },
+      {
+        "title": "Share a checkout link",
+        "body": "When the customer is ready, the agent sends a link to your checkout. Payment happens on your own site."
+      },
+      {
+        "title": "Save shoppers who are not ready",
+        "body": "If a customer wants to think about it, the agent saves their details to your Steps AI CRM or to HubSpot."
+      }
+    ]
+  },
+  "walkthrough": {
+    "title": "One conversation, from browsing to checkout.",
+    "intro": "How a WooCommerce shopper gets help on your website.",
+    "steps": [
+      {
+        "label": "Understand the need",
+        "customer": "I want a gift for my sister. She loves cooking.",
+        "agent": "Lovely. Is there a budget you have in mind?",
+        "note": "A short question first, instead of a long product list.",
+        "result": "Need understood"
+      },
+      {
+        "label": "Suggest from your store",
+        "customer": "Around 2,000.",
+        "agent": "The cast iron pan and the spice box set both fit. Shall I show you the pan first?",
+        "note": "Every suggestion comes from your WooCommerce catalogue.",
+        "result": "Picked from your catalogue"
+      },
+      {
+        "label": "Check stock",
+        "customer": "Is the pan available?",
+        "agent": "Yes, it is in stock and ready to ship.",
+        "note": "Stock is read from WooCommerce before the agent answers.",
+        "result": "Stock checked"
+      },
+      {
+        "label": "Send to checkout",
+        "customer": "Great, I will order it.",
+        "agent": "Here is your checkout link. You can pay on our site.",
+        "note": "Customers pay on your own checkout page.",
+        "result": "Checkout link shared"
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect WooCommerce in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect WooCommerce",
+        "body": "Open Resources, then Apps, and choose WooCommerce. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds WooCommerce to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Let the agent use your store",
+        "body": "Your catalogue is read in, and the agent can start answering product and order questions on every channel you have connected."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Customers pay on your own WooCommerce checkout. Steps AI does not process payments.",
+      "Discount sync and some newer workflow templates are built for Shopify first. Ask us which ones support WooCommerce today.",
+      "In the workflow builder, WooCommerce can be chosen as the app that starts a workflow."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the WooCommerce integration.",
+    "items": [
+      {
+        "q": "Do I need to install code on my WordPress site?",
+        "a": "No code to write. For the chat widget on WordPress there is a ready-made plugin, and the WooCommerce connection is set up from Resources, then Apps."
+      },
+      {
+        "q": "Can the agent look up an order?",
+        "a": "Yes. With WooCommerce connected and switched on, the agent can share an order status with the customer who asks."
+      },
+      {
+        "q": "Can customers pay in the chat?",
+        "a": "The agent shares a checkout link, and customers pay on your own WooCommerce checkout page."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with WooCommerce.",
+    "body": "Book a demo and we will walk through a real conversation using WooCommerce and your own information."
+  }
+}

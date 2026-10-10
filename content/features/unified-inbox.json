@@ -1,0 +1,116 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "unified-inbox",
+  "seo": {
+    "title": "Unified inbox for WhatsApp, Instagram, Messenger and web chat | Steps AI",
+    "description": "See every customer conversation from every agent and channel in one inbox. Filter, take over from the AI and reply as your team."
+  },
+  "hero": {
+    "kicker": "Unified inbox",
+    "title": "Every customer conversation in one inbox.",
+    "body": "Website chats, WhatsApp, Instagram and Messenger arrive in one place, from every agent you run. Your AI agent answers first, and your team takes over when a person is needed.",
+    "reassurance": "One inbox for every channel. Filters that find what needs you. Your team replies in the same thread."
+  },
+  "steps": {
+    "title": "From AI answer to human reply.",
+    "intro": "The inbox is where your team sees what the agent did and steps in when it matters.",
+    "items": [
+      {
+        "title": "Conversations arrive from every channel",
+        "body": "Each conversation shows which agent and channel it came from, so your team knows the context straight away."
+      },
+      {
+        "title": "Filter to what needs a person",
+        "body": "Filter by agent or channel, and by unread, starred or live conversations, to find the ones that need attention."
+      },
+      {
+        "title": "Take over from the agent",
+        "body": "When a customer asks for a person, a team member claims the conversation and continues it with the full history."
+      },
+      {
+        "title": "Reply and resolve",
+        "body": "Your team replies in the same thread, then resolves the handoff. The conversation stays in the inbox for later."
+      }
+    ]
+  },
+  "features": {
+    "title": "What you can do in the inbox.",
+    "intro": "Built for the people who look after your customers every day.",
+    "items": [
+      {
+        "title": "See every agent in one place",
+        "body": "The account inbox shows conversations from all your agents. Each agent also has its own conversation view."
+      },
+      {
+        "title": "Filter by channel and agent",
+        "body": "Narrow the list to one channel or one agent when you need to focus."
+      },
+      {
+        "title": "Star and track unread",
+        "body": "Star important conversations and keep track of what has not been read yet."
+      },
+      {
+        "title": "Claim a live request",
+        "body": "When the agent hands over, a team member claims the conversation so customers are not answered twice."
+      },
+      {
+        "title": "See the customer next to the chat",
+        "body": "Customer details from your CRM sit beside the conversation."
+      },
+      {
+        "title": "Work on mobile",
+        "body": "The inbox and conversations work on a phone, with stacked panels and a back button."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "A team member can reply once they have claimed the conversation and it is assigned to them.",
+      "Human handoff starts from the Starter plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the unified inbox.",
+    "items": [
+      {
+        "q": "Can my team reply to customers from the inbox?",
+        "a": "Yes. A team member claims the conversation, replies in the same thread and resolves the handoff when it is done."
+      },
+      {
+        "q": "Does the AI keep replying after my team takes over?",
+        "a": "Once a person has taken over, the conversation is with your team until the handoff is resolved."
+      },
+      {
+        "q": "Can I see conversations for just one agent?",
+        "a": "Yes. Filter the account inbox by agent, or open the agent’s own conversation view."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "CRM",
+        "href": "/features/crm/",
+        "body": "See customer records and tickets next to every conversation."
+      },
+      {
+        "label": "Agent skills",
+        "href": "/features/skills/",
+        "body": "Set when the agent hands over to a person."
+      },
+      {
+        "label": "Analytics",
+        "href": "/features/analytics/",
+        "body": "See what customers ask and when they message."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the unified inbox with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "hub",
+  "seo": {
+    "title": "Comparisons | Steps AI",
+    "description": "Honest comparisons of Steps AI with Manychat, Wati, AiSensy, Gorgias, Chatbase, Verifast and Tidio."
+  },
+  "hero": {
+    "kicker": "Compare",
+    "title": "Compare Steps AI with the tools you are considering.",
+    "body": "Each comparison covers channels, order lookups and pricing model, and says plainly when the other tool is the better choice.",
+    "reassurance": "Plain comparisons. Where we fit. Where we do not."
+  },
+  "cards": [
+    {
+      "label": "vs. Manychat",
+      "href": "/compare/steps-ai-vs-manychat/",
+      "body": "Manychat is known for building automated flows on Instagram, WhatsApp and Messenger.",
+      "built": true
+    },
+    {
+      "label": "vs. Wati",
+      "href": "/compare/steps-ai-vs-wati/",
+      "body": "Wati is a WhatsApp Business platform for broadcasts, team inboxes and chatbot flows.",
+      "built": true
+    },
+    {
+      "label": "vs. AiSensy",
+      "href": "/compare/steps-ai-vs-aisensy/",
+      "body": "AiSensy is a WhatsApp marketing platform that many Indian brands use for broadcasts and campaigns.",
+      "built": true
+    },
+    {
+      "label": "vs. Gorgias",
+      "href": "/compare/steps-ai-vs-gorgias/",
+      "body": "Gorgias is a Shopify helpdesk with AI automation added on.",
+      "built": true
+    },
+    {
+      "label": "vs. Chatbase",
+      "href": "/compare/steps-ai-vs-chatbase/",
+      "body": "Chatbase builds an AI chatbot from your website and documents.",
+      "built": true
+    },
+    {
+      "label": "vs. Verifast",
+      "href": "/compare/steps-ai-vs-verifast/",
+      "body": "Verifast and Steps AI both lead with helping shoppers choose and buy.",
+      "built": true
+    },
+    {
+      "label": "vs. Tidio",
+      "href": "/compare/steps-ai-vs-tidio/",
+      "body": "Tidio is a live chat tool with an AI assistant, Lyro, offered as an upgrade.",
+      "built": true
+    }
+  ],
+  "cta": {
+    "title": "Bring your own questions to a demo.",
+    "body": "We will run them through Steps AI so you can compare for yourself."
+  }
+}

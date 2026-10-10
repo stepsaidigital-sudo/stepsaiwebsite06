@@ -23,37 +23,37 @@
       "label": "Healthcare",
       "href": "/industries/healthcare/",
       "body": "Share clinic information, answer booking questions and collect appointment details.",
-      "built": false
+      "built": true
     },
     {
       "label": "Education",
       "href": "/industries/education/",
       "body": "Share course information, capture enquiries and book counselling.",
-      "built": false
+      "built": true
     },
     {
       "label": "Real estate",
       "href": "/industries/real-estate/",
       "body": "Ask about requirements, answer property questions and arrange a visit.",
-      "built": false
+      "built": true
     },
     {
       "label": "Travel and hospitality",
       "href": "/industries/travel-and-hospitality/",
       "body": "Answer questions about rooms, packages and policies. Collect travel enquiries and arrange a call with your team.",
-      "built": false
+      "built": true
     },
     {
       "label": "SaaS",
       "href": "/industries/saas/",
       "body": "Answer product questions, collect requirements and book a demo.",
-      "built": false
+      "built": true
     },
     {
       "label": "Financial services",
       "href": "/industries/financial-services/",
       "body": "Explain application requirements, collect enquiries and arrange a call with your team.",
-      "built": false
+      "built": true
     }
   ],
   "cta": {

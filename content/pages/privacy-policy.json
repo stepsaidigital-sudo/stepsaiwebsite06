@@ -1,0 +1,26 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Privacy policy | Steps AI",
+    "description": "The Steps AI privacy policy."
+  },
+  "hero": {
+    "kicker": "Legal",
+    "title": "Privacy policy.",
+    "body": "The full privacy policy is being finalised and will be published on this page. Until then, you can contact us with any question about how your data is handled."
+  },
+  "sections": [
+    {
+      "title": "What this page will cover.",
+      "paragraphs": [
+        "What information Steps AI collects, how it is used to run your agent, who it is shared with, how long it is kept, and how you can access or delete it."
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Have a privacy question?",
+    "body": "Get in touch and we will answer it."
+  }
+}

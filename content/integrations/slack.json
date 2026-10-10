@@ -1,0 +1,109 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "slack",
+  "name": "Slack",
+  "category": "Messaging and marketing",
+  "depth": "standard",
+  "seo": {
+    "title": "Slack integration | Steps AI",
+    "description": "Connect Slack to Steps AI so your team hears about handoffs, new leads and important orders in the Slack workspace they already use."
+  },
+  "hero": {
+    "kicker": "Slack integration",
+    "title": "Keep your team in the loop in Slack.",
+    "body": "Connect Slack so your team hears about the conversations that matter, such as a customer asking for a person or a large order coming in, in the workspace they already use.",
+    "reassurance": "Connected once. Used in skills and workflows. Your team stays informed."
+  },
+  "demo": {
+    "channel": "Website",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "I would like to speak to someone about a bulk order."
+      },
+      {
+        "from": "agent",
+        "text": "Of course. I have let our team know and someone will join this chat shortly."
+      }
+    ],
+    "lookup": {
+      "title": "Slack · From Steps AI",
+      "rows": [
+        [
+          "Event",
+          "Customer asked for a person"
+        ],
+        [
+          "Channel",
+          "Website chat"
+        ],
+        [
+          "Topic",
+          "Bulk order"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Slack connected.",
+    "intro": "Use Slack as a step in your workflows and agent skills.",
+    "items": [
+      {
+        "title": "Alert your team to handoffs",
+        "body": "Let your team know in Slack when a customer asks for a person, so the reply does not wait."
+      },
+      {
+        "title": "Share important orders",
+        "body": "Post a message when a high-value order or a refund comes in from your store."
+      },
+      {
+        "title": "Flag new leads",
+        "body": "Tell your sales team when the agent captures a lead worth following up."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Slack in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Slack",
+        "body": "Open Resources, then Apps, and choose Slack. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Slack to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Use it in a workflow or skill",
+        "body": "Add a Slack step to a workflow, or use it in a flow skill, and choose what it should do."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The actions available for Slack depend on your setup. We will show you exactly what it can do in your demo.",
+      "Workflows save as drafts until you switch them on."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Slack integration.",
+    "items": [
+      {
+        "q": "Where do I use Slack after connecting it?",
+        "a": "In the workflow builder and in flow skills, where a connected app can be chosen as an action."
+      },
+      {
+        "q": "Do I need to write code?",
+        "a": "No. You choose steps from menus. Advanced options such as webhooks are there if your team wants them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Slack.",
+    "body": "Book a demo and we will walk through a real conversation using Slack and your own information."
+  }
+}

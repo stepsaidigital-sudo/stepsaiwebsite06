@@ -256,3 +256,4 @@
 @media(prefers-reduced-motion:reduce){
   .sp-usage-meter i::after{transition:none}
 }
+.sp-feature-hero .channel-demo-conversation{width:100%}.sp-feature-hero .sp-scene-row{opacity:1;transform:none}

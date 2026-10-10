@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "compare",
+  "slug": "wati",
+  "competitor": "Wati",
+  "seo": {
+    "title": "Steps AI vs Wati: an honest comparison | Steps AI",
+    "description": "Compare Steps AI and Wati: channels, order lookups, pricing model and where each one is the better fit."
+  },
+  "hero": {
+    "kicker": "Steps AI vs Wati",
+    "title": "Steps AI vs Wati: beyond WhatsApp-only support.",
+    "body": "Wati is a WhatsApp Business platform for broadcasts, team inboxes and chatbot flows. Steps AI covers WhatsApp too, and adds your website, Instagram and Messenger with one agent that checks your store before replying.",
+    "reassurance": "Where we fit. Where they fit. How to switch."
+  },
+  "glance": {
+    "title": "At a glance.",
+    "intro": "How Steps AI and Wati compare on the questions owners ask most.",
+    "rows": [
+      {
+        "label": "What it is",
+        "steps": "An AI agent that answers customers and checks real records before it replies",
+        "them": "A WhatsApp Business platform for messaging, broadcasts and team inboxes"
+      },
+      {
+        "label": "Channels",
+        "steps": "Website, WhatsApp, Instagram and Messenger from one Meta connection, plus phone calls",
+        "them": "WhatsApp first, with other channels on some plans"
+      },
+      {
+        "label": "Order and delivery questions",
+        "steps": "Checks orders in Shopify or WooCommerce and shipments with five Indian carriers",
+        "them": "Through chatbot flows and connected apps you set up"
+      },
+      {
+        "label": "How you pay",
+        "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
+        "them": "Monthly plans plus WhatsApp conversation charges"
+      },
+      {
+        "label": "What happens after the answer",
+        "steps": "Books appointments, creates tickets, saves leads and hands over to a person",
+        "them": "Routes conversations to your team and runs the flows you build"
+      }
+    ]
+  },
+  "ours": {
+    "title": "When Steps AI is the better fit.",
+    "intro": "Choose Steps AI if these sound like you.",
+    "items": [
+      {
+        "title": "Your customers are not only on WhatsApp",
+        "body": "One agent answers on your website, WhatsApp, Instagram and Messenger with the same knowledge."
+      },
+      {
+        "title": "You want answers, not just routing",
+        "body": "The agent replies in plain language from your information and checks orders before it answers."
+      },
+      {
+        "title": "You ship with Indian carriers",
+        "body": "Shiprocket, Delhivery, DTDC, iThink Logistics and WareIQ connect directly for tracking questions."
+      }
+    ]
+  },
+  "theirs": {
+    "title": "When Wati may suit you better.",
+    "intro": "We would rather you pick the right tool than the wrong one.",
+    "items": [
+      {
+        "title": "WhatsApp is your only channel",
+        "body": "If everything happens on WhatsApp, a WhatsApp-first platform may be all you need."
+      },
+      {
+        "title": "Large broadcasts are your main job",
+        "body": "Steps AI campaigns are currently capped at 1,000 messages per send."
+      }
+    ]
+  },
+  "switching": {
+    "title": "Moving from Wati to Steps AI.",
+    "intro": "Most businesses are answering real customers within a day.",
+    "items": [
+      {
+        "title": "Paste your website address",
+        "body": "Steps AI reads your pages, FAQs and documents, so you do not have to rebuild your answers by hand."
+      },
+      {
+        "title": "Connect your channels and store",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger. Add Shopify or WooCommerce for order questions."
+      },
+      {
+        "title": "Test it against your own questions",
+        "body": "Ask the questions your customers ask. Switch it on when you are happy with the answers."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "This comparison uses publicly available information about Wati as of October 2026. Check their site for current plans and features.",
+      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about Steps AI and Wati.",
+    "items": [
+      {
+        "q": "Can I try Steps AI before I switch?",
+        "a": "Yes. You can start free with no card, test the agent against your own questions and switch when you are ready."
+      },
+      {
+        "q": "How is Steps AI priced?",
+        "a": "You pay per reply in credits. The number of credits a reply uses depends on the AI model you choose for your agent."
+      },
+      {
+        "q": "Can I run Steps AI alongside Wati?",
+        "a": "Yes, many businesses test both before deciding. Make sure only one tool replies on each channel at a time."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how Steps AI compares with Wati on your own questions.",
+    "body": "Book a demo and bring the questions your customers ask most."
+  }
+}

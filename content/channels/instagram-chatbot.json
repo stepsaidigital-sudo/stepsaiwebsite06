@@ -1,0 +1,130 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "channel",
+  "slug": "instagram-chatbot",
+  "channel": "Instagram",
+  "seo": {
+    "title": "Instagram DM automation and comment-to-DM | Steps AI",
+    "description": "Answer Instagram DMs with an AI agent, turn comments into conversations with keywords such as PRICE, and reply to story mentions."
+  },
+  "hero": {
+    "kicker": "Instagram chatbot",
+    "title": "Turn Instagram comments and DMs into sales.",
+    "body": "Your agent answers direct messages, replies to comments with a DM when someone uses a keyword, and picks up story replies and mentions. All from the same agent as your other channels.",
+    "reassurance": "One Meta connection. Keyword comment-to-DM. Your team can step in.",
+    "channels": [
+      "Instagram"
+    ]
+  },
+  "jobs": {
+    "title": "What your agent does on Instagram.",
+    "intro": "Busy launch? The agent keeps up with your DMs.",
+    "items": [
+      {
+        "title": "Answer direct messages",
+        "body": "Product, size, stock and delivery questions get an answer from your own information."
+      },
+      {
+        "title": "Turn comments into DMs",
+        "body": "When someone comments a keyword such as PRICE or LINK, reply in their DMs straight away."
+      },
+      {
+        "title": "Reply to stories",
+        "body": "Pick up story replies and mentions as conversations."
+      },
+      {
+        "title": "Help customers buy",
+        "body": "Recommend products and share a checkout link in the conversation."
+      }
+    ]
+  },
+  "triggers": {
+    "title": "Start more conversations on Instagram.",
+    "intro": "Comment triggers can be scoped to one post or Reel.",
+    "items": [
+      {
+        "title": "Keyword comments",
+        "body": "Choose the words that start a DM, and the reply that goes out."
+      },
+      {
+        "title": "Post and Reel triggers",
+        "body": "Run a comment trigger on a single post or Reel, including live comments."
+      },
+      {
+        "title": "Quick-reply buttons",
+        "body": "Send buttons that wait for the customer’s choice and branch on it."
+      },
+      {
+        "title": "Comment moderation",
+        "body": "Review comments on your connected posts in one place."
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Instagram once.",
+    "intro": "The same Meta connection covers WhatsApp and Messenger.",
+    "items": [
+      {
+        "title": "Connect through Meta",
+        "body": "Sign in to Meta and give Steps AI access to your Instagram professional account."
+      },
+      {
+        "title": "Choose the agent",
+        "body": "Pick which agent answers your Instagram messages."
+      },
+      {
+        "title": "Set your comment triggers",
+        "body": "Add keywords and replies for the posts you want to cover."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Instagram broadcast campaigns are not available. Campaigns run on WhatsApp.",
+      "Instagram does not share state-level location for analytics."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Instagram chatbot.",
+    "items": [
+      {
+        "q": "What is comment-to-DM?",
+        "a": "When someone comments a keyword you choose on your post, your agent sends them a direct message, so the conversation can continue privately."
+      },
+      {
+        "q": "Do I need a separate setup for WhatsApp and Messenger?",
+        "a": "No. One Meta connection covers Instagram, WhatsApp and Messenger."
+      },
+      {
+        "q": "Can my team reply instead?",
+        "a": "Yes. Instagram conversations appear in your shared inbox, where your team can take over."
+      }
+    ]
+  },
+  "related": {
+    "title": "Other channels.",
+    "items": [
+      {
+        "label": "Website chatbot",
+        "href": "/channels/website-chatbot/",
+        "body": "Answer visitors on your website."
+      },
+      {
+        "label": "WhatsApp chatbot",
+        "href": "/channels/whatsapp-chatbot/",
+        "body": "Answer customers on WhatsApp."
+      },
+      {
+        "label": "Messenger chatbot",
+        "href": "/channels/messenger-chatbot/",
+        "body": "Answer customers who message your Facebook page."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the Instagram chatbot with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

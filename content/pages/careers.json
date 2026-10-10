@@ -1,0 +1,44 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Careers | Steps AI",
+    "description": "Work on AI agents that answer real customers for small businesses. See how to get in touch with the Steps AI team."
+  },
+  "hero": {
+    "kicker": "Careers",
+    "title": "Help small businesses answer every customer.",
+    "body": "Steps AI is a small, founder-led team building AI agents for online stores and service businesses. We are always glad to hear from people who care about that problem."
+  },
+  "sections": [
+    {
+      "title": "Open roles.",
+      "paragraphs": [
+        "There are no open roles listed right now. If you think you could help, send us a short note about what you would like to work on."
+      ]
+    },
+    {
+      "title": "How we work.",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "Close to customers",
+          "body": "Many features start as a request from a real customer, such as the shipment landed cost calculator."
+        },
+        {
+          "title": "Plain and honest",
+          "body": "We write the way we speak to customers: clearly, and without overselling."
+        },
+        {
+          "title": "Small team, real ownership",
+          "body": "Everyone ships work that customers use."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Want to work with us?",
+    "body": "Get in touch and tell us what you would like to build."
+  }
+}

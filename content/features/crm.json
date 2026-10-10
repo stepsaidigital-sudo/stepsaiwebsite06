@@ -1,0 +1,120 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "crm",
+  "seo": {
+    "title": "Built-in CRM for customers, tickets and live requests | Steps AI",
+    "description": "Keep customer records, support tickets and live requests from every chat in one CRM, or send leads to HubSpot."
+  },
+  "hero": {
+    "kicker": "CRM",
+    "title": "Customer records, tickets and live requests in one place.",
+    "body": "Every conversation can create or update a customer record. Tickets and live requests sit next to them, so your team sees the whole picture before they reply.",
+    "reassurance": "Built into every agent. Fields you define. HubSpot if you already use it."
+  },
+  "steps": {
+    "title": "How records build themselves.",
+    "intro": "Your agent collects details during the conversation, and the CRM keeps them organised.",
+    "items": [
+      {
+        "title": "The agent collects details",
+        "body": "Skills ask for the details you choose, such as name, email, company or phone, during the conversation."
+      },
+      {
+        "title": "A record is created or updated",
+        "body": "The customer record is saved with where the customer came from and which agent they spoke to."
+      },
+      {
+        "title": "Tickets and live requests follow",
+        "body": "Problems become tickets, and requests for a person become live requests your team can pick up."
+      },
+      {
+        "title": "Your team works from one view",
+        "body": "Filter, sort and save views of customers, tickets and live requests."
+      }
+    ]
+  },
+  "features": {
+    "title": "What you can do with the CRM.",
+    "intro": "The CRM grows with the conversations your agents have.",
+    "items": [
+      {
+        "title": "Manage three tables",
+        "body": "Customers, tickets and live requests each have their own table, overview and settings."
+      },
+      {
+        "title": "Add your own fields",
+        "body": "Create custom fields with a label, type, placeholder and required setting."
+      },
+      {
+        "title": "Save views",
+        "body": "Save filtered and sorted views so your team can come back to the same list."
+      },
+      {
+        "title": "Keep notes and history",
+        "body": "Open a record to see its details, notes and related activity."
+      },
+      {
+        "title": "Filter by source and agent",
+        "body": "See customers by where they came from and which agent they spoke to."
+      },
+      {
+        "title": "See duplicates merged",
+        "body": "Customers are de-duplicated automatically, and phone-verified customers show a badge."
+      },
+      {
+        "title": "Use HubSpot instead",
+        "body": "If your team already works in HubSpot, the agent can save leads there."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The CRM saves what customers share in the chat. It does not identify anonymous visitors.",
+      "Ticket and lead limits depend on your plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the CRM.",
+    "items": [
+      {
+        "q": "Do I need another CRM?",
+        "a": "No. Steps AI includes a CRM for customers, tickets and live requests. Connect HubSpot if your team already uses it."
+      },
+      {
+        "q": "Can I add my own fields?",
+        "a": "Yes. Add fields such as text, number, email, phone or dropdown, and mark them as required."
+      },
+      {
+        "q": "Can I see records for one agent?",
+        "a": "Yes. Each agent has its own CRM view, and the account CRM shows all agents together."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "Unified inbox",
+        "href": "/features/unified-inbox/",
+        "body": "Reply to customers with their record beside the chat."
+      },
+      {
+        "label": "HubSpot",
+        "href": "/integrations/hubspot/",
+        "body": "Send leads to HubSpot if your team works there."
+      },
+      {
+        "label": "Analytics",
+        "href": "/features/analytics/",
+        "body": "See where leads come from and what they ask."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the CRM with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

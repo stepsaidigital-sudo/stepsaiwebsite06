@@ -1,0 +1,126 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "compare",
+  "slug": "chatbase",
+  "competitor": "Chatbase",
+  "seo": {
+    "title": "Steps AI vs Chatbase: an honest comparison | Steps AI",
+    "description": "Compare Steps AI and Chatbase: channels, order lookups, pricing model and where each one is the better fit."
+  },
+  "hero": {
+    "kicker": "Steps AI vs Chatbase",
+    "title": "Steps AI vs Chatbase: reading pages or checking records.",
+    "body": "Chatbase builds an AI chatbot from your website and documents. Steps AI does that too, then goes further: it checks real orders, books appointments and works on WhatsApp, Instagram and Messenger.",
+    "reassurance": "Where we fit. Where they fit. How to switch."
+  },
+  "glance": {
+    "title": "At a glance.",
+    "intro": "How Steps AI and Chatbase compare on the questions owners ask most.",
+    "rows": [
+      {
+        "label": "What it is",
+        "steps": "An AI agent that answers customers and checks real records before it replies",
+        "them": "An AI chatbot trained on your website and documents"
+      },
+      {
+        "label": "Channels",
+        "steps": "Website, WhatsApp, Instagram and Messenger from one Meta connection, plus phone calls",
+        "them": "Website, with messaging channels through integrations"
+      },
+      {
+        "label": "Order and delivery questions",
+        "steps": "Checks orders in Shopify or WooCommerce and shipments with five Indian carriers",
+        "them": "Answers from the content it was trained on"
+      },
+      {
+        "label": "How you pay",
+        "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
+        "them": "Credit-based plans. Removing branding is a paid add-on"
+      },
+      {
+        "label": "What happens after the answer",
+        "steps": "Books appointments, creates tickets, saves leads and hands over to a person",
+        "them": "Answers questions, with actions available through integrations"
+      }
+    ]
+  },
+  "ours": {
+    "title": "When Steps AI is the better fit.",
+    "intro": "Choose Steps AI if these sound like you.",
+    "items": [
+      {
+        "title": "Customers ask where their order is",
+        "body": "Steps AI checks the order in Shopify or WooCommerce instead of reciting your shipping policy."
+      },
+      {
+        "title": "You want the agent to look like your brand",
+        "body": "Add your own logo and colours to the chat widget and your agent page."
+      },
+      {
+        "title": "You need WhatsApp and Instagram",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger."
+      }
+    ]
+  },
+  "theirs": {
+    "title": "When Chatbase may suit you better.",
+    "intro": "We would rather you pick the right tool than the wrong one.",
+    "items": [
+      {
+        "title": "You want a developer-led chatbot",
+        "body": "If your team wants to build its own chatbot experience with an API first, Chatbase is set up for that."
+      },
+      {
+        "title": "Your use is mostly document Q&A",
+        "body": "For answering from documents on a website alone, both products can do the job."
+      }
+    ]
+  },
+  "switching": {
+    "title": "Moving from Chatbase to Steps AI.",
+    "intro": "Most businesses are answering real customers within a day.",
+    "items": [
+      {
+        "title": "Paste your website address",
+        "body": "Steps AI reads your pages, FAQs and documents, so you do not have to rebuild your answers by hand."
+      },
+      {
+        "title": "Connect your channels and store",
+        "body": "One Meta connection covers WhatsApp, Instagram and Messenger. Add Shopify or WooCommerce for order questions."
+      },
+      {
+        "title": "Test it against your own questions",
+        "body": "Ask the questions your customers ask. Switch it on when you are happy with the answers."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "This comparison uses publicly available information about Chatbase as of October 2026. Check their site for current plans and features.",
+      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+    ]
+  },
+  "faq": {
+    "title": "Questions about Steps AI and Chatbase.",
+    "items": [
+      {
+        "q": "Can I try Steps AI before I switch?",
+        "a": "Yes. You can start free with no card, test the agent against your own questions and switch when you are ready."
+      },
+      {
+        "q": "How is Steps AI priced?",
+        "a": "You pay per reply in credits. The number of credits a reply uses depends on the AI model you choose for your agent."
+      },
+      {
+        "q": "Can I run Steps AI alongside Chatbase?",
+        "a": "Yes, many businesses test both before deciding. Make sure only one tool replies on each channel at a time."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how Steps AI compares with Chatbase on your own questions.",
+    "body": "Book a demo and bring the questions your customers ask most."
+  }
+}

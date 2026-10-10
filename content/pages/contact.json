@@ -1,0 +1,39 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "content",
+  "seo": {
+    "title": "Contact | Steps AI",
+    "description": "Contact Steps AI for a demo, product help or partnerships."
+  },
+  "hero": {
+    "kicker": "Contact",
+    "title": "Get in touch with Steps AI.",
+    "body": "Tell us what you need and we will point you to the right person. Choose the option that fits best."
+  },
+  "sections": [
+    {
+      "title": "How can we help?",
+      "paragraphs": [],
+      "items": [
+        {
+          "title": "See Steps AI",
+          "body": "Book a demo and we will walk through your customers’ questions with you."
+        },
+        {
+          "title": "Get help with your account",
+          "body": "Find answers in the help centre, or ask the support team from inside the app."
+        },
+        {
+          "title": "Partner with us",
+          "body": "Agencies and affiliates can learn about our programs.",
+          "href": "/partners/"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Talk to us about your business.",
+    "body": "Book a demo and we will walk through your customers’ questions with you."
+  }
+}

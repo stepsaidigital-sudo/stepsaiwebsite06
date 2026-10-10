@@ -1,0 +1,149 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integration",
+  "slug": "zendesk",
+  "name": "Zendesk",
+  "category": "CRM and support",
+  "depth": "deep",
+  "seo": {
+    "title": "Zendesk AI agent for WhatsApp and chat support | Steps AI",
+    "description": "Connect Zendesk to Steps AI. Your agent answers common questions and turns the ones it cannot solve into tickets for your support team."
+  },
+  "hero": {
+    "kicker": "Zendesk integration",
+    "title": "Answer the common questions. Send the rest to Zendesk.",
+    "body": "Your agent handles everyday support on WhatsApp, Instagram, Messenger and your website. When something needs a person, it creates a ticket with the details your team needs.",
+    "reassurance": "Tickets where your team works. The fields you require. Clear handover to a person.",
+    "channels": [
+      "WhatsApp",
+      "Website",
+      "Messenger"
+    ]
+  },
+  "demo": {
+    "channel": "WhatsApp",
+    "lines": [
+      {
+        "from": "customer",
+        "text": "My blender stopped working after a week."
+      },
+      {
+        "from": "agent",
+        "text": "Sorry to hear that. I have opened a support ticket and our team will reply within a day."
+      }
+    ],
+    "lookup": {
+      "title": "Zendesk · New ticket",
+      "rows": [
+        [
+          "Subject",
+          "Blender not working"
+        ],
+        [
+          "Reason",
+          "Product fault"
+        ],
+        [
+          "Channel",
+          "WhatsApp"
+        ]
+      ]
+    }
+  },
+  "useCases": {
+    "title": "What you can do with Zendesk connected.",
+    "intro": "Let the agent take the repeat questions, and keep your team on the ones that need judgement.",
+    "items": [
+      {
+        "title": "Turn problems into tickets",
+        "body": "When the agent cannot solve something, it creates a ticket with the subject, reason and conversation details."
+      },
+      {
+        "title": "Ask for the right details first",
+        "body": "Set required fields such as order number, photo or phone number, so tickets arrive ready to work on."
+      },
+      {
+        "title": "Decide when to raise a ticket",
+        "body": "Describe in plain English when the ticket skill should be used, with examples of when it should not."
+      },
+      {
+        "title": "Notify the right people",
+        "body": "Choose who gets an email when a new ticket is created."
+      }
+    ]
+  },
+  "walkthrough": {
+    "title": "From a complaint to a ticket your team can act on.",
+    "intro": "A support conversation on WhatsApp.",
+    "steps": [
+      {
+        "label": "Understand the problem",
+        "customer": "My blender stopped working after a week.",
+        "agent": "Sorry about that. Could you share your order number?",
+        "note": "The agent collects the fields you marked as required.",
+        "result": "Order number collected"
+      },
+      {
+        "label": "Ask for evidence",
+        "customer": "Order 7781.",
+        "agent": "Thanks. Could you send a short photo or video of the issue?",
+        "note": "Media fields are supported for tickets.",
+        "result": "Photo collected"
+      },
+      {
+        "label": "Create the ticket",
+        "customer": "[photo]",
+        "agent": "I have opened a ticket for your team. You will hear back within a day.",
+        "note": "A Zendesk ticket is created and the people you chose are notified.",
+        "result": "Ticket created"
+      }
+    ]
+  },
+  "setup": {
+    "title": "Connect Zendesk in a few minutes.",
+    "intro": "No code. You sign in to the app once and you choose which agents use it.",
+    "items": [
+      {
+        "title": "Connect Zendesk",
+        "body": "Open Resources, then Apps, and choose Zendesk. Sign in, or enter your account details, to connect it to your workspace."
+      },
+      {
+        "title": "Add it to your agent",
+        "body": "Connecting adds Zendesk to your workspace. Then add it to each agent that should use it. An agent only uses the app once both steps are done."
+      },
+      {
+        "title": "Add the ticket skill",
+        "body": "Switch on ticket creation for your agent, choose Zendesk, and set the fields and people to notify."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Tickets can also be kept in the built-in Steps AI CRM if you do not use Zendesk.",
+      "Write a clear rule for when to raise a ticket, so the agent does not open one for questions it can answer."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the Zendesk integration.",
+    "items": [
+      {
+        "q": "Will every conversation become a ticket?",
+        "a": "No. Tickets are created only when the conditions you describe are met."
+      },
+      {
+        "q": "Can I add my own fields?",
+        "a": "Yes. Add custom fields such as text, number, email, phone, dropdown or media, and mark them as required."
+      },
+      {
+        "q": "Can a person take over the chat instead?",
+        "a": "Yes. Human handoff is a separate skill with a wait time, a fallback message and email alerts."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See Steps AI work with Zendesk.",
+    "body": "Book a demo and we will walk through a real conversation using Zendesk and your own information."
+  }
+}

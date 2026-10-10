@@ -1,0 +1,121 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "feature",
+  "slug": "analytics",
+  "seo": {
+    "title": "Chatbot analytics: questions, channels and busy hours | Steps AI",
+    "description": "See how many chats your agents handle, what customers ask, which channels they use and when they message, by agent or across your account."
+  },
+  "hero": {
+    "kicker": "Analytics",
+    "title": "See what customers ask and when they ask it.",
+    "body": "Track chats, messages and response times, see which channels bring conversations, and find the hours your customers are most active. View one agent or your whole account.",
+    "reassurance": "Clear definitions. Any date range. One agent or all of them."
+  },
+  "steps": {
+    "title": "From conversations to decisions.",
+    "intro": "Analytics turns everyday chats into something you can act on.",
+    "items": [
+      {
+        "title": "Pick a date range",
+        "body": "Choose today, the last 7 or 30 days, a month or a custom range."
+      },
+      {
+        "title": "Choose the agent",
+        "body": "See all agents together, or open one agent’s performance."
+      },
+      {
+        "title": "Read the headline numbers",
+        "body": "Total chats, total messages, average AI response time and ticket resolution rate."
+      },
+      {
+        "title": "Find the patterns",
+        "body": "Chats over time, channel breakdown, an activity heat map and the questions customers ask most."
+      }
+    ]
+  },
+  "features": {
+    "title": "What you can see.",
+    "intro": "Each report answers one clear question.",
+    "items": [
+      {
+        "title": "Chats and messages over time",
+        "body": "See how conversation volume changes day by day."
+      },
+      {
+        "title": "Channel breakdown",
+        "body": "See which channels bring the most conversations."
+      },
+      {
+        "title": "Activity heat map",
+        "body": "See which days and hours customers message, including late at night."
+      },
+      {
+        "title": "What customers are asking",
+        "body": "A ranked list of the questions customers ask most."
+      },
+      {
+        "title": "Agent comparison",
+        "body": "Compare conversations, messages per chat, response time, tickets and leads across agents."
+      },
+      {
+        "title": "Leads by topic and source",
+        "body": "See which topics and marketing sources bring leads, based on conversation tags."
+      },
+      {
+        "title": "Where customers are",
+        "body": "See countries and cities on a map. State-level location is available for website chats."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "Average response time measures the AI agent, not your team.",
+      "Lifecycle and intent reports show where tagged conversations sit. They are not sales funnels.",
+      "WhatsApp, Instagram and Messenger do not share state-level location."
+    ]
+  },
+  "faq": {
+    "title": "Questions about analytics.",
+    "items": [
+      {
+        "q": "Does response time include my team?",
+        "a": "No. Average response time is for the AI agent’s replies."
+      },
+      {
+        "q": "Can I see results for one agent?",
+        "a": "Yes. Each agent has its own performance view, and the account view can show all or one agent."
+      },
+      {
+        "q": "Where do topics and sources come from?",
+        "a": "From tags the agent applies to conversations, using rules you can edit in plain English."
+      }
+    ]
+  },
+  "related": {
+    "title": "Works well with.",
+    "items": [
+      {
+        "label": "CRM",
+        "href": "/features/crm/",
+        "body": "Follow up on the leads your reports show."
+      },
+      {
+        "label": "Unified inbox",
+        "href": "/features/unified-inbox/",
+        "body": "Open the conversations behind the numbers."
+      },
+      {
+        "label": "WhatsApp broadcast",
+        "href": "/features/whatsapp-broadcast/",
+        "body": "See delivery and read results for each campaign."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your analytics with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

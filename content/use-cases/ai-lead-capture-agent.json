@@ -1,0 +1,107 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "usecase",
+  "slug": "ai-lead-capture-agent",
+  "hero": {
+    "kicker": "AI lead capture agent",
+    "title": "Capture leads while they are still talking to you.",
+    "body": "Visitors ask a few questions and leave before filling in a form. Your agent answers them and collects the details your team needs during the conversation.",
+    "reassurance": "Details collected in the chat. Saved to your CRM or HubSpot. Your team follows up with context.",
+    "channels": [
+      "Website",
+      "WhatsApp",
+      "Instagram"
+    ]
+  },
+  "seo": {
+    "title": "AI lead capture agent for your website and WhatsApp | Steps AI",
+    "description": "Answer visitor questions and collect lead details during the conversation. Save leads to the Steps AI CRM or HubSpot."
+  },
+  "walkthrough": {
+    "title": "From a question to a qualified lead.",
+    "intro": "A visitor on your pricing page.",
+    "steps": [
+      {
+        "label": "Answer the first question",
+        "customer": "Does your plan include WhatsApp?",
+        "agent": "Yes, WhatsApp, Instagram and Messenger connect through one Meta connection on paid plans.",
+        "note": "The agent answers before it asks for anything.",
+        "result": "Question answered"
+      },
+      {
+        "label": "Ask for details",
+        "customer": "We have three stores. Could you send a quote?",
+        "agent": "Happy to. May I have your name, work email and company?",
+        "note": "Only the fields you switched on are asked for.",
+        "result": "Details requested"
+      },
+      {
+        "label": "Save the lead",
+        "customer": "Meera, meera@example.com, Lumen Home.",
+        "agent": "Thank you Meera. Our team will send your quote today.",
+        "note": "The lead is saved with where it came from and which agent it spoke to.",
+        "result": "Lead saved"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What your lead capture agent can do.",
+    "intro": "Better leads, with the conversation that came before.",
+    "items": [
+      {
+        "title": "Collect the fields you need",
+        "body": "Name, email, company, job title and custom fields, with required settings."
+      },
+      {
+        "title": "Verify leads",
+        "body": "Show a lead popup that verifies visitors by email or phone code."
+      },
+      {
+        "title": "Save to your CRM or HubSpot",
+        "body": "Leads go to the built-in CRM or to HubSpot."
+      },
+      {
+        "title": "Tag the conversation",
+        "body": "Conversations are tagged as lead, prospect or customer and by marketing source."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Works with your sales tools.",
+    "intro": "Send leads where your team already works.",
+    "names": [
+      "HubSpot",
+      "Google Calendar",
+      "Calendly"
+    ]
+  },
+  "quote": {
+    "excerpt": "We were losing good inquiries because people would ask a few questions and leave without filling out the form. Now StepsAI gets the details while they’re already talking and passes the lead into our CRM with the conversation attached.",
+    "attribution": "Ryan Collins | Growth Lead | Northstar SaaS"
+  },
+  "goodToKnow": {
+    "title": "Good to know",
+    "items": [
+      "The agent saves what visitors share. It does not identify anonymous visitors.",
+      "Lead limits depend on your plan."
+    ]
+  },
+  "faq": {
+    "title": "Questions about the AI lead capture agent.",
+    "items": [
+      {
+        "q": "Will it ask every visitor for their email?",
+        "a": "No. You decide when the lead skill is used, in plain English, with examples of when it should not be."
+      },
+      {
+        "q": "Can it book a call too?",
+        "a": "Yes. Add the booking skill and the agent can book a call after it captures the lead."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See the AI lead capture agent with your own business in mind.",
+    "body": "Book a demo and we will walk through it using your own information and channels."
+  }
+}

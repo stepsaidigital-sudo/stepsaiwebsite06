@@ -70,11 +70,6 @@
               "label": "Chat page",
               "href": "/channels/chat-page/",
               "body": ""
-            },
-            {
-              "label": "Integrations",
-              "href": "/integrations/",
-              "body": ""
             }
           ]
         }
@@ -106,6 +101,11 @@
               "label": "AI booking agent",
               "href": "/use-cases/ai-booking-agent/",
               "body": "Book appointments and demos"
+            },
+            {
+              "label": "AI receptionist",
+              "href": "/use-cases/ai-receptionist/",
+              "body": "Answer calls and take bookings"
             },
             {
               "label": "AI marketing agent",
@@ -156,6 +156,58 @@
             {
               "label": "All industries",
               "href": "/industries/",
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Case studies",
+      "columns": [
+        {
+          "title": "By agent",
+          "style": "tiles",
+          "items": [
+            {
+              "label": "AI sales agent",
+              "href": "/case-studies/ai-sales-agent/",
+              "body": "Help customers choose and buy"
+            },
+            {
+              "label": "AI support agent",
+              "href": "/case-studies/ai-support-agent/",
+              "body": "Clear repeat questions"
+            },
+            {
+              "label": "AI marketing agent",
+              "href": "/case-studies/ai-marketing-agent/",
+              "body": "Keep up during launches"
+            },
+            {
+              "label": "AI receptionist",
+              "href": "/case-studies/ai-receptionist/",
+              "body": "Answer calls in three languages"
+            },
+            {
+              "label": "AI booking agent",
+              "href": "/case-studies/ai-booking-agent/",
+              "body": "Answer before the first call"
+            },
+            {
+              "label": "AI lead capture agent",
+              "href": "/case-studies/ai-lead-capture-agent/",
+              "body": "Capture richer leads"
+            }
+          ]
+        },
+        {
+          "title": "Overview",
+          "style": "links",
+          "items": [
+            {
+              "label": "All case studies",
+              "href": "/case-studies/",
               "body": ""
             }
           ]

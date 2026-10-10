@@ -1,0 +1,253 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "integrations-hub",
+  "seo": {
+    "title": "Integrations | Steps AI",
+    "description": "Connect Shopify, WooCommerce, Indian shipping carriers, calendars, HubSpot, Zendesk, Google Sheets and more so your AI agent can check orders, book appointments and save leads."
+  },
+  "hero": {
+    "kicker": "Integrations",
+    "title": "Connect the tools you already use.",
+    "body": "Connect your store, calendar, CRM and knowledge sources to help your agent do the job. Each connection lets the agent check real information and take a real next step.",
+    "reassurance": "No code. Connect once for every agent. Start without any."
+  },
+  "categories": [
+    "Ecommerce",
+    "Shipping",
+    "Calendars",
+    "Knowledge and data",
+    "CRM and support",
+    "Messaging and marketing"
+  ],
+  "apps": [
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "category": "Ecommerce",
+      "body": "Orders, stock, discounts, cart and checkout in the chat."
+    },
+    {
+      "slug": "woocommerce",
+      "name": "WooCommerce",
+      "category": "Ecommerce",
+      "body": "Your catalogue, stock and order status."
+    },
+    {
+      "slug": "shiprocket",
+      "name": "Shiprocket",
+      "category": "Shipping",
+      "body": "Live shipment status in the chat."
+    },
+    {
+      "slug": "delhivery",
+      "name": "Delhivery",
+      "category": "Shipping",
+      "body": "Delivery status answered in the chat."
+    },
+    {
+      "slug": "dtdc",
+      "name": "DTDC",
+      "category": "Shipping",
+      "body": "Parcel tracking without waiting for your team."
+    },
+    {
+      "slug": "ithink-logistics",
+      "name": "iThink Logistics",
+      "category": "Shipping",
+      "body": "Shipment status on every channel."
+    },
+    {
+      "slug": "wareiq",
+      "name": "WareIQ",
+      "category": "Shipping",
+      "body": "Tracking for orders fulfilled through WareIQ."
+    },
+    {
+      "slug": "google-calendar",
+      "name": "Google Calendar",
+      "category": "Calendars",
+      "body": "Book appointments from the conversation."
+    },
+    {
+      "slug": "calendly",
+      "name": "Calendly",
+      "category": "Calendars",
+      "body": "Book customers into your Calendly."
+    },
+    {
+      "slug": "outlook-calendar",
+      "name": "Outlook Calendar",
+      "category": "Calendars",
+      "body": "Appointments in the calendar your team uses."
+    },
+    {
+      "slug": "cal-com",
+      "name": "Cal.com",
+      "category": "Calendars",
+      "body": "Bookings from WhatsApp, Instagram and web."
+    },
+    {
+      "slug": "square-appointments",
+      "name": "Square Appointments",
+      "category": "Calendars",
+      "body": "Bookings for salons, studios and services."
+    },
+    {
+      "slug": "google-sheets",
+      "name": "Google Sheets",
+      "category": "Knowledge and data",
+      "body": "Answer from a sheet and sync orders from it."
+    },
+    {
+      "slug": "google-drive",
+      "name": "Google Drive",
+      "category": "Knowledge and data",
+      "body": "Policies, guides and price lists as answers."
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "category": "Knowledge and data",
+      "body": "Help articles and notes as answers."
+    },
+    {
+      "slug": "airtable",
+      "name": "Airtable",
+      "category": "Knowledge and data",
+      "body": "Answer from your tables and lists."
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "category": "CRM and support",
+      "body": "Leads from the chat saved to HubSpot."
+    },
+    {
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "category": "CRM and support",
+      "body": "Tickets for what the agent cannot solve."
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "category": "Messaging and marketing",
+      "body": "Alerts for handoffs, leads and orders."
+    },
+    {
+      "slug": "outlook",
+      "name": "Outlook",
+      "category": "Messaging and marketing",
+      "body": "Keep your team informed by email."
+    },
+    {
+      "slug": "klaviyo",
+      "name": "Klaviyo",
+      "category": "Messaging and marketing",
+      "body": "Bring chat customers into your marketing."
+    }
+  ],
+  "jobs": {
+    "title": "What you can do with integrations.",
+    "intro": "Start from the job you want done. Each one lists the apps that make it work.",
+    "items": [
+      {
+        "title": "Track orders and deliveries",
+        "body": "Answer \"where is my order\" with the real order and delivery status, including five Indian shipping carriers.",
+        "apps": [
+          "shopify",
+          "woocommerce",
+          "shiprocket",
+          "delhivery",
+          "dtdc",
+          "ithink-logistics",
+          "wareiq"
+        ]
+      },
+      {
+        "title": "Sell and check out in the chat",
+        "body": "Recommend products that are in stock, mention only live discounts and send customers to checkout.",
+        "apps": [
+          "shopify",
+          "woocommerce"
+        ]
+      },
+      {
+        "title": "Bring customers back",
+        "body": "Switch on ready-made workflows for abandoned carts, COD confirmation, review requests and win-back.",
+        "apps": [
+          "shopify",
+          "woocommerce"
+        ]
+      },
+      {
+        "title": "Book appointments",
+        "body": "Offer times, collect details and confirm the booking in the calendar you already use.",
+        "apps": [
+          "google-calendar",
+          "calendly",
+          "outlook-calendar",
+          "cal-com",
+          "square-appointments"
+        ]
+      },
+      {
+        "title": "Capture and pass on leads",
+        "body": "Save the details customers share in the chat to the CRM your sales team works in.",
+        "apps": [
+          "hubspot",
+          "klaviyo"
+        ]
+      },
+      {
+        "title": "Hand over support to your team",
+        "body": "Turn problems into tickets and let the right people know when a customer needs a person.",
+        "apps": [
+          "zendesk",
+          "slack",
+          "outlook"
+        ]
+      },
+      {
+        "title": "Answer from your documents",
+        "body": "Use the policies, guides, tables and sheets your team already keeps up to date.",
+        "apps": [
+          "google-drive",
+          "notion",
+          "airtable",
+          "google-sheets"
+        ]
+      }
+    ]
+  },
+  "custom": {
+    "title": "Using a tool that is not listed?",
+    "body": "Ask us about a custom integration. Tell us what it should do and our team will look at it with you."
+  },
+  "faq": {
+    "title": "Questions about integrations.",
+    "items": [
+      {
+        "q": "Do I need an integration to get started?",
+        "a": "No. Your agent can answer from your website, files and FAQs from day one. Integrations add actions such as order lookups and bookings."
+      },
+      {
+        "q": "How do I connect an app?",
+        "a": "Open Resources, then Apps, and connect the app to your workspace. Then add it to each agent that should use it. Both steps are needed before an agent uses it."
+      },
+      {
+        "q": "Do I connect apps again for each agent?",
+        "a": "No. Apps are workspace resources. Connect once and choose which agents use them."
+      },
+      {
+        "q": "Which plans include integrations?",
+        "a": "Integrations are available on paid plans. The Free plan does not include channel integrations, order tracking or human handoff."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See your tools working with Steps AI.",
+    "body": "Book a demo and we will connect the apps you use and walk through a real conversation."
+  }
+}

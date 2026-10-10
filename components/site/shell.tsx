@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import copy from '@/app/copy.json';
 import { resolveLabel } from './routes';
 import { MegaMenus } from './mega-menu';
+import { useSiteMotion } from './motion';
 
 export type Open = { onOpen: (label: string) => void };
 type Place = { onHome?: boolean };
@@ -58,11 +59,11 @@ export function Header({ onOpen, onHome = true }: Open & Place) {
     return () => window.removeEventListener('scroll', update);
   }, []);
   const close = () => setOpen(false);
-  return <header className={scrolled ? 'site-header is-scrolled' : 'site-header'}><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}><MegaMenus onOpen={onOpen} onNavigate={close} /><LabelLink label="Pricing" onOpen={onOpen} onHome={onHome} after={close} /><span className="nav-spacer" /><button onClick={() => { close(); onOpen('Log in'); }}>Log in</button><Action onOpen={onOpen} /></nav></div></header>;
+  return <header className={scrolled ? 'site-header is-scrolled' : 'site-header'}><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}><MegaMenus onOpen={onOpen} onNavigate={close} /><LabelLink label="Integrations" onOpen={onOpen} onHome={onHome} after={close} /><LabelLink label="Pricing" onOpen={onOpen} onHome={onHome} after={close} /><span className="nav-spacer" /><button onClick={() => { close(); onOpen('Log in'); }}>Log in</button><Action onOpen={onOpen} /></nav></div></header>;
 }
 
 export function Footer({ onOpen, onHome = true }: Open & Place) {
-  return <footer className="container"><div className="footer-top"><Brand onHome={onHome} /><p>{copy.footer.paragraphs[0]}</p></div><div className="footer-groups">{copy.footer.paragraphs.slice(1, 7).map(group => { const [title, links] = group.split(': '); return <div key={title}><h3>{title}</h3>{links?.split(' | ').map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div>; })}</div><div className="footer-bottom"><span>Steps AI</span><div>{['Privacy policy', 'Terms of service'].map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div></div></footer>;
+  return <footer className="container"><div className="footer-top"><Brand onHome={onHome} /><p>{copy.footer.paragraphs[0]}</p></div><div className="footer-groups">{copy.footer.paragraphs.slice(1).map(group => { const [title, links] = group.split(': '); return <div key={title}><h3>{title}</h3>{links?.split(' | ').map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div>; })}</div><div className="footer-bottom"><span>Steps AI</span></div></footer>;
 }
 
 // Subpage wrapper: shared header and footer, plus the preview notice for
@@ -70,5 +71,6 @@ export function Footer({ onOpen, onHome = true }: Open & Place) {
 export function SiteFrame({ children }: { children: (onOpen: (label: string) => void) => React.ReactNode }) {
   const [route, setRoute] = useState('');
   const open = openOrGo(setRoute, false);
-  return <><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={setRoute} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={setRoute} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
+  useSiteMotion();
+  return <><div className="m-progress" aria-hidden="true" /><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={setRoute} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={setRoute} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
 }
