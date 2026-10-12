@@ -1,6 +1,26 @@
 // Labels that have a real page. Everything not listed here (and not a homepage
 // anchor) opens the "Design preview" notice instead of a dead link.
 export const builtRoutes: Record<string, string> = {
+  'Book a demo': '/book-a-demo/',
+  'Log in': 'https://app.stepsai.co/login',
+  'Sign up': 'https://app.stepsai.co/signup',
+  'Start free': 'https://app.stepsai.co/signup',
+  'Developer docs': 'https://docs.stepsai.co',
+  Blog: '/blog/',
+  'Help centre': '/help/',
+  // In-app setup actions go to sign-up, where they happen.
+  'Connect HubSpot': 'https://app.stepsai.co/signup',
+  'Connect Instagram': 'https://app.stepsai.co/signup',
+  'Connect Messenger': 'https://app.stepsai.co/signup',
+  'Connect WhatsApp': 'https://app.stepsai.co/signup',
+  'Connect a phone number': 'https://app.stepsai.co/signup',
+  'Connect your calendar': 'https://app.stepsai.co/signup',
+  'Connect your store': 'https://app.stepsai.co/signup',
+  'Create your page': 'https://app.stepsai.co/signup',
+  'Get the script': 'https://app.stepsai.co/signup',
+  'Request an integration': '/contact/',
+  'See analytics in a demo': '/book-a-demo/',
+  'See customer stories': '/case-studies/',
   Pricing: '/pricing/',
   Integrations: '/integrations/',
   'Case studies': '/case-studies/',

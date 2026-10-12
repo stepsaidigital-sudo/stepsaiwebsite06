@@ -5,6 +5,19 @@ import { SiteFrame } from '@/components/site/shell';
 import { CtaBand, Faq, PageHero, Reveal, SectionIntro } from '@/components/sections';
 import type { IntegrationsHub } from '@/content/types';
 import { AppCard, AppLogo } from './integration';
+import { ConnectFlow, type ConnectApp } from '@/components/premium/connect-flow';
+
+// Apps shown connecting in the walkthrough, with the question each one lets the agent answer.
+import shopify from '@/content/integrations/shopify.json';
+import googleCalendar from '@/content/integrations/google-calendar.json';
+import hubspot from '@/content/integrations/hubspot.json';
+import shiprocket from '@/content/integrations/shiprocket.json';
+import notion from '@/content/integrations/notion.json';
+type Demo = { slug: string; name: string; category: string; demo: { lines: { from: string; text: string }[] } };
+const flowApps: ConnectApp[] = ([shopify, googleCalendar, hubspot, shiprocket, notion] as Demo[]).map(j => ({
+  slug: j.slug, name: j.name, category: j.category,
+  question: j.demo.lines.find(l => l.from === 'customer')?.text, answer: j.demo.lines.find(l => l.from === 'agent')?.text,
+}));
 
 // Connected apps orbit the Steps AI mark. The ring turns slowly on its own,
 // and can be dragged to spin it, carrying on with a little momentum.
@@ -49,6 +62,8 @@ export function IntegrationsHubTemplate({ page }: { page: IntegrationsHub }) {
       </div>
       {groups.map(group => <div key={group.category} className="ig-group"><h3>{group.category}</h3><div className="ig-grid">{group.apps.map(app => <AppCard key={app.slug} app={app} />)}</div></div>)}
     </section>
+
+    <ConnectFlow apps={flowApps} title="Every app connects the same way." intro="Five steps. No code. Pick an app to watch it connect." />
 
     <section className="sp-section ig-jobs-band"><div className="container">
       <SectionIntro eyebrow="Use cases" title={page.jobs.title} intro={page.jobs.intro} />

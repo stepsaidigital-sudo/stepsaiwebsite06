@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, Check, Workflow } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
 import { DragRail } from '@/components/site/motion';
-import { ChatMock, CtaBand, Faq, FeatureList, GoodToKnow, PageHero, Reveal, SectionIntro, StepRows } from '@/components/sections';
+import { ChatMock, CtaBand, Faq, FeatureList, GoodToKnow, PageHero, Reveal, SectionIntro } from '@/components/sections';
 import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
 import type { IntegrationApp, IntegrationPage } from '@/content/types';
+import { ConnectFlow } from '@/components/premium/connect-flow';
 
 export function AppLogo({ slug, size = 40 }: { slug: string; size?: number }) {
   return <img className="ig-logo" src={`/brands/integrations/${slug}.svg`} alt="" width={size} height={size} />;
@@ -44,6 +45,7 @@ export function IntegrationTemplate({ page, related }: { page: IntegrationPage; 
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} visual={<ConnectedDemo page={page} />} />
     <nav className="container ig-crumbs" aria-label="Breadcrumb"><Link href="/integrations/"><ArrowLeft size={15} />All integrations</Link><span>/</span><span>{page.category}</span><span>/</span><strong>{page.name}</strong></nav>
+    <ConnectFlow app={{ slug: page.slug, name: page.name, category: page.category, question: page.demo.lines.find(l => l.from === 'customer')?.text, answer: page.demo.lines.find(l => l.from === 'agent')?.text }} title={page.setup.title} intro={page.setup.intro} />
 
     <section className="sp-section container">
       <SectionIntro eyebrow="Use cases" title={page.useCases.title} intro={page.useCases.intro} />
@@ -55,7 +57,6 @@ export function IntegrationTemplate({ page, related }: { page: IntegrationPage; 
 
     {page.workflows && <section className="sp-section container sp-split"><SectionIntro eyebrow={<><Workflow size={14} /> Workflows</>} title={page.workflows.title} intro={page.workflows.intro} /><FeatureList items={page.workflows.items} /></section>}
 
-    <section className="sp-section container"><SectionIntro eyebrow="Setup" title={page.setup.title} intro={page.setup.intro} /><StepRows items={page.setup.items} /></section>
     <section className="sp-section container"><GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} /></section>
     <Faq title={page.faq.title} items={page.faq.items} />
 
