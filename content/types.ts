@@ -96,7 +96,7 @@ export type ContentPage = Status & {
 // page renders steps, where-to-click paths, callouts, tables and FAQs consistently.
 // Media the team can attach later. image: a file in public/help/ or a full URL. video: an .mp4 file or a YouTube link.
 export type HelpMedia = { type: 'image' | 'video' | 'youtube'; src: string; alt?: string; caption?: string };
-export type HelpTopic = { slug: string; title: string; summary: string; icon: string; cover?: string };
+export type HelpTopic = { slug: string; title: string; summary: string; icon: string; cover?: string; group?: 'featured' | 'beginner' | 'advanced' };
 export type HelpCallout = { type: 'tip' | 'note' | 'warning'; text: string };
 export type HelpLesson = {
   slug: string; topic: string; title: string; summary: string;

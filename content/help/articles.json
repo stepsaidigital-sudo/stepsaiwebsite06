@@ -2,341 +2,1476 @@
   "status": "draft",
   "source": "Product Knowledge (9 Sep 2026) and verified page copy. Check in-app before publishing.",
   "topics": [
-    { "slug": "getting-started", "title": "Getting started", "summary": "Create your first agent and teach it your business.", "icon": "rocket" },
-    { "slug": "website", "title": "Website widget", "summary": "Add the chat to your site and make it yours.", "icon": "globe" },
-    { "slug": "whatsapp", "title": "WhatsApp", "summary": "Connect your number and answer customers on WhatsApp.", "icon": "whatsapp" },
-    { "slug": "instagram-messenger", "title": "Instagram and Messenger", "summary": "DMs, comment-to-DM and your Facebook page.", "icon": "instagram" },
-    { "slug": "chat-page", "title": "Chat page", "summary": "A branded page for businesses without a website.", "icon": "link" },
-    { "slug": "integrations", "title": "Integrations", "summary": "Connect your store, couriers, calendars and CRM.", "icon": "plug" },
-    { "slug": "skills", "title": "Agent skills", "summary": "Bookings, tickets, leads and custom skills.", "icon": "spark" },
-    { "slug": "handoff", "title": "Human handoff", "summary": "Pass conversations to your team with the full history.", "icon": "headset" },
-    { "slug": "campaigns", "title": "WhatsApp campaigns", "summary": "Send approved templates to the right audience.", "icon": "megaphone" },
-    { "slug": "workflows", "title": "Workflows", "summary": "Cart recovery, order updates and team alerts.", "icon": "flow" },
-    { "slug": "inbox", "title": "Inbox", "summary": "Every conversation from every channel in one place.", "icon": "inbox" },
-    { "slug": "crm", "title": "CRM", "summary": "Customers, tickets and live requests.", "icon": "users" },
-    { "slug": "analytics", "title": "Analytics", "summary": "Volume, response time, channels and busy hours.", "icon": "chart" },
-    { "slug": "billing", "title": "Plans and billing", "summary": "Credits, plans, limits and your account.", "icon": "card" }
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "summary": "Create your first agent and teach it your business.",
+      "icon": "rocket",
+      "group": "featured"
+    },
+    {
+      "slug": "website",
+      "title": "Website widget",
+      "summary": "Add the chat to your site and make it yours.",
+      "icon": "globe",
+      "group": "beginner"
+    },
+    {
+      "slug": "whatsapp",
+      "title": "WhatsApp",
+      "summary": "Connect your number and answer customers on WhatsApp.",
+      "icon": "whatsapp",
+      "group": "featured"
+    },
+    {
+      "slug": "instagram-messenger",
+      "title": "Instagram and Messenger",
+      "summary": "DMs, comment-to-DM and your Facebook page.",
+      "icon": "instagram",
+      "group": "beginner"
+    },
+    {
+      "slug": "chat-page",
+      "title": "Chat page",
+      "summary": "A branded page for businesses without a website.",
+      "icon": "link",
+      "group": "beginner"
+    },
+    {
+      "slug": "integrations",
+      "title": "Integrations",
+      "summary": "Connect your store, couriers, calendars and CRM.",
+      "icon": "plug",
+      "group": "featured"
+    },
+    {
+      "slug": "skills",
+      "title": "Agent skills",
+      "summary": "Bookings, tickets, leads and custom skills.",
+      "icon": "spark",
+      "group": "advanced"
+    },
+    {
+      "slug": "handoff",
+      "title": "Human handoff",
+      "summary": "Pass conversations to your team with the full history.",
+      "icon": "headset",
+      "group": "advanced"
+    },
+    {
+      "slug": "campaigns",
+      "title": "WhatsApp campaigns",
+      "summary": "Send approved templates to the right audience.",
+      "icon": "megaphone",
+      "group": "advanced"
+    },
+    {
+      "slug": "workflows",
+      "title": "Workflows",
+      "summary": "Cart recovery, order updates and team alerts.",
+      "icon": "flow",
+      "group": "advanced"
+    },
+    {
+      "slug": "inbox",
+      "title": "Inbox",
+      "summary": "Every conversation from every channel in one place.",
+      "icon": "inbox",
+      "group": "beginner"
+    },
+    {
+      "slug": "crm",
+      "title": "CRM",
+      "summary": "Customers, tickets and live requests.",
+      "icon": "users",
+      "group": "beginner"
+    },
+    {
+      "slug": "analytics",
+      "title": "Analytics",
+      "summary": "Volume, response time, channels and busy hours.",
+      "icon": "chart",
+      "group": "beginner"
+    },
+    {
+      "slug": "billing",
+      "title": "Plans and billing",
+      "summary": "Credits, plans, limits and your account.",
+      "icon": "card",
+      "group": "beginner"
+    }
   ],
   "lessons": [
-    { "slug": "create-your-first-agent", "topic": "getting-started", "title": "Create your first agent", "level": "Beginner", "plans": "All plans",
+    {
+      "slug": "create-your-first-agent",
+      "topic": "getting-started",
+      "title": "Create your first agent",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Paste your website address and your agent reads your pages. No code is needed.",
-      "before": ["A Steps AI account", "Your website address"],
-      "steps": [
-        { "title": "Open Agents", "body": "From the sidebar, open Agents and create a new agent.", "path": "Home › Agents" },
-        { "title": "Name your agent", "body": "Choose the name carefully. It cannot be changed after the agent is created." },
-        { "title": "Add your website", "body": "Paste your website address. Steps AI reads your pages, documents and FAQs." },
-        { "title": "Test it", "body": "Open the preview chat and ask the questions your customers ask most." }
+      "before": [
+        "A Steps AI account",
+        "Your website address"
       ],
-      "callouts": [{ "type": "warning", "text": "The agent name is the one setting you cannot change later." }],
-      "related": ["add-business-information", "set-tone-and-guardrails"] },
-    { "slug": "add-business-information", "topic": "getting-started", "title": "Add your business information", "level": "Beginner", "plans": "All plans",
+      "steps": [
+        {
+          "title": "Open Agents",
+          "body": "From the sidebar, open Agents and create a new agent.",
+          "path": "Home › Agents"
+        },
+        {
+          "title": "Name your agent",
+          "body": "Choose the name carefully. It cannot be changed after the agent is created."
+        },
+        {
+          "title": "Add your website",
+          "body": "Paste your website address. Steps AI reads your pages, documents and FAQs."
+        },
+        {
+          "title": "Test it",
+          "body": "Open the preview chat and ask the questions your customers ask most."
+        }
+      ],
+      "callouts": [
+        {
+          "type": "warning",
+          "text": "The agent name is the one setting you cannot change later."
+        }
+      ],
+      "related": [
+        "add-business-information",
+        "set-tone-and-guardrails"
+      ]
+    },
+    {
+      "slug": "add-business-information",
+      "topic": "getting-started",
+      "title": "Add your business information",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Websites, files and FAQs live in Resources and can be shared by every agent.",
       "steps": [
-        { "title": "Open Resources", "body": "Everything your agents know lives here.", "path": "Home › Resources" },
-        { "title": "Add sources", "body": "Add website pages, upload files or write FAQs." },
-        { "title": "Choose the agents", "body": "Pick which agents use each resource." },
-        { "title": "Keep it current", "body": "Update a resource once and every agent that uses it answers with the new information." }
+        {
+          "title": "Open Resources",
+          "body": "Everything your agents know lives here.",
+          "path": "Home › Resources"
+        },
+        {
+          "title": "Add sources",
+          "body": "Add website pages, upload files or write FAQs."
+        },
+        {
+          "title": "Choose the agents",
+          "body": "Pick which agents use each resource."
+        },
+        {
+          "title": "Keep it current",
+          "body": "Update a resource once and every agent that uses it answers with the new information."
+        }
       ],
-      "table": { "caption": "Storage and crawls grow with your plan", "columns": ["Limit", "Range"], "rows": [["Storage", "5 MB to 500 MB by plan"], ["Web crawls", "10 to 250 a month by plan"]] },
-      "callouts": [{ "type": "tip", "text": "Keep prices, dates and policies current in your documents so answers stay accurate." }],
-      "related": ["create-your-first-agent"] },
-    { "slug": "set-tone-and-guardrails", "topic": "getting-started", "title": "Set your agent's tone and guardrails", "level": "Beginner", "plans": "Custom personas from Starter",
+      "table": {
+        "caption": "Storage and crawls grow with your plan",
+        "columns": [
+          "Limit",
+          "Range"
+        ],
+        "rows": [
+          [
+            "Storage",
+            "5 MB to 500 MB by plan"
+          ],
+          [
+            "Web crawls",
+            "10 to 250 a month by plan"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Keep prices, dates and policies current in your documents so answers stay accurate."
+        }
+      ],
+      "related": [
+        "create-your-first-agent"
+      ]
+    },
+    {
+      "slug": "set-tone-and-guardrails",
+      "topic": "getting-started",
+      "title": "Set your agent's tone and guardrails",
+      "level": "Beginner",
+      "plans": "Custom personas from Starter",
       "summary": "Personas set your agent's role, tone and the things it must never do.",
       "steps": [
-        { "title": "Open Personas", "body": "Choose a predefined persona or create your own.", "path": "Agent › Intelligence › Personas" },
-        { "title": "Pick a tone", "body": "Friendly, professional, direct or neutral. Professional is the default." },
-        { "title": "Add guardrails", "body": "For example: never quote prices, never give medical, legal or financial advice, never discuss politics." },
-        { "title": "Or generate it", "body": "Generate a persona with AI from your homepage, the agent's role, your audience and your guardrails." }
+        {
+          "title": "Open Personas",
+          "body": "Choose a predefined persona or create your own.",
+          "path": "Agent › Intelligence › Personas"
+        },
+        {
+          "title": "Pick a tone",
+          "body": "Friendly, professional, direct or neutral. Professional is the default."
+        },
+        {
+          "title": "Add guardrails",
+          "body": "For example: never quote prices, never give medical, legal or financial advice, never discuss politics."
+        },
+        {
+          "title": "Or generate it",
+          "body": "Generate a persona with AI from your homepage, the agent's role, your audience and your guardrails."
+        }
       ],
-      "callouts": [{ "type": "tip", "text": "Healthcare and finance businesses should always add the matching \"never give advice\" guardrail." }],
-      "related": ["create-your-first-agent", "write-skill-rules"] },
-
-    { "slug": "add-chat-widget-to-website", "topic": "website", "title": "Add the chat widget to your website", "level": "Beginner", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Healthcare and finance businesses should always add the matching \"never give advice\" guardrail."
+        }
+      ],
+      "related": [
+        "create-your-first-agent",
+        "write-skill-rules"
+      ]
+    },
+    {
+      "slug": "add-chat-widget-to-website",
+      "topic": "website",
+      "title": "Add the chat widget to your website",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Copy one script, use a framework snippet, or install the WordPress plugin.",
       "steps": [
-        { "title": "Open Website", "body": "Find the install options for your agent.", "path": "Agent › Channels › Website" },
-        { "title": "Copy the script", "body": "Use the universal script, or the snippet for HTML, React, Next.js, Vue or Angular." },
-        { "title": "Paste it into your site", "body": "Guides cover Wix, Webflow, Framer, Bubble and WordPress." },
-        { "title": "Limit where it runs", "body": "Add allowed domains so the widget only works on your own sites." }
+        {
+          "title": "Open Website",
+          "body": "Find the install options for your agent.",
+          "path": "Agent › Channels › Website"
+        },
+        {
+          "title": "Copy the script",
+          "body": "Use the universal script, or the snippet for HTML, React, Next.js, Vue or Angular."
+        },
+        {
+          "title": "Paste it into your site",
+          "body": "Guides cover Wix, Webflow, Framer, Bubble and WordPress."
+        },
+        {
+          "title": "Limit where it runs",
+          "body": "Add allowed domains so the widget only works on your own sites."
+        }
       ],
-      "table": { "caption": "Where to paste the script", "columns": ["Site builder", "Where it goes"], "rows": [["Wix", "Custom code, end of body, then save and publish"], ["Webflow", "Project settings, custom code, then publish"], ["Bubble", "Custom code, then save"], ["WordPress", "Use the Steps AI plugin instead of a script"]] },
-      "callouts": [{ "type": "warning", "text": "If you leave allowed domains empty, the widget can be embedded on any website." }],
-      "related": ["install-wordpress-plugin", "customise-the-widget"] },
-    { "slug": "install-wordpress-plugin", "topic": "website", "title": "Install the WordPress plugin", "level": "Beginner", "plans": "All plans",
+      "table": {
+        "caption": "Where to paste the script",
+        "columns": [
+          "Site builder",
+          "Where it goes"
+        ],
+        "rows": [
+          [
+            "Wix",
+            "Custom code, end of body, then save and publish"
+          ],
+          [
+            "Webflow",
+            "Project settings, custom code, then publish"
+          ],
+          [
+            "Bubble",
+            "Custom code, then save"
+          ],
+          [
+            "WordPress",
+            "Use the Steps AI plugin instead of a script"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "warning",
+          "text": "If you leave allowed domains empty, the widget can be embedded on any website."
+        }
+      ],
+      "related": [
+        "install-wordpress-plugin",
+        "customise-the-widget"
+      ]
+    },
+    {
+      "slug": "install-wordpress-plugin",
+      "topic": "website",
+      "title": "Install the WordPress plugin",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "WordPress can remove script tags from pages. The plugin avoids that.",
       "steps": [
-        { "title": "Download the plugin", "body": "It comes pre-loaded with your agent.", "path": "Agent › Channels › Website › WordPress" },
-        { "title": "Upload it", "body": "In WordPress, add a new plugin and upload the file." },
-        { "title": "Activate it", "body": "The widget appears on your site. You never touch code." }
+        {
+          "title": "Download the plugin",
+          "body": "It comes pre-loaded with your agent.",
+          "path": "Agent › Channels › Website › WordPress"
+        },
+        {
+          "title": "Upload it",
+          "body": "In WordPress, add a new plugin and upload the file."
+        },
+        {
+          "title": "Activate it",
+          "body": "The widget appears on your site. You never touch code."
+        }
       ],
-      "related": ["add-chat-widget-to-website"] },
-    { "slug": "customise-the-widget", "topic": "website", "title": "Customise the widget", "level": "Beginner", "plans": "All plans",
+      "related": [
+        "add-chat-widget-to-website"
+      ]
+    },
+    {
+      "slug": "customise-the-widget",
+      "topic": "website",
+      "title": "Customise the widget",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Match your brand and keep the widget out of the way on mobile.",
       "steps": [
-        { "title": "Brand it", "body": "Set your logo, colours, light or dark theme, title and greeting.", "path": "Agent › Experience" },
-        { "title": "Add quick questions", "body": "Up to five, so visitors know what to ask." },
-        { "title": "Choose the display", "body": "Floating widget or inline search bar, set separately for desktop and mobile." },
-        { "title": "Place it", "body": "Pick one of nine positions and when it appears." }
+        {
+          "title": "Brand it",
+          "body": "Set your logo, colours, light or dark theme, title and greeting.",
+          "path": "Agent › Experience"
+        },
+        {
+          "title": "Add quick questions",
+          "body": "Up to five, so visitors know what to ask."
+        },
+        {
+          "title": "Choose the display",
+          "body": "Floating widget or inline search bar, set separately for desktop and mobile."
+        },
+        {
+          "title": "Place it",
+          "body": "Pick one of nine positions and when it appears."
+        }
       ],
-      "table": { "caption": "Display options", "columns": ["Setting", "Options"], "rows": [["Display", "Floating widget or inline search bar"], ["Position", "Nine positions"], ["Appears", "Straight away, 5 s, 10 s, 30 s or 1 minute"], ["Theme", "Light or dark"], ["Quick questions", "Up to 5"]] },
-      "callouts": [{ "type": "tip", "text": "Quick questions are the most useful field on this screen and the most often skipped." }, { "type": "note", "text": "On mobile, keep the bubble clear of your add-to-cart button." }],
-      "related": ["add-chat-widget-to-website"] },
-
-    { "slug": "connect-whatsapp", "topic": "whatsapp", "title": "Connect your WhatsApp Business number", "level": "Beginner", "plans": "Starter and above",
+      "table": {
+        "caption": "Display options",
+        "columns": [
+          "Setting",
+          "Options"
+        ],
+        "rows": [
+          [
+            "Display",
+            "Floating widget or inline search bar"
+          ],
+          [
+            "Position",
+            "Nine positions"
+          ],
+          [
+            "Appears",
+            "Straight away, 5 s, 10 s, 30 s or 1 minute"
+          ],
+          [
+            "Theme",
+            "Light or dark"
+          ],
+          [
+            "Quick questions",
+            "Up to 5"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Quick questions are the most useful field on this screen and the most often skipped."
+        },
+        {
+          "type": "note",
+          "text": "On mobile, keep the bubble clear of your add-to-cart button."
+        }
+      ],
+      "related": [
+        "add-chat-widget-to-website"
+      ]
+    },
+    {
+      "slug": "connect-whatsapp",
+      "topic": "whatsapp",
+      "title": "Connect your WhatsApp Business number",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Connect through Meta's official API. The same connection covers Instagram and Messenger.",
-      "before": ["A WhatsApp Business number", "Access to your Meta business account"],
-      "steps": [
-        { "title": "Open WhatsApp", "body": "Start the Meta connection.", "path": "Agent › Channels › WhatsApp" },
-        { "title": "Sign in with Meta", "body": "Allow access to your WhatsApp Business account." },
-        { "title": "Choose the agent", "body": "Pick which agent answers on this number." },
-        { "title": "Send a test", "body": "Message the number from your own phone before customers do." }
+      "before": [
+        "A WhatsApp Business number",
+        "Access to your Meta business account"
       ],
-      "callouts": [{ "type": "note", "text": "How many conversations you can start each day follows WhatsApp's messaging tiers for your number." }],
-      "related": ["whatsapp-templates", "missed-call-replies"] },
-    { "slug": "whatsapp-templates", "topic": "whatsapp", "title": "Use approved message templates", "level": "Intermediate", "plans": "Starter and above",
+      "steps": [
+        {
+          "title": "Open WhatsApp",
+          "body": "Start the Meta connection.",
+          "path": "Agent › Channels › WhatsApp"
+        },
+        {
+          "title": "Sign in with Meta",
+          "body": "Allow access to your WhatsApp Business account."
+        },
+        {
+          "title": "Choose the agent",
+          "body": "Pick which agent answers on this number."
+        },
+        {
+          "title": "Send a test",
+          "body": "Message the number from your own phone before customers do."
+        }
+      ],
+      "callouts": [
+        {
+          "type": "note",
+          "text": "How many conversations you can start each day follows WhatsApp's messaging tiers for your number."
+        }
+      ],
+      "related": [
+        "whatsapp-templates",
+        "missed-call-replies"
+      ]
+    },
+    {
+      "slug": "whatsapp-templates",
+      "topic": "whatsapp",
+      "title": "Use approved message templates",
+      "level": "Intermediate",
+      "plans": "Starter and above",
       "summary": "Messages that start a conversation use templates that Meta approves first.",
       "steps": [
-        { "title": "Write the template", "body": "Keep it short and add personalised fields such as the first name." },
-        { "title": "Submit for approval", "body": "Meta reviews each template before you can use it." },
-        { "title": "Use it", "body": "Approved templates appear in campaigns and workflows." }
+        {
+          "title": "Write the template",
+          "body": "Keep it short and add personalised fields such as the first name."
+        },
+        {
+          "title": "Submit for approval",
+          "body": "Meta reviews each template before you can use it."
+        },
+        {
+          "title": "Use it",
+          "body": "Approved templates appear in campaigns and workflows."
+        }
       ],
-      "callouts": [{ "type": "note", "text": "Replies inside an open conversation do not need a template." }],
-      "related": ["send-a-campaign"] },
-    { "slug": "missed-call-replies", "topic": "whatsapp", "title": "Reply to missed WhatsApp calls", "level": "Beginner", "plans": "Starter and above",
+      "callouts": [
+        {
+          "type": "note",
+          "text": "Replies inside an open conversation do not need a template."
+        }
+      ],
+      "related": [
+        "send-a-campaign"
+      ]
+    },
+    {
+      "slug": "missed-call-replies",
+      "topic": "whatsapp",
+      "title": "Reply to missed WhatsApp calls",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "When you miss a call, send a WhatsApp message so the conversation can continue in chat.",
       "steps": [
-        { "title": "Switch it on", "body": "Turn on the missed-call reply for your number.", "path": "Agent › Channels › WhatsApp" },
-        { "title": "Write the message", "body": "For example: Sorry we missed your call. How can we help?" },
-        { "title": "Let the agent continue", "body": "When the customer replies, your agent takes it from there." }
+        {
+          "title": "Switch it on",
+          "body": "Turn on the missed-call reply for your number.",
+          "path": "Agent › Channels › WhatsApp"
+        },
+        {
+          "title": "Write the message",
+          "body": "For example: Sorry we missed your call. How can we help?"
+        },
+        {
+          "title": "Let the agent continue",
+          "body": "When the customer replies, your agent takes it from there."
+        }
       ],
-      "related": ["connect-whatsapp"] },
-
-    { "slug": "connect-instagram-messenger", "topic": "instagram-messenger", "title": "Connect Instagram and Messenger", "level": "Beginner", "plans": "Starter and above",
+      "related": [
+        "connect-whatsapp"
+      ]
+    },
+    {
+      "slug": "connect-instagram-messenger",
+      "topic": "instagram-messenger",
+      "title": "Connect Instagram and Messenger",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "One Meta sign-in covers your Instagram professional account and your Facebook page.",
-      "before": ["An Instagram professional account", "Admin access to your Facebook page"],
-      "steps": [
-        { "title": "Open Instagram or Messenger", "body": "Start the Meta connection.", "path": "Agent › Channels" },
-        { "title": "Sign in with Meta", "body": "Allow access to your Instagram account and Facebook page." },
-        { "title": "Choose the agent", "body": "Pick which agent answers your DMs and page messages." }
+      "before": [
+        "An Instagram professional account",
+        "Admin access to your Facebook page"
       ],
-      "callouts": [{ "type": "warning", "text": "Instagram broadcast campaigns are not available. Campaigns run on WhatsApp." }],
-      "related": ["comment-to-dm"] },
-    { "slug": "comment-to-dm", "topic": "instagram-messenger", "title": "Turn Instagram comments into DMs", "level": "Beginner", "plans": "Starter and above",
+      "steps": [
+        {
+          "title": "Open Instagram or Messenger",
+          "body": "Start the Meta connection.",
+          "path": "Agent › Channels"
+        },
+        {
+          "title": "Sign in with Meta",
+          "body": "Allow access to your Instagram account and Facebook page."
+        },
+        {
+          "title": "Choose the agent",
+          "body": "Pick which agent answers your DMs and page messages."
+        }
+      ],
+      "callouts": [
+        {
+          "type": "warning",
+          "text": "Instagram broadcast campaigns are not available. Campaigns run on WhatsApp."
+        }
+      ],
+      "related": [
+        "comment-to-dm"
+      ]
+    },
+    {
+      "slug": "comment-to-dm",
+      "topic": "instagram-messenger",
+      "title": "Turn Instagram comments into DMs",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "When someone comments a keyword, reply in their direct messages straight away.",
       "steps": [
-        { "title": "Add a keyword", "body": "For example PRICE or LINK.", "path": "Agent › Channels › Instagram › Comments" },
-        { "title": "Write the reply", "body": "This is the first DM the person receives." },
-        { "title": "Choose the posts", "body": "Run it on all posts, or one post or Reel, including live comments." },
-        { "title": "Add quick replies", "body": "Buttons wait for the customer's choice and branch on it." }
+        {
+          "title": "Add a keyword",
+          "body": "For example PRICE or LINK.",
+          "path": "Agent › Channels › Instagram › Comments"
+        },
+        {
+          "title": "Write the reply",
+          "body": "This is the first DM the person receives."
+        },
+        {
+          "title": "Choose the posts",
+          "body": "Run it on all posts, or one post or Reel, including live comments."
+        },
+        {
+          "title": "Add quick replies",
+          "body": "Buttons wait for the customer's choice and branch on it."
+        }
       ],
-      "callouts": [{ "type": "tip", "text": "On Instagram, replying from the Instagram app pauses the AI so it does not talk over you." }],
-      "related": ["connect-instagram-messenger"] },
-
-    { "slug": "publish-a-chat-page", "topic": "chat-page", "title": "Publish a chat page", "level": "Beginner", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "On Instagram, replying from the Instagram app pauses the AI so it does not talk over you."
+        }
+      ],
+      "related": [
+        "connect-instagram-messenger"
+      ]
+    },
+    {
+      "slug": "publish-a-chat-page",
+      "topic": "chat-page",
+      "title": "Publish a chat page",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "No website? Share a branded page with your agent on it.",
       "steps": [
-        { "title": "Create the page", "body": "Open your agent's site settings.", "path": "Agent › Site" },
-        { "title": "Brand it", "body": "Logo, colours for light and dark, welcome message, up to five suggested questions." },
-        { "title": "Add link cards", "body": "Link your catalogue, booking page or socials." },
-        { "title": "Publish and share", "body": "Preview on desktop and mobile, then share the link in your bio or status." }
+        {
+          "title": "Create the page",
+          "body": "Open your agent's site settings.",
+          "path": "Agent › Site"
+        },
+        {
+          "title": "Brand it",
+          "body": "Logo, colours for light and dark, welcome message, up to five suggested questions."
+        },
+        {
+          "title": "Add link cards",
+          "body": "Link your catalogue, booking page or socials."
+        },
+        {
+          "title": "Publish and share",
+          "body": "Preview on desktop and mobile, then share the link in your bio or status."
+        }
       ],
-      "callouts": [{ "type": "note", "text": "The page uses a public link on the Steps AI domain. Custom domains are not set up from this screen today." }],
-      "related": ["customise-the-widget"] },
-
-    { "slug": "connect-an-app", "topic": "integrations", "title": "Connect an app", "level": "Beginner", "plans": "Starter and above",
+      "callouts": [
+        {
+          "type": "note",
+          "text": "The page uses a public link on the Steps AI domain. Custom domains are not set up from this screen today."
+        }
+      ],
+      "related": [
+        "customise-the-widget"
+      ]
+    },
+    {
+      "slug": "connect-an-app",
+      "topic": "integrations",
+      "title": "Connect an app",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Connecting is one step. Switching it on for an agent is the second.",
       "steps": [
-        { "title": "Open Apps", "body": "Every integration starts here.", "path": "Resources › Apps" },
-        { "title": "Choose the app", "body": "Search the library and select it." },
-        { "title": "Sign in", "body": "Sign in, or enter your account details, to connect it to your workspace." },
-        { "title": "Switch it on", "body": "Turn it on for each agent that should use it." },
-        { "title": "Test it", "body": "Ask a real question in the preview chat." }
+        {
+          "title": "Open Apps",
+          "body": "Every integration starts here.",
+          "path": "Resources › Apps"
+        },
+        {
+          "title": "Choose the app",
+          "body": "Search the library and select it."
+        },
+        {
+          "title": "Sign in",
+          "body": "Sign in, or enter your account details, to connect it to your workspace."
+        },
+        {
+          "title": "Switch it on",
+          "body": "Turn it on for each agent that should use it."
+        },
+        {
+          "title": "Test it",
+          "body": "Ask a real question in the preview chat."
+        }
       ],
-      "table": { "caption": "The 20 apps you can connect", "columns": ["Category", "Apps"], "rows": [["Ecommerce", "Shopify, WooCommerce"], ["Shipping", "Shiprocket, Delhivery, DTDC, iThink Logistics, WareIQ"], ["Calendars", "Google Calendar, Outlook Calendar, Calendly, Cal.com, Square Appointments"], ["Knowledge and files", "Google Drive, Notion, Airtable"], ["Messaging", "Slack, Outlook"], ["CRM", "HubSpot"], ["Support", "Zendesk"], ["Marketing", "Klaviyo"]] },
-      "callouts": [{ "type": "warning", "text": "An app that is connected but not switched on for an agent does nothing. This is the most common setup question." }, { "type": "tip", "text": "Need an app that is not listed? Ask for a custom integration from the Channels area." }],
-      "related": ["track-orders-shopify", "book-into-your-calendar"] },
-    { "slug": "track-orders-shopify", "topic": "integrations", "title": "Share order status from your store and courier", "level": "Beginner", "plans": "Starter and above",
+      "table": {
+        "caption": "The 20 apps you can connect",
+        "columns": [
+          "Category",
+          "Apps"
+        ],
+        "rows": [
+          [
+            "Ecommerce",
+            "Shopify, WooCommerce"
+          ],
+          [
+            "Shipping",
+            "Shiprocket, Delhivery, DTDC, iThink Logistics, WareIQ"
+          ],
+          [
+            "Calendars",
+            "Google Calendar, Outlook Calendar, Calendly, Cal.com, Square Appointments"
+          ],
+          [
+            "Knowledge and files",
+            "Google Drive, Notion, Airtable"
+          ],
+          [
+            "Messaging",
+            "Slack, Outlook"
+          ],
+          [
+            "CRM",
+            "HubSpot"
+          ],
+          [
+            "Support",
+            "Zendesk"
+          ],
+          [
+            "Marketing",
+            "Klaviyo"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "warning",
+          "text": "An app that is connected but not switched on for an agent does nothing. This is the most common setup question."
+        },
+        {
+          "type": "tip",
+          "text": "Need an app that is not listed? Ask for a custom integration from the Channels area."
+        }
+      ],
+      "related": [
+        "track-orders-shopify",
+        "book-into-your-calendar"
+      ]
+    },
+    {
+      "slug": "track-orders-shopify",
+      "topic": "integrations",
+      "title": "Share order status from your store and courier",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Your agent reads the order from your store and the status from your delivery tool.",
       "steps": [
-        { "title": "Connect your store", "body": "Shopify or WooCommerce.", "path": "Resources › Apps" },
-        { "title": "Connect your courier", "body": "Shiprocket, Delhivery, DTDC, iThink Logistics or WareIQ." },
-        { "title": "Switch both on", "body": "Turn them on for your support agent." },
-        { "title": "Test with a real order", "body": "Ask \"Where is my order\" with an order number." }
+        {
+          "title": "Connect your store",
+          "body": "Shopify or WooCommerce.",
+          "path": "Resources › Apps"
+        },
+        {
+          "title": "Connect your courier",
+          "body": "Shiprocket, Delhivery, DTDC, iThink Logistics or WareIQ."
+        },
+        {
+          "title": "Switch both on",
+          "body": "Turn them on for your support agent."
+        },
+        {
+          "title": "Test with a real order",
+          "body": "Ask \"Where is my order\" with an order number."
+        }
       ],
-      "callouts": [{ "type": "note", "text": "The agent shares the status your store and courier report. It cannot change a delivery." }],
-      "related": ["connect-an-app"] },
-    { "slug": "connect-hubspot", "topic": "integrations", "title": "Save leads to HubSpot", "level": "Beginner", "plans": "Starter and above",
+      "callouts": [
+        {
+          "type": "note",
+          "text": "The agent shares the status your store and courier report. It cannot change a delivery."
+        }
+      ],
+      "related": [
+        "connect-an-app"
+      ]
+    },
+    {
+      "slug": "connect-hubspot",
+      "topic": "integrations",
+      "title": "Save leads to HubSpot",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Already use HubSpot? Your agent can save leads there instead of the built-in CRM.",
       "steps": [
-        { "title": "Connect HubSpot", "body": "Sign in and allow access.", "path": "Resources › Apps › HubSpot" },
-        { "title": "Switch it on", "body": "Turn it on for the agents that collect leads." },
-        { "title": "Check a test lead", "body": "Share your details in the preview chat and find the record in HubSpot." }
+        {
+          "title": "Connect HubSpot",
+          "body": "Sign in and allow access.",
+          "path": "Resources › Apps › HubSpot"
+        },
+        {
+          "title": "Switch it on",
+          "body": "Turn it on for the agents that collect leads."
+        },
+        {
+          "title": "Check a test lead",
+          "body": "Share your details in the preview chat and find the record in HubSpot."
+        }
       ],
-      "related": ["use-the-built-in-crm"] },
-
-    { "slug": "book-into-your-calendar", "topic": "skills", "title": "Book appointments into your calendar", "level": "Beginner", "plans": "Starter and above",
+      "related": [
+        "use-the-built-in-crm"
+      ]
+    },
+    {
+      "slug": "book-into-your-calendar",
+      "topic": "skills",
+      "title": "Book appointments into your calendar",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "The booking skill works with Google Calendar, Outlook Calendar, Calendly, Cal.com and Square Appointments.",
       "steps": [
-        { "title": "Connect your calendar", "body": "Do this once for the workspace.", "path": "Resources › Apps" },
-        { "title": "Switch on the skill", "body": "Turn on Book appointment for your agent.", "path": "Agent › Intelligence › Skills" },
-        { "title": "Choose the calendar", "body": "Each booking skill uses one calendar provider." },
-        { "title": "Choose the details", "body": "Name, email, company or job title. Switch each one on or off." }
+        {
+          "title": "Connect your calendar",
+          "body": "Do this once for the workspace.",
+          "path": "Resources › Apps"
+        },
+        {
+          "title": "Switch on the skill",
+          "body": "Turn on Book appointment for your agent.",
+          "path": "Agent › Intelligence › Skills"
+        },
+        {
+          "title": "Choose the calendar",
+          "body": "Each booking skill uses one calendar provider."
+        },
+        {
+          "title": "Choose the details",
+          "body": "Name, email, company or job title. Switch each one on or off."
+        }
       ],
-      "callouts": [{ "type": "note", "text": "You can connect several calendars and choose one per booking skill." }],
-      "related": ["write-skill-rules"] },
-    { "slug": "create-tickets", "topic": "skills", "title": "Create tickets from conversations", "level": "Beginner", "plans": "Starter and above",
+      "callouts": [
+        {
+          "type": "note",
+          "text": "You can connect several calendars and choose one per booking skill."
+        }
+      ],
+      "related": [
+        "write-skill-rules"
+      ]
+    },
+    {
+      "slug": "create-tickets",
+      "topic": "skills",
+      "title": "Create tickets from conversations",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Collect the details your team needs, then notify the right people.",
       "steps": [
-        { "title": "Switch on Create ticket", "body": "Find it with the other skills.", "path": "Agent › Intelligence › Skills" },
-        { "title": "Choose the fields", "body": "Text, long text, number, email, phone, dropdown or media, such as a photo." },
-        { "title": "Mark required fields", "body": "The agent asks until required fields are filled." },
-        { "title": "Add recipients", "body": "Everyone listed gets an email for each new ticket." }
+        {
+          "title": "Switch on Create ticket",
+          "body": "Find it with the other skills.",
+          "path": "Agent › Intelligence › Skills"
+        },
+        {
+          "title": "Choose the fields",
+          "body": "Text, long text, number, email, phone, dropdown or media, such as a photo."
+        },
+        {
+          "title": "Mark required fields",
+          "body": "The agent asks until required fields are filled."
+        },
+        {
+          "title": "Add recipients",
+          "body": "Everyone listed gets an email for each new ticket."
+        }
       ],
-      "related": ["use-the-built-in-crm"] },
-    { "slug": "write-skill-rules", "topic": "skills", "title": "Write rules for when a skill is used", "level": "Intermediate", "plans": "Starter and above",
+      "related": [
+        "use-the-built-in-crm"
+      ]
+    },
+    {
+      "slug": "write-skill-rules",
+      "topic": "skills",
+      "title": "Write rules for when a skill is used",
+      "level": "Intermediate",
+      "plans": "Starter and above",
       "summary": "Plain-English rules and examples stop a skill firing at the wrong moment.",
       "steps": [
-        { "title": "Say when to use it", "body": "Describe the situation in one or two sentences." },
-        { "title": "Add should examples", "body": "Messages that should trigger the skill." },
-        { "title": "Add should-not examples", "body": "Messages that look similar but should not, with a reason." }
+        {
+          "title": "Say when to use it",
+          "body": "Describe the situation in one or two sentences."
+        },
+        {
+          "title": "Add should examples",
+          "body": "Messages that should trigger the skill."
+        },
+        {
+          "title": "Add should-not examples",
+          "body": "Messages that look similar but should not, with a reason."
+        }
       ],
-      "callouts": [{ "type": "tip", "text": "Clear should-not examples are the fastest way to stop a skill being used by mistake." }],
-      "related": ["custom-skills"] },
-    { "slug": "custom-skills", "topic": "skills", "title": "Build a custom skill", "level": "Intermediate", "plans": "Starter and above",
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Clear should-not examples are the fastest way to stop a skill being used by mistake."
+        }
+      ],
+      "related": [
+        "custom-skills"
+      ]
+    },
+    {
+      "slug": "custom-skills",
+      "topic": "skills",
+      "title": "Build a custom skill",
+      "level": "Intermediate",
+      "plans": "Starter and above",
       "summary": "An AI skill follows your instructions. A flow skill collects details and calls an app or webhook.",
       "steps": [
-        { "title": "Name it and pick a kind", "body": "AI skill or flow skill.", "path": "Agent › Intelligence › Skills › New" },
-        { "title": "Write the trigger examples", "body": "When should the agent use it?" },
-        { "title": "Add instructions or a flow", "body": "AI instructions, or the fields to collect and the HTTP request or app action to run." }
+        {
+          "title": "Name it and pick a kind",
+          "body": "AI skill or flow skill.",
+          "path": "Agent › Intelligence › Skills › New"
+        },
+        {
+          "title": "Write the trigger examples",
+          "body": "When should the agent use it?"
+        },
+        {
+          "title": "Add instructions or a flow",
+          "body": "AI instructions, or the fields to collect and the HTTP request or app action to run."
+        }
       ],
-      "related": ["write-skill-rules"] },
-
-    { "slug": "set-up-human-handoff", "topic": "handoff", "title": "Set up human handoff", "level": "Beginner", "plans": "Starter and above",
+      "related": [
+        "write-skill-rules"
+      ]
+    },
+    {
+      "slug": "set-up-human-handoff",
+      "topic": "handoff",
+      "title": "Set up human handoff",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Decide how long customers wait, what they see and who gets told.",
       "steps": [
-        { "title": "Switch on handoff", "body": "Turn on Hand over to a person.", "path": "Agent › Intelligence › Skills" },
-        { "title": "Set the wait time", "body": "How long the customer waits for a person before the fallback message." },
-        { "title": "Write the fallback", "body": "What customers see if nobody joins in time." },
-        { "title": "Choose who is told", "body": "Add the people who get an email when someone needs your team." }
+        {
+          "title": "Switch on handoff",
+          "body": "Turn on Hand over to a person.",
+          "path": "Agent › Intelligence › Skills"
+        },
+        {
+          "title": "Set the wait time",
+          "body": "How long the customer waits for a person before the fallback message."
+        },
+        {
+          "title": "Write the fallback",
+          "body": "What customers see if nobody joins in time."
+        },
+        {
+          "title": "Choose who is told",
+          "body": "Add the people who get an email when someone needs your team."
+        }
       ],
-      "table": { "caption": "Handoff settings", "columns": ["Setting", "Options"], "rows": [["Wait time", "10 s, 30 s, 1 minute or 2 minutes"], ["Fallback message", "Your own text"], ["Email alert", "Any recipients. Empty turns alerts off"]] },
-      "callouts": [{ "type": "note", "text": "Human handoff starts from the Starter plan." }],
-      "related": ["live-requests"] },
-    { "slug": "live-requests", "topic": "handoff", "title": "Pick up a live request", "level": "Beginner", "plans": "Starter and above",
+      "table": {
+        "caption": "Handoff settings",
+        "columns": [
+          "Setting",
+          "Options"
+        ],
+        "rows": [
+          [
+            "Wait time",
+            "10 s, 30 s, 1 minute or 2 minutes"
+          ],
+          [
+            "Fallback message",
+            "Your own text"
+          ],
+          [
+            "Email alert",
+            "Any recipients. Empty turns alerts off"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "note",
+          "text": "Human handoff starts from the Starter plan."
+        }
+      ],
+      "related": [
+        "live-requests"
+      ]
+    },
+    {
+      "slug": "live-requests",
+      "topic": "handoff",
+      "title": "Pick up a live request",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "When a customer asks for a person, the request appears in your CRM with the full chat.",
       "steps": [
-        { "title": "Open Live requests", "body": "Every request for a person, with its reason and priority.", "path": "CRM › Live requests" },
-        { "title": "Claim it", "body": "A team member claims the conversation so customers are not answered twice." },
-        { "title": "Reply with context", "body": "The full conversation is already there." }
+        {
+          "title": "Open Live requests",
+          "body": "Every request for a person, with its reason and priority.",
+          "path": "CRM › Live requests"
+        },
+        {
+          "title": "Claim it",
+          "body": "A team member claims the conversation so customers are not answered twice."
+        },
+        {
+          "title": "Reply with context",
+          "body": "The full conversation is already there."
+        }
       ],
-      "related": ["set-up-human-handoff"] },
-
-    { "slug": "send-a-campaign", "topic": "campaigns", "title": "Send a WhatsApp campaign", "level": "Beginner", "plans": "Starter and above",
+      "related": [
+        "set-up-human-handoff"
+      ]
+    },
+    {
+      "slug": "send-a-campaign",
+      "topic": "campaigns",
+      "title": "Send a WhatsApp campaign",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Send an approved template to a chosen audience. Replies go to your agent.",
-      "before": ["WhatsApp connected", "An approved template"],
-      "steps": [
-        { "title": "Pick the agent", "body": "Choose the agent that handles replies.", "path": "Campaigns › New" },
-        { "title": "Choose the template", "body": "Only approved templates appear." },
-        { "title": "Choose the audience", "body": "A saved list, a CSV, Shopify customers or a single tag." },
-        { "title": "Review and send", "body": "Check the estimated cost, then send now or schedule it." }
+      "before": [
+        "WhatsApp connected",
+        "An approved template"
       ],
-      "callouts": [{ "type": "note", "text": "A single campaign can currently go to up to 1,000 people." }],
-      "related": ["whatsapp-templates"] },
-
-    { "slug": "use-workflow-templates", "topic": "workflows", "title": "Start with a workflow template", "level": "Beginner", "plans": "Starter and above",
+      "steps": [
+        {
+          "title": "Pick the agent",
+          "body": "Choose the agent that handles replies.",
+          "path": "Campaigns › New"
+        },
+        {
+          "title": "Choose the template",
+          "body": "Only approved templates appear."
+        },
+        {
+          "title": "Choose the audience",
+          "body": "A saved list, a CSV, Shopify customers or a single tag."
+        },
+        {
+          "title": "Review and send",
+          "body": "Check the estimated cost, then send now or schedule it."
+        }
+      ],
+      "callouts": [
+        {
+          "type": "note",
+          "text": "A single campaign can currently go to up to 1,000 people."
+        }
+      ],
+      "related": [
+        "whatsapp-templates"
+      ]
+    },
+    {
+      "slug": "use-workflow-templates",
+      "topic": "workflows",
+      "title": "Start with a workflow template",
+      "level": "Beginner",
+      "plans": "Starter and above",
       "summary": "Cart recovery, order updates and team alerts, from menus, not code.",
       "steps": [
-        { "title": "Browse templates", "body": "Pick the job you want to automate.", "path": "Workflows › Templates" },
-        { "title": "Rename it", "body": "Give it a name before you create it." },
-        { "title": "Review each step", "body": "Waits, conditions and messages are all editable." },
-        { "title": "Switch it on", "body": "Workflows stay as drafts until you activate them." }
+        {
+          "title": "Browse templates",
+          "body": "Pick the job you want to automate.",
+          "path": "Workflows › Templates"
+        },
+        {
+          "title": "Rename it",
+          "body": "Give it a name before you create it."
+        },
+        {
+          "title": "Review each step",
+          "body": "Waits, conditions and messages are all editable."
+        },
+        {
+          "title": "Switch it on",
+          "body": "Workflows stay as drafts until you activate them."
+        }
       ],
-      "table": { "caption": "Popular templates", "columns": ["Template", "What it does"], "rows": [["Cart Abandonment", "Reminds shoppers who left items in their cart"], ["Order Confirmation", "Confirms each new order"], ["Shipping + Review Request", "Shares shipping updates, then asks for a review"], ["High Value Order Alert", "Tells your team about large orders"], ["Cancellation Win-Back", "Reaches customers who cancelled"]] },
-      "callouts": [{ "type": "note", "text": "Most templates today are built for Shopify stores." }, { "type": "warning", "text": "WhatsApp Cart Recovery does not yet remove duplicates, so several add-to-cart events can send several messages." }],
-      "related": ["workflow-triggers"] },
-    { "slug": "workflow-triggers", "topic": "workflows", "title": "Triggers and steps in the builder", "level": "Intermediate", "plans": "Starter and above",
+      "table": {
+        "caption": "Popular templates",
+        "columns": [
+          "Template",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Cart Abandonment",
+            "Reminds shoppers who left items in their cart"
+          ],
+          [
+            "Order Confirmation",
+            "Confirms each new order"
+          ],
+          [
+            "Shipping + Review Request",
+            "Shares shipping updates, then asks for a review"
+          ],
+          [
+            "High Value Order Alert",
+            "Tells your team about large orders"
+          ],
+          [
+            "Cancellation Win-Back",
+            "Reaches customers who cancelled"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "note",
+          "text": "Most templates today are built for Shopify stores."
+        },
+        {
+          "type": "warning",
+          "text": "WhatsApp Cart Recovery does not yet remove duplicates, so several add-to-cart events can send several messages."
+        }
+      ],
+      "related": [
+        "workflow-triggers"
+      ]
+    },
+    {
+      "slug": "workflow-triggers",
+      "topic": "workflows",
+      "title": "Triggers and steps in the builder",
+      "level": "Intermediate",
+      "plans": "Starter and above",
       "summary": "Every workflow starts with a trigger and runs steps you choose from menus.",
       "steps": [
-        { "title": "Choose a trigger", "body": "What starts the workflow." },
-        { "title": "Add steps", "body": "Wait, check a condition, send a message, call another tool or end." },
-        { "title": "Set error handling", "body": "Each step can fail, skip or retry." }
+        {
+          "title": "Choose a trigger",
+          "body": "What starts the workflow."
+        },
+        {
+          "title": "Add steps",
+          "body": "Wait, check a condition, send a message, call another tool or end."
+        },
+        {
+          "title": "Set error handling",
+          "body": "Each step can fail, skip or retry."
+        }
       ],
-      "table": { "caption": "Builder building blocks", "columns": ["Type", "Options"], "rows": [["Triggers", "Message received, manual, schedule, webhook, app event, form submission"], ["Steps", "Wait, condition, send message, HTTP request, end"], ["On error", "Fail, skip or retry with backoff"]] },
-      "related": ["use-workflow-templates"] },
-
-    { "slug": "find-conversations-that-need-you", "topic": "inbox", "title": "Find the conversations that need you", "level": "Beginner", "plans": "All plans",
+      "table": {
+        "caption": "Builder building blocks",
+        "columns": [
+          "Type",
+          "Options"
+        ],
+        "rows": [
+          [
+            "Triggers",
+            "Message received, manual, schedule, webhook, app event, form submission"
+          ],
+          [
+            "Steps",
+            "Wait, condition, send message, HTTP request, end"
+          ],
+          [
+            "On error",
+            "Fail, skip or retry with backoff"
+          ]
+        ]
+      },
+      "related": [
+        "use-workflow-templates"
+      ]
+    },
+    {
+      "slug": "find-conversations-that-need-you",
+      "topic": "inbox",
+      "title": "Find the conversations that need you",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Filter the inbox by channel, agent, tag, unread or starred.",
       "steps": [
-        { "title": "Open Inbox", "body": "Every agent and channel together.", "path": "Workspace › Inbox" },
-        { "title": "Filter", "body": "By channel, agent or tag, such as refund request or new lead." },
-        { "title": "Star what matters", "body": "Come back to it later from the starred filter." }
+        {
+          "title": "Open Inbox",
+          "body": "Every agent and channel together.",
+          "path": "Workspace › Inbox"
+        },
+        {
+          "title": "Filter",
+          "body": "By channel, agent or tag, such as refund request or new lead."
+        },
+        {
+          "title": "Star what matters",
+          "body": "Come back to it later from the starred filter."
+        }
       ],
-      "callouts": [{ "type": "tip", "text": "Each agent also has its own conversation view." }],
-      "related": ["use-tags"] },
-    { "slug": "use-tags", "topic": "inbox", "title": "Use conversation tags", "level": "Intermediate", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Each agent also has its own conversation view."
+        }
+      ],
+      "related": [
+        "use-tags"
+      ]
+    },
+    {
+      "slug": "use-tags",
+      "topic": "inbox",
+      "title": "Use conversation tags",
+      "level": "Intermediate",
+      "plans": "All plans",
       "summary": "Every conversation is tagged automatically, so you can count, filter and target it.",
       "steps": [
-        { "title": "Review the tags", "body": "Each has a category, description and a plain-English rule.", "path": "Agent › Intelligence › Tags" },
-        { "title": "Edit or add tags", "body": "Write the rule for when a conversation gets the tag." },
-        { "title": "Use them", "body": "Filter the inbox, read analytics or send a campaign to one tag." }
+        {
+          "title": "Review the tags",
+          "body": "Each has a category, description and a plain-English rule.",
+          "path": "Agent › Intelligence › Tags"
+        },
+        {
+          "title": "Edit or add tags",
+          "body": "Write the rule for when a conversation gets the tag."
+        },
+        {
+          "title": "Use them",
+          "body": "Filter the inbox, read analytics or send a campaign to one tag."
+        }
       ],
-      "table": { "caption": "Tag categories", "columns": ["Category", "Example tags"], "rows": [["Ecommerce", "Abandoned cart, pre-order, product inquiry"], ["Lifecycle", "Lead, prospect, customer, VIP customer"], ["Marketing source", "Paid social, Google ads, organic website"], ["Support status", "Billing question, refund request, technical issue"]] },
-      "related": ["find-conversations-that-need-you"] },
-
-    { "slug": "use-the-built-in-crm", "topic": "crm", "title": "Use the built-in CRM", "level": "Beginner", "plans": "All plans",
+      "table": {
+        "caption": "Tag categories",
+        "columns": [
+          "Category",
+          "Example tags"
+        ],
+        "rows": [
+          [
+            "Ecommerce",
+            "Abandoned cart, pre-order, product inquiry"
+          ],
+          [
+            "Lifecycle",
+            "Lead, prospect, customer, VIP customer"
+          ],
+          [
+            "Marketing source",
+            "Paid social, Google ads, organic website"
+          ],
+          [
+            "Support status",
+            "Billing question, refund request, technical issue"
+          ]
+        ]
+      },
+      "related": [
+        "find-conversations-that-need-you"
+      ]
+    },
+    {
+      "slug": "use-the-built-in-crm",
+      "topic": "crm",
+      "title": "Use the built-in CRM",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Customers, tickets and live requests, each in its own table.",
       "steps": [
-        { "title": "Open CRM", "body": "Start from the overview.", "path": "Workspace › CRM" },
-        { "title": "Switch tables", "body": "Customers, Tickets or Live requests." },
-        { "title": "Pick your columns", "body": "Show what your team needs." },
-        { "title": "Add custom fields", "body": "Label, type, placeholder and required setting." }
+        {
+          "title": "Open CRM",
+          "body": "Start from the overview.",
+          "path": "Workspace › CRM"
+        },
+        {
+          "title": "Switch tables",
+          "body": "Customers, Tickets or Live requests."
+        },
+        {
+          "title": "Pick your columns",
+          "body": "Show what your team needs."
+        },
+        {
+          "title": "Add custom fields",
+          "body": "Label, type, placeholder and required setting."
+        }
       ],
-      "callouts": [{ "type": "tip", "text": "There is no limit on the number of contacts." }],
-      "related": ["connect-hubspot"] },
-
-    { "slug": "read-your-analytics", "topic": "analytics", "title": "Read your analytics", "level": "Beginner", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "There is no limit on the number of contacts."
+        }
+      ],
+      "related": [
+        "connect-hubspot"
+      ]
+    },
+    {
+      "slug": "read-your-analytics",
+      "topic": "analytics",
+      "title": "Read your analytics",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "See volume, response time, channels and the hours customers message.",
       "steps": [
-        { "title": "Pick a date range", "body": "Today, 7 or 30 days, a month or custom.", "path": "Workspace › Analytics" },
-        { "title": "Choose the agent", "body": "All agents or one." },
-        { "title": "Read the headline numbers", "body": "Chats, messages and average AI response time." },
-        { "title": "Find busy hours", "body": "The activity heat map shows days and hours." }
+        {
+          "title": "Pick a date range",
+          "body": "Today, 7 or 30 days, a month or custom.",
+          "path": "Workspace › Analytics"
+        },
+        {
+          "title": "Choose the agent",
+          "body": "All agents or one."
+        },
+        {
+          "title": "Read the headline numbers",
+          "body": "Chats, messages and average AI response time."
+        },
+        {
+          "title": "Find busy hours",
+          "body": "The activity heat map shows days and hours."
+        }
       ],
-      "callouts": [{ "type": "note", "text": "Average response time measures the AI agent, not your team." }, { "type": "note", "text": "State-level location is available for website chats only." }],
-      "related": ["use-tags"] },
-
-    { "slug": "how-credits-work", "topic": "billing", "title": "How credits work", "level": "Beginner", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "note",
+          "text": "Average response time measures the AI agent, not your team."
+        },
+        {
+          "type": "note",
+          "text": "State-level location is available for website chats only."
+        }
+      ],
+      "related": [
+        "use-tags"
+      ]
+    },
+    {
+      "slug": "how-credits-work",
+      "topic": "billing",
+      "title": "How credits work",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "A credit is not a reply. The model your agent uses sets the cost of each reply.",
       "steps": [
-        { "title": "Credits come with your plan", "body": "Each plan includes a monthly number of credits." },
-        { "title": "Each reply uses credits", "body": "Lighter models use fewer credits per reply than larger ones." },
-        { "title": "You choose the model", "body": "Set it per agent." },
-        { "title": "Watch usage live", "body": "Credits, storage and crawls are tracked.", "path": "Account › Settings › Usage" }
+        {
+          "title": "Credits come with your plan",
+          "body": "Each plan includes a monthly number of credits."
+        },
+        {
+          "title": "Each reply uses credits",
+          "body": "Lighter models use fewer credits per reply than larger ones."
+        },
+        {
+          "title": "You choose the model",
+          "body": "Set it per agent."
+        },
+        {
+          "title": "Watch usage live",
+          "body": "Credits, storage and crawls are tracked.",
+          "path": "Account › Settings › Usage"
+        }
       ],
-      "table": { "caption": "Credits per reply by model (approximate)", "columns": ["Model", "Credits per reply"], "rows": [["GPT-5.4 Nano", "About 1"], ["GPT-5.4 Mini (default)", "About 3"], ["GPT-5.6 Luna", "About 1"], ["GPT-5.6 Terra", "About 7"], ["GPT-5.5 Standard", "About 15 to 20"]] },
-      "callouts": [{ "type": "note", "text": "Extra credit packs expire at the end of your billing cycle." }],
-      "related": ["what-each-plan-includes"] },
-    { "slug": "what-each-plan-includes", "topic": "billing", "title": "What each plan includes", "level": "Beginner", "plans": "All plans",
+      "table": {
+        "caption": "Credits per reply by model (approximate)",
+        "columns": [
+          "Model",
+          "Credits per reply"
+        ],
+        "rows": [
+          [
+            "GPT-5.4 Nano",
+            "About 1"
+          ],
+          [
+            "GPT-5.4 Mini (default)",
+            "About 3"
+          ],
+          [
+            "GPT-5.6 Luna",
+            "About 1"
+          ],
+          [
+            "GPT-5.6 Terra",
+            "About 7"
+          ],
+          [
+            "GPT-5.5 Standard",
+            "About 15 to 20"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "note",
+          "text": "Extra credit packs expire at the end of your billing cycle."
+        }
+      ],
+      "related": [
+        "what-each-plan-includes"
+      ]
+    },
+    {
+      "slug": "what-each-plan-includes",
+      "topic": "billing",
+      "title": "What each plan includes",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Free is for trying the agent. Order tracking, handoff and channels start on Starter.",
       "steps": [
-        { "title": "Compare plans", "body": "See current prices on the pricing page." }
+        {
+          "title": "Compare plans",
+          "body": "See current prices on the pricing page."
+        }
       ],
-      "table": { "caption": "What each plan adds", "columns": ["Plan", "Adds"], "rows": [["Free", "One agent and a small number of credits"], ["Starter", "Order tracking, human handoff, channels, ticketing, workflows, broadcasting, all integrations"], ["Growth", "More credits, AI confidence scoring, priority support"], ["Scale", "Advanced analytics, enhanced CRM, lead scoring, account manager"], ["Enterprise", "White-labelling, SSO, SLA, multi-brand, API access"]] },
-      "callouts": [{ "type": "tip", "text": "Paid plans include unlimited agents." }],
-      "related": ["how-credits-work", "cancel-or-change-plan"] },
-    { "slug": "cancel-or-change-plan", "topic": "billing", "title": "Cancel or change your plan", "level": "Beginner", "plans": "All plans",
+      "table": {
+        "caption": "What each plan adds",
+        "columns": [
+          "Plan",
+          "Adds"
+        ],
+        "rows": [
+          [
+            "Free",
+            "One agent and a small number of credits"
+          ],
+          [
+            "Starter",
+            "Order tracking, human handoff, channels, ticketing, workflows, broadcasting, all integrations"
+          ],
+          [
+            "Growth",
+            "More credits, AI confidence scoring, priority support"
+          ],
+          [
+            "Scale",
+            "Advanced analytics, enhanced CRM, lead scoring, account manager"
+          ],
+          [
+            "Enterprise",
+            "White-labelling, SSO, SLA, multi-brand, API access"
+          ]
+        ]
+      },
+      "callouts": [
+        {
+          "type": "tip",
+          "text": "Paid plans include unlimited agents."
+        }
+      ],
+      "related": [
+        "how-credits-work",
+        "cancel-or-change-plan"
+      ]
+    },
+    {
+      "slug": "cancel-or-change-plan",
+      "topic": "billing",
+      "title": "Cancel or change your plan",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "Cancel at any time. Your plan stays active until the end of the period.",
       "steps": [
-        { "title": "Open Billing", "body": "Your plan and the links to manage it.", "path": "Account › Settings › Billing" },
-        { "title": "Change or cancel", "body": "Your plan stays active until the end of the billing period." },
-        { "title": "Export your data", "body": "Up to 30 days after your account ends." }
+        {
+          "title": "Open Billing",
+          "body": "Your plan and the links to manage it.",
+          "path": "Account › Settings › Billing"
+        },
+        {
+          "title": "Change or cancel",
+          "body": "Your plan stays active until the end of the billing period."
+        },
+        {
+          "title": "Export your data",
+          "body": "Up to 30 days after your account ends."
+        }
       ],
-      "callouts": [{ "type": "warning", "text": "Payments are not refunded, and unused credits do not carry over." }],
-      "related": ["what-each-plan-includes"] },
-    { "slug": "product-limits", "topic": "billing", "title": "Product limits at a glance", "level": "Beginner", "plans": "All plans",
+      "callouts": [
+        {
+          "type": "warning",
+          "text": "Payments are not refunded, and unused credits do not carry over."
+        }
+      ],
+      "related": [
+        "what-each-plan-includes"
+      ]
+    },
+    {
+      "slug": "product-limits",
+      "topic": "billing",
+      "title": "Product limits at a glance",
+      "level": "Beginner",
+      "plans": "All plans",
       "summary": "The numbers people ask about most.",
-      "steps": [{ "title": "Check the table", "body": "Limits as of September 2026. Some are expected to rise." }],
-      "table": { "caption": "Limits", "columns": ["Thing", "Limit"], "rows": [["Agents on Free", "1"], ["Agents on paid plans", "Unlimited"], ["CRM contacts", "No limit"], ["WhatsApp campaign size", "1,000 messages per send"], ["Quick questions in the widget", "5"], ["Suggested questions on a chat page", "5"], ["Calendar per booking skill", "1"], ["Agent name", "Cannot be changed after creation"]] },
-      "related": ["what-each-plan-includes"] }
+      "steps": [
+        {
+          "title": "Check the table",
+          "body": "Limits as of September 2026. Some are expected to rise."
+        }
+      ],
+      "table": {
+        "caption": "Limits",
+        "columns": [
+          "Thing",
+          "Limit"
+        ],
+        "rows": [
+          [
+            "Agents on Free",
+            "1"
+          ],
+          [
+            "Agents on paid plans",
+            "Unlimited"
+          ],
+          [
+            "CRM contacts",
+            "No limit"
+          ],
+          [
+            "WhatsApp campaign size",
+            "1,000 messages per send"
+          ],
+          [
+            "Quick questions in the widget",
+            "5"
+          ],
+          [
+            "Suggested questions on a chat page",
+            "5"
+          ],
+          [
+            "Calendar per booking skill",
+            "1"
+          ],
+          [
+            "Agent name",
+            "Cannot be changed after creation"
+          ]
+        ]
+      },
+      "related": [
+        "what-each-plan-includes"
+      ]
+    }
   ]
 }
