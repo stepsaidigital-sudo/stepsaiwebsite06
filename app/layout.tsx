@@ -60,6 +60,7 @@ import "./analytics-mock.css";
 import "./connect-flow.css";
 import "./book-demo.css";
 import "./blog-help.css";
+import "./case-studies-clean.css";
 import "./v2.css";
 import "./nav-pill.css";
 import "./motion.css";

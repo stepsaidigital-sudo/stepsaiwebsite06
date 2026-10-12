@@ -1,0 +1,46 @@
+/* Case studies, quiet editorial layout (components/templates/case-studies-clean.tsx).
+   White page, warm panels, brand navy and light blue. Base rules first, breakpoints after. */
+.cs2{background:#fff;color:#1f2937}
+.cs2 a:hover{text-decoration:none}
+.cs2-head{max-width:760px;margin:0 auto;padding:150px 16px 44px;text-align:center}
+.cs2-head>span,.cs2-head>a{display:inline-block;margin-bottom:12px;font-size:.875rem;font-weight:600;color:#1769c2}
+.cs2-head h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1.15;letter-spacing:-.01em;color:#111827}
+.cs2-head p{max-width:600px;margin:16px auto 0;font-size:1rem;line-height:1.6;color:#4b5563}
+.cs2-filter{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 16px 36px}
+.cs2-filter button{padding:7px 14px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;font-size:.8125rem;font-weight:500;color:#374151}
+.cs2-filter .is-on{background:#0c3474;border-color:#0c3474;color:#fff}
+.cs2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:72px}
+.cs2-card{display:flex;flex-direction:column;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #ececec;transition:box-shadow 240ms,transform 240ms}
+.cs2-card:hover{box-shadow:0 14px 34px #0c347414;transform:translateY(-2px)}
+.cs2-top{position:relative;display:grid;place-items:center;height:200px;padding:16px;background:#f6f3ee}
+.cs2-label{position:absolute;left:14px;top:14px;padding:2px 6px;background:linear-gradient(transparent 0 8%,#cfe6fb 8% 92%,transparent 92%);font-size:.6875rem;font-weight:800;letter-spacing:.02em;line-height:1.35;color:#0c3474;text-align:left}
+.cs2-brand{font-family:Newsreader,Georgia,serif;font-size:1.75rem;font-weight:500;color:#0c3474;text-align:center}
+.cs2-bottom{display:flex;flex-direction:column;gap:10px;flex:1;padding:18px 20px 20px}
+.cs2-tag{align-self:flex-start;padding:4px 10px;border-radius:999px;background:#e6f2fd;color:#0c3474;font-size:.75rem;font-weight:600}
+.cs2-bottom blockquote{margin:0;font-size:.9375rem;line-height:1.55;font-weight:600;color:#111827}
+.cs2-bottom small{font-size:.8125rem;color:#6b7280}
+.cs2-bottom a{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:6px;font-size:.8125rem;font-weight:700;color:#1769c2}
+.cs2-grid-open{grid-template-columns:repeat(2,1fr)}
+.cs2-grid-open .cs2-bottom blockquote{font-weight:500;font-size:1rem;line-height:1.65}
+.cs2-empty{padding:0 0 56px;text-align:center;color:#4b5563}
+.cs2-empty a{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-weight:700;color:#1769c2}
+.cs2-caps{max-width:860px;padding:8px 0 40px}
+.cs2-caps h2,.cs2-cta h2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(26px,2.4vw,34px);color:#111827;margin-bottom:18px}
+.cs2-caps ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.cs2-caps li{display:flex;gap:12px;font-size:.9375rem;line-height:1.6;color:#4b5563}
+.cs2-caps li svg{flex:none;margin-top:4px;color:#1769c2}
+.cs2-caps strong{display:block;color:#111827}
+.cs2-note{max-width:860px;padding:16px 20px;margin-bottom:40px;border-radius:8px;background:#f6f3ee}
+.cs2-note strong{display:block;margin-bottom:6px;color:#111827}
+.cs2-note p{font-size:.9375rem;line-height:1.6;color:#4b5563}
+.cs2-more{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-bottom:40px}
+.cs2-more span{margin-right:6px;font-size:.8125rem;font-weight:700;color:#6b7280}
+.cs2-more a{padding:6px 12px;border-radius:999px;border:1px solid #e5e7eb;font-size:.8125rem;color:#374151}
+.cs2-more a:hover{border-color:#1769c2;color:#1769c2}
+.cs2-cta{max-width:760px;padding:48px 16px 110px;text-align:center;border-top:1px solid #f0f0f0}
+.cs2-cta p{font-size:1rem;color:#4b5563;margin-bottom:20px}
+.cs2-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:6px;background:#0c3474;color:#fff;font-weight:600;font-size:.9375rem}
+.cs2-btn:hover{background:#123f88}
+@media (max-width:1000px){.cs2-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cs2-grid,.cs2-grid-open{grid-template-columns:1fr}.cs2-head{padding-top:120px}}
+.cs2-sep{width:1px;height:22px;margin:0 6px;background:#e5e7eb;align-self:center}
