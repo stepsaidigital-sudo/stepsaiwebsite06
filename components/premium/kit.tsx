@@ -9,6 +9,7 @@ import { ChannelLogo } from '@/app/channel-chat';
 import { Reveal } from '@/components/sections';
 import { SplitWords } from '@/components/site/motion';
 import type { Faq, Item } from '@/content/types';
+import { CapabilityStage } from './capability-stage';
 
 // Premium subpage kit: the WhatsApp broadcast page's look (.wb classes), recoloured per page
 // through a theme (.pp-theme-*), plus platform-accurate phone screens. Every mockup is an
@@ -300,13 +301,7 @@ export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta:
 }
 
 export function Capabilities({ title, intro, items, icons }: { title: string; intro: string; items: Item[]; icons: [ReactNode, string][] }) {
-  return <section className="container pp-caps-wrap">
-    <div className="pp-head"><h2 aria-label={title}><SplitWords text={title} /></h2><p>{intro}</p></div>
-    <div className="pp-caps">{items.map((item, i) => {
-      const [icon, tint] = icons[i % icons.length];
-      return <Reveal key={item.title} className="pp-cap"><span className={`pp-cap-ico wb-${tint}`}>{icon}</span><h3>{item.title}</h3><p>{item.body}</p></Reveal>;
-    })}</div>
-  </section>;
+  return <CapabilityStage title={title} intro={intro} items={items} icons={icons} />;
 }
 
 export function PhotoStory({ id, eyebrow, title, body, points, photo, alt, overlay, reverse = false, tint = 'soft' }: {

@@ -64,3 +64,4 @@ import "./journey-stack.css";
 import "./broadcast.css";
 import "./surfaces.css";
 import "./v2-mockups-messaging.css";
+import "./capability-stage.css";
