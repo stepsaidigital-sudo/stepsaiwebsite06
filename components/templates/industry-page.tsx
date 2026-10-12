@@ -38,16 +38,8 @@ const agentInfo: Record<string, { label: string; icon: ReactNode }> = {
 };
 
 const photoKey: Record<string, string> = { ecommerce: 'ecom', healthcare: 'health', education: 'edu', 'real-estate': 're', 'travel-and-hospitality': 'travel', saas: 'saas', 'financial-services': 'fin' };
-// Use bundled assets: the former in-*-hero filenames were never shipped.
-const heroPhotos: Record<string, string> = {
-  ecommerce: '/photos/industry-ecommerce.jpg',
-  healthcare: '/photos/industry-healthcare.jpg',
-  education: '/photos/industry-education.jpg',
-  'real-estate': '/photos/industry-realestate.jpg',
-  'travel-and-hospitality': '/photos/ch-whatsapp.jpg',
-  saas: '/photos/skills.jpg',
-  'financial-services': '/photos/lead-capture.jpg',
-};
+// One unique hero photo per industry (public/photos/in-*-hero.jpg, credits in docs/photo-credits.md).
+const heroPhotos: Record<string, string> = Object.fromEntries(Object.entries(photoKey).map(([slug, k]) => [slug, `/photos/in-${k}-hero.jpg`]));
 const kickerIcon: Record<string, ReactNode> = {
   ecommerce: <ShoppingBag size={16} />, healthcare: <Stethoscope size={16} />, education: <GraduationCap size={16} />, 'real-estate': <Building2 size={16} />,
   'travel-and-hospitality': <Plane size={16} />, saas: <Users size={16} />, 'financial-services': <Landmark size={16} />,
@@ -156,7 +148,7 @@ const stories: Record<string, ReactNode[]> = {
     <PhotoStory key="sale" id="sale-days" reverse eyebrow="Sale days and launches" title="When messages pour in, every customer still gets an answer."
       body="On a sale day, hundreds of people ask about sizes, stock and delivery at once. Your agent answers each message as it arrives, so nobody waits in a queue."
       points={['Answers at any hour, including late at night', 'Every reply to your campaign handled by your agent', 'Your team picks up the conversations that need a person']}
-      photo="/photos/in-ecom-sale.jpg" alt="Shopper browsing a sale on her phone at night"
+      photo="/photos/in-ecom-sale.jpg" alt="Shopper browsing a sale on her laptop in the evening"
       overlay={<Card title="Tonight" status={<Chip tone="soft">Sale live</Chip>}>
         <div className="pp-kpi-grid"><div><small>Chats answered</small><strong>418</strong></div><div><small>Avg AI response</small><strong>2.1 sec</strong></div><div><small>Checkout links</small><strong>96</strong></div><div><small>Passed to team</small><strong>11</strong></div></div>
       </Card>} />,
