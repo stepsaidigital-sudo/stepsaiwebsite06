@@ -90,3 +90,6 @@
 
 /* Labels never wrap inside the pill. */
 .site-header .brand,.site-header .mm-trigger,.site-header .nav>a,.site-header .nav>button,.site-header .nav .button{white-space:nowrap}
+
+/* Resources now sits after Pricing/Integrations: open its panel toward the left so it stays on screen. */
+@media(min-width:1201px){#mm-resources{left:auto;right:-14px}}

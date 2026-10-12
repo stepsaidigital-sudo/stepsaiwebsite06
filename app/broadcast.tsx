@@ -11,8 +11,8 @@ import {ChannelLogo} from './channel-chat';
 const DURATION=7000;
 const tabs=[
   {key:'wa',channel:'WhatsApp',icon:Megaphone,title:'WhatsApp broadcast',line:'Send an approved template to a tagged audience. Replies go straight to your agent.'},
-  {key:'c2d',channel:'Instagram',icon:AtSign,title:'Comment to DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
   {key:'dm',channel:'Instagram',icon:MessageCircle,title:'Instagram DM',line:'Story replies and DMs get an answer straight away, day or night.'},
+  {key:'c2d',channel:'Instagram',icon:AtSign,title:'Comment to DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
 ];
 
 const B=({d,className='',children}:{d:number;className?:string;children?:ReactNode})=><div className={`bx ${className}`} style={{'--d':`${d}ms`} as CSSProperties}>{children}</div>;
@@ -109,7 +109,7 @@ function DmScreen(){
   </div>;
 }
 
-const screens=[<WhatsAppScreen key="wa"/>,<CommentScreen key="c2d"/>,<DmScreen key="dm"/>];
+const screens=[<WhatsAppScreen key="wa"/>,<DmScreen key="dm"/>,<CommentScreen key="c2d"/>];
 
 /* Cards beside the phone: the campaign behind the WhatsApp story, the result of each Instagram one. */
 function SideCards({tab}:{tab:number}){
@@ -122,7 +122,7 @@ function SideCards({tab}:{tab:number}){
     <div className={`bc-float bc-agent ${tab===0?'is-on':''}`} aria-hidden="true"><Bot size={15}/>Replies go to your agent</div>
     <div className={`bc-float bc-result ${tab!==0?'is-on':''}`} aria-hidden="true">
       <span className="bc-tick"><Check size={15}/></span>
-      <div><strong>{tab===1?'Lead saved · priya.k':'Lead saved · Bengaluru'}</strong><small>{tab===1?'Comment → DM':'Story reply → DM'}</small></div>
+      <div><strong>{tabs[tab].key==='c2d'?'Lead saved · priya.k':'Lead saved · Bengaluru'}</strong><small>{tabs[tab].key==='c2d'?'Comment → DM':'Story reply → DM'}</small></div>
     </div>
   </>;
 }

@@ -47,7 +47,7 @@ function Entry({ item, tile, onOpen, done }: { item: NavItem; tile: boolean; onO
 
 // Product, Solutions and Resources dropdowns. On wide screens they open on
 // hover or click as floating panels; inside the mobile menu they expand in place.
-export function MegaMenus({ onOpen, onNavigate }: { onOpen: (label: string) => void; onNavigate: () => void }) {
+export function MegaMenus({ onOpen, onNavigate, only }: { onOpen: (label: string) => void; onNavigate: () => void; only?: string[] }) {
   const [active, setActive] = useState<string | null>(null);
   const root = useRef<HTMLDivElement>(null);
   const timer = useRef<number>(0);
@@ -68,7 +68,7 @@ export function MegaMenus({ onOpen, onNavigate }: { onOpen: (label: string) => v
   const done = () => { setActive(null); onNavigate(); };
 
   return <div className="mm-root" ref={root} onBlur={e => { if (!root.current?.contains(e.relatedTarget as Node)) setActive(null); }}>
-    {(nav.menus as Menu[]).map(menu => {
+    {(nav.menus as Menu[]).filter(menu => !only || only.includes(menu.label)).map(menu => {
       const open = active === menu.label;
       const id = `mm-${menu.label.toLowerCase()}`;
       return <div key={menu.label} className={`mm-item ${open ? 'is-open' : ''}`}

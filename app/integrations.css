@@ -40,3 +40,42 @@
   .logo-set{gap:10px;padding-right:10px}
   .logo-ribbon+.logo-ribbon{margin-top:10px}
 }
+
+/* Livelier integrations (2026-10-12): bigger white tiles with a soft brand-tinted glow, a lift on
+   hover, and a Steps AI hub in the middle that the logos flow behind. Base rules, then breakpoints. */
+.integrations-stage{position:relative;max-width:1080px;margin:0 auto}
+.integrations-showcase .logo-ribbons{max-width:none;padding:14px 0;mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
+.integrations-showcase .logo-ribbon+.logo-ribbon{margin-top:20px}
+.integrations-showcase .logo-set{gap:20px;padding-right:20px}
+.integrations-showcase .ribbon-1 .logo-track{margin-left:-56px}
+.integrations-showcase .integration-tile{width:92px;height:92px;border-radius:24px;background:radial-gradient(120% 90% at 50% 120%,color-mix(in srgb,var(--brand) 16%,transparent),transparent 62%),#fff;border:1px solid color-mix(in srgb,var(--brand) 18%,#e4ebf2);box-shadow:0 1px 2px #0c34740d,0 14px 28px -20px color-mix(in srgb,var(--brand) 70%,#0c3474);transition:transform 260ms var(--ease,ease),box-shadow 260ms}
+.integrations-showcase .integration-tile:hover{transform:translateY(-6px);box-shadow:0 2px 4px #0c347412,0 22px 36px -18px color-mix(in srgb,var(--brand) 85%,#0c3474)}
+.integrations-showcase .integration-tile img{width:44px;height:44px}
+.integrations-showcase .integration-tile img[src$="woocommerce.svg"]{width:72px;height:72px}
+.integrations-showcase .integration-tile img[src$="calendly.svg"]{width:62px;height:62px}
+.integrations-showcase .integration-tile span{display:block;bottom:6px;font-size:10px;font-weight:600}
+.integrations-showcase .integration-tile:hover img{transform:translateY(-6px)}
+.integrations-showcase .integration-tile img{transition:transform 260ms var(--ease,ease)}
+
+.integrations-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:184px;height:184px;display:grid;place-items:center;pointer-events:none;z-index:2}
+.integrations-hub .hub-core{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;width:156px;padding:20px 12px 16px;border-radius:28px;background:#fff;border:1px solid #d9e6f4;box-shadow:0 0 0 14px #f5f4f0,0 0 0 15px #e2e9f1,0 30px 50px -24px #0c347466}
+.integrations-hub .hub-core img{width:46px;height:46px;object-fit:contain}
+.integrations-hub strong{font-size:16px;color:#0c3474;letter-spacing:-.01em}
+.integrations-hub small{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#52677c}
+.integrations-hub small i{width:7px;height:7px;border-radius:50%;background:#22a861;box-shadow:0 0 0 3px #22a86126;animation:hub-live 1.8s ease-in-out infinite}
+.hub-ring{position:absolute;inset:0;border-radius:44px;border:1.5px solid #2c9cfa55;animation:hub-pulse 3.2s cubic-bezier(.23,1,.32,1) infinite}
+.hub-ring-2{animation-delay:1.6s}
+@keyframes hub-pulse{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.55);opacity:0}}
+@keyframes hub-live{50%{opacity:.45}}
+@media(max-width:700px){
+  .integrations-showcase .integration-tile{width:72px;height:72px;border-radius:19px}
+  .integrations-showcase .integration-tile img{width:34px;height:34px}
+  .integrations-showcase .integration-tile img[src$="woocommerce.svg"]{width:58px;height:58px}
+  .integrations-showcase .integration-tile img[src$="calendly.svg"]{width:50px;height:50px}
+  .integrations-showcase .integration-tile span{display:none}
+  .integrations-showcase .logo-set{gap:12px;padding-right:12px}
+  .integrations-hub{width:140px;height:140px}
+  .integrations-hub .hub-core{width:124px;padding:14px 10px 12px;border-radius:22px}
+  .integrations-hub .hub-core img{width:34px;height:34px}
+}
+@media(prefers-reduced-motion:reduce){.hub-ring,.integrations-hub small i{animation:none}.hub-ring{display:none}.integrations-showcase .integration-tile,.integrations-showcase .integration-tile img{transition:none}}

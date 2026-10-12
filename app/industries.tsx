@@ -6,7 +6,6 @@ import copy from './copy.json';
 import {ChannelLogo} from './channel-chat';
 
 const featured=[{index:0,key:'ecommerce'},{index:4,key:'healthcare'},{index:3,key:'education'},{index:2,key:'realestate'}];
-const remaining=[1,5,6];
 
 export function IndustryMockup({kind}:{kind:string}){
   return <div className={`industry-demo demo-${kind}`}>
@@ -52,6 +51,5 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
       </article>})}
     </div>
     <div className="industry-deck-footer"><span className="industry-page-count" aria-hidden="true"><b>0{active+1}</b><span>/ 04</span><i/></span><button className="text-link" onClick={()=>onOpen('Explore solutions')}>Explore solutions <ArrowUpRight size={17}/></button></div>
-    <div className="other-industries">{remaining.map(index=>{const item=copy.business.items[index];return <details key={item.title}><summary>{item.title}<ChevronRight size={17}/></summary><p className="other-industry-question">{item.paragraphs[0]}</p><p>{item.paragraphs[1]}</p></details>})}</div>
   </div></section>
 }

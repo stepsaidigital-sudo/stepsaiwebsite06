@@ -13,3 +13,38 @@ h1{font-weight:550;letter-spacing:-.05em}.hero{padding-top:58px}.highlight:after
 @media(max-width:359px){.hero-scene-stage{padding-inline:17px}.hero-scene-toolbar{padding:12px}.scene-channel-controls button{padding:8px}.scene-channel-controls button[aria-pressed=true]{padding-inline:10px}.scene-caption{padding:16px;font-size:.75rem}.scene-platform{margin-left:0}.primary-mock{margin-inline:14px 25px}.floating-chat{margin-inline:25px 13px}.mock-window-title{font-size:.75rem}.record-field{display:block}.record-field>strong{margin-top:5px}.scene-outcome{margin-inline:14px!important}.journey-nav a{font-size:.6875rem}}
 @media(prefers-reduced-motion:reduce){.scene *,.scroll-reveal{animation:none!important;transition:none!important}.conversation-window,.outcome-stack,.primary-mock,.floating-chat{transform:none!important}.ocean-light{transform:none!important}}
 .stage-media{position:static}.primary-mock-body{padding-bottom:48px}.primary-mock-body h4{font-size:1rem}.floating-chat{position:relative;top:auto;right:auto;margin:-28px 23px 0 auto;width:72%}.scene-outcome{margin:20px 27px 0}.layered-demo{min-height:0}.polished-scene{min-height:0}@media(max-width:900px){.floating-chat{top:auto!important;width:84%;margin-right:16px}.scene-kind-calendar .scene-outcome,.scene-kind-workflow .scene-outcome{margin-top:20px}}@media(max-width:700px){.floating-chat{width:auto;margin:-25px 17px 0 35px}.scene-outcome{margin:18px!important}.primary-mock-body{padding-bottom:43px}}
+
+/* Closing section (2026-10-12): larger type, a soft glow and channel messages floating around it. */
+.final-section{overflow:hidden;padding:120px 0 128px;background:radial-gradient(ellipse 40% 60% at 50% 55%,#ffffffcc,transparent 70%),radial-gradient(ellipse 35% 50% at 8% 90%,#b9e3ba80,transparent 70%),radial-gradient(ellipse 35% 50% at 95% 10%,#ddb1ed70,transparent 70%),linear-gradient(140deg,#fcfcfc 0%,#c4ecfc 55%,#2c9cfa99 130%)}
+.final-section .container{position:relative;z-index:1}
+.final-section h2{max-width:920px;font-size:clamp(2.5rem,4.6vw,4.25rem)}
+.final-section p{max-width:700px;font-size:1.25rem;line-height:1.6;color:#33475b;margin:28px auto 36px}
+.final-section .button{min-height:56px;padding:0 34px;font-size:1.0625rem;border-radius:14px;box-shadow:0 14px 30px -14px #c98a0099}
+.final-bubbles{position:absolute;inset:0;pointer-events:none}
+.final-bubble{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border-radius:16px;background:#fff;border:1px solid #ffffff;box-shadow:0 18px 36px -22px #0c347466;font-size:.875rem;color:#1f3a5c;white-space:nowrap;animation:final-float 7s ease-in-out infinite}
+.final-bubble-logo{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:#f2f6fb;color:#2864c6}
+.final-bubble-logo img{width:20px;height:20px}
+.final-bubble i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#22a861;color:#fff}
+.final-bubble-0{left:5%;top:22%}
+.final-bubble-1{right:5%;top:16%;animation-delay:-2s}
+.final-bubble-2{left:9%;bottom:16%;animation-delay:-4s}
+.final-bubble-3{right:8%;bottom:20%;animation-delay:-5.5s}
+@keyframes final-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:1180px){.final-bubble{font-size:.8125rem}.final-bubble-0,.final-bubble-2{left:2%}.final-bubble-1,.final-bubble-3{right:2%}.final-bubble-0{top:8%}.final-bubble-1{top:6%}.final-bubble-2{bottom:6%}.final-bubble-3{bottom:8%}}
+@media(max-width:700px){.final-section{padding:80px 0 88px}.final-section h2{font-size:2.25rem}.final-section p{font-size:1.0625rem}.final-bubble-2,.final-bubble-3{display:none}.final-bubble-0{top:14px;left:12px}.final-bubble-1{top:auto;bottom:14px;right:12px}}
+@media(prefers-reduced-motion:reduce){.final-bubble{animation:none}}
+
+/* Footer (2026-10-12): tagline sits under the logo in a left column; the link groups move right. */
+@media(min-width:1100px){
+  footer.container{display:grid;grid-template-columns:minmax(220px,260px) minmax(0,1fr);column-gap:56px;align-items:start}
+  footer.container>.footer-top{display:block;margin-bottom:0}
+  footer.container>.footer-top p{margin-top:18px;max-width:260px}
+  footer.container>.footer-groups{gap:20px}
+  footer.container>.footer-bottom{grid-column:1/-1}
+}
+
+/* Hero reassurance as three ticked points (like Tidio's under-CTA row). */
+ul.reassurance-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;max-width:none;margin:22px auto 0;padding:0;list-style:none;font-size:.875rem;color:#52677c}
+.reassurance-list li{display:inline-flex;align-items:center;gap:8px}
+.reassurance-list svg{flex:none;width:16px;height:16px;padding:2px;border-radius:50%;background:#22a861;color:#fff}
+@media(max-width:700px){ul.reassurance-list{flex-direction:column;align-items:center;gap:8px;font-size:.8125rem;max-width:none}}

@@ -163,10 +163,10 @@
       ]
     },
     {
-      "label": "Case studies",
+      "label": "Resources",
       "columns": [
         {
-          "title": "By agent",
+          "title": "Case studies",
           "style": "tiles",
           "items": [
             {
@@ -202,46 +202,24 @@
           ]
         },
         {
-          "title": "Overview",
+          "title": "Learn and support",
           "style": "links",
           "items": [
             {
               "label": "All case studies",
               "href": "/case-studies/",
               "body": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Resources",
-      "columns": [
-        {
-          "title": "Learn",
-          "style": "tiles",
-          "items": [
+            },
             {
               "label": "Blog",
               "href": "/blog/",
               "body": "Guides for growing teams"
             },
             {
-              "label": "Customer stories",
-              "href": "/case-studies/",
-              "body": "How businesses use Steps AI"
-            },
-            {
               "label": "Compare",
               "href": "/compare/",
               "body": "Steps AI and the alternatives"
-            }
-          ]
-        },
-        {
-          "title": "Support",
-          "style": "tiles",
-          "items": [
+            },
             {
               "label": "Help centre",
               "href": "/help/",

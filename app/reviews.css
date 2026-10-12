@@ -46,3 +46,19 @@
 .rv-card{height:208px}
 .rv-card blockquote{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:700px){.rv-card{height:214px}}
+
+/* 2026-10-12: full quotes (no clamp), wider cards, and more life: soft brand glow behind the
+   rows, a gradient quote mark, a coloured accent per card and a lift on hover. */
+#stories.reviews-showcase.rv{position:relative;background:radial-gradient(ellipse 45% 55% at 12% 70%,#cfe3fb 0,transparent 70%),radial-gradient(ellipse 40% 50% at 90% 40%,#ead9f6 0,transparent 70%),radial-gradient(ellipse 30% 40% at 55% 100%,#fbe6d4 0,transparent 70%),var(--surface-mist)}
+.rv-card{position:relative;height:auto;width:400px;padding:26px 24px 22px;border-radius:22px;overflow:hidden;transition:transform 260ms var(--ease,ease),box-shadow 260ms}
+.rv-card:before{content:'\201C';position:absolute;top:-6px;right:18px;font-family:Newsreader,Georgia,serif;font-size:96px;line-height:1;background:linear-gradient(135deg,var(--rv-a),var(--rv-b));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.35;pointer-events:none}
+.rv-card:after{content:'';position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--rv-a),var(--rv-b))}
+.rv-card blockquote{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:.9375rem;line-height:1.6;padding-right:28px}
+.rv-logo{background:linear-gradient(135deg,var(--rv-a),var(--rv-b));color:#fff}
+.rv-set>.rv-card:nth-child(4n+1){--rv-a:#2c9cfa;--rv-b:#0c3474}
+.rv-set>.rv-card:nth-child(4n+2){--rv-a:#a77bf3;--rv-b:#5b3fd1}
+.rv-set>.rv-card:nth-child(4n+3){--rv-a:#25d366;--rv-b:#128c7e}
+.rv-set>.rv-card:nth-child(4n+4){--rv-a:#f8a14a;--rv-b:#d6406f}
+@media(hover:hover) and (pointer:fine){.rv-card:hover{transform:translateY(-6px);box-shadow:0 2px 4px #0c347412,0 26px 44px -26px #0c347480}}
+@media(max-width:700px){.rv-card{height:auto;width:300px;padding:22px 18px 18px}.rv-card:before{font-size:76px}}
+@media(prefers-reduced-motion:reduce){.rv-card{transition:none}}
