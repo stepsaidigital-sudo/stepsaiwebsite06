@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { HelpHubTemplate } from '@/components/templates/help';
+import { HelpHubTemplate } from '@/components/templates/help-hub';
 
 export const metadata: Metadata = {
   title: 'Help centre | Steps AI',

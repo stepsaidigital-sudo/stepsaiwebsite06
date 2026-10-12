@@ -37,3 +37,12 @@ Photorealistic editorial photo, 4:5 portrait. An Indian ecommerce store manager 
 
 ### careers-team.jpg
 Photorealistic editorial photo, 4:5 portrait. A small Indian startup team of four in their 20s and 30s gathered around one laptop at a bright, plant-filled co-working table, one person pointing at the screen, others smiling. Natural daylight, warm neutral tones with navy and sky-blue accents, candid and energetic. Shallow depth of field. No logos, no readable text, no watermarks.
+
+## Help centre
+
+| Page | Save as | Notes |
+|---|---|---|
+| /help/ ("New to Steps AI?") | `public/photos/ai/help-new.jpg` | AI image, 16:10 landscape |
+
+### help-new.jpg
+Photorealistic editorial photo, 16:10 landscape. A young Indian small-business owner at a bright café-style counter, laptop open, smiling as she sets something up; a phone beside the laptop. Soft morning light, warm neutral tones with navy and sky-blue accents, calm and welcoming. Shallow depth of field. No logos, no readable screen text, no watermarks.

@@ -63,6 +63,7 @@ import "./app-mocks.css";
 import "./connect-flow.css";
 import "./book-demo.css";
 import "./blog-help.css";
+import "./help-hub.css";
 import "./case-studies-clean.css";
 import "./v2.css";
 import "./nav-pill.css";

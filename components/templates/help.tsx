@@ -2,20 +2,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Check, ChevronDown, ChevronRight, Copy, Image as ImageIcon, LifeBuoy, PlayCircle, Search } from 'lucide-react';
-import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
-import help from '@/content/help/articles.json';
-import copy from '@/app/copy.json';
-import type { HelpLesson, HelpMedia, HelpTopic } from '@/content/types';
+import { helpLessons, helpTopics } from './help-data';
+import type { HelpMedia } from '@/content/types';
 
 // Help centre, laid out like a calm learning centre: topic cards, then lessons written as short
 // paragraphs with a screenshot or video under each. Content lives in content/help/articles.json.
 // Where the team has not added media yet, an empty frame marks the place for it.
 
-const topics = help.topics as HelpTopic[];
-const lessons = help.lessons as HelpLesson[];
+const topics = helpTopics;
+const lessons = helpLessons;
 const ofTopic = (slug: string) => lessons.filter(l => l.topic === slug);
-const groups: { key: HelpTopic['group']; title: string }[] = [{ key: 'featured', title: 'Featured topics' }, { key: 'beginner', title: 'Beginner topics' }, { key: 'advanced', title: 'Advanced topics' }];
 
 /* ---------- shared ---------- */
 
@@ -36,7 +33,7 @@ function SearchBox({ small = false }: { small?: boolean }) {
   </label>;
 }
 
-function MediaSlot({ media, kind, label }: { media?: HelpMedia; kind: 'image' | 'video'; label: string }) {
+export function MediaSlot({ media, kind, label }: { media?: HelpMedia; kind: 'image' | 'video'; label: string }) {
   if (media?.type === 'image') return <figure className="hz-media"><img src={media.src} alt={media.alt ?? ''} loading="lazy" decoding="async" />{media.caption && <figcaption>{media.caption}</figcaption>}</figure>;
   if (media?.type === 'video') return <figure className="hz-media"><video src={media.src} controls playsInline preload="metadata" /></figure>;
   const yt = media?.type === 'youtube' ? media.src.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1] : undefined;
@@ -49,36 +46,6 @@ export function StillNeedHelp() {
   return <section className="container hz-need"><h2>Still need help?</h2>
     <div className="hz-need-card"><span className="hz-need-ico"><LifeBuoy size={18} /></span><strong>Talk to our team</strong><p>Could not find what you were looking for? Reach out and we will do our best to help you.</p><Link className="hz-pill" href="/contact/">Contact us</Link></div>
   </section>;
-}
-
-/* ---------- hub ---------- */
-
-const topicIcon: Record<string, React.ReactNode> = { whatsapp: <ChannelLogo channel="WhatsApp" />, instagram: <ChannelLogo channel="Instagram" /> };
-
-function TopicCard({ t }: { t: HelpTopic }) {
-  const first = ofTopic(t.slug)[0];
-  return <article className="hz-card">
-    <div className="hz-card-img">{t.cover ? <img src={t.cover} alt="" loading="lazy" /> : <span className="hz-card-ph">{topicIcon[t.icon] ?? <ImageIcon size={26} />}</span>}</div>
-    <h3>{t.title}</h3><p>{t.summary}</p>
-    {first && <Link className="hz-pill" href={`/help/${first.slug}/`}>Explore articles</Link>}
-  </article>;
-}
-
-export function HelpHubTemplate() {
-  const faqs = copy.faq.items.slice(0, 7);
-  return <SiteFrame>{() => <div className="hz">
-    <HelpBar />
-    <section className="hz-hero"><h1>Steps AI Help Centre</h1><p>Search for something, or browse by topic below</p><SearchBox /></section>
-    {groups.map(g => <section key={g.key} className="container hz-group"><h2>{g.title}</h2><div className="hz-grid">{topics.filter(t => t.group === g.key).map(t => <TopicCard key={t.slug} t={t} />)}</div></section>)}
-    <section className="container hz-group"><h2>Developer topics</h2><div className="hz-grid">
-      <article className="hz-card"><div className="hz-card-img"><span className="hz-card-ph"><ImageIcon size={26} /></span></div><h3>Developer documentation</h3><p>Technical documentation for building with Steps AI.</p><a className="hz-pill" href="https://docs.stepsai.co">Explore articles</a></article>
-    </div></section>
-    <section className="container hz-faq">
-      <div><h2>Frequently asked questions</h2><p>Cannot find the answer you are looking for?</p><Link className="hz-pill" href="/help/faqs/">Explore all FAQs</Link></div>
-      <ul>{faqs.map(f => <li key={f.title}><Link href="/help/faqs/">{f.title}<ChevronRight size={16} /></Link></li>)}</ul>
-    </section>
-    <StillNeedHelp />
-  </div>}</SiteFrame>;
 }
 
 /* ---------- lesson ---------- */
