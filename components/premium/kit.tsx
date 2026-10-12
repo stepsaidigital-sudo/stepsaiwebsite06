@@ -91,7 +91,7 @@ function Typing({ className }: { className: string }) {
 }
 
 // Shows each line once the clock passes its time; the agent "types" for a moment first.
-function Thread({ lines, t, kind }: { lines: Line[]; t: number; kind: 'wa' | 'ig' | 'web' }) {
+function Thread({ lines, t, kind }: { lines: Line[]; t: number; kind: 'wa' | 'ig' | 'web' | 'ms' }) {
   const typing = lines.find(l => l.from === 'agent' && t >= l.at - 1000 && t < l.at);
   return <>
     {lines.filter(l => t >= l.at).map((l, i) => <Fragment key={i}>
@@ -140,11 +140,36 @@ export function CallScreen({ business, transcript, t }: { business: string; tran
   </div>;
 }
 
-export function LivePhone({ kind, business, handle = '@yourstore', lines, period = 9000, className = '' }: { kind: 'WhatsApp' | 'Instagram' | 'Website'; business: string; handle?: string; lines: Line[]; period?: number; className?: string }) {
+export function MessengerScreen({ business, lines, t }: { business: string; lines: Line[]; t: number }) {
+  return <div className="pp-ms">
+    <header><ChevronLeft size={20} /><span className="pp-ms-avatar">{business[0]}<i /></span><div><strong>{business}</strong><small>Typically replies instantly</small></div><PhoneIcon size={17} /><Video size={19} /></header>
+    <div className="pp-ms-chat"><Thread lines={lines} t={t} kind="ms" /></div>
+    <footer><Plus size={18} /><Camera size={17} /><ImageIcon size={17} /><span className="pp-ms-input">Aa</span><Smile size={17} /></footer>
+  </div>;
+}
+
+export function ChatPageScreen({ business, lines, t, chips = [], links = [] }: { business: string; lines: Line[]; t: number; chips?: string[]; links?: string[] }) {
+  return <div className="pp-cp">
+    <div className="pp-cp-url">steps.ai/{business.toLowerCase().replace(/[^a-z]/g, '')}</div>
+    <div className="pp-cp-brand"><span>{business[0]}</span><strong>{business}</strong><small>Ask us anything, any time</small></div>
+    {links.length > 0 && <div className="pp-cp-links">{links.map(l => <span key={l}>{l}<ArrowRight size={12} /></span>)}</div>}
+    <div className="pp-cp-chat">{t < (lines[0]?.at ?? 0) && chips.length > 0 ? <div className="pp-cp-chips">{chips.map(c => <span key={c}>{c}</span>)}</div> : <Thread lines={lines} t={t} kind="web" />}</div>
+    <footer><span>Ask a question</span><span className="pp-web-send"><Send size={14} /></span></footer>
+  </div>;
+}
+
+export function AppWindow({ title, sub, children, className = '' }: { title: string; sub?: string; children: ReactNode; className?: string }) {
+  return <div className={`pp-app ${className}`}>
+    <div className="pp-app-bar"><i /><i /><i /><strong>{title}</strong>{sub && <small>{sub}</small>}</div>
+    <div className="pp-app-body">{children}</div>
+  </div>;
+}
+
+export function LivePhone({ kind, business, handle = '@yourstore', lines, period = 9000, className = '', chips, links }: { kind: 'WhatsApp' | 'Instagram' | 'Website' | 'Messenger' | 'ChatPage'; business: string; handle?: string; lines: Line[]; period?: number; className?: string; chips?: string[]; links?: string[] }) {
   const [ref, t] = useLoop(period);
   return <div ref={ref} className={className}>
     <PhoneFrame>
-      {kind === 'WhatsApp' ? <WhatsAppScreen business={business} lines={lines} t={t} /> : kind === 'Instagram' ? <InstagramScreen business={business} handle={handle} lines={lines} t={t} /> : <WidgetScreen business={business} lines={lines} t={t} />}
+      {kind === 'WhatsApp' ? <WhatsAppScreen business={business} lines={lines} t={t} /> : kind === 'Instagram' ? <InstagramScreen business={business} handle={handle} lines={lines} t={t} /> : kind === 'Messenger' ? <MessengerScreen business={business} lines={lines} t={t} /> : kind === 'ChatPage' ? <ChatPageScreen business={business} lines={lines} t={t} chips={chips} links={links} /> : <WidgetScreen business={business} lines={lines} t={t} />}
     </PhoneFrame>
   </div>;
 }
@@ -157,7 +182,7 @@ export function LiveCall({ business, transcript, period = 10000, className = '' 
 /* ---------- industry examples: the same agent, shown in different businesses ---------- */
 
 export type Scenario = {
-  industry: string; href: string; photo: string; icon: ReactNode; kind: 'WhatsApp' | 'Instagram' | 'Website' | 'Call';
+  industry: string; href: string; photo: string; icon: ReactNode; kind: 'WhatsApp' | 'Instagram' | 'Website' | 'Messenger' | 'Call';
   business: string; lines: Line[]; did: string[];
 };
 
@@ -166,7 +191,7 @@ export function convo(...pairs: [string, string, ReactNode?][]): Line[] {
   return pairs.flatMap(([c, a, card], i) => [{ from: 'customer' as const, text: c, at: 400 + i * 4200 }, { from: 'agent' as const, text: a, at: 2400 + i * 4200, card }]);
 }
 
-export function IndustryExamples({ title, intro, scenarios }: { title: string; intro: string; scenarios: Scenario[] }) {
+export function IndustryExamples({ title, intro, scenarios, noPhoto = false }: { title: string; intro: string; scenarios: Scenario[]; noPhoto?: boolean }) {
   const [active, setActive] = useState(0), [held, setHeld] = useState(false);
   useEffect(() => {
     if (held || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -178,9 +203,9 @@ export function IndustryExamples({ title, intro, scenarios }: { title: string; i
   return <section id="industries" className="pp-ind-wrap"><div className="container">
     <div className="pp-head"><span className="wb-eyebrow">By industry</span><h2 aria-label={title}><SplitWords text={title} /></h2><p>{intro}</p></div>
     <div className="pp-ind-tabs" role="tablist" aria-label="Industries">{scenarios.map((x, i) => <button key={x.industry} role="tab" aria-selected={i === active} className={i === active ? 'is-active' : ''} onClick={() => { setActive(i); setHeld(true); }}>{x.icon}{x.industry}</button>)}</div>
-    <div className="pp-ind-stage" key={active}>
+    <div className={`pp-ind-stage ${noPhoto ? 'is-plain' : ''}`} key={active}>
       <div className="pp-ind-photo">
-        <img src={s.photo} alt="" loading="lazy" decoding="async" />
+        {!noPhoto && <img src={s.photo} alt="" loading="lazy" decoding="async" />}
         <div className="pp-ind-did"><small>What the agent did</small>{s.did.map((d, i) => <span key={d} style={{ animationDelay: `${300 + i * 250}ms` }}><CircleCheck size={15} />{d}</span>)}</div>
       </div>
       <div className="pp-ind-phone">
@@ -285,11 +310,11 @@ export function Capabilities({ title, intro, items, icons }: { title: string; in
 }
 
 export function PhotoStory({ id, eyebrow, title, body, points, photo, alt, overlay, reverse = false, tint = 'soft' }: {
-  id?: string; eyebrow: string; title: string; body: string; points: string[]; photo: string; alt: string; overlay: ReactNode; reverse?: boolean; tint?: 'soft' | 'warm';
+  id?: string; eyebrow: string; title: string; body: string; points: string[]; photo?: string; alt: string; overlay: ReactNode; reverse?: boolean; tint?: 'soft' | 'warm';
 }) {
   return <section id={id} className={`pp-story-wrap pp-story-${tint}`}><div className={`container pp-story ${reverse ? 'is-reverse' : ''}`}>
-    <Reveal className="pp-story-media">
-      <img src={photo} alt={alt} loading="lazy" decoding="async" />
+    <Reveal className={`pp-story-media ${photo ? '' : 'is-plain'}`}>
+      {photo && <img src={photo} alt={alt} loading="lazy" decoding="async" />}
       <div className="pp-story-overlay">{overlay}</div>
     </Reveal>
     <div className="pp-story-copy">

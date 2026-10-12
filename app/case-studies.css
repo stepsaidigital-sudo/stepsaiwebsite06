@@ -57,3 +57,7 @@
 @media (prefers-reduced-motion:reduce){
   .cs-wave i,.cs-call-line{animation:none}
 }
+
+/* Hub filters: industry row and agent row */
+.cs-filter-row{align-items:center;margin-bottom:10px}
+.cs-filter-label{min-width:64px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5b6b82}

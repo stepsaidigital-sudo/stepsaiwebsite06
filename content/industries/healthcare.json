@@ -100,5 +100,175 @@
         "a": "Yes. The booking skill works on WhatsApp, your website and phone calls."
       }
     ]
+  },
+  "problems": {
+    "title": "What keeps a clinic phone ringing, and what your agent does about it.",
+    "intro": "Most patient questions are simple. They still take your front desk away from the patients in front of them.",
+    "items": [
+      {
+        "pain": "The phone never stops.",
+        "scene": "Timings, fees, parking. Your front desk answers the same calls between patients.",
+        "fix": "Your agent answers clinic questions from your own information, on WhatsApp, your website and phone calls.",
+        "agent": "ai-support-agent",
+        "ask": "Are you open on Saturday?",
+        "reply": "Yes, from 9 to 1. Would you like to book?",
+        "count": "23 missed calls today"
+      },
+      {
+        "pain": "Bookings get lost in the back and forth.",
+        "scene": "Three messages to agree a time, then the patient goes quiet.",
+        "fix": "Your agent offers free times from your calendar and confirms the booking in one chat.",
+        "agent": "ai-booking-agent",
+        "ask": "Can I book for tomorrow?",
+        "reply": "Tomorrow has 11:00 or 4:30 free. Which suits you?",
+        "count": "9 bookings left hanging"
+      },
+      {
+        "pain": "Calls come after the clinic closes.",
+        "scene": "At 9 at night a patient calls to book. Nobody picks up.",
+        "fix": "The AI receptionist answers in English, Hindi and Telugu, and after hours a voicemail becomes a callback ticket.",
+        "agent": "ai-receptionist",
+        "ask": "Hello, can I book a check-up?",
+        "reply": "Of course. Saturday at 11 is free. Shall I book it?",
+        "count": "Calls after 8 PM: unanswered"
+      },
+      {
+        "pain": "Patients ask medical questions in chat.",
+        "scene": "Someone asks about their report. A wrong answer is not an option.",
+        "fix": "Anything medical goes to your team with the conversation attached. Your agent never gives medical advice.",
+        "agent": "ai-support-agent",
+        "ask": "Is my report normal?",
+        "reply": "I will pass this to the clinic team. A doctor will reply.",
+        "count": "Needs a doctor"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Three agents. One clinic. Every patient answered.",
+    "intro": "They share your clinic information, calendar and patient conversations.",
+    "items": [
+      {
+        "slug": "ai-booking-agent",
+        "does": [
+          "Offers free times from your calendar",
+          "Collects name and phone",
+          "Adds the visit to your calendar"
+        ]
+      },
+      {
+        "slug": "ai-receptionist",
+        "does": [
+          "Answers calls in three languages",
+          "Books visits on the phone",
+          "Turns after-hours calls into callbacks"
+        ]
+      },
+      {
+        "slug": "ai-support-agent",
+        "does": [
+          "Answers timings, fees and directions",
+          "Shares test preparation steps",
+          "Passes medical questions to your team"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One patient, from first question to booked visit.",
+    "intro": "Here is what a clinic looks like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Answer a clinic question",
+        "body": "The agent answers timings, fees and directions from your own information.",
+        "customer": "How much is a consultation?",
+        "agent": "A first consultation is ₹600 and takes 30 minutes.",
+        "result": "Answered from your information",
+        "card": {
+          "title": "Clinic information",
+          "chip": "Your info",
+          "rows": [
+            [
+              "clinic",
+              "Consultation fee",
+              "₹600 · 30 minutes"
+            ],
+            [
+              "clock",
+              "Open Mon to Sat",
+              "9 AM to 7 PM"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Offer free times",
+        "body": "Times come straight from your connected calendar.",
+        "customer": "Can I come tomorrow?",
+        "agent": "Tomorrow has 11:00 or 4:30 free.",
+        "result": "Times from your calendar",
+        "card": {
+          "title": "Google Calendar",
+          "chip": "Connected",
+          "rows": [
+            [
+              "calendar",
+              "Tomorrow, 11:00",
+              "Dr. Nair"
+            ],
+            [
+              "calendar",
+              "Tomorrow, 4:30",
+              "Dr. Nair"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Book the visit",
+        "body": "The agent collects the details you ask for and confirms.",
+        "customer": "4:30, I am Priya.",
+        "agent": "You are booked for tomorrow at 4:30, Priya.",
+        "result": "Booking confirmed",
+        "card": {
+          "title": "Booking",
+          "chip": "Booked",
+          "rows": [
+            [
+              "user",
+              "Priya · 98xxx xxx21",
+              "Name and phone"
+            ],
+            [
+              "calendar",
+              "Tomorrow, 4:30 PM",
+              "Added to your calendar"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Pass medical questions to a person",
+        "body": "Anything clinical goes to your team, with the full chat.",
+        "customer": "Should I stop my medicine before the test?",
+        "agent": "I will ask the doctor and the clinic will reply to you.",
+        "result": "Passed to your team",
+        "card": {
+          "title": "Live request",
+          "chip": "Assigned",
+          "rows": [
+            [
+              "team",
+              "Clinic team",
+              "Full conversation attached"
+            ],
+            [
+              "check",
+              "AI replies paused",
+              "Until the team hands back"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

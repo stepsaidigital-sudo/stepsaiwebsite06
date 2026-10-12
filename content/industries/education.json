@@ -96,5 +96,183 @@
         "a": "Yes. Send a WhatsApp campaign with an approved template to your saved enquiries."
       }
     ]
+  },
+  "problems": {
+    "title": "Where admissions get lost, and what your agent does about it.",
+    "intro": "Students and parents ask at night and on weekends. The first answer often decides where they enrol.",
+    "items": [
+      {
+        "pain": "Enquiries arrive at night.",
+        "scene": "A parent asks about fees at 10 PM. By morning they have called another institute.",
+        "fix": "Your agent answers fees, dates and eligibility at any hour from your brochures.",
+        "agent": "ai-sales-agent",
+        "ask": "What are the fees for this course?",
+        "reply": "The course fee is ₹48,000, payable in two parts.",
+        "count": "41 enquiries after 8 PM"
+      },
+      {
+        "pain": "Interested students slip away.",
+        "scene": "They ask one question and leave without a name or number.",
+        "fix": "Your agent collects name, phone and course interest during the chat and saves it to your CRM.",
+        "agent": "ai-lead-capture-agent",
+        "ask": "When does the next batch start?",
+        "reply": "On 3 February. May I have your name and phone to send details?",
+        "count": "No contact details saved"
+      },
+      {
+        "pain": "Counselling calls take days to set up.",
+        "scene": "Back and forth on WhatsApp to find a time that works.",
+        "fix": "Your agent books counselling straight into your counsellors’ calendar.",
+        "agent": "ai-booking-agent",
+        "ask": "Can I speak to a counsellor?",
+        "reply": "Thursday at 5 PM is free. Shall I book it?",
+        "count": "3 days to book a call"
+      },
+      {
+        "pain": "New batches go unnoticed.",
+        "scene": "Past enquiries never hear that admissions opened.",
+        "fix": "Send a WhatsApp campaign to past enquiries, and your agent answers every reply.",
+        "agent": "ai-marketing-agent",
+        "ask": "Admissions open?",
+        "reply": "Yes, admissions for the March batch are open. Want the brochure?",
+        "count": "600 old enquiries, no follow-up"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Four agents. One institute. Every enquiry followed up.",
+    "intro": "They share your brochures, counsellors’ calendars and student enquiries.",
+    "items": [
+      {
+        "slug": "ai-sales-agent",
+        "does": [
+          "Recommends the right course",
+          "Answers fees and batch dates",
+          "Moves students to counselling"
+        ]
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Collects name, phone and course",
+          "Saves enquiries to your CRM",
+          "Tags where they came from"
+        ]
+      },
+      {
+        "slug": "ai-booking-agent",
+        "does": [
+          "Books counselling sessions",
+          "Offers demo class times",
+          "Adds them to your calendar"
+        ]
+      },
+      {
+        "slug": "ai-marketing-agent",
+        "does": [
+          "Announces new batches on WhatsApp",
+          "Answers every campaign reply",
+          "Follows up with old enquiries"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One student, from first question to counselling call.",
+    "intro": "Here is what admissions look like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Answer the course question",
+        "body": "Fees, duration and eligibility come from your brochures and website.",
+        "customer": "Is there a scholarship?",
+        "agent": "Yes, merit scholarships cover up to 25% of the fee.",
+        "result": "Answered from your brochure",
+        "card": {
+          "title": "Course brochure",
+          "chip": "Your docs",
+          "rows": [
+            [
+              "book",
+              "Data analytics · 6 months",
+              "Fee ₹48,000"
+            ],
+            [
+              "school",
+              "Scholarship",
+              "Up to 25%"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Capture the enquiry",
+        "body": "The agent asks only for the fields you switched on.",
+        "customer": "I am Kavya, 98xxx xxx40.",
+        "agent": "Thank you Kavya. I have saved your details.",
+        "result": "Enquiry saved",
+        "card": {
+          "title": "New enquiry",
+          "chip": "Saved",
+          "rows": [
+            [
+              "user",
+              "Kavya · 98xxx xxx40",
+              "Interest: data analytics"
+            ],
+            [
+              "search",
+              "Source: Instagram",
+              "Tagged automatically"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Book counselling",
+        "body": "Times come from your counsellors’ calendar.",
+        "customer": "Can I talk to a counsellor?",
+        "agent": "Thursday at 5 PM is booked for you.",
+        "result": "Counselling booked",
+        "card": {
+          "title": "Counselling",
+          "chip": "Booked",
+          "rows": [
+            [
+              "calendar",
+              "Thursday, 5:00 PM",
+              "Counsellor: Meera"
+            ],
+            [
+              "check",
+              "Confirmation sent",
+              "On WhatsApp"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Follow up when a batch opens",
+        "body": "A WhatsApp campaign reaches past enquiries. Replies go to your agent.",
+        "customer": "INFO",
+        "agent": "The March batch starts on the 3rd. Want the fee details?",
+        "result": "Reply answered",
+        "card": {
+          "title": "Campaign",
+          "chip": "Sent",
+          "rows": [
+            [
+              "whatsapp",
+              "March batch open",
+              "Sent to enquiries"
+            ],
+            [
+              "check",
+              "Replies answered",
+              "By your agent"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

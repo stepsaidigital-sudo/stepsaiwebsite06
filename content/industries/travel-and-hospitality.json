@@ -91,5 +91,143 @@
         "a": "It collects the enquiry and passes it to your team, who confirm availability."
       }
     ]
+  },
+  "problems": {
+    "title": "Where bookings slip away, and what your agent does about it.",
+    "intro": "Travellers ask before they book, at all hours, and often book wherever answers first.",
+    "items": [
+      {
+        "pain": "Guests ask at midnight.",
+        "scene": "A family plans a trip at night. Nobody answers, so they book elsewhere.",
+        "fix": "Your agent answers rooms, amenities and policies at any hour from your information.",
+        "agent": "ai-support-agent",
+        "ask": "Is breakfast included?",
+        "reply": "Yes, breakfast is included with every room.",
+        "count": "Messages after 10 PM: unanswered"
+      },
+      {
+        "pain": "Booking enquiries arrive half complete.",
+        "scene": "Dates but no guest count. A name but no phone.",
+        "fix": "Your agent collects dates, guests and contact details before passing it to your team.",
+        "agent": "ai-lead-capture-agent",
+        "ask": "Rooms for 12 to 14 March?",
+        "reply": "Happy to check. How many guests, and your name and phone?",
+        "count": "Missing dates and numbers"
+      },
+      {
+        "pain": "Past guests forget you.",
+        "scene": "Your best customers never hear about the monsoon offer.",
+        "fix": "Send an approved WhatsApp template to past guests, and your agent answers every reply.",
+        "agent": "ai-marketing-agent",
+        "ask": "Is the monsoon offer still on?",
+        "reply": "Yes, until 30 August. Want me to note your dates?",
+        "count": "No repeat bookings"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Three agents. One property. Every guest answered.",
+    "intro": "They share your room information, policies and guest enquiries. Your team confirms availability.",
+    "items": [
+      {
+        "slug": "ai-support-agent",
+        "does": [
+          "Answers rooms, timings and policies",
+          "Shares directions and amenities",
+          "Passes requests to your team"
+        ]
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Collects dates and guest count",
+          "Saves contact details",
+          "Hands the enquiry to your team"
+        ]
+      },
+      {
+        "slug": "ai-marketing-agent",
+        "does": [
+          "Sends offers to past guests",
+          "Answers every reply",
+          "Brings guests back in the off season"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One guest, from first question to booking enquiry.",
+    "intro": "Steps AI does not connect to booking engines. Your team confirms availability and the booking.",
+    "stages": [
+      {
+        "title": "Answer the guest’s question",
+        "body": "Rooms, timings and policies come from your own information.",
+        "customer": "What time is check-in?",
+        "agent": "Check-in is from 2 PM and check-out by 11 AM.",
+        "result": "Answered from your information",
+        "card": {
+          "title": "Property information",
+          "chip": "Your info",
+          "rows": [
+            [
+              "clock",
+              "Check-in 2 PM",
+              "Check-out 11 AM"
+            ],
+            [
+              "home",
+              "Breakfast included",
+              "All rooms"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Collect the booking details",
+        "body": "Dates, guests and contact details are saved for your team.",
+        "customer": "12 to 14 March, two adults.",
+        "agent": "Thank you. May I have your name and phone?",
+        "result": "Enquiry captured",
+        "card": {
+          "title": "Booking enquiry",
+          "chip": "Saved",
+          "rows": [
+            [
+              "calendar",
+              "12 to 14 March",
+              "2 adults"
+            ],
+            [
+              "user",
+              "Rohan · 98xxx xxx77",
+              "Contact saved"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Hand it to your team",
+        "body": "Your team confirms availability and the booking.",
+        "customer": "Can you confirm the room?",
+        "agent": "Our team will confirm availability with you shortly.",
+        "result": "Passed to your team",
+        "card": {
+          "title": "Live request",
+          "chip": "Assigned",
+          "rows": [
+            [
+              "team",
+              "Reservations team",
+              "Full conversation attached"
+            ],
+            [
+              "check",
+              "Team notified",
+              "By email"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

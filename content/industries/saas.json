@@ -100,5 +100,143 @@
         "a": "Yes. Connect your help centre website or documents, and the agent answers from them."
       }
     ]
+  },
+  "problems": {
+    "title": "Where SaaS teams lose time, and what your agent does about it.",
+    "intro": "Visitors want quick answers before they talk to sales. Customers want answers before they open a ticket.",
+    "items": [
+      {
+        "pain": "Visitors leave with unanswered questions.",
+        "scene": "Pricing and integration questions at 11 PM, and no one online.",
+        "fix": "Your agent answers from your help centre and docs, any time.",
+        "agent": "ai-support-agent",
+        "ask": "Do you integrate with HubSpot?",
+        "reply": "Yes. Leads can be saved straight to HubSpot.",
+        "count": "Visitors leave unanswered"
+      },
+      {
+        "pain": "Sales talks to the wrong people.",
+        "scene": "Demo calls with students and competitors.",
+        "fix": "Your agent collects company size, use case and contact details before booking.",
+        "agent": "ai-lead-capture-agent",
+        "ask": "Can I book a demo?",
+        "reply": "Of course. How big is your team, and what would you use it for?",
+        "count": "Unqualified demos"
+      },
+      {
+        "pain": "Simple product questions become tickets.",
+        "scene": "Password resets queue behind real bugs.",
+        "fix": "Your agent answers how-to questions and turns real issues into tickets for your team or Zendesk.",
+        "agent": "ai-support-agent",
+        "ask": "How do I reset my password?",
+        "reply": "Go to Settings, then Security, then Reset password.",
+        "count": "Queue full of how-tos"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Three agents. Sales and support covered.",
+    "intro": "They share your docs, help centre and CRM.",
+    "items": [
+      {
+        "slug": "ai-support-agent",
+        "does": [
+          "Answers from your help centre and docs",
+          "Turns real issues into tickets",
+          "Hands over with context"
+        ]
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Asks company size and use case",
+          "Saves leads to HubSpot",
+          "Tags the source"
+        ]
+      },
+      {
+        "slug": "ai-booking-agent",
+        "does": [
+          "Books demos into your calendar",
+          "Offers times across time zones",
+          "Sends the confirmation"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One visitor, from first question to booked demo.",
+    "intro": "Here is what your website looks like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Answer from your docs",
+        "body": "Help centre articles and documentation become answers.",
+        "customer": "How is pricing calculated?",
+        "agent": "Pricing is per workspace, with credits for AI replies.",
+        "result": "Answered from your docs",
+        "card": {
+          "title": "Help centre",
+          "chip": "Your docs",
+          "rows": [
+            [
+              "book",
+              "Pricing and billing",
+              "help.yourapp.com"
+            ],
+            [
+              "search",
+              "Matched article",
+              "Updated last week"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Qualify the lead",
+        "body": "Company size, use case and contact details are collected.",
+        "customer": "40 people, mostly support.",
+        "agent": "Thanks. May I have your work email?",
+        "result": "Lead qualified",
+        "card": {
+          "title": "New lead",
+          "chip": "Saved",
+          "rows": [
+            [
+              "user",
+              "Ana · Brightline",
+              "40 people · support"
+            ],
+            [
+              "team",
+              "Synced to HubSpot",
+              "Owner: sales"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Book the demo",
+        "body": "Times come from your sales team’s calendar.",
+        "customer": "Can we talk on Thursday?",
+        "agent": "Thursday at 3 PM is booked.",
+        "result": "Demo booked",
+        "card": {
+          "title": "Demo",
+          "chip": "Booked",
+          "rows": [
+            [
+              "calendar",
+              "Thursday, 3:00 PM",
+              "With your sales team"
+            ],
+            [
+              "check",
+              "Invite sent",
+              "By email"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

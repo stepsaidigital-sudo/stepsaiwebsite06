@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { FeatureTemplate } from '@/components/templates/feature';
 import { BroadcastPageTemplate } from '@/components/templates/broadcast-page';
 import { SkillsPageTemplate } from '@/components/templates/skills-page';
+import { FeaturePageTemplate } from '@/components/templates/feature-page';
 import { getFeature, listFeatures } from '@/lib/content';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -22,5 +23,6 @@ export default async function FeatureRoute({ params }: Props) {
   // WhatsApp broadcast has its own composition, built to the approved reference.
   if (page.slug === 'whatsapp-broadcast') return <BroadcastPageTemplate page={page} />;
   if (page.slug === 'skills') return <SkillsPageTemplate page={page} />;
+  if (page.slug === 'analytics') return <FeaturePageTemplate page={page} />;
   return <FeatureTemplate page={page} />;
 }

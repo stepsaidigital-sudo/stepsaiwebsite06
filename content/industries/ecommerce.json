@@ -131,5 +131,228 @@
   "cta": {
     "title": "See your agent answer questions from your own store.",
     "body": "Book a demo and we will show you product, order and return conversations built around your catalogue."
+  },
+  "problems": {
+    "title": "What slows an online store down, and what your agent does about it.",
+    "intro": "Every store owner knows these. Here is what changes when an AI agent answers for you.",
+    "items": [
+      {
+        "pain": "The same questions, all day long.",
+        "scene": "Size? Stock? Delivery date? Your team types the same answers hundreds of times a week.",
+        "fix": "Your agent answers from your catalogue and policy pages in seconds, on WhatsApp, Instagram and your website.",
+        "agent": "ai-support-agent",
+        "ask": "Is this available in medium?",
+        "reply": "Yes, medium is in stock in white and sand. Want the link?",
+        "count": "38 chats waiting"
+      },
+      {
+        "pain": "“Where is my order?” fills your inbox.",
+        "scene": "One courier delay and the same message arrives fifty times.",
+        "fix": "Your agent checks Shopify and your delivery partner, then shares the latest status in the chat.",
+        "agent": "ai-support-agent",
+        "ask": "Where is my order?",
+        "reply": "Your order 2087 is out for delivery today.",
+        "count": "52 chats waiting"
+      },
+      {
+        "pain": "Questions arrive after you close.",
+        "scene": "It is 11 at night. Someone asks if the dress will arrive before the wedding. Nobody replies, so they buy somewhere else.",
+        "fix": "Your agent answers at any hour, suggests products from your catalogue and shares a checkout link.",
+        "agent": "ai-sales-agent",
+        "ask": "Will it arrive before Saturday?",
+        "reply": "Yes. Order tonight and it arrives on Friday.",
+        "count": "Seen 11:02 PM"
+      },
+      {
+        "pain": "Shoppers leave without paying.",
+        "scene": "They add to cart, get distracted and never come back.",
+        "fix": "A WhatsApp reminder brings them back to their cart. Available for Shopify stores.",
+        "agent": "ai-marketing-agent",
+        "ask": "Cart left · Linen shirt · ₹1,890",
+        "reply": "You left the linen shirt in your cart. It is still in stock. Here is your cart.",
+        "count": "31 carts left today"
+      },
+      {
+        "pain": "Cash on delivery orders come back.",
+        "scene": "A customer orders COD, is not home, and the parcel returns at your cost.",
+        "fix": "Customers confirm COD orders on WhatsApp before you ship, and can switch to prepaid with a payment link.",
+        "agent": "ai-marketing-agent",
+        "ask": "COD order #2091 · ₹1,890",
+        "reply": "Please confirm your cash on delivery order #2091. Reply YES to confirm.",
+        "count": "4 parcels returned this week"
+      },
+      {
+        "pain": "Instagram comments go unanswered.",
+        "scene": "Your Reel takes off. Hundreds of people comment PRICE. You reply to ten.",
+        "fix": "Comment-to-DM sends every one of them the details in their direct messages.",
+        "agent": "ai-marketing-agent",
+        "ask": "PRICE",
+        "reply": "Thanks for commenting. The vase is ₹2,450. Here is the link.",
+        "count": "212 comments unanswered"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Four agents. One store. Every conversation covered.",
+    "intro": "Start with one. Add the others when you need them. They share your catalogue, inbox and customer records.",
+    "items": [
+      {
+        "slug": "ai-sales-agent",
+        "does": [
+          "Recommends products from your catalogue",
+          "Checks stock before suggesting",
+          "Adds to cart and shares a checkout link"
+        ],
+        "photo": "/photos/ag-ecom-sales.jpg"
+      },
+      {
+        "slug": "ai-support-agent",
+        "does": [
+          "Tells customers where their order is",
+          "Answers return and exchange questions",
+          "Opens a ticket and hands over when needed"
+        ],
+        "photo": "/photos/ag-ecom-support.jpg"
+      },
+      {
+        "slug": "ai-marketing-agent",
+        "does": [
+          "Sends WhatsApp campaigns to tagged customers",
+          "Turns Instagram comments into DMs",
+          "Recovers carts and confirms COD orders"
+        ],
+        "photo": "/photos/ag-ecom-marketing.jpg"
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Collects bulk and wholesale enquiries",
+          "Saves them to your CRM or HubSpot",
+          "Tags where each lead came from"
+        ],
+        "photo": "/photos/ag-ecom-lead.jpg"
+      }
+    ]
+  },
+  "journey": {
+    "title": "One order, from first question to doorstep.",
+    "intro": "Here is what a Shopify store looks like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Answer a product question",
+        "body": "The agent checks your Shopify catalogue and stock before it replies.",
+        "customer": "Do you have the linen shirt in medium?",
+        "agent": "Yes, medium is in stock in white and sand.",
+        "result": "Checked in your store",
+        "card": {
+          "title": "Shopify product",
+          "chip": "In stock",
+          "rows": [
+            [
+              "shirt",
+              "Linen shirt · Medium",
+              "White, sand · ₹1,890"
+            ],
+            [
+              "box",
+              "14 in stock",
+              "Updated just now"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Buy without leaving the chat",
+        "body": "On WhatsApp and Instagram the agent adds items to a cart and sends a checkout link. Customers pay on your own store.",
+        "customer": "Add the white one please.",
+        "agent": "Added. Here is your checkout link.",
+        "result": "Checkout link sent",
+        "card": {
+          "title": "Cart",
+          "chip": "1 item",
+          "rows": [
+            [
+              "cart",
+              "Linen shirt · White · M",
+              "₹1,890"
+            ],
+            [
+              "link",
+              "Checkout link sent",
+              "Payment on your store"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Confirm a cash on delivery order",
+        "body": "Before you ship, customers confirm their COD order on WhatsApp, or switch to prepaid with a payment link.",
+        "customer": "Yes, confirmed.",
+        "agent": "Thank you. Your order ships today.",
+        "result": "COD order confirmed",
+        "card": {
+          "title": "COD confirmation",
+          "chip": "Confirmed",
+          "rows": [
+            [
+              "whatsapp",
+              "Message sent on WhatsApp",
+              "Order #2087 · ₹1,890"
+            ],
+            [
+              "check",
+              "Confirmed by the customer",
+              "Ready to ship"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Share where the order is",
+        "body": "The agent reads the status from Shopify and your delivery partner, so nobody has to look it up.",
+        "customer": "Where is my order 2087?",
+        "agent": "It is out for delivery today.",
+        "result": "Status from your courier",
+        "card": {
+          "title": "Order #2087",
+          "chip": "Out for delivery",
+          "rows": [
+            [
+              "truck",
+              "Shiprocket",
+              "Out for delivery today"
+            ],
+            [
+              "box",
+              "Shipped on Monday",
+              "2 items"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Help with a return",
+        "body": "The agent explains the steps from your returns policy and opens a ticket if something arrived damaged.",
+        "customer": "It does not fit. Can I exchange it?",
+        "agent": "Yes. Unworn items can be exchanged. Here are the steps.",
+        "result": "Answered from your policy",
+        "card": {
+          "title": "Returns",
+          "chip": "Your policy",
+          "rows": [
+            [
+              "book",
+              "Returns and exchanges page",
+              "yourstore.com/returns"
+            ],
+            [
+              "ticket",
+              "Ticket if damaged",
+              "Photo collected"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

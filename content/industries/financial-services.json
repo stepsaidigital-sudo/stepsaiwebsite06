@@ -87,5 +87,143 @@
         "a": "Not if you set the guardrail. Advice questions can be passed to your advisers."
       }
     ]
+  },
+  "problems": {
+    "title": "Where enquiries stall, and what your agent does about it.",
+    "intro": "People want to know the process before they talk to anyone. Your agent explains it without giving advice.",
+    "items": [
+      {
+        "pain": "The same process questions, every day.",
+        "scene": "Documents, timelines, eligibility. Your advisers answer them between meetings.",
+        "fix": "Your agent explains eligibility, documents and timelines from your own information.",
+        "agent": "ai-support-agent",
+        "ask": "What documents do I need?",
+        "reply": "You need PAN, Aadhaar and your last three payslips.",
+        "count": "120 process questions a week"
+      },
+      {
+        "pain": "Enquiries arrive without details.",
+        "scene": "A name, no phone, no product of interest.",
+        "fix": "Your agent collects contact details and the product they are interested in.",
+        "agent": "ai-lead-capture-agent",
+        "ask": "I am interested in a home loan.",
+        "reply": "Happy to help. May I have your name and phone?",
+        "count": "Half-filled enquiries"
+      },
+      {
+        "pain": "Personal questions need a person.",
+        "scene": "Someone asks what they should invest in. That is advice.",
+        "fix": "Anything that needs advice goes to your team. Your agent never gives financial advice.",
+        "agent": "ai-support-agent",
+        "ask": "Should I choose this fund?",
+        "reply": "An adviser will help you with that. Shall I book a call?",
+        "count": "Needs an adviser"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Three agents. Every enquiry handled carefully.",
+    "intro": "They share your product information and your advisers’ calendars.",
+    "items": [
+      {
+        "slug": "ai-support-agent",
+        "does": [
+          "Explains products and processes",
+          "Shares document checklists",
+          "Passes advice questions to your team"
+        ]
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Collects contact details",
+          "Notes the product of interest",
+          "Saves enquiries to your CRM"
+        ]
+      },
+      {
+        "slug": "ai-booking-agent",
+        "does": [
+          "Books adviser calls",
+          "Offers times from their calendars",
+          "Sends the confirmation"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One enquiry, from first question to adviser call.",
+    "intro": "Here is what your enquiries look like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Explain the process",
+        "body": "Eligibility, documents and timelines come from your information.",
+        "customer": "How long does approval take?",
+        "agent": "Approval usually takes 5 to 7 working days.",
+        "result": "Answered from your information",
+        "card": {
+          "title": "Home loan",
+          "chip": "Your info",
+          "rows": [
+            [
+              "book",
+              "Documents checklist",
+              "PAN, Aadhaar, payslips"
+            ],
+            [
+              "clock",
+              "Approval time",
+              "5 to 7 working days"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Capture the enquiry",
+        "body": "Contact details and the product of interest are saved.",
+        "customer": "Rahul, 98xxx xxx55.",
+        "agent": "Thank you Rahul. I have saved your enquiry.",
+        "result": "Enquiry saved",
+        "card": {
+          "title": "New enquiry",
+          "chip": "Saved",
+          "rows": [
+            [
+              "user",
+              "Rahul · 98xxx xxx55",
+              "Interest: home loan"
+            ],
+            [
+              "bank",
+              "Saved to your CRM",
+              "Ready for follow-up"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Book an adviser call",
+        "body": "Times come from your advisers’ calendars.",
+        "customer": "Can I speak to an adviser?",
+        "agent": "Friday at 11 AM is booked with an adviser.",
+        "result": "Call booked",
+        "card": {
+          "title": "Adviser call",
+          "chip": "Booked",
+          "rows": [
+            [
+              "calendar",
+              "Friday, 11:00 AM",
+              "Adviser: Neha"
+            ],
+            [
+              "check",
+              "Confirmation sent",
+              "On WhatsApp"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

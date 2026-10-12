@@ -166,50 +166,9 @@
       "label": "Resources",
       "columns": [
         {
-          "title": "Case studies",
+          "title": "Learn",
           "style": "tiles",
           "items": [
-            {
-              "label": "AI sales agent",
-              "href": "/case-studies/ai-sales-agent/",
-              "body": "Help customers choose and buy"
-            },
-            {
-              "label": "AI support agent",
-              "href": "/case-studies/ai-support-agent/",
-              "body": "Clear repeat questions"
-            },
-            {
-              "label": "AI marketing agent",
-              "href": "/case-studies/ai-marketing-agent/",
-              "body": "Keep up during launches"
-            },
-            {
-              "label": "AI receptionist",
-              "href": "/case-studies/ai-receptionist/",
-              "body": "Answer calls in three languages"
-            },
-            {
-              "label": "AI booking agent",
-              "href": "/case-studies/ai-booking-agent/",
-              "body": "Answer before the first call"
-            },
-            {
-              "label": "AI lead capture agent",
-              "href": "/case-studies/ai-lead-capture-agent/",
-              "body": "Capture richer leads"
-            }
-          ]
-        },
-        {
-          "title": "Learn and support",
-          "style": "links",
-          "items": [
-            {
-              "label": "All case studies",
-              "href": "/case-studies/",
-              "body": ""
-            },
             {
               "label": "Blog",
               "href": "/blog/",
@@ -219,7 +178,13 @@
               "label": "Compare",
               "href": "/compare/",
               "body": "Steps AI and the alternatives"
-            },
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "style": "tiles",
+          "items": [
             {
               "label": "Help centre",
               "href": "/help/",

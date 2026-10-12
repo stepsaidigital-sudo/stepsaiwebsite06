@@ -88,13 +88,13 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
     <PhotoStory id="custom-skills" eyebrow="Custom skills" title="Teach your agent a job that is yours alone."
       body="When the ready-made skills do not cover it, build your own: an AI skill with your own instructions, or a flow skill that collects details and calls an app or a webhook."
       points={['Write when to use it in plain English', 'Collect exactly the fields you need', 'Send the result to an app, a webhook or an HTTP request']}
-      photo="/photos/skills.jpg" alt="Team working together at laptops"
+      photo="/photos/st-custom-skills.jpg" alt="Planning a custom skill on a laptop"
       overlay={<Card title="Flow skill · Warranty claim" status={<Chip tone="green"><Check size={11} />Active</Chip>}>
         <Row icon={<MessageSquare size={15} />} title="When to use" sub="Customer reports a fault in warranty" delay={200} />
         <Row icon={<UserPlus size={15} />} title="Collect" sub="Order number, photo, email" delay={400} />
         <Row icon={<Webhook size={15} />} title="Then" sub="POST to your service desk" picked delay={600} />
       </Card>} />
-    {handoffStory({ customer: 'Priya Shah', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true)}
+    {handoffStory({ customer: 'Priya Shah', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true, '/photos/ho-skills.jpg')}
 
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />

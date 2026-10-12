@@ -36,6 +36,9 @@ export type IndustryPage = Status & {
   questions: { title: string; intro: string; items: { text: string; channel: string }[] };
   jobs: Block; tools: { title: string; intro: string; names: string[] };
   quotes: Quote[]; goodToKnow: Notes; faq: FaqBlock; cta: Cta;
+  problems?: { title: string; intro: string; items: { pain: string; scene: string; fix: string; agent: string; ask?: string; reply?: string; count?: string }[] };
+  agents?: { title: string; intro: string; items: { slug: string; does: string[]; photo?: string }[] };
+  journey?: { title: string; intro: string; stages: { title: string; body: string; customer: string; agent: string; result: string; card: { title: string; chip: string; rows: string[][] } }[] };
 };
 
 // One page per connected app. Deep pages add a step-by-step walkthrough and

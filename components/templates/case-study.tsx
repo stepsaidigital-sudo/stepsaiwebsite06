@@ -74,18 +74,25 @@ export function CaseStudyTemplate({ page, agents }: { page: CaseStudyPage; agent
 }
 
 export function CaseStudiesHubTemplate({ page, stories }: { page: CaseStudiesHub; stories: { slug: string; agent: string; story: Story }[] }) {
-  const [filter, setFilter] = useState('all');
-  const shown = stories.filter(s => filter === 'all' || s.slug === filter);
+  const [filter, setFilter] = useState('all'), [industry, setIndustry] = useState('all');
+  const industries = [...new Set(stories.map(s => s.story.industry))];
+  const shown = stories.filter(s => (filter === 'all' || s.slug === filter) && (industry === 'all' || s.story.industry === industry));
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} visual={<StoryCard story={stories[0].story} agent={stories[0].agent} />} />
     <section className="sp-section container">
-      <SectionIntro eyebrow={`${stories.length} customer stories`} title="Choose an agent to see its stories." />
-      <div className="ig-filters" role="group" aria-label="Filter stories by agent">
-        <button className={filter === 'all' ? 'is-active' : ''} aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>All<small>{stories.length}</small></button>
+      <SectionIntro eyebrow={`${stories.length} customer stories`} title="Find the stories that match your business." />
+      <div className="ig-filters cs-filter-row" role="group" aria-label="Filter stories by industry">
+        <span className="cs-filter-label">Industry</span>
+        <button className={industry === 'all' ? 'is-active' : ''} aria-pressed={industry === 'all'} onClick={() => setIndustry('all')}>All industries</button>
+        {industries.map(name => <button key={name} className={industry === name ? 'is-active' : ''} aria-pressed={industry === name} onClick={() => setIndustry(name)}>{name}<small>{stories.filter(s => s.story.industry === name).length}</small></button>)}
+      </div>
+      <div className="ig-filters cs-filter-row" role="group" aria-label="Filter stories by agent">
+        <span className="cs-filter-label">Agent</span>
+        <button className={filter === 'all' ? 'is-active' : ''} aria-pressed={filter === 'all'} onClick={() => setFilter('all')}>All agents<small>{stories.length}</small></button>
         {page.agents.map(a => <button key={a.slug} className={filter === a.slug ? 'is-active' : ''} aria-pressed={filter === a.slug} onClick={() => setFilter(a.slug)}>{a.label}<small>{a.count}</small></button>)}
       </div>
       {shown.length
-        ? <DragRail key={filter} label="Customer stories">{shown.map(s => <StoryCard key={s.story.brand} story={s.story} agent={s.agent} href={`/case-studies/${s.slug}/`} />)}</DragRail>
+        ? <DragRail key={filter + industry} label="Customer stories">{shown.map(s => <StoryCard key={s.story.brand} story={s.story} agent={s.agent} href={`/case-studies/${s.slug}/`} />)}</DragRail>
         : <div className="cs-empty"><span className="cs-call-icon"><PhoneCall size={20} /></span><div><h2>Customer stories are on the way.</h2><p>See what the AI receptionist does while we gather them. <Link className="text-link" href={`/case-studies/${filter}/`}>Open the page <ArrowRight size={15} /></Link></p></div></div>}
     </section>
     <Reveal><CtaBand cta={page.cta} onOpen={onOpen} /></Reveal>

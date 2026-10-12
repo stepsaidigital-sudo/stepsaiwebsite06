@@ -96,5 +96,175 @@
         "a": "Yes. The booking skill offers times from your connected calendar."
       }
     ]
+  },
+  "problems": {
+    "title": "Where property leads go cold, and what your agent does about it.",
+    "intro": "Buyers compare several projects at once. The team that answers first and books the visit usually wins.",
+    "items": [
+      {
+        "pain": "Leads wait hours for a reply.",
+        "scene": "An ad brings 80 enquiries on Sunday. Your team answers on Monday.",
+        "fix": "Your agent answers configurations, prices and amenities straight away from your brochures and listings.",
+        "agent": "ai-sales-agent",
+        "ask": "Is the 3BHK still available?",
+        "reply": "Yes, a few 3BHK homes are left in Tower C.",
+        "count": "80 enquiries unanswered"
+      },
+      {
+        "pain": "Your team calls people who were never serious.",
+        "scene": "Hours on the phone with buyers outside your budget.",
+        "fix": "Your agent asks budget, size and timeline first, and saves them to your CRM.",
+        "agent": "ai-lead-capture-agent",
+        "ask": "What is the price per square foot?",
+        "reply": "It starts at ₹7,800. What budget are you working with?",
+        "count": "Half the calls unqualified"
+      },
+      {
+        "pain": "Site visits take days to fix.",
+        "scene": "Messages back and forth to agree a weekend slot.",
+        "fix": "Your agent books visits straight into your sales team’s calendar.",
+        "agent": "ai-booking-agent",
+        "ask": "Can I visit this weekend?",
+        "reply": "Saturday at 11 is free. Shall I book it?",
+        "count": "Visits lost to delay"
+      },
+      {
+        "pain": "Hot buyers get the same treatment as everyone.",
+        "scene": "A ready buyer waits in the same queue as a casual browser.",
+        "fix": "Serious buyers go straight to your team with the full conversation.",
+        "agent": "ai-sales-agent",
+        "ask": "I want to book a unit today.",
+        "reply": "Great. I am connecting you with our sales team now.",
+        "count": "Ready buyer, no callback"
+      }
+    ]
+  },
+  "agents": {
+    "title": "Three agents. Every project. Every buyer answered.",
+    "intro": "They share your brochures, listings and sales calendar.",
+    "items": [
+      {
+        "slug": "ai-sales-agent",
+        "does": [
+          "Answers project and pricing questions",
+          "Shares brochures and floor plans",
+          "Hands hot buyers to your team"
+        ]
+      },
+      {
+        "slug": "ai-lead-capture-agent",
+        "does": [
+          "Asks budget, size and timeline",
+          "Saves them as CRM fields",
+          "Tags the ad they came from"
+        ]
+      },
+      {
+        "slug": "ai-booking-agent",
+        "does": [
+          "Books site visits",
+          "Offers weekend slots",
+          "Adds visits to your calendar"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "One buyer, from first question to site visit.",
+    "intro": "Here is what a sales team looks like with an agent answering at every step.",
+    "stages": [
+      {
+        "title": "Answer the property question",
+        "body": "Configurations, amenities and location come from your brochures.",
+        "customer": "Is it ready to move in?",
+        "agent": "Tower A is ready. Tower B hands over in March.",
+        "result": "Answered from your listing",
+        "card": {
+          "title": "Skyline Park",
+          "chip": "Listing",
+          "rows": [
+            [
+              "home",
+              "3BHK · 1,650 sq ft",
+              "From ₹1.2 crore"
+            ],
+            [
+              "book",
+              "Brochure and floor plans",
+              "Shared in the chat"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Ask about requirements",
+        "body": "Budget, size and timeline are saved as fields in your CRM.",
+        "customer": "Around 1.2 crore, moving this year.",
+        "agent": "Thank you. I have noted that for our team.",
+        "result": "Buyer qualified",
+        "card": {
+          "title": "Buyer details",
+          "chip": "Saved",
+          "rows": [
+            [
+              "rupee",
+              "Budget: ₹1.2 crore",
+              "Custom field"
+            ],
+            [
+              "clock",
+              "Timeline: this year",
+              "Custom field"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Book the site visit",
+        "body": "Visit slots come from your sales team’s calendar.",
+        "customer": "Saturday morning works.",
+        "agent": "Saturday at 11 is booked for your visit.",
+        "result": "Site visit booked",
+        "card": {
+          "title": "Site visit",
+          "chip": "Booked",
+          "rows": [
+            [
+              "calendar",
+              "Saturday, 11:00 AM",
+              "Sample flat, Tower C"
+            ],
+            [
+              "check",
+              "Confirmation sent",
+              "On WhatsApp"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Hand over the hot lead",
+        "body": "Serious buyers reach your team with everything already collected.",
+        "customer": "I want to book a unit today.",
+        "agent": "Connecting you with our sales team now.",
+        "result": "Passed to sales",
+        "card": {
+          "title": "Hot lead",
+          "chip": "Assigned",
+          "rows": [
+            [
+              "team",
+              "Sales team",
+              "Full conversation attached"
+            ],
+            [
+              "user",
+              "Arjun · ₹1.2 crore",
+              "Ready to book"
+            ]
+          ]
+        }
+      }
+    ]
   }
 }

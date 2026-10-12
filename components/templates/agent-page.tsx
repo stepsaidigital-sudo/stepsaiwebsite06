@@ -36,19 +36,19 @@ function InboxHandoff({ customer, ask, agentLine, team }: { customer: string; as
   </div>;
 }
 
-export function handoffStory(theme: { customer: string; ask: string; agentLine: string; team: string }, reverse = false) {
+export function handoffStory(theme: { customer: string; ask: string; agentLine: string; team: string }, reverse = false, photo?: string) {
   return <PhotoStory key="handoff" id="handoff" reverse={reverse} tint="warm" eyebrow="Human handoff" title="Your team steps in, with the whole conversation."
     body="When a customer asks for a person, or the agent reaches something it should not handle, the chat moves to your shared inbox with the full history. Nobody has to repeat themselves."
     points={['Set a wait time and a fallback message', 'Email the right person when someone is needed', 'On Instagram, replying from the app pauses the AI']}
-    photo="/photos/handoff.jpg" alt="Support team member with a headset at her desk"
+    photo={photo} alt="A team member stepping in to help a customer"
     overlay={<InboxHandoff {...theme} />} />;
 }
 
-function catalogStory() {
+function catalogStory(photo: string) {
   return <PhotoStory key="catalog" id="catalogue" eyebrow="Product catalogue" title="Your catalogue, right inside the chat."
     body="Connect Shopify or WooCommerce and your agent recommends real products, checks stock and sends a checkout link, without the customer leaving the conversation."
     points={['Products and prices from your own store', 'Stock checked before anything is suggested', 'Cart and checkout link in WhatsApp and Instagram']}
-    photo="/photos/sales.jpg" alt="Customer browsing products on her phone"
+    photo={photo} alt="Products from a store catalogue"
     overlay={<LivePhone kind="WhatsApp" business="Lumen Home" className="pp-story-phone" period={9000} lines={[
       { from: 'customer', text: 'Something decorative under 3,000?', at: 400 },
       { from: 'agent', text: 'Two picks from the collection:', at: 2000, card: <div className="pp-products">
@@ -63,7 +63,7 @@ function catalogStory() {
 const leadStory = <PhotoStory key="lead" id="leads" reverse eyebrow="Lead generation" title="Every interested visitor becomes a lead you can follow up."
   body="Your agent answers first, then asks only for the details you switched on. Each lead is saved with where it came from, so your team follows up with context."
   points={['Name, email, company and your own custom fields', 'Verify by email or phone code', 'Saved to your CRM or HubSpot, tagged by source']}
-  photo="/photos/lead-capture.jpg" alt="Business buyer working on a laptop"
+  photo="/photos/st-leads.jpg" alt="Business meeting about a new enquiry"
   overlay={<Card title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
     <Row icon={<UserPlus size={15} />} title="Meera Shah" sub="meera@lumenhome.in · Verified" />
     <Row icon={<Tag size={15} />} title="Lumen Home" sub="Tag: quote request · Source: website" />
@@ -137,7 +137,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> },
     capIcons: [[<Sparkles key="a" size={20} />, 'violet'], [<PackageCheck key="b" size={20} />, 'teal'], [<ShoppingCart key="c" size={20} />, 'rose'], [<UserPlus key="d" size={20} />, 'amber'], [<Tag key="e" size={20} />, 'violet'], [<Headphones key="f" size={20} />, 'blue']],
-    stories: [catalogStory(), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true)],
+    stories: [catalogStory('/photos/st-catalog-sales.jpg'), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true, '/photos/ho-sales.jpg')],
     ctaArt: [ctaStack(result(<Sparkles size={15} />, 'Two picks', 'From your catalogue'), result(<PackageCheck size={15} />, 'In stock', 'Checked in your store')), ctaStack(result(<ShoppingCart size={15} />, 'Added to cart', 'Ceramic vase'), result(<Link2 size={15} />, 'Checkout link', 'Sent in the chat'))],
   },
 
@@ -170,7 +170,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> },
     capIcons: [[<Truck key="a" size={20} />, 'teal'], [<BookOpen key="b" size={20} />, 'blue'], [<Ticket key="c" size={20} />, 'amber'], [<Headphones key="d" size={20} />, 'violet'], [<PhoneIncoming key="e" size={20} />, 'green']],
-    stories: [handoffStory({ customer: 'Priya Shah', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' })],
+    stories: [handoffStory({ customer: 'Priya Shah', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, '/photos/ho-support.jpg')],
     ctaArt: [ctaStack(result(<Truck size={15} />, 'Order checked', 'Out for delivery'), result(<BookOpen size={15} />, 'Policy answered', 'From your returns page')), ctaStack(result(<Ticket size={15} />, 'Ticket created', 'Photo attached'), result(<UserCheck size={15} />, 'Team joined', 'Full history'))],
   },
 
@@ -200,7 +200,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect HubSpot', icon: <img src="/brands/integrations/hubspot.svg" alt="" /> },
     capIcons: [[<FileText key="a" size={20} />, 'amber'], [<ShieldCheck key="b" size={20} />, 'green'], [<UserPlus key="c" size={20} />, 'blue'], [<Tag key="d" size={20} />, 'violet']],
-    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' })],
+    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' }, false, '/photos/ho-lead.jpg')],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', 'Before any form'), result(<Mail size={15} />, 'Email verified', 'By code')), ctaStack(result(<UserPlus size={15} />, 'Lead saved', 'With its source'), result(<Users size={15} />, 'Team follows up', 'With context'))],
   },
 
@@ -227,7 +227,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your calendar', icon: <img src="/brands/integrations/google-calendar.svg" alt="" /> },
     capIcons: [[<CalendarCheck key="a" size={20} />, 'green'], [<UserCheck key="b" size={20} />, 'blue'], [<CalendarDays key="c" size={20} />, 'teal'], [<MessageSquare key="d" size={20} />, 'violet']],
-    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' })],
+    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, '/photos/ho-booking.jpg')],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', '45 min consultation'), result(<CalendarDays size={15} />, 'Times offered', 'From your calendar')), ctaStack(result(<CalendarCheck size={15} />, 'Booked', 'Thursday, 3:30'), result(<Check size={15} />, 'Details saved', 'Name and phone'))],
   },
 
@@ -255,7 +255,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect a phone number', icon: <PhoneCall size={18} /> },
     capIcons: [[<PhoneIncoming key="a" size={20} />, 'blue'], [<Languages key="b" size={20} />, 'violet'], [<Voicemail key="c" size={20} />, 'amber'], [<PhoneCall key="d" size={20} />, 'green'], [<Inbox key="e" size={20} />, 'teal']],
-    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr. Nair’s desk' })],
+    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr. Nair’s desk' }, false, '/photos/ho-receptionist.jpg')],
     ctaArt: [ctaStack(result(<PhoneIncoming size={15} />, 'Call answered', 'In three languages'), result(<CalendarCheck size={15} />, 'Visit booked', 'Saturday, 11:00')), ctaStack(result(<Headphones size={15} />, 'Transferred', 'To your team'), result(<Voicemail size={15} />, 'Callback ticket', 'After hours'))],
   },
 
@@ -287,7 +287,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect WhatsApp', icon: <ChannelLogo channel="WhatsApp" /> },
     capIcons: [[<Megaphone key="a" size={20} />, 'rose'], [<MessageCircle key="b" size={20} />, 'violet'], [<Workflow key="c" size={20} />, 'teal'], [<BarChart3 key="d" size={20} />, 'amber']],
-    stories: [catalogStory(), handoffStory({ customer: 'Anu K.', ask: 'Can I get a custom colour for a bulk order?', agentLine: 'Let me check with the team for you.', team: 'Hi Anu, we can do that. How many pieces?' }, true)],
+    stories: [catalogStory('/photos/st-catalog-marketing.jpg'), handoffStory({ customer: 'Anu K.', ask: 'Can I get a custom colour for a bulk order?', agentLine: 'Let me check with the team for you.', team: 'Hi Anu, we can do that. How many pieces?' }, true, '/photos/ho-marketing.jpg')],
     ctaArt: [ctaStack(result(<Send size={15} />, 'Campaign sent', 'Approved template'), result(<MessageCircle size={15} />, 'Comment to DM', 'Keyword PRICE')), ctaStack(result(<Bot size={15} />, 'Replies answered', 'By your agent'), result(<BarChart3 size={15} />, 'Revenue tracked', 'Shopify orders'))],
   },
 };
