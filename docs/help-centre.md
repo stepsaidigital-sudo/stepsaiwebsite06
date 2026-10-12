@@ -34,15 +34,15 @@ Everything in `/help/` is built from one file: `content/help/articles.json`. No 
 }
 ```
 
-- Lessons appear in the order they are listed. Lessons in the `getting-started` topic also form the "Start here" path.
-- `path` shows a "where to click" chip. Separate levels with ` › `.
+- Lessons appear in the order they are listed. Each topic card opens its first lesson. Topics are grouped on the hub by `group`: featured, beginner or advanced.
+- `path` is added to the step as "Go to …". Separate levels with ` › `.
 - Only `slug`, `topic`, `title`, `summary`, `level` and `steps` are required.
 
 ## Images and videos
 
 - Put files in `public/help/` and reference them as `/help/file-name.png`.
 - `media.type`: `image` (PNG, JPG, WebP or GIF), `video` (an .mp4 file) or `youtube` (any YouTube link).
-- A step without media shows an illustrated figure for its first two steps. When you add real media, it replaces the figure.
+- Every step and every lesson video shows an empty dashed frame until media is added. Add `media` (or `video`) and the frame is replaced. Topic cards show an empty image area until you add `cover`.
 - Keep images under about 300 KB and at least 1200 px wide.
 
 ## FAQs page
