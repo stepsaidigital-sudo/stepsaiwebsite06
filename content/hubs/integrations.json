@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Integrations",
     "title": "Connect the tools you already use.",
-    "body": "Connect your store, calendar, CRM and knowledge sources to help your agent do the job. Each connection lets the agent check real information and take a real next step.",
-    "reassurance": "No code. Connect once for every agent. Start without any."
+    "body": "Your agent checks real orders, bookings and records before it replies.",
+    "reassurance": "No code. Connect once for every agent."
   },
   "categories": [
     "Ecommerce",

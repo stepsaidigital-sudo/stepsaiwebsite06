@@ -1,0 +1,118 @@
+/* Integrations hub: centred hero with a live connection diagram, a compact
+   app grid and visual use-case cards. App pages stay in integration-pages.css. */
+
+/* Hero. A quiet paper surface with a faint dot grid and one soft glow. */
+.igh-hero{position:relative;overflow:hidden;margin-top:-78px;padding:128px 0 40px;background:var(--paper);border-bottom:1px solid var(--line)}
+.igh-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#0c34741f 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 45%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 75% at 50% 45%,#000 30%,transparent 80%);pointer-events:none}
+.igh-hero::after{content:"";position:absolute;left:50%;top:58%;width:900px;height:520px;translate:-50% -50%;background:radial-gradient(closest-side,#c4ecfcb3,#c4ecfc00);pointer-events:none}
+.igh-hero>.container{position:relative;z-index:1}
+.igh-hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+.igh-kicker{display:inline-flex;align-items:center;gap:8px;padding:5px 6px 5px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.8125rem;font-weight:600}
+.igh-kicker b{padding:2px 9px;border-radius:999px;background:var(--navy);color:var(--paper);font-weight:600;font-size:.75rem}
+.igh-hero h1{margin-top:18px;max-width:none;font-family:'Newsreader',Georgia,serif;font-weight:500;font-optical-sizing:auto;font-size:clamp(40px,4.6vw,66px);letter-spacing:-.035em;line-height:1.04}
+.igh-hero-copy p{margin-top:16px;max-width:52ch;font-size:1.125rem;line-height:1.55}
+.igh-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+.igh-ghost{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:13px 22px;border:1px solid var(--line);border-radius:9px;background:#fff;font-size:.9375rem;font-weight:600;transition:border-color 160ms,transform 160ms var(--ease)}
+.igh-ghost:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* Diagram. Nodes are positioned in % of the same box the SVG fills. */
+.igh-stage{position:relative;max-width:1040px;margin:36px auto 0;aspect-ratio:1000/380}
+.igh-wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.igh-wires path{fill:none;stroke:#0c347424;stroke-width:1.5;stroke-dasharray:4 6;vector-effect:non-scaling-stroke;transition:stroke 300ms}
+.igh-wires path.is-on{stroke:var(--blue);stroke-width:2;stroke-dasharray:none}
+.igh-pulse{fill:var(--yellow);stroke:#fff;stroke-width:2;filter:drop-shadow(0 0 6px #f8b403aa)}
+.igh-channel,.igh-app,.igh-core{position:absolute;translate:-50% -50%}
+.igh-channel{display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 9px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.875rem;font-weight:600;white-space:nowrap;box-shadow:0 8px 20px #0c34740d;transition:border-color 300ms,box-shadow 300ms}
+.igh-channel img{border-radius:6px}
+.igh-channel.is-on,.igh-app.is-on{border-color:var(--blue);box-shadow:0 0 0 4px #2c9cfa1f,0 10px 24px #0c347414}
+.igh-core{display:grid;place-items:center;width:96px;height:96px;border-radius:28px;background:#fff;box-shadow:0 0 0 10px #ffffff80,0 20px 44px #0c347429}
+.igh-core::after{content:"";position:absolute;inset:-10px;border-radius:34px;border:1px solid #2c9cfa59;animation:igh-ring 3.6s var(--ease) infinite}
+@keyframes igh-ring{from{opacity:1;scale:1}to{opacity:0;scale:1.35}}
+.igh-app{display:inline-flex;align-items:center;gap:10px;min-width:184px;padding:8px 14px 8px 8px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.875rem;font-weight:600;white-space:nowrap;box-shadow:0 8px 20px #0c34740d;transition:border-color 300ms,box-shadow 300ms,translate 300ms var(--ease)}
+.igh-app .ig-logo{border-radius:7px}
+.igh-app.is-on{translate:-54% -50%}
+
+/* The reply the active app made possible. */
+.igh-card{position:absolute;left:50%;top:44%;width:min(380px,38%);translate:-50% 0;padding:14px 16px 16px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 24px 50px #0c34741f;display:flex;flex-direction:column;gap:8px}
+.igh-card-head{display:flex;align-items:center;gap:8px;font-size:.8125rem;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.igh-card-head span{display:grid;place-items:center;width:22px;height:22px;color:var(--navy)}
+.igh-card-head img{border-radius:6px}
+.igh-card-head strong{flex:1;font-weight:600}
+.igh-card-head small{font-size:.75rem;color:var(--muted)}
+.igh-msg{max-width:88%;padding:8px 12px;border-radius:14px;font-size:.875rem;line-height:1.45;color:var(--navy);animation:igh-in 420ms var(--ease) both}
+.igh-in{align-self:flex-start;background:#f1f3f6;border-bottom-left-radius:4px}
+.igh-out{align-self:flex-end;background:var(--navy);color:var(--paper);border-bottom-right-radius:4px;animation-delay:1s}
+.igh-used{align-self:flex-end;display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;color:#1a7f4b;animation:igh-in 420ms var(--ease) 1.3s both}
+.igh-used .ig-logo{border-radius:4px}
+@keyframes igh-in{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
+
+/* Directory as a calm grid of tiles. The short description is the tooltip. */
+.igh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:10px}
+.igh-tile{position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:14px;align-items:center;padding:12px 36px 12px 12px;border:1px solid var(--line);border-radius:14px;background:#fff;transition:transform 200ms var(--ease),box-shadow 200ms,border-color 200ms}
+.igh-tile:hover{transform:translateY(-3px);border-color:#0c347440;box-shadow:0 14px 30px #0c347414}
+.igh-tile-logo{grid-row:span 2;display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#f5f4f0}
+.igh-tile strong{align-self:end;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.02em}
+.igh-tile small{align-self:start;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:.75rem;color:var(--muted)}
+.igh-tile-arrow{position:absolute;top:50%;margin-top:-8px;right:14px;color:var(--muted);opacity:0;transition:opacity 200ms,transform 200ms var(--ease)}
+.igh-tile:hover .igh-tile-arrow{opacity:1;transform:translate(2px,-2px)}
+
+/* How it connects: three steps, one line each. */
+.igh-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.igh-steps li{position:relative;display:flex;align-items:center;gap:16px;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.igh-steps li:not(:last-child)::after{content:"";position:absolute;right:-14px;top:50%;width:14px;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0 4px,transparent 4px 7px)}
+.igh-step-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--navy);color:var(--paper);flex-shrink:0}
+.igh-steps li:last-child .igh-step-icon{background:var(--yellow);color:var(--navy)}
+.igh-steps strong{display:block;font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:-.02em}
+.igh-steps small{font-size:.875rem;color:var(--muted)}
+
+/* Use cases: the apps and the job, nothing more. */
+.igh-jobs-band{background:#f5f4f0;border-block:1px solid var(--line);padding:96px 0!important;margin-top:72px}
+.igh-jobs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.igh-job{display:flex;flex-direction:column;gap:18px;min-height:170px;padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.igh-job h3{margin-top:auto;font-size:1.1875rem;line-height:1.25}
+.igh-job.is-wide{grid-column:span 2;background:var(--navy);border-color:var(--navy)}
+.igh-job.is-wide h3{color:var(--paper);font-size:1.5rem}
+.igh-stack{display:flex}
+.igh-stack>span{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 10px #0c34740f}
+.igh-stack>span+span{margin-left:-8px}
+.igh-stack .ig-logo{border-radius:5px}
+.igh-more{font-size:.75rem;font-weight:700;color:var(--navy)}
+.igh-track{display:flex;gap:6px;flex-wrap:wrap}
+.igh-track span{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 6px 6px;border-radius:999px;background:#ffffff14;color:#fcfcfcd9;font-size:.8125rem;font-weight:600}
+.igh-track i{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#ffffff26}
+.igh-track .is-done i{background:#1a7f4b;color:#fff}
+.igh-track .is-now{background:var(--yellow);color:var(--navy)}
+.igh-track .is-now i{background:var(--navy);animation:igh-blink 1.4s ease-in-out infinite}
+@keyframes igh-blink{50%{opacity:.35}}
+
+.igh-custom{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.igh-custom h2{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.03em}
+.igh-custom .button{gap:8px;flex-shrink:0}
+
+@media (max-width:1100px){
+  .igh-jobs{grid-template-columns:repeat(2,1fr)}
+  .igh-app{min-width:0}
+  .igh-app span{display:none}
+  .igh-app{padding:8px}
+}
+/* Phones: drop the wires and stack the diagram. */
+@media (max-width:760px){
+  .igh-hero{margin-top:-68px;padding:112px 0 32px}
+  .igh-hero-copy p{font-size:1rem}
+  .igh-stage{aspect-ratio:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+  .igh-wires,.igh-channel{display:none}
+  .igh-core{position:relative;translate:none;order:-1;flex-basis:100%;width:auto;height:auto;background:none;box-shadow:none;margin-bottom:6px}
+  .igh-core::after{display:none}
+  .igh-core img{width:64px;height:64px;padding:8px;border-radius:20px;background:#fff;box-shadow:0 14px 30px #0c347426}
+  .igh-app,.igh-card,.igh-core{position:relative;left:auto!important;top:auto!important;translate:none}
+  .igh-app.is-on{translate:0 -3px}
+  .igh-card{width:100%;margin-top:8px}
+  .igh-jobs,.igh-steps{grid-template-columns:1fr}
+  .igh-steps li::after{display:none}
+  .igh-job.is-wide{grid-column:auto}
+  .igh-custom{flex-direction:column;align-items:flex-start;padding:24px}
+  .igh-jobs-band{padding:64px 0!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .igh-core::after,.igh-msg,.igh-used,.igh-track .is-now i{animation:none}
+}

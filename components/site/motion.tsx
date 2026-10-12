@@ -34,9 +34,9 @@ export function reveal(el: HTMLElement) {
 }
 
 // Blocks that templates render without a <Reveal> wrapper.
-const AUTO = '.sp-intro, .ig-card, .sp-card, .sp-feature, .faq-list > details, .sp-faq > div:first-child, .vs-row, .sp-logos li, .ig-filters, .cs-tabs, .ig-crumbs, .ig-group > h3, .m-rail-wrap';
+const AUTO = '.sp-intro, .ig-card, .igh-tile, .sp-card, .sp-feature, .faq-list > details, .sp-faq > div:first-child, .vs-row, .sp-logos li, .ig-filters, .cs-tabs, .ig-crumbs, .ig-group > h3, .m-rail-wrap';
 // Cards that get the cursor-following light.
-const SPOT = '.ig-card, .ig-use, .sp-card, .cs-story, .ig-job, .vs-fit-col, .sp-feature, .sp-plan';
+const SPOT = '.ig-card, .igh-tile, .igh-job, .ig-use, .sp-card, .cs-story, .ig-job, .vs-fit-col, .sp-feature, .sp-plan';
 
 export function useSiteMotion({ auto = AUTO, spots = SPOT }: { auto?: string; spots?: string } = {}) {
   useEffect(() => {

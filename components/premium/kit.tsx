@@ -10,6 +10,7 @@ import { Reveal } from '@/components/sections';
 import { SplitWords } from '@/components/site/motion';
 import type { Faq, Item } from '@/content/types';
 import { CapabilityStage } from './capability-stage';
+import { AiImage } from './ai-image';
 
 // Premium subpage kit: the WhatsApp broadcast page's look (.wb classes), recoloured per page
 // through a theme (.pp-theme-*), plus platform-accurate phone screens. Every mockup is an
@@ -304,12 +305,12 @@ export function Capabilities({ title, intro, items, icons }: { title: string; in
   return <CapabilityStage title={title} intro={intro} items={items} icons={icons} />;
 }
 
-export function PhotoStory({ id, eyebrow, title, body, points, photo, alt, overlay, reverse = false, tint = 'soft' }: {
-  id?: string; eyebrow: string; title: string; body: string; points: string[]; photo?: string; alt: string; overlay: ReactNode; reverse?: boolean; tint?: 'soft' | 'warm';
+export function PhotoStory({ id, eyebrow, title, body, points, photo, prompt, alt, overlay, reverse = false, tint = 'soft' }: {
+  id?: string; eyebrow: string; title: string; body: string; points: string[]; photo?: string; prompt?: string; alt: string; overlay: ReactNode; reverse?: boolean; tint?: 'soft' | 'warm';
 }) {
   return <section id={id} className={`pp-story-wrap pp-story-${tint}`}><div className={`container pp-story ${reverse ? 'is-reverse' : ''}`}>
     <Reveal className={`pp-story-media ${photo ? '' : 'is-plain'}`}>
-      {photo && <img src={photo} alt={alt} loading="lazy" decoding="async" />}
+      {photo && (prompt ? <AiImage src={photo} alt={alt} prompt={prompt} /> : <img src={photo} alt={alt} loading="lazy" decoding="async" />)}
       <div className="pp-story-overlay">{overlay}</div>
     </Reveal>
     <div className="pp-story-copy">

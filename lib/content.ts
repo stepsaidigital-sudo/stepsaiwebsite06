@@ -13,7 +13,6 @@ import skillsFeatureJson from '@/content/features/skills.json';
 import unifiedInboxFeatureJson from '@/content/features/unified-inbox.json';
 import whatsappBroadcastFeatureJson from '@/content/features/whatsapp-broadcast.json';
 import workflowBuilderFeatureJson from '@/content/features/workflow-builder.json';
-import chatPageChannelJson from '@/content/channels/chat-page.json';
 import instagramChatbotChannelJson from '@/content/channels/instagram-chatbot.json';
 import messengerChatbotChannelJson from '@/content/channels/messenger-chatbot.json';
 import websiteChatbotChannelJson from '@/content/channels/website-chatbot.json';
@@ -86,7 +85,8 @@ import zendeskIntegration from '@/content/integrations/zendesk.json';
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
 const features = { 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcast': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
-const channels = { 'chat-page': chatPageChannelJson, 'instagram-chatbot': instagramChatbotChannelJson, 'messenger-chatbot': messengerChatbotChannelJson, 'website-chatbot': websiteChatbotChannelJson, 'whatsapp-chatbot': whatsappChatbotChannelJson } satisfies Record<string, Json<ChannelPage>>;
+// Chat page is switched off for now; its content stays in content/channels/chat-page.json.
+const channels = { 'instagram-chatbot': instagramChatbotChannelJson, 'messenger-chatbot': messengerChatbotChannelJson, 'website-chatbot': websiteChatbotChannelJson, 'whatsapp-chatbot': whatsappChatbotChannelJson } satisfies Record<string, Json<ChannelPage>>;
 const useCases = { 'ai-booking-agent': aiBookingAgentUseCaseJson, 'ai-lead-capture-agent': aiLeadCaptureAgentUseCaseJson, 'ai-marketing-agent': aiMarketingAgentUseCaseJson, 'ai-receptionist': aiReceptionistUseCaseJson, 'ai-sales-agent': aiSalesAgentUseCaseJson, 'ai-support-agent': aiSupportAgentUseCaseJson } satisfies Record<string, Json<UseCasePage>>;
 const industries = { 'ecommerce': ecommerceIndustryJson, 'education': educationIndustryJson, 'financial-services': financialServicesIndustryJson, 'healthcare': healthcareIndustryJson, 'real-estate': realEstateIndustryJson, 'saas': saasIndustryJson, 'travel-and-hospitality': travelAndHospitalityIndustryJson } satisfies Record<string, Json<IndustryPage>>;
 const integrations = { 'airtable': airtableIntegration, 'cal-com': calComIntegration, 'calendly': calendlyIntegration, 'delhivery': delhiveryIntegration, 'dtdc': dtdcIntegration, 'google-calendar': googleCalendarIntegration, 'google-drive': googleDriveIntegration, 'google-sheets': googleSheetsIntegration, 'hubspot': hubspotIntegration, 'ithink-logistics': ithinkLogisticsIntegration, 'klaviyo': klaviyoIntegration, 'notion': notionIntegration, 'outlook-calendar': outlookCalendarIntegration, 'outlook': outlookIntegration, 'shiprocket': shiprocketIntegration, 'shopify': shopifyIntegration, 'slack': slackIntegration, 'square-appointments': squareAppointmentsIntegration, 'wareiq': wareiqIntegration, 'woocommerce': woocommerceIntegration, 'zendesk': zendeskIntegration } satisfies Record<string, Json<IntegrationPage>>;

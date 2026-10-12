@@ -62,7 +62,6 @@ export const builtRoutes: Record<string, string> = {
   'Website chatbot': '/channels/website-chatbot/',
   'Instagram chatbot': '/channels/instagram-chatbot/',
   'Messenger chatbot': '/channels/messenger-chatbot/',
-  'Chat page': '/channels/chat-page/',
   'AI support agent': '/use-cases/ai-support-agent/',
   'AI lead capture agent': '/use-cases/ai-lead-capture-agent/',
   'AI booking agent': '/use-cases/ai-booking-agent/',

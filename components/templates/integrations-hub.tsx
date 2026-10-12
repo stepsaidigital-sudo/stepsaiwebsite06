@@ -1,79 +1,71 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { SiteFrame } from '@/components/site/shell';
-import { CtaBand, Faq, PageHero, Reveal, SectionIntro } from '@/components/sections';
+import { useState } from 'react';
+import { ArrowRight, ArrowUpRight, LayoutGrid, LogIn, Zap } from 'lucide-react';
+import { SiteFrame, Action } from '@/components/site/shell';
+import { CtaBand, Faq, Reveal, SectionIntro } from '@/components/sections';
 import type { IntegrationsHub } from '@/content/types';
-import { AppCard, AppLogo } from './integration';
-import { ConnectFlow, type ConnectApp } from '@/components/premium/connect-flow';
+import { AppLogo } from './integration';
+import { HubDiagram, LogoStack, TrackingStrip, type HubApp } from './integrations-hub-visuals';
 
-// Apps shown connecting in the walkthrough, with the question each one lets the agent answer.
+// Apps shown in the hero, with the question each one lets the agent answer.
 import shopify from '@/content/integrations/shopify.json';
 import googleCalendar from '@/content/integrations/google-calendar.json';
 import hubspot from '@/content/integrations/hubspot.json';
 import shiprocket from '@/content/integrations/shiprocket.json';
 import notion from '@/content/integrations/notion.json';
-type Demo = { slug: string; name: string; category: string; demo: { lines: { from: string; text: string }[] } };
-const flowApps: ConnectApp[] = ([shopify, googleCalendar, hubspot, shiprocket, notion] as Demo[]).map(j => ({
-  slug: j.slug, name: j.name, category: j.category,
+type Demo = { slug: string; name: string; category: string; demo: { channel: string; lines: { from: string; text: string }[] } };
+const demoApps: HubApp[] = ([shopify, googleCalendar, hubspot, shiprocket, notion] as Demo[]).map(j => ({
+  slug: j.slug, name: j.name, channel: j.demo.channel,
   question: j.demo.lines.find(l => l.from === 'customer')?.text, answer: j.demo.lines.find(l => l.from === 'agent')?.text,
 }));
 
-// Connected apps orbit the Steps AI mark. The ring turns slowly on its own,
-// and can be dragged to spin it, carrying on with a little momentum.
-function LogoCloud({ slugs }: { slugs: string[] }) {
-  const ring = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ring.current!;
-    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let angle = 0, velocity = 0, dragging = false, lastX = 0, frame = 0;
-    const tick = () => {
-      // After a flick, the speed eases back to a slow cruise.
-      if (!dragging) { angle += velocity; velocity = velocity * 0.95 + (still ? 0 : 0.06) * 0.05; }
-      el.style.setProperty('--rot', `${angle}deg`);
-      frame = requestAnimationFrame(tick);
-    };
-    const down = (e: PointerEvent) => { dragging = true; lastX = e.clientX; velocity = 0; el.classList.add('is-dragging'); el.setPointerCapture(e.pointerId); };
-    const move = (e: PointerEvent) => { if (!dragging) return; const dx = e.clientX - lastX; lastX = e.clientX; angle += dx * 0.45; velocity = dx * 0.45; };
-    const up = () => { dragging = false; el.classList.remove('is-dragging'); };
-    el.addEventListener('pointerdown', down); el.addEventListener('pointermove', move);
-    el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
-    frame = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(frame); el.removeEventListener('pointerdown', down); el.removeEventListener('pointermove', move); el.removeEventListener('pointerup', up); el.removeEventListener('pointercancel', up); };
-  }, []);
-  return <div ref={ring} className="ig-cloud" aria-hidden="true">
-    <div className="ig-cloud-core"><img src="/brands/steps-original.png" alt="" width={56} height={56} draggable={false} /></div>
-    {slugs.map((slug, i) => <span key={slug} className="ig-cloud-item" style={{ ['--a' as string]: `${(360 / slugs.length) * i}deg`, ['--r' as string]: i % 2 ? '168px' : '112px', animationDelay: `${i * 90}ms` }}><AppLogo slug={slug} size={30} /></span>)}
-    <span className="ig-cloud-hint">Drag to spin</span>
-  </div>;
-}
+const CONNECT = [
+  { icon: <LayoutGrid size={20} />, title: 'Open Apps', note: 'Resources, then Apps' },
+  { icon: <LogIn size={20} />, title: 'Sign in once', note: 'For your whole workspace' },
+  { icon: <Zap size={20} />, title: 'Switch it on', note: 'For each agent that needs it' },
+];
 
 export function IntegrationsHubTemplate({ page }: { page: IntegrationsHub }) {
   const [filter, setFilter] = useState('All');
-  const names = Object.fromEntries(page.apps.map(app => [app.slug, app.name]));
-  const groups = (filter === 'All' ? page.categories : [filter]).map(category => ({ category, apps: page.apps.filter(app => app.category === category) }));
+  const apps = filter === 'All' ? page.apps : page.apps.filter(app => app.category === filter);
   return <SiteFrame>{onOpen => <>
-    <PageHero hero={page.hero} onOpen={onOpen} visual={<LogoCloud slugs={['shopify', 'google-calendar', 'hubspot', 'shiprocket', 'zendesk', 'calendly', 'woocommerce', 'google-sheets', 'notion', 'slack', 'delhivery', 'klaviyo']} />} />
+    <section className="igh-hero">
+      <div className="container igh-hero-copy">
+        <span className="igh-kicker"><span className="tiny-mark" />{page.hero.kicker}<b>{page.apps.length} apps</b></span>
+        <h1>{page.hero.title}</h1>
+        <p>{page.hero.body}</p>
+        <div className="igh-actions"><Action onOpen={onOpen} /><a className="igh-ghost" href="#directory">Browse apps <ArrowRight size={16} /></a></div>
+      </div>
+      <div className="container"><HubDiagram apps={demoApps} /></div>
+    </section>
 
     <section className="sp-section container" id="directory">
-      <SectionIntro eyebrow={`${page.apps.length} integrations`} title="Every app you can connect." intro="Choose an app to see what it lets your agent do, how a conversation goes and how to set it up." />
+      <SectionIntro eyebrow={`${page.apps.length} integrations`} title="Every app you can connect." />
       <div className="ig-filters" role="group" aria-label="Filter integrations by category">
         {['All', ...page.categories].map(category => <button key={category} className={filter === category ? 'is-active' : ''} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}<small>{category === 'All' ? page.apps.length : page.apps.filter(app => app.category === category).length}</small></button>)}
       </div>
-      {groups.map(group => <div key={group.category} className="ig-group"><h3>{group.category}</h3><div className="ig-grid">{group.apps.map(app => <AppCard key={app.slug} app={app} />)}</div></div>)}
+      <div className="igh-grid">{apps.map(app => <a key={app.slug} className="igh-tile" href={`/integrations/${app.slug}/`} title={app.body}>
+        <span className="igh-tile-logo"><AppLogo slug={app.slug} size={36} /></span>
+        <strong>{app.name}</strong><small>{app.category}</small>
+        <ArrowUpRight size={16} className="igh-tile-arrow" />
+      </a>)}</div>
     </section>
 
-    <ConnectFlow apps={flowApps} title="Every app connects the same way." intro="Five steps. No code. Pick an app to watch it connect." />
+    <section className="sp-section container">
+      <SectionIntro eyebrow="No code" title="Connected in three steps." />
+      <ol className="igh-steps">{CONNECT.map(s => <Reveal as="li" key={s.title}><span className="igh-step-icon">{s.icon}</span><span><strong>{s.title}</strong><small>{s.note}</small></span></Reveal>)}</ol>
+    </section>
 
-    <section className="sp-section ig-jobs-band"><div className="container">
-      <SectionIntro eyebrow="Use cases" title={page.jobs.title} intro={page.jobs.intro} />
-      <div className="ig-jobs">{page.jobs.items.map(job => <Reveal key={job.title} className="ig-job">
-        <h3>{job.title}</h3><p>{job.body}</p>
-        <div className="ig-job-apps">{job.apps.map(slug => <a key={slug} href={`/integrations/${slug}/`}><AppLogo slug={slug} size={20} />{names[slug]}</a>)}</div>
+    <section className="sp-section igh-jobs-band"><div className="container">
+      <SectionIntro eyebrow="Use cases" title={page.jobs.title} />
+      <div className="igh-jobs">{page.jobs.items.map((job, i) => <Reveal key={job.title} className={`igh-job ${i === 0 ? 'is-wide' : ''}`}>
+        <LogoStack slugs={job.apps} />
+        <h3>{job.title}</h3>
+        {i === 0 && <TrackingStrip />}
       </Reveal>)}</div>
     </div></section>
 
-    <section className="sp-section container"><Reveal className="ig-custom"><div><h2>{page.custom.title}</h2><p>{page.custom.body}</p></div><button className="button" onClick={() => onOpen('Request an integration')}>Request an integration <ArrowRight size={17} /></button></Reveal></section>
+    <section className="sp-section container"><Reveal className="igh-custom"><h2>{page.custom.title}</h2><button className="button" onClick={() => onOpen('Request an integration')}>Request an integration <ArrowRight size={17} /></button></Reveal></section>
     <Faq title={page.faq.title} items={page.faq.items} />
     <Reveal><CtaBand cta={page.cta} onOpen={onOpen} /></Reveal>
   </>}</SiteFrame>;

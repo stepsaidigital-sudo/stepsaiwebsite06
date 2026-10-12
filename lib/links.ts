@@ -17,7 +17,6 @@ const N: Record<string, RelatedLink> = {
   instagram: { label: 'Instagram chatbot', href: '/channels/instagram-chatbot/', body: 'Reply to DMs and turn comments into conversations.', logo: 'instagram' },
   messenger: { label: 'Messenger chatbot', href: '/channels/messenger-chatbot/', body: 'Answer customers who message your Facebook page.', logo: 'messenger' },
   website: { label: 'Website chatbot', href: '/channels/website-chatbot/', body: 'A chat widget that answers every visitor.' },
-  chatpage: { label: 'Chat page', href: '/channels/chat-page/', body: 'A branded agent page you can share. No website needed.', logo: 'steps' },
   // Agents
   sales: { label: 'AI sales agent', href: '/use-cases/ai-sales-agent/', body: 'Recommend products and share checkout in the chat.' },
   support: { label: 'AI support agent', href: '/use-cases/ai-support-agent/', body: 'Answer order and policy questions, hand over cleanly.' },
@@ -71,8 +70,7 @@ const G: Record<string, string[]> = {
   whatsapp: ['broadcast', 'shopify', 'workflows', 'sales', 'support', 'instagram'],
   instagram: ['marketing', 'whatsapp', 'messenger', 'sales', 'inbox'],
   messenger: ['instagram', 'whatsapp', 'inbox', 'support'],
-  website: ['chatpage', 'shopify', 'woocommerce', 'leads', 'sales', 'analytics'],
-  chatpage: ['website', 'instagram', 'leads', 'whatsapp'],
+  website: ['shopify', 'woocommerce', 'leads', 'sales', 'analytics'],
   sales: ['shopify', 'whatsapp', 'woocommerce', 'ecommerce', 'workflows', 'crm'],
   support: ['inbox', 'shiprocket', 'zendesk', 'shopify', 'skills', 'ecommerce'],
   leads: ['crm', 'hubspot', 'website', 'booking', 'saas'],
