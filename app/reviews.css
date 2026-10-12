@@ -47,18 +47,21 @@
 .rv-card blockquote{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:700px){.rv-card{height:214px}}
 
-/* 2026-10-12: full quotes (no clamp), wider cards, and more life: soft brand glow behind the
-   rows, a gradient quote mark, a coloured accent per card and a lift on hover. */
-#stories.reviews-showcase.rv{position:relative;background:radial-gradient(ellipse 45% 55% at 12% 70%,#cfe3fb 0,transparent 70%),radial-gradient(ellipse 40% 50% at 90% 40%,#ead9f6 0,transparent 70%),radial-gradient(ellipse 30% 40% at 55% 100%,#fbe6d4 0,transparent 70%),var(--surface-mist)}
-.rv-card{position:relative;height:auto;width:400px;padding:26px 24px 22px;border-radius:22px;overflow:hidden;transition:transform 260ms var(--ease,ease),box-shadow 260ms}
-.rv-card:before{content:'\201C';position:absolute;top:-6px;right:18px;font-family:Newsreader,Georgia,serif;font-size:96px;line-height:1;background:linear-gradient(135deg,var(--rv-a),var(--rv-b));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.35;pointer-events:none}
-.rv-card:after{content:'';position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--rv-a),var(--rv-b))}
-.rv-card blockquote{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:.9375rem;line-height:1.6;padding-right:28px}
-.rv-logo{background:linear-gradient(135deg,var(--rv-a),var(--rv-b));color:#fff}
-.rv-set>.rv-card:nth-child(4n+1){--rv-a:#2c9cfa;--rv-b:#0c3474}
-.rv-set>.rv-card:nth-child(4n+2){--rv-a:#a77bf3;--rv-b:#5b3fd1}
-.rv-set>.rv-card:nth-child(4n+3){--rv-a:#25d366;--rv-b:#128c7e}
-.rv-set>.rv-card:nth-child(4n+4){--rv-a:#f8a14a;--rv-b:#d6406f}
-@media(hover:hover) and (pointer:fine){.rv-card:hover{transform:translateY(-6px);box-shadow:0 2px 4px #0c347412,0 26px 44px -26px #0c347480}}
-@media(max-width:700px){.rv-card{height:auto;width:300px;padding:22px 18px 18px}.rv-card:before{font-size:76px}}
+/* 2026-10-12: full quotes in compact, premium cards. Each card is as tall as its own quote,
+   hairline above the name, soft glow behind the rows. */
+#stories.reviews-showcase.rv{position:relative;background:radial-gradient(ellipse 45% 55% at 12% 70%,#dbe9fb 0,transparent 70%),radial-gradient(ellipse 40% 50% at 90% 40%,#efe3f8 0,transparent 70%),var(--surface-mist)}
+.rv-rows{gap:14px}
+.rv-set{align-items:flex-start;gap:14px;padding-right:14px}
+.rv-row-1 .rv-track{margin-left:-170px}
+.rv-card{height:auto;width:400px;gap:12px;padding:16px 20px 14px;border-radius:16px;background:#ffffffeb;border:1px solid rgb(12 52 116 / 7%);box-shadow:0 1px 2px #0c347408,0 12px 28px -22px #0c34744d;transition:transform 260ms var(--ease,ease),box-shadow 260ms,border-color 260ms}
+.rv-card blockquote{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:.875rem;line-height:1.55;color:#22395a}
+.rv-card figcaption{gap:10px;padding-top:10px;border-top:1px solid rgb(12 52 116 / 6%)}
+.rv-logo{width:32px;height:32px;border-radius:9px;font-size:.6875rem;background:#eaf2fd;color:#1d5fb8}
+.rv-card strong{font-size:.8125rem}
+.rv-card small{font-size:.75rem}
+@media(hover:hover) and (pointer:fine){.rv-card:hover{transform:translateY(-4px);border-color:rgb(44 156 250 / 30%);box-shadow:0 2px 4px #0c34740d,0 20px 36px -24px #0c347466}}
+@media(max-width:700px){.rv-card{height:auto;width:280px;padding:16px}}
 @media(prefers-reduced-motion:reduce){.rv-card{transition:none}}
+#stories.rv{padding:64px 0 44px}
+#stories .rv-intro{margin-bottom:30px}
+@media(max-width:700px){#stories.rv{padding:48px 0 36px}}
