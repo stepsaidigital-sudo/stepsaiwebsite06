@@ -303,6 +303,9 @@ export function BroadcastPageTemplate({ page }: { page: FeaturePage }) {
         <div className="wb-mini-phone"><div><i /><i /><i /></div></div>
         <span className="wb-wa-bubble wb-wa-small"><ChannelLogo channel="WhatsApp" /></span>
       </div>
+      <div className="wb-cta-art wb-cta-art-right" aria-hidden="true">
+        <div className="wb-report-mini"><small>After you send</small>{[['Delivered', 92], ['Read', 68], ['Replied', 24]].map(([label, w]) => <div key={label}><span>{label}</span><i style={{ width: `${w}%` }} /></div>)}</div>
+      </div>
       <div className="wb-cta-copy"><h2>{page.cta.title}</h2><p>{page.cta.body}</p></div>
       <button className="wb-btn wb-btn-navy" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
     </Reveal></section>

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { AgentPageTemplate } from '@/components/templates/agent-page';
+import { premiumAgentPages } from '@/components/templates/premium-pages';
 import { UseCaseTemplate } from '@/components/templates/usecase';
 import { getUseCase, listUseCases } from '@/lib/content';
 
@@ -17,5 +19,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function UseCaseRoute({ params }: Props) {
   const page = getUseCase((await params).slug);
   if (!page) notFound();
-  return <UseCaseTemplate page={page} />;
+  return premiumAgentPages.includes(page.slug) ? <AgentPageTemplate page={page} /> : <UseCaseTemplate page={page} />;
 }
