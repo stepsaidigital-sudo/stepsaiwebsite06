@@ -11,7 +11,7 @@ import { SiteFrame } from '@/components/site/shell';
 import { Reveal } from '@/components/sections';
 import {
   Bubble, Capabilities, IndustryExamples, Card, Chip, ChannelRow, CtaBlock, FaqBlock, Float, GoodToKnow, HeroScene, LiveCall, LivePhone, PhotoStory,
-  PremiumHero, QuoteBlock, Row, StepBand, ToolCards, type Line, type Stage, type Theme,
+  PremiumHero, QuoteBlock, Row, StepBand, ToolCards, type Line, type Stage,
 } from '@/components/premium/kit';
 import type { UseCasePage } from '@/content/types';
 import { industryScenarios } from './agent-industries';
@@ -93,7 +93,7 @@ export function OtherAgents({ current, title = 'One agent can do more than one j
 /* ---------- per-page design ---------- */
 
 type Design = {
-  theme: Theme; icon: ReactNode; accent: string[]; photo: string; alt: string;
+  icon: ReactNode; accent: string[]; photo: string; alt: string;
   hero: (page: UseCasePage) => ReactNode;
   cards: ReactNode[]; bandCta: { label: string; icon: ReactNode };
   capIcons: [ReactNode, string][]; stories: ReactNode[]; ctaArt: [ReactNode, ReactNode];
@@ -109,7 +109,7 @@ const ctaStack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items
 
 const designs: Record<string, Design> = {
   'ai-sales-agent': {
-    theme: 'violet', icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/sales.jpg', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
+    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/sales.jpg', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
     hero: page => <HeroScene photo="/photos/sales.jpg" alt="Customer shopping on her phone, with a WhatsApp sales conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 3])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Sparkles size={14} />Picked from your catalogue</div><div className="pp-products"><div className="pp-product"><img src={PRODUCT} alt="" /><div><strong>Ceramic vase</strong><small>₹2,450 · In stock</small></div></div></div></Float>
@@ -142,7 +142,7 @@ const designs: Record<string, Design> = {
   },
 
   'ai-support-agent': {
-    theme: 'teal', icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/support.jpg', alt: 'Small business owner answering customers, with a WhatsApp support conversation',
+    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/support.jpg', alt: 'Small business owner answering customers, with a WhatsApp support conversation',
     hero: page => <HeroScene photo="/photos/support.jpg" alt="Small business owner answering customers, with a WhatsApp support conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Truck size={14} />Order #2087</div><div className="pp-track"><i className="is-done" /><i className="is-done" /><i className="is-now" /><i /></div><small className="pp-track-label">Out for delivery today</small></Float>
@@ -175,7 +175,7 @@ const designs: Record<string, Design> = {
   },
 
   'ai-lead-capture-agent': {
-    theme: 'amber', icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/lead-capture.jpg', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
+    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/lead-capture.jpg', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
     hero: page => <HeroScene photo="/photos/lead-capture.jpg" alt="Business buyer on a laptop, with a website chat collecting lead details">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@lumenhome.in</span><span><b>Company</b>Lumen Home</span></div></Float>
@@ -205,7 +205,7 @@ const designs: Record<string, Design> = {
   },
 
   'ai-booking-agent': {
-    theme: 'green', icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/booking.jpg', alt: 'Clinic reception, with a WhatsApp booking conversation',
+    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/booking.jpg', alt: 'Clinic reception, with a WhatsApp booking conversation',
     hero: page => <HeroScene photo="/photos/booking.jpg" alt="Clinic reception, with a WhatsApp booking conversation">
       <LivePhone kind="WhatsApp" business="City Care Clinic" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><CalendarDays size={14} />Thursday</div><div className="pp-slots"><span>11:00</span><span className="is-picked">3:30 <Check size={11} /></span><span>5:00</span></div></Float>
@@ -232,7 +232,7 @@ const designs: Record<string, Design> = {
   },
 
   'ai-receptionist': {
-    theme: 'indigo', icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/receptionist.jpg', alt: 'Front desk on a phone call, with a live call transcript',
+    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/receptionist.jpg', alt: 'Front desk on a phone call, with a live call transcript',
     hero: page => <HeroScene photo="/photos/receptionist.jpg" alt="Front desk on a phone call, with a live call transcript">
       <LiveCall business="City Care Clinic" className="pp-hero-phone" period={13000} transcript={page.walkthrough.steps.flatMap((s, i) => [{ who: 'Caller', text: s.customer, at: 600 + i * 4000 }, { who: 'AI receptionist', text: s.agent, at: 2400 + i * 4000 }])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Languages size={14} />Speaks</div><div className="pp-langs"><span className="is-picked">English</span><span>हिन्दी</span><span>తెలుగు</span></div></Float>
@@ -260,7 +260,7 @@ const designs: Record<string, Design> = {
   },
 
   'ai-marketing-agent': {
-    theme: 'rose', icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/marketing.jpg', alt: 'Customer reading a campaign message, with an Instagram conversation',
+    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/marketing.jpg', alt: 'Customer reading a campaign message, with an Instagram conversation',
     hero: page => <HeroScene photo="/photos/marketing.jpg" alt="Customer reading a campaign message, with an Instagram conversation">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={12000} lines={[
         { from: 'agent', text: 'Thanks for your comment. Here are the details you asked for.', at: 400 },
@@ -306,7 +306,7 @@ export function AgentPageTemplate({ page }: { page: UseCasePage }) {
       {step.result && <div className="pp-step-result" style={{ animationDelay: '2200ms' }}><CircleCheck size={14} />{step.result}</div>}
     </div>,
   }));
-  return <SiteFrame>{onOpen => <div className={`wb pp pp-theme-${d.theme}`}>
+  return <SiteFrame>{onOpen => <div className={`wb pp`}>
     <PremiumHero kicker={page.hero.kicker} icon={d.icon} title={page.hero.title} accent={d.accent} body={page.hero.body} checks={checks} visual={d.hero(page)} onOpen={onOpen} />
     {page.hero.channels && <ChannelRow channels={page.hero.channels} />}
     <section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">Walkthrough</span><h2>{page.walkthrough.title}</h2><p>{page.walkthrough.intro}</p></section>

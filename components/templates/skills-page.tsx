@@ -65,7 +65,7 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
       <div className="pp-step-result" style={{ animationDelay: '2200ms' }}><CircleCheck size={14} />{results[i]}</div>
     </div>,
   }));
-  return <SiteFrame>{onOpen => <div className="wb pp pp-theme-blue">
+  return <SiteFrame>{onOpen => <div className="wb pp">
     <PremiumHero kicker={page.hero.kicker} icon={<Sparkles size={16} />} title={page.hero.title} accent={['finish the job']} body={page.hero.body} checks={checks} onOpen={onOpen} demoLabel="See how a skill works"
       visual={<HeroScene photo="/photos/skills.jpg" alt="Team setting up agent skills, with a website chat booking an appointment">
         <LivePhone kind="Website" business="City Care Clinic" className="pp-hero-phone" period={13000} lines={[

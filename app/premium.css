@@ -2,15 +2,10 @@
    with a theme, plus photo scenes and platform-accurate phone screens. Scoped under .pp.
    Base rules first, then breakpoints widest to narrowest. Mockup text never goes below 12px. */
 
-/* ---------- themes: each page gets its own colour, the layout stays the same ---------- */
-.pp{--pa:#1a56db;--pa2:#3b82f6;--pa-soft:#eaf1ff;--pa-glow:#bcd5ff;--pa-wash:#f6f9ff;--pa-wash2:#dfeaff}
-.pp-theme-violet{--pa:#7c3aed;--pa2:#db2777;--pa-soft:#f3ecff;--pa-glow:#dcc8ff;--pa-wash:#fbf8ff;--pa-wash2:#f1e6ff}
-.pp-theme-teal{--pa:#0f8b8d;--pa2:#0ea5e9;--pa-soft:#e2f6f5;--pa-glow:#b7ecea;--pa-wash:#f5fcfc;--pa-wash2:#dcf3f6}
-.pp-theme-amber{--pa:#d9480f;--pa2:#f59e0b;--pa-soft:#fff0e3;--pa-glow:#ffd7b0;--pa-wash:#fffaf5;--pa-wash2:#ffeedd}
-.pp-theme-green{--pa:#0b8a5c;--pa2:#22c55e;--pa-soft:#e3f7ee;--pa-glow:#bdeed6;--pa-wash:#f6fcf9;--pa-wash2:#dff5ea}
-.pp-theme-indigo{--pa:#4338ca;--pa2:#06b6d4;--pa-soft:#ebeafe;--pa-glow:#cdd0ff;--pa-wash:#f8f8ff;--pa-wash2:#e5e8ff}
-.pp-theme-rose{--pa:#d6336c;--pa2:#f97316;--pa-soft:#ffe9ef;--pa-glow:#ffc9d6;--pa-wash:#fff8f9;--pa-wash2:#ffe8ec}
-.pp-theme-blue{--pa:#1a56db;--pa2:#7c3aed;--pa-soft:#eaf1ff;--pa-glow:#c9d8ff;--pa-wash:#f6f9ff;--pa-wash2:#e3e9ff}
+/* ---------- brand colours: one palette for every premium page ----------
+   Navy and blue from the Steps AI tokens (globals.css), yellow as a small highlight.
+   Platform colours (WhatsApp green, the Instagram gradient) appear only inside their own mockups. */
+.pp{--pa:#0c3474;--pa2:#2c9cfa;--pa-soft:#e6f4fe;--pa-glow:#c4ecfc;--pa-wash:#f7fbff;--pa-wash2:#e2f1fd;--pa-yellow:#f8b403}
 .pp{--wb-blue:var(--pa);--wb-blue-2:var(--pa2);--wb-soft:var(--pa-soft)}
 .pp .wb-btn{background:linear-gradient(100deg,var(--pa),color-mix(in srgb,var(--pa) 70%,var(--pa2)));box-shadow:0 10px 24px color-mix(in srgb,var(--pa) 28%,transparent)}
 .pp .wb-btn:hover{box-shadow:0 14px 30px color-mix(in srgb,var(--pa) 36%,transparent)}
@@ -384,3 +379,16 @@
 @media (max-width:1100px){.pp-cap{flex-basis:calc((100% - 16px) / 2)}}
 @media (max-width:700px){.pp-cap{flex-basis:100%}}
 .pp-pos-tr .pp-product{width:100%}.pp-pos-tr .pp-product img{height:96px}
+
+/* Brand-only icon tints: navy, blue and yellow (replaces the per-page rainbow) */
+.pp .wb-blue,.pp .wb-teal,.pp .wb-sky{background:#e6f4fe;color:#1769c2}
+.pp .wb-violet,.pp .wb-rose{background:#e8eef8;color:#0c3474}
+.pp .wb-amber,.pp .wb-green{background:#e6f4fe;color:#1769c2}
+.pp .pp-cap:nth-child(3n+2) .pp-cap-ico{background:#e8eef8;color:#0c3474}
+.pp .wb-accent{background:linear-gradient(90deg,#0c3474 0%,#1769c2 55%,#2c9cfa 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pp .wb-hero h1 .wb-accent{text-decoration:underline;text-decoration-color:var(--pa-yellow);text-decoration-thickness:4px;text-underline-offset:8px;-webkit-text-decoration-color:var(--pa-yellow)}
+.pp .wb-btn{background:#0c3474;box-shadow:0 10px 24px #0c347440}
+.pp .wb-btn:hover{box-shadow:0 14px 30px #0c347452}
+.pp .wb-eyebrow,.pp .pp-kicker{color:#1769c2}
+.pp .pp-ind-tabs .is-active{background:#0c3474;box-shadow:0 8px 18px #0c347440}
+.pp-wa header{gap:9px}.pp-wa header strong{overflow:hidden;text-overflow:ellipsis}.pp-wa header>svg:last-child{margin-left:2px}
