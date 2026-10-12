@@ -38,6 +38,16 @@ const agentInfo: Record<string, { label: string; icon: ReactNode }> = {
 };
 
 const photoKey: Record<string, string> = { ecommerce: 'ecom', healthcare: 'health', education: 'edu', 'real-estate': 're', 'travel-and-hospitality': 'travel', saas: 'saas', 'financial-services': 'fin' };
+// Use bundled assets: the former in-*-hero filenames were never shipped.
+const heroPhotos: Record<string, string> = {
+  ecommerce: '/photos/industry-ecommerce.jpg',
+  healthcare: '/photos/industry-healthcare.jpg',
+  education: '/photos/industry-education.jpg',
+  'real-estate': '/photos/industry-realestate.jpg',
+  'travel-and-hospitality': '/photos/ch-whatsapp.jpg',
+  saas: '/photos/skills.jpg',
+  'financial-services': '/photos/lead-capture.jpg',
+};
 const kickerIcon: Record<string, ReactNode> = {
   ecommerce: <ShoppingBag size={16} />, healthcare: <Stethoscope size={16} />, education: <GraduationCap size={16} />, 'real-estate': <Building2 size={16} />,
   'travel-and-hospitality': <Plane size={16} />, saas: <Users size={16} />, 'financial-services': <Landmark size={16} />,
@@ -172,7 +182,7 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
   const capIcons: [ReactNode, string][] = [[<ShoppingBag key="a" size={20} />, 'blue'], [<Truck key="b" size={20} />, 'violet'], [<ShoppingCart key="c" size={20} />, 'blue'], [<Megaphone key="d" size={20} />, 'violet'], [<BookOpen key="e" size={20} />, 'blue'], [<Users key="f" size={20} />, 'violet']];
   return <SiteFrame>{onOpen => <div className="wb pp">
     <PremiumHero kicker={page.hero.kicker} icon={kickerIcon[page.slug]} title={page.hero.title} accent={page.hero.accent} body={page.hero.body} checks={checks} onOpen={onOpen}
-      visual={<HeroScene photo={`/photos/in-${key}-hero.jpg`} alt={`${page.hero.kicker} business answering customers with Steps AI`}>
+      visual={<HeroScene photo={heroPhotos[page.slug]} alt={`${page.hero.kicker} conversation and customer updates with Steps AI`}>
         <LivePhone kind={channel} business={business[page.slug] ?? 'Your business'} className="pp-hero-phone" period={11000} lines={heroLines} />
         {j[0] && <Float className="pp-pos-tr"><div className="pp-float-head"><CircleCheck size={14} />{j[0].result}</div><Row icon={icons[j[0].card.rows[0][0]]} title={j[0].card.rows[0][1]} sub={j[0].card.rows[0][2]} /></Float>}
         {last && <Float className="pp-pos-br">{result(<CircleCheck size={16} />, last.result, last.card.rows[0][2])}</Float>}

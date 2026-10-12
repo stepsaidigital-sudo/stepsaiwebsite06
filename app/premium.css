@@ -31,11 +31,12 @@
 .pp-kicker{color:var(--pa)}
 
 /* Photo scene: stock photo with mockups layered over it. */
-.pp-scene{position:relative;width:100%;max-width:660px;height:500px;justify-self:end}
-.pp-scene-photo{position:absolute;left:150px;right:0;top:0;height:430px;margin:0;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,var(--pa-glow),var(--pa-wash2));box-shadow:0 30px 70px color-mix(in srgb,var(--pa) 22%,transparent)}
+.pp-hero .wb-hero-inner>*{min-width:0}
+.pp-scene{position:relative;display:grid;align-items:start;width:100%;max-width:660px;min-height:524px;padding-top:44px;justify-self:end}
+.pp-scene-photo{position:absolute;left:150px;right:0;top:0;aspect-ratio:6/5;margin:0;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,var(--pa-glow),var(--pa-wash2));box-shadow:0 30px 70px color-mix(in srgb,var(--pa) 22%,transparent)}
 .pp-scene-photo img{width:100%;height:100%;object-fit:cover}
 .pp-scene-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,transparent 55%,color-mix(in srgb,var(--pa) 30%,transparent))}
-.pp-scene>.pp-hero-phone{position:absolute;left:0;top:44px;z-index:2}
+.pp-scene>.pp-hero-phone{position:relative;z-index:2}
 .pp-float{position:absolute;z-index:3;padding:12px 14px;border-radius:16px;background:#fffffff2;border:1px solid #fff;box-shadow:0 18px 40px color-mix(in srgb,var(--pa) 20%,#0b1b3f14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .pp-float-head{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;color:var(--pa);margin-bottom:8px}
 .pp-float-head svg{flex:none}
@@ -269,9 +270,9 @@
 }
 @media (max-width:880px){.sp-main>.pp:first-child>.pp-hero{margin-top:-68px}}
 @media (max-width:700px){
-  .pp-scene{height:auto;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:360px}
-  .pp-scene-photo{position:relative;left:auto;right:auto;width:100%;height:220px;border-radius:22px}
-  .pp-scene>.pp-hero-phone{position:relative;left:auto;top:auto;order:-1}
+  .pp-scene{min-height:504px;padding-top:24px;max-width:360px}
+  .pp-scene-photo{left:48px;right:0;aspect-ratio:4/5;border-radius:22px}
+  .pp-scene>.pp-hero-phone{justify-self:center}
   .pp-scene .pp-float,.pp-scene .pp-bubble-logo{display:none}
   .pp-caps,.pp-tool-grid{grid-template-columns:1fr}
   .pp-story-wrap{padding:56px 0;margin-top:32px}
