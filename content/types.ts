@@ -91,3 +91,21 @@ export type ContentPage = Status & {
   kind: 'content'; seo: Seo; hero: Hero;
   sections: { title: string; paragraphs: string[]; items?: (Item & { href?: string })[] }[]; cta: Cta;
 };
+
+// Help centre (learning centre). Topics group lessons; a lesson is structured data so the
+// page renders steps, where-to-click paths, callouts, tables and FAQs consistently.
+// Media the team can attach later. image: a file in public/help/ or a full URL. video: an .mp4 file or a YouTube link.
+export type HelpMedia = { type: 'image' | 'video' | 'youtube'; src: string; alt?: string; caption?: string };
+export type HelpTopic = { slug: string; title: string; summary: string; icon: string; cover?: string };
+export type HelpCallout = { type: 'tip' | 'note' | 'warning'; text: string };
+export type HelpLesson = {
+  slug: string; topic: string; title: string; summary: string;
+  level: 'Beginner' | 'Intermediate'; plans?: string;
+  before?: string[];
+  video?: HelpMedia;
+  steps: { title: string; body: string; path?: string; media?: HelpMedia }[];
+  table?: { caption: string; columns: string[]; rows: string[][] };
+  callouts?: HelpCallout[];
+  faq?: { q: string; a: string }[];
+  related?: string[];
+};
