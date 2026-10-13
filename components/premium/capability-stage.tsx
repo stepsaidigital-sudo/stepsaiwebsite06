@@ -3,6 +3,7 @@
 import { useId, useRef, useState, type ReactNode } from 'react';
 import { ArrowDown, ArrowRight, BookOpen, Bot, CalendarCheck, CalendarDays, Check, CheckCheck, ChevronRight, CircleCheck, FileText, Globe, Headphones, Inbox, Link2, Mail, MapPin, MessageCircle, Mic, MoreHorizontal, Package, Phone, Play, Search, Send, ShieldCheck, Shirt, ShoppingBag, ShoppingCart, Tag, Ticket, Truck, User, Users, Workflow } from 'lucide-react';
 import type { Item } from '@/content/types';
+import {CommerceCapability,commercePhoto,commerceStories} from './commerce-capability';
 
 type Kind = 'answer' | 'shop' | 'delivery' | 'handoff' | 'booking' | 'lead' | 'campaign' | 'comments' | 'voice' | 'workflow' | 'analytics' | 'inbox' | 'records' | 'ticket' | 'search' | 'calculator';
 
@@ -47,10 +48,20 @@ function Bubble({ children, outgoing = false }: { children: ReactNode; outgoing?
 function Composer() { return <div className="cv-composer"><span /><Send size={18} /></div>; }
 function Seal({ children, icon }: { children: ReactNode; icon?: ReactNode }) { return <div className="cv-seal">{icon ?? <CircleCheck size={19} />}<span>{children}</span></div>; }
 
-function AnswerScene({ title }: { title: string }) { const suggested = title === 'Show suggested questions' || title === 'Suggest quick questions'; return <div className="cv-composition cv-answer">
-  <div className="cv-sources"><div><Globe /><Lines /></div><div><FileText /><Lines /></div><div><BookOpen /><Lines /></div><span className="cv-source-check"><Check size={20} /></span></div>
+const answerExamples:Record<string,[string,string,string]>={
+ 'Answer course questions':['Is this course suitable for beginners?','Yes. The course starts with the fundamentals. Here’s the course outline.','Course information'],
+ 'Explain products and processes':['What documents do I need?','Here’s the checklist from your application guide.','Application guide'],
+ 'Share clinic information':['Are you open on Saturday?','Yes, the clinic is open on Saturday. Would you like help with a booking?','Clinic information'],
+ 'Answer property questions':['Can I arrange a site visit?','Yes. Share your preferred day and I’ll help with the next step.','Property information'],
+ 'Answer property and package questions':['Is breakfast included?','Yes, breakfast is included in this package.','Package details'],
+ 'Answer from your docs':['Where can I find the setup guide?','Here’s the guide, with each setup step in order.','Setup guide'],
+ 'Answer before booking':['What should I bring?','Here’s the preparation checklist for your appointment.','Booking information'],
+ 'Reply to stories':['Can you tell me more about this?','Of course. Here are the details and a link to learn more.','Your business information'],
+};
+function AnswerScene({ title }: { title: string }) { const suggested = title === 'Show suggested questions' || title === 'Suggest quick questions'; const [question,answer,source]=answerExamples[title]??['Are you open on Saturday?','Yes, we’re open on Saturday. How can we help?','Business hours']; return <div className="cv-composition cv-answer cv-readable-answer">
+  <div className="cv-knowledge"><div><Globe size={21}/><strong>Your website</strong></div><div><FileText size={21}/><strong>{source}</strong><span>Information you provide</span></div><div><BookOpen size={21}/><strong>FAQs & documents</strong></div><span><Check size={16}/>Your information, used in the reply</span></div>
   <div className="cv-bridge"><ArrowRight /></div>
-  <Window title="Conversation"><div className="cv-chat">{suggested ? <div className="cv-suggestions">{['Opening hours', 'How it works', 'Talk to us'].map(s => <span key={s}>{s}<ChevronRight size={13} /></span>)}</div> : <><Bubble outgoing><Lines count={2} /></Bubble><div className="cv-answer-row"><Avatar /><Bubble><Lines count={3} /></Bubble></div><span className="cv-citation"><Link2 size={13} />Your information</span></>}</div><Composer /></Window>
+  <Window title="Example conversation"><div className="cv-chat">{suggested ? <div className="cv-suggestions">{['Opening hours', 'How it works', 'Talk to us'].map(s => <span key={s}>{s}<ChevronRight size={13} /></span>)}</div> : <><Bubble outgoing>{question}</Bubble><div className="cv-answer-row"><Avatar /><Bubble>{answer}</Bubble></div><span className="cv-citation"><Link2 size={13}/>{source}</span></>}</div></Window>
 </div>; }
 function ShopScene({ title }: { title: string }) { if (title === 'Link to what matters') return <div className="cv-composition"><Window title="Useful links" icon={<Link2 size={18} />}><div className="cv-chat cv-suggestions">{['Catalogue', 'Booking page', 'Social profiles'].map(s => <span key={s}><Link2 size={16} />{s}<ChevronRight size={16} /></span>)}</div><Composer /></Window></div>; const stock = title === 'Check stock in your store'; const discount = title === 'Offer only your discounts'; return <div className="cv-composition cv-shopping">
   <div className="cv-products">{['sand', 'blue'].map((tone, i) => <div className={`cv-product ${tone}`} key={tone}><Shirt size={88} strokeWidth={1.1} /><span className="cv-swatches"><i /><i /><i /></span>{i === 0 && <span className="cv-product-check"><Check size={17} /></span>}</div>)}</div>
@@ -105,6 +116,7 @@ export function CapabilityStage({ title, intro, items, icons }: { title: string;
   const active = items[selected];
   const kind = capabilityKinds[active.title] ?? 'answer';
   const Scene = scenes[kind];
+  const commerce=commerceStories[active.title];
   return <section id="capabilities" className="container cv-section" aria-labelledby={`${uid}-heading`}>
     <h2 id={`${uid}-heading`}>{title}</h2>
     <p className="cv-sr-only">{intro} Select a capability to view an illustrative demonstration.</p>
@@ -115,10 +127,12 @@ export function CapabilityStage({ title, intro, items, icons }: { title: string;
           if (next >= 0) { event.preventDefault(); setSelected(next); tabs.current[next]?.focus(); }
         }}><span>{icons[i % icons.length]?.[0] ?? <Icon size={22} />}</span><span className="cv-tab-label">{shortLabels[item.title] ?? labels[itemKind]}</span></button>; })}
       </div>
-      <div className={`cv-stage cv-kind-${kind}`} id={`${uid}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${uid}-tab-${selected}`} aria-describedby={`${uid}-description`}>
+      <div className={`cv-stage cv-kind-${kind}${commerce?' cv-commerce':''}`} id={`${uid}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${uid}-tab-${selected}`} aria-describedby={`${uid}-description`}>
+        {commerce&&<img className="cv-commerce-backdrop" src={commercePhoto} width="1536" height="1024" alt="" loading="lazy"/>}
+        <div className="cv-stage-heading"><h3>{commerce?.benefit??active.title}</h3>{commerce&&<p>{active.title}</p>}</div>
         <p className="cv-sr-only" id={`${uid}-description`}>{active.body}</p>
-        <div className="cv-scene" key={selected} aria-hidden="true"><Scene title={active.title} /></div>
-        <span className="cv-demo-label">Illustrative preview</span>
+        <div className="cv-scene" key={selected}>{commerce?<CommerceCapability title={active.title}/>:<Scene title={active.title}/>}</div>
+        <span className="cv-demo-label">Illustrative example · sample data</span>
       </div>
     </div>
   </section>;
