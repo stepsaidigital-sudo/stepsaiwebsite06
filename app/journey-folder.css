@@ -1,0 +1,47 @@
+/* Journey folders: the stacked cards keep their card-over-card scroll, and each one is drawn as a file folder.
+   The sticky strip and every folder header use the same four tab slots (.jv-ftab), so a folder's tab
+   docks into the strip in exactly the same size and place. Strip tabs only show once their folder has stuck. */
+.jv-journey .jv-tabs,.jv-folder .jv-card-label{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end;gap:8px;padding:0 8px;border:0;border-radius:0;background:transparent}
+.jv-journey .jv-ftab{position:relative;justify-self:stretch;justify-content:center;display:flex;align-items:center;gap:12px;min-height:56px;margin:0 0 -1px;padding:10px 18px;border:1px solid #d9e6ef;border-bottom:0;border-radius:18px 18px 0 0;background:#fff;color:#0c3474;font-size:16px;font-weight:650;line-height:1.2;white-space:nowrap;text-decoration:none}
+.jv-journey .jv-tab-num{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:#eef5fb;color:#52677f;font-size:13px;font-weight:700}
+.jv-journey .jv-tabs .jv-ftab[aria-current] .jv-tab-num,.jv-folder.is-current .jv-ftab.is-own .jv-tab-num{background:#1456b8;color:#fff}
+.jv-journey .jv-tabs .jv-ftab:not([aria-current]){color:#52677f}
+.jv-folder .jv-ftab:not(.is-own){visibility:hidden}
+
+/* Strip: a solid band that cards slide under; it takes no room until the first folder sticks. */
+.jv-journey .jv-tabs{z-index:8;background:#eff7fc;margin-bottom:calc(-1 * var(--jv-strip,46px));opacity:0;pointer-events:none;visibility:hidden}
+.jv-journey.is-docked .jv-tabs{opacity:1;pointer-events:auto;visibility:visible}
+.jv-journey .jv-tabs:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:110px;background:#eff7fc;pointer-events:none}
+.jv-journey .jv-tabs .jv-ftab:not(.is-up){visibility:hidden}
+
+.jv-card.jv-folder{background:transparent;border:0;border-radius:0;overflow:visible}
+.jv-folder-sheet{background:#fff;border:1px solid #d9e6ef;border-radius:20px;overflow:hidden;box-shadow:0 -10px 30px rgb(12 52 116/7%)}
+
+@media(hover:hover){.jv-journey .jv-tabs .jv-ftab:hover{color:#1456b8;background:#f9fcff}}
+.jv-journey .jv-ftab:focus-visible{outline:3px solid #1456b8;outline-offset:2px}
+
+/* Stack on every screen; journey.tsx sets each card's top so tall cards stick with their bottom edge in view. */
+@media(max-height:850px),(max-width:1000px){.jv-card.jv-folder{position:sticky}}
+/* Narrow screens: each tab fills its column so all four fit, in both the strip and the folders. */
+@media(max-width:800px){
+ .jv-journey .jv-tabs,.jv-folder .jv-card-label{padding:0 4px;gap:4px}
+ .jv-journey .jv-ftab{justify-self:stretch;justify-content:center;gap:6px;min-height:52px;padding:8px 6px;border-radius:12px 12px 0 0;font-size:12px;white-space:normal;text-align:center;text-wrap:balance}
+ .jv-journey .jv-tab-num{width:20px;height:20px;font-size:10px}
+}
+@media(max-width:480px){.jv-journey .jv-tab-num{display:none}.jv-journey .jv-ftab{font-size:11px;padding:8px 4px}}
+@media(prefers-reduced-motion:reduce){.jv-card.jv-folder{position:relative;top:auto!important}.jv-journey .jv-tabs{margin-bottom:0;opacity:1;visibility:visible;pointer-events:auto}.jv-journey .jv-tabs .jv-ftab{visibility:visible}}
+/* A folder's tab rides over the strip while it slides into its slot, then hands over to the strip's own tab. */
+.jv-card.jv-folder:not(.is-docked){z-index:9}
+/* Stacking depth (from the earlier stacked cards): once the next folder mostly covers a folder (.is-covered from
+   journey.tsx), it eases back slightly and takes a faint navy shade. CSS transitions keep it smooth while scrolling. */
+.jv-card.jv-folder,.jv-card.jv-folder.is-behind{transform-origin:50% 0;transform:none;filter:none}
+.jv-folder-sheet{position:relative}
+.jv-shade{position:absolute;inset:0;border-radius:inherit;background:#0c3474;opacity:0;pointer-events:none}
+.jv-card.jv-folder.is-covered{transform:scale(.975)}
+.jv-folder.is-covered .jv-shade{opacity:.07}
+@media(prefers-reduced-motion:no-preference){.jv-card.jv-folder{transition:transform 650ms cubic-bezier(.22,.8,.3,1)}.jv-shade{transition:opacity 650ms ease}}
+@media(prefers-reduced-motion:reduce){.jv-card.jv-folder.is-covered{transform:none}.jv-folder.is-covered .jv-shade{opacity:0}}
+/* Strip tabs: the current stage is white with navy text; the others sit on a soft tint so they still read clearly. */
+.jv-journey .jv-tabs .jv-ftab:not([aria-current]){background:#f6fafd;color:#3d5370}
+.jv-journey .jv-tabs .jv-ftab[aria-current]{background:#fff;color:#0c3474;border-color:#c9ddeb}
+.jv-folder .jv-copy>p{max-width:400px}

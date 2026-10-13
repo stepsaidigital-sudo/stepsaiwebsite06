@@ -76,3 +76,4 @@ import "./capability-stage.css";
 import "./visual-stories.css";
 import "./setup-journey.css";
 import "./journey-showcase.css";
+import "./journey-folder.css";
