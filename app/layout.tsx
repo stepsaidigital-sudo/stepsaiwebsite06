@@ -75,3 +75,4 @@ import "./v2-mockups-messaging.css";
 import "./capability-stage.css";
 import "./visual-stories.css";
 import "./setup-journey.css";
+import "./journey-showcase.css";
