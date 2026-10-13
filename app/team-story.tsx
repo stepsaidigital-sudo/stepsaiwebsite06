@@ -1,38 +1,86 @@
 'use client';
-import {useState} from 'react';
-import {ArrowUpRight,Check,CheckCheck,Headphones,Inbox,MessageCircle,UserRound,ChartNoAxesCombined,ArrowRight,Package,Send} from 'lucide-react';
+import {useEffect,useRef,useState,type ReactNode} from 'react';
+import {ArrowRight,Check,CheckCheck,ChevronLeft,Phone,Video,MoreVertical,Camera,Mic,Smile,Plus,Send,Info,ChartNoAxesCombined,ShoppingBag,Headphones,PauseCircle,UserRound,Mail,CalendarDays,Tag,Inbox,Search,type LucideIcon} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
 import copy from './copy.json';
 
-const views=[{label:'Inbox',Icon:Inbox},{label:'Customer',Icon:UserRound},{label:'Team',Icon:Headphones},{label:'Results',Icon:ChartNoAxesCombined}];
+// "See the conversations, customers and results in one place": the same pattern as the hero. Tabs pick one of the
+// four team.items. Each one plays a platform-accurate customer chat (messages arrive one by one, with typing dots),
+// and a floating Steps AI card shows what your team sees on its side. Sample business and data throughout.
+type Msg={from:'customer'|'agent'|'human'|'event';text:ReactNode};
+type Story={label:string;Icon:LucideIcon;channel:'WhatsApp'|'Website'|'Instagram';href:string;contact:string;handle:string;messages:Msg[];card:ReactNode};
+
+const stories:Story[]=[
+ {label:'Inbox',Icon:Inbox,channel:'WhatsApp',href:'/features/unified-inbox/',contact:'',handle:'',messages:[],card:null},
+ {label:'Customer details',Icon:UserRound,channel:'Website',href:'/features/crm/',contact:'Steps AI',handle:'Typically replies instantly',
+  messages:[{from:'customer',text:'Can I book a store visit on Friday?'},{from:'agent',text:'Of course. Could I have your name and email to confirm the visit?'},{from:'customer',text:'Aisha Khan, aisha@example.com'},{from:'agent',text:'Thanks, Aisha. Friday is noted, and the team will confirm your time by email.'}],
+  card:<><header className="tv-card-head"><UserRound size={16}/><strong>Contact saved</strong><span className="tv-pill tv-pill-ok"><Check size={12}/>CRM</span></header>
+   <div className="tv-profile"><span className="tv-avatar tv-avatar-2">A</span><div><strong>Aisha Khan</strong><small><ChannelLogo channel="Website"/>From website chat</small></div></div>
+   <dl className="tv-fields"><div><dt><Mail size={13}/>Email</dt><dd>aisha@example.com</dd></div><div><dt><CalendarDays size={13}/>Preferred day</dt><dd>Friday</dd></div><div><dt><Info size={13}/>Request</dt><dd>Store visit</dd></div></dl>
+   <div className="tv-tags"><span><Tag size={12}/>Booking enquiry</span><span><Tag size={12}/>Follow up this week</span></div></>},
+ {label:'Human help',Icon:Headphones,channel:'Instagram',href:'/features/unified-inbox/',contact:'yourstore',handle:'Your Store',
+  messages:[{from:'customer',text:'Is this jacket available in blue?'},{from:'agent',text:'Yes, the blue jacket is in stock in M and L.'},{from:'customer',text:'Can I change the size after it arrives?'},{from:'event',text:'Priya joined from the Instagram app'},{from:'human',text:'Hi James, Priya here. Yes, we can help you exchange the size.'}],
+  card:<><header className="tv-card-head"><Headphones size={16}/><strong>Team handover</strong><span className="tv-pill tv-pill-warm">Priya</span></header>
+   <ol className="tv-steps"><li><Check size={13}/>Priya read the full chat first</li><li><Check size={13}/>Replied from the Instagram app</li><li className="is-paused"><PauseCircle size={13}/>AI paused in this chat</li></ol>
+   <div className="tv-toggle"><span>AI agent</span><i aria-hidden="true"><b/></i><small>Paused</small></div></>},
+ {label:'Results',Icon:ChartNoAxesCombined,channel:'WhatsApp',href:'/features/analytics/',contact:'Your Store',handle:'Business account',
+  messages:[{from:'agent',text:<><span className="tv-template"><b>Weekend sale</b>The Sol collection is 20% off until Sunday.<span className="tv-template-btn"><ShoppingBag size={13}/>Shop the sale</span></span></>},{from:'customer',text:'Is the Sol vase included?'},{from:'agent',text:'Yes, it is. Here’s your link to order it.'},{from:'event',text:'Order placed · ₹1,890'}],
+  card:<><header className="tv-card-head"><ChartNoAxesCombined size={16}/><strong>Results</strong><span className="tv-pill">Example data</span></header>
+   <div className="tv-metrics"><div><small><ChannelLogo channel="WhatsApp"/>Orders from chats</small><strong>48</strong></div><div><small><ShoppingBag size={13}/>Campaign revenue</small><strong>₹86,400</strong></div></div>
+   <div className="tv-bars"><small>What customers ask</small>{[['Order status',100],['Delivery',64],['Returns',38]].map(([l,w])=><div key={l}><span>{l}</span><i><em style={{width:`${w}%`}}/></i></div>)}</div></>}
+];
+const TOTAL=9000;
+
+// Inbox tab: a unified inbox, not a single channel. Conversations from every connected channel arrive in one list,
+// each tagged by what the customer wants; the sidebar shows the connected channels and tag counts. Static view.
+const inboxRows=[
+ {name:'Maya',channel:'WhatsApp',text:'Where is my order?',tag:'Order',status:'AI answered',tone:'ok'},
+ {name:'James',channel:'Instagram',text:'Is this jacket in blue?',tag:'Product',status:'AI answered',tone:'ok'},
+ {name:'Aisha',channel:'Website',text:'Can I book a visit on Friday?',tag:'Booking',status:'New',tone:'new'},
+ {name:'Leo',channel:'Messenger',text:'Do you deliver to Dubai?',tag:'Delivery',status:'AI answered',tone:'ok'},
+ {name:'Nora',channel:'WhatsApp',text:'I’d like to return my order',tag:'Return',status:'Alex',tone:'team'},
+ {name:'Ravi',channel:'Instagram',text:'Price for two sets?',tag:'Lead',status:'AI answered',tone:'ok'}
+];
+const inboxChannels=['WhatsApp','Instagram','Messenger','Website'],inboxTags=['Order','Product','Booking','Delivery','Return','Lead'];
+function UnifiedInbox(){
+ const arrived=inboxRows,list=inboxRows;
+ const count=(key:'channel'|'tag',value:string)=>arrived.filter(r=>r[key]===value).length;
+ return <div className="tv-inbox"><header className="tv-inbox-top"><span className="tv-card-brand"><span>s</span>Steps AI</span><strong>Inbox</strong><span className="tv-search"><Search size={14}/>Search conversations</span><span className="tv-pill tv-pill-ok"><i className="tv-dot"/>4 channels</span></header>
+  <div className="tv-inbox-main"><aside className="tv-inbox-side"><small>Connected channels</small>{inboxChannels.map(ch=><div key={ch} className="tv-side-row"><ChannelLogo channel={ch}/><span>{ch}</span><b>{count('channel',ch)}</b></div>)}<small>Tags</small><div className="tv-side-tags">{inboxTags.map(t=><span key={t} className={`tv-tag tv-tag-${t.toLowerCase()}`}>{t}<b>{count('tag',t)}</b></span>)}</div></aside>
+   <div className="tv-inbox-list"><div className="tv-list-head"><strong>All conversations</strong><span>{arrived.length} open</span></div>{list.map((r,i)=><div key={r.name} className={`tv-irow${i===0?' is-new':''}`}><span className={`tv-avatar tv-avatar-${inboxRows.indexOf(r)%4}`}>{r.name[0]}<em><ChannelLogo channel={r.channel}/></em></span><div><strong>{r.name}<small>{r.channel}</small></strong><p>{r.text}</p></div><div className="tv-irow-meta"><span className={`tv-tag tv-tag-${r.tag.toLowerCase()}`}>{r.tag}</span><span className={`tv-state tv-state-${r.tone}`}>{r.status}</span></div></div>)}</div></div></div>;
+}
+
+
+function Chat({story,time}:{story:Story;time:number}){
+ const kind=story.channel.toLowerCase();const step=TOTAL/(story.messages.length+1);
+ const head=kind==='whatsapp'?<header className="tv-head"><ChevronLeft size={20}/><span className="tv-head-avatar"><img src="/images/stories/homeware-still-life.webp" alt="" width="34" height="34"/></span><div><strong>{story.contact}</strong><small>{story.handle}</small></div><Video size={19}/><Phone size={17}/><MoreVertical size={17}/></header>
+  :kind==='instagram'?<header className="tv-head"><ChevronLeft size={22}/><span className="tv-head-avatar tv-ig-ring"><b>YS</b></span><div><strong>{story.contact}</strong><small>{story.handle}</small></div><Phone size={19}/><Video size={20}/></header>
+  :<header className="tv-head"><span className="tv-head-avatar tv-web-mark">s</span><div><strong>{story.contact}</strong><small><i className="tv-dot"/>{story.handle}</small></div><MoreVertical size={17}/></header>;
+ const input=kind==='whatsapp'?<footer className="tv-input"><Plus size={20}/><span>Message</span><Smile size={18}/><Camera size={18}/><Mic size={18}/></footer>
+  :kind==='instagram'?<footer className="tv-input"><span className="tv-ig-cam"><Camera size={15}/></span><span>Message…</span><Mic size={18}/></footer>
+  :<footer className="tv-input"><span>Type your message…</span><Send size={17}/></footer>;
+ return <div className={`tv-chat tv-${kind}`}>{head}<div className="tv-body">{story.messages.map((m,i)=>{const at=step*(i+.6),shown=time>=at,typing=!shown&&time>=at-900&&m.from!=='event';
+  return <div key={i} className={`tv-slot tv-from-${m.from}`}>{shown?<div className={`tv-msg ${m.from==='event'?'tv-event':''}`}>{m.from==='human'&&<span className="tv-who">Priya · Your team</span>}{m.text}{m.from!=='event'&&<small>10:{24+i}{kind==='whatsapp'&&m.from==='customer'&&<CheckCheck size={13}/>}</small>}</div>:typing?<div className="tv-typing" aria-hidden="true"><i/><i/><i/></div>:null}</div>})}</div>{input}</div>;
+}
+
 export function TeamStory(){
- const [view,setView]=useState(0);
- return <section id="team" className="visual-story workspace-story" aria-labelledby="workspace-title">
-  <div className="container">
-   <header className="vs-heading"><h2 id="workspace-title">{copy.team.title}</h2><p>Every message. The full picture.</p></header>
-   <div className="ws-canvas" data-view={view}>
-    <div className="ws-topline"><span className="ws-brand"><span className="vs-brandmark">s</span>Your workspace</span><span className="vs-demo">Illustrative demo</span></div>
-    <div className="ws-layout">
-     <aside className="ws-inbox"><div className="vs-ui-heading"><Inbox size={18}/><strong>Inbox</strong><span>3</span></div>
-      {[['M','Maya','Where is my order?','WhatsApp'],['J','James','Is this available?','Instagram'],['A','Aisha','Can I book a visit?','Website']].map(([initial,name,message,channel],i)=><div key={name} className={`ws-contact ${i===0?'selected':''}`}><span className={`vs-avatar avatar-${i}`}>{initial}</span><div><strong>{name}</strong><small>{message}</small></div><span title={channel}><ChannelLogo channel={channel}/></span></div>)}
-      <div className="ws-channel-strip">{['Website','WhatsApp','Instagram','Messenger'].map(channel=><span key={channel} title={channel}><ChannelLogo channel={channel}/></span>)}</div>
-      <div className="ws-catalogue"><img src="/images/stories/homeware-still-life.webp" alt="Ivory vase and blue bowl from the example homeware store" width="1536" height="1024" loading="lazy"/><span>North & Pine<ArrowUpRight size={14}/></span></div>
-     </aside>
-     <div className="ws-conversation"><header><span className="vs-avatar avatar-0">M</span><div><strong>Maya Patel</strong><small><ChannelLogo channel="WhatsApp"/>WhatsApp</small></div><span className="vs-status"><i/>{view===2?'Alex joined':'Open'}</span></header>
-      <div className="ws-messages" key={view}><span className="ws-date">Today · 10:24</span><div className="ws-bubble ws-in">Where is my order?</div><div className="ws-order"><Package size={24}/><div><strong>Order #2087</strong><small>Out for delivery</small></div><Check size={16}/></div><div className="ws-bubble ws-out">Your order is out for delivery today.<CheckCheck size={14}/></div>
-       {view===2?<><div className="ws-bubble ws-in">Could someone help with a return, too?</div><div className="ws-event"><Headphones size={14}/>Alex joined · history included</div><div className="ws-bubble ws-human">Hi Maya, I can help with that.</div></>:<div className="ws-event"><Check size={14}/>{view===1?'Saved to Maya’s customer record':view===3?'Order question answered':'Answered by your agent'}</div>}
-      </div><div className="ws-composer"><span>{view===2?'Alex is replying · team handling':'Conversation history stays here'}</span><Send size={16}/></div>
-     </div>
-     <aside className={`ws-context ${view===1?'is-highlighted':''}`}>
-      {view===3?<div className="ws-analytics"><ChartNoAxesCombined size={24}/><strong>What customers ask</strong><small>Example conversations</small>{[['Order status',18],['Returns',9],['Products',5]].map(([label,count])=><div className="ws-topic" key={label}><span>{label}<b>{count}</b></span><i><em style={{width:`${Number(count)/18*100}%`}}/></i></div>)}<div className="ws-analytics-note"><Check size={15}/>Maya’s order question is included.</div></div>:<><div className="ws-profile"><span className="vs-avatar avatar-0">M</span><strong>Maya Patel</strong><small>Returning customer</small></div><div className="ws-record"><span>Customer details</span><strong>maya@example.com</strong><span className="ws-label">Order enquiry</span></div><div className="ws-history"><strong>One connected history</strong><span><MessageCircle size={14}/>WhatsApp conversation</span><span><Package size={14}/>Order #2087</span><span><Headphones size={14}/>{view===2?'Assigned to Alex':'Team can take over'}</span></div></>}
-     </aside>
-    </div>
-    <div className={`ws-results ${view===3?'is-highlighted':''}`}><span><ChartNoAxesCombined size={19}/><strong>Results</strong></span><span><b>Order status</b><small>Question answered</small></span><span><b>Maya Patel</b><small>Customer record linked</small></span><span><b>{view===2?'Alex':'AI agent'}</b><small>{view===2?'Handling the return':'Handled the enquiry'}</small></span><a href="/features/analytics/" aria-label="Explore analytics"><ArrowUpRight size={21}/></a></div>
-   </div>
-   <div className="vs-controls" role="group" aria-label="Explore the connected workspace">{views.map(({label,Icon},i)=><button key={label} aria-pressed={view===i} onClick={()=>setView(i)}><Icon size={17}/>{label}{view===i&&<ArrowRight size={15}/>}</button>)}</div>
-   <p className="vs-sr-only" role="status">{['Inbox: the agent answers the order enquiry.','Customer: contact details and conversation history are linked.','Team: Alex joins the conversation with its history.','Results: example question categories and counts are shown.'][view]}</p>
-   <div className="vs-sr-only"><p>{copy.team.paragraphs[0]}</p>{copy.team.items.map(item=><p key={item.title}>{item.title}. {item.paragraphs[0]}</p>)}</div>
+ const [active,setActive]=useState(0),[time,setTime]=useState(0),[auto,setAuto]=useState(true),[visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
+ const root=useRef<HTMLElement>(null);
+ useEffect(()=>{const mq=matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>setReduced(mq.matches);sync();mq.addEventListener('change',sync);
+  const observer=new IntersectionObserver(([e])=>setVisible(e.isIntersecting),{threshold:.35});observer.observe(root.current!);return()=>{observer.disconnect();mq.removeEventListener('change',sync)}},[]);
+ // Play the chat while the section is on screen; once it has finished, move on to the next tab until someone picks one.
+ const done=time>=TOTAL+1800;
+ useEffect(()=>{if(!visible||reduced||done)return;const timer=window.setInterval(()=>{if(!document.hidden)setTime(t=>Math.min(TOTAL+1800,t+100))},100);return()=>window.clearInterval(timer)},[visible,reduced,done]);
+ useEffect(()=>{if(done&&auto){setActive(a=>(a+1)%stories.length);setTime(0)}},[done,auto]);
+ const pick=(i:number)=>{setAuto(false);setActive(i);setTime(0)};
+ const shownTime=reduced?TOTAL:time,story=stories[active],item=copy.team.items[active];
+ return <section id="team" ref={root} className="tv-section" aria-labelledby="workspace-title"><div className="container">
+  <header className="tv-heading"><h2 id="workspace-title">{copy.team.title}</h2><p>{copy.team.paragraphs[0]}</p></header>
+  <div className="tv-tabs" role="tablist" aria-label="What your team can see">{stories.map((s,i)=><button key={s.label} role="tab" id={`tv-tab-${i}`} aria-selected={active===i} aria-controls="tv-panel" onClick={()=>pick(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:-1)+stories.length)%stories.length;pick(n);(e.currentTarget.parentElement?.children[n] as HTMLElement|undefined)?.focus()}}}><s.Icon size={19}/><span>{s.label}</span>{active===i&&auto&&!reduced&&<i className="tv-progress" style={{transform:`scaleX(${Math.min(1,shownTime/(TOTAL+1800))})`}}/>}</button>)}</div>
+  <div className="tv-panel" id="tv-panel" role="tabpanel" aria-labelledby={`tv-tab-${active}`} key={active}>
+   <div className="tv-copy"><span className="tv-kicker"><b>0{active+1}</b>{story.label}</span><h3>{item.title}</h3><p>{item.paragraphs[0]}</p><a href={story.href} className="tv-link">See how it works <ArrowRight size={16}/></a></div>
+   <div className={`tv-stage${active===0?' is-inbox':''}`}><span className="tv-illus">Illustrative example</span>{active===0?<UnifiedInbox/>:<><Chat story={story} time={shownTime}/><div className={`tv-card${shownTime>=TOTAL*.55?' is-in':''}`}><div className="tv-card-brand"><span>s</span>Steps AI · your team’s view</div>{story.card}</div></>}</div>
   </div>
- </section>;
+ </div></section>;
 }
 export const StorySection=TeamStory;

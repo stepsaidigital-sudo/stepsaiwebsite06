@@ -76,4 +76,7 @@ import "./capability-stage.css";
 import "./visual-stories.css";
 import "./setup-journey.css";
 import "./journey-showcase.css";
-import "./journey-folder.css";
+import "./journey-stack-scroll.css";
+import "./final-tiles.css";
+import "./team-switcher.css";
+import "./hero-cascade.css";

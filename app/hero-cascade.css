@@ -1,0 +1,6 @@
+/* Hero title letter cascade (components/ui/letter-cascade.tsx). This project has no Tailwind, so the component's
+   layout classes are written out here, scoped to the hero words. The cursor stays normal: it's a headline, not a button. */
+.kinetic-title .lc-word{display:inline-flex;align-items:baseline;cursor:default;user-select:text}
+.kinetic-title .lc-word>span{position:relative;display:inline-flex;white-space:pre}
+.kinetic-title .lc-word .cascade-front{display:inline-block}
+.kinetic-title .lc-word .cascade-echo{position:absolute;inset:0;display:inline-block}

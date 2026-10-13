@@ -1,0 +1,33 @@
+/* Journey scroll stack: the four cards are sticky in one container, so each new card slides up over the last one,
+   and the covered card shrinks and fades. The fade follows the scroll exactly through CSS scroll-driven animations:
+   a zero-height marker before each card (.jv-mark-N) is a view timeline, and the card above it recedes while that
+   marker travels up the screen. journey.tsx only sets each card's sticky top on resize. Browsers without
+   scroll-driven animations still get the stacking, just without the fade. Phones and reduced motion get a plain list. */
+.jv-stack{--jv-top:96px;--jv-peek:16px;position:relative;padding-bottom:8vh;timeline-scope:--jv-a1,--jv-a2,--jv-a3}
+.jv-stack .jv-card{position:sticky;top:var(--jv-top);margin:0 0 14vh;background:#fff;border:1px solid #d9e6ef;border-radius:24px;overflow:hidden;transform-origin:50% 0;box-shadow:0 -12px 40px -24px rgb(12 52 116/30%),0 24px 50px -32px rgb(12 52 116/35%)}
+.jv-stack .jv-card:last-of-type{margin-bottom:0}
+.jv-stack .jv-mark{display:block;height:0}
+.jv-stack .jv-mark-1{view-timeline-name:--jv-a1}.jv-stack .jv-mark-2{view-timeline-name:--jv-a2}.jv-stack .jv-mark-3{view-timeline-name:--jv-a3}
+@keyframes jv-recede{to{transform:scale(.9);opacity:.2}}
+@supports (animation-timeline:view()){
+ .jv-stack .jv-card-0,.jv-stack .jv-card-1,.jv-stack .jv-card-2{animation:jv-recede linear both;animation-range:cover 30% cover calc(100% - 120px)}
+ .jv-stack .jv-card-0{animation-timeline:--jv-a1}.jv-stack .jv-card-1{animation-timeline:--jv-a2}.jv-stack .jv-card-2{animation-timeline:--jv-a3}
+}
+
+/* Card text side: product-UI styling. A segmented stage meter, the stage name as a bold sans headline in a navy-to-blue
+   gradient, the stage sentence as the lead line, and the paragraph set off by a blue rule. */
+.jv-stack .jv-copy{padding:8px 0 8px 6px}
+.jv-stack .jv-meter{display:flex;align-items:center;gap:10px;margin-bottom:26px;font:600 13px/1 Manrope,Arial,sans-serif;letter-spacing:.04em;color:#7a8ea6}
+.jv-stack .jv-meter b{color:#1456b8;font-weight:800}
+.jv-stack .jv-meter-bars{display:flex;gap:5px;margin-right:4px}
+.jv-stack .jv-meter-bars i{width:26px;height:5px;border-radius:5px;background:#dbe6f2}
+.jv-stack .jv-meter-bars i.is-on{background:linear-gradient(90deg,#1456b8,#2c7bf0)}
+.jv-stack .jv-copy h3.jv-stage-name{font-family:Manrope,Arial,sans-serif!important;font-size:clamp(44px,4.2vw,60px);line-height:1.02;font-weight:800;letter-spacing:-.045em;max-width:none;padding-bottom:.06em;color:#0c3474;background:linear-gradient(100deg,#0c3474 30%,#1f6fe0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.jv-stack .jv-copy>p.jv-lead{margin:18px 0 0;max-width:430px;font:700 clamp(19px,1.55vw,22px)/1.35 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#0c3474}
+.jv-stack .jv-copy>p.jv-lead+p{margin-top:18px;padding-left:16px;border-left:3px solid #c9dcf3;max-width:410px;font-size:16px;line-height:1.6;color:#52677f}
+
+@media(max-width:800px),(prefers-reduced-motion:reduce){
+ .jv-stack{padding-bottom:0}
+ .jv-stack .jv-card{position:relative;top:auto!important;margin:0 0 20px;animation:none!important;transform:none;opacity:1}
+ .jv-stack .jv-copy h3.jv-stage-name{font-size:44px}
+}
