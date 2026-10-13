@@ -1,6 +1,7 @@
 'use client';
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   ArrowRight, BarChart3, BookOpen, CalendarCheck, Check, ChevronRight, CreditCard, Globe, Headphones, Inbox, LifeBuoy, Megaphone, MousePointer2,
   Play, Plug, Rocket, Search, Sparkles, Users, Workflow, Code2, MessageCircleQuestion,
@@ -33,31 +34,66 @@ const iconOf = (key?: string) => ICONS[key ?? ''] ?? <BookOpen size={20} />;
 
 const CHIPS: [string, string][] = [['Connect WhatsApp', 'connect-whatsapp'], ['Train your agent', 'add-business-information'], ['Human handoff', 'set-up-human-handoff'], ['Credits and billing', 'how-credits-work']];
 
+// Questions the placeholder cycles through; each one has a guide behind it.
+const PROMPTS = ['How do I connect WhatsApp?', 'How do I add the chat to my website?', 'How does human handoff work?', 'How do credits work?', 'How do I book appointments?'];
+
+// Word-based search: each meaningful word is matched on its own, so a question such as
+// "How do I connect WhatsApp?" finds the guide. Title matches rank above summary and steps.
+const STOP = new Set(['a', 'an', 'the', 'how', 'do', 'does', 'i', 'my', 'me', 'to', 'can', 'is', 'are', 'what', 'where', 'when', 'why', 'and', 'or', 'of', 'for', 'in', 'on', 'with', 'it', 'you', 'your', 'we', 'our', 'set', 'up']);
+const words = (text: string) => text.toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').split(/\s+/).filter(w => w.length > 1 && !STOP.has(w));
+function searchGuides(query: string) {
+  const terms = words(query);
+  if (!terms.length) return [];
+  return lessons.map(l => {
+    const title = l.title.toLowerCase(), summary = `${l.summary} ${topicOf(l)?.title ?? ''}`.toLowerCase(), body = l.steps.map(s => `${s.title} ${s.body}`).join(' ').toLowerCase();
+    let score = 0, matched = 0;
+    for (const t of terms) { const stem = t.length > 4 ? t.replace(/(ing|es|s)$/, '') : t; const hit = (x: string) => x.includes(stem); if (hit(title)) score += 6; if (hit(summary)) score += 3; if (hit(body)) score += 1; if (hit(title) || hit(summary) || hit(body)) matched++; }
+    return { l, score: score + (matched === terms.length ? 4 : 0) };
+  }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 6).map(r => r.l);
+}
+const SUGGESTED = ['connect-whatsapp', 'add-chat-widget-to-website', 'set-up-human-handoff', 'how-credits-work'];
+
 function HeroSearch() {
+  const router = useRouter();
+  const input = useRef<HTMLInputElement>(null);
   const [q, setQ] = useState('');
+  const [hint, setHint] = useState(0);
+  const [focused, setFocused] = useState(false);
   const term = q.trim().toLowerCase();
-  const hits = term.length > 1 ? lessons.filter(a => `${a.title} ${a.summary} ${a.steps.map(s => `${s.title} ${s.body}`).join(' ')}`.toLowerCase().includes(term)).slice(0, 6) : [];
+  const hits = term.length > 1 ? searchGuides(q) : [];
+  const [open, setOpen] = useState(false);
+  const suggested = SUGGESTED.map(bySlug).filter(Boolean) as HelpLesson[];
+  // "/" focuses the search from anywhere on the page.
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => { if (e.key === '/' && !(e.target as HTMLElement).closest('input,textarea')) { e.preventDefault(); input.current?.focus(); } };
+    addEventListener('keydown', key);
+    return () => removeEventListener('keydown', key);
+  }, []);
+  useEffect(() => {
+    if (q || focused || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t = setInterval(() => setHint(h => (h + 1) % PROMPTS.length), 2800);
+    return () => clearInterval(t);
+  }, [q, focused]);
+  const go = () => { if (hits[0]) router.push(`/help/${hits[0].slug}/`); else input.current?.focus(); };
   return <div className="hx-search-wrap">
-    <label className="hx-search"><Search size={20} />
-      <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, for example “connect WhatsApp”" aria-label="Search the help centre" />
-      <kbd>{lessons.length} guides</kbd>
-    </label>
+    <div className="hx-halo" aria-hidden="true" />
+    <form className={`hx-search ${focused ? 'is-focus' : ''}`} role="search" onSubmit={e => { e.preventDefault(); go(); }}>
+      <Search size={22} className="hx-search-ico" />
+      <span className="hx-field">
+        <input ref={input} value={q} onChange={e => setQ(e.target.value)} onFocus={() => { setFocused(true); setOpen(true); }} onBlur={() => { setFocused(false); setTimeout(() => setOpen(false), 150); }} onKeyDown={e => { if (e.key === 'Escape') { setOpen(false); input.current?.blur(); } }} aria-label="Search the help centre" />
+        {!q && <span className="hx-ph" key={hint} aria-hidden="true">{focused ? 'Type a question or a feature' : PROMPTS[hint]}</span>}
+      </span>
+      {!focused && !q && <kbd aria-hidden="true">/</kbd>}
+      <button type="submit" className="hx-go">Search</button>
+    </form>
+    {open && term.length <= 1 && <div className="hx-results" role="listbox" aria-label="Suggested guides"><small className="hx-results-label">Suggested guides</small>
+      {suggested.map(a => <Link key={a.slug} href={`/help/${a.slug}/`} className="hx-hit"><span className="hx-hit-ico">{iconOf(topicOf(a)?.icon)}</span><span><strong>{a.title}</strong><small>{topicOf(a)?.title} · {a.summary}</small></span><ChevronRight size={16} /></Link>)}
+    </div>}
     {term.length > 1 && <div className="hx-results" role="listbox">
       {hits.length ? hits.map(a => <Link key={a.slug} href={`/help/${a.slug}/`} className="hx-hit"><span className="hx-hit-ico">{iconOf(topicOf(a)?.icon)}</span><span><strong>{a.title}</strong><small>{topicOf(a)?.title} · {a.summary}</small></span><ChevronRight size={16} /></Link>)
         : <p className="hx-none">No guides match “{q}”. Try a shorter word, or <Link href="/help/faqs/">browse the FAQs</Link>.</p>}
     </div>}
-    <div className="hx-chips"><span>Popular:</span>{CHIPS.map(([label, slug]) => <Link key={slug} href={`/help/${slug}/`}>{label}</Link>)}</div>
-  </div>;
-}
-
-/* ---------- hero art: real guides, floating ---------- */
-
-function HeroArt() {
-  const wa = bySlug('connect-whatsapp'), ho = bySlug('set-up-human-handoff'), first = bySlug('create-your-first-agent');
-  return <div className="hx-art" aria-hidden="true">
-    {wa && <div className="hx-art-card hx-art-a"><span className="hx-hit-ico">{iconOf('whatsapp')}</span><div><small>WhatsApp · {wa.steps.length} steps</small><strong>{wa.title}</strong><i className="hx-art-bar"><b style={{ width: '75%' }} /></i></div></div>}
-    {ho && <div className="hx-art-card hx-art-b"><span className="hx-hit-ico">{iconOf('headset')}</span><div><small>Human handoff · {ho.level}</small><strong>{ho.title}</strong></div></div>}
-    {first && <div className="hx-art-card hx-art-c"><span className="hx-hit-ico is-done"><Check size={18} /></span><div><small>Guide completed</small><strong>{first.title}</strong></div></div>}
+    <div className="hx-chips"><span>Popular</span>{CHIPS.map(([label, slug]) => <Link key={slug} href={`/help/${slug}/`}>{label}</Link>)}</div>
   </div>;
 }
 
@@ -136,10 +172,9 @@ export function HelpHubTemplate() {
     <section className="hx-hero">
       <div className="container hx-hero-in">
         <nav className="hx-bar"><Link href="/help/" className="is-home"><LifeBuoy size={16} />Help centre</Link><Link href="#topics">Topics</Link><Link href="#tutorials">Tutorials</Link><Link href="/help/faqs/">FAQs</Link></nav>
-        <h1>How can we <span>help?</span></h1>
+        <h1>How can we help?</h1>
         <p>Guides for setting up your agent, your channels and your team.</p>
         <HeroSearch />
-        <HeroArt />
       </div>
     </section>
 
