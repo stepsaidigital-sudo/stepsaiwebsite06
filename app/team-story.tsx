@@ -1,30 +1,38 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';
-import {Inbox,ChartNoAxesCombined,MessageCircleQuestion,Headphones,Pause,Play,RotateCcw} from 'lucide-react';
+import {useState} from 'react';
+import {ArrowUpRight,Check,CheckCheck,Headphones,Inbox,MessageCircle,UserRound,ChartNoAxesCombined,ArrowRight,Package,Send} from 'lucide-react';
+import {ChannelLogo} from './channel-chat';
 import copy from './copy.json';
-import {ProductStage} from './product-story';
-import {usePinnedTour} from './use-pinned-tour';
-// SEO copy for each scene, taken verbatim from copy.team (docs/seo-homepage-source.md).
-const [inbox,crm,human,insights]=copy.team.items.map(item=>item.paragraphs[0]);
-const [insightQuestions,insightRevenue]=insights.split(/(?<=\.) /);
-const states=[
- {key:'conversations',title:'Customer conversations, together',detail:`${inbox} ${crm}`,icon:Inbox,transition:'inbox-to-activity',duration:2500},
- {key:'activity',title:'Performance at a glance',detail:insightRevenue,icon:ChartNoAxesCombined,transition:'internal-scroll',duration:2500},
- {key:'questions',title:'Understand what customers ask',detail:insightQuestions,icon:MessageCircleQuestion,transition:'conversation-handoff',duration:2500},
- {key:'handoff',title:'Your team steps in when needed',detail:human,icon:Headphones,transition:'soft-reset',duration:2500}
-];
-export function TeamStory(){return <StorySection/>}
-export function StorySection(){
- const root=useRef<HTMLElement>(null),elapsed=useRef(0);
- const [timed,setTimed]=useState(0),[cycle,setCycle]=useState(0),[paused,setPaused]=useState(false),[visible,setVisible]=useState(false),[pageVisible,setPageVisible]=useState(true),[reduced,setReduced]=useState(false);
- const [manual,setManual]=useState(false);
- // Pinned (desktop): scroll picks the scene. Otherwise the tour autoplays on a timer.
- const tour=usePinnedTour(root,states.length);
- const current=tour.pinned?tour.index:timed;
- const running=visible&&pageVisible&&!paused&&!reduced;
- useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>setReduced(media.matches);update();media.addEventListener('change',update);const visibility=()=>setPageVisible(!document.hidden);document.addEventListener('visibilitychange',visibility);const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.15});if(root.current)observer.observe(root.current);return()=>{media.removeEventListener('change',update);document.removeEventListener('visibilitychange',visibility);observer.disconnect()}},[]);
- useEffect(()=>{if(!running||tour.pinned)return;let frame=0,last=performance.now();const tick=(now:number)=>{elapsed.current+=Math.min(now-last,80);last=now;if(elapsed.current>=states[timed].duration){elapsed.current=0;setTimed((timed+1)%states.length);if(timed===3)setCycle(v=>v+1);return}frame=requestAnimationFrame(tick)};frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame)},[timed,running,tour.pinned]);
- const select=(index:number)=>{if(tour.pinned){tour.go(index);return}elapsed.current=0;setTimed(index);setPaused(true);setManual(true)};
- const bar=(index:number)=>tour.pinned?{animation:'none',transform:`scaleX(${index<current?1:index===current?tour.progress:0})`}:{animationPlayState:running?'running':'paused'};
- return <section id="team" ref={root} className={`product-story ${tour.pinned?'is-pinned':''}`} style={tour.runwayStyle}><div className="ps-pin"><div className="container ps-layout"><div className="ps-copy"><h2>{copy.team.title}</h2><p className="ps-lede">{copy.team.paragraphs[0]}</p><div className="ps-features" aria-label="Product tour scenes">{states.map((state,index)=>{const Icon=state.icon;return <button key={state.key} aria-pressed={current===index} onClick={()=>select(index)}><Icon size={21}/><span><span className="setup-step-title">{state.title}</span>{current===index&&<span className="setup-detail" key={current}>{state.detail}</span>}</span><small>0{index+1}</small></button>})}</div></div><div className="ps-visual"><div className="ps-frame-header"><span><i/>One workspace, every conversation</span><div>{!tour.pinned&&<><button aria-label={paused?'Play product tour':'Pause product tour'} disabled={reduced} onClick={()=>{setManual(false);setPaused(v=>!v)}}>{paused?<Play size={14}/>:<Pause size={14}/>}</button><button aria-label="Replay product tour" onClick={()=>{setManual(false);elapsed.current=0;setTimed(0);setCycle(v=>v+1);setPaused(false)}}><RotateCcw size={14}/></button></>}<b>0{current+1} / 04</b></div></div><ProductStage current={current} cycle={cycle} running={running} reduced={reduced||manual}/><div className="ps-timeline" aria-hidden="true">{states.map((state,index)=><i key={tour.pinned?state.key:`${cycle}-${current}-${state.key}`} className={index===current?'is-current':index<current?'is-complete':''}><span style={bar(index)}/></i>)}</div></div></div></div></section>
+
+const views=[{label:'Inbox',Icon:Inbox},{label:'Customer',Icon:UserRound},{label:'Team',Icon:Headphones},{label:'Results',Icon:ChartNoAxesCombined}];
+export function TeamStory(){
+ const [view,setView]=useState(0);
+ return <section id="team" className="visual-story workspace-story" aria-labelledby="workspace-title">
+  <div className="container">
+   <header className="vs-heading"><h2 id="workspace-title">{copy.team.title}</h2><p>Every message. The full picture.</p></header>
+   <div className="ws-canvas" data-view={view}>
+    <div className="ws-topline"><span className="ws-brand"><span className="vs-brandmark">s</span>Your workspace</span><span className="vs-demo">Illustrative demo</span></div>
+    <div className="ws-layout">
+     <aside className="ws-inbox"><div className="vs-ui-heading"><Inbox size={18}/><strong>Inbox</strong><span>3</span></div>
+      {[['M','Maya','Where is my order?','WhatsApp'],['J','James','Is this available?','Instagram'],['A','Aisha','Can I book a visit?','Website']].map(([initial,name,message,channel],i)=><div key={name} className={`ws-contact ${i===0?'selected':''}`}><span className={`vs-avatar avatar-${i}`}>{initial}</span><div><strong>{name}</strong><small>{message}</small></div><span title={channel}><ChannelLogo channel={channel}/></span></div>)}
+      <div className="ws-channel-strip">{['Website','WhatsApp','Instagram','Messenger'].map(channel=><span key={channel} title={channel}><ChannelLogo channel={channel}/></span>)}</div>
+      <div className="ws-catalogue"><img src="/images/stories/homeware-still-life.webp" alt="Ivory vase and blue bowl from the example homeware store" width="1536" height="1024" loading="lazy"/><span>North & Pine<ArrowUpRight size={14}/></span></div>
+     </aside>
+     <div className="ws-conversation"><header><span className="vs-avatar avatar-0">M</span><div><strong>Maya Patel</strong><small><ChannelLogo channel="WhatsApp"/>WhatsApp</small></div><span className="vs-status"><i/>{view===2?'Alex joined':'Open'}</span></header>
+      <div className="ws-messages" key={view}><span className="ws-date">Today · 10:24</span><div className="ws-bubble ws-in">Where is my order?</div><div className="ws-order"><Package size={24}/><div><strong>Order #2087</strong><small>Out for delivery</small></div><Check size={16}/></div><div className="ws-bubble ws-out">Your order is out for delivery today.<CheckCheck size={14}/></div>
+       {view===2?<><div className="ws-bubble ws-in">Could someone help with a return, too?</div><div className="ws-event"><Headphones size={14}/>Alex joined · history included</div><div className="ws-bubble ws-human">Hi Maya, I can help with that.</div></>:<div className="ws-event"><Check size={14}/>{view===1?'Saved to Maya’s customer record':view===3?'Order question answered':'Answered by your agent'}</div>}
+      </div><div className="ws-composer"><span>{view===2?'Alex is replying · team handling':'Conversation history stays here'}</span><Send size={16}/></div>
+     </div>
+     <aside className={`ws-context ${view===1?'is-highlighted':''}`}>
+      {view===3?<div className="ws-analytics"><ChartNoAxesCombined size={24}/><strong>What customers ask</strong><small>Example conversations</small>{[['Order status',18],['Returns',9],['Products',5]].map(([label,count])=><div className="ws-topic" key={label}><span>{label}<b>{count}</b></span><i><em style={{width:`${Number(count)/18*100}%`}}/></i></div>)}<div className="ws-analytics-note"><Check size={15}/>Maya’s order question is included.</div></div>:<><div className="ws-profile"><span className="vs-avatar avatar-0">M</span><strong>Maya Patel</strong><small>Returning customer</small></div><div className="ws-record"><span>Customer details</span><strong>maya@example.com</strong><span className="ws-label">Order enquiry</span></div><div className="ws-history"><strong>One connected history</strong><span><MessageCircle size={14}/>WhatsApp conversation</span><span><Package size={14}/>Order #2087</span><span><Headphones size={14}/>{view===2?'Assigned to Alex':'Team can take over'}</span></div></>}
+     </aside>
+    </div>
+    <div className={`ws-results ${view===3?'is-highlighted':''}`}><span><ChartNoAxesCombined size={19}/><strong>Results</strong></span><span><b>Order status</b><small>Question answered</small></span><span><b>Maya Patel</b><small>Customer record linked</small></span><span><b>{view===2?'Alex':'AI agent'}</b><small>{view===2?'Handling the return':'Handled the enquiry'}</small></span><a href="/features/analytics/" aria-label="Explore analytics"><ArrowUpRight size={21}/></a></div>
+   </div>
+   <div className="vs-controls" role="group" aria-label="Explore the connected workspace">{views.map(({label,Icon},i)=><button key={label} aria-pressed={view===i} onClick={()=>setView(i)}><Icon size={17}/>{label}{view===i&&<ArrowRight size={15}/>}</button>)}</div>
+   <p className="vs-sr-only" role="status">{['Inbox: the agent answers the order enquiry.','Customer: contact details and conversation history are linked.','Team: Alex joins the conversation with its history.','Results: example question categories and counts are shown.'][view]}</p>
+   <div className="vs-sr-only"><p>{copy.team.paragraphs[0]}</p>{copy.team.items.map(item=><p key={item.title}>{item.title}. {item.paragraphs[0]}</p>)}</div>
+  </div>
+ </section>;
 }
+export const StorySection=TeamStory;
