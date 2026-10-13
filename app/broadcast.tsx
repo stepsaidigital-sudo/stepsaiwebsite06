@@ -173,7 +173,6 @@ export function Broadcast(){
         {tabs.map((t,i)=><span key={t.key} className={`bc-art bc-art-${i} ${tab===i?'is-on':''}`} aria-hidden="true"/>)}
         <div className="bc-phone" aria-hidden="true"><span className="bc-btn bc-btn-a"/><span className="bc-btn bc-btn-b"/><span className="bc-btn bc-btn-c"/><div className="bc-phone-core"><span className="ios-island"/>{screens.map((s,i)=><div key={i} className={`bc-screen ${tab===i?'is-active':''}`}>{s}</div>)}</div></div>
         <SideCards tab={tab}/>
-        <span className="bc-illus">Illustration</span>
       </div>
     </div></div>
   </section>;

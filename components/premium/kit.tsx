@@ -132,11 +132,11 @@ export function WidgetScreen({ business, lines, t }: { business: string; lines: 
   </div>;
 }
 
-export function CallScreen({ business, transcript, t }: { business: string; transcript: { who: string; text: string; at: number }[]; t: number }) {
+export function CallScreen({ business, transcript, t, label = 'Live transcript · Illustration' }: { business: string; transcript: { who: string; text: string; at: number }[]; t: number; label?: string }) {
   const seconds = Math.min(59, Math.floor(t / 1000) + 12);
   return <div className="pp-call">
     <div className="pp-call-top"><span className="pp-call-avatar">{business[0]}</span><strong>{business}</strong><small>00:{String(seconds).padStart(2, '0')}</small></div>
-    <div className="pp-call-live"><small><i />Live transcript · Illustration</small>{transcript.filter(l => t >= l.at).slice(-3).map(l => <p key={l.at}><b>{l.who}</b>{l.text}</p>)}</div>
+    <div className="pp-call-live"><small><i />{label}</small>{transcript.filter(l => t >= l.at).slice(-3).map(l => <p key={l.at}><b>{l.who}</b>{l.text}</p>)}</div>
     <div className="pp-call-keys">{[[MicOff, 'mute'], [Grid3x3, 'keypad'], [Volume2, 'speaker']].map(([Icon, label]) => { const I = Icon as typeof MicOff; return <span key={label as string}><i><I size={20} /></i>{label as string}</span>; })}</div>
     <span className="pp-call-end"><PhoneOff size={22} /></span>
   </div>;

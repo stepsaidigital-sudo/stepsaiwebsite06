@@ -79,7 +79,7 @@ export function TeamStory(){
   <div className="tv-tabs" role="tablist" aria-label="What your team can see">{stories.map((s,i)=><button key={s.label} role="tab" id={`tv-tab-${i}`} aria-selected={active===i} aria-controls="tv-panel" onClick={()=>pick(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:-1)+stories.length)%stories.length;pick(n);(e.currentTarget.parentElement?.children[n] as HTMLElement|undefined)?.focus()}}}><s.Icon size={19}/><span>{s.label}</span>{active===i&&auto&&!reduced&&<i className="tv-progress" style={{transform:`scaleX(${Math.min(1,shownTime/(TOTAL+1800))})`}}/>}</button>)}</div>
   <div className="tv-panel" id="tv-panel" role="tabpanel" aria-labelledby={`tv-tab-${active}`} key={active}>
    <div className="tv-copy"><span className="tv-kicker"><b>0{active+1}</b>{story.label}</span><h3>{item.title}</h3><p>{item.paragraphs[0]}</p><a href={story.href} className="tv-link">See how it works <ArrowRight size={16}/></a></div>
-   <div className={`tv-stage${active===0?' is-inbox':''}`}><span className="tv-illus">Illustrative example</span>{active===0?<UnifiedInbox/>:<><Chat story={story} time={shownTime}/><div className={`tv-card${shownTime>=TOTAL*.55?' is-in':''}`}><div className="tv-card-brand"><span>s</span>Steps AI · your team’s view</div>{story.card}</div></>}</div>
+   <div className={`tv-stage${active===0?' is-inbox':''}`}>{active===0?<UnifiedInbox/>:<><Chat story={story} time={shownTime}/><div className={`tv-card${shownTime>=TOTAL*.55?' is-in':''}`}><div className="tv-card-brand"><span>s</span>Steps AI · your team’s view</div>{story.card}</div></>}</div>
   </div>
  </div></section>;
 }
