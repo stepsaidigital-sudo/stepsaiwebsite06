@@ -3,7 +3,6 @@ import "./globals.css";
 import "./polish.css";
 import "./corrections.css";
 import "./industries.css";
-import "./reviews.css";
 import "./hero-channels.css";
 
 export const metadata: Metadata = {
@@ -80,3 +79,4 @@ import "./journey-stack-scroll.css";
 import "./final-tiles.css";
 import "./team-switcher.css";
 import "./hero-cascade.css";
+import "./reviews-spotlight.css";

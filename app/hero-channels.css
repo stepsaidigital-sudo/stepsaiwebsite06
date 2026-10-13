@@ -72,3 +72,8 @@
   #showcase .channel-demo-canvas .channel-demo-result{margin-top:6px}
   #showcase .channel-presentation-panel{padding-block:4px}
 }
+/* Phone calls tab: the AI receptionist page's phone call mockup (PhoneFrame + CallScreen from the premium kit),
+   scaled to sit in the hero card. Its colour variables normally come from .pp, so they are set here. */
+.channel-demo-canvas.is-call{background:linear-gradient(150deg,#eef6ff,#dcebfb);align-items:center}
+.hero-call{--pa:#0c3474;--pa2:#2c9cfa;--pa-soft:#e6f4fe;--pa-glow:#c4ecfc;--pa-wash:#f7fbff;--pa-wash2:#e2f1fd;--pa-yellow:#f8b403;zoom:.78;margin:auto}
+.hero-call .pp-phone{height:530px;margin:0 auto}

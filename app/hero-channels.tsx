@@ -1,8 +1,9 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
-import {ArrowRight,Check,Phone,PhoneCall,Mic,Volume2} from 'lucide-react';
+import {ArrowRight,Check,Phone} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
 import {LiveConversation} from './live-conversation';
+import {PhoneFrame,CallScreen} from '@/components/premium/kit';
 import copy from './copy.json';
 
 const channels=[
@@ -13,7 +14,9 @@ const channels=[
   {name:'Phone calls',title:'A helpful voice on the other end.',description:'Let customers call your business as usual. Your AI calling agent can answer questions and help them take the next step.',question:'Can I arrange a visit tomorrow?',answer:'Of course. Would morning or afternoon work better for you?',result:'A normal phone call. A useful conversation.',tag:'Phone calls · Voice conversations · Your business'}
 ];
 
-function VoiceScene({time,paused}:{time:number;paused:boolean}){return <div className={`voice-scene ${paused||time>=12000?'voice-paused':''}`}><div className="voice-call-label"><span className="voice-status-dot"/> {time<700?'Connecting…':time<12000?'Example phone conversation':'Conversation complete'} <span>00:{String(Math.floor(time/1000)).padStart(2,'0')}</span></div><div className="voice-orbit"><div><PhoneCall size={26}/></div></div><div className="voice-wave" aria-hidden="true">{[12,22,16,34,48,27,42,58,36,24,50,64,38,52,28,44,60,32,22,42,29,18,26,12].map((height,i)=><i key={i} style={{height,animationDelay:`${i*65}ms`}}/>)}</div><div className="voice-transcript">{[{at:1000,who:'Customer',text:'Can I arrange a visit tomorrow?'},{at:3900,who:'AI calling agent',text:'Of course. Would morning or afternoon work better for you?'},{at:7300,who:'Customer',text:'Afternoon would be perfect.'},{at:10600,who:'AI calling agent',text:'Let’s check the available afternoon times.'}].map(line=><div key={line.at} className={time>=line.at?'voice-line line-shown':'voice-line'} aria-hidden={time<line.at}><span>{line.who}</span><p>“{line.text}”</p></div>)}</div><div className="voice-controls"><span><Mic size={15}/> {time<700?'Connecting':time<3900?'Listening':time<7300?'Agent speaking':time<10600?'Listening':'Next step'}</span><Volume2 size={16}/></div></div>}
+// Phone calls tab: the same phone call mockup as the AI receptionist page, driven by the hero clock.
+const callLines=[{at:1000,who:'Caller',text:'Can I arrange a visit tomorrow?'},{at:3900,who:'AI calling agent',text:'Of course. Would morning or afternoon work better for you?'},{at:7300,who:'Caller',text:'Afternoon would be perfect.'},{at:10600,who:'AI calling agent',text:'Let’s check the available afternoon times.'}];
+function CallPhone({time}:{time:number}){return <div className="hero-call"><PhoneFrame dark><CallScreen business="Your Business" transcript={callLines} t={time}/></PhoneFrame></div>}
 
 function SceneContext({index}:{index:number}){return <div className={`scene-context scene-context-${index}`} aria-hidden="true">{index===0?<><img src="/industries/ecommerce.png" alt=""/><div><small>A message worth opening</small><strong>A little something, picked for you.</strong><span>Explore the collection <ArrowRight size={12}/></span></div></>:index===1?<><img src="/industries/ecommerce.png" alt=""/><div><small>From your latest post</small><strong>“Details, please!”</strong><span>Comment → Conversation</span></div></>:index===2?<><span className="context-orb">?</span><div><small>A customer needs help</small><strong>Make the next step clear.</strong><span>From a question to an answer</span></div></>:<><div className="context-browser-dots"><i/><i/><i/></div><div><small>Your website</small><strong>Turn a visit into a conversation.</strong><span>A helpful welcome, right on your page</span></div></>}</div>}
 
@@ -42,6 +45,9 @@ export function HeroChannels(){
   useEffect(()=>{
     const outer=runway.current!,inner=frame.current!;
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    // The scale is worked out once per window size. Recomputing it whenever the content resized (chat bubbles
+    // arriving) fed back into itself: the new scale changed the measured size, which changed the scale (blinking).
+    let scaleKey='',lastScale=1;
     const measure=()=>{
       step.current=Math.max(420,innerHeight*.7);
       // Decide pinning from the natural (unscaled) size, which pinning itself never changes.
@@ -52,13 +58,16 @@ export function HeroChannels(){
       const natural=tabs.offsetHeight+presNatural+60;
       const fits=innerWidth>=760&&natural+100<=innerHeight&&!reduced.matches;
       // Scale up into the room left on taller screens, never past what fits, never below 1.
-      const scale=fits&&innerWidth>=1000?Math.max(1,Math.min(1.4,(innerHeight-104-tabs.offsetHeight-125)/presNatural)):1;
-      outer.style.setProperty('--hero-z',scale.toFixed(3));
+      const key=`${innerWidth}x${innerHeight}x${fits}`;
+      if(key!==scaleKey){scaleKey=key;lastScale=fits&&innerWidth>=1000?Math.max(1,Math.min(1.4,(innerHeight-104-tabs.offsetHeight-125)/presNatural)):1}
+      outer.style.setProperty('--hero-z',lastScale.toFixed(3));
       setPinned(fits);
       outer.style.height=fits?`${inner.offsetHeight+step.current*channels.length}px`:'auto';
     };
     const observer=new ResizeObserver(measure);observer.observe(inner);
     window.addEventListener('resize',measure);reduced.addEventListener('change',measure);measure();
+    // Web fonts change the natural height, so size once more after they load.
+    document.fonts?.ready.then(()=>{scaleKey='';measure()});
     return()=>{observer.disconnect();window.removeEventListener('resize',measure);reduced.removeEventListener('change',measure)};
   },[]);
   useEffect(()=>{
@@ -80,7 +89,7 @@ export function HeroChannels(){
       <nav className="channel-icon-tabs" aria-label="Preview a customer channel">{channels.map((item,i)=><button key={item.name} aria-label={item.name} aria-pressed={active===i} aria-controls={`hero-channel-${i}`} onClick={()=>select(i)} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(i+(event.key==='ArrowRight'?1:-1)+channels.length)%channels.length;select(next);event.currentTarget.parentElement?.querySelectorAll('button')[next]?.focus()}}}>{i===4?<Phone size={22}/>:<ChannelLogo channel={item.name}/>}<span>{item.name}</span></button>)}</nav>
       <div className="channel-presentation">{channels.map((item,i)=><article id={`hero-channel-${i}`} key={item.name} className={`channel-presentation-panel panel-${i} ${active===i?'is-current':''}`} aria-hidden={active!==i} inert={active!==i}>
         <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i+1}</span><span>{['Start a conversation','Keep the interest going','Make help feel effortless','Welcome every visitor','Let the conversation flow'][i]}</span></div><h2>{item.title}</h2><p>{item.description}</p><a href="#product" className="channel-learn">Explore how it works <ArrowRight size={17}/></a></div>
-        <div className={`channel-demo-canvas ${i===4?'is-voice':''}`}><span className="scene-illustration">Illustration</span>{i===4?<VoiceScene time={active===i?time:0} paused={paused||!visible||reduced}/>:<><SceneContext index={i}/><div className="channel-demo-conversation"><LiveConversation channel={item.name} question={item.question} answer={item.answer} time={active===i?time:0}/></div></>}<div className={`channel-demo-result ${time>=12000?'result-arrived':'result-waiting'}`} aria-hidden={time<12000}><span><Check size={15}/></span>{item.result}</div></div>
+        <div className={`channel-demo-canvas ${i===4?'is-call':''}`}><span className="scene-illustration">Illustration</span>{i===4?<CallPhone time={active===i?time:0}/>:<><SceneContext index={i}/><div className="channel-demo-conversation"><LiveConversation channel={item.name} question={item.question} answer={item.answer} time={active===i?time:0}/></div></>}<div className={`channel-demo-result ${time>=12000?'result-arrived':'result-waiting'}`} aria-hidden={time<12000}><span><Check size={15}/></span>{item.result}</div></div>
       </article>)}</div>
     </div>
   </div>

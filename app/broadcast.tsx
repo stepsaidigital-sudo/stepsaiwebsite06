@@ -164,7 +164,6 @@ export function Broadcast(){
         <span className="bc-eyebrow">Campaigns &amp; Instagram</span>
         <h2 id="broadcast-title">Send a campaign. Every reply lands with your agent.</h2>
         <p className="bc-lead">Broadcast on WhatsApp, turn Instagram comments into DMs and let your agent answer everyone who writes back.</p>
-        <p className="bc-guide"><span className="bc-mouse" aria-hidden="true"><i/></span>{pinned?'Scroll to move through each channel, or pick one.':'Pick a channel to see it in action.'}</p>
         <div className="bc-tabs" role="tablist" aria-label="Campaign channels">{tabs.map((t,i)=>{const Icon=t.icon;return <button key={t.key} role="tab" aria-selected={tab===i} aria-controls="bc-stage" className={`bc-tab bc-tab-${i} ${tab===i?'is-active':''}`} onClick={()=>pick(i)}>
           <span className="bc-tab-icon"><Icon size={18}/></span><span className="bc-tab-text"><small>0{i+1}</small><strong>{t.title}</strong><span>{t.line}</span></span><span className="bc-tab-logo"><ChannelLogo channel={t.channel}/></span>
           <span className="bc-tab-bar"><i ref={el=>{bars.current[i]=el}}/></span>
