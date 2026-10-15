@@ -77,3 +77,48 @@
 .channel-demo-canvas.is-call{background:linear-gradient(150deg,#eef6ff,#dcebfb);align-items:center}
 .hero-call{--pa:#0c3474;--pa2:#2c9cfa;--pa-soft:#e6f4fe;--pa-glow:#c4ecfc;--pa-wash:#f7fbff;--pa-wash2:#e2f1fd;--pa-yellow:#f8b403;zoom:.78;margin:auto}
 .hero-call .pp-phone{height:530px;margin:0 auto}
+
+/* Website tab: the real Steps AI Shopper widget (matches the live widget: blue customer bubble on the right, grey agent
+   bubble on the left, product cards with a purple Add to cart, fixed-height body that scrolls to the newest message). */
+.hc-w{width:100%;max-width:400px;margin:0 auto;display:flex;flex-direction:column;height:430px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 0 0 6px rgb(255 255 255/55%),0 24px 44px -24px rgb(12 52 116/40%);font-family:Inter,system-ui,Arial,sans-serif;color:#1d2433;text-align:left}
+.hc-w-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #eef0f3;color:#444c58;flex:none}
+.hc-w-avatar{position:relative;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e4e7ec;color:#6b7280;flex:none}
+.hc-w-avatar i{position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;border-radius:50%;background:#22c55e;border:2px solid #fff}
+.hc-w-head div{flex:1;line-height:1.2}.hc-w-head strong{display:block;font-size:15px;color:#1d2433}.hc-w-head small{font-size:12px;color:#6b7280}
+.hc-w-cart{position:relative;display:grid;place-items:center}
+.hc-w-cart b{position:absolute;top:-7px;right:-8px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#7c3aed;color:#fff;font-size:10px;display:grid;place-items:center;animation:hc-w-pop 300ms cubic-bezier(.23,1,.32,1)}
+.hc-w-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:14px}
+.hc-w-msg{display:flex;flex-direction:column;max-width:86%;animation:hc-w-in 280ms cubic-bezier(.23,1,.32,1) both}
+.hc-w-msg>p{margin:0;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.5;color:#1d2433}
+.hc-w-msg.customer{align-self:flex-end}.hc-w-msg.customer>p{background:#3dbdf3;color:#0b2233}
+.hc-w-msg.agent{align-self:flex-start;max-width:100%}.hc-w-msg.agent>p{background:#f1f2f4;max-width:86%}
+.hc-w-showing{font-size:12px;color:#6b7280;margin:10px 0 6px}
+.hc-w-product{display:grid;grid-template-columns:84px 1fr;gap:6px 12px;padding:10px;border:1px solid #e3e6ea;border-radius:14px;background:#fff;margin-bottom:8px}
+.hc-w-product img{width:84px;height:84px;object-fit:cover;border-radius:8px;background:#f4f1ec}
+.hc-w-product strong{display:flex;justify-content:space-between;gap:6px;font-size:13px;line-height:1.3;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#c9ced6}
+.hc-w-product strong svg{flex:none;color:#6b7280}
+.hc-w-price{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:5px 0 8px}
+.hc-w-price b{font-size:15px;color:#15803d}.hc-w-price s{font-size:12px;color:#8a919c}
+.hc-w-price em{font-style:normal;font-size:12px;font-weight:600;padding:2px 7px;border-radius:6px;background:#38bdf8;color:#0b2233}
+.hc-w-add{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px;border-radius:8px;background:#7c3aed;color:#fff;font-size:12px;font-weight:600}
+.hc-w-add.in-cart{background:#15803d}
+.hc-w-product>p{grid-column:1/-1;margin:0;font-size:12px;line-height:1.45;color:#5b6270;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.hc-w-typing{display:flex;gap:4px;padding:12px 14px;border-radius:16px;background:#f1f2f4;align-self:flex-start}
+.hc-w-typing.customer{align-self:flex-end;background:#3dbdf3}
+.hc-w-typing i{width:5px;height:5px;border-radius:50%;background:#7d8590;animation:typing-pulse 800ms ease-in-out infinite alternate}
+.hc-w-typing.customer i{background:#0b2233}
+.hc-w-typing i:nth-child(2){animation-delay:150ms}.hc-w-typing i:nth-child(3){animation-delay:300ms}
+.hc-w-foot{flex:none;padding:8px 12px 6px;border-top:1px solid #f0f1f3;text-align:center}
+.hc-w-foot>div{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;border:1px solid #dfe2e6;border-radius:22px;color:#6b7280}
+.hc-w-foot>div span{flex:1;text-align:left;font-size:14px;color:#3b4250}
+.hc-w-foot>div b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e8f6fd;color:#7cc4e6}
+.hc-w-foot small{display:block;margin-top:5px;font-size:11px;color:#6b7280}.hc-w-foot small strong{color:#4f46e5;letter-spacing:.04em}
+@keyframes hc-w-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes hc-w-pop{from{transform:scale(.4)}to{transform:scale(1)}}
+@media(min-width:760px) and (max-height:780px){.hc-w{height:400px}.hc-w-msg>p{font-size:14px;padding:8px 12px}.hc-w-head{padding:7px 12px}.hc-w-product{grid-template-columns:64px 1fr}.hc-w-product img{width:64px;height:64px}}
+@media(max-width:759px){.hc-w{height:440px}}
+
+/* Customer’s-phone view: customer (first message) on the right, business agent on the left. */
+#showcase .live-chat .live-message-slot.from-customer{justify-content:flex-end}
+#showcase .live-chat .live-message-slot.from-agent{justify-content:flex-start}
+#showcase .live-chat .agent-typing{left:0;right:auto;background:#eef0f3}

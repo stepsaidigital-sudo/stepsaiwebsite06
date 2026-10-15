@@ -98,3 +98,18 @@
 }
 @keyframes jv-recede{to{transform:scale(.94);opacity:.9}}
 @media(max-width:800px),(prefers-reduced-motion:reduce){.jv-stack .jv-card>*{animation:none!important;opacity:1}}
+
+/* Card copy refresh (2026-10-15): step counter removed; the stage name uses the page's serif display face like the
+   hero, the supporting text stays sans and dark enough to read. Engage card carries the Shopify/WooCommerce identity
+   badge above its heading. */
+.jv-built{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.jv-built small{font:600 13px/1.2 Manrope,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#4a5f78}
+.jv-built-logos{display:flex;flex-wrap:wrap;gap:12px}
+.jv-built-logos span{display:flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border:1px solid #dfe7f1;border-radius:14px;background:#fff;box-shadow:0 6px 16px -10px rgb(12 52 116/30%);font:700 19px/1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#182934}
+.jv-built-logos img{height:30px;width:auto}
+.jv-built-logos img[src*=woocommerce]{height:26px}
+.jv-stack .jv-copy h3.jv-stage-name{font-family:Newsreader,Georgia,serif!important;font-weight:500;letter-spacing:-.03em;line-height:1.02;font-size:clamp(44px,4vw,60px)}
+.jv-copy>p.jv-lead{font:500 clamp(19px,1.6vw,22px)/1.35 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#1f3d63;max-width:26ch}
+.jv-copy>p.jv-lead+p{color:#4a5f78}
+.jv-points li{color:#1c3558}
+@media(max-height:780px) and (min-width:760px){.jv-built{margin-bottom:14px;gap:8px}.jv-built-logos span{padding:8px 14px 8px 12px;font-size:17px}.jv-built-logos img{height:26px}.jv-built-logos img[src*=woocommerce]{height:22px}.jv-stack .jv-copy h3.jv-stage-name{font-size:clamp(38px,3.4vw,50px)}}

@@ -2,23 +2,65 @@
 import {useEffect,useRef,useState} from 'react';
 import {ArrowRight,Check,Phone} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
-import {LiveConversation} from './live-conversation';
+import {LiveConversation,type Product} from './live-conversation';
 import {PhoneFrame,CallScreen} from '@/components/premium/kit';
-import copy from './copy.json';
 
-const channels=[
-  {name:'WhatsApp',title:copy.journey.stages[0].items[0].title,description:copy.journey.stages[0].items[0].paragraphs[0],question:'Do you have the offer in a smaller size?',answer:'I can help you choose a size. Which item caught your eye?',result:'From campaign to conversation',tag:'Campaigns · Conversations · Follow-ups'},
-  {name:'Instagram',title:copy.journey.stages[0].items[1].title,description:copy.journey.stages[0].items[1].paragraphs[0],question:'I saw your post. Could you send me the details?',answer:'Of course. What would you like to know about the collection?',result:'From a comment to a useful answer',tag:'Comments · Direct messages · Your team'},
-  {name:'Messenger',title:copy.journey.stages[2].items[0].title,description:copy.journey.stages[2].items[0].paragraphs[0],question:'Can you help me understand your services?',answer:'Absolutely. Tell me what you’re looking for and I’ll help you find the right information.',result:'Help customers in the conversation',tag:'Questions · Answers · Human help'},
-  {name:'Website',title:copy.journey.stages[1].items[1].title,description:copy.journey.stages[1].items[1].paragraphs[0],question:'Can I speak with your team about a demo?',answer:'Of course. Share a little about your business so our team can prepare for the conversation.',result:'A conversation your team can continue',tag:'Visitors · Enquiries · Customer context'},
-  {name:'Phone calls',title:'A helpful voice on the other end.',description:'Let customers call your business as usual. Your AI calling agent can answer questions and help them take the next step.',question:'Can I arrange a visit tomorrow?',answer:'Of course. Would morning or afternoon work better for you?',result:'A normal phone call. A useful conversation.',tag:'Phone calls · Voice conversations · Your business'}
+// Hero copy is its own (not the journey section's), so each tab describes the conversation its mockup plays.
+// `panel` keeps each channel's original panel-N styling after the tabs were reordered.
+type Channel={name:string;panel:number;label:string;title:string;description:string;messages?:string[];products?:Product[];result:string};
+const channels:Channel[]=[
+  {name:'Website',panel:3,label:'Help them buy',title:'Help shoppers choose and buy on your website',description:'Shoppers tell your agent what they need and how much they want to spend. It shows matching products from your catalogue, adds them to the cart and answers questions before checkout.',
+    messages:['need a housewarming gift under ₹2,000','These two fit your budget. The Sol Ceramic Vase is the one most people pick for a new home.','add the sol vase. do you gift wrap?','Added to your cart. Gift wrap is ₹99, and you can add a note at checkout.'],
+    products:[{name:'Sol Ceramic Vase',price:'₹1,890.00',was:'₹2,690.00',off:'30% off',description:'Hand-finished stoneware vase with a matte glaze. Fits a small bunch of stems.',image:'/images/stories/homeware-still-life.webp'},{name:'Dune Vase and Bowl Set',price:'₹1,650.00',was:'₹2,350.00',off:'30% off',description:'Speckled stoneware vase and serving bowl, packed in a gift box.',image:'/industries/ecommerce.png'}],
+    result:'From a question to a full cart'},
+  {name:'WhatsApp',panel:0,label:'Check an order',title:'Answer order questions on WhatsApp',description:'Customers message you about their order. Your agent looks it up in Shopify and replies with the actual status. If a change needs a person, it hands the chat to your team.',
+    messages:['hi, i ordered a linen shirt on monday. order 4821. when will it come?','Found it. Order #4821 shipped yesterday and is due on Friday. Here’s your tracking link.','can i change the address? i’ll be at office that day','It has already shipped, so the address has to be changed with the courier. I’ve passed this to our team and Priya will reply here shortly.'],
+    result:'Real order status, then a person for the change'},
+  {name:'Phone calls',panel:4,label:'Pick up the phone',title:'Call your leads and answer every call',description:'Your AI calling agent calls new leads to check whether they’re interested. It also confirms orders, books appointments and answers when customers call you. Every call is saved with a transcript.',
+    result:''},
+  {name:'Instagram',panel:1,label:'From comment to DM',title:'Reply to Instagram comments in DMs',description:'When someone comments a word like PRICE on your post, your agent sends them a DM with the details. Then it keeps answering their questions.',
+    messages:['hi, commented on ur reel. price for the kantha jacket?','It’s ₹3,450 and comes in S to XL. Shipping is free on orders over ₹2,000. Need help with the size?','im usually M but shoulders are always tight on me','It’s a relaxed fit, so most people stay with their usual size. M fits up to a 40 inch chest. Here’s the link for M.'],
+    result:'From a comment to an order link'},
+  {name:'Messenger',panel:2,label:'Handle a return',title:'Handle exchanges on Messenger',description:'Your agent answers from your return policy and checks the delivery date. It then creates a ticket so your team can arrange the pickup.',
+    messages:['the shoes are one size small. can i exchange?','Yes. Unworn shoes can be exchanged within 15 days. Your order was delivered on 9 Oct, so you’re within the window. Which size do you need?','UK 9','UK 9 is in stock. I’ve created an exchange request, and our team will message you here with a pickup time.'],
+    result:'Policy answer, ticket created'}
 ];
+const CHAT_MS=12000;
+const isCall=(c:Channel)=>c.name==='Phone calls';
 
-// Phone calls tab: the same phone call mockup as the AI receptionist page, driven by the hero clock.
-const callLines=[{at:1000,who:'Caller',text:'Can I arrange a visit tomorrow?'},{at:3900,who:'AI calling agent',text:'Of course. Would morning or afternoon work better for you?'},{at:7300,who:'Caller',text:'Afternoon would be perfect.'},{at:10600,who:'AI calling agent',text:'Let’s check the available afternoon times.'}];
-function CallPhone({time}:{time:number}){return <div className="hero-call"><PhoneFrame dark><CallScreen business="Your Business" transcript={callLines} t={time} label="Live transcript"/></PhoneFrame></div>}
+// Phone calls tab: three calls play one after another in the AI receptionist page's phone mockup.
+// Line times are relative to the start of each call; `length` is how long the call stays on screen.
+const calls=[
+  {business:'Horizon Overseas Education',direction:'Outgoing call',length:23000,result:'Lead checked, counsellor call booked',lines:[
+    {at:800,who:'Rahul',text:'Hello?'},
+    {at:2200,who:'AI assistant',text:'Hi Rahul, I’m the AI assistant from Horizon Overseas Education. You filled in our form about studying in Canada. Do you have two minutes?'},
+    {at:6200,who:'Rahul',text:'Yes, tell me.'},
+    {at:8000,who:'AI assistant',text:'Are you planning to go this year or next year? And have you taken IELTS yet?'},
+    {at:11400,who:'Rahul',text:'Next September. IELTS is booked for November.'},
+    {at:14200,who:'AI assistant',text:'That works for the September intake. Shall I book a call with a counsellor? Thursday at 5 or Saturday at 11?'},
+    {at:18000,who:'Rahul',text:'Saturday 11.'},
+    {at:19600,who:'AI assistant',text:'Done. I’ve sent the details to you on WhatsApp.'}]},
+  {business:'Sunrise Dental Clinic',direction:'Incoming call',length:12000,result:'Appointment booked from a phone call',lines:[
+    {at:800,who:'Caller',text:'Hi, is Dr. Rao available tomorrow evening?'},
+    {at:3400,who:'AI assistant',text:'Dr. Rao has 6:30 and 7:15 free tomorrow. Which works for you?'},
+    {at:6400,who:'Caller',text:'6:30.'},
+    {at:8000,who:'AI assistant',text:'You’re booked for 6:30 tomorrow with Dr. Rao. I’ll send a confirmation on WhatsApp.'}]},
+  {business:'Urban Threads',direction:'Outgoing call',length:15500,result:'Order confirmed before shipping',lines:[
+    {at:800,who:'Neha',text:'Hello?'},
+    {at:2200,who:'AI assistant',text:'Hi Neha, I’m the AI assistant from Urban Threads. I’m calling about your cash-on-delivery order for ₹1,299. Should we ship it?'},
+    {at:6000,who:'Neha',text:'Yes, ship it.'},
+    {at:7600,who:'AI assistant',text:'It goes out today and should reach you by Friday.'},
+    {at:10200,who:'Neha',text:'Can it come after 6? I’m at work.'},
+    {at:12400,who:'AI assistant',text:'I’ve added a note asking the courier to deliver after 6 pm.'}]}
+];
+const CALLS_MS=calls.reduce((sum,c)=>sum+c.length,0);
+function currentCall(time:number){
+  let start=0;
+  for(let i=0;i<calls.length-1;i++){if(time<start+calls[i].length)return {call:calls[i],t:time-start};start+=calls[i].length}
+  return {call:calls[calls.length-1],t:time-start};
+}
+function CallPhone({time}:{time:number}){const {call,t}=currentCall(time);return <div className="hero-call"><PhoneFrame dark><CallScreen key={call.business} business={call.business} transcript={call.lines} t={t} label={`${call.direction} · Live transcript`}/></PhoneFrame></div>}
 
-function SceneContext({index}:{index:number}){return <div className={`scene-context scene-context-${index}`} aria-hidden="true">{index===0?<><img src="/industries/ecommerce.png" alt=""/><div><small>A message worth opening</small><strong>A little something, picked for you.</strong><span>Explore the collection <ArrowRight size={12}/></span></div></>:index===1?<><img src="/industries/ecommerce.png" alt=""/><div><small>From your latest post</small><strong>“Details, please!”</strong><span>Comment → Conversation</span></div></>:index===2?<><span className="context-orb">?</span><div><small>A customer needs help</small><strong>Make the next step clear.</strong><span>From a question to an answer</span></div></>:<><div className="context-browser-dots"><i/><i/><i/></div><div><small>Your website</small><strong>Turn a visit into a conversation.</strong><span>A helpful welcome, right on your page</span></div></>}</div>}
 
 export function HeroChannels(){
   const [active,setActive]=useState(0);
@@ -26,10 +68,12 @@ export function HeroChannels(){
   // The pause/replay strip was removed from the hero; playback always runs while the panel is visible.
   const paused=false,replay=0;
   const [visible,setVisible]=useState(false),[reduced,setReduced]=useState(false);
+  // The phone tab plays three calls, so its clock runs longer than a chat's.
+  const duration=isCall(channels[active])?CALLS_MS:CHAT_MS;
   // The clock is keyed to the channel and replay, so a new channel starts from zero on its first render.
   const key=`${active}-${replay}`;
   const [clock,setClock]=useState({key,t:0});
-  const time=reduced?12000:clock.key===key?clock.t:0;
+  const time=reduced?duration:clock.key===key?clock.t:0;
   const runway=useRef<HTMLDivElement>(null),frame=useRef<HTMLDivElement>(null);
   const step=useRef(480);
   useEffect(()=>{
@@ -38,10 +82,10 @@ export function HeroChannels(){
     return()=>{observer.disconnect();mq.removeEventListener('change',sync)};
   },[]);
   useEffect(()=>{
-    if(paused||!visible||reduced||time>=12000)return;
-    const timer=window.setInterval(()=>{if(!document.hidden)setClock(c=>({key,t:Math.min(12000,(c.key===key?c.t:0)+100)}))},100);
+    if(paused||!visible||reduced||time>=duration)return;
+    const timer=window.setInterval(()=>{if(!document.hidden)setClock(c=>({key,t:Math.min(duration,(c.key===key?c.t:0)+100)}))},100);
     return()=>window.clearInterval(timer);
-  },[paused,visible,reduced,time>=12000,key]);
+  },[paused,visible,reduced,time>=duration,key,duration]);
   useEffect(()=>{
     const outer=runway.current!,inner=frame.current!;
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -86,11 +130,17 @@ export function HeroChannels(){
   };
   return <div id="showcase" className={`channel-runway ${pinned?'channel-pinned':''}`} ref={runway} data-channel={channels[active].name}>
     <div ref={frame} className={`channel-theatre ${paused?'playback-paused':''}`}>
-      <nav className="channel-icon-tabs" aria-label="Preview a customer channel">{channels.map((item,i)=><button key={item.name} aria-label={item.name} aria-pressed={active===i} aria-controls={`hero-channel-${i}`} onClick={()=>select(i)} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(i+(event.key==='ArrowRight'?1:-1)+channels.length)%channels.length;select(next);event.currentTarget.parentElement?.querySelectorAll('button')[next]?.focus()}}}>{i===4?<Phone size={22}/>:<ChannelLogo channel={item.name}/>}<span>{item.name}</span></button>)}</nav>
-      <div className="channel-presentation">{channels.map((item,i)=><article id={`hero-channel-${i}`} key={item.name} className={`channel-presentation-panel panel-${i} ${active===i?'is-current':''}`} aria-hidden={active!==i} inert={active!==i}>
-        <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i+1}</span><span>{['Start a conversation','Keep the interest going','Make help feel effortless','Welcome every visitor','Let the conversation flow'][i]}</span></div><h2>{item.title}</h2><p>{item.description}</p><a href="#product" className="channel-learn">Explore how it works <ArrowRight size={17}/></a></div>
-        <div className={`channel-demo-canvas ${i===4?'is-call':''}`}>{i===4?<CallPhone time={active===i?time:0}/>:<><SceneContext index={i}/><div className="channel-demo-conversation"><LiveConversation channel={item.name} question={item.question} answer={item.answer} time={active===i?time:0}/></div></>}<div className={`channel-demo-result ${time>=12000?'result-arrived':'result-waiting'}`} aria-hidden={time<12000}><span><Check size={15}/></span>{item.result}</div></div>
-      </article>)}</div>
+      <nav className="channel-icon-tabs" aria-label="Preview a customer channel">{channels.map((item,i)=><button key={item.name} aria-label={item.name} aria-pressed={active===i} aria-controls={`hero-channel-${i}`} onClick={()=>select(i)} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(i+(event.key==='ArrowRight'?1:-1)+channels.length)%channels.length;select(next);event.currentTarget.parentElement?.querySelectorAll('button')[next]?.focus()}}}>{isCall(item)?<Phone size={22}/>:<ChannelLogo channel={item.name}/>}<span>{item.name}</span></button>)}</nav>
+      <div className="channel-presentation">{channels.map((item,i)=>{
+        const t=active===i?time:0;
+        // A call shows its own result once its last line has been said; a chat shows its result at the end.
+        const call=isCall(item)?currentCall(t):null;
+        const result=call?call.call.result:item.result;
+        const arrived=call?t>0&&call.t>=call.call.lines[call.call.lines.length-1].at+900:t>=CHAT_MS;
+        return <article id={`hero-channel-${i}`} key={item.name} className={`channel-presentation-panel panel-${item.panel} ${active===i?'is-current':''}`} aria-hidden={active!==i} inert={active!==i}>
+          <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i+1}</span><span>{item.label}</span></div><h2>{item.title}</h2><p>{item.description}</p><a href="#product" className="channel-learn">Explore how it works <ArrowRight size={17}/></a></div>
+          <div className={`channel-demo-canvas ${call?'is-call':''}`}>{call?<CallPhone time={t}/>:<><div className="channel-demo-conversation"><LiveConversation channel={item.name} messages={item.messages!} products={item.products} time={t}/></div></>}<div key={result} className={`channel-demo-result ${arrived?'result-arrived':'result-waiting'}`} aria-hidden={!arrived}><span><Check size={15}/></span>{result}</div></div>
+        </article>})}</div>
     </div>
   </div>
 }

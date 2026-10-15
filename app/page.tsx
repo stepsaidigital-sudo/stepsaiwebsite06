@@ -10,7 +10,6 @@ import {Integrations} from './integrations';
 import {TeamStory} from './team-story';
 import {Industries} from './industries';
 import {Reviews} from './reviews';
-import {ChannelLogo} from './channel-chat';
 import {ScrollPolish} from './showcase';
 import {HeroChannels} from './hero-channels';
 import {SetupStory} from './setup-story';
@@ -21,7 +20,7 @@ import {Action,Footer,Header,UnresolvedDialog,openOrGo,type Open} from '@/compon
 // Same words as before; each one is a span so motion.css can stagger them in.
 // Hero title: each word fades in on load (motion.css), and hovering a word flips its letters in a wave (LetterCascade).
 function KineticTitle(){const c=(text:string)=><LetterCascade text={text} className="lc-word" staggerDuration={0.03}/>;const w=(text:string,i:number)=><span className="kw" style={{'--i':i} as React.CSSProperties}>{c(text)}</span>;return <h1 className="kinetic-title" aria-label="Your AI agent for marketing, sales and support.">{w('Your',0)} {w('AI',1)} {w('agent',2)} {w('for',3)} {w('marketing,',4)}<br className="desktop-break"/> {w('sales',5)} {w('and',6)} <span className="kw highlight" style={{'--i':7} as React.CSSProperties}>{c('support.')}</span></h1>}
-function Hero({onOpen}:Open){return <section className="hero container"><div className="hero-copy"><div className="eyebrow"><span className="tiny-mark"/>{copy.hero.title}</div><KineticTitle/><p className="hero-description">{copy.hero.paragraphs[1]}</p><div className="channels">{['Website','WhatsApp','Instagram','Messenger'].map(c=><span key={c}><ChannelLogo channel={c}/>{c}</span>)}</div><Action onOpen={onOpen}/><ul className="reassurance reassurance-list">{copy.hero.paragraphs[4].split(/(?<=\.) /).map(point=><li key={point}><Check size={12} strokeWidth={3}/>{point.replace(/\.$/,'')}</li>)}</ul></div><HeroChannels/></section>}
+function Hero({onOpen}:Open){return <section className="hero container"><div className="hero-copy"><div className="eyebrow"><span className="tiny-mark"/>{copy.hero.title}</div><KineticTitle/><p className="hero-description">{copy.hero.paragraphs[1]}</p><Action onOpen={onOpen}/><ul className="reassurance reassurance-list">{copy.hero.paragraphs[4].split(/(?<=\.) /).map(point=><li key={point}><Check size={12} strokeWidth={3}/>{point.replace(/\.$/,'')}</li>)}</ul></div><HeroChannels/></section>}
 function Intro({title,description}:{title:string;description:string}){return <div className="section-intro"><h2 aria-label={title}><SplitWords text={title}/></h2><p>{description}</p></div>}
 function ProductJourney(){return <section id="product" className="product-section journey-band"><div className="container"><Intro title={copy.journey.title} description={copy.journey.paragraphs[0]}/><Journey/></div></section>}
 function TeamOverview(){return <TeamStory/>}
