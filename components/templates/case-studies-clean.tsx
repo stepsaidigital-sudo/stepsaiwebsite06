@@ -138,8 +138,6 @@ export function CaseStudiesHubClean({ page, stories }: { page: CaseStudiesHub; s
           <p>{page.hero.body}</p>
         </header>
 
-        {page.hero.image && <Banner image={page.hero.image} />}
-
         <nav className="cs2-filter" aria-label="Filter case studies">
           <button className={agent === 'all' && industry === 'all' ? 'is-on' : ''} onClick={() => { setAgent('all'); setIndustry('all'); }}>
             All stories <small>({stories.length})</small>
