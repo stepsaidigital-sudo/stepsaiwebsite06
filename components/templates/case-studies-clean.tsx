@@ -13,11 +13,11 @@ import {
   Star,
   Sparkles,
   SlidersHorizontal,
+  ExternalLink,
 } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
-import { ClientWall } from '@/components/site/client-wall';
 import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/types';
-import { brandInspireMap } from './story-inspire';
+import { brandInspireMap, type BrandInspireData } from './story-inspire';
 
 type Entry = { slug: string; agent: string; story: Story };
 
@@ -53,7 +53,7 @@ const person = (attribution: string) => {
 };
 
 /* Brand Emblem & Typographic Identity */
-function BrandLogo({ brand }: { brand: string }) {
+export function BrandLogo({ brand }: { brand: string }) {
   switch (brand) {
     case 'Mysa Living':
       return (
@@ -241,7 +241,7 @@ function BrandLogo({ brand }: { brand: string }) {
   }
 }
 
-// A wide photo under the page heading on detail subpages.
+// A wide photo under the page heading on legacy pages.
 function Banner({ image }: { image: HeroImage }) {
   return (
     <figure className="container cs2-banner">
@@ -261,6 +261,7 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
   const avatar = customerAvatars[p.name];
   const inspire = brandInspireMap[e.story.brand];
+  const targetSlug = inspire?.brandSlug || e.slug;
 
   const content = (
     <>
@@ -327,7 +328,7 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
 
   return (
     <Link
-      href={`/case-studies/${e.slug}/`}
+      href={`/case-studies/${targetSlug}/`}
       className="cs2-card cs2-card-link"
       title={`Read full ${e.story.brand} detail case study`}
     >
@@ -342,10 +343,11 @@ function SpotlightCard({ e }: { e: Entry }) {
   const avatar = customerAvatars[p.name];
   const photo = brandPhotos[e.story.brand] ?? '/photos/in-ecom-hero.jpg';
   const inspire = brandInspireMap[e.story.brand];
+  const targetSlug = inspire?.brandSlug || e.slug;
 
   return (
     <Link
-      href={`/case-studies/${e.slug}/`}
+      href={`/case-studies/${targetSlug}/`}
       className="cs2-card cs2-spotlight-card"
       title={`Read full ${e.story.brand} featured case study`}
     >
@@ -419,7 +421,7 @@ function SpotlightCard({ e }: { e: Entry }) {
   );
 }
 
-/* Interstitial High-Conversion Promo Card (Inspired by Real Results) */
+/* Interstitial High-Conversion Promo Card */
 function ResultsPromoCard() {
   return (
     <article className="cs2-card cs2-promo-card">
@@ -491,15 +493,6 @@ function CallMock() {
         <span>Transfer to a person</span>
       </div>
     </div>
-  );
-}
-
-function Clients() {
-  return (
-    <section className="container cs2-clients">
-      <h2>Businesses using Steps AI every day.</h2>
-      <ClientWall />
-    </section>
   );
 }
 
@@ -676,10 +669,10 @@ export function CaseStudiesHubClean({
                   // Insert high-converting Promo Card at natural position 2
                   if (index === 2 && !hasFilter) {
                     return (
-                      <>
+                      <div key="promo-pair" style={{ display: 'contents' }}>
                         <StoryCard key={e.story.brand + e.slug} e={e} />
                         <ResultsPromoCard key="promo-results-card" />
-                      </>
+                      </div>
                     );
                   }
 
@@ -700,8 +693,6 @@ export function CaseStudiesHubClean({
             )}
           </section>
 
-          <Clients />
-
           {/* High-Impact Bottom CTA */}
           <section className="container cs2-cta">
             <h2>{page.cta.title}</h2>
@@ -721,6 +712,254 @@ export function CaseStudiesHubClean({
   );
 }
 
+/* ==========================================================================
+   Dedicated Case Study Detail View (Inspired by Zoko, built for Steps AI)
+   ========================================================================== */
+export function BrandCaseStudyDetail({
+  story,
+  relatedStories = [],
+}: {
+  story: BrandInspireData;
+  relatedStories?: BrandInspireData[];
+}) {
+  return (
+    <SiteFrame>
+      {() => (
+        <div className="bcs-page">
+          {/* Header Section */}
+          <section className="container bcs-hero">
+            <Link href="/case-studies/" className="bcs-back-link">
+              ← Back to all customer stories
+            </Link>
+
+            <div className="bcs-tag-row">
+              <span className="bcs-tag-pill">{story.agentLabel}</span>
+              <span className="bcs-tag-pill bcs-tag-ind">{story.industry}</span>
+            </div>
+
+            <h1 className="bcs-title">How {story.brand} {story.headline.toLowerCase()}</h1>
+
+            <p className="bcs-lede">{story.challenge}</p>
+
+            <div className="bcs-hero-actions">
+              <Link href="/book-a-demo/" className="bcs-btn-primary">
+                Book a personalized demo →
+              </Link>
+              <Link href={`/use-cases/${story.agentSlug}/`} className="bcs-btn-secondary">
+                Explore {story.agentLabel}
+              </Link>
+            </div>
+
+            {/* Cinematic Cover Banner with Overlaid Results KPIs */}
+            <div className="bcs-cover">
+              <img
+                src={story.photo}
+                alt={story.brand}
+                className="bcs-cover-img"
+                loading="eager"
+              />
+              <div className="bcs-cover-kpis">
+                <div className="bcs-kpi-heading">Verified Results</div>
+                <div className="bcs-kpi-grid">
+                  {story.stats.map((st, i) => (
+                    <div key={i} className="bcs-kpi-item">
+                      <div className="bcs-kpi-val">{st.value}</div>
+                      <div className="bcs-kpi-lbl">{st.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Two-Column Story Narrative & Sticky Profile Sidebar */}
+          <section className="container bcs-body-section">
+            <div className="bcs-layout">
+              {/* Left Sticky Sidebar */}
+              <aside className="bcs-sidebar">
+                <div className="bcs-profile-card">
+                  <div className="bcs-profile-head">
+                    <BrandLogo brand={story.brand} />
+                  </div>
+
+                  <ul className="bcs-profile-list">
+                    <li>
+                      <span className="bcs-meta-lbl">Company</span>
+                      <strong className="bcs-meta-val">{story.brand}</strong>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">Industry</span>
+                      <span className="bcs-meta-val">{story.industry}</span>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">Location</span>
+                      <span className="bcs-meta-val">{story.location}</span>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">Team Size</span>
+                      <span className="bcs-meta-val">{story.teamSize}</span>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">AI Agent</span>
+                      <span className="bcs-meta-val">{story.agentLabel}</span>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">Channels Deployed</span>
+                      <span className="bcs-meta-val">{story.channels.join(', ')}</span>
+                    </li>
+                    <li>
+                      <span className="bcs-meta-lbl">Website</span>
+                      <a
+                        href={story.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bcs-meta-link"
+                      >
+                        {story.website.replace(/^https?:\/\//, '')} <ExternalLink size={12} />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Sticky Mini CTA */}
+                <div className="bcs-sticky-cta">
+                  <h4>Want similar results?</h4>
+                  <p>
+                    See how Steps AI can automate 80%+ of inquiries for your store in a 15-minute live demo.
+                  </p>
+                  <Link href="/book-a-demo/" className="bcs-sticky-btn">
+                    Book a demo →
+                  </Link>
+                </div>
+              </aside>
+
+              {/* Right Main Article */}
+              <article className="bcs-article">
+                <h2>About {story.brand}</h2>
+                <p>{story.about}</p>
+
+                <h2>The challenge</h2>
+                <p>{story.challenge}</p>
+
+                <h2>How Steps AI helped</h2>
+                <p>{story.solution}</p>
+
+                <div className="bcs-quote-box">
+                  <blockquote className="bcs-quote">
+                    “{story.quote.replace(/^[“"]|[”"]$/g, '')}”
+                  </blockquote>
+                  <div className="bcs-quote-author">
+                    <img
+                      src={story.avatar}
+                      alt={story.personName}
+                      className="bcs-author-avatar"
+                      width={44}
+                      height={44}
+                    />
+                    <div>
+                      <div className="bcs-author-name">
+                        <strong>{story.personName}</strong>
+                        <CheckCircle2 size={15} className="bcs-verified-icon" />
+                      </div>
+                      <span className="bcs-author-role">{story.personRole}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <h2>The results</h2>
+                <ul className="bcs-results-list">
+                  {story.resultsList.map((res, i) => (
+                    <li key={i}>
+                      <span className="bcs-check-icon">
+                        <Check size={16} strokeWidth={3} />
+                      </span>
+                      <span>{res}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          {/* Related Case Studies */}
+          {relatedStories.length > 0 && (
+            <section className="container bcs-related-section">
+              <div className="bcs-related-header">
+                <h3>More customer stories</h3>
+                <Link href="/case-studies/" className="bcs-view-all">
+                  View all stories →
+                </Link>
+              </div>
+
+              <div className="cs2-grid">
+                {relatedStories.map((rel) => (
+                  <Link
+                    key={rel.brand}
+                    href={`/case-studies/${rel.brandSlug}/`}
+                    className="cs2-card cs2-card-link"
+                  >
+                    <div className="cs2-card-head">
+                      <BrandLogo brand={rel.brand} />
+                      <span className="cs2-arrow-btn" aria-hidden="true">
+                        <ArrowUpRight size={17} />
+                      </span>
+                    </div>
+
+                    <div className="cs2-metric-block">
+                      <div className="cs2-stat-num">{rel.metricBig}</div>
+                      <div className="cs2-stat-lbl">{rel.metricLabel}</div>
+                    </div>
+
+                    <blockquote className="cs2-card-quote">
+                      “{rel.quote.replace(/^[“"]|[”"]$/g, '')}”
+                    </blockquote>
+
+                    <div className="cs2-person">
+                      <img
+                        src={rel.avatar}
+                        alt={rel.personName}
+                        className="cs2-avatar"
+                        width={40}
+                        height={40}
+                      />
+                      <div className="cs2-person-info">
+                        <div className="cs2-person-name">
+                          <strong>{rel.personName}</strong>
+                          <CheckCircle2 size={14} className="cs2-verified-check" />
+                        </div>
+                        <span>{rel.personRole}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Bottom CTA Banner */}
+          <section className="container bcs-cta-section">
+            <div className="bcs-cta-banner">
+              <h2>Turn autonomous AI into your #1 revenue & support channel</h2>
+              <p>
+                Join 15,000+ fast-growing brands deploying Steps AI agents to automate 80%+ of conversations and lift conversion.
+              </p>
+              <div className="bcs-cta-actions">
+                <Link href="/book-a-demo/" className="bcs-cta-btn-primary">
+                  Book a demo <ArrowRight size={16} />
+                </Link>
+                <Link href="/pricing/" className="bcs-cta-btn-secondary">
+                  View pricing plans
+                </Link>
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
+    </SiteFrame>
+  );
+}
+
+/* Fallback Agent Case Study View */
 export function CaseStudyClean({
   page,
   agents,
@@ -782,8 +1021,6 @@ export function CaseStudyClean({
               ))}
             </ul>
           </section>
-
-          <Clients />
 
           {page.goodToKnow.items.length > 0 && (
             <section className="container cs2-note">
