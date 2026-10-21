@@ -3,8 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Camera, Sparkles } from 'lucide-react';
 
 // An image that will be generated with another AI tool. Until the file exists at `src`,
-// the slot shows the prompt to generate it with. Every prompt is also listed in
-// docs/ai-image-prompts.md with its target file name.
+// the slot shows the prompt to generate it with.
 // With real, the slot asks for a real photo instead (used for real people, never generated).
 // With fallback, a missing file shows that instead of the prompt, so a live page never shows instructions.
 export function AiImage({ src, alt, prompt, className = '', real = false, fallback }: { src: string; alt: string; prompt: string; className?: string; real?: boolean; fallback?: ReactNode }) {

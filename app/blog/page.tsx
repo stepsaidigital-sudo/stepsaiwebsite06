@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BlogHubTemplate } from '@/components/templates/blog-hub';
-import blog from '@/content/hubs/blog.json';
+import { listPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Chatbot, WhatsApp and support guides | Steps AI',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlogRoute() {
-  return <BlogHubTemplate posts={blog.posts} />;
+  return <BlogHubTemplate posts={listPosts()} />;
 }

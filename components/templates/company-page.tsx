@@ -16,7 +16,7 @@ import type { ContentPage } from '@/content/types';
 
 // Company and legal pages on the premium look. Copy comes from content/pages/*.json; the visuals
 // only restate what that copy says. Photos of real people are never generated: those slots ask
-// for a real photo. Mood photos use AI image slots (docs/ai-image-prompts.md).
+// for a real photo. Mood photos use AI image slots.
 
 type Open = (label: string) => void;
 const S = (page: ContentPage, i: number) => page.sections[i] ?? { title: '', paragraphs: [] as string[], items: [] };
