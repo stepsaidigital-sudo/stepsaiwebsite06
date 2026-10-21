@@ -1,7 +1,19 @@
 'use client';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Check, PhoneCall, Mic } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  CheckCircle2,
+  PhoneCall,
+  Mic,
+  Search,
+  X,
+  Star,
+  Sparkles,
+  SlidersHorizontal,
+} from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
 import { ClientWall } from '@/components/site/client-wall';
 import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/types';
@@ -40,69 +52,271 @@ const person = (attribution: string) => {
   return { name: name.trim(), role: role.join(', ').trim() };
 };
 
-// A wide photo under the page heading.
+/* Brand Emblem & Typographic Identity */
+function BrandLogo({ brand }: { brand: string }) {
+  switch (brand) {
+    case 'Mysa Living':
+      return (
+        <div className="cs-brand-mark brand-mysa">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#eaf4ff" />
+            <path
+              d="M8 21V11L16 17L24 11V21"
+              stroke="#0c3474"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <circle cx="16" cy="9" r="2.2" fill="#2c9cfa" />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">MYSA LIVING</span>
+            <span className="cs-brand-sub">Nordic Home & Decor</span>
+          </div>
+        </div>
+      );
+    case 'Aster & Row':
+      return (
+        <div className="cs-brand-mark brand-aster">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#fdf4ea" />
+            <path
+              d="M16 6L19 12.5L26 16L19 19.5L16 26L13 19.5L6 16L13 12.5L16 6Z"
+              fill="#b45309"
+            />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">ASTER & ROW</span>
+            <span className="cs-brand-sub">Luxury Apparel</span>
+          </div>
+        </div>
+      );
+    case 'North & Pine':
+      return (
+        <div className="cs-brand-mark brand-north">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#edf7f0" />
+            <path d="M16 6L22 13H18.5L23 20H9L13.5 13H10L16 6Z" fill="#15803d" />
+            <rect x="14.8" y="20" width="2.4" height="5" fill="#15803d" />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">NORTH & PINE</span>
+            <span className="cs-brand-sub">Outdoor & Gear</span>
+          </div>
+        </div>
+      );
+    case 'Nivara':
+      return (
+        <div className="cs-brand-mark brand-nivara">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#fef2f2" />
+            <circle cx="16" cy="16" r="8" stroke="#e11d48" strokeWidth="2" />
+            <path
+              d="M16 8C16 12.5 12.5 16 8 16C12.5 16 16 19.5 16 24C16 19.5 19.5 16 24 16C19.5 16 16 12.5 16 8Z"
+              fill="#e11d48"
+            />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">NIVARA</span>
+            <span className="cs-brand-sub">Sustainable Lifestyle</span>
+          </div>
+        </div>
+      );
+    case 'Casa Noma':
+      return (
+        <div className="cs-brand-mark brand-casanoma">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#fdf6ec" />
+            <path
+              d="M9 23V14C9 10.134 12.134 7 16 7C19.866 7 23 10.134 23 14V23H9Z"
+              stroke="#c2410c"
+              strokeWidth="2.4"
+            />
+            <circle cx="16" cy="14" r="3" fill="#f97316" />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">CASA NOMA</span>
+            <span className="cs-brand-sub">Artisanal Decor</span>
+          </div>
+        </div>
+      );
+    case 'Stacklane':
+      return (
+        <div className="cs-brand-mark brand-stacklane">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#f0fdfa" />
+            <path d="M8 11L16 7L24 11L16 15L8 11Z" fill="#0d9488" />
+            <path
+              d="M8 16L16 20L24 16"
+              stroke="#0d9488"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M8 21L16 25L24 21"
+              stroke="#0d9488"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">STACKLANE</span>
+            <span className="cs-brand-sub">Developer Cloud</span>
+          </div>
+        </div>
+      );
+    case 'Sunday Form':
+      return (
+        <div className="cs-brand-mark brand-sunday">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#fefce8" />
+            <circle cx="16" cy="16" r="5.5" fill="#eab308" />
+            <path
+              d="M16 4V7M16 25V28M4 16H7M25 16H28M7.5 7.5L9.6 9.6M22.4 22.4L24.5 24.5M7.5 24.5L9.6 22.4M22.4 9.6L24.5 7.5"
+              stroke="#ca8a04"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">SUNDAY FORM</span>
+            <span className="cs-brand-sub">Fitness & Wellness</span>
+          </div>
+        </div>
+      );
+    case 'Northstar SaaS':
+      return (
+        <div className="cs-brand-mark brand-northstar">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#eef2ff" />
+            <path
+              d="M16 5L18.5 12.8L26 16L18.5 19.2L16 27L13.5 19.2L6 16L13.5 12.8L16 5Z"
+              fill="#4f46e5"
+            />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">NORTHSTAR</span>
+            <span className="cs-brand-sub">Enterprise Workflow</span>
+          </div>
+        </div>
+      );
+    case 'LatticeFlow Labs':
+      return (
+        <div className="cs-brand-mark brand-lattice">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#f5f3ff" />
+            <circle cx="10" cy="10" r="3" fill="#7c3aed" />
+            <circle cx="22" cy="10" r="3" fill="#7c3aed" />
+            <circle cx="16" cy="22" r="3" fill="#7c3aed" />
+            <path d="M10 10L22 10L16 22L10 10Z" stroke="#7c3aed" strokeWidth="1.8" />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">LATTICEFLOW</span>
+            <span className="cs-brand-sub">AI & Infrastructure</span>
+          </div>
+        </div>
+      );
+    case 'RelayDesk':
+      return (
+        <div className="cs-brand-mark brand-relay">
+          <svg viewBox="0 0 32 32" fill="none" className="cs-brand-icon" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#eff6ff" />
+            <path d="M17 6L8 16.5H15.5L14.5 26L24 14.5H16.5L17 6Z" fill="#2563eb" />
+          </svg>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">RELAYDESK</span>
+            <span className="cs-brand-sub">IT Service Desk</span>
+          </div>
+        </div>
+      );
+    default:
+      return (
+        <div className="cs-brand-mark brand-default">
+          <div className="cs-brand-avatar-fallback">{brand.slice(0, 2).toUpperCase()}</div>
+          <div className="cs-brand-text">
+            <span className="cs-brand-name">{brand.toUpperCase()}</span>
+          </div>
+        </div>
+      );
+  }
+}
+
+// A wide photo under the page heading on detail subpages.
 function Banner({ image }: { image: HeroImage }) {
   return (
     <figure className="container cs2-banner">
-      <img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchPriority="high" />
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        fetchPriority="high"
+      />
     </figure>
   );
 }
 
+/* Stat-First Modern Clean Story Card */
 function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
-  const photo = brandPhotos[e.story.brand] ?? '/photos/pg-case-studies.jpg';
   const avatar = customerAvatars[p.name];
   const inspire = brandInspireMap[e.story.brand];
 
   const content = (
     <>
-      <div className="cs2-top">
-        <img src={photo} alt={e.story.brand} className="cs2-photo" loading="lazy" />
-        <div className="cs2-top-overlay">
-          <div className="cs2-top-bar">
-            <div className="cs2-badges">
-              <span className="cs2-label">{e.agent.toUpperCase()}</span>
-              <span className="cs2-ind-badge">{e.story.industry.toUpperCase()}</span>
-            </div>
-            {!open && (
-              <span className="cs2-arrow-btn" aria-hidden="true">
-                <ArrowUpRight size={17} />
-              </span>
-            )}
+      {/* Card Header: Brand identity & Circle link button */}
+      <div className="cs2-card-head">
+        <BrandLogo brand={e.story.brand} />
+        {!open && (
+          <span className="cs2-arrow-btn" aria-hidden="true">
+            <ArrowUpRight size={17} />
+          </span>
+        )}
+      </div>
+
+      {/* Hero Metric: Big, Bold, Stat-First */}
+      {inspire && (
+        <div className="cs2-metric-block">
+          <div className="cs2-stat-num">{inspire.metricBig}</div>
+          <div className="cs2-stat-lbl">{inspire.metricLabel}</div>
+        </div>
+      )}
+
+      {/* Excerpt Quote */}
+      <blockquote className="cs2-card-quote">
+        “{e.story.excerpt.replace(/^[“"]|[”"]$/g, '')}”
+      </blockquote>
+
+      {/* Person Attribution with Avatar & Verified Badge */}
+      <div className="cs2-person">
+        {avatar && (
+          <img
+            src={avatar}
+            alt={p.name}
+            className="cs2-avatar"
+            width={40}
+            height={40}
+            loading="lazy"
+          />
+        )}
+        <div className="cs2-person-info">
+          <div className="cs2-person-name">
+            <strong>{p.name}</strong>
+            <CheckCircle2 size={14} className="cs2-verified-check" aria-label="Verified user" />
           </div>
-          <strong className="cs2-brand">{e.story.brand}</strong>
+          <span>{p.role}</span>
         </div>
       </div>
-      <div className="cs2-bottom">
-        {inspire && (
-          <div className="cs2-metric-callout">
-            <span className="cs2-metric-num">{inspire.metricBig}</span>
-            <span className="cs2-metric-lbl">{inspire.metricLabel}</span>
-          </div>
-        )}
-        <div className="cs2-tags">
-          {e.story.tags.map((tag) => (
-            <span key={tag} className="cs2-tag">
-              {tag}
-            </span>
-          ))}
-        </div>
-        <blockquote>“{e.story.excerpt.replace(/^[“"]|[”"]$/g, '')}”</blockquote>
-        <div className="cs2-person">
-          {avatar && <img src={avatar} alt={p.name} className="cs2-avatar" width={40} height={40} />}
-          <div className="cs2-person-info">
-            <strong>{p.name}</strong>
-            <span>{p.role}</span>
-          </div>
-        </div>
-        {!open && (
-          <div className="cs2-card-actions">
-            <span className="cs2-read-link">
-              Read detail case study <ArrowRight size={14} />
-            </span>
-          </div>
-        )}
+
+      {/* Tag Chips */}
+      <div className="cs2-tags">
+        <span className="cs2-tag cs2-tag-agent">{e.agent}</span>
+        <span className="cs2-tag cs2-tag-ind">{e.story.industry}</span>
+        {e.story.tags.slice(0, 1).map((tag) => (
+          <span key={tag} className="cs2-tag cs2-tag-extra">
+            {tag}
+          </span>
+        ))}
       </div>
     </>
   );
@@ -122,27 +336,160 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   );
 }
 
+/* Featured Spotlight Wide Card (Spans 2 columns on desktop) */
+function SpotlightCard({ e }: { e: Entry }) {
+  const p = person(e.story.attribution);
+  const avatar = customerAvatars[p.name];
+  const photo = brandPhotos[e.story.brand] ?? '/photos/in-ecom-hero.jpg';
+  const inspire = brandInspireMap[e.story.brand];
+
+  return (
+    <Link
+      href={`/case-studies/${e.slug}/`}
+      className="cs2-card cs2-spotlight-card"
+      title={`Read full ${e.story.brand} featured case study`}
+    >
+      <div className="cs2-spotlight-visual">
+        <img src={photo} alt={e.story.brand} className="cs2-spotlight-img" loading="lazy" />
+        <div className="cs2-spotlight-overlay">
+          <span className="cs2-spotlight-badge">
+            <Sparkles size={13} /> FEATURED STORY
+          </span>
+        </div>
+      </div>
+
+      <div className="cs2-spotlight-content">
+        <div className="cs2-card-head">
+          <BrandLogo brand={e.story.brand} />
+          <span className="cs2-arrow-btn" aria-hidden="true">
+            <ArrowUpRight size={17} />
+          </span>
+        </div>
+
+        {inspire && (
+          <div className="cs2-spotlight-stats">
+            <div className="cs2-spotlight-stat-item">
+              <span className="cs2-stat-num">{inspire.metricBig}</span>
+              <span className="cs2-stat-lbl">{inspire.metricLabel}</span>
+            </div>
+            {inspire.stats && inspire.stats[1] && (
+              <div className="cs2-spotlight-stat-item">
+                <span className="cs2-stat-num">{inspire.stats[1].value}</span>
+                <span className="cs2-stat-lbl">{inspire.stats[1].label}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        <blockquote className="cs2-card-quote">
+          “{e.story.excerpt.replace(/^[“"]|[”"]$/g, '')}”
+        </blockquote>
+
+        <div className="cs2-person">
+          {avatar && (
+            <img
+              src={avatar}
+              alt={p.name}
+              className="cs2-avatar"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
+          )}
+          <div className="cs2-person-info">
+            <div className="cs2-person-name">
+              <strong>{p.name}</strong>
+              <CheckCircle2 size={14} className="cs2-verified-check" aria-label="Verified user" />
+            </div>
+            <span>{p.role}</span>
+          </div>
+        </div>
+
+        <div className="cs2-spotlight-foot">
+          <div className="cs2-tags">
+            <span className="cs2-tag cs2-tag-agent">{e.agent}</span>
+            <span className="cs2-tag cs2-tag-ind">{e.story.industry}</span>
+          </div>
+          <span className="cs2-read-link">
+            Read detail case study <ArrowRight size={14} />
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/* Interstitial High-Conversion Promo Card (Inspired by Real Results) */
+function ResultsPromoCard() {
+  return (
+    <article className="cs2-card cs2-promo-card">
+      <div className="cs2-promo-ambient-glow" aria-hidden="true" />
+      <div className="cs2-promo-top">
+        <span className="cs2-promo-badge">
+          <Star size={13} fill="currentColor" /> PROVEN IMPACT
+        </span>
+      </div>
+
+      <div className="cs2-promo-body">
+        <h3 className="cs2-promo-title">
+          Real results.
+          <br />
+          Real impact.
+        </h3>
+        <p className="cs2-promo-desc">
+          See exactly how much revenue and support hours Steps AI can unlock for your specific business.
+        </p>
+      </div>
+
+      <div className="cs2-promo-foot">
+        <Link href="/book-a-demo/" className="cs2-promo-btn">
+          Get custom ROI blueprint <ArrowRight size={15} />
+        </Link>
+        <span className="cs2-promo-note">Free 15-min consultation · No setup required</span>
+      </div>
+    </article>
+  );
+}
+
 function CallMock() {
   return (
     <div className="cs-call">
       <div className="cs-call-head">
-        <span className="cs-call-icon"><PhoneCall size={18} /></span>
-        <div><strong>Incoming call</strong><small>Steps AI Receptionist · Interactive Preview</small></div>
+        <span className="cs-call-icon">
+          <PhoneCall size={18} />
+        </span>
+        <div>
+          <strong>Incoming call</strong>
+          <small>Steps AI Receptionist · Interactive Preview</small>
+        </div>
         <span className="cs-live">Live</span>
       </div>
       <div className="cs-wave" aria-hidden="true">
-        {Array.from({ length: 28 }, (_, i) => <i key={i} style={{ animationDelay: `${(i % 7) * 120}ms` }} />)}
+        {Array.from({ length: 28 }, (_, i) => (
+          <i key={i} style={{ animationDelay: `${(i % 7) * 120}ms` }} />
+        ))}
       </div>
       {[
         ['Caller', 'Hi, can I book a consultation for tomorrow?'],
         ['Agent', 'Of course. We have 11:00 AM or 3:30 PM free. Which works best for you?'],
-        ['Caller', '11:00 AM, please.']
+        ['Caller', '11:00 AM, please.'],
       ].map(([who, text], i) => (
-        <p key={i} className={`cs-call-line ${who === 'Agent' ? 'is-agent' : ''}`} style={{ animationDelay: `${400 + i * 700}ms` }}>
-          <b>{who === 'Agent' ? <Mic size={12} /> : null}{who}</b>{text}
+        <p
+          key={i}
+          className={`cs-call-line ${who === 'Agent' ? 'is-agent' : ''}`}
+          style={{ animationDelay: `${400 + i * 700}ms` }}
+        >
+          <b>
+            {who === 'Agent' ? <Mic size={12} /> : null}
+            {who}
+          </b>
+          {text}
         </p>
       ))}
-      <div className="cs-call-foot"><span>English · Hindi · Telugu</span><span>Transfer to a person</span></div>
+      <div className="cs-call-foot">
+        <span>English · Hindi · Telugu</span>
+        <span>Transfer to a person</span>
+      </div>
     </div>
   );
 }
@@ -156,77 +503,217 @@ function Clients() {
   );
 }
 
-export function CaseStudiesHubClean({ page, stories }: { page: CaseStudiesHub; stories: Entry[] }) {
+export function CaseStudiesHubClean({
+  page,
+  stories,
+}: {
+  page: CaseStudiesHub;
+  stories: Entry[];
+}) {
+  const [searchQuery, setSearchQuery] = useState('');
   const [agent, setAgent] = useState('all');
   const [industry, setIndustry] = useState('all');
 
-  const industries = [...new Set(stories.map((s) => s.story.industry))];
-  const shown = stories.filter(
-    (s) =>
-      (agent === 'all' || s.slug === agent) &&
-      (industry === 'all' || s.story.industry === industry)
-  );
+  const industries = useMemo(() => {
+    return [...new Set(stories.map((s) => s.story.industry))];
+  }, [stories]);
+
+  const filtered = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return stories.filter((s) => {
+      const matchAgent = agent === 'all' || s.slug === agent;
+      const matchIndustry = industry === 'all' || s.story.industry === industry;
+      if (!matchAgent || !matchIndustry) return false;
+
+      if (!q) return true;
+      const brand = s.story.brand.toLowerCase();
+      const excerpt = s.story.excerpt.toLowerCase();
+      const tags = s.story.tags.join(' ').toLowerCase();
+      const personName = s.story.attribution.toLowerCase();
+      const agentLabel = s.agent.toLowerCase();
+      const ind = s.story.industry.toLowerCase();
+
+      const inspire = brandInspireMap[s.story.brand];
+      const metricText = inspire
+        ? `${inspire.metricBig} ${inspire.metricLabel} ${inspire.headline} ${inspire.challenge} ${inspire.solution}`.toLowerCase()
+        : '';
+
+      return (
+        brand.includes(q) ||
+        excerpt.includes(q) ||
+        tags.includes(q) ||
+        personName.includes(q) ||
+        agentLabel.includes(q) ||
+        ind.includes(q) ||
+        metricText.includes(q)
+      );
+    });
+  }, [stories, agent, industry, searchQuery]);
+
+  const hasFilter = searchQuery.trim() !== '' || agent !== 'all' || industry !== 'all';
+
+  const resetFilters = () => {
+    setSearchQuery('');
+    setAgent('all');
+    setIndustry('all');
+  };
 
   return (
     <SiteFrame>
       {() => (
         <div className="cs2">
-          <header className="cs2-head">
-            <span>Steps AI customer stories</span>
-            <h1>{page.hero.title}</h1>
-            <p>{page.hero.body}</p>
-          </header>
+          {/* High-Impact Hero Banner */}
+          <section className="container cs2-hero-wrap">
+            <div className="cs2-hero-banner">
+              <div className="cs2-hero-ambient" aria-hidden="true" />
+              <div className="cs2-hero-content">
+                <div className="cs2-hero-trust">
+                  <div className="cs2-stars" aria-hidden="true">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} fill="#f8b403" color="#f8b403" />
+                    ))}
+                  </div>
+                  <span className="cs2-trust-score">4.9 / 5 Rating</span>
+                  <span className="cs2-trust-dot">·</span>
+                  <span className="cs2-trust-text">1,800+ Verified Reviews on G2 & Capterra</span>
+                </div>
 
-          <nav className="cs2-filter" aria-label="Filter case studies">
-            <button
-              className={agent === 'all' && industry === 'all' ? 'is-on' : ''}
-              onClick={() => {
-                setAgent('all');
-                setIndustry('all');
-              }}
-            >
-              All stories <small>({stories.length})</small>
-            </button>
-            {page.agents
-              .filter((a) => a.count > 0)
-              .map((a) => (
+                <h1 className="cs2-hero-title">Customer Stories & Proven Impact</h1>
+
+                <p className="cs2-hero-subtitle">
+                  Explore how 15,000+ businesses deploy Steps AI autonomous agents to automate 80%+ of
+                  customer conversations, accelerate checkout conversion, and scale 24/7 without extra headcount.
+                </p>
+
+                <div className="cs2-hero-actions">
+                  <a href="#browse-stories" className="cs2-hero-btn-primary">
+                    Explore customer stories ↓
+                  </a>
+                  <Link href="/book-a-demo/" className="cs2-hero-btn-secondary">
+                    Book a demo →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Search & Filter Toolbar */}
+          <div id="browse-stories" className="container cs2-toolbar">
+            <div className="cs2-search-box">
+              <Search size={18} className="cs2-search-icon" aria-hidden="true" />
+              <input
+                type="text"
+                className="cs2-search-input"
+                placeholder="Search by company, industry, or use case..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search customer stories"
+              />
+              {searchQuery && (
                 <button
-                  key={a.slug}
-                  className={agent === a.slug ? 'is-on' : ''}
-                  onClick={() => setAgent(a.slug)}
+                  type="button"
+                  className="cs2-search-clear"
+                  onClick={() => setSearchQuery('')}
+                  aria-label="Clear search"
                 >
-                  {a.label} <small>({a.count})</small>
+                  <X size={15} />
+                </button>
+              )}
+            </div>
+
+            <nav className="cs2-filter-nav" aria-label="Filter case studies by agent">
+              <button
+                className={`cs2-pill ${agent === 'all' && industry === 'all' ? 'is-active' : ''}`}
+                onClick={resetFilters}
+              >
+                All use cases <small>({stories.length})</small>
+              </button>
+              {page.agents
+                .filter((a) => a.count > 0)
+                .map((a) => (
+                  <button
+                    key={a.slug}
+                    className={`cs2-pill ${agent === a.slug ? 'is-active' : ''}`}
+                    onClick={() => setAgent(agent === a.slug ? 'all' : a.slug)}
+                  >
+                    {a.label} <small>({a.count})</small>
+                  </button>
+                ))}
+              <span className="cs2-nav-divider" aria-hidden="true" />
+              {industries.map((ind) => (
+                <button
+                  key={ind}
+                  className={`cs2-pill cs2-pill-ind ${industry === ind ? 'is-active' : ''}`}
+                  onClick={() => setIndustry(industry === ind ? 'all' : ind)}
+                >
+                  {ind}
                 </button>
               ))}
-            <i className="cs2-sep" />
-            {industries.map((n) => (
-              <button
-                key={n}
-                className={industry === n ? 'is-on' : ''}
-                onClick={() => setIndustry(industry === n ? 'all' : n)}
-              >
-                {n}
-              </button>
-            ))}
-          </nav>
+            </nav>
 
-          <section className="container cs2-grid">
-            {shown.map((e) => (
-              <StoryCard
-                key={e.story.brand + e.slug}
-                e={e}
-              />
-            ))}
+            <div className="cs2-status-bar">
+              <span className="cs2-count">
+                Showing <strong>{filtered.length}</strong> {filtered.length === 1 ? 'story' : 'customer stories'}
+              </span>
+              {hasFilter && (
+                <button type="button" className="cs2-reset-link" onClick={resetFilters}>
+                  Clear filters & show all
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <section className="container cs2-grid-section">
+            {filtered.length > 0 ? (
+              <div className="cs2-grid">
+                {filtered.map((e, index) => {
+                  // Spotlight Featured Card for first item when browsing all without active search
+                  if (index === 0 && !hasFilter) {
+                    return <SpotlightCard key={e.story.brand + e.slug} e={e} />;
+                  }
+
+                  // Insert high-converting Promo Card at natural position 2
+                  if (index === 2 && !hasFilter) {
+                    return (
+                      <>
+                        <StoryCard key={e.story.brand + e.slug} e={e} />
+                        <ResultsPromoCard key="promo-results-card" />
+                      </>
+                    );
+                  }
+
+                  return <StoryCard key={e.story.brand + e.slug} e={e} />;
+                })}
+              </div>
+            ) : (
+              <div className="cs2-empty-state">
+                <div className="cs2-empty-icon">
+                  <SlidersHorizontal size={28} />
+                </div>
+                <h3>No stories match your criteria</h3>
+                <p>Try searching for a different keyword or resetting your filters.</p>
+                <button type="button" className="cs2-empty-btn" onClick={resetFilters}>
+                  Reset all filters
+                </button>
+              </div>
+            )}
           </section>
 
           <Clients />
 
+          {/* High-Impact Bottom CTA */}
           <section className="container cs2-cta">
             <h2>{page.cta.title}</h2>
             <p>{page.cta.body}</p>
-            <Link className="cs2-btn" href="/book-a-demo/">
-              Book a demo <ArrowRight size={15} />
-            </Link>
+            <div className="cs2-cta-buttons">
+              <Link className="cs2-btn cs2-btn-primary" href="/book-a-demo/">
+                Book a demo <ArrowRight size={15} />
+              </Link>
+              <Link className="cs2-btn cs2-btn-secondary" href="/pricing/">
+                View pricing plans
+              </Link>
+            </div>
           </section>
         </div>
       )}
@@ -234,7 +721,13 @@ export function CaseStudiesHubClean({ page, stories }: { page: CaseStudiesHub; s
   );
 }
 
-export function CaseStudyClean({ page, agents }: { page: CaseStudyPage; agents: CaseStudiesHub['agents'] }) {
+export function CaseStudyClean({
+  page,
+  agents,
+}: {
+  page: CaseStudyPage;
+  agents: CaseStudiesHub['agents'];
+}) {
   const entries: Entry[] = page.stories.map((story) => ({
     slug: page.slug,
     agent: page.agent,
@@ -246,7 +739,9 @@ export function CaseStudyClean({ page, agents }: { page: CaseStudyPage; agents: 
       {() => (
         <div className="cs2">
           <header className="cs2-head">
-            <Link href="/case-studies/">← Back to all case studies</Link>
+            <Link href="/case-studies/" className="cs2-back-link">
+              ← Back to all customer stories
+            </Link>
             <h1>{page.hero.title}</h1>
             <p>{page.hero.body}</p>
           </header>
@@ -313,7 +808,7 @@ export function CaseStudyClean({ page, agents }: { page: CaseStudyPage; agents: 
           <section className="container cs2-cta">
             <h2>{page.cta.title}</h2>
             <p>{page.cta.body}</p>
-            <Link className="cs2-btn" href="/book-a-demo/">
+            <Link className="cs2-btn cs2-btn-primary" href="/book-a-demo/">
               Book a demo <ArrowRight size={15} />
             </Link>
           </section>
