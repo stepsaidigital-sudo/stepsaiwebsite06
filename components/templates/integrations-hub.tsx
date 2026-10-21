@@ -13,10 +13,13 @@ import googleCalendar from '@/content/integrations/google-calendar.json';
 import hubspot from '@/content/integrations/hubspot.json';
 import shiprocket from '@/content/integrations/shiprocket.json';
 import notion from '@/content/integrations/notion.json';
-type Demo = { slug: string; name: string; category: string; demo: { channel: string; lines: { from: string; text: string }[] } };
+type Demo = { slug: string; name: string; category: string; demo: { channel: string; lines: { from: string; text: string }[]; lookup?: { title: string; rows: string[][] } } };
+// "Shopify · Order 1042" + first row "Fulfilled" becomes "Order 1042 · Fulfilled".
+const found = (l?: { title: string; rows: string[][] }) => l && [l.title.split(' · ').slice(1).join(' · '), l.rows[0]?.[1]].filter(Boolean).join(' · ');
 const demoApps: HubApp[] = ([shopify, googleCalendar, hubspot, shiprocket, notion] as Demo[]).map(j => ({
   slug: j.slug, name: j.name, channel: j.demo.channel,
   question: j.demo.lines.find(l => l.from === 'customer')?.text, answer: j.demo.lines.find(l => l.from === 'agent')?.text,
+  found: found(j.demo.lookup),
 }));
 
 const CONNECT = [
