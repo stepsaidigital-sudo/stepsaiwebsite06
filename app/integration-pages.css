@@ -72,3 +72,31 @@
   .ig-wire i{animation:none}
   .sp-in .ig-lookup-row,.sp-in .ig-lookup-ok{animation:none}
 }
+
+/* Readability floor for the subpage chat mockups (ChatMock): nothing below 11px. */
+.sp-chat .chat-date{font-size:11px}
+.sp-chat .native-message small{font-size:11px}
+.sp-chat .native-chat-header small{font-size:12px}
+.channel-demo-canvas .scene-illustration{font-size:11px}
+
+/* Subpage step demo (StepTheatre): same readable sizes the homepage #showcase uses. */
+.sp-section .channel-demo-canvas .live-message-slot .native-message,.sp-section .channel-demo-canvas .native-message{font-size:15px!important;line-height:1.45!important;padding:10px 14px!important;max-width:88%}
+.sp-section .channel-demo-canvas .native-message small{font-size:12px;margin-top:4px}
+.sp-section .channel-demo-canvas .native-chat-body{gap:10px}
+.sp-section .channel-demo-canvas .scene-illustration{font-size:12px}
+.sp-section .channel-demo-canvas .scene-context small,.sp-section .channel-demo-canvas .scene-context div>span{font-size:12px}
+.sp-section .channel-demo-canvas .scene-context strong{font-size:16px;max-width:none}
+.sp-section .channel-demo-canvas .channel-demo-result{font-size:14px}
+.sp-section .channel-story-number{font-size:12px}
+@media(max-width:759px){
+  .sp-section .channel-demo-canvas .live-message-slot .native-message,.sp-section .channel-demo-canvas .native-message{font-size:14px!important;line-height:1.4!important;padding:7px 12px!important}
+  .sp-section .channel-demo-canvas .native-message small{margin-top:2px}
+  .sp-section .channel-demo-canvas .native-chat-body{gap:6px}
+  .sp-section .channel-demo-canvas .scene-context strong{font-size:15px}
+}
+body .sp-usage-models small,body .mock-window-title small{font-size:11px}
+/* Subpage step theatre controls: readable at every width. */
+.sp-theatre .channel-icon-tabs button span{font-size:12px}
+.sp-theatre .conversation-playback span,.sp-theatre .channel-scroll-cue span,.sp-theatre .channel-scroll-cue i{font-size:11px}
+body .am-tick{font-size:11px}
+body .jv-price s{font-size:11px}

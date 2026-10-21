@@ -122,3 +122,7 @@
 #showcase .live-chat .live-message-slot.from-customer{justify-content:flex-end}
 #showcase .live-chat .live-message-slot.from-agent{justify-content:flex-start}
 #showcase .live-chat .agent-typing{left:0;right:auto;background:#eef0f3}
+
+/* Readability: hero channel tab labels and the product label were 8px and 10px on phones. */
+@media(max-width:759px){.channel-icon-tabs button span{font-size:10px}.channel-product-label{font-size:11px}}
+@media(max-width:359px){.channel-icon-tabs button span{font-size:9px}}
