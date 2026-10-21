@@ -49,7 +49,10 @@ function Partners() {
 
 // A real person's photo goes here; it is never generated.
 function RealPhoto({ src, alt, note }: { src: string; alt: string; note: string }) {
-  return <AiImage className="co-portrait" src={src} alt={alt} prompt={note} real />;
+  // Until the real portrait is added, show the founder's initials in the same frame.
+  const initials = alt.split(',')[0].split(' ').map(w => w[0]).join('').slice(0, 2);
+  return <AiImage className="co-portrait" src={src} alt={alt} prompt={note} real
+    fallback={<div className="co-portrait co-monogram" role="img" aria-label={alt}><span>{initials}</span></div>} />;
 }
 
 /* ---------------- About ---------------- */
@@ -96,7 +99,7 @@ function About({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
       <div className="co-tiles">{tiles.map(([icon, label]) => <Reveal key={label} className="co-tile"><span>{icon}</span>{label}</Reveal>)}</div>
       <Reveal className="co-who-foot"><span className="co-pill"><Landmark size={14} />Most of our customers are in India</span><Partners /></Reveal>
     </section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<MessageSquare size={15} />, 'Real answers', 'From your own information'), result(<Zap size={15} />, 'Real actions', 'Orders, bookings, handovers'))} artRight={stack(result(<Hand size={15} />, 'Your team in control', 'Step in any time'), result(<BadgeCheck size={15} />, 'Meta and Shopify', 'Partner'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<MessageSquare size={15} />, 'Real answers', 'From your own information'), result(<Zap size={15} />, 'Real actions', 'Orders, bookings, handovers'))} artRight={stack(result(<Hand size={15} />, 'Your team in control', 'Step in any time'), result(<BadgeCheck size={15} />, 'Meta and Shopify', 'Partner'))} />
   </>;
 }
 
@@ -123,7 +126,7 @@ function FoundersNote({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
       <Head eyebrow="Principles" title={never.title} center />
       <div className="co-principles">{(never.items ?? []).map((item, i) => <Reveal key={item.title} className="co-principle"><span className="co-principle-ico">{icons[i]}</span><span className="co-num">0{i + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Reveal>)}</div>
     </div></section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<Database size={15} />, 'Real answers', 'Looked up, not guessed'))} artRight={stack(result(<Hand size={15} />, 'Knows when to stop', 'Passes to a person'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<Database size={15} />, 'Real answers', 'Looked up, not guessed'))} artRight={stack(result(<Hand size={15} />, 'Knows when to stop', 'Passes to a person'))} />
   </>;
 }
 
@@ -136,8 +139,7 @@ function Careers({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     <Hero page={page} icon={<Rocket size={16} />} onOpen={onOpen}
       actions={<><button className="wb-btn" onClick={() => onOpen('Send us a note')}>Send us a note <ArrowRight size={16} /></button><a className="wb-btn-ghost" href="#how-we-work">How we work</a></>}
       visual={<div className="co-photo-visual">
-        <AiImage className="co-photo" src="/photos/ai/careers-team.jpg" alt="Small team working together at a table"
-          prompt="Photorealistic editorial photo, 4:5 portrait. A small Indian startup team of four in their 20s and 30s gathered around one laptop at a bright, plant-filled co-working table, one person pointing at the screen, others smiling. Natural daylight, warm neutral tones with navy and sky-blue accents, candid and energetic. Shallow depth of field. No logos, no readable text, no watermarks." />
+        <img className="co-photo" src="/photos/careers-team.jpg" alt="Two colleagues planning work together at a laptop" width={1400} height={933} decoding="async" />
         <Float className="co-float co-float-a">{result(<Sparkles size={15} />, 'Built from a customer request', 'Shipment landed cost calculator')}</Float>
         <Float className="co-float co-float-b">{result(<Rocket size={15} />, 'Everyone ships', 'Work customers use')}</Float>
       </div>} />
@@ -150,7 +152,7 @@ function Careers({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
       <Head eyebrow="Culture" title={how.title} center />
       <div className="co-principles">{(how.items ?? []).map((item, i) => <Reveal key={item.title} className="co-principle"><span className="co-principle-ico">{icons[i]}</span><h3>{item.title}</h3><p>{item.body}</p></Reveal>)}</div>
     </div></section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<Users size={15} />, 'Close to customers', 'Ideas start with them'))} artRight={stack(result(<Rocket size={15} />, 'Real ownership', 'Small team'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<Users size={15} />, 'Close to customers', 'Ideas start with them'))} artRight={stack(result(<Rocket size={15} />, 'Real ownership', 'Small team'))} />
   </>;
 }
 
@@ -170,9 +172,9 @@ function Team({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     </Reveal></section>}
     <section className="co-band"><div className="container">
       <Head eyebrow="The team" title={team.title} intro={team.paragraphs[0]} center />
-      <div className="co-groups">{groups.map(([icon, label]) => <Reveal key={label} className="co-group"><span className="co-principle-ico">{icon}</span><h3>{label}</h3><div className="co-avatars is-small">{[0, 1, 2].map(i => <span key={i}><UserRound size={15} /></span>)}</div><small>Team photos coming soon</small></Reveal>)}</div>
+      <div className="co-groups">{groups.map(([icon, label]) => <Reveal key={label} className="co-group"><span className="co-principle-ico">{icon}</span><h3>{label}</h3></Reveal>)}</div>
     </div></section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<Users size={15} />, 'Founder-led', 'Since 2024'))} artRight={stack(result(<BadgeCheck size={15} />, 'Meta and Shopify', 'Partner'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<Users size={15} />, 'Founder-led', 'Since 2024'))} artRight={stack(result(<BadgeCheck size={15} />, 'Meta and Shopify', 'Partner'))} />
   </>;
 }
 
@@ -191,7 +193,7 @@ function Contact({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
       <span className={`co-contact-ico is-${o.tone}`}>{o.icon}</span><h3>{item.title}</h3><p>{item.body}</p><span className="co-link">{o.cta} <ArrowRight size={15} /></span></>;
       return <Reveal key={item.title}>{o.href ? <Link className="co-contact-card" href={o.href}>{inner}</Link> : <button className="co-contact-card" onClick={o.go}>{inner}</button>}</Reveal>;
     })}</section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<CalendarCheck size={15} />, 'Book a demo', 'With your own questions'))} artRight={stack(result(<LifeBuoy size={15} />, 'Help centre', 'Guides for every step'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<CalendarCheck size={15} />, 'Book a demo', 'With your own questions'))} artRight={stack(result(<LifeBuoy size={15} />, 'Help centre', 'Guides for every step'))} />
   </>;
 }
 
@@ -204,7 +206,7 @@ function Security({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     <div key="1" className="co-mini co-list">{[['yourstore.com', true], ['shop.yourstore.com', true], ['copycat-site.net', false]].map(([d, ok]) => <span key={d as string}><Globe size={13} />{d}{ok ? <Check size={14} className="co-ok" /> : <Ban size={14} className="co-no" />}</span>)}</div>,
     <div key="2" className="co-mini co-list">{['Never quote prices', 'No medical, legal or financial advice', 'Never share internal details'].map(r => <span key={r}><ShieldCheck size={13} className="co-ok" />{r}</span>)}</div>,
   ];
-  const orbit: [ReactNode, string][] = [[<Globe key="a" size={15} />, 'Allowed domains'], [<ShieldCheck key="b" size={15} />, 'Guardrails'], [<Lock key="c" size={15} />, 'Workspace isolation'], [<KeyRound key="d" size={15} />, 'SSO and SAML'], [<Clock key="e" size={15} />, '99.9% uptime SLA'], [<Download key="f" size={15} />, '30-day export']];
+  const orbit: [ReactNode, string][] = [[<Globe key="a" size={15} />, 'Allowed domains'], [<ShieldCheck key="b" size={15} />, 'Guardrails'], [<Lock key="c" size={15} />, 'Workspace isolation'], [<KeyRound key="d" size={15} />, 'SSO on Enterprise'], [<Clock key="e" size={15} />, 'Uptime SLA on Enterprise'], [<Download key="f" size={15} />, '30-day export']];
   return <>
     <Hero page={page} icon={<ShieldCheck size={16} />} onOpen={onOpen} visual={<div className="co-shield">
       <span className="co-shield-core"><ShieldCheck size={46} /></span>
@@ -224,12 +226,12 @@ function Security({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     <section className="container co-sec">
       <Head eyebrow="Enterprise" title={big.title} />
       <div className="co-stats">
-        <Reveal className="co-stat"><KeyRound size={22} /><strong>SSO &amp; SAML</strong><small>Single sign-on on Enterprise plans</small></Reveal>
+        <Reveal className="co-stat"><KeyRound size={22} /><strong>SSO and SAML</strong><small>Single sign-on on Enterprise plans</small></Reveal>
         <Reveal className="co-stat"><Clock size={22} /><strong>99.9%</strong><small>Uptime service level agreement</small></Reveal>
         <Reveal className="co-stat"><Download size={22} /><strong>30 days</strong><small>To export your data after your plan ends</small></Reveal>
       </div>
     </section>
-    <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={stack(result(<ShieldCheck size={15} />, 'Guardrails', 'Rules you set'))} artRight={stack(result(<Lock size={15} />, 'Isolated workspaces', 'Members only'))} />
+    <CtaBlock title={page.cta.title} body={page.cta.body} action={page.cta.action} onOpen={onOpen} art={stack(result(<ShieldCheck size={15} />, 'Guardrails', 'Rules you set'))} artRight={stack(result(<Lock size={15} />, 'Isolated workspaces', 'Members only'))} />
   </>;
 }
 

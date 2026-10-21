@@ -69,8 +69,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="asks" id="questions" eyebrow="What customers ask" title="Know the questions before your team does."
         body="Analytics ranks the questions customers ask most, so you can improve your answers, your product pages and your policies where it matters."
         points={['A ranked list of the most asked questions', 'Busiest days and hours on a heat map', 'Leads by topic and marketing source']}
-        photo="/photos/ai/f-analytics.jpg" alt="Store manager reviewing conversation numbers on a laptop"
-        prompt="Photorealistic editorial photo, 4:5 portrait. An Indian ecommerce store manager in her early 30s sits at a light oak desk in a bright, calm studio office, looking thoughtfully at a laptop with soft charts glowing on screen (no readable text). Late afternoon window light, warm whites with navy and sky-blue accents, a small plant and a coffee cup. Shallow depth of field, clean uncluttered background, empty space on the right third for an overlaid card. No logos, no watermarks."
+        photo="/photos/f-analytics.jpg" alt="Store manager reviewing sales reports on a tablet at her desk"
         overlay={<Card title="Top questions" status={<Chip>Last 30 days</Chip>}>
           {[['Where is my order?', '34%'], ['Which size should I pick?', '22%'], ['How do returns work?', '15%'], ['Is COD available?', '11%']].map(([q, v], i) => <Row key={q} icon={<MessageSquare size={15} />} title={q} end={<Chip tone={i === 0 ? 'soft' : 'plain'}>{v}</Chip>} picked={i === 0} delay={200 + i * 150} />)}
         </Card>} />,
@@ -114,8 +113,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="team" id="team" eyebrow="Your team" title="Step in only when it matters."
         body="The agent answers first. Your team sees who needs a person and picks up the thread with the full history."
         points={['Live requests stand out in the list', 'Claim once, so nobody answers twice', 'Customer details beside every chat']}
-        photo="/photos/ai/f-inbox.jpg" alt="Support specialist replying to a customer on a laptop"
-        prompt="Photorealistic editorial photo, 4:5 portrait. A young Indian customer support specialist (mid 20s) wearing a light headset sits at a bright modern desk, smiling while typing a reply on a laptop (screen not readable). Airy Bengaluru office with large windows, soft morning light, warm neutral tones with navy and sky-blue accents. Shallow depth of field, calm and premium mood, empty space on the right third for an overlaid card. No logos, no text, no watermarks."
+        photo="/photos/f-inbox.jpg" alt="Support team with headsets replying to customers on laptops"
         overlay={<Card title="Needs a person" status={<Chip tone="soft">Live</Chip>}>
           <Row icon={ch('WhatsApp')} title="Anu Sharma" sub="Damaged order" picked delay={200} />
           <Row icon={ch('Website')} title="Meera Iyer" sub="Bulk order quote" delay={350} />
@@ -161,8 +159,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="records" id="records" eyebrow="Records" title="Know who you are talking to."
         body="Every chat can add to a customer record, so the next conversation starts with the full picture."
         points={['Fields you choose, filled from the chat', 'Notes and activity on every record', 'HubSpot if your team already uses it']}
-        photo="/photos/ai/f-crm.jpg" alt="Boutique owner checking a customer record on a tablet"
-        prompt="Photorealistic editorial photo, 4:5 portrait. An Indian boutique owner in her 30s stands behind the counter of a bright clothing store with folded textiles on wooden shelves, holding a tablet and smiling as she checks a customer's details (screen not readable). Soft daylight, warm neutral palette with navy and sky-blue accents, premium and calm. Shallow depth of field, empty space on the left third for an overlaid card. No logos, no text, no watermarks."
+        photo="/photos/f-crm.jpg" alt="Clothing studio owner checking customer details on a laptop"
         reverse tint="warm"
         overlay={<Card title="Anu Sharma" status={<Chip tone="green"><BadgeCheck size={11} />Verified</Chip>}>
           <Row icon={ch('WhatsApp')} title="Came from WhatsApp" sub="Support desk" delay={200} />
@@ -211,8 +208,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="followups" id="followups" eyebrow="Follow-ups" title="The follow-ups happen while you pack orders."
         body="Cart reminders, COD checks and review requests go out on time, without anyone on your team remembering to send them."
         points={['Ready-made templates for Shopify stores', 'WhatsApp, website messages and email', 'Run history for every workflow']}
-        photo="/photos/ai/f-workflow.jpg" alt="Founder packing orders while a phone shows a notification"
-        prompt="Photorealistic editorial photo, 4:5 portrait. A young Indian D2C founder packs orders at a bright home studio table with kraft boxes, tissue paper and a label printer; a phone lies face up beside the boxes with a soft glowing notification (no readable text). Warm morning light, neutral palette with navy and sky-blue accents, relaxed and in-control mood. Shallow depth of field, empty space on the right third for an overlaid card. No logos, no text, no watermarks."
+        photo="/photos/f-workflow.jpg" alt="Two founders packing a customer order at their studio table"
         overlay={<Card title="This month" status={<Chip tone="green">Automated</Chip>}>
           <Row icon={<ShoppingCart size={15} />} title="14 checkouts recovered" sub="Cart recovery" picked delay={200} />
           <Row icon={<Check size={15} />} title="COD orders confirmed" sub="COD confirmation" delay={350} />
@@ -230,7 +226,7 @@ const relatedIcon = (href: string) => href.includes('crm') ? <Users size={20} />
 export function FeaturePageTemplate({ page }: { page: FeaturePage }) {
   const d = designs[page.slug];
   const checks = (page.hero.reassurance ?? '').split('. ').map(s => s.replace(/\.$/, '')).filter(Boolean);
-  const stages: Stage[] = page.steps.items.map((step, i) => ({ pill: `Step ${i + 1} · ${step.title.split(' ').slice(0, 2).join(' ')}`, title: step.title, body: step.body, card: d.cards[i], side: d.sides[i] }));
+  const stages: Stage[] = page.steps.items.map((step, i) => ({ pill: `Step ${i + 1} of ${page.steps.items.length}`, title: step.title, body: step.body, card: d.cards[i], side: d.sides[i] }));
   return <SiteFrame>{onOpen => <div className="wb pp">
     <section className="wb-hero pp-hero pp-hero-wide">
       <div className="container">

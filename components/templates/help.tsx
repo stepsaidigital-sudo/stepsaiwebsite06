@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, ChevronDown, ChevronRight, Copy, Image as ImageIcon, LifeBuoy, PlayCircle, Search } from 'lucide-react';
+import { Check, ChevronDown, ChevronRight, Copy, LifeBuoy, Search } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
 import { helpLessons, helpTopics } from './help-data';
 import type { HelpMedia } from '@/content/types';
@@ -38,8 +38,7 @@ export function MediaSlot({ media, kind, label }: { media?: HelpMedia; kind: 'im
   if (media?.type === 'video') return <figure className="hz-media"><video src={media.src} controls playsInline preload="metadata" /></figure>;
   const yt = media?.type === 'youtube' ? media.src.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1] : undefined;
   if (yt) return <figure className="hz-media hz-video"><iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={media?.alt ?? label} loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowFullScreen /></figure>;
-  // Empty frame: the place where the team will add a screenshot or a video.
-  return <figure className={`hz-slot ${kind === 'video' ? 'is-video' : ''}`} aria-hidden="true">{kind === 'video' ? <PlayCircle size={40} /> : <ImageIcon size={28} />}<span>{label}</span></figure>;
+  // No media yet: render nothing. Add a screenshot or video through the article's media field.
 }
 
 export function StillNeedHelp() {
@@ -63,7 +62,7 @@ export function HelpArticleTemplate({ slug }: { slug: string }) {
     <HelpBar />
     <div className="container hz-article">
       <aside className="hz-side">
-        <h2>Topics &amp; Articles</h2>
+        <h2>Topics and articles</h2>
         <div className="hz-side-box">{topics.map(t => <div key={t.slug} className="hz-acc">
           <button onClick={() => setOpen(open === t.slug ? '' : t.slug)} aria-expanded={open === t.slug}>{t.title}{open === t.slug ? <ChevronDown size={15} /> : <ChevronRight size={15} />}</button>
           {open === t.slug && <div>{ofTopic(t.slug).map(x => <Link key={x.slug} href={`/help/${x.slug}/`} className={x.slug === slug ? 'is-on' : ''}>{x.title}</Link>)}</div>}
@@ -90,7 +89,6 @@ export function HelpArticleTemplate({ slug }: { slug: string }) {
 
         {a.faq?.length ? <><h2>Questions</h2>{a.faq.map(f => <p key={f.q}><b>{f.q}</b> {f.a}</p>)}</> : null}
 
-        <p className="hz-keywords"><b>Keywords:</b> {[topic.title, ...a.steps.slice(0, 2).map(s => s.title)].join(', ')}</p>
       </article>
     </div>
     <StillNeedHelp />

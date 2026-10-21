@@ -32,3 +32,17 @@ Stock photos in `public/photos/` (free licences: Pexels licence / Unsplash licen
 | ag-ecom-sales, ag-ecom-support, ag-ecom-marketing, ag-ecom-lead | 8886948, 6392975, 7514830, 14661636 |
 | in-ecom-sale | 6585976 |
 | in-* industry heroes and stories | sourced 2026-10-12 from Pexels; IDs not recorded by the search run |
+
+## Added 2026-10-21
+
+| File | Source | Photo | Photographer |
+|---|---|---|---|
+| careers-team.jpg | Pexels | https://www.pexels.com/photo/4308091/ | Ketut Subiyanto |
+
+Feature pages (`/features/analytics`, `/features/crm`, `/features/unified-inbox`, `/features/workflow-builder`) now use the
+already-credited `f-*.jpg` stock photos above instead of the unfilled `public/photos/ai/f-*.jpg` slots.
+
+`public/photos/ai/help-new.jpg` is AI-generated (prompt and tool in `help-new-generation.json` beside it).
+
+Still needed from Steps AI: a real portrait of the founder at `public/photos/team/reshmanth.jpg` (4:5, at least 1000px wide).
+Until it exists, the Founder's note and Team pages show his initials in the same frame.
