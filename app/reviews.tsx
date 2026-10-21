@@ -6,6 +6,7 @@ import {ArrowRight,Quote} from 'lucide-react';
 import copy from './copy.json';
 import reviews from './testimonials.json';
 
+import { asset } from '@/lib/asset';
 // "See what changes for your customers and your team": a row of photo cards that moves on by one card at a time.
 // Each card front is a photo of that kind of business with the brand and the outcome; hovering or focusing a card
 // wipes the full review over it (components/ui/hover-transition) and stops the row. Quotes and names come from testimonials.json; the photo and outcome line per brand live in `extra` below.
@@ -28,13 +29,13 @@ const STEP=3200;
 
 function Front({review}:{review:Review}){
  const [name]=review.attribution.split(' | ');const e=extra[review.brand];
- return <div className="rvx-face rvx-front"><img src={`/images/reviews/${e.photo}.webp`} alt="" width="960" height="720" loading="lazy" decoding="async"/>
+ return <div className="rvx-face rvx-front"><img src={asset(`/images/reviews/${e.photo}.webp`)} alt="" width="960" height="720" loading="lazy" decoding="async"/>
   <span className="rvx-brand"><b>{initials(review.brand)}</b>{review.brand}</span>
   <div className="rvx-front-copy"><h3>{e.outcome}</h3><p>{name}</p></div></div>;
 }
 function Back({review}:{review:Review}){
  const [name,role,company]=review.attribution.split(' | ');const e=extra[review.brand];
- return <div className="rvx-face rvx-back"><img src={`/images/reviews/${e.photo}.webp`} alt="" width="960" height="720" loading="lazy" decoding="async"/>
+ return <div className="rvx-face rvx-back"><img src={asset(`/images/reviews/${e.photo}.webp`)} alt="" width="960" height="720" loading="lazy" decoding="async"/>
   <div className="rvx-back-copy"><Quote size={24}/><blockquote>{review.quote}</blockquote><footer><b>{initials(review.brand)}</b><span><strong>{name}</strong><small>{role} · {company}</small></span></footer></div></div>;
 }
 

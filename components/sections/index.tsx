@@ -8,6 +8,7 @@ import { builtRoutes } from '@/components/site/routes';
 import { reveal } from '@/components/site/motion';
 import type { Cta, Faq as FaqItem, Hero, Item, Quote, Related } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Fades a block in the first time it scrolls into view. Blocks already on
 // screen at load, and everything under reduced motion, are shown straight
 // away so server-rendered content never blinks out and back in.
@@ -83,12 +84,12 @@ const slugOf = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').
 export function LogoStrip({ names }: { names: string[] }) {
   return <ul className="sp-logos">{names.map(name => {
     const slug = slugOf(name);
-    return <li key={name}>{logoFiles.has(slug) ? <img src={`/brands/integrations/${slug}.svg`} alt="" width="28" height="28" loading="lazy" /> : <span className="sp-logo-initial" aria-hidden="true">{name[0]}</span>}<span>{name}</span></li>;
+    return <li key={name}>{logoFiles.has(slug) ? <img src={asset(`/brands/integrations/${slug}.svg`)} alt="" width="28" height="28" loading="lazy" /> : <span className="sp-logo-initial" aria-hidden="true">{name[0]}</span>}<span>{name}</span></li>;
   })}</ul>;
 }
 
 export function CtaBand({ cta, onOpen }: Open & { cta: Cta }) {
-  return <section className="final-section"><div className="container"><img className="final-original" src="/brands/steps-original.png" alt="" /><h2>{cta.title}</h2><p>{cta.body}</p><Action onOpen={onOpen} className="yellow">{cta.action}</Action></div></section>;
+  return <section className="final-section"><div className="container"><img className="final-original" src={asset("/brands/steps-original.png")} alt="" /><h2>{cta.title}</h2><p>{cta.body}</p><Action onOpen={onOpen} className="yellow">{cta.action}</Action></div></section>;
 }
 
 // Mockups. Illustrative only, with fictional sample data.

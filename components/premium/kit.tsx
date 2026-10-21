@@ -12,6 +12,7 @@ import type { Faq, Item } from '@/content/types';
 import { CapabilityStage } from './capability-stage';
 import { AiImage } from './ai-image';
 
+import { asset } from '@/lib/asset';
 // Premium subpage kit: the WhatsApp broadcast page's look (.wb classes), recoloured per page
 // through a theme (.pp-theme-*), plus platform-accurate phone screens. Every mockup is an
 // illustration with fictional sample data. Mockup text never goes below 12px.
@@ -73,7 +74,7 @@ export function Row({ icon, title, sub, end, picked, delay = 0 }: { icon?: React
 
 export function Bubble({ who, children, delay, initial = 'P' }: { who: 'customer' | 'agent'; children: ReactNode; delay: number; initial?: string }) {
   return <div className={`wb-bubble wb-bubble-${who}`} style={{ animationDelay: `${delay}ms` }}>
-    {who === 'agent' ? <span className="wb-bot pp-bot-mark"><img src="/brands/steps-original.png" alt="" /></span> : <span className="wb-avatar wb-peach" aria-hidden="true">{initial}</span>}
+    {who === 'agent' ? <span className="wb-bot pp-bot-mark"><img src={asset("/brands/steps-original.png")} alt="" /></span> : <span className="wb-avatar wb-peach" aria-hidden="true">{initial}</span>}
     <p>{children}</p>
   </div>;
 }
@@ -125,7 +126,7 @@ export function InstagramScreen({ business, handle, lines, t }: { business: stri
 
 export function WidgetScreen({ business, lines, t }: { business: string; lines: Line[]; t: number }) {
   return <div className="pp-web">
-    <header><span className="pp-web-avatar"><img src="/brands/steps-original.png" alt="" /></span><div><strong>{business}</strong><small><i />Typically replies instantly</small></div></header>
+    <header><span className="pp-web-avatar"><img src={asset("/brands/steps-original.png")} alt="" /></span><div><strong>{business}</strong><small><i />Typically replies instantly</small></div></header>
     <div className="pp-web-chat"><Thread lines={lines} t={t} kind="web" /></div>
     <footer><span>Type your message</span><span className="pp-web-send"><Send size={14} /></span></footer>
     <small className="pp-web-by">Powered by Steps AI</small>
@@ -328,7 +329,7 @@ export function ToolCards({ title, intro, names }: { title: string; intro: strin
   return <section className="container wb-split wb-related pp-tools">
     <div className="wb-split-copy"><span className="wb-eyebrow">Integrations</span><h2 aria-label={title}><SplitWords text={title} /></h2><p>{intro}</p></div>
     <div className="pp-tool-grid">{names.map(name => <Reveal key={name}><Link className="pp-tool" href={`/integrations/${logoSlug(name)}/`}>
-      <img src={`/brands/integrations/${logoSlug(name)}.svg`} alt="" width={30} height={30} />
+      <img src={asset(`/brands/integrations/${logoSlug(name)}.svg`)} alt="" width={30} height={30} />
       <strong>{name}</strong><ArrowRight size={14} />
     </Link></Reveal>)}</div>
   </section>;

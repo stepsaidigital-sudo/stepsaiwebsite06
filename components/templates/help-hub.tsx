@@ -15,6 +15,7 @@ import { MediaSlot } from './help';
 import { helpLessons as lessons, helpTopics as topics } from './help-data';
 import type { HelpLesson } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Help centre home. A navy search hero, a beginner path, topics, a tutorial player that plays each
 // lesson's own steps (or its video once one is added), learning paths and the ways to get help.
 // Lesson pages and FAQs stay in help.tsx.
@@ -179,7 +180,7 @@ export function HelpHubTemplate() {
     </section>
 
     <section className="container hx-new">
-      <Reveal className="hx-new-media"><AiImage src="/photos/ai/help-new.jpg" alt="Business owner setting up an AI agent on a laptop"
+      <Reveal className="hx-new-media"><AiImage src={asset("/photos/ai/help-new.jpg")} alt="Business owner setting up an AI agent on a laptop"
         prompt="Photorealistic editorial photo, 16:10 landscape. A young Indian small-business owner at a bright café-style counter, laptop open, smiling as she sets something up; a phone beside the laptop. Soft morning light, warm neutral tones with navy and sky-blue accents, calm and welcoming. Shallow depth of field. No logos, no readable screen text, no watermarks." /></Reveal>
       <div className="hx-new-copy">
         <span className="hx-eyebrow">New to Steps AI?</span>

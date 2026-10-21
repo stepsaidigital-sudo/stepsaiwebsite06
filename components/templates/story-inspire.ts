@@ -1,3 +1,4 @@
+import { asset } from '@/lib/asset';
 export type BrandInspireData = {
   brand: string;
   brandSlug: string;
@@ -60,7 +61,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Anika Rao',
     personRole: 'Head of Digital Experience, Mysa Living',
     avatar: '',
-    photo: '/images/case-studies/mysa-living.jpg',
+    photo: asset('/images/case-studies/mysa-living.jpg'),
     fullSlug: 'ai-sales-agent'
   },
   'Aster & Row': {
@@ -98,7 +99,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Priya Shah',
     personRole: 'VP of E-Commerce, Aster & Row',
     avatar: '',
-    photo: '/images/case-studies/aster-and-row.jpg',
+    photo: asset('/images/case-studies/aster-and-row.jpg'),
     fullSlug: 'ai-sales-agent'
   },
   'North & Pine': {
@@ -136,7 +137,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Maya Patel',
     personRole: 'Head of E-commerce, North & Pine',
     avatar: '',
-    photo: '/images/case-studies/north-and-pine.jpg',
+    photo: asset('/images/case-studies/north-and-pine.jpg'),
     fullSlug: 'ai-support-agent'
   },
   'Nivara': {
@@ -174,7 +175,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Arjun Mehta',
     personRole: 'E-commerce Manager, Nivara',
     avatar: '',
-    photo: '/images/case-studies/nivara.jpg',
+    photo: asset('/images/case-studies/nivara.jpg'),
     fullSlug: 'ai-support-agent'
   },
   'Casa Noma': {
@@ -212,7 +213,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Sofia Alvarez',
     personRole: 'Customer Operations Manager, Casa Noma',
     avatar: '',
-    photo: '/images/case-studies/casa-noma.jpg',
+    photo: asset('/images/case-studies/casa-noma.jpg'),
     fullSlug: 'ai-support-agent'
   },
   'Stacklane': {
@@ -250,7 +251,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Jonathan Reed',
     personRole: 'VP of Customer Success, Stacklane',
     avatar: '',
-    photo: '/images/case-studies/stacklane.jpg',
+    photo: asset('/images/case-studies/stacklane.jpg'),
     fullSlug: 'ai-support-agent'
   },
   'Sunday Form': {
@@ -288,7 +289,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Nina Kapoor',
     personRole: 'Growth Director, Sunday Form',
     avatar: '',
-    photo: '/images/case-studies/sunday-form.jpg',
+    photo: asset('/images/case-studies/sunday-form.jpg'),
     fullSlug: 'ai-marketing-agent'
   },
   'Northstar SaaS': {
@@ -326,7 +327,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Ryan Collins',
     personRole: 'Head of Sales, Northstar SaaS',
     avatar: '',
-    photo: '/images/case-studies/northstar-saas.jpg',
+    photo: asset('/images/case-studies/northstar-saas.jpg'),
     fullSlug: 'ai-lead-capture-agent'
   },
   'LatticeFlow Labs': {
@@ -364,7 +365,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Rachel Morgan',
     personRole: 'Revenue Operations, LatticeFlow Labs',
     avatar: '',
-    photo: '/images/case-studies/latticeflow-labs.jpg',
+    photo: asset('/images/case-studies/latticeflow-labs.jpg'),
     fullSlug: 'ai-lead-capture-agent'
   },
   'RelayDesk': {
@@ -402,7 +403,7 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
     personName: 'Kevin Morales',
     personRole: 'Operations Lead, RelayDesk',
     avatar: '',
-    photo: '/images/case-studies/relaydesk.jpg',
+    photo: asset('/images/case-studies/relaydesk.jpg'),
     fullSlug: 'ai-booking-agent'
   }
 };

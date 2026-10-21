@@ -5,6 +5,7 @@ import { ChatMock, CtaBand, Faq, FeatureList, GoodToKnow, LogoStrip, PageHero, Q
 import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/sections/step-theatre';
 import type { UseCasePage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 const icons = [MessageSquare, ShoppingBag, PackageCheck, ShoppingCart];
 
 // The walkthrough is data-driven: each step becomes one theatre scene, with
@@ -15,7 +16,7 @@ function walkthroughScenes(page: UseCasePage, channel: string): Scene[] {
     return {
       tab: `Step ${i + 1}`, icon: <Icon size={20} />, label: step.label, result: step.result ?? step.label,
       render: t => <>
-        <ContextCard media={i === 1 || i === 2 ? <img src="/industries/ecommerce.png" alt="" /> : <span className="context-orb"><Icon size={18} /></span>} small={`Step ${i + 1} of ${page.walkthrough.steps.length}`} title={step.label + '.'} note={<><Check size={11} /> {channel}</>} />
+        <ContextCard media={i === 1 || i === 2 ? <img src={asset("/industries/ecommerce.png")} alt="" /> : <span className="context-orb"><Icon size={18} /></span>} small={`Step ${i + 1} of ${page.walkthrough.steps.length}`} title={step.label + '.'} note={<><Check size={11} /> {channel}</>} />
         <TimedChat channel={channel} time={t} lines={[{ from: 'customer', text: step.customer, at: 500 }, { from: 'agent', text: step.agent, at: 2600 }]} />
       </>,
     };

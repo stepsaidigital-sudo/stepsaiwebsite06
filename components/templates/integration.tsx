@@ -8,6 +8,7 @@ import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/se
 import type { IntegrationApp, IntegrationPage } from '@/content/types';
 import { ConnectFlow } from '@/components/premium/connect-flow';
 
+import { asset } from '@/lib/asset';
 // What the lookup card confirms, by app category. Apps the agent writes to are not 'checked'.
 const DONE: Record<string, string> = {
   'Calendars': 'Booked before replying',
@@ -16,7 +17,7 @@ const DONE: Record<string, string> = {
 };
 
 export function AppLogo({ slug, size = 40 }: { slug: string; size?: number }) {
-  return <img className="ig-logo" src={`/brands/integrations/${slug}.svg`} alt="" width={size} height={size} />;
+  return <img className="ig-logo" src={asset(`/brands/integrations/${slug}.svg`)} alt="" width={size} height={size} />;
 }
 
 // Steps AI and the app, joined by a live line, above the chat and the record
@@ -24,7 +25,7 @@ export function AppLogo({ slug, size = 40 }: { slug: string; size?: number }) {
 function ConnectedDemo({ page }: { page: IntegrationPage }) {
   return <div className="ig-demo">
     <Reveal className="ig-link-bar">
-      <span className="ig-node"><img src="/brands/steps-original.png" alt="" width={28} height={28} />Steps AI</span>
+      <span className="ig-node"><img src={asset("/brands/steps-original.png")} alt="" width={28} height={28} />Steps AI</span>
       <span className="ig-wire" aria-hidden="true"><i /></span>
       <span className="ig-node"><AppLogo slug={page.slug} size={28} />{page.name}</span>
     </Reveal>

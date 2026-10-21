@@ -1,6 +1,7 @@
 import {Globe,CheckCheck} from 'lucide-react';
+import { asset } from '@/lib/asset';
 export function channelKind(channel:string){return channel.includes('WhatsApp')?'whatsapp':channel==='Instagram'?'instagram':channel==='Messenger'?'messenger':'website'}
-export function ChannelLogo({channel}:{channel:string}){const kind=channelKind(channel);return kind==='website'?<Globe size={20}/>:<img className="channel-logo" src={`/brands/${kind==='instagram'?'instagram-icon':kind}.png`} width="24" height="24" alt=""/>}
+export function ChannelLogo({channel}:{channel:string}){const kind=channelKind(channel);return kind==='website'?<Globe size={20}/>:<img className="channel-logo" src={asset(`/brands/${kind==='instagram'?'instagram-icon':kind}.png`)} width="24" height="24" alt=""/>}
 export function ChannelChat({channel,question,answer,options,comments=false}:{channel:string;question:string;answer:string;options?:string[];comments?:boolean}){
   const kind=channelKind(channel);
   return <div className={`channel-chat channel-${kind} ${comments?'is-comments':''}`} aria-label={`${channel} ${comments?'comment':'conversation'} illustration`}>

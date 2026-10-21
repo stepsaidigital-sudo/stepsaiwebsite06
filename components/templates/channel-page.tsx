@@ -18,11 +18,12 @@ import { handoffStory } from '@/components/templates/agent-page';
 import { industryScenarios } from '@/components/templates/agent-industries';
 import type { ChannelPage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // The five channel pages on the premium template. Copy comes from content/channels/*.json.
 // Platform screens follow each platform's own look; everything around them uses the Steps AI palette.
 // Mockups are illustrations with fictional sample data.
 
-const PRODUCT = '/industries/ecommerce.png';
+const PRODUCT = asset('/industries/ecommerce.png');
 const result = (icon: ReactNode, title: string, sub: string) => <div className="pp-result"><span>{icon}</span><div><strong>{title}</strong><small>{sub}</small></div></div>;
 const stack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items.map((item, i) => <Float key={i}>{item}</Float>)}</div>;
 const side = (lines: [('customer' | 'agent'), string][], done: string) => <div className="wb-chat">
@@ -31,10 +32,10 @@ const side = (lines: [('customer' | 'agent'), string][], done: string) => <div c
 </div>;
 
 const ind = {
-  ecommerce: { industry: 'Ecommerce', href: '/solutions/ecommerce/', photo: '/photos/industry-ecommerce.jpg', icon: <ShoppingBag size={16} /> },
-  healthcare: { industry: 'Healthcare', href: '/solutions/healthcare/', photo: '/photos/industry-healthcare.jpg', icon: <Stethoscope size={16} /> },
-  education: { industry: 'Education', href: '/solutions/education/', photo: '/photos/industry-education.jpg', icon: <GraduationCap size={16} /> },
-  realestate: { industry: 'Real estate', href: '/solutions/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
+  ecommerce: { industry: 'Ecommerce', href: '/solutions/ecommerce/', photo: asset('/photos/industry-ecommerce.jpg'), icon: <ShoppingBag size={16} /> },
+  healthcare: { industry: 'Healthcare', href: '/solutions/healthcare/', photo: asset('/photos/industry-healthcare.jpg'), icon: <Stethoscope size={16} /> },
+  education: { industry: 'Education', href: '/solutions/education/', photo: asset('/photos/industry-education.jpg'), icon: <GraduationCap size={16} /> },
+  realestate: { industry: 'Real estate', href: '/solutions/real-estate/', photo: asset('/photos/industry-realestate.jpg'), icon: <Building2 size={16} /> },
 };
 
 // Industry examples for a channel: reuse the agent pages' conversations on that channel, one per industry,
@@ -90,8 +91,8 @@ const waHero: Line[] = [
 
 const designs: Record<string, Design> = {
   'whatsapp-chatbot': {
-    accent: ['day and night'], photo: '/photos/ch-whatsapp.jpg', alt: 'Customer chatting on WhatsApp, answered by an AI agent', logo: <ChannelLogo channel="WhatsApp" />,
-    hero: <HeroScene photo="/photos/ch-whatsapp.jpg" alt="Customer chatting on WhatsApp, answered by an AI agent">
+    accent: ['day and night'], photo: asset('/photos/ch-whatsapp.jpg'), alt: 'Customer chatting on WhatsApp, answered by an AI agent', logo: <ChannelLogo channel="WhatsApp" />,
+    hero: <HeroScene photo={asset("/photos/ch-whatsapp.jpg")} alt="Customer chatting on WhatsApp, answered by an AI agent">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={11000} lines={waHero} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><BadgeCheck size={14} />Official WhatsApp Business API</div><Row icon={<ChannelLogo channel="WhatsApp" />} title="+91 98xxx xxx10" sub="Connected through Meta" /></Float>
       <Float className="pp-pos-br">{result(<Clock size={16} />, 'Answered at 11:42 PM', 'No waiting for opening hours')}</Float>
@@ -130,8 +131,8 @@ const designs: Record<string, Design> = {
   },
 
   'instagram-chatbot': {
-    accent: ['into sales'], photo: '/photos/ch-instagram.jpg', alt: 'Brand owner creating product content for Instagram', logo: <ChannelLogo channel="Instagram" />,
-    hero: <HeroScene photo="/photos/ch-instagram.jpg" alt="Brand owner creating product content for Instagram">
+    accent: ['into sales'], photo: asset('/photos/ch-instagram.jpg'), alt: 'Brand owner creating product content for Instagram', logo: <ChannelLogo channel="Instagram" />,
+    hero: <HeroScene photo={asset("/photos/ch-instagram.jpg")} alt="Brand owner creating product content for Instagram">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={11000} lines={[
         { from: 'agent', text: 'Thanks for commenting PRICE! The linen set is ₹2,800.', at: 400 },
         { from: 'customer', text: 'Is M available?', at: 2600 },
@@ -173,8 +174,8 @@ const designs: Record<string, Design> = {
   },
 
   'messenger-chatbot': {
-    accent: ['your Facebook page'], photo: '/photos/ch-messenger.jpg', alt: 'Customer messaging a business on Messenger', logo: <ChannelLogo channel="Messenger" />,
-    hero: <HeroScene photo="/photos/ch-messenger.jpg" alt="Customer messaging a business on Messenger">
+    accent: ['your Facebook page'], photo: asset('/photos/ch-messenger.jpg'), alt: 'Customer messaging a business on Messenger', logo: <ChannelLogo channel="Messenger" />,
+    hero: <HeroScene photo={asset("/photos/ch-messenger.jpg")} alt="Customer messaging a business on Messenger">
       <LivePhone kind="Messenger" business="Lumen Home" className="pp-hero-phone" period={11000} lines={convo(
         ['Are you open on Sunday?', 'Yes, our store is open 10 to 6 on Sundays.'],
         ['Do you have the bowl set?', 'Yes, it is in stock. Here is the link.'])} />
@@ -211,8 +212,8 @@ const designs: Record<string, Design> = {
   },
 
   'website-chatbot': {
-    accent: ['even at 11pm'], photo: '/photos/ch-website.jpg', alt: 'Visitor browsing a website in the evening, with the chat widget answering', logo: <Globe size={16} />,
-    hero: <HeroScene photo="/photos/ch-website.jpg" alt="Visitor browsing a website in the evening, with the chat widget answering">
+    accent: ['even at 11pm'], photo: asset('/photos/ch-website.jpg'), alt: 'Visitor browsing a website in the evening, with the chat widget answering', logo: <Globe size={16} />,
+    hero: <HeroScene photo={asset("/photos/ch-website.jpg")} alt="Visitor browsing a website in the evening, with the chat widget answering">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={11000} lines={convo(
         ['Does the Arlo sofa come in grey?', 'Yes, it comes in grey and it is in stock.'],
         ['Add it to my cart.', 'Added. You can check out right here.'])} />
@@ -251,8 +252,8 @@ const designs: Record<string, Design> = {
   },
 
   'chat-page': {
-    accent: ['Share your agent’s page'], photo: '/photos/ch-chatpage.jpg', alt: 'Small business owner sharing her chat page link from her phone', logo: <Link2 size={16} />,
-    hero: <HeroScene photo="/photos/ch-chatpage.jpg" alt="Small business owner sharing her chat page link from her phone">
+    accent: ['Share your agent’s page'], photo: asset('/photos/ch-chatpage.jpg'), alt: 'Small business owner sharing her chat page link from her phone', logo: <Link2 size={16} />,
+    hero: <HeroScene photo={asset("/photos/ch-chatpage.jpg")} alt="Small business owner sharing her chat page link from her phone">
       <LivePhone kind="ChatPage" business="Bake House" className="pp-hero-phone" period={10000} chips={['Order a cake', 'Delivery areas', 'Prices']} links={['See our menu', 'Follow us on Instagram']} lines={convo(
         ['Can I order a cake for Saturday?', 'Yes! Which flavour and size would you like?'])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Link2 size={14} />Your link</div><div className="pp-link-pill">steps.ai/bakehouse</div><small className="pp-track-label">In your Instagram bio and WhatsApp status</small></Float>

@@ -5,13 +5,14 @@ import {ChannelLogo} from './channel-chat';
 import {LiveConversation,type Product} from './live-conversation';
 import {PhoneFrame,CallScreen} from '@/components/premium/kit';
 
+import { asset } from '@/lib/asset';
 // Hero copy is its own (not the journey section's), so each tab describes the conversation its mockup plays.
 // `panel` keeps each channel's original panel-N styling after the tabs were reordered.
 type Channel={name:string;panel:number;label:string;title:string;description:string;messages?:string[];products?:Product[];result:string};
 const channels:Channel[]=[
   {name:'Website',panel:3,label:'Help them buy',title:'Help shoppers choose and buy on your website',description:'Shoppers tell your agent what they need and how much they want to spend. It shows matching products from your catalogue, adds them to the cart and answers questions before checkout.',
     messages:['need a housewarming gift under ₹2,000','These two fit your budget. The Sol Ceramic Vase is the one most people pick for a new home.','add the sol vase. do you gift wrap?','Added to your cart. Gift wrap is ₹99, and you can add a note at checkout.'],
-    products:[{name:'Sol Ceramic Vase',price:'₹1,890.00',was:'₹2,690.00',off:'30% off',description:'Hand-finished stoneware vase with a matte glaze. Fits a small bunch of stems.',image:'/images/stories/homeware-still-life.webp'},{name:'Dune Vase and Bowl Set',price:'₹1,650.00',was:'₹2,350.00',off:'30% off',description:'Speckled stoneware vase and serving bowl, packed in a gift box.',image:'/industries/ecommerce.png'}],
+    products:[{name:'Sol Ceramic Vase',price:'₹1,890.00',was:'₹2,690.00',off:'30% off',description:'Hand-finished stoneware vase with a matte glaze. Fits a small bunch of stems.',image:asset('/images/stories/homeware-still-life.webp')},{name:'Dune Vase and Bowl Set',price:'₹1,650.00',was:'₹2,350.00',off:'30% off',description:'Speckled stoneware vase and serving bowl, packed in a gift box.',image:asset('/industries/ecommerce.png')}],
     result:'From a question to a full cart'},
   {name:'WhatsApp',panel:0,label:'Check an order',title:'Answer order questions on WhatsApp',description:'Customers message you about their order. Your agent looks it up in Shopify and replies with the actual status. If a change needs a person, it hands the chat to your team.',
     messages:['hi, i ordered a linen shirt on monday. order 4821. when will it come?','Found it. Order #4821 shipped yesterday and is due on Friday. Here’s your tracking link.','can i change the address? i’ll be at office that day','It has already shipped, so the address has to be changed with the courier. I’ve passed this to our team and Priya will reply here shortly.'],

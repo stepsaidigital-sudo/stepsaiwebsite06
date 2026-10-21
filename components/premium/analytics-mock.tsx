@@ -5,6 +5,7 @@ import {
   ShoppingBag, DollarSign,
 } from 'lucide-react';
 
+import { asset } from '@/lib/asset';
 // Light-theme recreation of the Steps AI analytics Overview screen (from the product's own dashboard).
 // Sample store data; numbers count up and the chart draws itself when the mockup comes into view.
 
@@ -86,7 +87,7 @@ const rail = [LayoutGrid, ShoppingBag, Layers, DollarSign, Flag, Monitor, Hash, 
 export function AnalyticsMock({ compact = false }: { compact?: boolean }) {
   const [ref, p] = useProgress();
   return <div ref={ref} className={`am ${compact ? 'is-compact' : ''}`} role="img" aria-label="Steps AI analytics overview with revenue, conversations, response time and channel breakdown (illustration)">
-    <nav className="am-rail"><img src="/brands/steps-original.png" alt="" />{rail.map((Icon, i) => <span key={i} className={i === 8 ? 'is-on' : ''}><Icon size={15} /></span>)}<span className="am-rail-end"><Bell size={15} /></span></nav>
+    <nav className="am-rail"><img src={asset("/brands/steps-original.png")} alt="" />{rail.map((Icon, i) => <span key={i} className={i === 8 ? 'is-on' : ''}><Icon size={15} /></span>)}<span className="am-rail-end"><Bell size={15} /></span></nav>
     <aside className="am-menu"><small>Analytics</small><span className="is-on"><CalendarDays size={14} />Overview</span><span><Globe size={14} />Geography</span><div className="am-plan"><small>Current plan</small><strong>Scale plan</strong><i /></div></aside>
     <div className="am-main">
       <header className="am-head"><div><strong><LayoutGrid size={15} />Overview</strong><small>Performance overview across your agents</small></div><span>Sep 2 – Sep 10, 2026</span><span>All agents</span></header>

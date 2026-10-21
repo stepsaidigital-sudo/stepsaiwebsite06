@@ -14,6 +14,7 @@ import { CtaBlock, Float } from '@/components/premium/kit';
 import { AiImage } from '@/components/premium/ai-image';
 import type { ContentPage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Company and legal pages on the premium look. Copy comes from content/pages/*.json; the visuals
 // only restate what that copy says. Photos of real people are never generated: those slots ask
 // for a real photo. Mood photos use AI image slots.
@@ -43,7 +44,7 @@ const stack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items.ma
 function Partners() {
   return <div className="co-partners">
     <span><BadgeCheck size={16} className="co-ok" />Meta Business Partner</span>
-    <span><img src="/brands/integrations/shopify.svg" alt="" width={18} height={18} />Shopify Partner</span>
+    <span><img src={asset("/brands/integrations/shopify.svg")} alt="" width={18} height={18} />Shopify Partner</span>
   </div>;
 }
 
@@ -68,7 +69,7 @@ function ChatCard({ channel, q, a, action, icon, className = '' }: { channel: st
 function About({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
   const why = S(page, 0), beliefs = S(page, 1), who = S(page, 2);
   const minis = [
-    <div key="0" className="co-mini"><div className="co-mini-src"><span><Globe size={13} />Website</span><span><FileText size={13} />Documents</span><span><img src="/brands/integrations/shopify.svg" alt="" width={13} height={13} />Shopify</span></div><ArrowRight size={16} className="co-mini-arrow" /><p className="co-a">Order 1042 shipped yesterday.</p></div>,
+    <div key="0" className="co-mini"><div className="co-mini-src"><span><Globe size={13} />Website</span><span><FileText size={13} />Documents</span><span><img src={asset("/brands/integrations/shopify.svg")} alt="" width={13} height={13} />Shopify</span></div><ArrowRight size={16} className="co-mini-arrow" /><p className="co-a">Order 1042 shipped yesterday.</p></div>,
     <div key="1" className="co-mini"><p className="co-a">The linen shirt in M is in stock.</p><span className="co-action"><ShoppingBag size={13} />Checkout link sent</span></div>,
     <div key="2" className="co-mini"><div className="co-toggle"><i />Agent can reply</div><span className="co-action is-team"><Hand size={13} />Ananya took over</span></div>,
   ];
@@ -110,7 +111,7 @@ function FoundersNote({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
   const icons = [<Database key="a" size={20} />, <Hand key="b" size={20} />, <CreditCard key="c" size={20} />];
   return <>
     <Hero page={page} icon={<PenLine size={16} />} onOpen={onOpen} visual={<div className="co-founder-visual">
-      <RealPhoto src="/photos/team/reshmanth.jpg" alt="Reshmanth Jonnalagadda, founder of Steps AI" note="Real photo needed: a warm, natural portrait of Reshmanth Jonnalagadda (4:5, soft daylight, plain light background). Please use a real photo, not an AI image." />
+      <RealPhoto src={asset("/photos/team/reshmanth.jpg")} alt="Reshmanth Jonnalagadda, founder of Steps AI" note="Real photo needed: a warm, natural portrait of Reshmanth Jonnalagadda (4:5, soft daylight, plain light background). Please use a real photo, not an AI image." />
       <Float className="co-sign-card"><strong>Reshmanth Jonnalagadda</strong><small>Founder, Steps AI · 2024</small></Float>
     </div>} />
     <section className="container co-letter-wrap"><Reveal className="co-letter">
@@ -139,7 +140,7 @@ function Careers({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     <Hero page={page} icon={<Rocket size={16} />} onOpen={onOpen}
       actions={<><button className="wb-btn" onClick={() => onOpen('Send us a note')}>Send us a note <ArrowRight size={16} /></button><a className="wb-btn-ghost" href="#how-we-work">How we work</a></>}
       visual={<div className="co-photo-visual">
-        <img className="co-photo" src="/photos/careers-team.jpg" alt="Two colleagues planning work together at a laptop" width={1400} height={933} decoding="async" />
+        <img className="co-photo" src={asset("/photos/careers-team.jpg")} alt="Two colleagues planning work together at a laptop" width={1400} height={933} decoding="async" />
         <Float className="co-float co-float-a">{result(<Sparkles size={15} />, 'Built from a customer request', 'Shipment landed cost calculator')}</Float>
         <Float className="co-float co-float-b">{result(<Rocket size={15} />, 'Everyone ships', 'Work customers use')}</Float>
       </div>} />
@@ -167,7 +168,7 @@ function Team({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
       <Partners />
     </div>} />
     {founder && <section className="container"><Reveal className="co-founder-card">
-      <RealPhoto src="/photos/team/reshmanth.jpg" alt={founder.title} note="Real photo needed: a natural portrait of Reshmanth Jonnalagadda (4:5). Please use a real photo, not an AI image." />
+      <RealPhoto src={asset("/photos/team/reshmanth.jpg")} alt={founder.title} note="Real photo needed: a natural portrait of Reshmanth Jonnalagadda (4:5). Please use a real photo, not an AI image." />
       <div><span className="wb-eyebrow">Founder</span><h2>{founder.title}</h2><p>{founder.body}</p><Link className="co-link" href="/note/">Read the founder’s note <ArrowRight size={15} /></Link></div>
     </Reveal></section>}
     <section className="co-band"><div className="container">

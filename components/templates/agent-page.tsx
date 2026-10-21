@@ -18,10 +18,11 @@ import {
 import type { UseCasePage } from '@/content/types';
 import { industryScenarios } from './agent-industries';
 
+import { asset } from '@/lib/asset';
 // The six AI agent pages, on the premium template. Copy comes from content/use-cases/*.json;
 // this file only adds each page's colour, photos and illustrative mockups (fictional sample data).
 
-const PRODUCT = '/industries/ecommerce.png';
+const PRODUCT = asset('/industries/ecommerce.png');
 
 /* ---------- shared stories (sections inside pages, not pages of their own) ---------- */
 
@@ -65,11 +66,11 @@ function catalogStory(photo: string) {
 const leadStory = <PhotoStory key="lead" id="leads" reverse eyebrow="Lead generation" title="Every interested visitor becomes a lead you can follow up."
   body="Your agent answers first, then asks only for the details you switched on. Each lead is saved with where it came from, so your team follows up with context."
   points={['Name, email, company and your own custom fields', 'Verify by email or phone code', 'Saved to your CRM or HubSpot, tagged by source']}
-  photo="/photos/st-leads.jpg" alt="Business meeting about a new enquiry"
+  photo={asset("/photos/st-leads.jpg")} alt="Business meeting about a new enquiry"
   overlay={<Card title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
     <Row icon={<UserPlus size={15} />} title="Meera" sub="meera@example.com · Verified" />
     <Row icon={<Tag size={15} />} title="Lumen Home" sub="Tag: quote request · Source: website" />
-    <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Owner: sales team" picked />
+    <Row icon={<img src={asset("/brands/integrations/hubspot.svg")} alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Owner: sales team" picked />
   </Card>} />;
 
 /* ---------- the other agents: one platform, many jobs ---------- */
@@ -111,8 +112,8 @@ const ctaStack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items
 
 const designs: Record<string, Design> = {
   'ai-sales-agent': {
-    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/use-cases/sales.webp', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/sales.webp" alt="Customer shopping on her phone, with a WhatsApp sales conversation">
+    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: asset('/photos/use-cases/sales.webp'), alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/sales.webp")} alt="Customer shopping on her phone, with a WhatsApp sales conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 3])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Sparkles size={14} />Picked from your catalogue</div><div className="pp-products"><div className="pp-product"><img src={PRODUCT} alt="" /><div><strong>Ceramic vase</strong><small>₹2,450 · In stock</small></div></div></div></Float>
       <Float className="pp-pos-br">{result(<ShoppingCart size={16} />, 'Checkout link sent', 'Payment on your own checkout')}</Float>
@@ -137,15 +138,15 @@ const designs: Record<string, Design> = {
         <Row icon={<Link2 size={15} />} title="Checkout link sent" sub="Customer pays on your checkout page" picked delay={450} />
       </Card>,
     ],
-    bandCta: { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> },
+    bandCta: { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> },
     capIcons: [[<Sparkles key="a" size={20} />, 'violet'], [<PackageCheck key="b" size={20} />, 'teal'], [<ShoppingCart key="c" size={20} />, 'rose'], [<UserPlus key="d" size={20} />, 'amber'], [<Tag key="e" size={20} />, 'violet'], [<Headphones key="f" size={20} />, 'blue']],
-    stories: [catalogStory('/photos/st-catalog-sales.jpg'), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true, '/photos/ho-sales.jpg')],
+    stories: [catalogStory(asset('/photos/st-catalog-sales.jpg')), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true, asset('/photos/ho-sales.jpg'))],
     ctaArt: [ctaStack(result(<Sparkles size={15} />, 'Two picks', 'From your catalogue'), result(<PackageCheck size={15} />, 'In stock', 'Checked in your store')), ctaStack(result(<ShoppingCart size={15} />, 'Added to cart', 'Ceramic vase'), result(<Link2 size={15} />, 'Checkout link', 'Sent in the chat'))],
   },
 
   'ai-support-agent': {
-    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/use-cases/support.webp', alt: 'Customer asking about a delivery, with a WhatsApp support conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/support.webp" alt="Customer asking about a delivery, with a WhatsApp support conversation">
+    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: asset('/photos/use-cases/support.webp'), alt: 'Customer asking about a delivery, with a WhatsApp support conversation',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/support.webp")} alt="Customer asking about a delivery, with a WhatsApp support conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Truck size={14} />Order #2087</div><div className="pp-track"><i className="is-done" /><i className="is-done" /><i className="is-now" /><i /></div><small className="pp-track-label">Out for delivery today</small></Float>
       <Float className="pp-pos-br">{result(<Ticket size={16} />, 'Ticket #431 created', 'Photo attached · Team notified')}</Float>
@@ -153,8 +154,8 @@ const designs: Record<string, Design> = {
     </HeroScene>,
     cards: [
       <Card key="0" title="Order #2087" status={<Chip tone="green"><Truck size={11} />Shipped</Chip>}>
-        <Row icon={<img src="/brands/integrations/shopify.svg" alt="" width={16} height={16} />} title="Found in Shopify" sub="2 items · Paid" delay={200} />
-        <Row icon={<img src="/brands/integrations/shiprocket.svg" alt="" width={16} height={16} />} title="Out for delivery" sub="Carrier status, checked just now" picked delay={450} />
+        <Row icon={<img src={asset("/brands/integrations/shopify.svg")} alt="" width={16} height={16} />} title="Found in Shopify" sub="2 items · Paid" delay={200} />
+        <Row icon={<img src={asset("/brands/integrations/shiprocket.svg")} alt="" width={16} height={16} />} title="Out for delivery" sub="Carrier status, checked just now" picked delay={450} />
       </Card>,
       <Card key="1" title="Answer source" status={<Chip>Your help content</Chip>}>
         <Row icon={<BookOpen size={15} />} title="Returns policy" sub="yourstore.com/returns" picked delay={200} />
@@ -170,18 +171,18 @@ const designs: Record<string, Design> = {
         <Row icon={<Bot size={15} />} title="AI replies paused" sub="Until your team hands back" delay={450} />
       </Card>,
     ],
-    bandCta: { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> },
+    bandCta: { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> },
     capIcons: [[<Truck key="a" size={20} />, 'teal'], [<BookOpen key="b" size={20} />, 'blue'], [<Ticket key="c" size={20} />, 'amber'], [<Headphones key="d" size={20} />, 'violet'], [<PhoneIncoming key="e" size={20} />, 'green']],
-    stories: [handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, '/photos/ho-support.jpg')],
+    stories: [handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, asset('/photos/ho-support.jpg'))],
     ctaArt: [ctaStack(result(<Truck size={15} />, 'Order checked', 'Out for delivery'), result(<BookOpen size={15} />, 'Policy answered', 'From your returns page')), ctaStack(result(<Ticket size={15} />, 'Ticket created', 'Photo attached'), result(<UserCheck size={15} />, 'Team joined', 'Full history'))],
   },
 
   'ai-lead-capture-agent': {
-    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/use-cases/lead-capture.webp', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
-    hero: page => <HeroScene photo="/photos/use-cases/lead-capture.webp" alt="Business buyer on a laptop, with a website chat collecting lead details">
+    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: asset('/photos/use-cases/lead-capture.webp'), alt: 'Business buyer on a laptop, with a website chat collecting lead details',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/lead-capture.webp")} alt="Business buyer on a laptop, with a website chat collecting lead details">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@example.com</span><span><b>Company</b>Lumen Home</span></div></Float>
-      <Float className="pp-pos-br">{result(<img src="/brands/integrations/hubspot.svg" alt="" width={18} height={18} />, 'Lead saved to HubSpot', 'Tagged: quote request')}</Float>
+      <Float className="pp-pos-br">{result(<img src={asset("/brands/integrations/hubspot.svg")} alt="" width={18} height={18} />, 'Lead saved to HubSpot', 'Tagged: quote request')}</Float>
       <span className="pp-bubble-logo pp-pos-logo"><Globe size={28} /></span>
     </HeroScene>,
     cards: [
@@ -197,18 +198,18 @@ const designs: Record<string, Design> = {
       <Card key="2" title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
         <Row icon={<UserPlus size={15} />} title="Meera · Lumen Home" sub="meera@example.com" delay={200} />
         <Row icon={<Tag size={15} />} title="Source: website chat" sub="Agent: Sales assistant" delay={400} />
-        <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Ready for follow-up" picked delay={600} />
+        <Row icon={<img src={asset("/brands/integrations/hubspot.svg")} alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Ready for follow-up" picked delay={600} />
       </Card>,
     ],
-    bandCta: { label: 'Connect HubSpot', icon: <img src="/brands/integrations/hubspot.svg" alt="" /> },
+    bandCta: { label: 'Connect HubSpot', icon: <img src={asset("/brands/integrations/hubspot.svg")} alt="" /> },
     capIcons: [[<FileText key="a" size={20} />, 'amber'], [<ShieldCheck key="b" size={20} />, 'green'], [<UserPlus key="c" size={20} />, 'blue'], [<Tag key="d" size={20} />, 'violet']],
-    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' }, false, '/photos/ho-lead.jpg')],
+    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' }, false, asset('/photos/ho-lead.jpg'))],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', 'Before any form'), result(<Mail size={15} />, 'Email verified', 'By code')), ctaStack(result(<UserPlus size={15} />, 'Lead saved', 'With its source'), result(<Users size={15} />, 'Team follows up', 'With context'))],
   },
 
   'ai-booking-agent': {
-    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/use-cases/booking.webp', alt: 'Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/booking.webp" alt="Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation">
+    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: asset('/photos/use-cases/booking.webp'), alt: 'Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/booking.webp")} alt="Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation">
       <LivePhone kind="WhatsApp" business="City Care Clinic" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><CalendarDays size={14} />Thursday</div><div className="pp-slots"><span>11:00</span><span className="is-picked">3:30 <Check size={11} /></span><span>5:00</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Booked · Thu 3:30', 'Added to Google Calendar')}</Float>
@@ -219,7 +220,7 @@ const designs: Record<string, Design> = {
         <Row icon={<Clock size={15} />} title="30 minutes" sub="From your service list" picked delay={200} />
         <Row icon={<FileText size={15} />} title="Bring previous reports" sub="Preparation note" delay={450} />
       </Card>,
-      <Card key="1" title="Free this week" status={<Chip tone="soft"><img src="/brands/integrations/google-calendar.svg" alt="" width={12} height={12} />Google Calendar</Chip>}>
+      <Card key="1" title="Free this week" status={<Chip tone="soft"><img src={asset("/brands/integrations/google-calendar.svg")} alt="" width={12} height={12} />Google Calendar</Chip>}>
         <div className="pp-slots pp-slots-card"><span>Thu 11:00</span><span className="is-picked">Thu 3:30 <Check size={11} /></span><span>Fri 10:00</span><span>Fri 4:30</span></div>
       </Card>,
       <Card key="2" title="Booking confirmed" status={<Chip tone="green"><Check size={11} />Booked</Chip>}>
@@ -227,15 +228,15 @@ const designs: Record<string, Design> = {
         <Row icon={<UserCheck size={15} />} title="Priya" sub="Name and phone collected" delay={450} />
       </Card>,
     ],
-    bandCta: { label: 'Connect your calendar', icon: <img src="/brands/integrations/google-calendar.svg" alt="" /> },
+    bandCta: { label: 'Connect your calendar', icon: <img src={asset("/brands/integrations/google-calendar.svg")} alt="" /> },
     capIcons: [[<CalendarCheck key="a" size={20} />, 'green'], [<UserCheck key="b" size={20} />, 'blue'], [<CalendarDays key="c" size={20} />, 'teal'], [<MessageSquare key="d" size={20} />, 'violet']],
-    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, '/photos/ho-booking.jpg')],
+    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, asset('/photos/ho-booking.jpg'))],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', '30 min consultation'), result(<CalendarDays size={15} />, 'Times offered', 'From your calendar')), ctaStack(result(<CalendarCheck size={15} />, 'Booked', 'Thursday, 3:30'), result(<Check size={15} />, 'Details saved', 'Name and phone'))],
   },
 
   'ai-receptionist': {
-    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/use-cases/receptionist.webp', alt: 'Front desk on a phone call, with a live call transcript',
-    hero: page => <HeroScene photo="/photos/use-cases/receptionist.webp" alt="Front desk on a phone call, with a live call transcript">
+    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: asset('/photos/use-cases/receptionist.webp'), alt: 'Front desk on a phone call, with a live call transcript',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/receptionist.webp")} alt="Front desk on a phone call, with a live call transcript">
       <LiveCall business="City Care Clinic" className="pp-hero-phone" period={13000} transcript={page.walkthrough.steps.flatMap((s, i) => [{ who: 'Caller', text: s.customer, at: 600 + i * 4000 }, { who: 'AI receptionist', text: s.agent, at: 2400 + i * 4000 }])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Languages size={14} />Speaks</div><div className="pp-langs"><span className="is-picked">English</span><span>हिन्दी</span><span>తెలుగు</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Saturday 11:00 booked', 'Confirmation sent')}</Float>
@@ -257,13 +258,13 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect a phone number', icon: <PhoneCall size={18} /> },
     capIcons: [[<PhoneIncoming key="a" size={20} />, 'blue'], [<Languages key="b" size={20} />, 'violet'], [<Voicemail key="c" size={20} />, 'amber'], [<PhoneCall key="d" size={20} />, 'green'], [<Inbox key="e" size={20} />, 'teal']],
-    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr Nair’s desk' }, false, '/photos/ho-receptionist.jpg')],
+    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr Nair’s desk' }, false, asset('/photos/ho-receptionist.jpg'))],
     ctaArt: [ctaStack(result(<PhoneIncoming size={15} />, 'Call answered', 'In three languages'), result(<CalendarCheck size={15} />, 'Visit booked', 'Saturday, 11:00')), ctaStack(result(<Headphones size={15} />, 'Transferred', 'To your team'), result(<Voicemail size={15} />, 'Callback ticket', 'After hours'))],
   },
 
   'ai-marketing-agent': {
-    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/use-cases/marketing.webp', alt: 'Boutique owner responding to campaign interest, with an Instagram conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/marketing.webp" alt="Boutique owner responding to campaign interest, with an Instagram conversation">
+    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: asset('/photos/use-cases/marketing.webp'), alt: 'Boutique owner responding to campaign interest, with an Instagram conversation',
+    hero: page => <HeroScene photo={asset("/photos/use-cases/marketing.webp")} alt="Boutique owner responding to campaign interest, with an Instagram conversation">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={12000} lines={[
         { from: 'agent', text: 'Thanks for your comment. Here are the details you asked for.', at: 400 },
         { from: 'customer', text: 'Medium in the linen shirt?', at: 2600 },
@@ -289,7 +290,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect WhatsApp', icon: <ChannelLogo channel="WhatsApp" /> },
     capIcons: [[<Megaphone key="a" size={20} />, 'rose'], [<MessageCircle key="b" size={20} />, 'violet'], [<Workflow key="c" size={20} />, 'teal'], [<BarChart3 key="d" size={20} />, 'amber']],
-    stories: [catalogStory('/photos/st-catalog-marketing.jpg'), handoffStory({ customer: 'Anu K.', ask: 'Can I get a custom colour for a bulk order?', agentLine: 'Let me check with the team for you.', team: 'Hi Anu, we can do that. How many pieces?' }, true, '/photos/ho-marketing.jpg')],
+    stories: [catalogStory(asset('/photos/st-catalog-marketing.jpg')), handoffStory({ customer: 'Anu K.', ask: 'Can I get a custom colour for a bulk order?', agentLine: 'Let me check with the team for you.', team: 'Hi Anu, we can do that. How many pieces?' }, true, asset('/photos/ho-marketing.jpg'))],
     ctaArt: [ctaStack(result(<Send size={15} />, 'Campaign sent', 'Approved template'), result(<MessageCircle size={15} />, 'Comment-to-DM', 'Keyword PRICE')), ctaStack(result(<Bot size={15} />, 'Replies answered', 'By your agent'), result(<BarChart3 size={15} />, 'Revenue tracked', 'Shopify orders'))],
   },
 };

@@ -17,6 +17,7 @@ import {
 } from '@/components/premium/kit';
 import type { IndustryPage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Industry pages on the premium template. Copy comes from content/industries/*.json, including the
 // problem-and-fix rows, the agents each industry runs and one end-to-end journey. Mockups are
 // illustrations with fictional sample data.
@@ -40,7 +41,7 @@ const agentInfo: Record<string, { label: string; icon: ReactNode }> = {
 
 const photoKey: Record<string, string> = { ecommerce: 'ecom', healthcare: 'health', education: 'edu', 'real-estate': 're', 'travel-and-hospitality': 'travel', saas: 'saas', 'financial-services': 'fin' };
 // One unique hero photo per industry (public/photos/in-*-hero.jpg, credits in docs/photo-credits.md).
-const heroPhotos: Record<string, string> = Object.fromEntries(Object.entries(photoKey).map(([slug, k]) => [slug, `/photos/in-${k}-hero.jpg`]));
+const heroPhotos: Record<string, string> = Object.fromEntries(Object.entries(photoKey).map(([slug, k]) => [slug, asset(`/photos/in-${k}-hero.jpg`)]));
 const kickerIcon: Record<string, ReactNode> = {
   ecommerce: <ShoppingBag size={16} />, healthcare: <Stethoscope size={16} />, education: <GraduationCap size={16} />, 'real-estate': <Building2 size={16} />,
   'travel-and-hospitality': <Plane size={16} />, saas: <Users size={16} />, 'financial-services': <Landmark size={16} />,
@@ -104,8 +105,8 @@ function Problems({ data }: { data: NonNullable<IndustryPage['problems']> }) {
         <div className="pp-ps-after" aria-hidden={!after}>
           <div className="pp-ps-chat">
             {item.ask && <div className="pp-ps-q">{item.ask}</div>}
-            {after && <div className="pp-ps-typing"><span className="pp-ps-bot"><img src="/brands/steps-original.png" alt="" /></span><i /><i /><i /></div>}
-            <div className="pp-ps-a"><span className="pp-ps-bot"><img src="/brands/steps-original.png" alt="" /></span><p>{item.reply ?? item.fix}</p></div>
+            {after && <div className="pp-ps-typing"><span className="pp-ps-bot"><img src={asset("/brands/steps-original.png")} alt="" /></span><i /><i /><i /></div>}
+            <div className="pp-ps-a"><span className="pp-ps-bot"><img src={asset("/brands/steps-original.png")} alt="" /></span><p>{item.reply ?? item.fix}</p></div>
           </div>
           <span className="pp-ps-stamp"><CircleCheck size={16} />Answered in seconds</span>
           {agentInfo[item.agent] && (isPublishedUseCase(item.agent)
@@ -144,16 +145,16 @@ const stories: Record<string, ReactNode[]> = {
     <PhotoStory key="shopify" id="shopify" eyebrow="Built for Shopify" title="Connect your store once. Your agent knows every product and order."
       body="Steps AI reads your Shopify catalogue, stock and orders, and your delivery partner's tracking. Your agent answers from real data, not from guesses."
       points={['Products, prices and stock from Shopify or WooCommerce', 'Order status from Shiprocket, Delhivery, DTDC, iThink Logistics or WareIQ', 'Cart reminders and COD confirmation for Shopify stores']}
-      photo="/photos/in-ecom-shopify.jpg" alt="Team packing and labelling online orders"
+      photo={asset("/photos/in-ecom-shopify.jpg")} alt="Team packing and labelling online orders"
       overlay={<Card title="Connected" status={<Chip tone="green"><Check size={11} />Live</Chip>}>
-        <Row icon={<img src="/brands/integrations/shopify.svg" alt="" width={16} height={16} />} title="Shopify" sub="1,240 products · Orders synced" picked delay={200} />
-        <Row icon={<img src="/brands/integrations/shiprocket.svg" alt="" width={16} height={16} />} title="Shiprocket" sub="Tracking for every shipment" delay={400} />
+        <Row icon={<img src={asset("/brands/integrations/shopify.svg")} alt="" width={16} height={16} />} title="Shopify" sub="1,240 products · Orders synced" picked delay={200} />
+        <Row icon={<img src={asset("/brands/integrations/shiprocket.svg")} alt="" width={16} height={16} />} title="Shiprocket" sub="Tracking for every shipment" delay={400} />
         <Row icon={<ChannelLogo channel="WhatsApp" />} title="WhatsApp Business" sub="Replies and reminders" delay={600} />
       </Card>} />,
     <PhotoStory key="sale" id="sale-days" reverse eyebrow="Sale days and launches" title="When messages pour in, every customer still gets an answer."
       body="On a sale day, hundreds of people ask about sizes, stock and delivery at once. Your agent answers each message as it arrives, so nobody waits in a queue."
       points={['Answers at any hour, including late at night', 'Every reply to your campaign handled by your agent', 'Your team picks up the conversations that need a person']}
-      photo="/photos/in-ecom-sale.jpg" alt="Shopper browsing a sale on her laptop in the evening"
+      photo={asset("/photos/in-ecom-sale.jpg")} alt="Shopper browsing a sale on her laptop in the evening"
       overlay={<Card title="Tonight" status={<Chip tone="soft">Sale live</Chip>}>
         <div className="pp-kpi-grid"><div><small>Chats answered</small><strong>418</strong></div><div><small>Avg AI response</small><strong>2.1 sec</strong></div><div><small>Checkout links</small><strong>96</strong></div><div><small>Passed to team</small><strong>11</strong></div></div>
       </Card>} />,
@@ -201,9 +202,9 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
     {page.problems && <Problems data={page.problems} />}
     {page.agents && <Agents data={page.agents} />}
     {page.journey && <><section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">Customer journey</span><h2>{page.journey.title}</h2><p>{page.journey.intro}</p></section>
-      <StepBand stages={stages} cta={page.slug === 'ecommerce' ? { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> } : { label: 'Book a demo', icon: <CalendarDays size={18} /> }} onOpen={onOpen} label={page.journey.title} /></>}
+      <StepBand stages={stages} cta={page.slug === 'ecommerce' ? { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> } : { label: 'Book a demo', icon: <CalendarDays size={18} /> }} onOpen={onOpen} label={page.journey.title} /></>}
     <Capabilities title={page.jobs.title} intro={page.jobs.intro} items={page.jobs.items} icons={capIcons} />
-    {stories[page.slug] ?? (j[1] && <PhotoStory id="in-practice" eyebrow="In practice" title={page.journey!.stages[1].title + '.'} body={page.journey!.stages[1].body} points={page.jobs.items.slice(0, 3).map(x => x.title)} photo={'/photos/in-' + key + '-story.jpg'} alt={page.hero.kicker + ' team helping a customer'} overlay={<Card title={j[1].card.title} status={<Chip tone="green"><Check size={11} />{j[1].card.chip}</Chip>}>{j[1].card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === j[1].card.rows.length - 1} delay={200 + k * 220} />)}</Card>} />)}
+    {stories[page.slug] ?? (j[1] && <PhotoStory id="in-practice" eyebrow="In practice" title={page.journey!.stages[1].title + '.'} body={page.journey!.stages[1].body} points={page.jobs.items.slice(0, 3).map(x => x.title)} photo={asset(`/photos/in-${key}-story.jpg`)} alt={page.hero.kicker + ' team helping a customer'} overlay={<Card title={j[1].card.title} status={<Chip tone="green"><Check size={11} />{j[1].card.chip}</Chip>}>{j[1].card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === j[1].card.rows.length - 1} delay={200 + k * 220} />)}</Card>} />)}
     <ToolCards title={page.tools.title} intro={page.tools.intro} names={page.tools.names} />
     {page.quotes.map(q => <QuoteBlock key={q.attribution} excerpt={q.excerpt} attribution={q.attribution} />)}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />

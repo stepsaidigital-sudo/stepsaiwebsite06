@@ -1,6 +1,7 @@
 'use client';
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
 
+import { asset } from '@/lib/asset';
 // Closing section: stock photo tiles fly in from outside the frame when the section scrolls into view and settle
 // into a mosaic around the headline. Six tiles on top, one tall tile either side of the headline, six below.
 // The photos are decorative, so they have empty alt text.
@@ -12,7 +13,7 @@ const bottom=['in-ecom-hero','ho-marketing','in-edu-hero','ch-website','in-fin-h
 function Tile({name,col,row,className=''}:{name:string;col:number;row:number;className?:string}){
  const dx=(col-2.5)/2.5,dy=row-1;
  const style={'--fx':`${Math.round(dx*70)}vw`,'--fy':`${Math.round(dy*55)}vh`,'--d':`${Math.round((Math.abs(dx)+Math.abs(dy))*110)}ms`} as CSSProperties;
- return <span className={`ft-tile ${className}`} style={style}><img src={`/images/cta-tiles/${name}.webp`} alt="" width="480" height="360" loading="lazy" decoding="async"/></span>;
+ return <span className={`ft-tile ${className}`} style={style}><img src={asset(`/images/cta-tiles/${name}.webp`)} alt="" width="480" height="360" loading="lazy" decoding="async"/></span>;
 }
 
 export function FinalTiles({children}:{children:ReactNode}){

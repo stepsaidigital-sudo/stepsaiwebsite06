@@ -82,6 +82,7 @@ import wareiqIntegration from '@/content/integrations/wareiq.json';
 import woocommerceIntegration from '@/content/integrations/woocommerce.json';
 import zendeskIntegration from '@/content/integrations/zendesk.json';
 
+import { asset, isAssetPath } from '@/lib/asset';
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
 const features = { 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcasting': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
@@ -100,9 +101,17 @@ const hubs = { industries: industriesHub, compare: compareHub, features: feature
 const pricing = pricingPage satisfies Json<PricingPage>;
 const pages = { about: aboutPage, 'not-found': notFoundPage, 'partners': partnersPage, 'affiliate-program': affiliateProgramPage, 'hire-an-agency': hireAnAgencyPage, 'founders-note': foundersNotePage, 'careers': careersPage, 'team': teamPage, 'contact': contactPage, 'security': securityPage, 'privacy-policy': privacyPolicyPage, 'terms-of-service': termsOfServicePage } satisfies Record<string, Json<ContentPage>>;
 
+// Content JSON keeps root-relative paths to files in public/; point them at the asset host.
+function withAssets<T>(value: T): T {
+  if (typeof value === 'string') return (isAssetPath(value) ? asset(value) : value) as T;
+  if (Array.isArray(value)) return value.map(withAssets) as T;
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, withAssets(v)])) as T;
+  return value;
+}
+
 function lookup<T>(pages: Record<string, unknown>) {
   return {
-    get: (slug: string) => (Object.hasOwn(pages, slug) ? pages[slug] as T : undefined),
+    get: (slug: string) => (Object.hasOwn(pages, slug) ? withAssets(pages[slug] as T) : undefined),
     list: () => Object.keys(pages),
   };
 }
@@ -112,11 +121,11 @@ export const getFeature = f.get, listFeatures = f.list;
 export const getChannel = c.get, listChannels = c.list;
 export const getUseCase = u.get, listUseCases = u.list;
 export const getIndustry = i.get, listIndustries = i.list;
-export const getHub = (name: keyof typeof hubs) => hubs[name] as HubPage;
-export const getPricing = () => pricing as PricingPage;
-export const getPage = (name: keyof typeof pages) => pages[name] as ContentPage;
+export const getHub = (name: keyof typeof hubs) => withAssets(hubs[name] as HubPage);
+export const getPricing = () => withAssets(pricing as PricingPage);
+export const getPage = (name: keyof typeof pages) => withAssets(pages[name] as ContentPage);
 export const getIntegration = g.get, listIntegrations = g.list;
-export const getIntegrationsHub = () => integrationsIndex as IntegrationsHub;
+export const getIntegrationsHub = () => withAssets(integrationsIndex as IntegrationsHub);
 export const getCaseStudy = cs.get, listCaseStudies = cs.list;
-export const getCaseStudiesHub = () => caseStudiesIndex as CaseStudiesHub;
+export const getCaseStudiesHub = () => withAssets(caseStudiesIndex as CaseStudiesHub);
 export const getCompare = cp.get, listCompares = cp.list;

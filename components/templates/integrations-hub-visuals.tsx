@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Check, Globe } from 'lucide-react';
 import { AppLogo } from './integration';
 
+import { asset } from '@/lib/asset';
 export type HubApp = { slug: string; name: string; channel: string; question?: string; answer?: string; found?: string };
 
 // Diagram geometry, in viewBox units. Nodes are placed with the same numbers
@@ -10,8 +11,8 @@ export type HubApp = { slug: string; name: string; channel: string; question?: s
 // sit high enough that their wires never pass under the reply card.
 const W = 1000, H = 380, CORE = { x: 500, y: 112 };
 const CHANNELS = [
-  { name: 'WhatsApp', y: 64, icon: <img src="/brands/whatsapp.png" alt="" width={22} height={22} /> },
-  { name: 'Instagram', y: 124, icon: <img src="/brands/instagram-icon.png" alt="" width={22} height={22} /> },
+  { name: 'WhatsApp', y: 64, icon: <img src={asset("/brands/whatsapp.png")} alt="" width={22} height={22} /> },
+  { name: 'Instagram', y: 124, icon: <img src={asset("/brands/instagram-icon.png")} alt="" width={22} height={22} /> },
   { name: 'Website', y: 184, icon: <Globe size={19} /> },
 ];
 const APP_Y = [50, 120, 190, 260, 330];
@@ -72,7 +73,7 @@ export function HubDiagram({ apps }: { apps: HubApp[] }) {
 
     {CHANNELS.map((c, i) => <span key={c.name} className={`igh-channel ${i === channel ? 'is-on' : ''}`} style={pos(90, c.y)}>{c.icon}{c.name}</span>)}
 
-    <span className={`igh-core ${phase === 1 ? 'is-thinking' : ''}`} style={pos(CORE.x, CORE.y)}><img src="/brands/steps-original.png" alt="" width={50} height={50} /></span>
+    <span className={`igh-core ${phase === 1 ? 'is-thinking' : ''}`} style={pos(CORE.x, CORE.y)}><img src={asset("/brands/steps-original.png")} alt="" width={50} height={50} /></span>
 
     {apps.map((a, i) => <a key={a.slug} href={`/integrations/${a.slug}/`} className={`igh-app ${i === active ? 'is-on' : ''} ${i === active && phase >= 1 ? 'is-hit' : ''}`} style={pos(910, APP_Y[i])}
       onMouseEnter={() => pick(i)} onFocus={() => pick(i)} onBlur={() => setPaused(false)} aria-label={`${a.name} integration`}>

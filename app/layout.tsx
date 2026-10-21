@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { fontFaces } from "./fonts";
 
+import { asset } from '@/lib/asset';
 export const metadata: Metadata = {
   title: "Steps AI: Your AI agent for marketing, sales and support",
   description: "Send campaigns, answer customer questions, capture leads and book appointments. Your AI agent, customer messages and follow-ups in one platform.",
@@ -8,8 +10,8 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: asset("/favicon.svg"),
+    shortcut: asset("/favicon.svg"),
   },
 };
 
@@ -20,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: fontFaces }} />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );

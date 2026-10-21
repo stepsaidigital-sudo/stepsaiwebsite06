@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Bot, Check, KeyRound, LayoutGrid, Lock, LogIn, MessageSquare, MousePointerClick, Pause, Play, Search, ShieldCheck, ToggleRight, Zap } from 'lucide-react';
 
+import { asset } from '@/lib/asset';
 // "How to connect" walkthrough: the real steps in the Steps AI dashboard
 // (Resources → Apps → sign in → switch on for agents → live), played as a short animated demo.
 // With several apps it connects each one in turn. Screens are illustrations with sample data.
@@ -20,7 +21,7 @@ function signIn(app: ConnectApp): { label: string; icon: 'google' | 'microsoft' 
   return { label: `Sign in to ${app.name}`, icon: 'app' };
 }
 
-const logo = (slug: string, size = 22) => <img src={`/brands/integrations/${slug}.svg`} alt="" width={size} height={size} />;
+const logo = (slug: string, size = 22) => <img src={asset(`/brands/integrations/${slug}.svg`)} alt="" width={size} height={size} />;
 // The last step's caption, by app category.
 const LIVE: Record<string, string> = {
   'Ecommerce': 'Answers now use live store data',
@@ -80,7 +81,7 @@ export function ConnectFlow({ app, apps, title, intro }: { app?: ConnectApp; app
         <div className="cf-bar-top"><i /><i /><i /><span><Lock size={11} />app.stepsai.co/resources/apps{step >= 1 ? `/${a.slug}` : ''}</span>
           <button className="cf-play" onClick={() => setPaused(p => !p)} aria-label={paused ? 'Play' : 'Pause'} tabIndex={-1}>{paused ? <Play size={12} /> : <Pause size={12} />}</button></div>
         <div className="cf-body">
-          <nav className="cf-side"><img src="/brands/steps-original.png" alt="" /><span>Home</span><span>Agents</span><span className="is-on">Resources</span><span>Workflows</span><span>Inbox</span><span>CRM</span></nav>
+          <nav className="cf-side"><img src={asset("/brands/steps-original.png")} alt="" /><span>Home</span><span>Agents</span><span className="is-on">Resources</span><span>Workflows</span><span>Inbox</span><span>CRM</span></nav>
           <div className="cf-main" key={`${ai}-${step}`}>
             {step <= 1 && <>
               <div className="cf-title"><strong>Apps</strong><small>Connect the tools your agents use</small></div>
@@ -89,7 +90,7 @@ export function ConnectFlow({ app, apps, title, intro }: { app?: ConnectApp; app
               {step === 1 && <span className="cf-cursor" />}
             </>}
             {step === 2 && <div className="cf-modal">
-              <div className="cf-modal-logos"><img src="/brands/steps-original.png" alt="" /><span className="cf-dots"><i /><i /><i /></span>{logo(a.slug, 34)}</div>
+              <div className="cf-modal-logos"><img src={asset("/brands/steps-original.png")} alt="" /><span className="cf-dots"><i /><i /><i /></span>{logo(a.slug, 34)}</div>
               <strong>Connect {a.name}</strong>
               {auth.field && <span className="cf-field">{auth.icon === 'key' && <KeyRound size={13} />}<b className="cf-typed">{auth.field === 'API key' ? '••••••••••••3f9a' : auth.field}</b></span>}
               <span className={`cf-auth cf-auth-${auth.icon}`}>{auth.icon === 'google' && <i className="cf-g">G</i>}{auth.icon === 'microsoft' && <i className="cf-ms"><b /><b /><b /><b /></i>}{auth.label}</span>

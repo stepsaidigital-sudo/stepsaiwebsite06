@@ -6,11 +6,12 @@ import { resolveLabel } from './routes';
 import { MegaMenus } from './mega-menu';
 import { useSiteMotion } from './motion';
 
+import { asset } from '@/lib/asset';
 export type Open = { onOpen: (label: string) => void };
 type Place = { onHome?: boolean };
 
 export function Brand({ onHome = true }: Place) {
-  return <a className="brand" href={onHome ? '#top' : '/'} aria-label="Steps AI home"><img className="brand-original" src="/brands/steps-original.png" alt="" /><span>Steps AI</span></a>;
+  return <a className="brand" href={onHome ? '#top' : '/'} aria-label="Steps AI home"><img className="brand-original" src={asset("/brands/steps-original.png")} alt="" /><span>Steps AI</span></a>;
 }
 
 export function Action({ children = 'Book a demo', onOpen, className = '' }: Open & { children?: string; className?: string }) {

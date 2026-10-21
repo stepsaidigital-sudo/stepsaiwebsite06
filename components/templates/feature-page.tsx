@@ -16,6 +16,7 @@ import { AnalyticsMock, ScaleBox } from '@/components/premium/analytics-mock';
 import { CrmMock, InboxMock, WorkflowMock } from '@/components/premium/app-mocks';
 import type { FeaturePage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Feature pages on the premium template. Copy comes from content/features/*.json; the product
 // mockups follow the real Steps AI screens (sample data only).
 
@@ -70,7 +71,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="asks" id="questions" eyebrow="What customers ask" title="Know the questions before your team does."
         body="Analytics ranks the questions customers ask most, so you can improve your answers, your product pages and your policies where it matters."
         points={['A ranked list of the most asked questions', 'Busiest days and hours on a heat map', 'Leads by topic and marketing source']}
-        photo="/photos/f-analytics.jpg" alt="Store manager reviewing sales reports on a tablet at her desk"
+        photo={asset("/photos/f-analytics.jpg")} alt="Store manager reviewing sales reports on a tablet at her desk"
         overlay={<Card title="Top questions" status={<Chip>Last 30 days</Chip>}>
           {[['Where is my order?', '34%'], ['Which size should I pick?', '22%'], ['How do returns work?', '15%'], ['Is COD available?', '11%']].map(([q, v], i) => <Row key={q} icon={<MessageSquare size={15} />} title={q} end={<Chip tone={i === 0 ? 'soft' : 'plain'}>{v}</Chip>} picked={i === 0} delay={200 + i * 150} />)}
         </Card>} />,
@@ -114,7 +115,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="team" id="team" eyebrow="Your team" title="Step in only when it matters."
         body="The agent answers first. Your team sees who needs a person and picks up the thread with the full history."
         points={['Live requests stand out in the list', 'Claim once, so nobody answers twice', 'Customer details beside every chat']}
-        photo="/photos/f-inbox.jpg" alt="Support team with headsets replying to customers on laptops"
+        photo={asset("/photos/f-inbox.jpg")} alt="Support team with headsets replying to customers on laptops"
         overlay={<Card title="Needs a person" status={<Chip tone="soft">Live</Chip>}>
           <Row icon={ch('WhatsApp')} title="Anu Sharma" sub="Damaged order" picked delay={200} />
           <Row icon={ch('Website')} title="Meera Iyer" sub="Bulk order quote" delay={350} />
@@ -160,7 +161,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="records" id="records" eyebrow="Records" title="Know who you are talking to."
         body="Every chat can add to a customer record, so the next conversation starts with the full picture."
         points={['Fields you choose, filled from the chat', 'Notes and activity on every record', 'HubSpot if your team already uses it']}
-        photo="/photos/f-crm.jpg" alt="Clothing studio owner checking customer details on a laptop"
+        photo={asset("/photos/f-crm.jpg")} alt="Clothing studio owner checking customer details on a laptop"
         reverse tint="warm"
         overlay={<Card title="Anu Sharma" status={<Chip tone="green"><BadgeCheck size={11} />Verified</Chip>}>
           <Row icon={ch('WhatsApp')} title="Came from WhatsApp" sub="Support desk" delay={200} />
@@ -209,7 +210,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="followups" id="followups" eyebrow="Follow-ups" title="The follow-ups happen while you pack orders."
         body="Cart reminders, COD checks and review requests go out on time, without anyone on your team remembering to send them."
         points={['Ready-made templates for Shopify stores', 'WhatsApp, website messages and email', 'Run history for every workflow']}
-        photo="/photos/f-workflow.jpg" alt="Two founders packing a customer order at their studio table"
+        photo={asset("/photos/f-workflow.jpg")} alt="Two founders packing a customer order at their studio table"
         overlay={<Card title="This month" status={<Chip tone="green">Automated</Chip>}>
           <Row icon={<ShoppingCart size={15} />} title="14 checkouts recovered" sub="Cart recovery" picked delay={200} />
           <Row icon={<Check size={15} />} title="COD orders confirmed" sub="COD confirmation" delay={350} />

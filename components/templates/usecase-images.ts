@@ -1,7 +1,8 @@
+import { asset } from '@/lib/asset';
 // Generated editorial illustrations, not customer photographs or product screenshots.
 // Keep image selection independent of page copy and existing layout dimensions.
 type Photo = { src: string; alt: string };
-const photo = (name: string, alt: string): Photo => ({ src: `/photos/use-cases/${name}.webp`, alt });
+const photo = (name: string, alt: string): Photo => ({ src: asset(`/photos/use-cases/${name}.webp`), alt });
 
 export const useCaseIndustryImages: Record<'chat' | 'call', Record<string, Photo>> = {
   chat: {

@@ -4,15 +4,16 @@ import { SiteFrame } from '@/components/site/shell';
 import { CtaBand, Faq, GoodToKnow, PageHero, Reveal, SectionIntro, StepRows } from '@/components/sections';
 import type { ComparePage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // Two marks facing each other, with the first table rows ticking in.
 // Official competitor marks in public/brands/compare (sources in docs/photo-credits.md). Three only exist as PNG.
 const PNG_LOGOS = ['manychat', 'aisensy', 'verifast'];
-const competitorLogo = (name: string) => { const slug = name.toLowerCase().replace(/[^a-z]/g, ''); return `/brands/compare/${slug}.${PNG_LOGOS.includes(slug) ? 'png' : 'svg'}`; };
+const competitorLogo = (name: string) => { const slug = name.toLowerCase().replace(/[^a-z]/g, ''); return asset(`/brands/compare/${slug}.${PNG_LOGOS.includes(slug) ? 'png' : 'svg'}`); };
 
 function VersusCard({ page }: { page: ComparePage }) {
   return <Reveal className="vs-card" >
     <div className="vs-head">
-      <span className="vs-brand is-us"><img src="/brands/steps-original.png" alt="" width={30} height={30} />Steps AI</span>
+      <span className="vs-brand is-us"><img src={asset("/brands/steps-original.png")} alt="" width={30} height={30} />Steps AI</span>
       <span className="vs-badge">vs</span>
       <span className="vs-brand"><img src={competitorLogo(page.competitor)} alt="" width={30} height={30} />{page.competitor}</span>
     </div>

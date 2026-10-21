@@ -5,6 +5,7 @@ import {ArrowRight,Check,CheckCheck,ChevronLeft,Phone,Video,MoreVertical,Camera,
 import {ChannelLogo} from './channel-chat';
 import copy from './copy.json';
 
+import { asset } from '@/lib/asset';
 // "See the conversations, customers and results in one place": the same pattern as the hero. Tabs pick one of the
 // four team.items. Each one plays a platform-accurate customer chat (messages arrive one by one, with typing dots),
 // and a floating Steps AI card shows what your team sees on its side. Sample business and data throughout.
@@ -54,7 +55,7 @@ function UnifiedInbox(){
 
 function Chat({story,time}:{story:Story;time:number}){
  const kind=story.channel.toLowerCase();const step=TOTAL/(story.messages.length+1);
- const head=kind==='whatsapp'?<header className="tv-head"><ChevronLeft size={20}/><span className="tv-head-avatar"><img src="/images/stories/homeware-still-life.webp" alt="" width="34" height="34"/></span><div><strong>{story.contact}</strong><small>{story.handle}</small></div><Video size={19}/><Phone size={17}/><MoreVertical size={17}/></header>
+ const head=kind==='whatsapp'?<header className="tv-head"><ChevronLeft size={20}/><span className="tv-head-avatar"><img src={asset("/images/stories/homeware-still-life.webp")} alt="" width="34" height="34"/></span><div><strong>{story.contact}</strong><small>{story.handle}</small></div><Video size={19}/><Phone size={17}/><MoreVertical size={17}/></header>
   :kind==='instagram'?<header className="tv-head"><ChevronLeft size={22}/><span className="tv-head-avatar tv-ig-ring"><b>YS</b></span><div><strong>{story.contact}</strong><small>{story.handle}</small></div><Phone size={19}/><Video size={20}/></header>
   :<header className="tv-head"><span className="tv-head-avatar tv-web-mark">s</span><div><strong>{story.contact}</strong><small><i className="tv-dot"/>{story.handle}</small></div><MoreVertical size={17}/></header>;
  const input=kind==='whatsapp'?<footer className="tv-input"><Plus size={20}/><span>Message</span><Smile size={18}/><Camera size={18}/><Mic size={18}/></footer>

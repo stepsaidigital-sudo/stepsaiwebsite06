@@ -8,6 +8,7 @@ import {
 import { ChannelLogo } from '@/app/channel-chat';
 import { useLoop } from './kit';
 
+import { asset } from '@/lib/asset';
 // Light-theme recreations of the Steps AI inbox, CRM and workflow builder, in the same
 // app frame as the analytics mockup. Designed at 1000px wide for ScaleBox. Fictional
 // sample data; each screen plays a short loop while it is on screen.
@@ -18,7 +19,7 @@ const fade = (t: number, at: number) => `ax-fade ${on(t, at) ? 'is-in' : ''}`;
 function Frame({ active, menu, children, label, loopRef }: { active: number; menu: ReactNode; children: ReactNode; label: string; loopRef: React.Ref<HTMLDivElement> }) {
   const rail = [LayoutGrid, Bot, Inbox, Users, Workflow, MessageSquare];
   return <div ref={loopRef} className="am ax" role="img" aria-label={label}>
-    <nav className="am-rail"><img src="/brands/steps-original.png" alt="" />{rail.map((Icon, i) => <span key={i} className={i === active ? 'is-on' : ''}><Icon size={15} /></span>)}<span className="am-rail-end"><Bell size={15} /></span></nav>
+    <nav className="am-rail"><img src={asset("/brands/steps-original.png")} alt="" />{rail.map((Icon, i) => <span key={i} className={i === active ? 'is-on' : ''}><Icon size={15} /></span>)}<span className="am-rail-end"><Bell size={15} /></span></nav>
     {menu}
     <div className="ax-main">{children}</div>
   </div>;

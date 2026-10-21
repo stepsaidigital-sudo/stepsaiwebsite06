@@ -12,6 +12,7 @@ import { Reveal } from '@/components/sections';
 import { SplitWords } from '@/components/site/motion';
 import type { FeaturePage } from '@/content/types';
 
+import { asset } from '@/lib/asset';
 // The WhatsApp broadcast page, built to the approved visual reference. Copy
 // comes from content/features/whatsapp-broadcast.json; every mockup is an
 // illustration with fictional sample data.
@@ -56,7 +57,7 @@ function Phone() {
       <div className="wb-phone-head"><span className="wb-phone-logo">S</span><strong>Your Business</strong><BadgeCheck size={13} className="wb-verified" /></div>
       <div className="wb-phone-chat">
         <div className="wb-tpl">
-          <img src="/industries/ecommerce.png" alt="" />
+          <img src={asset("/industries/ecommerce.png")} alt="" />
           <p><b>Hi Priya,</b> our new collection is live. See the latest styles and the offers picked for you.</p>
           <small>11:42 AM</small>
           <span className="wb-tpl-btn"><ExternalLink size={12} />View collection</span>
@@ -226,8 +227,8 @@ function FeatureTiles({ items }: { items: FeaturePage['features']['items'] }) {
 /* ---------- page ---------- */
 
 const logoFor: Record<string, ReactNode> = {
-  hubspot: <img src="/brands/integrations/hubspot.svg" alt="" width={30} height={30} />,
-  'google-calendar': <img src="/brands/integrations/google-calendar.svg" alt="" width={30} height={30} />,
+  hubspot: <img src={asset("/brands/integrations/hubspot.svg")} alt="" width={30} height={30} />,
+  'google-calendar': <img src={asset("/brands/integrations/google-calendar.svg")} alt="" width={30} height={30} />,
   webhook: <Webhook size={28} className="wb-webhook" />,
 };
 

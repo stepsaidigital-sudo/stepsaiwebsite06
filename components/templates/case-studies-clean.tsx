@@ -19,19 +19,20 @@ import { SiteFrame } from '@/components/site/shell';
 import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/types';
 import { brandInspireMap, type BrandInspireData } from './story-inspire';
 
+import { asset } from '@/lib/asset';
 type Entry = { slug: string; agent: string; story: Story };
 
 const brandPhotos: Record<string, string> = {
-  'Mysa Living': '/images/case-studies/mysa-living.jpg',
-  'Aster & Row': '/images/case-studies/aster-and-row.jpg',
-  'North & Pine': '/images/case-studies/north-and-pine.jpg',
-  'Nivara': '/images/case-studies/nivara.jpg',
-  'Casa Noma': '/images/case-studies/casa-noma.jpg',
-  'Stacklane': '/images/case-studies/stacklane.jpg',
-  'Sunday Form': '/images/case-studies/sunday-form.jpg',
-  'Northstar SaaS': '/images/case-studies/northstar-saas.jpg',
-  'LatticeFlow Labs': '/images/case-studies/latticeflow-labs.jpg',
-  'RelayDesk': '/images/case-studies/relaydesk.jpg',
+  'Mysa Living': asset('/images/case-studies/mysa-living.jpg'),
+  'Aster & Row': asset('/images/case-studies/aster-and-row.jpg'),
+  'North & Pine': asset('/images/case-studies/north-and-pine.jpg'),
+  'Nivara': asset('/images/case-studies/nivara.jpg'),
+  'Casa Noma': asset('/images/case-studies/casa-noma.jpg'),
+  'Stacklane': asset('/images/case-studies/stacklane.jpg'),
+  'Sunday Form': asset('/images/case-studies/sunday-form.jpg'),
+  'Northstar SaaS': asset('/images/case-studies/northstar-saas.jpg'),
+  'LatticeFlow Labs': asset('/images/case-studies/latticeflow-labs.jpg'),
+  'RelayDesk': asset('/images/case-studies/relaydesk.jpg'),
 };
 
 /* Executive Monogram Badge - Eliminates human face photos in favor of verified credentials */
@@ -326,7 +327,7 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
 function SpotlightCard({ e }: { e: Entry }) {
   const p = person(e.story.attribution);
   const inspire = brandInspireMap[e.story.brand];
-  const photo = inspire?.photo || brandPhotos[e.story.brand] || '/images/case-studies/mysa-living.jpg';
+  const photo = inspire?.photo || brandPhotos[e.story.brand] || asset('/images/case-studies/mysa-living.jpg');
 
   // Not a link until per-customer case study pages are published.
   return (
