@@ -1,0 +1,412 @@
+/* ══════════════════════════════════════════════════════════════════
+   INSPIRING CLIENT EXPERIENCES CAROUSEL
+   Wide-screen layout with 4 cards visible across desktop,
+   eliminating wasted space, with dynamic auto-scrolling,
+   pause-on-hover desktop view, and rich atmospheric background.
+   Brand palette: #F8B403 (Gold), #0C3474 (Navy), #2C9CF4 (Sky), #C4ECFC (Ice)
+   ══════════════════════════════════════════════════════════════════ */
+
+.exp-section {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: 105px 0 92px;
+  scroll-margin-top: 100px;
+  color: #0c3474;
+  background:
+    radial-gradient(55% 40% at 0% 0%, #ffffff 0%, transparent 70%),
+    radial-gradient(60% 45% at 100% 25%, rgb(44 156 250 / 42%) 0%, transparent 70%),
+    radial-gradient(70% 45% at 0% 75%, rgb(44 156 250 / 30%) 0%, transparent 70%),
+    radial-gradient(45% 35% at 92% 98%, rgb(248 180 3 / 22%) 0%, transparent 70%),
+    linear-gradient(170deg, #f4fbff 0%, #c4ecfc 36%, #a2d6fb 70%, #c4ecfc 100%);
+  border-block: 1px solid rgb(12 52 116 / 12%);
+}
+
+/* Layered dot-grid texture matching pricing and hub hero sections */
+.exp-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#0c34741c 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 35%, transparent 85%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 35%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient organic drifting light orbs behind the cards */
+.exp-section::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(34px);
+  pointer-events: none;
+  width: 65vw;
+  height: 52vw;
+  right: -18vw;
+  top: 40%;
+  background: radial-gradient(ellipse, rgba(12, 52, 116, 0.18) 0%, rgba(44, 156, 250, 0.32) 40%, transparent 70%);
+  animation: exp-drift 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes exp-drift {
+  to {
+    transform: translate3d(4vw, -5vh, 0) scale(1.05);
+  }
+}
+
+/* Ambient background waves */
+.exp-ambient-waves {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 280px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.exp-ambient-waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.exp-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 46px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-title {
+  margin: 0;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: #0c3474;
+}
+
+.exp-subtitle {
+  margin: 14px auto 0;
+  max-width: 620px;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: #33475b;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   WIDE VIEWPORT & CAROUSEL TRACK
+   Spans broad width on desktop to fill empty side spaces completely
+   ══════════════════════════════════════════════════════════════════ */
+.exp-viewport-wide {
+  position: relative;
+  width: 100%;
+  max-width: 1620px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.exp-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 16px max(28px, calc((100vw - 1560px) / 2)) 36px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.exp-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Universal Card Base: Sized so 4 full cards display across desktop */
+.exp-card {
+  flex: 0 0 clamp(290px, 22.8vw, 345px);
+  min-height: 395px;
+  scroll-snap-align: start;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 26px;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 320ms ease, border-color 320ms ease;
+  user-select: none;
+  position: relative;
+}
+
+.exp-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  z-index: 2;
+}
+
+/* Featured Gold Rating Card */
+.exp-card-gold {
+  background: #F8B403;
+  background: linear-gradient(145deg, #FFC82C 0%, #F8B403 60%, #E89E00 100%);
+  color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    0 20px 45px -8px rgba(248, 180, 3, 0.45),
+    0 4px 10px rgba(12, 52, 116, 0.08);
+}
+
+.exp-card-gold:hover {
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    0 30px 65px -10px rgba(248, 180, 3, 0.6);
+}
+
+.exp-gold-stars {
+  display: flex;
+  gap: 4px;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.exp-gold-rating {
+  margin: 0 0 16px;
+  font-family: 'Poppins', Inter, system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.exp-gold-quote {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1f2937;
+  flex-grow: 1;
+}
+
+.exp-gold-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.exp-gold-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.exp-gold-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #FFC82C;
+  margin-right: -10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+}
+
+.exp-gold-users strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.exp-gold-users span {
+  display: block;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 2px;
+}
+
+/* White Review Cards with Glass Frosted Depth */
+.exp-card-white {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 4px 6px -1px rgba(12, 52, 116, 0.05),
+    0 20px 42px -10px rgba(12, 52, 116, 0.14);
+}
+
+.exp-card-white:hover {
+  border-color: rgba(44, 156, 250, 0.4);
+  box-shadow:
+    0 8px 12px -2px rgba(12, 52, 116, 0.08),
+    0 28px 58px -12px rgba(12, 52, 116, 0.22);
+}
+
+.exp-quote-icon {
+  font-family: Georgia, serif;
+  font-size: 2.85rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #F8B403;
+  margin-bottom: 12px;
+  transition: transform 260ms ease;
+}
+
+.exp-card-white:hover .exp-quote-icon {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.exp-quote-text {
+  margin: 0 0 24px;
+  font-size: 0.9375rem;
+  line-height: 1.68;
+  color: #1e293b;
+  flex-grow: 1;
+}
+
+.exp-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.exp-author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(12, 52, 116, 0.12);
+}
+
+.exp-author-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.exp-author-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exp-author-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0c3474;
+  white-space: nowrap;
+}
+
+.exp-verified-badge {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.exp-author-sub {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Centered Carousel Navigation Controls */
+.exp-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(12, 52, 116, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0c3474;
+  cursor: pointer;
+  transition: all 180ms ease;
+  box-shadow: 0 4px 14px rgba(12, 52, 116, 0.1);
+}
+
+.exp-btn:hover {
+  background: #0c3474;
+  color: #ffffff;
+  border-color: #0c3474;
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(12, 52, 116, 0.22);
+}
+
+.exp-btn:active {
+  transform: scale(0.96);
+}
+
+/* Footer Link to Full Stories */
+.exp-footer-link {
+  text-align: center;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-see-all {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0c3474;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(12, 52, 116, 0.14);
+  transition: all 180ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.exp-see-all:hover {
+  background: #0c3474;
+  color: #ffffff;
+  border-color: #0c3474;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(12, 52, 116, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .exp-card {
+    flex: 0 0 310px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-section {
+    padding: 72px 0 64px;
+  }
+  .exp-card {
+    flex: 0 0 290px;
+    min-height: 380px;
+    padding: 24px 20px;
+  }
+  .exp-track {
+    padding-inline: 16px;
+    gap: 14px;
+  }
+}

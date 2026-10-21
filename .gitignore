@@ -44,3 +44,8 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+/.impeccable/
+/qa/*.log
+/qa/*.png
+/qa/*.jpg
+jf3-*.png
