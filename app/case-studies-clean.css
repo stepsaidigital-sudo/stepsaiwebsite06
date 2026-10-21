@@ -1428,6 +1428,36 @@
   border: 2px solid #e2e8f0;
 }
 
+/* Executive Monogram Badge - High-credibility verified initials, no face photos */
+.cs2-exec-badge {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0c3474 0%, #1754a6 100%);
+  border: 1.5px solid rgba(44, 156, 250, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(12, 52, 116, 0.16);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.bcs-quote-author .cs2-exec-badge {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  font-size: 0.9375rem;
+  border: 2px solid rgba(44, 156, 250, 0.5);
+  box-shadow: 0 6px 16px rgba(12, 52, 116, 0.2);
+}
+
 .bcs-author-name {
   display: flex;
   align-items: center;

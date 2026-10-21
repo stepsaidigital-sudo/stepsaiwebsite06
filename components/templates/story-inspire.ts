@@ -59,8 +59,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Shoppers who talk to the sales agent are noticeably more likely to finish checkout. It answers the questions that used to make people hesitate, especially around dimensions and materials.',
     personName: 'Anika Rao',
     personRole: 'Head of Digital Experience, Mysa Living',
-    avatar: '/photos/avatars/ananya.webp',
-    photo: '/photos/in-ecom-hero.jpg',
+    avatar: '',
+    photo: '/images/case-studies/mysa-living.jpg',
     fullSlug: 'ai-sales-agent'
   },
   'Aster & Row': {
@@ -97,8 +97,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'We treat it like a digital concierge. It knows our entire catalogue, handles size queries smoothly, and hands over to our human stylists whenever a customer wants a personal styling session.',
     personName: 'Priya Shah',
     personRole: 'VP of E-Commerce, Aster & Row',
-    avatar: '/photos/avatars/priya.webp',
-    photo: '/photos/cs-sales.jpg',
+    avatar: '',
+    photo: '/images/case-studies/aster-and-row.jpg',
     fullSlug: 'ai-sales-agent'
   },
   'North & Pine': {
@@ -135,8 +135,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be.',
     personName: 'Maya Patel',
     personRole: 'Head of E-commerce, North & Pine',
-    avatar: '/photos/avatars/maya.webp',
-    photo: '/photos/ag-ecom-sales.jpg',
+    avatar: '',
+    photo: '/images/case-studies/north-and-pine.jpg',
     fullSlug: 'ai-support-agent'
   },
   'Nivara': {
@@ -173,8 +173,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Size, stock, shipping, and returns were probably half of our daily messages. StepsAI handles most of those conversations now, and support has a lot more time for the customers who actually need help.',
     personName: 'Arjun Mehta',
     personRole: 'E-commerce Manager, Nivara',
-    avatar: '/photos/avatars/arjun.webp',
-    photo: '/photos/sc-sales-ecommerce.jpg',
+    avatar: '',
+    photo: '/images/case-studies/nivara.jpg',
     fullSlug: 'ai-support-agent'
   },
   'Casa Noma': {
@@ -211,8 +211,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Monday mornings are noticeably quieter now. We used to open WhatsApp to a wall of delivery, stock, and sizing questions from the weekend. Most of those get answered as they come in now.',
     personName: 'Sofia Alvarez',
     personRole: 'Customer Operations Manager, Casa Noma',
-    avatar: '/photos/avatars/sneha.webp',
-    photo: '/photos/in-ecom-shopify.jpg',
+    avatar: '',
+    photo: '/images/case-studies/casa-noma.jpg',
     fullSlug: 'ai-support-agent'
   },
   'Stacklane': {
@@ -249,8 +249,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Our help center is pretty big, and customers weren’t finding half of what was already there. Now they just ask the question normally and get the relevant answer directly.',
     personName: 'Jonathan Reed',
     personRole: 'VP of Customer Success, Stacklane',
-    avatar: '/photos/avatars/sam.webp',
-    photo: '/photos/ag-saas-support.jpg',
+    avatar: '',
+    photo: '/images/case-studies/stacklane.jpg',
     fullSlug: 'ai-support-agent'
   },
   'Sunday Form': {
@@ -287,8 +287,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Running marketing campaigns through the AI agent helped us re-engage past customers with personalized WhatsApp broadcasts that felt like one-on-one recommendations.',
     personName: 'Nina Kapoor',
     personRole: 'Growth Director, Sunday Form',
-    avatar: '/photos/avatars/neha.webp',
-    photo: '/photos/cs-marketing.jpg',
+    avatar: '',
+    photo: '/images/case-studies/sunday-form.jpg',
     fullSlug: 'ai-marketing-agent'
   },
   'Northstar SaaS': {
@@ -325,8 +325,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Inbound leads get qualified in under two minutes. By the time our account executives join the demo, they already know the company size, tech stack, and pain points.',
     personName: 'Ryan Collins',
     personRole: 'Head of Sales, Northstar SaaS',
-    avatar: '/photos/avatars/rohan.webp',
-    photo: '/photos/in-saas-story.jpg',
+    avatar: '',
+    photo: '/images/case-studies/northstar-saas.jpg',
     fullSlug: 'ai-lead-capture-agent'
   },
   'LatticeFlow Labs': {
@@ -363,8 +363,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Instead of waiting for an SDR to wake up, our prospects across Europe and Asia get immediate technical qualification and a calendar invite.',
     personName: 'Rachel Morgan',
     personRole: 'Revenue Operations, LatticeFlow Labs',
-    avatar: '/photos/avatars/kavya.webp',
-    photo: '/photos/f-crm.jpg',
+    avatar: '',
+    photo: '/images/case-studies/latticeflow-labs.jpg',
     fullSlug: 'ai-lead-capture-agent'
   },
   'RelayDesk': {
@@ -401,8 +401,8 @@ export const brandInspireMap: Record<string, BrandInspireData> = {
       'Our onboarding sessions are booked automatically right after signup. The back-and-forth emails for finding a 30-minute slot are completely gone.',
     personName: 'Kevin Morales',
     personRole: 'Operations Lead, RelayDesk',
-    avatar: '/photos/avatars/karan.webp',
-    photo: '/photos/cs-booking.jpg',
+    avatar: '',
+    photo: '/images/case-studies/relaydesk.jpg',
     fullSlug: 'ai-booking-agent'
   }
 };

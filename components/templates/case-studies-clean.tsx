@@ -22,30 +22,34 @@ import { brandInspireMap, type BrandInspireData } from './story-inspire';
 type Entry = { slug: string; agent: string; story: Story };
 
 const brandPhotos: Record<string, string> = {
-  'Mysa Living': '/photos/in-ecom-hero.jpg',
-  'Aster & Row': '/photos/cs-sales.jpg',
-  'North & Pine': '/photos/ag-ecom-sales.jpg',
-  'Nivara': '/photos/sc-sales-ecommerce.jpg',
-  'Casa Noma': '/photos/in-ecom-shopify.jpg',
-  'Stacklane': '/photos/ag-saas-support.jpg',
-  'Sunday Form': '/photos/cs-marketing.jpg',
-  'Northstar SaaS': '/photos/in-saas-story.jpg',
-  'LatticeFlow Labs': '/photos/f-crm.jpg',
-  'RelayDesk': '/photos/cs-booking.jpg',
+  'Mysa Living': '/images/case-studies/mysa-living.jpg',
+  'Aster & Row': '/images/case-studies/aster-and-row.jpg',
+  'North & Pine': '/images/case-studies/north-and-pine.jpg',
+  'Nivara': '/images/case-studies/nivara.jpg',
+  'Casa Noma': '/images/case-studies/casa-noma.jpg',
+  'Stacklane': '/images/case-studies/stacklane.jpg',
+  'Sunday Form': '/images/case-studies/sunday-form.jpg',
+  'Northstar SaaS': '/images/case-studies/northstar-saas.jpg',
+  'LatticeFlow Labs': '/images/case-studies/latticeflow-labs.jpg',
+  'RelayDesk': '/images/case-studies/relaydesk.jpg',
 };
 
-const customerAvatars: Record<string, string> = {
-  'Anika Rao': '/photos/avatars/ananya.webp',
-  'Priya Shah': '/photos/avatars/priya.webp',
-  'Maya Patel': '/photos/avatars/maya.webp',
-  'Arjun Mehta': '/photos/avatars/arjun.webp',
-  'Sofia Alvarez': '/photos/avatars/sneha.webp',
-  'Jonathan Reed': '/photos/avatars/sam.webp',
-  'Nina Kapoor': '/photos/avatars/neha.webp',
-  'Ryan Collins': '/photos/avatars/rohan.webp',
-  'Rachel Morgan': '/photos/avatars/kavya.webp',
-  'Kevin Morales': '/photos/avatars/karan.webp',
-};
+/* Executive Monogram Badge - Eliminates human face photos in favor of verified credentials */
+export function ExecutiveBadge({ name }: { name: string }) {
+  const initials = name
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+
+  return (
+    <div className="cs2-exec-badge" aria-label={name}>
+      <span>{initials}</span>
+    </div>
+  );
+}
 
 const person = (attribution: string) => {
   const [name, ...role] = attribution.split(' | ');
@@ -259,7 +263,6 @@ function Banner({ image }: { image: HeroImage }) {
 /* Stat-First Modern Clean Story Card */
 function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
-  const avatar = customerAvatars[p.name];
   const inspire = brandInspireMap[e.story.brand];
   const targetSlug = inspire?.brandSlug || e.slug;
 
@@ -288,18 +291,9 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
         “{e.story.excerpt.replace(/^[“"]|[”"]$/g, '')}”
       </blockquote>
 
-      {/* Person Attribution with Avatar & Verified Badge */}
+      {/* Person Attribution with Initials Badge & Verified Badge (No Face Photos) */}
       <div className="cs2-person">
-        {avatar && (
-          <img
-            src={avatar}
-            alt={p.name}
-            className="cs2-avatar"
-            width={40}
-            height={40}
-            loading="lazy"
-          />
-        )}
+        <ExecutiveBadge name={p.name} />
         <div className="cs2-person-info">
           <div className="cs2-person-name">
             <strong>{p.name}</strong>
@@ -340,9 +334,8 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
 /* Featured Spotlight Wide Card (Spans 2 columns on desktop) */
 function SpotlightCard({ e }: { e: Entry }) {
   const p = person(e.story.attribution);
-  const avatar = customerAvatars[p.name];
-  const photo = brandPhotos[e.story.brand] ?? '/photos/in-ecom-hero.jpg';
   const inspire = brandInspireMap[e.story.brand];
+  const photo = inspire?.photo || brandPhotos[e.story.brand] || '/images/case-studies/mysa-living.jpg';
   const targetSlug = inspire?.brandSlug || e.slug;
 
   return (
@@ -388,16 +381,7 @@ function SpotlightCard({ e }: { e: Entry }) {
         </blockquote>
 
         <div className="cs2-person">
-          {avatar && (
-            <img
-              src={avatar}
-              alt={p.name}
-              className="cs2-avatar"
-              width={40}
-              height={40}
-              loading="lazy"
-            />
-          )}
+          <ExecutiveBadge name={p.name} />
           <div className="cs2-person-info">
             <div className="cs2-person-name">
               <strong>{p.name}</strong>
@@ -849,13 +833,7 @@ export function BrandCaseStudyDetail({
                     “{story.quote.replace(/^[“"]|[”"]$/g, '')}”
                   </blockquote>
                   <div className="bcs-quote-author">
-                    <img
-                      src={story.avatar}
-                      alt={story.personName}
-                      className="bcs-author-avatar"
-                      width={44}
-                      height={44}
-                    />
+                    <ExecutiveBadge name={story.personName} />
                     <div>
                       <div className="bcs-author-name">
                         <strong>{story.personName}</strong>
@@ -915,13 +893,7 @@ export function BrandCaseStudyDetail({
                     </blockquote>
 
                     <div className="cs2-person">
-                      <img
-                        src={rel.avatar}
-                        alt={rel.personName}
-                        className="cs2-avatar"
-                        width={40}
-                        height={40}
-                      />
+                      <ExecutiveBadge name={rel.personName} />
                       <div className="cs2-person-info">
                         <div className="cs2-person-name">
                           <strong>{rel.personName}</strong>
