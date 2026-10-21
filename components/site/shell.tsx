@@ -60,7 +60,7 @@ export function Header({ onOpen, onHome = true }: Open & Place) {
     return () => window.removeEventListener('scroll', update);
   }, []);
   const close = () => setOpen(false);
-  return <header className={scrolled ? 'site-header is-scrolled' : 'site-header'}><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}><MegaMenus onOpen={onOpen} onNavigate={close} only={['Product', 'Solutions']} /><LabelLink label="Pricing" onOpen={onOpen} onHome={onHome} after={close} /><LabelLink label="Integrations" onOpen={onOpen} onHome={onHome} after={close} /><MegaMenus onOpen={onOpen} onNavigate={close} only={['Resources']} /><span className="nav-spacer" /><button onClick={() => { close(); onOpen('Log in'); }}>Log in</button><Action onOpen={onOpen} /></nav></div></header>;
+  return <header className={scrolled ? 'site-header is-scrolled' : 'site-header'}><div className="container header-inner"><Brand onHome={onHome} /><button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav id="main-nav" aria-label="Main navigation" className={open ? 'nav open' : 'nav'}><MegaMenus onOpen={onOpen} onNavigate={close} only={['Product', 'Solutions']} /><LabelLink label="Pricing" onOpen={onOpen} onHome={onHome} after={close} /><LabelLink label="Integrations" onOpen={onOpen} onHome={onHome} after={close} /><MegaMenus onOpen={onOpen} onNavigate={close} only={['Resources']} /><span className="nav-spacer" /><LabelLink label="Log in" onOpen={onOpen} onHome={onHome} after={close} /><Action onOpen={onOpen} /></nav></div></header>;
 }
 
 export function Footer({ onOpen, onHome = true }: Open & Place) {
@@ -73,5 +73,5 @@ export function SiteFrame({ children }: { children: (onOpen: (label: string) => 
   const [route, setRoute] = useState('');
   const open = openOrGo(setRoute, false);
   useSiteMotion();
-  return <><div className="m-progress" aria-hidden="true" /><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={setRoute} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={setRoute} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
+  return <><div className="m-progress" aria-hidden="true" /><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={open} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={open} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
 }

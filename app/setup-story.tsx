@@ -4,6 +4,7 @@ import {ArrowRight,Check,ChevronRight,FileText,Globe,LayoutDashboard,MessageCirc
 import copy from './copy.json';
 
 import { asset } from '@/lib/asset';
+import { DEMO_URL } from '@/components/site/routes';
 const goals=[
  {id:'messaging',label:'WhatsApp messaging',detail:'Reach your customers',icon:Send},
  {id:'agent',label:'AI agent',detail:'Answer and assist',icon:Sparkles},
@@ -40,7 +41,7 @@ export function SetupStory(){
      </div>
     </section>
    </div>
-   <div className="sj-bottom"><span><Check size={15}/>Guided from the start</span><a href="/book-a-demo/">See your setup in a demo<ArrowRight size={16}/></a></div>
+   <div className="sj-bottom"><span><Check size={15}/>Guided from the start</span><a href={DEMO_URL}>See your setup in a demo<ArrowRight size={16}/></a></div>
   </div>
   <div className="sj-caption"><span>Sample business shown. Connections and any required approvals come next.</span></div>
   <span className="vs-sr-only" role="status">{goals.find(item=>item.id===goal)!.label} example selected. {goal==='messaging'?'Preview a draft message, then connect WhatsApp through Meta.':goal==='agent'?'Preview an assistant reply, then choose WhatsApp or your website.':'Preview website chat, then add it to Shopify or another website.'}</span>

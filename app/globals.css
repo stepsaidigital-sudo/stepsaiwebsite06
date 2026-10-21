@@ -3181,6 +3181,7 @@ body .jv-price s{font-size:11px}
 .bd-done{display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px 10px;text-align:center}
 .bd-done>span{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#e3f7ee;color:#0b8a5c}
 .bd-done p{color:#4b5a75}
+.bd-back{display:inline-flex;align-items:center;gap:6px;color:#4b5a75;font-size:14px;font-weight:600}
 @media (max-width:1100px){.bd-layout{grid-template-columns:1fr}.bd-card{position:relative;top:auto}.bd-phone{display:none}}
 @media (max-width:560px){.bd-row{grid-template-columns:1fr}.bd-card{padding:22px}}
 

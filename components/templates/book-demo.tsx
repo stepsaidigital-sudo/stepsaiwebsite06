@@ -1,8 +1,10 @@
 'use client';
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 import { ArrowRight, CalendarDays, Check, CircleCheck, Globe, Loader2, MessageSquare, ShoppingBag, UserPlus } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
+import { CALENDLY_URL } from '@/components/site/routes';
 import { Float, LivePhone } from '@/components/premium/kit';
 
 // /book-a-demo/: a short form that posts to /api/demo-request. The request is only shown as sent
@@ -18,13 +20,15 @@ const sees = [
 type State = 'idle' | 'sending' | 'sent' | 'error' | 'not-configured';
 
 export function BookDemoTemplate() {
-  const [state, setState] = useState<State>('idle'), [picked, setPicked] = useState<string[]>(['WhatsApp']);
+  const [state, setState] = useState<State>('idle'), [picked, setPicked] = useState<string[]>(['WhatsApp']), [calendly, setCalendly] = useState(CALENDLY_URL);
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     setState('sending');
+    // Prefill Calendly with what they just typed, for the "pick a time" step.
+    setCalendly(`${CALENDLY_URL}?${new URLSearchParams({ name: String(form.get('name') ?? ''), email: String(form.get('email') ?? '') })}`);
     try {
-      const res = await fetch('/api/demo-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...Object.fromEntries(form), channels: picked.join(', ') }) });
+      const res = await fetch('/api/demo-request/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...Object.fromEntries(form), channels: picked.join(', ') }) });
       const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       setState(res.ok && json.ok ? 'sent' : json.error === 'not-configured' ? 'not-configured' : 'error');
     } catch { setState('error'); }
@@ -45,7 +49,7 @@ export function BookDemoTemplate() {
       </div>
 
       <div className="bd-card">
-        {state === 'sent' ? <div className="bd-done"><span><Check size={26} /></span><h2>Thank you. Your request is in.</h2><p>We will reply by email to arrange a time that suits you.</p><a className="wb-btn" href="/">Back to the homepage <ArrowRight size={16} /></a></div> : <form onSubmit={submit} noValidate={false}>
+        {state === 'sent' ? <div className="bd-done"><span><Check size={26} /></span><h2>Thank you. Your request is in.</h2><p>Pick a time now, or we will reply by email to arrange one that suits you.</p><a className="wb-btn" href={calendly} target="_blank" rel="noopener noreferrer">Pick a time <CalendarDays size={16} /></a><Link className="bd-back" href="/">Back to the homepage <ArrowRight size={14} /></Link></div> : <form onSubmit={submit} noValidate={false}>
           <h2>Book your demo</h2>
           <p className="bd-sub">It takes a minute. Fields marked * are required.</p>
           <div className="bd-row"><label>Your name *<input name="name" required autoComplete="name" placeholder="Priya Shah" /></label><label>Work email *<input name="email" type="email" required autoComplete="email" placeholder="priya@yourstore.com" /></label></div>

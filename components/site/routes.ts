@@ -1,7 +1,12 @@
 // Labels that have a real page. Everything not listed here (and not a homepage
 // anchor) opens the "Design preview" notice instead of a dead link.
+// Demo booking: every "Book a demo" goes to the form, which sends the request to the webhook
+// (app/api/demo-request). After it is sent, the visitor can pick a time on Calendly.
+export const DEMO_URL = '/book-a-demo/';
+export const CALENDLY_URL = 'https://calendly.com/reshmanth-stepsai/demo';
+
 export const builtRoutes: Record<string, string> = {
-  'Book a demo': '/book-a-demo/',
+  'Book a demo': DEMO_URL,
   'Log in': 'https://app.stepsai.co/login',
   'Sign up': 'https://app.stepsai.co/signup',
   'Start free': 'https://app.stepsai.co/signup',
@@ -19,7 +24,7 @@ export const builtRoutes: Record<string, string> = {
   'Create your page': 'https://app.stepsai.co/signup',
   'Get the script': 'https://app.stepsai.co/signup',
   'Request an integration': '/contact/',
-  'See analytics in a demo': '/book-a-demo/',
+  'See analytics in a demo': DEMO_URL,
   'See customer stories': '/case-studies/',
   Pricing: '/pricing/',
   Integrations: '/integrations/',

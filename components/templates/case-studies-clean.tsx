@@ -20,6 +20,7 @@ import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/
 import { brandInspireMap, type BrandInspireData } from './story-inspire';
 
 import { asset } from '@/lib/asset';
+import { DEMO_URL } from '@/components/site/routes';
 type Entry = { slug: string; agent: string; story: Story };
 
 const brandPhotos: Record<string, string> = {
@@ -416,7 +417,7 @@ function ResultsPromoCard() {
       </div>
 
       <div className="cs2-promo-foot">
-        <Link href="/book-a-demo/" className="cs2-promo-btn">
+        <Link href={DEMO_URL} className="cs2-promo-btn">
           Get custom ROI blueprint <ArrowRight size={15} />
         </Link>
         <span className="cs2-promo-note">Free 15-min consultation · No setup required</span>
@@ -554,7 +555,7 @@ export function CaseStudiesHubClean({
                   <a href="#browse-stories" className="cs2-hero-btn-primary">
                     Explore customer stories ↓
                   </a>
-                  <Link href="/book-a-demo/" className="cs2-hero-btn-secondary">
+                  <Link href={DEMO_URL} className="cs2-hero-btn-secondary">
                     Book a demo →
                   </Link>
                 </div>
@@ -670,7 +671,7 @@ export function CaseStudiesHubClean({
             <h2>{page.cta.title}</h2>
             <p>{page.cta.body}</p>
             <div className="cs2-cta-buttons">
-              <Link className="cs2-btn cs2-btn-primary" href="/book-a-demo/">
+              <Link className="cs2-btn cs2-btn-primary" href={DEMO_URL}>
                 Book a demo <ArrowRight size={15} />
               </Link>
               <Link className="cs2-btn cs2-btn-secondary" href="/pricing/">
@@ -714,7 +715,7 @@ export function BrandCaseStudyDetail({
             <p className="bcs-lede">{story.challenge}</p>
 
             <div className="bcs-hero-actions">
-              <Link href="/book-a-demo/" className="bcs-btn-primary">
+              <Link href={DEMO_URL} className="bcs-btn-primary">
                 Book a personalized demo →
               </Link>
               <Link href={`/use-cases/${story.agentSlug}/`} className="bcs-btn-secondary">
@@ -799,7 +800,7 @@ export function BrandCaseStudyDetail({
                   <p>
                     See how Steps AI can automate 80%+ of inquiries for your store in a 15-minute live demo.
                   </p>
-                  <Link href="/book-a-demo/" className="bcs-sticky-btn">
+                  <Link href={DEMO_URL} className="bcs-sticky-btn">
                     Book a demo →
                   </Link>
                 </div>
@@ -904,7 +905,7 @@ export function BrandCaseStudyDetail({
                 Join 15,000+ fast-growing brands deploying Steps AI agents to automate 80%+ of conversations and lift conversion.
               </p>
               <div className="bcs-cta-actions">
-                <Link href="/book-a-demo/" className="bcs-cta-btn-primary">
+                <Link href={DEMO_URL} className="bcs-cta-btn-primary">
                   Book a demo <ArrowRight size={16} />
                 </Link>
                 <Link href="/pricing/" className="bcs-cta-btn-secondary">
@@ -1005,7 +1006,7 @@ export function CaseStudyClean({
           <section className="container cs2-cta">
             <h2>{page.cta.title}</h2>
             <p>{page.cta.body}</p>
-            <Link className="cs2-btn cs2-btn-primary" href="/book-a-demo/">
+            <Link className="cs2-btn cs2-btn-primary" href={DEMO_URL}>
               Book a demo <ArrowRight size={15} />
             </Link>
           </section>
