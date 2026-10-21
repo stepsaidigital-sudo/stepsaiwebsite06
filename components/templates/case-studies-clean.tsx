@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
-import type { CaseStudiesHub, CaseStudyPage, Story } from '@/content/types';
+import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/types';
 
 // Case studies in a quiet editorial layout: a centred heading and three-column story cards
 // (brand panel on top, tag, the customer's own words, a link). Every quote is real and unedited;
@@ -12,6 +12,11 @@ import type { CaseStudiesHub, CaseStudyPage, Story } from '@/content/types';
 type Entry = { slug: string; agent: string; story: Story };
 const lead = (text: string) => { const s = text.split(/(?<=[.!?])\s+/)[0]; return s.length > 150 ? s.slice(0, 147).replace(/\s+\S*$/, '') + '…' : s; };
 const person = (attribution: string) => { const [name, role] = attribution.split(' | '); return { name, role }; };
+
+// A wide photo under the page heading.
+function Banner({ image }: { image: HeroImage }) {
+  return <figure className="container cs2-banner"><img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchPriority="high" /></figure>;
+}
 
 function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
@@ -35,6 +40,7 @@ export function CaseStudiesHubClean({ page, stories }: { page: CaseStudiesHub; s
   const shown = stories.filter(s => (agent === 'all' || s.slug === agent) && (industry === 'all' || s.story.industry === industry));
   return <SiteFrame>{() => <div className="cs2">
     <header className="cs2-head"><span>Steps AI case studies</span><h1>{page.hero.title}</h1><p>{page.hero.body}</p></header>
+    {page.hero.image && <Banner image={page.hero.image} />}
     <nav className="cs2-filter" aria-label="Filter by agent">
       <button className={agent === 'all' && industry === 'all' ? 'is-on' : ''} onClick={() => { setAgent('all'); setIndustry('all'); }}>All stories</button>
       {page.agents.filter(a => a.count).map(a => <button key={a.slug} className={agent === a.slug ? 'is-on' : ''} onClick={() => setAgent(a.slug)}>{a.label}</button>)}
@@ -50,6 +56,7 @@ export function CaseStudyClean({ page, agents }: { page: CaseStudyPage; agents: 
   const entries: Entry[] = page.stories.map(story => ({ slug: page.slug, agent: page.agent, story }));
   return <SiteFrame>{() => <div className="cs2">
     <header className="cs2-head"><Link href="/case-studies/">Case studies</Link><h1>{page.hero.title}</h1><p>{page.hero.body}</p></header>
+    {page.hero.image && <Banner image={page.hero.image} />}
     {entries.length
       ? <section className="container cs2-grid cs2-grid-open">{entries.map(e => <StoryCard key={e.story.brand} e={e} open />)}</section>
       : <section className="container cs2-empty"><p>Customer stories for this agent are on the way.</p><Link href={page.agentPage}>See what the {page.agent} does <ArrowRight size={14} /></Link></section>}

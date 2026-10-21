@@ -1,4 +1,5 @@
 'use client';
+import { Face } from '@/components/site/face';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
@@ -97,14 +98,14 @@ const designs: Record<string, Design> = {
         <div className="pp-step-result" style={{ animationDelay: '600ms' }}><Hand size={14} />Claimed by Ananya</div>
       </Card>,
       <Card key="3" title="Handoff" status={<Chip tone="green"><Check size={11} />Resolved</Chip>}>
-        <Row icon={<UserRound size={15} />} title="Ananya replied" sub="Same WhatsApp thread" delay={200} />
+        <Row icon={<span className="wb-avatar wb-mini"><Face name="Ananya" initials="A" /></span>} title="Ananya replied" sub="Same WhatsApp thread" delay={200} />
         <Row icon={<CircleCheck size={15} />} title="Handoff resolved" sub="Kept in the inbox" picked delay={400} />
       </Card>,
     ],
     sides: [
       results([ch('WhatsApp'), 'WhatsApp · Support desk'], [ch('Instagram'), 'Instagram · Sales assistant']),
       bars('Needs attention', [['Live', 20], ['Unread', 40], ['Starred', 30]]),
-      results([<Hand key="a" size={14} />, 'Customer asked for a person'], [<UserRound key="b" size={14} />, 'Ananya took over']),
+      results([<Hand key="a" size={14} />, 'Customer asked for a person'], [<span key="b" className="wb-avatar wb-mini"><Face name="Ananya" initials="A" /></span>, 'Ananya took over']),
       results([<MessageSquare key="a" size={14} />, 'Replacement ships today'], [<Check key="b" size={14} />, 'Customer said thank you']),
     ],
     bandCta: { label: 'See the inbox in a demo', icon: <Inbox size={18} /> },

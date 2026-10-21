@@ -71,6 +71,7 @@ import "./journey-stack.css";
 import "./broadcast.css";
 import "./surfaces.css";
 import "./v2-mockups-messaging.css";
+import "./pricing-page.css";
 import "./capability-stage.css";
 import "./visual-stories.css";
 import "./setup-journey.css";

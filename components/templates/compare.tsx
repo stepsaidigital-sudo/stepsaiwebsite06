@@ -5,12 +5,16 @@ import { CtaBand, Faq, GoodToKnow, PageHero, Reveal, SectionIntro, StepRows } fr
 import type { ComparePage } from '@/content/types';
 
 // Two marks facing each other, with the first table rows ticking in.
+// Official competitor marks in public/brands/compare (sources in docs/photo-credits.md). Three only exist as PNG.
+const PNG_LOGOS = ['manychat', 'aisensy', 'verifast'];
+const competitorLogo = (name: string) => { const slug = name.toLowerCase().replace(/[^a-z]/g, ''); return `/brands/compare/${slug}.${PNG_LOGOS.includes(slug) ? 'png' : 'svg'}`; };
+
 function VersusCard({ page }: { page: ComparePage }) {
   return <Reveal className="vs-card" >
     <div className="vs-head">
       <span className="vs-brand is-us"><img src="/brands/steps-original.png" alt="" width={30} height={30} />Steps AI</span>
       <span className="vs-badge">vs</span>
-      <span className="vs-brand"><span className="vs-mono" aria-hidden="true">{page.competitor[0]}</span>{page.competitor}</span>
+      <span className="vs-brand"><img src={competitorLogo(page.competitor)} alt="" width={30} height={30} />{page.competitor}</span>
     </div>
     {page.glance.rows.slice(0, 3).map((row, i) => <div key={row.label} className="vs-mini" style={{ animationDelay: `${300 + i * 260}ms` }}>
       <small>{row.label}</small>

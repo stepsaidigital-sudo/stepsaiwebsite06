@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import { facePhoto } from '@/components/site/faces';
 import {
   BadgeCheck,
   Bookmark,
@@ -144,9 +145,10 @@ function withKeyword(text: string) {
 }
 
 function Avatar({ src, name, className, ring }: { src?: string; name: string; className?: string; ring?: boolean }) {
+  const photo = src ?? facePhoto(name);
   const face = (
-    <span className={cx('mk-avatar', className)} style={src ? undefined : { background: tint(name) }} aria-hidden="true">
-      {src ? <img src={src} alt="" /> : initials(name)}
+    <span className={cx('mk-avatar', className)} style={photo ? undefined : { background: tint(name) }} aria-hidden="true">
+      {photo ? <img src={photo} alt="" /> : initials(name)}
     </span>
   );
   return ring ? <span className="mk-ring">{face}</span> : face;

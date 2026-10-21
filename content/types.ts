@@ -2,7 +2,8 @@
 // final copy replaces it; the layouts read only these fields.
 export type Status = { status: 'draft'; source: 'draft, pending specialist copy' };
 export type Seo = { title: string; description: string };
-export type Hero = { kicker: string; title: string; body: string; reassurance?: string; channels?: string[]; accent?: string[] };
+export type HeroImage = { src: string; alt: string; width: number; height: number };
+export type Hero = { kicker: string; title: string; body: string; reassurance?: string; channels?: string[]; accent?: string[]; image?: HeroImage };
 export type Item = { title: string; body: string };
 export type Faq = { q: string; a: string };
 export type Quote = { excerpt: string; attribution: string };
@@ -83,8 +84,11 @@ export type HubPage = Status & { kind: 'hub'; seo: Seo; hero: Hero; cards: (Rela
 
 export type PricingPage = Status & {
   kind: 'pricing'; seo: Seo; hero: Hero;
-  plans: { name: string; for: string; price: string; credits: string; items: string[]; featured?: boolean }[];
-  credits: Block; faq: FaqBlock; cta: Cta;
+  creditNote: { title: string; badge: string; body: string };
+  plans: { name: string; for: string; monthly: number | null; annual: number | null; priceLabel?: string; credits: string; cta: string; items: string[]; featured?: boolean; badge?: string }[];
+  addons: { eyebrow: string; title: string; intro: string; packs: { credits: string; price: string }[]; note: string; link: string };
+  compare: { eyebrow: string; title: string; intro: string; plans: string[]; groups: { title: string; rows: [string, (string | boolean)[]][] }[] };
+  faq: FaqBlock; cta: Cta;
 };
 
 export type ContentPage = Status & {

@@ -188,7 +188,8 @@ function Contact({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     { icon: <Handshake size={24} />, cta: 'See partner programs', href: items[2]?.href ?? '/partners/', tone: 'yellow' },
   ];
   return <>
-    <Hero page={page} icon={<Mail size={16} />} onOpen={onOpen} centered actions={<></>} />
+    <Hero page={page} icon={<Mail size={16} />} onOpen={onOpen} centered={!page.hero.image} actions={<></>}
+      visual={page.hero.image && <div className="co-photo-visual"><img className="co-photo" src={page.hero.image.src} alt={page.hero.image.alt} width={page.hero.image.width} height={page.hero.image.height} fetchPriority="high" /></div>} />
     <section className="container co-contact">{items.map((item, i) => { const o = opts[i]; const inner = <>
       <span className={`co-contact-ico is-${o.tone}`}>{o.icon}</span><h3>{item.title}</h3><p>{item.body}</p><span className="co-link">{o.cta} <ArrowRight size={15} /></span></>;
       return <Reveal key={item.title}>{o.href ? <Link className="co-contact-card" href={o.href}>{inner}</Link> : <button className="co-contact-card" onClick={o.go}>{inner}</button>}</Reveal>;

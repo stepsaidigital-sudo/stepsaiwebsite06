@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
+import { facePhoto } from '@/components/site/faces';
 import { Reveal } from '@/components/sections';
 import { SplitWords } from '@/components/site/motion';
 import type { FeaturePage } from '@/content/types';
@@ -41,8 +42,9 @@ function PaperPlane({ className }: { className: string }) {
   </svg>;
 }
 
-function Avatar({ name, tone }: { name: string; tone: string }) {
-  return <span className={`wb-avatar wb-${tone}`} aria-hidden="true">{name}</span>;
+function Avatar({ name, tone, full }: { name: string; tone: string; full?: string }) {
+  const photo = facePhoto(full);
+  return <span className={`wb-avatar wb-${tone}`} aria-hidden="true">{photo ? <img className="face-img" src={photo} alt="" /> : name}</span>;
 }
 
 /* ---------- hero composition ---------- */
@@ -111,7 +113,7 @@ function Card({ title, status, children }: { title: string; status?: ReactNode; 
 
 function Bubble({ who, children, delay }: { who: 'customer' | 'agent'; children: ReactNode; delay: number }) {
   return <div className={`wb-bubble wb-bubble-${who}`} style={{ animationDelay: `${delay}ms` }}>
-    {who === 'agent' ? <span className="wb-bot"><Bot size={15} /></span> : <Avatar name="P" tone="peach" />}
+    {who === 'agent' ? <span className="wb-bot"><Bot size={15} /></span> : <Avatar name="P" tone="peach" full="Priya" />}
     <p>{children}</p>
   </div>;
 }
@@ -157,7 +159,7 @@ function stages(): Stage[] {
       pill: 'Step 4 · Replies',
       card: <Card title="Shared inbox" status={<span className="wb-chip">3 new replies</span>}>
         {[['P', 'Priya N.', 'SIZE. Do you have it in medium?', 'peach'], ['R', 'Rahul M.', 'Is delivery free this week?', 'blue'], ['A', 'Anu K.', 'Please send the link.', 'mint']].map(([n, name, text, tone], i) =>
-          <div key={name} className="wb-row wb-row-box" style={{ animationDelay: `${200 + i * 180}ms` }}><Avatar name={n} tone={tone} /><div><strong>{name}</strong><small>{text}</small></div><span className="wb-chip wb-chip-soft">AI replied</span></div>)}
+          <div key={name} className="wb-row wb-row-box" style={{ animationDelay: `${200 + i * 180}ms` }}><Avatar name={n} tone={tone} full={name} /><div><strong>{name}</strong><small>{text}</small></div><span className="wb-chip wb-chip-soft">AI replied</span></div>)}
       </Card>,
       side: <div className="wb-chat">
         <Bubble who="customer" delay={300}>SIZE. Do you have the linen shirt in medium?</Bubble>

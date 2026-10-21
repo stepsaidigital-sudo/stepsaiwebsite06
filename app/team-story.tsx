@@ -1,4 +1,5 @@
 'use client';
+import { Face } from '@/components/site/face';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {ArrowRight,Check,CheckCheck,ChevronLeft,Phone,Video,MoreVertical,Camera,Mic,Smile,Plus,Send,Info,ChartNoAxesCombined,ShoppingBag,Headphones,PauseCircle,UserRound,Mail,CalendarDays,Tag,Inbox,Search,type LucideIcon} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
@@ -47,7 +48,7 @@ function UnifiedInbox(){
  const count=(key:'channel'|'tag',value:string)=>arrived.filter(r=>r[key]===value).length;
  return <div className="tv-inbox"><header className="tv-inbox-top"><span className="tv-card-brand"><span>s</span>Steps AI</span><strong>Inbox</strong><span className="tv-search"><Search size={14}/>Search conversations</span><span className="tv-pill tv-pill-ok"><i className="tv-dot"/>4 channels</span></header>
   <div className="tv-inbox-main"><aside className="tv-inbox-side"><small>Connected channels</small>{inboxChannels.map(ch=><div key={ch} className="tv-side-row"><ChannelLogo channel={ch}/><span>{ch}</span><b>{count('channel',ch)}</b></div>)}<small>Tags</small><div className="tv-side-tags">{inboxTags.map(t=><span key={t} className={`tv-tag tv-tag-${t.toLowerCase()}`}>{t}<b>{count('tag',t)}</b></span>)}</div></aside>
-   <div className="tv-inbox-list"><div className="tv-list-head"><strong>All conversations</strong><span>{arrived.length} open</span></div>{list.map((r,i)=><div key={r.name} className={`tv-irow${i===0?' is-new':''}`}><span className={`tv-avatar tv-avatar-${inboxRows.indexOf(r)%4}`}>{r.name[0]}<em><ChannelLogo channel={r.channel}/></em></span><div><strong>{r.name}<small>{r.channel}</small></strong><p>{r.text}</p></div><div className="tv-irow-meta"><span className={`tv-tag tv-tag-${r.tag.toLowerCase()}`}>{r.tag}</span><span className={`tv-state tv-state-${r.tone}`}>{r.status}</span></div></div>)}</div></div></div>;
+   <div className="tv-inbox-list"><div className="tv-list-head"><strong>All conversations</strong><span>{arrived.length} open</span></div>{list.map((r,i)=><div key={r.name} className={`tv-irow${i===0?' is-new':''}`}><span className={`tv-avatar tv-avatar-${inboxRows.indexOf(r)%4}`}><Face name={r.name} initials={r.name[0]}/><em><ChannelLogo channel={r.channel}/></em></span><div><strong>{r.name}<small>{r.channel}</small></strong><p>{r.text}</p></div><div className="tv-irow-meta"><span className={`tv-tag tv-tag-${r.tag.toLowerCase()}`}>{r.tag}</span><span className={`tv-state tv-state-${r.tone}`}>{r.status}</span></div></div>)}</div></div></div>;
 }
 
 

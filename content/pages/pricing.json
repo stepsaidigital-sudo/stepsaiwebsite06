@@ -1,125 +1,502 @@
 {
-  "status": "draft",
-  "source": "draft, pending specialist copy",
+  "status": "final",
+  "source": "Prices and plan features: stepsai.co/pricing, captured 2026-10-21. Credits wording: Steps AI Product Knowledge (a credit is not a reply).",
   "kind": "pricing",
   "seo": {
-    "title": "Pricing | Steps AI",
-    "description": "Start free, then choose the plan that fits how many conversations your AI agent handles. Paid plans include order tracking, human handoff and every channel."
+    "title": "Pricing: plans from ₹2,499 a month | Steps AI",
+    "description": "Steps AI plans from ₹2,499 a month, billed monthly or annually with 20% off. Pick the AI credit volume you need, add credit packs any time, or talk to sales for Enterprise."
   },
   "hero": {
     "kicker": "Pricing",
-    "title": "Start free, then pay for what your agent does.",
-    "body": "Every plan includes your AI agent, trained on your own information. Paid plans add your channels, order tracking, human handoff and the tools that turn conversations into sales.",
-    "reassurance": "Paid plans include unlimited agents. Cancel at the end of any billing period."
+    "title": "Plans that scale with every AI reply.",
+    "body": "Pick the credit volume you need and scale from self-serve to enterprise-grade support. Billed monthly or annually. Save 20% on annual."
+  },
+  "creditNote": {
+    "title": "How credits work",
+    "badge": "Usage-based",
+    "body": "You pay per AI reply in credits. The AI model your agent uses sets how many credits a reply costs, and customer messages are free."
   },
   "plans": [
     {
-      "name": "Free",
-      "for": "Try your agent on your website.",
-      "price": "To be confirmed",
-      "credits": "Monthly credits: To be confirmed",
+      "name": "Starter",
+      "for": "Perfect for small stores getting started",
+      "monthly": 2499,
+      "annual": 1999,
+      "credits": "1,000 credits/mo",
+      "cta": "Start now",
       "items": [
-        "One AI agent",
-        "Answers from your website and documents",
-        "Does not include channel connections, order tracking or human handoff"
+        "1,000 credits",
+        "50 MB storage",
+        "50 web crawls",
+        "Ticketing system",
+        "Lead management",
+        "Workflows",
+        "Broadcasting",
+        "Order tracking",
+        "Custom AI personas",
+        "Human handoff",
+        "All channels (WhatsApp, Instagram and more)",
+        "Basic analytics",
+        "Email support"
       ]
     },
     {
-      "name": "Starter",
-      "for": "Small teams answering customers on every channel.",
-      "price": "To be confirmed",
-      "credits": "Monthly credits: To be confirmed",
-      "items": [
-        "Unlimited agents",
-        "WhatsApp, Instagram, Messenger and website",
-        "Order tracking and human handoff",
-        "Workflows and WhatsApp broadcasting",
-        "All integrations",
-        "Ticketing and lead management"
-      ],
-      "featured": true
-    },
-    {
       "name": "Growth",
-      "for": "Busier teams that want more control.",
-      "price": "To be confirmed",
-      "credits": "Monthly credits: To be confirmed",
+      "for": "Everything in Starter, plus more power",
+      "monthly": 6999,
+      "annual": 5599,
+      "credits": "4,000 credits/mo",
+      "cta": "Start now",
+      "featured": true,
+      "badge": "Popular",
       "items": [
         "Everything in Starter",
-        "Answer confidence scoring",
+        "4,000 credits",
+        "100 MB storage",
+        "100 web crawls",
+        "AI confidence scoring",
         "Priority support"
       ]
     },
     {
       "name": "Scale",
-      "for": "Teams that rely on the numbers.",
-      "price": "To be confirmed",
-      "credits": "Monthly credits: To be confirmed",
+      "for": "Everything in Growth, plus advanced features",
+      "monthly": 18999,
+      "annual": 15199,
+      "credits": "15,000 credits/mo",
+      "cta": "Start now",
       "items": [
         "Everything in Growth",
-        "Advanced and website analytics",
-        "Lead scoring",
-        "A dedicated account manager"
+        "15,000 credits",
+        "500 MB storage",
+        "250 web crawls",
+        "Advanced analytics",
+        "Website analytics",
+        "Enhanced CRM and lead scoring",
+        "Dedicated account manager"
       ]
     },
     {
       "name": "Enterprise",
-      "for": "Larger organisations and multiple brands.",
-      "price": "To be confirmed",
-      "credits": "Monthly credits: To be confirmed",
+      "for": "Custom plans for large organisations",
+      "monthly": null,
+      "annual": null,
+      "priceLabel": "Custom",
+      "credits": "50,000+ credits/mo",
+      "cta": "Talk to sales",
       "items": [
         "Everything in Scale",
-        "White labelling and multiple brands",
+        "50,000+ credits a month",
+        "Agent sites",
+        "White-label platform",
+        "Remove \"Powered by\" branding",
         "SSO and SAML",
-        "API access"
+        "Custom SLA and 99.9% uptime",
+        "Multi-brand management",
+        "Custom integrations and API",
+        "Unlimited storage and crawls",
+        "Dedicated engineering support",
+        "Phone and Slack support"
       ]
     }
   ],
-  "credits": {
-    "title": "How credits work.",
-    "intro": "A credit is not a reply. The number of credits a reply uses depends on the AI model you choose for your agent.",
-    "items": [
+  "addons": {
+    "eyebrow": "Add-on credits",
+    "title": "Need more credits for a busy month?",
+    "intro": "Buy additional credit packs any time. They work with every paid plan and let you handle bursts without jumping tiers.",
+    "packs": [
       {
-        "title": "Choose the model for each agent",
-        "body": "A lighter model uses fewer credits per reply. A more capable model uses more. You decide per agent."
+        "credits": "500",
+        "price": "₹999"
       },
       {
-        "title": "See your usage as it happens",
-        "body": "The usage screen shows the credits you have used this month and how many are left."
+        "credits": "1,000",
+        "price": "₹1,799"
       },
       {
-        "title": "Top up with credit packs",
-        "body": "If you run low, buy an extra credit pack instead of changing your plan."
+        "credits": "2,500",
+        "price": "₹3,999"
       },
       {
-        "title": "Credits reset each billing period",
-        "body": "Unused credits do not carry over to the next period, so pick the plan that fits a typical month."
+        "credits": "5,000",
+        "price": "₹6,999"
+      }
+    ],
+    "note": "Add-on credits are available on paid plans and expire at the end of your billing cycle.",
+    "link": "Buy credits in your dashboard"
+  },
+  "compare": {
+    "eyebrow": "Compare plans",
+    "title": "Full feature comparison.",
+    "intro": "How each plan expands your channels, analytics, automation and support.",
+    "plans": [
+      "Starter",
+      "Growth",
+      "Scale",
+      "Enterprise"
+    ],
+    "groups": [
+      {
+        "title": "Usage and limits",
+        "rows": [
+          [
+            "AI message credits a month",
+            [
+              "1,000",
+              "4,000",
+              "15,000",
+              "50,000+"
+            ]
+          ],
+          [
+            "Storage",
+            [
+              "50 MB",
+              "100 MB",
+              "500 MB",
+              "Unlimited"
+            ]
+          ],
+          [
+            "Web crawls a month",
+            [
+              "50",
+              "100",
+              "250",
+              "Unlimited"
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "AI agent",
+        "rows": [
+          [
+            "AI sales and support agent",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Custom AI personas",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Human handoff",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "AI confidence scoring",
+            [
+              false,
+              true,
+              true,
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Conversations and automation",
+        "rows": [
+          [
+            "Unified chat inbox",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Ticketing system",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Lead management",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Workflows",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Broadcasting",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Enhanced CRM and lead scoring",
+            [
+              false,
+              false,
+              true,
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Ecommerce",
+        "rows": [
+          [
+            "Product cards in chat",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Order tracking",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Channels and integrations",
+        "rows": [
+          [
+            "Channels (WhatsApp, Instagram, website and more)",
+            [
+              "All",
+              "All",
+              "All",
+              "All"
+            ]
+          ],
+          [
+            "Integrations",
+            [
+              "All",
+              "All",
+              "All",
+              "Custom and API"
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Analytics",
+        "rows": [
+          [
+            "Basic analytics",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Advanced analytics",
+            [
+              false,
+              false,
+              true,
+              true
+            ]
+          ],
+          [
+            "Website analytics",
+            [
+              false,
+              false,
+              true,
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Support",
+        "rows": [
+          [
+            "Email support",
+            [
+              true,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Priority support",
+            [
+              false,
+              true,
+              true,
+              true
+            ]
+          ],
+          [
+            "Dedicated account manager",
+            [
+              false,
+              false,
+              true,
+              true
+            ]
+          ],
+          [
+            "Dedicated engineering, phone and Slack",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "title": "Platform and enterprise",
+        "rows": [
+          [
+            "Agent sites",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "White-label platform",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "Remove \"Powered by\" branding",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "SSO and SAML",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "Custom SLA and 99.9% uptime",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "Multi-brand management",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ],
+          [
+            "Custom integrations and API",
+            [
+              false,
+              false,
+              false,
+              true
+            ]
+          ]
+        ]
       }
     ]
   },
   "faq": {
-    "title": "Questions about pricing.",
+    "title": "Questions about plans, billing and credits.",
     "items": [
       {
-        "q": "What does the free plan include?",
-        "a": "One AI agent that answers from your website and documents. Channel connections, order tracking and human handoff start on Starter."
-      },
-      {
         "q": "Does one credit equal one reply?",
-        "a": "No. Each reply uses a number of credits that depends on the AI model your agent uses. The usage screen shows exactly what you have used."
+        "a": "Not always. The AI model your agent uses sets how many credits each reply costs. Customer messages are free, and the usage screen shows exactly what you have used."
       },
       {
-        "q": "What happens if I run out of credits?",
-        "a": "You can buy an extra credit pack or move to a larger plan. Credit packs expire at the end of the billing period."
+        "q": "What happens if I exceed my message limit?",
+        "a": "Buy an add-on credit pack from your dashboard, from 500 credits for ₹999 to 5,000 credits for ₹6,999, or move to a larger plan. Add-on credits work with every paid plan and expire at the end of your billing cycle."
       },
       {
-        "q": "Can I cancel at any time?",
-        "a": "Yes. Your plan stays active until the end of the current billing period."
+        "q": "Can I upgrade or downgrade my plan anytime?",
+        "a": "Yes. Pick the plan that fits today, then upgrade or downgrade any time."
+      },
+      {
+        "q": "How does billing work?",
+        "a": "Plans are billed monthly or annually. Annual billing saves 20%, so Starter is ₹1,999 a month instead of ₹2,499."
+      },
+      {
+        "q": "Which currency are prices shown in?",
+        "a": "Prices on this page are in Indian rupees (₹)."
+      },
+      {
+        "q": "What is included in the Starter plan?",
+        "a": "1,000 credits a month, 50 MB storage and 50 web crawls, with ticketing, lead management, workflows, broadcasting, order tracking, custom AI personas, human handoff, every channel, basic analytics and email support."
+      },
+      {
+        "q": "Is AI voice calling available?",
+        "a": "Yes. Your agent can answer phone calls with the same knowledge base and handoff rules. Voice minutes are billed as credits."
+      },
+      {
+        "q": "Do you offer custom pricing for Enterprise?",
+        "a": "Yes. Enterprise starts at 50,000+ credits a month with custom pricing. Talk to sales and we will build a plan around your volume."
       }
     ]
   },
   "cta": {
-    "title": "Not sure which plan fits?",
-    "body": "Book a demo and we will look at your message volume with you before you choose."
+    "title": "Not sure which plan? Let us figure it out.",
+    "body": "Pick the plan that fits today. Upgrade or downgrade any time.",
+    "action": "Book a demo"
   }
 }

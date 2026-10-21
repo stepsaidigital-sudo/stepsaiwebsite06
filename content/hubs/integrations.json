@@ -242,7 +242,7 @@
       },
       {
         "q": "Which plans include integrations?",
-        "a": "Integrations are available on paid plans. The Free plan does not include channel integrations, order tracking or human handoff."
+        "a": "Every plan includes all integrations. Enterprise adds custom integrations and API access."
       }
     ]
   },

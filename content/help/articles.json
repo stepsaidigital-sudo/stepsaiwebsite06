@@ -1336,7 +1336,7 @@
       "title": "What each plan includes",
       "level": "Beginner",
       "plans": "All plans",
-      "summary": "Free is for trying the agent. Order tracking, handoff and channels start on Starter.",
+      "summary": "Four plans: Starter, Growth, Scale and Enterprise. Every plan includes all channels, order tracking and human handoff.",
       "steps": [
         {
           "title": "Compare plans",
@@ -1344,31 +1344,32 @@
         }
       ],
       "table": {
-        "caption": "What each plan adds",
+        "caption": "What each plan adds (monthly price, or per month billed annually)",
         "columns": [
           "Plan",
+          "Price",
           "Adds"
         ],
         "rows": [
           [
-            "Free",
-            "One agent and a small number of credits"
-          ],
-          [
             "Starter",
-            "Order tracking, human handoff, channels, ticketing, workflows, broadcasting, all integrations"
+            "₹2,499 (₹1,999 annual)",
+            "1,000 credits, 50 MB storage, 50 web crawls, every channel, order tracking, human handoff, ticketing, lead management, workflows, broadcasting, basic analytics, email support"
           ],
           [
             "Growth",
-            "More credits, AI confidence scoring, priority support"
+            "₹6,999 (₹5,599 annual)",
+            "4,000 credits, 100 MB storage, 100 web crawls, AI confidence scoring, priority support"
           ],
           [
             "Scale",
-            "Advanced analytics, enhanced CRM, lead scoring, account manager"
+            "₹18,999 (₹15,199 annual)",
+            "15,000 credits, 500 MB storage, 250 web crawls, advanced and website analytics, enhanced CRM and lead scoring, a dedicated account manager"
           ],
           [
             "Enterprise",
-            "White-labelling, SSO, SLA, multi-brand, API access"
+            "Custom",
+            "50,000+ credits, agent sites, white label, SSO and SAML, custom SLA, multi-brand management, custom integrations and API"
           ]
         ]
       },

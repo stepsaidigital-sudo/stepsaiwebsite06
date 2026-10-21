@@ -1,8 +1,9 @@
 'use client';
+import { Face } from '@/components/site/face';
 import type { ReactNode } from 'react';
 import {
   BadgeCheck, Bell, Bot, CalendarDays, Check, CircleDot, Clock, Filter, GitBranch, Hand, Inbox, LayoutGrid, Mail, MessageSquare,
-  Play, Search, Send, ShoppingCart, Star, StickyNote, Ticket, UserRound, Users, Workflow, Zap,
+  Play, Search, Send, ShoppingCart, Star, StickyNote, Ticket, Users, Workflow, Zap,
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { useLoop } from './kit';
@@ -43,27 +44,27 @@ export function InboxMock() {
       <div className="ax-tabs"><span className="is-on">All</span><span>Unread <b>2</b></span><span>Starred</span><span className="ax-live">Live <b>1</b></span></div>
       <div className="ax-selects"><span><Filter size={12} />All channels</span><span><Bot size={12} />All agents</span></div>
       {CONVOS.map((c, i) => <div key={c.name} className={`ax-convo ${i === 0 ? 'is-on' : ''} ${i === 0 && !on(t, 600) ? 'is-new' : ''}`}>
-        <span className="ax-avatar">{c.name[0]}<i><ChannelLogo channel={c.ch} /></i></span>
+        <span className="ax-avatar"><Face name={c.name} initials={c.name[0]} /><i><ChannelLogo channel={c.ch} /></i></span>
         <div><strong>{c.name}<small>{c.time}</small></strong><p>{c.text}</p>
           <em>{c.agent}{i === 0 ? <b className={claimed ? 'ax-pill-green' : 'ax-pill-amber'}>{claimed ? 'With Ananya' : 'Live request'}</b> : c.tag ? <b>{c.tag}</b> : null}{c.star && <Star size={12} className="ax-star" />}{c.unread && <i className="ax-dot" />}</em></div>
       </div>)}
     </aside>}>
     <div className="ax-thread">
-      <header className="ax-thread-head"><span className="ax-avatar">A<i><ChannelLogo channel="WhatsApp" /></i></span><div><strong>Anu Sharma</strong><small>WhatsApp · Support desk</small></div>
+      <header className="ax-thread-head"><span className="ax-avatar"><Face name="Anu Sharma" initials="A" /><i><ChannelLogo channel="WhatsApp" /></i></span><div><strong>Anu Sharma</strong><small>WhatsApp · Support desk</small></div>
         <span className={claimed ? 'ax-pill-green' : 'ax-pill-amber'}>{claimed ? <><Check size={12} />Claimed by Ananya</> : <><Hand size={12} />Wants a person</>}</span></header>
       <div className="ax-msgs">
         <p className={`ax-in ${fade(t, 300)}`}>Hi, my order 1042 arrived and the box is damaged. The bottle inside is broken.</p>
         <p className={`ax-out ax-ai ${fade(t, 1300)}`}><small><Bot size={11} />AI agent</small>I am sorry about that. I will connect you with our team so they can sort out a replacement.</p>
         <span className={`ax-sys ${fade(t, 2400)}`}><Hand size={12} />Live request created</span>
         <span className={`ax-sys ax-sys-green ${fade(t, 4200)}`}><Check size={12} />Ananya claimed this conversation</span>
-        <p className={`ax-out ax-team ${fade(t, 5800)}`}><small><UserRound size={11} />Ananya</small>Hi Anu, I have arranged a free replacement. It ships today with tracking on WhatsApp.</p>
+        <p className={`ax-out ax-team ${fade(t, 5800)}`}><small><span className="ax-mini-face"><Face name="Ananya" initials="A" /></span>Ananya</small>Hi Anu, I have arranged a free replacement. It ships today with tracking on WhatsApp.</p>
         <p className={`ax-in ${fade(t, 7600)}`}>Thank you, that was quick!</p>
         <span className={`ax-sys ${fade(t, 9000)}`}><CircleDot size={12} />Handoff resolved</span>
       </div>
       <footer className="ax-compose">{claimed ? <><span>Reply to Anu…</span><b><Send size={14} /></b></> : <button className={on(t, 2400) ? 'is-pulse' : ''}><Hand size={14} />Claim conversation</button>}</footer>
     </div>
     <aside className="ax-side">
-      <div className="ax-side-who"><span className="ax-avatar ax-avatar-lg">A</span><strong>Anu Sharma</strong><small><BadgeCheck size={12} />Phone verified</small></div>
+      <div className="ax-side-who"><span className="ax-avatar ax-avatar-lg"><Face name="Anu Sharma" initials="A" /></span><strong>Anu Sharma</strong><small><BadgeCheck size={12} />Phone verified</small></div>
       <dl><dt>Phone</dt><dd>+91 98••• ••210</dd><dt>Email</dt><dd>anu.s@mail.com</dd><dt>Source</dt><dd><ChannelLogo channel="WhatsApp" />WhatsApp</dd><dt>Agent</dt><dd>Support desk</dd></dl>
       <div className={`ax-ticket ${fade(t, 2400)}`}><Ticket size={13} /><div><strong>Damaged item</strong><small>Ticket #T-208 · Open</small></div></div>
     </aside>
@@ -91,11 +92,11 @@ export function CrmMock() {
     <div className="ax-table-wrap">
       <table className="ax-table"><thead><tr><th>Name</th><th>Email</th><th>Source</th><th>Agent</th><th>Added</th></tr></thead>
         <tbody>
-          <tr className={`ax-new ${on(t, 1200) ? 'is-in' : ''} ${open ? 'is-sel' : ''}`}><td><span className="ax-avatar">A</span>Anu Sharma<BadgeCheck size={13} className="ax-ok" /><b className="ax-pill-blue">New from chat</b></td><td>anu.s@mail.com</td><td><ChannelLogo channel="WhatsApp" />WhatsApp</td><td>Support desk</td><td>Just now</td></tr>
-          {PEOPLE.map(p => <tr key={p.name}><td><span className="ax-avatar">{p.name[0]}</span>{p.name}{p.phone && <BadgeCheck size={13} className="ax-ok" />}</td><td>{p.email}</td><td><ChannelLogo channel={p.ch} />{p.ch}</td><td>{p.agent}</td><td>{p.when}</td></tr>)}
+          <tr className={`ax-new ${on(t, 1200) ? 'is-in' : ''} ${open ? 'is-sel' : ''}`}><td><span className="ax-avatar"><Face name="Anu Sharma" initials="A" /></span>Anu Sharma<BadgeCheck size={13} className="ax-ok" /><b className="ax-pill-blue">New from chat</b></td><td>anu.s@mail.com</td><td><ChannelLogo channel="WhatsApp" />WhatsApp</td><td>Support desk</td><td>Just now</td></tr>
+          {PEOPLE.map(p => <tr key={p.name}><td><span className="ax-avatar"><Face name={p.name} initials={p.name[0]} /></span>{p.name}{p.phone && <BadgeCheck size={13} className="ax-ok" />}</td><td>{p.email}</td><td><ChannelLogo channel={p.ch} />{p.ch}</td><td>{p.agent}</td><td>{p.when}</td></tr>)}
         </tbody></table>
       <aside className={`ax-drawer ${open ? 'is-open' : ''}`}>
-        <div className="ax-side-who"><span className="ax-avatar ax-avatar-lg">A</span><strong>Anu Sharma</strong><small><BadgeCheck size={12} />Phone verified</small></div>
+        <div className="ax-side-who"><span className="ax-avatar ax-avatar-lg"><Face name="Anu Sharma" initials="A" /></span><strong>Anu Sharma</strong><small><BadgeCheck size={12} />Phone verified</small></div>
         <dl><dt>Order number</dt><dd>1042</dd><dt>City</dt><dd>Bengaluru</dd><dt>Plan interest</dt><dd>Gift bundle</dd></dl>
         <small className="ax-drawer-label">Activity</small>
         <div className={`ax-act ${fade(t, 4600)}`}><MessageSquare size={12} />Chat on WhatsApp with Support desk</div>

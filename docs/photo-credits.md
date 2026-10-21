@@ -46,3 +46,28 @@ already-credited `f-*.jpg` stock photos above instead of the unfilled `public/ph
 
 Still needed from Steps AI: a real portrait of the founder at `public/photos/team/reshmanth.jpg` (4:5, at least 1000px wide).
 Until it exists, the Founder's note and Team pages show his initials in the same frame.
+
+## Brand logos (added 2026-10-21)
+
+Brand marks are used only to name the integration / competitor (nominative use). They are trademarks of their owners.
+No logo was redrawn: each file was downloaded from the source below, then cropped to the icon (viewBox crop or pixel crop),
+centred in a square, and stripped of comments and metadata. Where the source was a PNG, it is embedded in the `.svg` as a data URI
+(integrations) or saved as a 256x256 transparent `.png` (compare).
+
+| File | Brand | Source URL | Notes |
+|---|---|---|---|
+| public/brands/integrations/delhivery.svg | Delhivery | https://www.delhivery.com/favicon.png | Official site favicon (128px PNG embedded). Solid red/black square mark. |
+| public/brands/integrations/dtdc.svg | DTDC | https://commons.wikimedia.org/wiki/File:DTDC_logo.png | Wordmark centred in square (only DTDC icon on dtdc.com is a 50x39 favicon). |
+| public/brands/integrations/ithink-logistics.svg | iThink Logistics | https://itl-website-aws.s3.ap-south-1.amazonaws.com/manage/assets/images/logo-cl.svg | Pin mark cropped from the site header SVG; wordmark paths removed. |
+| public/brands/integrations/klaviyo.svg | Klaviyo | https://www.klaviyo.com/ (inline header logo SVG) | Flag mark = the flag sub-path of the header wordmark, black (`currentColor` on the site). |
+| public/brands/integrations/outlook.svg | Microsoft Outlook | https://commons.wikimedia.org/wiki/File:Microsoft_Outlook_Icon_(2025%E2%80%93present).svg | Current Outlook icon. |
+| public/brands/integrations/outlook-calendar.svg | Microsoft Outlook (Calendar) | same as outlook.svg | Same Outlook icon; Microsoft has no separate Calendar mark. |
+| public/brands/integrations/shiprocket.svg | Shiprocket | https://sr-website-01.shiprocket.in/sr-website/shiprocket_logo-1-TWLqUy.svg | Play-arrow mark cropped from the header SVG; wordmark paths removed. |
+| public/brands/integrations/wareiq.svg | WareIQ | https://wareiq-prelogin.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/05/28144452/cropped-WareIQ-Favicon-270x270.png | Official favicon, resized to 128px PNG and embedded. |
+| public/brands/compare/manychat.png | Manychat | https://avatars.githubusercontent.com/u/23737151 (github.com/manychat org avatar) | manychat.com blocks automated fetches (Cloudflare). White background converted to transparency. |
+| public/brands/compare/wati.svg | Wati | https://www.wati.io/wp-content/uploads/2026/10/wati-logo.svg | Speech-bubble mark cropped from the header SVG. |
+| public/brands/compare/aisensy.png | AiSensy | https://umsousercontent.com/lib_EyxlwrMuBuWXHRhZ/o23jhxuys457hg29.png (aisensy.com header logo) | Icon cropped from the 2000px header PNG, white background converted to transparency. |
+| public/brands/compare/gorgias.svg | Gorgias | https://cdn.prod.website-files.com/5e4ff204e7b6f80e402d407a/669a5ab4a69be50c3a94800a_Gorgias%20Logo%20-%20Black.svg | Mark cropped from the black header logo. |
+| public/brands/compare/chatbase.svg | Chatbase | https://www.chatbase.co/images/chatbase-logo.svg | Used as is, square viewBox. |
+| public/brands/compare/tidio.svg | Tidio | https://www.tidio.com/images/vs/shared/brand-logo-tidio-square.svg | Used as is. |
+| public/brands/compare/verifast.png | Verifast | https://framerusercontent.com/images/aVhfFVStiuLBkNmOYroKAN7EY.png (verifast.ai favicon) | 1200px favicon trimmed and resized to 256x256. |

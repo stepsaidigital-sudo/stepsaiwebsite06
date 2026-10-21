@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { facePhoto } from "@/components/site/faces";
 import {
   ArrowRight,
   BadgeCheck,
@@ -104,12 +105,13 @@ function Avatar({ name, size = 28 }: { name: string; size?: number }) {
     .slice(0, 2)
     .join("");
   const k = [...name].reduce((a, c) => a + c.charCodeAt(0), 0) % AV_TONES.length;
+  const photo = facePhoto(name);
   return (
     <span
       className="pm-av"
-      style={{ width: size, height: size, background: AV_TONES[k], color: AV_INK[k] }}
+      style={{ width: size, height: size, background: AV_TONES[k], color: AV_INK[k], overflow: "hidden" }}
     >
-      {initials}
+      {photo ? <img src={photo} alt="" width={size} height={size} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : initials}
     </span>
   );
 }

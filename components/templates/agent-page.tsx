@@ -1,4 +1,5 @@
 'use client';
+import { Face } from '@/components/site/face';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
@@ -25,11 +26,11 @@ const PRODUCT = '/industries/ecommerce.png';
 
 function InboxHandoff({ customer, ask, agentLine, team }: { customer: string; ask: string; agentLine: string; team: string }) {
   return <div className="pp-inbox">
-    <div className="pp-inbox-head"><span className="wb-avatar wb-peach">{customer[0]}</span><div><strong>{customer}</strong><small>Unified inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
+    <div className="pp-inbox-head"><span className="wb-avatar wb-peach"><Face name={customer} initials={customer[0]} /></span><div><strong>{customer}</strong><small>Unified inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
     <div className="pp-inbox-thread">
       <p className="is-customer">{ask}</p>
       <p className="is-agent">{agentLine}</p>
-      <span className="pp-inbox-event"><UserCheck size={14} />Alex joined with the full history</span>
+      <span className="pp-inbox-event"><span className="wb-avatar wb-mini"><Face name="Alex" initials="A" /></span>Alex joined with the full history</span>
       <p className="is-team">{team}</p>
     </div>
     <div className="pp-inbox-foot"><span><i className="pp-online" />Assigned to Alex</span><span><Bot size={13} />AI replies paused</span></div>

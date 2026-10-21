@@ -27,7 +27,8 @@ export function PageHero({ hero, onOpen, visual }: Open & { hero: Hero; visual?:
       <Action onOpen={onOpen} />
       {hero.reassurance && <p className="reassurance">{hero.reassurance}</p>}
     </div>
-    {visual && <div className="sp-hero-visual">{visual}</div>}
+    {visual ? <div className="sp-hero-visual">{visual}</div>
+      : hero.image && <div className="sp-hero-visual"><img className="sp-hero-photo" src={hero.image.src} alt={hero.image.alt} width={hero.image.width} height={hero.image.height} fetchPriority="high" /></div>}
   </div></section>;
 }
 

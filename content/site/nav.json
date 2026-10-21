@@ -173,6 +173,11 @@
               "label": "Compare",
               "href": "/compare/",
               "body": "Steps AI and the alternatives"
+            },
+            {
+              "label": "Case studies",
+              "href": "/case-studies/",
+              "body": "How businesses use Steps AI"
             }
           ]
         },
