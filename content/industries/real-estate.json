@@ -149,7 +149,8 @@
           "Answers project and pricing questions",
           "Shares brochures and floor plans",
           "Hands hot buyers to your team"
-        ]
+        ],
+        "photo": "/photos/sc-sales-realestate.jpg"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -157,7 +158,8 @@
           "Asks budget, size and timeline",
           "Saves them as CRM fields",
           "Tags where each lead came from"
-        ]
+        ],
+        "photo": "/photos/sc-lead-realestate.jpg"
       },
       {
         "slug": "ai-booking-agent",
@@ -165,7 +167,8 @@
           "Books site visits",
           "Offers weekend slots",
           "Adds visits to your calendar"
-        ]
+        ],
+        "photo": "/photos/sc-booking-realestate.jpg"
       }
     ]
   },

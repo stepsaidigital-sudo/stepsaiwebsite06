@@ -66,3 +66,9 @@
   .integrations-showcase .logo-set{gap:12px;padding-right:12px}
 }
 @media(prefers-reduced-motion:reduce){.integrations-showcase .integration-tile,.integrations-showcase .integration-tile img{transition:none}}
+
+/* Integrations diagram image replacement */
+.integrations-diagram-box{max-width:1060px;margin:24px auto 0;border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(12,52,116,0.08);box-shadow:0 14px 44px -14px rgba(12,52,116,0.14),0 2px 6px rgba(12,52,116,0.04);transition:transform 280ms ease,box-shadow 280ms ease}
+.integrations-diagram-box:hover{transform:translateY(-4px);box-shadow:0 20px 54px -12px rgba(12,52,116,0.18),0 4px 10px rgba(12,52,116,0.06)}
+.integrations-diagram-img{width:100%;height:auto;display:block}
+

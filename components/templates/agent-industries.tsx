@@ -1,5 +1,6 @@
 import { Building2, GraduationCap, ShoppingBag, Stethoscope } from 'lucide-react';
 import { convo, type Scenario } from '@/components/premium/kit';
+import { useCaseIndustryImages } from './usecase-images';
 
 // How each agent works in four industries. Illustrative conversations with fictional businesses;
 // every action shown is one the product supports (catalogue, orders, tickets, leads, bookings, calls, campaigns).
@@ -11,7 +12,7 @@ const ind = {
   realestate: { industry: 'Real estate', href: '/industries/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
 };
 
-export const industryScenarios: Record<string, { title: string; intro: string; scenarios: Scenario[] }> = {
+const scenariosByAgent: Record<string, { title: string; intro: string; scenarios: Scenario[] }> = {
   'ai-support-agent': {
     title: 'Support that fits your business.', intro: 'Order questions for stores, appointment questions for clinics, fee and document questions for schools. Pick an industry to see the conversation.',
     scenarios: [
@@ -123,3 +124,14 @@ export const industryScenarios: Record<string, { title: string; intro: string; s
     ],
   },
 };
+
+// Calling examples show actual calls; messaging examples show the industry enquiry.
+export const industryScenarios: typeof scenariosByAgent = Object.fromEntries(
+  Object.entries(scenariosByAgent).map(([slug, page]) => [slug, {
+    ...page,
+    scenarios: page.scenarios.map(scenario => {
+      const image = useCaseIndustryImages[slug === 'ai-receptionist' ? 'call' : 'chat'][scenario.industry];
+      return image ? { ...scenario, photo: image.src, photoAlt: image.alt } : scenario;
+    }),
+  }]),
+);

@@ -131,7 +131,8 @@
           "Explains products and processes",
           "Shares document checklists",
           "Passes advice questions to your team"
-        ]
+        ],
+        "photo": "/photos/in-fin-story.jpg"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -139,7 +140,8 @@
           "Collects contact details",
           "Notes the product of interest",
           "Saves enquiries to your CRM"
-        ]
+        ],
+        "photo": "/photos/ho-lead.jpg"
       },
       {
         "slug": "ai-booking-agent",
@@ -147,7 +149,8 @@
           "Books adviser calls",
           "Offers times from their calendars",
           "Sends the confirmation"
-        ]
+        ],
+        "photo": "/photos/ho-booking.jpg"
       }
     ]
   },

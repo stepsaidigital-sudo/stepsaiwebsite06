@@ -66,7 +66,7 @@ const leadStory = <PhotoStory key="lead" id="leads" reverse eyebrow="Lead genera
   points={['Name, email, company and your own custom fields', 'Verify by email or phone code', 'Saved to your CRM or HubSpot, tagged by source']}
   photo="/photos/st-leads.jpg" alt="Business meeting about a new enquiry"
   overlay={<Card title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
-    <Row icon={<UserPlus size={15} />} title="Meera Shah" sub="meera@aurastudio.in · Verified" />
+    <Row icon={<UserPlus size={15} />} title="Meera" sub="meera@example.com · Verified" />
     <Row icon={<Tag size={15} />} title="Lumen Home" sub="Tag: quote request · Source: website" />
     <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Owner: sales team" picked />
   </Card>} />;
@@ -110,8 +110,8 @@ const ctaStack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items
 
 const designs: Record<string, Design> = {
   'ai-sales-agent': {
-    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/sales.jpg', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
-    hero: page => <HeroScene photo="/photos/sales.jpg" alt="Customer shopping on her phone, with a WhatsApp sales conversation">
+    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/use-cases/sales.webp', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
+    hero: page => <HeroScene photo="/photos/use-cases/sales.webp" alt="Customer shopping on her phone, with a WhatsApp sales conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 3])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Sparkles size={14} />Picked from your catalogue</div><div className="pp-products"><div className="pp-product"><img src={PRODUCT} alt="" /><div><strong>Ceramic vase</strong><small>₹2,450 · In stock</small></div></div></div></Float>
       <Float className="pp-pos-br">{result(<ShoppingCart size={16} />, 'Checkout link sent', 'Payment on your own checkout')}</Float>
@@ -143,8 +143,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-support-agent': {
-    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/support.jpg', alt: 'Small business owner answering customers, with a WhatsApp support conversation',
-    hero: page => <HeroScene photo="/photos/support.jpg" alt="Small business owner answering customers, with a WhatsApp support conversation">
+    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/use-cases/support.webp', alt: 'Customer asking about a delivery, with a WhatsApp support conversation',
+    hero: page => <HeroScene photo="/photos/use-cases/support.webp" alt="Customer asking about a delivery, with a WhatsApp support conversation">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Truck size={14} />Order #2087</div><div className="pp-track"><i className="is-done" /><i className="is-done" /><i className="is-now" /><i /></div><small className="pp-track-label">Out for delivery today</small></Float>
       <Float className="pp-pos-br">{result(<Ticket size={16} />, 'Ticket #431 created', 'Photo attached · Team notified')}</Float>
@@ -176,10 +176,10 @@ const designs: Record<string, Design> = {
   },
 
   'ai-lead-capture-agent': {
-    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/lead-capture.jpg', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
-    hero: page => <HeroScene photo="/photos/lead-capture.jpg" alt="Business buyer on a laptop, with a website chat collecting lead details">
+    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/use-cases/lead-capture.webp', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
+    hero: page => <HeroScene photo="/photos/use-cases/lead-capture.webp" alt="Business buyer on a laptop, with a website chat collecting lead details">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
-      <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@lumenhome.in</span><span><b>Company</b>Lumen Home</span></div></Float>
+      <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@example.com</span><span><b>Company</b>Lumen Home</span></div></Float>
       <Float className="pp-pos-br">{result(<img src="/brands/integrations/hubspot.svg" alt="" width={18} height={18} />, 'Lead saved to HubSpot', 'Tagged: quote request')}</Float>
       <span className="pp-bubble-logo pp-pos-logo"><Globe size={28} /></span>
     </HeroScene>,
@@ -194,7 +194,7 @@ const designs: Record<string, Design> = {
         <Row icon={<Users size={15} />} title="Company" sub="Optional" delay={600} />
       </Card>,
       <Card key="2" title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
-        <Row icon={<UserPlus size={15} />} title="Meera Shah · Aura Studio" sub="meera@aurastudio.in" delay={200} />
+        <Row icon={<UserPlus size={15} />} title="Meera · Lumen Home" sub="meera@example.com" delay={200} />
         <Row icon={<Tag size={15} />} title="Source: website chat" sub="Agent: Sales assistant" delay={400} />
         <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Ready for follow-up" picked delay={600} />
       </Card>,
@@ -206,8 +206,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-booking-agent': {
-    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/booking.jpg', alt: 'Clinic reception, with a WhatsApp booking conversation',
-    hero: page => <HeroScene photo="/photos/booking.jpg" alt="Clinic reception, with a WhatsApp booking conversation">
+    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/use-cases/booking.webp', alt: 'Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation',
+    hero: page => <HeroScene photo="/photos/use-cases/booking.webp" alt="Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation">
       <LivePhone kind="WhatsApp" business="City Care Clinic" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><CalendarDays size={14} />Thursday</div><div className="pp-slots"><span>11:00</span><span className="is-picked">3:30 <Check size={11} /></span><span>5:00</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Booked · Thu 3:30', 'Added to Google Calendar')}</Float>
@@ -215,26 +215,26 @@ const designs: Record<string, Design> = {
     </HeroScene>,
     cards: [
       <Card key="0" title="First consultation" status={<Chip>Service</Chip>}>
-        <Row icon={<Clock size={15} />} title="45 minutes" sub="From your service list" picked delay={200} />
+        <Row icon={<Clock size={15} />} title="30 minutes" sub="From your service list" picked delay={200} />
         <Row icon={<FileText size={15} />} title="Bring previous reports" sub="Preparation note" delay={450} />
       </Card>,
       <Card key="1" title="Free this week" status={<Chip tone="soft"><img src="/brands/integrations/google-calendar.svg" alt="" width={12} height={12} />Google Calendar</Chip>}>
         <div className="pp-slots pp-slots-card"><span>Thu 11:00</span><span className="is-picked">Thu 3:30 <Check size={11} /></span><span>Fri 10:00</span><span>Fri 4:30</span></div>
       </Card>,
       <Card key="2" title="Booking confirmed" status={<Chip tone="green"><Check size={11} />Booked</Chip>}>
-        <Row icon={<CalendarCheck size={15} />} title="Thursday, 3:30 PM" sub="First consultation · 45 min" picked delay={200} />
+        <Row icon={<CalendarCheck size={15} />} title="Thursday, 3:30 PM" sub="First consultation · 30 min" picked delay={200} />
         <Row icon={<UserCheck size={15} />} title="Priya" sub="Name and phone collected" delay={450} />
       </Card>,
     ],
     bandCta: { label: 'Connect your calendar', icon: <img src="/brands/integrations/google-calendar.svg" alt="" /> },
     capIcons: [[<CalendarCheck key="a" size={20} />, 'green'], [<UserCheck key="b" size={20} />, 'blue'], [<CalendarDays key="c" size={20} />, 'teal'], [<MessageSquare key="d" size={20} />, 'violet']],
     stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, '/photos/ho-booking.jpg')],
-    ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', '45 min consultation'), result(<CalendarDays size={15} />, 'Times offered', 'From your calendar')), ctaStack(result(<CalendarCheck size={15} />, 'Booked', 'Thursday, 3:30'), result(<Check size={15} />, 'Details saved', 'Name and phone'))],
+    ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', '30 min consultation'), result(<CalendarDays size={15} />, 'Times offered', 'From your calendar')), ctaStack(result(<CalendarCheck size={15} />, 'Booked', 'Thursday, 3:30'), result(<Check size={15} />, 'Details saved', 'Name and phone'))],
   },
 
   'ai-receptionist': {
-    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/receptionist.jpg', alt: 'Front desk on a phone call, with a live call transcript',
-    hero: page => <HeroScene photo="/photos/receptionist.jpg" alt="Front desk on a phone call, with a live call transcript">
+    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/use-cases/receptionist.webp', alt: 'Front desk on a phone call, with a live call transcript',
+    hero: page => <HeroScene photo="/photos/use-cases/receptionist.webp" alt="Front desk on a phone call, with a live call transcript">
       <LiveCall business="City Care Clinic" className="pp-hero-phone" period={13000} transcript={page.walkthrough.steps.flatMap((s, i) => [{ who: 'Caller', text: s.customer, at: 600 + i * 4000 }, { who: 'AI receptionist', text: s.agent, at: 2400 + i * 4000 }])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Languages size={14} />Speaks</div><div className="pp-langs"><span className="is-picked">English</span><span>हिन्दी</span><span>తెలుగు</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Saturday 11:00 booked', 'Confirmation sent')}</Float>
@@ -261,8 +261,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-marketing-agent': {
-    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/marketing.jpg', alt: 'Customer reading a campaign message, with an Instagram conversation',
-    hero: page => <HeroScene photo="/photos/marketing.jpg" alt="Customer reading a campaign message, with an Instagram conversation">
+    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/use-cases/marketing.webp', alt: 'Boutique owner responding to campaign interest, with an Instagram conversation',
+    hero: page => <HeroScene photo="/photos/use-cases/marketing.webp" alt="Boutique owner responding to campaign interest, with an Instagram conversation">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={12000} lines={[
         { from: 'agent', text: 'Thanks for your comment. Here are the details you asked for.', at: 400 },
         { from: 'customer', text: 'Medium in the linen shirt?', at: 2600 },

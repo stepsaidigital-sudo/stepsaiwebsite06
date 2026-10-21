@@ -149,7 +149,8 @@
           "Recommends the right course",
           "Answers fees and batch dates",
           "Moves students to counselling"
-        ]
+        ],
+        "photo": "/photos/sc-sales-education.jpg"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -157,7 +158,8 @@
           "Collects name, phone and course",
           "Saves enquiries to your CRM",
           "Tags where they came from"
-        ]
+        ],
+        "photo": "/photos/sc-lead-education.jpg"
       },
       {
         "slug": "ai-booking-agent",
@@ -165,7 +167,8 @@
           "Books counselling sessions",
           "Offers demo class times",
           "Adds them to your calendar"
-        ]
+        ],
+        "photo": "/photos/sc-booking-education.jpg"
       },
       {
         "slug": "ai-marketing-agent",
@@ -173,7 +176,8 @@
           "Announces new batches on WhatsApp",
           "Answers every campaign reply",
           "Follows up with old enquiries"
-        ]
+        ],
+        "photo": "/photos/sc-mkt-education.jpg"
       }
     ]
   },

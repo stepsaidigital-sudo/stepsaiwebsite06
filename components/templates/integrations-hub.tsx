@@ -39,7 +39,15 @@ export function IntegrationsHubTemplate({ page }: { page: IntegrationsHub }) {
         <p>{page.hero.body}</p>
         <div className="igh-actions"><Action onOpen={onOpen} /><a className="igh-ghost" href="#directory">Browse apps <ArrowRight size={16} /></a></div>
       </div>
-      <div className="container"><HubDiagram apps={demoApps} /></div>
+      <div className="container igh-diagram-box">
+        <img 
+          src="/integrations-diagram.png" 
+          alt="Steps AI Integrations: Connect WhatsApp, Instagram, and Website to Shopify, Google Calendar, HubSpot, Shiprocket, and Notion" 
+          width={1120} 
+          height={480} 
+          className="igh-diagram-img" 
+        />
+      </div>
     </section>
 
     <section className="sp-section container" id="directory">

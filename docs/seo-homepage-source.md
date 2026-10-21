@@ -250,35 +250,9 @@ Explore solutions
 
 ## **6\. Customer testimonials**
 
-# **See what changes for your customers and your team.**
+# **Businesses already using Steps AI.**
 
-Hear how businesses use Steps AI to answer questions and prepare their teams for the next conversation.
-
-### **After-hours questions answered**
-
-“A lot of our customers shop and message us after hours. StepsAI handles most of those questions now, so we’re not coming back every morning to a backlog.”
-
-Priya Shah | Founder | Aster & Row
-
-### **Better context before the sales call**
-
-“Our sales team has a lot more context before they speak to someone now.”
-
-Rachel Morgan | VP of Growth | LatticeFlow Labs
-
-### **Instagram questions answered during launches**
-
-“Our Instagram inbox used to be a mess during launches. People asking if something was still in stock, when it would ship, whether we had another size. Now most of those questions get answered without someone from our team sitting in DMs all day.”
-
-Nina Kapoor | E-commerce Lead | Sunday Form
-
-### **Customers find answers in your docs**
-
-“Our help center is pretty big, and customers weren’t finding half of what was already there. Now they just ask the question normally and get the relevant answer.”
-
-Jonathan Reed | VP, Customer Success | Stacklane
-
-See customer stories
+Real businesses use Steps AI to answer their customers on WhatsApp, Instagram and their websites.
 
 ## **7\. FAQ**
 

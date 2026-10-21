@@ -135,7 +135,8 @@
           "Answers rooms, timings and policies",
           "Shares directions and amenities",
           "Passes requests to your team"
-        ]
+        ],
+        "photo": "/photos/cs-booking.jpg"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -143,7 +144,8 @@
           "Collects dates and guest count",
           "Saves contact details",
           "Hands the enquiry to your team"
-        ]
+        ],
+        "photo": "/photos/in-travel-story.jpg"
       },
       {
         "slug": "ai-marketing-agent",
@@ -151,7 +153,8 @@
           "Sends offers to past guests",
           "Answers every reply",
           "Brings guests back in the off season"
-        ]
+        ],
+        "photo": "/photos/cs-marketing.jpg"
       }
     ]
   },

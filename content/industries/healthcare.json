@@ -153,7 +153,8 @@
           "Offers free times from your calendar",
           "Collects name and phone",
           "Adds the visit to your calendar"
-        ]
+        ],
+        "photo": "/photos/sc-booking-healthcare.jpg"
       },
       {
         "slug": "ai-receptionist",
@@ -161,7 +162,8 @@
           "Answers calls in three languages",
           "Books visits on the phone",
           "Turns after-hours calls into callbacks"
-        ]
+        ],
+        "photo": "/photos/sc-recep-healthcare.jpg"
       },
       {
         "slug": "ai-support-agent",
@@ -169,7 +171,8 @@
           "Answers timings, fees and directions",
           "Shares test preparation steps",
           "Passes medical questions to your team"
-        ]
+        ],
+        "photo": "/photos/sc-support-healthcare.jpg"
       }
     ]
   },

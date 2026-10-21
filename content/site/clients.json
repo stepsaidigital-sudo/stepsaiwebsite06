@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "mysa-living",
+    "name": "Mysa Living",
+    "website": "https://mysaliving.com",
+    "what": "Scandinavian home decor & furniture store using Steps AI to recommend products by budget, style, and room need.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/in-ecom-hero.jpg"
+  },
+  {
+    "slug": "aster-row",
+    "name": "Aster & Row",
+    "website": "https://asterandrow.com",
+    "what": "Boutique apparel label answering after-hours sizing and shipping inquiries on WhatsApp and Instagram.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/cs-sales.jpg"
+  },
+  {
+    "slug": "north-pine",
+    "name": "North & Pine",
+    "website": "https://northandpine.com",
+    "what": "Outdoor apparel brand handling 85% of order-status tracking and return questions automatically.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/ag-ecom-sales.jpg"
+  },
+  {
+    "slug": "nivara",
+    "name": "Nivara",
+    "website": "https://nivara.in",
+    "what": "Handcrafted ethnic fashion brand resolving size, stock, and exchange requests instantly.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/sc-sales-ecommerce.jpg"
+  },
+  {
+    "slug": "casa-noma",
+    "name": "Casa Noma",
+    "website": "https://casanoma.com",
+    "what": "Artisanal ceramics and home goods store clearing weekend WhatsApp message surges before Monday morning.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/in-ecom-shopify.jpg"
+  },
+  {
+    "slug": "stacklane",
+    "name": "Stacklane",
+    "website": "https://stacklane.io",
+    "what": "B2B SaaS provider deflecting documentation tickets and delivering instantaneous help center answers.",
+    "category": "SaaS",
+    "logo": null,
+    "photo": "photos/ag-saas-support.jpg"
+  },
+  {
+    "slug": "sunday-form",
+    "name": "Sunday Form",
+    "website": "https://sundayform.com",
+    "what": "Streetwear design label automating Instagram DM inquiries and stock checks during rapid collection drops.",
+    "category": "Ecommerce",
+    "logo": null,
+    "photo": "photos/cs-marketing.jpg"
+  },
+  {
+    "slug": "northstar-saas",
+    "name": "Northstar SaaS",
+    "website": "https://northstarsaas.com",
+    "what": "Cloud analytics tool capturing high-intent trial inquiries and syncing enriched contact details directly into CRM.",
+    "category": "SaaS",
+    "logo": null,
+    "photo": "photos/in-saas-story.jpg"
+  },
+  {
+    "slug": "latticeflow-labs",
+    "name": "LatticeFlow Labs",
+    "website": "https://latticeflow.ai",
+    "what": "Enterprise automation SaaS qualifying enterprise leads with technical context before initial sales calls.",
+    "category": "SaaS",
+    "logo": null,
+    "photo": "photos/f-crm.jpg"
+  },
+  {
+    "slug": "relaydesk",
+    "name": "RelayDesk",
+    "website": "https://relaydesk.co",
+    "what": "Helpdesk platform booking qualified product demos directly onto sales directors' calendars in the chat.",
+    "category": "SaaS",
+    "logo": null,
+    "photo": "photos/cs-booking.jpg"
+  }
+]

@@ -184,7 +184,7 @@ export function LiveCall({ business, transcript, period = 10000, className = '' 
 /* ---------- industry examples: the same agent, shown in different businesses ---------- */
 
 export type Scenario = {
-  industry: string; href: string; photo: string; icon: ReactNode; kind: 'WhatsApp' | 'Instagram' | 'Website' | 'Messenger' | 'Call';
+  industry: string; href: string; photo: string; photoAlt?: string; icon: ReactNode; kind: 'WhatsApp' | 'Instagram' | 'Website' | 'Messenger' | 'Call';
   business: string; lines: Line[]; did: string[];
 };
 
@@ -207,7 +207,7 @@ export function IndustryExamples({ title, intro, scenarios, noPhoto = false }: {
     <div className="pp-ind-tabs" role="tablist" aria-label="Industries">{scenarios.map((x, i) => <button key={x.industry} role="tab" aria-selected={i === active} className={i === active ? 'is-active' : ''} onClick={() => { setActive(i); setHeld(true); }}>{x.icon}{x.industry}</button>)}</div>
     <div className={`pp-ind-stage ${noPhoto ? 'is-plain' : ''}`} key={active}>
       <div className="pp-ind-photo">
-        {!noPhoto && <img src={s.photo} alt="" loading="lazy" decoding="async" />}
+        {!noPhoto && <img src={s.photo} alt={s.photoAlt ?? `${s.industry} business example`} loading="lazy" decoding="async" />}
         <div className="pp-ind-did"><small>What the agent did</small>{s.did.map((d, i) => <span key={d} style={{ animationDelay: `${300 + i * 250}ms` }}><CircleCheck size={15} />{d}</span>)}</div>
       </div>
       <div className="pp-ind-phone">

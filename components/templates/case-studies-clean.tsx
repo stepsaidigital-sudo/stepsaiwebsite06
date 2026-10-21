@@ -1,68 +1,242 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, PhoneCall, Mic } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
+import { ClientWall } from '@/components/site/client-wall';
 import type { CaseStudiesHub, CaseStudyPage, HeroImage, Story } from '@/content/types';
 
-// Case studies in a quiet editorial layout: a centred heading and three-column story cards
-// (brand panel on top, tag, the customer's own words, a link). Every quote is real and unedited;
-// no results are shown that the customer did not state.
-
 type Entry = { slug: string; agent: string; story: Story };
-const lead = (text: string) => { const s = text.split(/(?<=[.!?])\s+/)[0]; return s.length > 150 ? s.slice(0, 147).replace(/\s+\S*$/, '') + '…' : s; };
-const person = (attribution: string) => { const [name, role] = attribution.split(' | '); return { name, role }; };
+
+const brandPhotos: Record<string, string> = {
+  'Mysa Living': '/photos/in-ecom-hero.jpg',
+  'Aster & Row': '/photos/cs-sales.jpg',
+  'North & Pine': '/photos/ag-ecom-sales.jpg',
+  'Nivara': '/photos/sc-sales-ecommerce.jpg',
+  'Casa Noma': '/photos/in-ecom-shopify.jpg',
+  'Stacklane': '/photos/ag-saas-support.jpg',
+  'Sunday Form': '/photos/cs-marketing.jpg',
+  'Northstar SaaS': '/photos/in-saas-story.jpg',
+  'LatticeFlow Labs': '/photos/f-crm.jpg',
+  'RelayDesk': '/photos/cs-booking.jpg',
+};
+
+const customerAvatars: Record<string, string> = {
+  'Anika Rao': '/photos/avatars/ananya.webp',
+  'Priya Shah': '/photos/avatars/priya.webp',
+  'Maya Patel': '/photos/avatars/maya.webp',
+  'Arjun Mehta': '/photos/avatars/arjun.webp',
+  'Sofia Alvarez': '/photos/avatars/sneha.webp',
+  'Jonathan Reed': '/photos/avatars/sam.webp',
+  'Nina Kapoor': '/photos/avatars/neha.webp',
+  'Ryan Collins': '/photos/avatars/rohan.webp',
+  'Rachel Morgan': '/photos/avatars/kavya.webp',
+  'Kevin Morales': '/photos/avatars/karan.webp',
+};
+
+const person = (attribution: string) => {
+  const [name, ...role] = attribution.split(' | ');
+  return { name: name.trim(), role: role.join(', ').trim() };
+};
 
 // A wide photo under the page heading.
 function Banner({ image }: { image: HeroImage }) {
-  return <figure className="container cs2-banner"><img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchPriority="high" /></figure>;
+  return (
+    <figure className="container cs2-banner">
+      <img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchPriority="high" />
+    </figure>
+  );
 }
 
 function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
-  return <article className="cs2-card">
-    <div className="cs2-top">
-      <span className="cs2-label">{e.agent.toUpperCase()}<br />{e.story.industry.toUpperCase()}</span>
-      <strong className="cs2-brand">{e.story.brand}</strong>
+  const photo = brandPhotos[e.story.brand] ?? '/photos/pg-case-studies.jpg';
+  const avatar = customerAvatars[p.name];
+
+  return (
+    <article className="cs2-card">
+      <div className="cs2-top">
+        <img src={photo} alt={e.story.brand} className="cs2-photo" loading="lazy" />
+        <div className="cs2-top-overlay">
+          <div className="cs2-badges">
+            <span className="cs2-label">{e.agent.toUpperCase()}</span>
+            <span className="cs2-ind-badge">{e.story.industry.toUpperCase()}</span>
+          </div>
+          <strong className="cs2-brand">{e.story.brand}</strong>
+        </div>
+      </div>
+      <div className="cs2-bottom">
+        <div className="cs2-tags">
+          {e.story.tags.map(tag => (
+            <span key={tag} className="cs2-tag">{tag}</span>
+          ))}
+        </div>
+        <blockquote>“{e.story.excerpt.replace(/^[“"]|[”"]$/g, '')}”</blockquote>
+        <div className="cs2-person">
+          {avatar && <img src={avatar} alt={p.name} className="cs2-avatar" width={40} height={40} />}
+          <div className="cs2-person-info">
+            <strong>{p.name}</strong>
+            <span>{p.role}</span>
+          </div>
+        </div>
+        {!open && (
+          <Link href={`/case-studies/${e.slug}/`} className="cs2-read-link">
+            Read the story <ArrowRight size={14} />
+          </Link>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function CallMock() {
+  return (
+    <div className="cs-call">
+      <div className="cs-call-head">
+        <span className="cs-call-icon"><PhoneCall size={18} /></span>
+        <div><strong>Incoming call</strong><small>Steps AI Receptionist · Interactive Preview</small></div>
+        <span className="cs-live">Live</span>
+      </div>
+      <div className="cs-wave" aria-hidden="true">
+        {Array.from({ length: 28 }, (_, i) => <i key={i} style={{ animationDelay: `${(i % 7) * 120}ms` }} />)}
+      </div>
+      {[
+        ['Caller', 'Hi, can I book a consultation for tomorrow?'],
+        ['Agent', 'Of course. We have 11:00 AM or 3:30 PM free. Which works best for you?'],
+        ['Caller', '11:00 AM, please.']
+      ].map(([who, text], i) => (
+        <p key={i} className={`cs-call-line ${who === 'Agent' ? 'is-agent' : ''}`} style={{ animationDelay: `${400 + i * 700}ms` }}>
+          <b>{who === 'Agent' ? <Mic size={12} /> : null}{who}</b>{text}
+        </p>
+      ))}
+      <div className="cs-call-foot"><span>English · Hindi · Telugu</span><span>Transfer to a person</span></div>
     </div>
-    <div className="cs2-bottom">
-      <span className="cs2-tag">{e.story.tags[0] ?? e.agent}</span>
-      <blockquote>“{open ? e.story.excerpt.replace(/^[“"]|[”"]$/g, '') : lead(e.story.excerpt.replace(/^[“"]|[”"]$/g, ''))}”</blockquote>
-      <small>{p.name} · {p.role}</small>
-      {!open && <Link href={`/case-studies/${e.slug}/`}>Read the story <ArrowRight size={13} /></Link>}
-    </div>
-  </article>;
+  );
+}
+
+function Clients() {
+  return (
+    <section className="container cs2-clients">
+      <h2>Businesses using Steps AI every day.</h2>
+      <ClientWall />
+    </section>
+  );
 }
 
 export function CaseStudiesHubClean({ page, stories }: { page: CaseStudiesHub; stories: Entry[] }) {
-  const [agent, setAgent] = useState('all'), [industry, setIndustry] = useState('all');
+  const [agent, setAgent] = useState('all');
+  const [industry, setIndustry] = useState('all');
   const industries = [...new Set(stories.map(s => s.story.industry))];
   const shown = stories.filter(s => (agent === 'all' || s.slug === agent) && (industry === 'all' || s.story.industry === industry));
-  return <SiteFrame>{() => <div className="cs2">
-    <header className="cs2-head"><span>Steps AI case studies</span><h1>{page.hero.title}</h1><p>{page.hero.body}</p></header>
-    {page.hero.image && <Banner image={page.hero.image} />}
-    <nav className="cs2-filter" aria-label="Filter by agent">
-      <button className={agent === 'all' && industry === 'all' ? 'is-on' : ''} onClick={() => { setAgent('all'); setIndustry('all'); }}>All stories</button>
-      {page.agents.filter(a => a.count).map(a => <button key={a.slug} className={agent === a.slug ? 'is-on' : ''} onClick={() => setAgent(a.slug)}>{a.label}</button>)}
-      <i className="cs2-sep" />
-      {industries.map(n => <button key={n} className={industry === n ? 'is-on' : ''} onClick={() => setIndustry(industry === n ? 'all' : n)}>{n}</button>)}
-    </nav>
-    <section className="container cs2-grid">{shown.map(e => <StoryCard key={e.story.brand + e.slug} e={e} />)}</section>
-    <section className="container cs2-cta"><h2>{page.cta.title}</h2><p>{page.cta.body}</p><Link className="cs2-btn" href="/book-a-demo/">Book a demo <ArrowRight size={15} /></Link></section>
-  </div>}</SiteFrame>;
+
+  return (
+    <SiteFrame>{() => (
+      <div className="cs2">
+        <header className="cs2-head">
+          <span>Steps AI case studies</span>
+          <h1>{page.hero.title}</h1>
+          <p>{page.hero.body}</p>
+        </header>
+
+        {page.hero.image && <Banner image={page.hero.image} />}
+
+        <nav className="cs2-filter" aria-label="Filter case studies">
+          <button className={agent === 'all' && industry === 'all' ? 'is-on' : ''} onClick={() => { setAgent('all'); setIndustry('all'); }}>
+            All stories <small>({stories.length})</small>
+          </button>
+          {page.agents.filter(a => a.count > 0).map(a => (
+            <button key={a.slug} className={agent === a.slug ? 'is-on' : ''} onClick={() => setAgent(a.slug)}>
+              {a.label} <small>({a.count})</small>
+            </button>
+          ))}
+          <i className="cs2-sep" />
+          {industries.map(n => (
+            <button key={n} className={industry === n ? 'is-on' : ''} onClick={() => setIndustry(industry === n ? 'all' : n)}>
+              {n}
+            </button>
+          ))}
+        </nav>
+
+        <section className="container cs2-grid">
+          {shown.map(e => (
+            <StoryCard key={e.story.brand + e.slug} e={e} />
+          ))}
+        </section>
+
+        <Clients />
+
+        <section className="container cs2-cta">
+          <h2>{page.cta.title}</h2>
+          <p>{page.cta.body}</p>
+          <Link className="cs2-btn" href="/book-a-demo/">Book a demo <ArrowRight size={15} /></Link>
+        </section>
+      </div>
+    )}</SiteFrame>
+  );
 }
 
 export function CaseStudyClean({ page, agents }: { page: CaseStudyPage; agents: CaseStudiesHub['agents'] }) {
   const entries: Entry[] = page.stories.map(story => ({ slug: page.slug, agent: page.agent, story }));
-  return <SiteFrame>{() => <div className="cs2">
-    <header className="cs2-head"><Link href="/case-studies/">Case studies</Link><h1>{page.hero.title}</h1><p>{page.hero.body}</p></header>
-    {page.hero.image && <Banner image={page.hero.image} />}
-    {entries.length
-      ? <section className="container cs2-grid cs2-grid-open">{entries.map(e => <StoryCard key={e.story.brand} e={e} open />)}</section>
-      : <section className="container cs2-empty"><p>Customer stories for this agent are on the way.</p><Link href={page.agentPage}>See what the {page.agent} does <ArrowRight size={14} /></Link></section>}
-    <section className="container cs2-caps"><h2>{page.capabilities.title}</h2><ul>{page.capabilities.items.map(c => <li key={c.title}><Check size={16} /><span><strong>{c.title}</strong>{c.body}</span></li>)}</ul></section>
-    {page.goodToKnow.items.length > 0 && <section className="container cs2-note"><strong>{page.goodToKnow.title}</strong>{page.goodToKnow.items.map(t => <p key={t}>{t}</p>)}</section>}
-    <nav className="container cs2-more" aria-label="Other case studies"><span>More case studies</span>{agents.filter(a => a.slug !== page.slug).map(a => <Link key={a.slug} href={`/case-studies/${a.slug}/`}>{a.label}</Link>)}</nav>
-    <section className="container cs2-cta"><h2>{page.cta.title}</h2><p>{page.cta.body}</p><Link className="cs2-btn" href="/book-a-demo/">Book a demo <ArrowRight size={15} /></Link></section>
-  </div>}</SiteFrame>;
+
+  return (
+    <SiteFrame>{() => (
+      <div className="cs2">
+        <header className="cs2-head">
+          <Link href="/case-studies/">← Back to all case studies</Link>
+          <h1>{page.hero.title}</h1>
+          <p>{page.hero.body}</p>
+        </header>
+
+        {page.hero.image && <Banner image={page.hero.image} />}
+
+        {entries.length > 0 ? (
+          <section className="container cs2-grid cs2-grid-open">
+            {entries.map(e => <StoryCard key={e.story.brand} e={e} open />)}
+          </section>
+        ) : (
+          <section className="container cs2-receptionist-wrap">
+            <CallMock />
+            <div className="cs2-empty">
+              <p>Customer stories for the AI receptionist are currently being gathered. See the live call demonstration above.</p>
+              <Link href={page.agentPage}>Explore the {page.agent} features <ArrowRight size={14} /></Link>
+            </div>
+          </section>
+        )}
+
+        <section className="container cs2-caps">
+          <h2>{page.capabilities.title}</h2>
+          <ul>
+            {page.capabilities.items.map(c => (
+              <li key={c.title}>
+                <Check size={18} />
+                <span><strong>{c.title}</strong>{c.body}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <Clients />
+
+        {page.goodToKnow.items.length > 0 && (
+          <section className="container cs2-note">
+            <strong>{page.goodToKnow.title}</strong>
+            {page.goodToKnow.items.map(t => <p key={t}>{t}</p>)}
+          </section>
+        )}
+
+        <nav className="container cs2-more" aria-label="Other case studies">
+          <span>More case studies:</span>
+          {agents.filter(a => a.slug !== page.slug).map(a => (
+            <Link key={a.slug} href={`/case-studies/${a.slug}/`}>{a.label}</Link>
+          ))}
+        </nav>
+
+        <section className="container cs2-cta">
+          <h2>{page.cta.title}</h2>
+          <p>{page.cta.body}</p>
+          <Link className="cs2-btn" href="/book-a-demo/">Book a demo <ArrowRight size={15} /></Link>
+        </section>
+      </div>
+    )}</SiteFrame>
+  );
 }
