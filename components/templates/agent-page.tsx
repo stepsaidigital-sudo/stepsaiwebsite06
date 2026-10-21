@@ -110,8 +110,8 @@ const ctaStack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items
 
 const designs: Record<string, Design> = {
   'ai-sales-agent': {
-    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/use-cases/sales.webp', alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/sales.webp" alt="Customer shopping on her phone, with a WhatsApp sales conversation">
+    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: '/photos/use-cases/sales.webp', alt: 'Autonomous product advisory and catalogue checkout engine',
+    hero: page => <HeroScene photo="/photos/use-cases/sales.webp" alt="Autonomous product advisory and catalogue checkout engine">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 3])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Sparkles size={14} />Picked from your catalogue</div><div className="pp-products"><div className="pp-product"><img src={PRODUCT} alt="" /><div><strong>Ceramic vase</strong><small>₹2,450 · In stock</small></div></div></div></Float>
       <Float className="pp-pos-br">{result(<ShoppingCart size={16} />, 'Checkout link sent', 'Payment on your own checkout')}</Float>
@@ -143,8 +143,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-support-agent': {
-    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/use-cases/support.webp', alt: 'Customer asking about a delivery, with a WhatsApp support conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/support.webp" alt="Customer asking about a delivery, with a WhatsApp support conversation">
+    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: '/photos/use-cases/support.webp', alt: 'Autonomous multi-channel delivery tracking and tier-1 ticket resolution hub',
+    hero: page => <HeroScene photo="/photos/use-cases/support.webp" alt="Autonomous multi-channel delivery tracking and tier-1 ticket resolution hub">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Truck size={14} />Order #2087</div><div className="pp-track"><i className="is-done" /><i className="is-done" /><i className="is-now" /><i /></div><small className="pp-track-label">Out for delivery today</small></Float>
       <Float className="pp-pos-br">{result(<Ticket size={16} />, 'Ticket #431 created', 'Photo attached · Team notified')}</Float>
@@ -176,8 +176,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-lead-capture-agent': {
-    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/use-cases/lead-capture.webp', alt: 'Business buyer on a laptop, with a website chat collecting lead details',
-    hero: page => <HeroScene photo="/photos/use-cases/lead-capture.webp" alt="Business buyer on a laptop, with a website chat collecting lead details">
+    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: '/photos/use-cases/lead-capture.webp', alt: 'Autonomous inbound lead qualification matrix and CRM synchronization',
+    hero: page => <HeroScene photo="/photos/use-cases/lead-capture.webp" alt="Autonomous inbound lead qualification matrix and CRM synchronization">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@example.com</span><span><b>Company</b>Lumen Home</span></div></Float>
       <Float className="pp-pos-br">{result(<img src="/brands/integrations/hubspot.svg" alt="" width={18} height={18} />, 'Lead saved to HubSpot', 'Tagged: quote request')}</Float>
@@ -206,8 +206,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-booking-agent': {
-    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/use-cases/booking.webp', alt: 'Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/booking.webp" alt="Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation">
+    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: '/photos/use-cases/booking.webp', alt: 'Autonomous 24/7 calendar coordination and slot confirmation matrix',
+    hero: page => <HeroScene photo="/photos/use-cases/booking.webp" alt="Autonomous 24/7 calendar coordination and slot confirmation matrix">
       <LivePhone kind="WhatsApp" business="City Care Clinic" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><CalendarDays size={14} />Thursday</div><div className="pp-slots"><span>11:00</span><span className="is-picked">3:30 <Check size={11} /></span><span>5:00</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Booked · Thu 3:30', 'Added to Google Calendar')}</Float>
@@ -233,8 +233,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-receptionist': {
-    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/use-cases/receptionist.webp', alt: 'Front desk on a phone call, with a live call transcript',
-    hero: page => <HeroScene photo="/photos/use-cases/receptionist.webp" alt="Front desk on a phone call, with a live call transcript">
+    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: '/photos/use-cases/receptionist.webp', alt: 'Neural voice receptionist and acoustic speech transcription engine',
+    hero: page => <HeroScene photo="/photos/use-cases/receptionist.webp" alt="Neural voice receptionist and acoustic speech transcription engine">
       <LiveCall business="City Care Clinic" className="pp-hero-phone" period={13000} transcript={page.walkthrough.steps.flatMap((s, i) => [{ who: 'Caller', text: s.customer, at: 600 + i * 4000 }, { who: 'AI receptionist', text: s.agent, at: 2400 + i * 4000 }])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Languages size={14} />Speaks</div><div className="pp-langs"><span className="is-picked">English</span><span>हिन्दी</span><span>తెలుగు</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Saturday 11:00 booked', 'Confirmation sent')}</Float>
@@ -261,8 +261,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-marketing-agent': {
-    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/use-cases/marketing.webp', alt: 'Boutique owner responding to campaign interest, with an Instagram conversation',
-    hero: page => <HeroScene photo="/photos/use-cases/marketing.webp" alt="Boutique owner responding to campaign interest, with an Instagram conversation">
+    icon: <Megaphone size={16} />, accent: ['turn into sales'], photo: '/photos/use-cases/marketing.webp', alt: 'Automated campaign conversation funnel and broadcast performance analytics',
+    hero: page => <HeroScene photo="/photos/use-cases/marketing.webp" alt="Automated campaign conversation funnel and broadcast performance analytics">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={12000} lines={[
         { from: 'agent', text: 'Thanks for your comment. Here are the details you asked for.', at: 400 },
         { from: 'customer', text: 'Medium in the linen shirt?', at: 2600 },
