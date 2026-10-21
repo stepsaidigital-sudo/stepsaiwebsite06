@@ -1,0 +1,6 @@
+Resolved in commit 32064cc and deployed to production:
+https://stepsaiwebsite06.vercel.app/#setup
+
+Replaced the generic orbit scene with a visual business-first journey: business details and website-derived industry, an interactive goal choice, and a tailored workspace preview. WhatsApp messaging, AI agent and website chat each show a distinct example and a relevant next step. Uses the real Steps AI logo with its original proportions and responsive directional connectors. Illustrative status and pending connections/approvals are explicit.
+
+Validation: production build passed (112 generated pages), canonical copy/section-order check passed, desktop 1440px and mobile 390px/320px inspected, no horizontal overflow, keyboard goal switching works, images load and no preview console errors. Independent finish review passed after removing contradictory screen-reader-only legacy copy. Existing workspace styles verified unchanged. Vercel reports deployment success; public page and goal switching verified.
