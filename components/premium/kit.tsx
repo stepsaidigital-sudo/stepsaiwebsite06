@@ -218,8 +218,8 @@ export function IndustryExamples({ title, intro, scenarios, noPhoto = false }: {
       <div className="pp-ind-copy">
         <span className="pp-ind-kind">{s.kind === 'Call' ? <PhoneIcon size={15} /> : <ChannelLogo channel={s.kind} />}{s.kind === 'Call' ? 'Phone call' : s.kind}</span>
         <h3>{s.business}</h3>
-        <p>An example of the conversation for a {s.industry.toLowerCase()} business. Your agent answers from your own information and tools.</p>
-        <Link href={s.href}>See {s.industry.toLowerCase()} solutions <ArrowRight size={15} /></Link>
+        <p>An example conversation for {/^[aeiou]/i.test(s.industry) ? 'an' : 'a'} {s.industry === 'SaaS' ? 'SaaS' : s.industry.toLowerCase()} business. Your agent answers from your own information and tools.</p>
+        <Link href={s.href}>See Steps AI for {s.industry === 'SaaS' ? 'SaaS' : s.industry.toLowerCase()} <ArrowRight size={15} /></Link>
       </div>
     </div>
   </div></section>;
@@ -291,7 +291,7 @@ export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta:
         <p key={`p${active}`} className="wb-swap">{stage.body}</p>
         <button className="wb-btn-light" onClick={() => onOpen(cta.label)}>{cta.icon}{cta.label} <ArrowRight size={15} /></button>
         <div className="wb-dots" role="tablist" aria-label={label}>
-          {stages.map((s, i) => <button key={s.pill} role="tab" aria-selected={i === active} aria-label={s.pill} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}><i style={{ animationPlayState: paused ? 'paused' : 'running' }} /></button>)}
+          {stages.map((s, i) => <button key={s.pill} role="tab" aria-selected={i === active} aria-label={`${s.pill}: ${s.title}`} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}><i style={{ animationPlayState: paused ? 'paused' : 'running' }} /></button>)}
         </div>
       </div>
       <div className="wb-band-card" key={`c${active}`}>{stage.card}</div>
@@ -358,11 +358,11 @@ export function FaqBlock({ title, items }: { title: string; items: Faq[] }) {
   </section>;
 }
 
-export function CtaBlock({ title, body, onOpen, art, artRight }: { title: string; body: string; onOpen: (l: string) => void; art: ReactNode; artRight?: ReactNode }) {
+export function CtaBlock({ title, body, onOpen, art, artRight, action = 'Book a demo' }: { title: string; body: string; onOpen: (l: string) => void; art: ReactNode; artRight?: ReactNode; action?: string }) {
   return <section className="container wb-cta-wrap"><Reveal className="wb-cta pp-cta">
     <div className="wb-cta-art pp-cta-art" aria-hidden="true">{art}</div>
     {artRight && <div className="wb-cta-art wb-cta-art-right pp-cta-art" aria-hidden="true">{artRight}</div>}
     <div className="wb-cta-copy"><h2>{title}</h2><p>{body}</p></div>
-    <button className="wb-btn wb-btn-navy" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
+    <button className="wb-btn wb-btn-navy" onClick={() => onOpen(action)}>{action} <ArrowRight size={16} /></button>
   </Reveal></section>;
 }

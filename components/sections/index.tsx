@@ -87,7 +87,7 @@ export function LogoStrip({ names }: { names: string[] }) {
 }
 
 export function CtaBand({ cta, onOpen }: Open & { cta: Cta }) {
-  return <section className="final-section"><div className="container"><img className="final-original" src="/brands/steps-original.png" alt="" /><h2>{cta.title}</h2><p>{cta.body}</p><Action onOpen={onOpen} className="yellow" /></div></section>;
+  return <section className="final-section"><div className="container"><img className="final-original" src="/brands/steps-original.png" alt="" /><h2>{cta.title}</h2><p>{cta.body}</p><Action onOpen={onOpen} className="yellow">{cta.action}</Action></div></section>;
 }
 
 // Mockups. Illustrative only, with fictional sample data.

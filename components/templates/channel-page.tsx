@@ -93,7 +93,7 @@ const designs: Record<string, Design> = {
     accent: ['day and night'], photo: '/photos/ch-whatsapp.jpg', alt: 'Customer chatting on WhatsApp, answered by an AI agent', logo: <ChannelLogo channel="WhatsApp" />,
     hero: <HeroScene photo="/photos/ch-whatsapp.jpg" alt="Customer chatting on WhatsApp, answered by an AI agent">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={11000} lines={waHero} />
-      <Float className="pp-pos-tr"><div className="pp-float-head"><BadgeCheck size={14} />Official WhatsApp Business API</div><Row icon={<ChannelLogo channel="WhatsApp" />} title="+91 98765 43210" sub="Connected through Meta" /></Float>
+      <Float className="pp-pos-tr"><div className="pp-float-head"><BadgeCheck size={14} />Official WhatsApp Business API</div><Row icon={<ChannelLogo channel="WhatsApp" />} title="+91 98xxx xxx10" sub="Connected through Meta" /></Float>
       <Float className="pp-pos-br">{result(<Clock size={16} />, 'Answered at 11:42 PM', 'No waiting for opening hours')}</Float>
       <span className="pp-bubble-logo pp-pos-logo"><ChannelLogo channel="WhatsApp" /></span>
     </HeroScene>,
@@ -160,7 +160,7 @@ const designs: Record<string, Design> = {
       </Card>,
     ],
     stageSides: [
-      side([['customer', 'PRICE'], ['agent', 'Thanks! The linen set is ₹2,800. Want the link?']], 'Comment turned into a DM'),
+      side([['customer', 'PRICE'], ['agent', 'Thanks. The linen set is ₹2,800. Want the link?']], 'Comment turned into a DM'),
       side([['customer', 'LINK'], ['agent', 'Here is the festive collection.']], 'Reel trigger fired'),
       side([['customer', 'Sizes'], ['agent', 'Here is the size guide. Which size do you usually wear?']], 'Branched on the tap'),
       side([['customer', 'Is this back in stock?'], ['agent', 'Yes, it is back. I have sent you the link.']], 'Comment answered'),
@@ -168,7 +168,7 @@ const designs: Record<string, Design> = {
     bandCta: { label: 'Connect Instagram', icon: <ChannelLogo channel="Instagram" /> },
     jobIcons: [[<MessageCircle key="a" size={20} />, 'blue'], [<AtSign key="b" size={20} />, 'violet'], [<ImageIcon key="c" size={20} />, 'blue'], [<ShoppingBag key="d" size={20} />, 'violet']],
     setupIcons: [<Plug key="a" size={24} />, <Bot key="b" size={24} />, <Tag key="c" size={24} />],
-    industries: { title: 'Instagram for every kind of business.', intro: 'Product launches, course enquiries, clinic bookings and property launches, all answered in the DMs.', kind: 'Instagram' },
+    industries: { title: 'Instagram for every kind of business.', intro: 'Product launches, course enquiries, clinic bookings and property enquiries, all answered in the DMs.', kind: 'Instagram' },
     ctaArt: [stack(result(<AtSign size={15} />, 'Comment to DM', 'Keyword PRICE'), result(<MessageCircle size={15} />, 'DM answered', 'In seconds')), stack(result(<ShoppingBag size={15} />, 'Link shared', 'In the chat'), result(<Headphones size={15} />, 'Team can step in', 'Replying pauses the AI'))],
   },
 
@@ -192,7 +192,7 @@ const designs: Record<string, Design> = {
         <Row icon={<FileText size={15} />} title="Returns policy.pdf" sub="Document" delay={350} />
         <Row icon={<BookOpen size={15} />} title="FAQs" sub="Edited once, used on every channel" picked delay={500} />
       </Card>,
-      <Card key="2" title="Shared inbox" status={<Chip>All channels</Chip>}>
+      <Card key="2" title="Unified inbox" status={<Chip>All channels</Chip>}>
         <Row icon={<ChannelLogo channel="Messenger" />} title="Meera · Open on Sunday?" sub="AI replied" delay={200} />
         <Row icon={<ChannelLogo channel="WhatsApp" />} title="Priya · Where is my order?" sub="AI replied" delay={350} />
         <Row icon={<ChannelLogo channel="Instagram" />} title="Rahul · Is M available?" sub="AI replied" picked delay={500} />
@@ -299,7 +299,7 @@ export function ChannelPageTemplate({ page }: { page: ChannelPage }) {
   const d = designs[page.slug];
   const checks = (page.hero.reassurance ?? '').split('. ').map(s => s.replace(/\.$/, '')).filter(Boolean);
   const stages: Stage[] = page.triggers.items.map((item, i) => ({
-    pill: `${i + 1} · ${item.title.split(' ').slice(0, 3).join(' ')}`, title: item.title, body: item.body, card: d.stageCards[i], side: d.stageSides[i],
+    pill: `Step ${i + 1} of ${page.triggers.items.length}`, title: item.title, body: item.body, card: d.stageCards[i], side: d.stageSides[i],
   }));
   const scenarios = d.industries ? channelScenarios(d.industries.kind) : [];
   return <SiteFrame>{onOpen => <div className="wb pp">
@@ -309,7 +309,7 @@ export function ChannelPageTemplate({ page }: { page: ChannelPage }) {
     <StepBand stages={stages} cta={d.bandCta} onOpen={onOpen} label={page.triggers.title} />
     {d.industries && scenarios.length > 1 && <IndustryExamples title={d.industries.title} intro={d.industries.intro} scenarios={scenarios} noPhoto />}
     <FlowStrip eyebrow="Setup" title={page.setup.title} intro={page.setup.intro} items={page.setup.items.map((item, i) => ({ ...item, icon: d.setupIcons[i], tint: i % 2 ? 'violet' : 'blue' }))} />
-    {handoffStory({ customer: 'Priya Shah', ask: 'Can I speak to someone about a bulk order?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. How many pieces do you need?' })}
+    {handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about a bulk order?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. How many pieces do you need?' })}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />
     <section className="container wb-split wb-related">

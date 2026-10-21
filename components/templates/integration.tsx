@@ -8,6 +8,13 @@ import { ContextCard, StepTheatre, TimedChat, type Scene } from '@/components/se
 import type { IntegrationApp, IntegrationPage } from '@/content/types';
 import { ConnectFlow } from '@/components/premium/connect-flow';
 
+// What the lookup card confirms, by app category. Apps the agent writes to are not 'checked'.
+const DONE: Record<string, string> = {
+  'Calendars': 'Booked before replying',
+  'CRM and support': 'Saved before replying',
+  'Messaging and marketing': 'Sent to your team',
+};
+
 export function AppLogo({ slug, size = 40 }: { slug: string; size?: number }) {
   return <img className="ig-logo" src={`/brands/integrations/${slug}.svg`} alt="" width={size} height={size} />;
 }
@@ -25,7 +32,7 @@ function ConnectedDemo({ page }: { page: IntegrationPage }) {
     <Reveal className="ig-lookup">
       <div className="ig-lookup-head"><AppLogo slug={page.slug} size={22} /><strong>{page.demo.lookup.title}</strong><small>Illustration</small></div>
       {page.demo.lookup.rows.map(([label, value], i) => <div key={label} className="ig-lookup-row" style={{ animationDelay: `${700 + i * 260}ms` }}><span>{label}</span><strong>{value}</strong></div>)}
-      <div className="ig-lookup-ok" style={{ animationDelay: `${800 + page.demo.lookup.rows.length * 260}ms` }}><Check size={13} /> Checked before replying</div>
+      <div className="ig-lookup-ok" style={{ animationDelay: `${800 + page.demo.lookup.rows.length * 260}ms` }}><Check size={13} /> {DONE[page.category] ?? 'Checked before replying'}</div>
     </Reveal>
   </div>;
 }
@@ -61,7 +68,7 @@ export function IntegrationTemplate({ page, related }: { page: IntegrationPage; 
     <Faq title={page.faq.title} items={page.faq.items} />
 
     <section className="sp-section container">
-      <SectionIntro eyebrow="Related" title="Integrations that work well alongside." />
+      <SectionIntro eyebrow="Related" title={`Integrations that work well with ${page.name}.`} />
       <DragRail label="Related integrations">{related.map(app => <AppCard key={app.slug} app={app} />)}</DragRail>
       <Link className="text-link ig-all" href="/integrations/">See all integrations <ArrowUpRight size={18} /></Link>
     </section>

@@ -364,7 +364,7 @@
           ],
           [
             "Appears",
-            "Straight away, 5 s, 10 s, 30 s or 1 minute"
+            "Straight away, 5 seconds, 10 seconds, 30 seconds or 1 minute"
           ],
           [
             "Theme",
@@ -534,7 +534,7 @@
       "steps": [
         {
           "title": "Add a keyword",
-          "body": "For example PRICE or LINK.",
+          "body": "For example, PRICE or LINK.",
           "path": "Agent › Channels › Instagram › Comments"
         },
         {
@@ -627,7 +627,7 @@
         }
       ],
       "table": {
-        "caption": "The 20 apps you can connect",
+        "caption": "The 21 apps you can connect",
         "columns": [
           "Category",
           "Apps"
@@ -647,7 +647,7 @@
           ],
           [
             "Knowledge and files",
-            "Google Drive, Notion, Airtable"
+            "Google Drive, Google Sheets, Notion, Airtable"
           ],
           [
             "Messaging",
@@ -824,7 +824,7 @@
           "body": "Describe the situation in one or two sentences."
         },
         {
-          "title": "Add should examples",
+          "title": "Add “should trigger” examples",
           "body": "Messages that should trigger the skill."
         },
         {
@@ -903,7 +903,7 @@
         "rows": [
           [
             "Wait time",
-            "10 s, 30 s, 1 minute or 2 minutes"
+            "10 seconds, 30 seconds, 1 minute or 2 minutes"
           ],
           [
             "Fallback message",
@@ -911,7 +911,7 @@
           ],
           [
             "Email alert",
-            "Any recipients. Empty turns alerts off"
+            "Any recipients. Leave it empty to turn alerts off."
           ]
         ]
       },
@@ -1421,7 +1421,7 @@
       "title": "Product limits at a glance",
       "level": "Beginner",
       "plans": "All plans",
-      "summary": "The numbers people ask about most.",
+      "summary": "Agents, CRM contacts, WhatsApp campaign sizes and the other Steps AI limits, in one table.",
       "steps": [
         {
           "title": "Check the table",

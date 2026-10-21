@@ -25,7 +25,7 @@ const PRODUCT = '/industries/ecommerce.png';
 
 function InboxHandoff({ customer, ask, agentLine, team }: { customer: string; ask: string; agentLine: string; team: string }) {
   return <div className="pp-inbox">
-    <div className="pp-inbox-head"><span className="wb-avatar wb-peach">{customer[0]}</span><div><strong>{customer}</strong><small>Shared inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
+    <div className="pp-inbox-head"><span className="wb-avatar wb-peach">{customer[0]}</span><div><strong>{customer}</strong><small>Unified inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
     <div className="pp-inbox-thread">
       <p className="is-customer">{ask}</p>
       <p className="is-agent">{agentLine}</p>
@@ -38,7 +38,7 @@ function InboxHandoff({ customer, ask, agentLine, team }: { customer: string; as
 
 export function handoffStory(theme: { customer: string; ask: string; agentLine: string; team: string }, reverse = false, photo?: string) {
   return <PhotoStory key="handoff" id="handoff" reverse={reverse} tint="warm" eyebrow="Human handoff" title="Your team steps in, with the whole conversation."
-    body="When a customer asks for a person, or the agent reaches something it should not handle, the chat moves to your shared inbox with the full history. Nobody has to repeat themselves."
+    body="When a customer asks for a person, or the agent reaches something it should not handle, the chat moves to your unified inbox with the full history. Nobody has to repeat themselves."
     points={['Set a wait time and a fallback message', 'Email the right person when someone is needed', 'On Instagram, replying from the app pauses the AI']}
     photo={photo} alt="A team member stepping in to help a customer"
     overlay={<InboxHandoff {...theme} />} />;
@@ -65,7 +65,7 @@ const leadStory = <PhotoStory key="lead" id="leads" reverse eyebrow="Lead genera
   points={['Name, email, company and your own custom fields', 'Verify by email or phone code', 'Saved to your CRM or HubSpot, tagged by source']}
   photo="/photos/st-leads.jpg" alt="Business meeting about a new enquiry"
   overlay={<Card title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
-    <Row icon={<UserPlus size={15} />} title="Meera Shah" sub="meera@lumenhome.in · Verified" />
+    <Row icon={<UserPlus size={15} />} title="Meera Shah" sub="meera@aurastudio.in · Verified" />
     <Row icon={<Tag size={15} />} title="Lumen Home" sub="Tag: quote request · Source: website" />
     <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Owner: sales team" picked />
   </Card>} />;
@@ -83,7 +83,7 @@ const agents = [
 
 export function OtherAgents({ current, title = 'One agent can do more than one job.' }: { current: string; title?: string }) {
   return <section className="container pp-agents-wrap">
-    <div className="pp-head"><span className="wb-eyebrow">One platform</span><h2>{title}</h2><p>Give the same agent the skills it needs, or run a separate agent for each job. They share your information, inbox and contacts.</p></div>
+    <div className="pp-head"><span className="wb-eyebrow">One agent, many jobs</span><h2>{title}</h2><p>Give the same agent the skills it needs, or run a separate agent for each job. They share your information, inbox and contacts.</p></div>
     <div className="pp-agents">{agents.filter(a => a.slug !== current).map(a => <Reveal key={a.slug}><Link className="pp-agent" href={`/use-cases/${a.slug}/`}>
       <span className={`pp-cap-ico wb-${a.tint}`}>{a.icon}</span><span><strong>{a.label}</strong><small>{a.body}</small></span><ArrowRight size={15} />
     </Link></Reveal>)}</div>
@@ -170,7 +170,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your store', icon: <img src="/brands/integrations/shopify.svg" alt="" /> },
     capIcons: [[<Truck key="a" size={20} />, 'teal'], [<BookOpen key="b" size={20} />, 'blue'], [<Ticket key="c" size={20} />, 'amber'], [<Headphones key="d" size={20} />, 'violet'], [<PhoneIncoming key="e" size={20} />, 'green']],
-    stories: [handoffStory({ customer: 'Priya Shah', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, '/photos/ho-support.jpg')],
+    stories: [handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, '/photos/ho-support.jpg')],
     ctaArt: [ctaStack(result(<Truck size={15} />, 'Order checked', 'Out for delivery'), result(<BookOpen size={15} />, 'Policy answered', 'From your returns page')), ctaStack(result(<Ticket size={15} />, 'Ticket created', 'Photo attached'), result(<UserCheck size={15} />, 'Team joined', 'Full history'))],
   },
 
@@ -193,7 +193,7 @@ const designs: Record<string, Design> = {
         <Row icon={<Users size={15} />} title="Company" sub="Optional" delay={600} />
       </Card>,
       <Card key="2" title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
-        <Row icon={<UserPlus size={15} />} title="Meera Shah · Lumen Home" sub="meera@lumenhome.in" delay={200} />
+        <Row icon={<UserPlus size={15} />} title="Meera Shah · Aura Studio" sub="meera@aurastudio.in" delay={200} />
         <Row icon={<Tag size={15} />} title="Source: website chat" sub="Agent: Sales assistant" delay={400} />
         <Row icon={<img src="/brands/integrations/hubspot.svg" alt="" width={16} height={16} />} title="Synced to HubSpot" sub="Ready for follow-up" picked delay={600} />
       </Card>,
@@ -255,7 +255,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect a phone number', icon: <PhoneCall size={18} /> },
     capIcons: [[<PhoneIncoming key="a" size={20} />, 'blue'], [<Languages key="b" size={20} />, 'violet'], [<Voicemail key="c" size={20} />, 'amber'], [<PhoneCall key="d" size={20} />, 'green'], [<Inbox key="e" size={20} />, 'teal']],
-    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr. Nair’s desk' }, false, '/photos/ho-receptionist.jpg')],
+    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr Nair’s desk' }, false, '/photos/ho-receptionist.jpg')],
     ctaArt: [ctaStack(result(<PhoneIncoming size={15} />, 'Call answered', 'In three languages'), result(<CalendarCheck size={15} />, 'Visit booked', 'Saturday, 11:00')), ctaStack(result(<Headphones size={15} />, 'Transferred', 'To your team'), result(<Voicemail size={15} />, 'Callback ticket', 'After hours'))],
   },
 
@@ -280,7 +280,7 @@ const designs: Record<string, Design> = {
         <Row icon={<PackageCheck size={15} />} title="Linen shirt · Medium" sub="In stock" delay={200} />
         <Row icon={<Link2 size={15} />} title="Checkout link sent" sub="In the same chat" picked delay={450} />
       </Card>,
-      <Card key="2" title="Comment to DM" status={<Chip tone="green"><Check size={11} />Live</Chip>}>
+      <Card key="2" title="Comment-to-DM" status={<Chip tone="green"><Check size={11} />Live</Chip>}>
         <Row icon={<MessageCircle size={15} />} title="Keyword: PRICE" sub="On posts and Reels" delay={200} />
         <Row icon={<ChannelLogo channel="Instagram" />} title="DM sent to anu.k" sub="Agent takes it from there" picked delay={450} />
       </Card>,
@@ -288,7 +288,7 @@ const designs: Record<string, Design> = {
     bandCta: { label: 'Connect WhatsApp', icon: <ChannelLogo channel="WhatsApp" /> },
     capIcons: [[<Megaphone key="a" size={20} />, 'rose'], [<MessageCircle key="b" size={20} />, 'violet'], [<Workflow key="c" size={20} />, 'teal'], [<BarChart3 key="d" size={20} />, 'amber']],
     stories: [catalogStory('/photos/st-catalog-marketing.jpg'), handoffStory({ customer: 'Anu K.', ask: 'Can I get a custom colour for a bulk order?', agentLine: 'Let me check with the team for you.', team: 'Hi Anu, we can do that. How many pieces?' }, true, '/photos/ho-marketing.jpg')],
-    ctaArt: [ctaStack(result(<Send size={15} />, 'Campaign sent', 'Approved template'), result(<MessageCircle size={15} />, 'Comment to DM', 'Keyword PRICE')), ctaStack(result(<Bot size={15} />, 'Replies answered', 'By your agent'), result(<BarChart3 size={15} />, 'Revenue tracked', 'Shopify orders'))],
+    ctaArt: [ctaStack(result(<Send size={15} />, 'Campaign sent', 'Approved template'), result(<MessageCircle size={15} />, 'Comment-to-DM', 'Keyword PRICE')), ctaStack(result(<Bot size={15} />, 'Replies answered', 'By your agent'), result(<BarChart3 size={15} />, 'Revenue tracked', 'Shopify orders'))],
   },
 };
 

@@ -34,7 +34,7 @@
       "body": "Send now or plan for later"
     },
     {
-      "title": "AI follow up",
+      "title": "AI follow-up",
       "body": "Your agent handles replies and next steps"
     }
   ],
@@ -97,7 +97,7 @@
         "body": "Pick from the WhatsApp templates Meta has approved for your number, so every send follows WhatsApp rules."
       },
       {
-        "title": "Let AI follow up on replies",
+        "title": "Let AI follow-up on replies",
         "body": "When someone replies, your AI agent answers from your business information and your team sees it in the shared inbox."
       }
     ]

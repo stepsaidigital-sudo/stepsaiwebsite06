@@ -10,7 +10,7 @@
   },
   "hero": {
     "kicker": "Steps AI vs Wati",
-    "title": "Steps AI vs Wati: beyond WhatsApp-only support.",
+    "title": "Steps AI vs Wati: more than WhatsApp-first support.",
     "body": "Wati is a WhatsApp Business platform for broadcasts, team inboxes and chatbot flows. Steps AI covers WhatsApp too, and adds your website, Instagram and Messenger with one agent that checks your store before replying.",
     "reassurance": "Where we fit. Where they fit. How to switch."
   },
@@ -36,7 +36,7 @@
       {
         "label": "How you pay",
         "steps": "Per reply in credits. The cost of a reply depends on the AI model you choose",
-        "them": "Monthly plans plus WhatsApp conversation charges"
+        "them": "Monthly plans plus Meta’s WhatsApp message charges"
       },
       {
         "label": "What happens after the answer",
@@ -79,7 +79,7 @@
   },
   "switching": {
     "title": "Moving from Wati to Steps AI.",
-    "intro": "Most businesses are answering real customers within a day.",
+    "intro": "You can test answers on your own questions the same day you connect.",
     "items": [
       {
         "title": "Paste your website address",
@@ -99,7 +99,7 @@
     "title": "Good to know",
     "items": [
       "This comparison uses publicly available information about Wati as of October 2026. Check their site for current plans and features.",
-      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+      "Steps AI does not answer inbound email. AI voice calls are billed as credits."
     ]
   },
   "faq": {

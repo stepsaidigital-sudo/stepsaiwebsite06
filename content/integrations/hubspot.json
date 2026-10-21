@@ -34,11 +34,11 @@
       },
       {
         "from": "customer",
-        "text": "Rahul, rahul@example.com"
+        "text": "Rahul, rahul@kaveristores.in"
       },
       {
         "from": "agent",
-        "text": "Thanks Rahul. Our team will be in touch today."
+        "text": "Thanks, Rahul. Our team will be in touch today."
       }
     ],
     "lookup": {
@@ -50,7 +50,7 @@
         ],
         [
           "Email",
-          "rahul@example.com"
+          "rahul@kaveristores.in"
         ],
         [
           "Source",
@@ -101,7 +101,7 @@
       },
       {
         "label": "Save to HubSpot",
-        "customer": "Rahul, rahul@example.com, Nivara Retail.",
+        "customer": "Rahul, rahul@kaveristores.in, Nivara Retail.",
         "agent": "Thank you Rahul. Our team will be in touch today.",
         "note": "The contact is created in HubSpot with what was collected.",
         "result": "Contact saved to HubSpot"

@@ -41,6 +41,7 @@
   ],
   "cta": {
     "title": "Apply to the affiliate program.",
-    "body": "Get in touch and we will share the current terms and your referral link."
+    "body": "Get in touch and we will share the current terms and your referral link.",
+    "action": "Apply"
   }
 }

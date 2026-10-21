@@ -166,8 +166,19 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
   const heroLines: Line[] = j.length >= 2
     ? [{ from: 'customer', text: j[0].customer, at: 400 }, { from: 'agent', text: j[0].agent, at: 2300 }, { from: 'customer', text: last.customer, at: 4800 }, { from: 'agent', text: last.agent, at: 6700 }]
     : page.questions.items.slice(0, 2).flatMap((q, i) => [{ from: 'customer' as const, text: q.text, at: 400 + i * 4200 }]);
+  // Two results in the closing band that fit this industry (ecommerce keeps checkout and tracking).
+  const outcomes: Record<string, [ReactNode, string, string][]> = {
+    ecommerce: [[<ShoppingCart key="a" size={15} />, 'Checkout link sent', 'In the chat'], [<Truck key="b" size={15} />, 'Order tracked', 'From your courier']],
+    healthcare: [[<CalendarDays key="a" size={15} />, 'Visit booked', 'In your calendar'], [<CircleCheck key="b" size={15} />, 'Patient details saved', 'For your front desk']],
+    education: [[<CircleCheck key="a" size={15} />, 'Enquiry saved', 'With course and batch'], [<CalendarDays key="b" size={15} />, 'Counselling booked', 'In your calendar']],
+    'financial-services': [[<CircleCheck key="a" size={15} />, 'Lead saved', 'With the details you need'], [<CalendarDays key="b" size={15} />, 'Call booked', 'With your advisor']],
+    'real-estate': [[<CircleCheck key="a" size={15} />, 'Lead saved', 'With budget and timeline'], [<CalendarDays key="b" size={15} />, 'Site visit booked', 'In your calendar']],
+    saas: [[<CircleCheck key="a" size={15} />, 'Lead saved', 'To your CRM'], [<CalendarDays key="b" size={15} />, 'Demo booked', 'In your calendar']],
+    'travel-and-hospitality': [[<CircleCheck key="a" size={15} />, 'Enquiry saved', 'With dates and guests'], [<CalendarDays key="b" size={15} />, 'Call booked', 'With your team']],
+  };
+  const outcome = outcomes[page.slug] ?? outcomes.ecommerce;
   const stages: Stage[] = j.map((s, i) => ({
-    pill: `Step ${i + 1} · ${s.title.split(' ').slice(0, 2).join(' ')}`, title: s.title, body: s.body,
+    pill: `Step ${i + 1} of ${j.length}`, title: s.title, body: s.body,
     card: <Card title={s.card.title} status={<Chip tone="green"><Check size={11} />{s.card.chip}</Chip>}>{s.card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === s.card.rows.length - 1} delay={200 + k * 220} />)}</Card>,
     side: <div className="wb-chat"><Bubble who="customer" delay={300}>{s.customer}</Bubble><Bubble who="agent" delay={1300}>{s.agent}</Bubble><div className="pp-step-result" style={{ animationDelay: '2200ms' }}><CircleCheck size={14} />{s.result}</div></div>,
   }));
@@ -193,8 +204,8 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />
     <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen}
-      art={<div className="pp-cta-stack"><Float>{result(<CircleCheck size={15} />, 'Question answered', 'In seconds')}</Float><Float>{result(<ShoppingCart size={15} />, 'Checkout link sent', 'In the chat')}</Float></div>}
-      artRight={<div className="pp-cta-stack"><Float>{result(<Truck size={15} />, 'Order tracked', 'From your courier')}</Float><Float>{result(<Headphones size={15} />, 'Team joined', 'With the full history')}</Float></div>} />
+      art={<div className="pp-cta-stack"><Float>{result(<CircleCheck size={15} />, 'Question answered', 'In seconds')}</Float><Float>{result(outcome[0][0], outcome[0][1], outcome[0][2])}</Float></div>}
+      artRight={<div className="pp-cta-stack"><Float>{result(outcome[1][0], outcome[1][1], outcome[1][2])}</Float><Float>{result(<Headphones size={15} />, 'Team joined', 'With the full history')}</Float></div>} />
   </div>}</SiteFrame>;
 }
 

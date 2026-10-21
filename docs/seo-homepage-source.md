@@ -150,7 +150,7 @@ Your agent handles the routine work. Your team can see what happened and take ov
 
 ### **One inbox for your customer messages**
 
-View website, WhatsApp, Instagram and Messenger conversations together. Filter by channel or label, and assign conversations to your team.
+View website, WhatsApp, Instagram and Messenger conversations together. Filter by channel or tag, and assign conversations to your team.
 
 ### **Customer details saved as you talk**
 

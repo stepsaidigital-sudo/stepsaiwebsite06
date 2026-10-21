@@ -70,12 +70,12 @@ const panelRows: [string, string, ReactNode][] = [
   ['Select template', 'Choose from approved templates', <span key="c" className="wb-chip wb-chip-green"><Check size={11} />Approved</span>],
   ['Add audience', 'Select segments or upload list', <span key="c" className="wb-chip">850 contacts</span>],
   ['Schedule', 'Pick date and time', <span key="c" className="wb-chip">Send now or later</span>],
-  ['AI follow up', 'Engage, qualify and convert', <span key="c" className="wb-chip">Handled by your agent</span>],
+  ['AI follow-up', 'Engage, qualify and convert', <span key="c" className="wb-chip">Handled by your agent</span>],
 ];
 
 function BroadcastPanel() {
   return <div className="wb-panel">
-    <div className="wb-panel-head"><strong>New Broadcast</strong><span>Draft <ArrowRight size={12} /></span></div>
+    <div className="wb-panel-head"><strong>New broadcast</strong><span>Draft <ArrowRight size={12} /></span></div>
     {panelRows.map(([title, sub, chip], i) => <div key={title} className="wb-panel-row" style={{ animationDelay: `${500 + i * 220}ms` }}>
       <span className="wb-num">{i + 1}</span>
       <div><strong>{title}</strong><small>{sub}</small></div>
@@ -121,8 +121,8 @@ function stages(): Stage[] {
     {
       pill: 'Step 1 · Connect',
       card: <Card title="WhatsApp Business" status={<span className="wb-chip wb-chip-green"><CircleCheck size={12} />Connected</span>}>
-        <div className="wb-row wb-row-box"><span className="wb-wa-mini"><ChannelLogo channel="WhatsApp" /></span><div><strong>+91 98765 43210</strong><small>Connected 2 minutes ago</small></div></div>
-        <small className="wb-label">Assigned Agent</small>
+        <div className="wb-row wb-row-box"><span className="wb-wa-mini"><ChannelLogo channel="WhatsApp" /></span><div><strong>+91 98xxx xxx10</strong><small>Connected 2 minutes ago</small></div></div>
+        <small className="wb-label">Assigned agent</small>
         <div className="wb-row wb-row-box wb-row-link"><span className="wb-agent"><Users size={16} /></span><div><strong>Sales Assistant</strong><small>Handles replies, qualifies leads and books meetings.</small></div><ChevronRight size={16} /></div>
       </Card>,
       side: <div className="wb-chat">
@@ -156,7 +156,7 @@ function stages(): Stage[] {
     {
       pill: 'Step 4 · Replies',
       card: <Card title="Shared inbox" status={<span className="wb-chip">3 new replies</span>}>
-        {[['P', 'Priya S.', 'SIZE. Do you have it in medium?', 'peach'], ['R', 'Rahul M.', 'Is delivery free this week?', 'blue'], ['A', 'Anu K.', 'Please send the link.', 'mint']].map(([n, name, text, tone], i) =>
+        {[['P', 'Priya N.', 'SIZE. Do you have it in medium?', 'peach'], ['R', 'Rahul M.', 'Is delivery free this week?', 'blue'], ['A', 'Anu K.', 'Please send the link.', 'mint']].map(([n, name, text, tone], i) =>
           <div key={name} className="wb-row wb-row-box" style={{ animationDelay: `${200 + i * 180}ms` }}><Avatar name={n} tone={tone} /><div><strong>{name}</strong><small>{text}</small></div><span className="wb-chip wb-chip-soft">AI replied</span></div>)}
       </Card>,
       side: <div className="wb-chat">
@@ -202,7 +202,7 @@ const featureIcons = [
   [ShieldCheck, 'rose'], [FileCheck2, 'violet'], [Sparkles, 'teal'],
 ] as const;
 // Reference order: list, customers, cost / tag, personalise, track / opt-outs, templates, AI.
-const featureOrder = ['Send to a saved list or CSV', 'Reach your Shopify customers', 'Check the cost before you send', 'Target one tag at a time', 'Personalise names and offers', 'Track delivery and retry failures', 'Respect opt-outs automatically', 'Use approved templates', 'Let AI follow up on replies'];
+const featureOrder = ['Send to a saved list or CSV', 'Reach your Shopify customers', 'Check the cost before you send', 'Target one tag at a time', 'Personalise names and offers', 'Track delivery and retry failures', 'Respect opt-outs automatically', 'Use approved templates', 'Let AI follow-up on replies'];
 
 function FeatureTiles({ items }: { items: FeaturePage['features']['items'] }) {
   const [open, setOpen] = useState<string | null>(null);

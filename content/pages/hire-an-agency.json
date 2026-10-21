@@ -41,6 +41,7 @@
   ],
   "cta": {
     "title": "Find an agency for your setup.",
-    "body": "Book a call and we will introduce you to a partner that fits your business."
+    "body": "Book a call and we will introduce you to a partner that fits your business.",
+    "action": "Book a call"
   }
 }

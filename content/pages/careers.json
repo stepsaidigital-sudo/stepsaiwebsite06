@@ -39,6 +39,7 @@
   ],
   "cta": {
     "title": "Want to work with us?",
-    "body": "Get in touch and tell us what you would like to build."
+    "body": "Get in touch and tell us what you would like to build.",
+    "action": "Send us a note"
   }
 }

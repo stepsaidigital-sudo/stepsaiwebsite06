@@ -16,7 +16,7 @@
   "hero": {
     "kicker": "Healthcare",
     "title": "Answer patients and fill your appointment book.",
-    "body": "Share clinic information, answer booking questions and collect appointment details on WhatsApp, your website and phone calls. Your agent never gives medical advice.",
+    "body": "Share clinic information, answer booking questions and collect appointment details on WhatsApp, your website and phone calls. Set a guardrail and your agent will not give medical advice.",
     "reassurance": "Clinic information only. Bookings in your calendar. Your team for anything clinical.",
     "channels": [
       "WhatsApp",
@@ -135,7 +135,7 @@
       {
         "pain": "Patients ask medical questions in chat.",
         "scene": "Someone asks about their report. A wrong answer is not an option.",
-        "fix": "Anything medical goes to your team with the conversation attached. Your agent never gives medical advice.",
+        "fix": "Anything medical goes to your team with the conversation attached. Set a guardrail and your agent will not give medical advice.",
         "agent": "ai-support-agent",
         "ask": "Is my report normal?",
         "reply": "I will pass this to the clinic team. A doctor will reply.",
@@ -213,12 +213,12 @@
             [
               "calendar",
               "Tomorrow, 11:00",
-              "Dr. Nair"
+              "Dr Nair"
             ],
             [
               "calendar",
               "Tomorrow, 4:30",
-              "Dr. Nair"
+              "Dr Nair"
             ]
           ]
         }

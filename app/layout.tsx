@@ -6,7 +6,7 @@ import "./industries.css";
 import "./hero-channels.css";
 
 export const metadata: Metadata = {
-  title: "Steps AI — Your AI agent for marketing, sales and support",
+  title: "Steps AI: Your AI agent for marketing, sales and support",
   description: "Send campaigns, answer customer questions, capture leads and book appointments. Your AI agent, customer messages and follow-ups in one platform.",
   other: {
     "codex-preview": "development",

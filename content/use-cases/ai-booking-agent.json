@@ -25,7 +25,7 @@
       {
         "label": "Answer the question",
         "customer": "How long is a first consultation?",
-        "agent": "A first consultation is 45 minutes. Would you like to book one?",
+        "agent": "A first consultation is 30 minutes. Would you like to book one?",
         "note": "The agent answers from your information first.",
         "result": "Question answered"
       },

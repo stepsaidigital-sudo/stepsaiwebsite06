@@ -7,7 +7,7 @@
   "category": "Shipping",
   "depth": "standard",
   "seo": {
-    "title": "iThink Logistics order tracking on WhatsApp and chat | Steps AI",
+    "title": "iThink Logistics order tracking in chat | Steps AI",
     "description": "Connect iThink Logistics to Steps AI so customers get delivery status in the chat on WhatsApp, Instagram and your website."
   },
   "hero": {
@@ -53,7 +53,7 @@
   },
   "useCases": {
     "title": "What you can do with iThink Logistics connected.",
-    "intro": "Fewer \"where is my order\" messages for your team, and faster answers for customers.",
+    "intro": "Fewer “where is my order” messages for your team, and faster answers for customers.",
     "items": [
       {
         "title": "Answer delivery questions instantly",

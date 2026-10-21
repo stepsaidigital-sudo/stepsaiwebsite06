@@ -10,7 +10,7 @@
     "body": "Book a demo and we will walk through it using your own information and channels."
   },
   "seo": {
-    "title": "AI chatbot for real estate enquiries and site visits | Steps AI",
+    "title": "AI chatbot for real estate enquiries | Steps AI",
     "description": "Answer property questions, qualify buyers and book site visits on WhatsApp, Instagram and your website."
   },
   "hero": {
@@ -156,7 +156,7 @@
         "does": [
           "Asks budget, size and timeline",
           "Saves them as CRM fields",
-          "Tags the ad they came from"
+          "Tags where each lead came from"
         ]
       },
       {

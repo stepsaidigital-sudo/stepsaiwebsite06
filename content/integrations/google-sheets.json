@@ -25,7 +25,7 @@
       },
       {
         "from": "agent",
-        "text": "The 5 kg bag is 620. It is available for delivery this week."
+        "text": "The 5 kg bag is ₹620. It is available for delivery this week."
       }
     ],
     "lookup": {
@@ -82,7 +82,7 @@
       {
         "label": "Answer a price question",
         "customer": "How much is the 5 kg rice bag?",
-        "agent": "The 5 kg bag is 620.",
+        "agent": "The 5 kg bag is ₹620.",
         "note": "Prices are read from your price list sheet.",
         "result": "Price from your sheet"
       },

@@ -16,7 +16,7 @@
     {
       "title": "Why agencies partner with Steps AI.",
       "paragraphs": [
-        "Most agencies do not have AI infrastructure of their own. Steps AI becomes the platform you set up, run and charge for."
+        "Most agencies do not have AI infrastructure of their own. Steps AI becomes the AI you set up, run and charge for."
       ],
       "items": [
         {
@@ -43,6 +43,7 @@
   ],
   "cta": {
     "title": "Apply to become a partner.",
-    "body": "Book a call and we will walk through how the program works for your agency."
+    "body": "Book a call and we will walk through how the program works for your agency.",
+    "action": "Book a call"
   }
 }

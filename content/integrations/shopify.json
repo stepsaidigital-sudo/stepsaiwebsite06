@@ -7,7 +7,7 @@
   "category": "Ecommerce",
   "depth": "deep",
   "seo": {
-    "title": "Shopify AI chatbot for WhatsApp, Instagram and your store | Steps AI",
+    "title": "Shopify AI chatbot for WhatsApp and Instagram | Steps AI",
     "description": "Connect Shopify to Steps AI. Answer order questions, recommend products, add to cart and check out in the chat, and recover carts with ready-made workflows."
   },
   "hero": {
@@ -68,7 +68,7 @@
     "intro": "Each one uses live data from your store, so the agent answers from what is true right now.",
     "items": [
       {
-        "title": "Answer where is my order",
+        "title": "Answer “Where is my order?”",
         "body": "The agent finds the order in Shopify and replies with its current status, on any channel the customer uses."
       },
       {

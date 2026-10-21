@@ -4,7 +4,7 @@
   "kind": "feature",
   "slug": "skills",
   "seo": {
-    "title": "AI agent skills: booking, tickets, leads and handoff | Steps AI",
+    "title": "AI agent skills: bookings, tickets and handoff | Steps AI",
     "description": "Give your AI agent skills to book appointments, create tickets, save leads, hand over to your team and search the web, with rules you write in plain English."
   },
   "hero": {
@@ -19,7 +19,7 @@
     "items": [
       {
         "title": "Say when to use it",
-        "body": "Describe in plain English when the skill should be used, with examples of when it should and should not."
+        "body": "Describe in plain English when the skill should be used, with examples of when it should and should not be used."
       },
       {
         "title": "Choose what it collects",

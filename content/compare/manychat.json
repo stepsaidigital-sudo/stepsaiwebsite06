@@ -79,7 +79,7 @@
   },
   "switching": {
     "title": "Moving from Manychat to Steps AI.",
-    "intro": "Most businesses are answering real customers within a day.",
+    "intro": "You can test answers on your own questions the same day you connect.",
     "items": [
       {
         "title": "Paste your website address",
@@ -99,7 +99,7 @@
     "title": "Good to know",
     "items": [
       "This comparison uses publicly available information about Manychat as of October 2026. Check their site for current plans and features.",
-      "Steps AI does not answer inbound email, and AI voice calls are billed as credits."
+      "Steps AI does not answer inbound email. AI voice calls are billed as credits."
     ]
   },
   "faq": {

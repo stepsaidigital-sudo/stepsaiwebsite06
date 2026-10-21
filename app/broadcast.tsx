@@ -12,7 +12,7 @@ const DURATION=7000;
 const tabs=[
   {key:'wa',channel:'WhatsApp',icon:Megaphone,title:'WhatsApp broadcast',line:'Send an approved template to a tagged audience. Replies go straight to your agent.'},
   {key:'dm',channel:'Instagram',icon:MessageCircle,title:'Instagram DM',line:'Story replies and DMs get an answer straight away, day or night.'},
-  {key:'c2d',channel:'Instagram',icon:AtSign,title:'Comment to DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
+  {key:'c2d',channel:'Instagram',icon:AtSign,title:'Comment-to-DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
 ];
 
 const B=({d,className='',children}:{d:number;className?:string;children?:ReactNode})=><div className={`bx ${className}`} style={{'--d':`${d}ms`} as CSSProperties}>{children}</div>;

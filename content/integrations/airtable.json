@@ -21,27 +21,27 @@
     "lines": [
       {
         "from": "customer",
-        "text": "What is your return policy for sale items?"
+        "text": "Is the weekend pottery batch still open?"
       },
       {
         "from": "agent",
-        "text": "Sale items can be exchanged within 14 days. Refunds are not available on sale items."
+        "text": "Yes, the Saturday batch starts on 8 November and has 4 seats left. Shall I share the booking link?"
       }
     ],
     "lookup": {
-      "title": "Airtable · Source used",
+      "title": "Airtable · Courses",
       "rows": [
         [
-          "Document",
-          "Returns and exchanges"
+          "Table",
+          "Courses"
         ],
         [
-          "Section",
-          "Sale items"
+          "Row",
+          "Weekend pottery batch"
         ],
         [
-          "Answer",
-          "From your content"
+          "Seats left",
+          "4"
         ]
       ]
     }

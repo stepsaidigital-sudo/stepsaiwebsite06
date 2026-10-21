@@ -21,12 +21,22 @@ function signIn(app: ConnectApp): { label: string; icon: 'google' | 'microsoft' 
 }
 
 const logo = (slug: string, size = 22) => <img src={`/brands/integrations/${slug}.svg`} alt="" width={size} height={size} />;
+// The last step's caption, by app category.
+const LIVE: Record<string, string> = {
+  'Ecommerce': 'Answers now use live store data',
+  'Shipping': 'Answers now use live tracking',
+  'Calendars': 'Bookings go into your calendar',
+  'CRM and support': 'Leads and tickets go to your tools',
+  'Messaging and marketing': 'Updates reach your team',
+  'Knowledge and data': 'Answers now use your content',
+};
+
 const STEPS = [
   { icon: <LayoutGrid size={18} />, title: 'Open Apps', cap: () => 'Resources, then Apps, in your dashboard' },
   { icon: <MousePointerClick size={18} />, title: 'Pick the app', cap: (a: ConnectApp) => `Search and select ${a.name}` },
   { icon: <LogIn size={18} />, title: 'Sign in', cap: () => 'Allow access once' },
   { icon: <ToggleRight size={18} />, title: 'Switch on', cap: () => 'Turn it on for each agent' },
-  { icon: <Zap size={18} />, title: 'Live', cap: () => 'Answers now use live data' },
+  { icon: <Zap size={18} />, title: 'Live', cap: (a: ConnectApp) => LIVE[a.category] ?? 'Your agent can now use it' },
 ];
 
 export function ConnectFlow({ app, apps, title, intro }: { app?: ConnectApp; apps?: ConnectApp[]; title?: string; intro?: string }) {

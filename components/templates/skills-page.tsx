@@ -22,7 +22,7 @@ const result = (icon: React.ReactNode, title: string, sub: string) => <div class
 
 const cards = [
   <Card key="0" title="Book appointment" status={<Chip tone="soft">When to use</Chip>}>
-    <div className="pp-rule"><p>Use when the customer wants to book, move or ask about a free time for a consultation.</p></div>
+    <div className="pp-rule"><p>Use when the customer wants to book or move a consultation, or asks which times are free.</p></div>
     <Row icon={<Check size={15} />} title="“Can I come in on Friday?”" sub="Use the skill" delay={200} />
     <Row icon={<XCircle size={15} />} title="“What are your prices?”" sub="Answer instead, do not book" delay={400} />
   </Card>,
@@ -46,7 +46,7 @@ const cards = [
 const sides = [
   [{ who: 'customer', text: 'Can I book a consultation for Friday?' }, { who: 'agent', text: 'Happy to help you book. Friday has 11:00 or 4:30 free.' }],
   [{ who: 'customer', text: '4:30 works.' }, { who: 'agent', text: 'Lovely. May I have your name and email?' }],
-  [{ who: 'customer', text: 'Priya, priya@example.com' }, { who: 'agent', text: 'You are booked for Friday at 4:30. See you then.' }],
+  [{ who: 'customer', text: 'Priya, priya.nair@gmail.com' }, { who: 'agent', text: 'You are booked for Friday at 4:30. See you then.' }],
   [{ who: 'customer', text: 'Thank you!' }, { who: 'agent', text: 'You will get a confirmation shortly.' }],
 ] as const;
 const results = ['Skill matched', 'Details collected', 'Added to Google Calendar', 'Saved and team notified'];
@@ -92,9 +92,9 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
       overlay={<Card title="Flow skill · Warranty claim" status={<Chip tone="green"><Check size={11} />Active</Chip>}>
         <Row icon={<MessageSquare size={15} />} title="When to use" sub="Customer reports a fault in warranty" delay={200} />
         <Row icon={<UserPlus size={15} />} title="Collect" sub="Order number, photo, email" delay={400} />
-        <Row icon={<Webhook size={15} />} title="Then" sub="POST to your service desk" picked delay={600} />
+        <Row icon={<Webhook size={15} />} title="Then" sub="Send to your service desk" picked delay={600} />
       </Card>} />
-    {handoffStory({ customer: 'Priya Shah', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true, '/photos/ho-skills.jpg')}
+    {handoffStory({ customer: 'Priya Nair', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true, '/photos/ho-skills.jpg')}
 
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />

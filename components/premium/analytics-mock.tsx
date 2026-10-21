@@ -87,15 +87,15 @@ export function AnalyticsMock({ compact = false }: { compact?: boolean }) {
   const [ref, p] = useProgress();
   return <div ref={ref} className={`am ${compact ? 'is-compact' : ''}`} role="img" aria-label="Steps AI analytics overview with revenue, conversations, response time and channel breakdown (illustration)">
     <nav className="am-rail"><img src="/brands/steps-original.png" alt="" />{rail.map((Icon, i) => <span key={i} className={i === 8 ? 'is-on' : ''}><Icon size={15} /></span>)}<span className="am-rail-end"><Bell size={15} /></span></nav>
-    <aside className="am-menu"><small>Analytics</small><span className="is-on"><CalendarDays size={14} />Overview</span><span><Globe size={14} />Geo</span><div className="am-plan"><small>Current plan</small><strong>Scale plan</strong><i /></div></aside>
+    <aside className="am-menu"><small>Analytics</small><span className="is-on"><CalendarDays size={14} />Overview</span><span><Globe size={14} />Geography</span><div className="am-plan"><small>Current plan</small><strong>Scale plan</strong><i /></div></aside>
     <div className="am-main">
-      <header className="am-head"><div><strong><LayoutGrid size={15} />Overview</strong><small>Performance overview across your agents</small></div><span>Sep 2 – Sep 9, 2026</span><span>All agents</span></header>
-      <div className="am-store"><b>WearBliss</b><i />Shopify clothing brand<i />~190–200 orders/month<i />AOV ₹750<span><CalendarDays size={12} />30 days</span></div>
+      <header className="am-head"><div><strong><LayoutGrid size={15} />Overview</strong><small>Performance overview across your agents</small></div><span>Sep 2 – Sep 10, 2026</span><span>All agents</span></header>
+      <div className="am-store"><b>WearBliss</b><i />Shopify clothing brand<i />~190–200 orders/month<i />AOV ₹750<span><CalendarDays size={12} />9 days</span></div>
       <div className="am-kpis">
-        <div><small>Steps AI assisted revenue</small><strong>{inr(STATS.revenue * p)}</strong><em className="is-up"><ArrowUp size={11} />12.6% <span>vs last 30 days</span></em></div>
+        <div><small>Steps AI assisted revenue</small><strong>{inr(STATS.revenue * p)}</strong><em className="is-up"><ArrowUp size={11} />12.6% <span>vs previous period</span></em></div>
         <div><small>Conversations handled</small><strong>{Math.round(STATS.conversations * p)}</strong><em><b>84.5%</b> <span>automated resolution</span></em></div>
-        <div><small>Avg response time</small><strong>{(STATS.response * p).toFixed(1)} sec</strong><em className="is-up"><ArrowDown size={11} />94% <span>vs human response</span></em></div>
-        <div><small>Conversion rate</small><strong>{(STATS.conversion * p).toFixed(1)}%</strong><em className="is-up"><ArrowUp size={11} />1.4% <span>vs last 30 days</span></em></div>
+        <div><small>Avg response time</small><strong>{(STATS.response * p).toFixed(1)} sec</strong><em className="is-up"><ArrowDown size={11} />94% <span>faster than manual replies</span></em></div>
+        <div><small>Conversion rate</small><strong>{(STATS.conversion * p).toFixed(1)}%</strong><em className="is-up"><ArrowUp size={11} />1.4% <span>vs previous period</span></em></div>
       </div>
       <div className="am-charts">
         <div className="am-card am-card-line"><strong>Chats &amp; messages over time</strong><small>Daily volume across the selected date range</small><LineChart p={p} /><div className="am-legend"><span><i style={{ background: '#2c9cfa' }} />Chats</span><span><i style={{ background: '#0c3474' }} />Messages</span></div></div>
@@ -105,7 +105,7 @@ export function AnalyticsMock({ compact = false }: { compact?: boolean }) {
         <div className="am-kpis am-kpis-3">
           <div><small>Abandoned cart recoveries</small><strong>{inr(STATS.cart * p)}</strong><em><span>14 recovered checkouts</span></em></div>
           <div><small>High-intent leads</small><strong>{Math.round(STATS.leads * p)}</strong><em><span>Leads captured</span></em></div>
-          <div><small>Repetitive tickets deflected</small><strong>{(STATS.deflected * p).toFixed(1)}%</strong><em><span>Sizing · Delivery · COD · Returns · Tracking</span></em></div>
+          <div><small>Repeat questions answered for you</small><strong>{(STATS.deflected * p).toFixed(1)}%</strong><em><span>Sizing · Delivery · COD · Returns · Tracking</span></em></div>
         </div>
         <div className="am-card am-table"><strong>Agent performance</strong><small>Conversations, response times and CRM activity per agent</small>
           <table><thead><tr><th>Agent</th><th>Conversations</th><th>Avg msgs/chat</th><th>Avg response</th><th>Tickets</th><th>Leads</th></tr></thead>

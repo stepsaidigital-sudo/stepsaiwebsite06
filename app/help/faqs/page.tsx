@@ -4,7 +4,7 @@ import copy from '@/app/copy.json';
 import { getChannel, getFeature, getIndustry, getIntegration, getUseCase, listChannels, listFeatures, listIndustries, listIntegrations, listUseCases } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'FAQs | Steps AI Help centre',
+  title: 'FAQs | Steps AI Help',
   description: 'Answers to common questions about Steps AI agents, channels, integrations, industries and plans.',
 };
 

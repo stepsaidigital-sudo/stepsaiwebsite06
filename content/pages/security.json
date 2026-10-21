@@ -47,6 +47,7 @@
   ],
   "cta": {
     "title": "Have a security question?",
-    "body": "Book a call and we will answer it with you."
+    "body": "Book a call and we will answer it with you.",
+    "action": "Book a call"
   }
 }
