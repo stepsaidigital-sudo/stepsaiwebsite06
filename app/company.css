@@ -222,3 +222,10 @@
 /* Founder initials in the portrait frame until the real photo is added. */
 .co-monogram{display:grid;place-items:center;background:radial-gradient(120% 90% at 30% 20%,#2c9cfa,#0c3474 70%);color:#fcfcfc}
 .co-monogram span{font-family:'Newsreader',Georgia,serif;font-size:clamp(64px,8vw,112px);font-weight:500;letter-spacing:-.04em}
+
+/* Legal text with sub-headings and lists (privacy policy). Same rhythm as the paragraphs above. */
+.co-legal-block h3{margin:22px 0 8px;font-family:Manrope,Arial,sans-serif;font-size:1.0625rem;font-weight:700;letter-spacing:-.01em;color:var(--navy)}
+.co-legal-block ul{margin:0 0 12px;padding-left:20px;display:grid;gap:6px}
+.co-legal-block li{font-size:1rem;line-height:1.65;color:#33475b}
+.co-legal-block li::marker{color:var(--blue)}
+.co-legal-date{margin-top:12px;font-size:.875rem;font-weight:600;color:var(--muted)}

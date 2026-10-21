@@ -44,8 +44,6 @@ already-credited `f-*.jpg` stock photos above instead of the unfilled `public/ph
 
 `public/photos/ai/help-new.jpg` is AI-generated (prompt and tool in `help-new-generation.json` beside it).
 
-Still needed from Steps AI: a real portrait of the founder at `public/photos/team/reshmanth.jpg` (4:5, at least 1000px wide).
-Until it exists, the Founder's note and Team pages show his initials in the same frame.
 
 ## Brand logos (added 2026-10-21)
 
@@ -71,3 +69,48 @@ centred in a square, and stripped of comments and metadata. Where the source was
 | public/brands/compare/chatbase.svg | Chatbase | https://www.chatbase.co/images/chatbase-logo.svg | Used as is, square viewBox. |
 | public/brands/compare/tidio.svg | Tidio | https://www.tidio.com/images/vs/shared/brand-logo-tidio-square.svg | Used as is. |
 | public/brands/compare/verifast.png | Verifast | https://framerusercontent.com/images/aVhfFVStiuLBkNmOYroKAN7EY.png (verifast.ai favicon) | 1200px favicon trimmed and resized to 256x256. |
+
+## Avatars and page photos (added 2026-10-21)
+
+Avatars are 256x256 WebP crops in `public/photos/avatars/`; page photos are 1600px-wide JPGs in `public/photos/`.
+The Dell logo on the laptop lid in pg-affiliate.jpg was blurred out.
+
+| File | Source | Photo URL | Photographer |
+|---|---|---|---|
+| avatars/priya.webp | Pexels | https://www.pexels.com/photo/woman-in-blue-denim-jacket-smiling-8720868/ | Ravi Roshan |
+| avatars/meera.webp | Pexels | https://www.pexels.com/photo/portrait-of-an-indian-woman-in-red-sari-17450830/ | Mouli Ghosh |
+| avatars/anu.webp | Pexels | https://www.pexels.com/photo/young-woman-wearing-yellow-earrings-smiling-at-the-camera-12631107/ | Satyabrata Maiti |
+| avatars/neha.webp | Pexels | https://www.pexels.com/photo/photograph-of-a-woman-smiling-7688183/ | Kindel Media |
+| avatars/kavya.webp | Pexels | https://www.pexels.com/photo/smiling-young-woman-in-bright-yellow-dress-outdoors-31652286/ | Adarsh Mp |
+| avatars/maya.webp | Pexels | https://www.pexels.com/photo/portrait-of-a-beautiful-woman-with-necklaces-looking-at-the-camera-7879393/ | Sohani Kamat |
+| avatars/ananya.webp | Pexels | https://www.pexels.com/photo/woman-with-black-hair-17550359/ | Dipayan Paul |
+| avatars/sneha.webp | Pexels | https://www.pexels.com/photo/smiling-woman-in-purple-dress-outdoors-29125196/ | G T |
+| avatars/pooja.webp | Pexels | https://www.pexels.com/photo/a-woman-wearing-eyeglasses-6949802/ | Prem Kumar |
+| avatars/divya.webp | Pexels | https://www.pexels.com/photo/smiling-woman-in-traditional-yellow-saree-indoors-39459425/ | Anil Sharma |
+| avatars/rahul.webp | Pexels | https://www.pexels.com/photo/bearded-man-in-gray-suit-jacket-9171219/ | Lokesh Tiwari |
+| avatars/karan.webp | Pexels | https://www.pexels.com/photo/man-in-black-dress-shirt-leaning-on-a-desk-7580992/ | RDNE Stock project |
+| avatars/dev.webp | Pexels | https://www.pexels.com/photo/portrait-of-a-man-in-a-green-shirt-smiling-6102858/ | Henlynn |
+| avatars/arjun.webp | Pexels | https://www.pexels.com/photo/positive-bearded-young-indian-guy-in-turban-4307869/ | Ketut Subiyanto |
+| avatars/ravi.webp | Pexels | https://www.pexels.com/photo/portrait-of-an-indian-man-outdoors-36876208/ | Satya pic |
+| avatars/vikram.webp | Pexels | https://www.pexels.com/photo/professional-portrait-of-businessman-in-office-setting-37894130/ | Vishal Kampani |
+| avatars/amit.webp | Pexels | https://www.pexels.com/photo/confident-adult-man-with-arms-crossed-portrait-31695306/ | Anil Sharma |
+| avatars/sam.webp | Pexels | https://www.pexels.com/photo/man-in-blue-suit-jacket-and-blue-dress-pants-7580761/ | RDNE Stock project |
+| avatars/alex.webp | Pexels | https://www.pexels.com/photo/photo-of-man-wearing-blue-polo-shirt-2590287/ | Okay Bhargav |
+| avatars/rohan.webp | Pexels | https://www.pexels.com/photo/gentleman-india-indian-man-man-1067622/ | G N |
+| pg-affiliate.jpg | Pexels | https://www.pexels.com/photo/young-indian-boy-is-doing-his-work-in-laptop-15598847/ | Sanket Mishra |
+| pg-partners.jpg | Pexels | https://www.pexels.com/photo/real-estate-agent-in-black-printed-blouse-having-negotiation-to-a-couple-home-buyers-8293702/ | RDNE Stock project |
+| pg-hire-agency.jpg | Pexels | https://www.pexels.com/photo/colleagues-talking-in-an-office-8112161/ | Pavel Danilyuk |
+| pg-contact.jpg | Pexels | https://www.pexels.com/photo/women-at-work-7658433/ | Pavel Danilyuk |
+| pg-industries.jpg | Pexels | https://www.pexels.com/photo/colorful-market-stall-in-chennai-india-30443336/ | Henry Benjamin |
+| pg-compare.jpg | Pexels | https://www.pexels.com/photo/man-sitting-at-a-table-and-working-on-a-laptop-4962999/ | Ketut Subiyanto |
+| pg-case-studies.jpg | Pexels | https://www.pexels.com/photo/smiling-man-posing-in-clothes-store-16498505/ | Soubhagya Maharana |
+| cs-sales.jpg | Pexels | https://www.pexels.com/photo/colorful-street-market-scene-in-bengaluru-38443540/ | Aditya Oberai |
+| cs-lead-capture.jpg | Pexels | https://www.pexels.com/photo/man-talking-on-the-telephone-7580916/ | RDNE Stock project |
+| cs-booking.jpg | Pexels | https://www.pexels.com/photo/friendly-hotel-reception-interaction-in-dhaka-37680832/ | FAKHRUL HASSAN |
+| cs-receptionist.jpg | Pexels | https://www.pexels.com/photo/woman-talking-on-the-telephone-7580831/ | RDNE Stock project |
+
+The support and marketing case studies reuse the already-credited `support.jpg` and `marketing.jpg` (see the first table); no on-brief new photo was found for them.
+
+## Founder portrait (added 2026-10-21)
+
+`public/photos/team/reshmanth.jpg`: photo of Reshmanth Jonnalagadda supplied by Steps AI (400x400 original, cropped to 320x400, 4:5). A larger original (at least 1000px wide) would look sharper on high-resolution screens.

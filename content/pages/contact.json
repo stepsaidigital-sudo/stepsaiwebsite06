@@ -9,7 +9,13 @@
   "hero": {
     "kicker": "Contact",
     "title": "Get in touch with Steps AI.",
-    "body": "Tell us what you need and we will point you to the right person. Choose the option that fits best."
+    "body": "Tell us what you need and we will point you to the right person. Choose the option that fits best.",
+    "image": {
+      "src": "/photos/pg-contact.jpg",
+      "alt": "Support team on headsets at a bright desk with plants",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "sections": [
     {

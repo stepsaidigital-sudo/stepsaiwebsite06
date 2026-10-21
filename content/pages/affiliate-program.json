@@ -10,7 +10,13 @@
     "kicker": "Become an affiliate",
     "title": "Recommend Steps AI and earn on every customer you refer.",
     "body": "If your audience runs online stores or service businesses, you can share Steps AI with them and earn commission when they become paying customers.",
-    "reassurance": "Simple to join. No setup work. Terms shared when you apply."
+    "reassurance": "Simple to join. No setup work. Terms shared when you apply.",
+    "image": {
+      "src": "/photos/pg-affiliate.jpg",
+      "alt": "Young man on a phone call with a laptop on his lap, sitting on a bench",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "sections": [
     {

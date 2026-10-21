@@ -1,6 +1,7 @@
 // Shapes for subpage copy. Every file is a draft until the SEO specialist's
 // final copy replaces it; the layouts read only these fields.
-export type Status = { status: 'draft'; source: 'draft, pending specialist copy' };
+// final = copy confirmed from an official Steps AI source; source says where it came from.
+export type Status = { status: 'draft' | 'final'; source: string };
 export type Seo = { title: string; description: string };
 export type HeroImage = { src: string; alt: string; width: number; height: number };
 export type Hero = { kicker: string; title: string; body: string; reassurance?: string; channels?: string[]; accent?: string[]; image?: HeroImage };
@@ -91,9 +92,11 @@ export type PricingPage = Status & {
   faq: FaqBlock; cta: Cta;
 };
 
+// Legal text in order: sub-headings, paragraphs and bullet lists (used instead of paragraphs when present).
+export type LegalBlock = { h3: string } | { p: string } | { ul: string[] };
 export type ContentPage = Status & {
   kind: 'content'; seo: Seo; hero: Hero;
-  sections: { title: string; paragraphs: string[]; items?: (Item & { href?: string })[] }[]; cta: Cta;
+  sections: { title: string; paragraphs: string[]; items?: (Item & { href?: string })[]; body?: LegalBlock[] }[]; cta: Cta;
 };
 
 // Help centre (learning centre). Topics group lessons; a lesson is structured data so the

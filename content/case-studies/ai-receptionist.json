@@ -12,7 +12,13 @@
   "hero": {
     "kicker": "Case studies · AI receptionist",
     "title": "An AI receptionist that answers your calls.",
-    "body": "Steps AI can now answer phone calls in English, Hindi and Telugu. Customer stories for the AI receptionist are being gathered, and this page will share them as they come in."
+    "body": "Steps AI can now answer phone calls in English, Hindi and Telugu. Customer stories for the AI receptionist are being gathered, and this page will share them as they come in.",
+    "image": {
+      "src": "/photos/cs-receptionist.jpg",
+      "alt": "Receptionist answering a desk phone at her workstation",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "stories": [],
   "capabilities": {

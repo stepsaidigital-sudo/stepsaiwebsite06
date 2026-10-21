@@ -10,7 +10,13 @@
     "kicker": "Industries",
     "title": "An AI agent that fits the way your business works.",
     "body": "Every industry gets different questions. Pick yours to see what your agent can answer, collect and arrange for your team.",
-    "reassurance": "Answers from your information. Built around your customers. Your team stays in control."
+    "reassurance": "Answers from your information. Built around your customers. Your team stays in control.",
+    "image": {
+      "src": "/photos/pg-industries.jpg",
+      "alt": "Shopkeeper at a busy market stall full of goods",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "cards": [
     {

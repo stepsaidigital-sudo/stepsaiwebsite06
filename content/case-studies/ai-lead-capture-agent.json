@@ -12,7 +12,13 @@
   "hero": {
     "kicker": "Case studies · AI lead capture agent",
     "title": "How growth teams use an AI agent to capture better leads.",
-    "body": "Visitors ask a few questions and leave before filling in a form. These teams use Steps AI to collect details during the conversation and pass richer leads to sales."
+    "body": "Visitors ask a few questions and leave before filling in a form. These teams use Steps AI to collect details during the conversation and pass richer leads to sales.",
+    "image": {
+      "src": "/photos/cs-lead-capture.jpg",
+      "alt": "Smiling man on a desk phone call in an office",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "stories": [
     {

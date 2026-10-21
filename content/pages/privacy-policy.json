@@ -1,6 +1,6 @@
 {
-  "status": "draft",
-  "source": "draft, pending specialist copy",
+  "status": "final",
+  "source": "stepsai.co/privacy-policy, copied word for word 2026-10-21",
   "kind": "content",
   "seo": {
     "title": "Privacy policy | Steps AI",
@@ -9,13 +9,444 @@
   "hero": {
     "kicker": "Legal",
     "title": "Privacy policy.",
-    "body": "The full privacy policy is being finalised and will be published on this page. Until then, you can contact us with any question about how your data is handled."
+    "body": "Steps AI Technologies Inc. values your privacy. This policy describes how we collect, use, store, and share information when you visit our website, use the Steps AI platform, or interact with an AI agent powered by our technology.",
+    "reassurance": "Effective Date: [Date to be set on publish]"
   },
   "sections": [
     {
-      "title": "What this page will cover.",
+      "title": "1. Introduction",
       "paragraphs": [
-        "What information Steps AI collects, how it is used to run your agent, who it is shared with, how long it is kept, and how you can access or delete it."
+        "Steps AI Technologies Inc. (\"Steps AI,\" \"Steps AI,\" \"we,\" \"our,\" or \"us\") is a company incorporated in Canada. We operate the Steps AI platform, which enables businesses to deploy AI agents across websites, WhatsApp, Instagram, Messenger, Slack, Microsoft Teams, email, and other supported channels (the \"Platform\" or \"Services\").",
+        "This Privacy Policy is intended to help you understand what information we collect, why we collect it, and what we do with it. By using our Services, you acknowledge the practices described here. If you do not agree, please discontinue use of the Platform and the Steps AI website.",
+        "This policy is not a contract and does not create any legal rights or obligations beyond those that exist under applicable law. We may update our practices and this policy over time as our business, technology, and the regulatory landscape evolve."
+      ],
+      "body": [
+        {
+          "p": "Steps AI Technologies Inc. (\"Steps AI,\" \"Steps AI,\" \"we,\" \"our,\" or \"us\") is a company incorporated in Canada. We operate the Steps AI platform, which enables businesses to deploy AI agents across websites, WhatsApp, Instagram, Messenger, Slack, Microsoft Teams, email, and other supported channels (the \"Platform\" or \"Services\")."
+        },
+        {
+          "p": "This Privacy Policy is intended to help you understand what information we collect, why we collect it, and what we do with it. By using our Services, you acknowledge the practices described here. If you do not agree, please discontinue use of the Platform and the Steps AI website."
+        },
+        {
+          "p": "This policy is not a contract and does not create any legal rights or obligations beyond those that exist under applicable law. We may update our practices and this policy over time as our business, technology, and the regulatory landscape evolve."
+        }
+      ]
+    },
+    {
+      "title": "2. Scope",
+      "paragraphs": [
+        "Additional terms, supplemental notices, or written agreements may apply to specific features, regions, or customer deployments and will take precedence over this policy to the extent of any conflict."
+      ],
+      "body": [
+        {
+          "h3": "This Privacy Policy applies to:"
+        },
+        {
+          "ul": [
+            "Visitors to stepsai.co and related marketing sites",
+            "Customers and authorized users of the Steps AI platform (app.stepsai.co)",
+            "End users who interact with a Steps AI-powered AI agent through any supported channel",
+            "Businesses that connect third-party integrations to Steps AI",
+            "Prospects and contacts engaged via sales, demo requests, or support channels"
+          ]
+        },
+        {
+          "h3": "This Policy does not apply to:"
+        },
+        {
+          "ul": [
+            "Third-party websites, services, or messaging platforms linked to or integrated with Steps AI, which are governed by their own privacy policies",
+            "Data that customers process using Steps AI under separate written agreements where Steps AI acts solely as a service provider on behalf of the customer",
+            "Employment applicants, who are covered by a separate notice"
+          ]
+        },
+        {
+          "p": "Additional terms, supplemental notices, or written agreements may apply to specific features, regions, or customer deployments and will take precedence over this policy to the extent of any conflict."
+        }
+      ]
+    },
+    {
+      "title": "3. Information We Collect",
+      "paragraphs": [
+        "We collect information that you or your team provide when you:",
+        "When you or your end users interact with Steps AI, we may automatically collect:",
+        "When you connect a channel or integration, we receive data necessary to deliver the Services. The specific data depends on the integration and may include account identifiers, message content, product catalogs, customer records, contacts, documents, tickets, and similar information as applicable to the integration you enable.",
+        "When an end user interacts with a Steps AI-powered agent deployed by one of our customers, we may process on behalf of that customer:",
+        "We may receive information from:",
+        "Steps AI is not designed to process sensitive personal data such as government identifiers, health records, biometric data, or payment card numbers. You should not submit such data through the Services unless a separate written agreement with appropriate safeguards is in place."
+      ],
+      "body": [
+        {
+          "h3": "3.1 Information You Provide"
+        },
+        {
+          "p": "We collect information that you or your team provide when you:"
+        },
+        {
+          "ul": [
+            "Create an account (name, work email, password, organization name, role)",
+            "Configure a workspace or AI agent (agent settings, knowledge sources, channel preferences)",
+            "Upload or connect knowledge sources (documents, FAQs, product catalogs, policies)",
+            "Connect a communication channel or integration and authorize access",
+            "Submit a sales inquiry, demo request, newsletter signup, or contact form",
+            "Provide billing details (billing contact, company address, tax ID; payment card data is handled by third-party payment processors and is not stored on our servers)",
+            "Interact with customer support or submit feedback"
+          ]
+        },
+        {
+          "h3": "3.2 Information Collected Automatically"
+        },
+        {
+          "p": "When you or your end users interact with Steps AI, we may automatically collect:"
+        },
+        {
+          "ul": [
+            "Device and connection data (IP address, browser type, OS, device identifiers, language, time zone)",
+            "Usage data (pages viewed, features used, queries issued, session duration)",
+            "Conversation metadata (channel type, timestamps, message counts, escalation events)",
+            "Log data (system events, errors, security alerts, audit entries)",
+            "Cookies and similar technologies as described in Section 8"
+          ]
+        },
+        {
+          "h3": "3.3 Information from Connected Channels and Integrations"
+        },
+        {
+          "p": "When you connect a channel or integration, we receive data necessary to deliver the Services. The specific data depends on the integration and may include account identifiers, message content, product catalogs, customer records, contacts, documents, tickets, and similar information as applicable to the integration you enable."
+        },
+        {
+          "ul": [
+            "We only access data based on the permissions you authorize",
+            "We do not modify or delete your source content unless you explicitly instruct us to do so"
+          ]
+        },
+        {
+          "h3": "3.4 Information About End Users"
+        },
+        {
+          "p": "When an end user interacts with a Steps AI-powered agent deployed by one of our customers, we may process on behalf of that customer:"
+        },
+        {
+          "ul": [
+            "Contact identifiers provided by the channel",
+            "Message content and interaction history",
+            "Derived signals such as detected intent or language",
+            "Contextual data related to the conversation, such as order lookups or scheduling requests"
+          ]
+        },
+        {
+          "h3": "3.5 Information from Other Sources"
+        },
+        {
+          "p": "We may receive information from:"
+        },
+        {
+          "ul": [
+            "Authentication providers you use to sign in",
+            "Analytics and marketing partners",
+            "Publicly available sources"
+          ]
+        },
+        {
+          "h3": "3.6 Sensitive Data"
+        },
+        {
+          "p": "Steps AI is not designed to process sensitive personal data such as government identifiers, health records, biometric data, or payment card numbers. You should not submit such data through the Services unless a separate written agreement with appropriate safeguards is in place."
+        }
+      ]
+    },
+    {
+      "title": "4. How We Use Your Information",
+      "paragraphs": [
+        "We use your information to authenticate users, provision workspaces, train your AI agent on the knowledge sources you connect, route conversations, execute integrations, and provide platform features such as analytics and the unified inbox.",
+        "We use your information to respond to support requests, send service-related announcements, transactional messages, and (with your consent or as permitted by law) marketing communications. You can opt out of marketing emails at any time using the unsubscribe link.",
+        "We use your information to measure performance, diagnose errors, improve the Services, detect fraud and abuse, and enforce our terms.",
+        "We may use your information to comply with applicable laws, respond to legal process, establish or defend legal claims, and enforce our agreements.",
+        "We do not use your customer data, knowledge sources, or end-user conversations to train any generalized or shared AI or machine-learning model. Your data stays within your workspace and is used solely to operate your own deployment, unless you explicitly opt in otherwise in writing.",
+        "Data obtained through Meta APIs (Facebook, Instagram, WhatsApp) and Google Workspace APIs is used strictly to provide the requested Steps AI features and is never sold, rented, licensed for advertising, or used to develop independent AI or ML models. StepsAI’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements — this data is never used to create, train, or improve generalized or foundational AI/machine-learning models.",
+        "Steps AI does not sell or rent personal information. We do not share personal information for cross-context behavioral advertising."
+      ],
+      "body": [
+        {
+          "h3": "4.1 Operating the Platform"
+        },
+        {
+          "p": "We use your information to authenticate users, provision workspaces, train your AI agent on the knowledge sources you connect, route conversations, execute integrations, and provide platform features such as analytics and the unified inbox."
+        },
+        {
+          "h3": "4.2 Communications"
+        },
+        {
+          "p": "We use your information to respond to support requests, send service-related announcements, transactional messages, and (with your consent or as permitted by law) marketing communications. You can opt out of marketing emails at any time using the unsubscribe link."
+        },
+        {
+          "h3": "4.3 Improvement and Security"
+        },
+        {
+          "p": "We use your information to measure performance, diagnose errors, improve the Services, detect fraud and abuse, and enforce our terms."
+        },
+        {
+          "h3": "4.4 Legal Purposes"
+        },
+        {
+          "p": "We may use your information to comply with applicable laws, respond to legal process, establish or defend legal claims, and enforce our agreements."
+        },
+        {
+          "h3": "AI Training Commitment"
+        },
+        {
+          "p": "We do not use your customer data, knowledge sources, or end-user conversations to train any generalized or shared AI or machine-learning model. Your data stays within your workspace and is used solely to operate your own deployment, unless you explicitly opt in otherwise in writing."
+        },
+        {
+          "p": "Data obtained through Meta APIs (Facebook, Instagram, WhatsApp) and Google Workspace APIs is used strictly to provide the requested Steps AI features and is never sold, rented, licensed for advertising, or used to develop independent AI or ML models. StepsAI’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements — this data is never used to create, train, or improve generalized or foundational AI/machine-learning models."
+        },
+        {
+          "h3": "No Sale of Personal Information"
+        },
+        {
+          "p": "Steps AI does not sell or rent personal information. We do not share personal information for cross-context behavioral advertising."
+        }
+      ]
+    },
+    {
+      "title": "5. Data Storage, Security, and Retention",
+      "paragraphs": [
+        "Steps AI uses cloud infrastructure from third-party providers. Our primary hosting is in the United States and India, though this may change or expand over time. Additional hosting regions may be offered in the future.",
+        "We maintain administrative, technical, and physical safeguards designed to protect personal data against unauthorized access, loss, misuse, or alteration. These safeguards include encryption in transit, access controls, monitoring, and confidentiality obligations for team members. We review and update these measures from time to time as our platform, customer base, and the threat landscape evolve.",
+        "However, no system is completely secure, and we do not warrant or guarantee the absolute security of your information. You use the Services at your own risk, and we encourage you to use strong passwords and protect your account credentials.",
+        "We may pursue industry certifications, third-party audits, or additional compliance programs in the future and will update this policy and our documentation accordingly.",
+        "We retain information for as long as reasonably necessary to provide the Services, comply with legal obligations, resolve disputes, and enforce our agreements. General guidelines:",
+        "To request deletion or a copy of your data, email support@stepsai.ca. We will respond within a reasonable timeframe."
+      ],
+      "body": [
+        {
+          "h3": "5.1 Where We Store Data"
+        },
+        {
+          "p": "Steps AI uses cloud infrastructure from third-party providers. Our primary hosting is in the United States and India, though this may change or expand over time. Additional hosting regions may be offered in the future."
+        },
+        {
+          "h3": "5.2 Security"
+        },
+        {
+          "p": "We maintain administrative, technical, and physical safeguards designed to protect personal data against unauthorized access, loss, misuse, or alteration. These safeguards include encryption in transit, access controls, monitoring, and confidentiality obligations for team members. We review and update these measures from time to time as our platform, customer base, and the threat landscape evolve."
+        },
+        {
+          "p": "However, no system is completely secure, and we do not warrant or guarantee the absolute security of your information. You use the Services at your own risk, and we encourage you to use strong passwords and protect your account credentials."
+        },
+        {
+          "p": "We may pursue industry certifications, third-party audits, or additional compliance programs in the future and will update this policy and our documentation accordingly."
+        },
+        {
+          "h3": "5.3 Retention"
+        },
+        {
+          "p": "We retain information for as long as reasonably necessary to provide the Services, comply with legal obligations, resolve disputes, and enforce our agreements. General guidelines:"
+        },
+        {
+          "ul": [
+            "Account data: retained while your subscription is active; deleted from production systems within a reasonable period after account closure, unless legal retention is required",
+            "Conversation data: retained according to your workspace settings or our default retention periods, which may change from time to time",
+            "Knowledge sources: removed within a reasonable period after you disconnect or delete them",
+            "Integration tokens: revoked when you disconnect the integration",
+            "Billing and tax records: retained as required by applicable financial and tax regulations",
+            "Website analytics and cookies: retained in accordance with Section 8 and our analytics providers’ policies",
+            "Marketing data: retained while you remain engaged, subject to your opt-out rights"
+          ]
+        },
+        {
+          "p": "To request deletion or a copy of your data, email support@stepsai.ca. We will respond within a reasonable timeframe."
+        }
+      ]
+    },
+    {
+      "title": "6. Third-Party Integrations and Data Sharing",
+      "paragraphs": [
+        "Steps AI integrates with third-party platforms that you choose to connect, including (without limitation) Meta Platforms, Shopify, WooCommerce, BigCommerce, HubSpot, Salesforce, Calendly, Google Drive, OneDrive, Notion, Confluence, Intercom, Jira, Slack, Microsoft Teams, Webflow, Framer, Stripe, Razorpay, and others. Each of these platforms is governed by its own terms and privacy policy. We are not responsible for the privacy practices of third-party services.",
+        "Disconnecting an integration stops new data from flowing to Steps AI; previously cached or indexed data is removed in line with Section 5.3.",
+        "We do not sell personal data. We may share information with:",
+        "A list of our key subprocessors is available on request by emailing support@stepsai.ca."
+      ],
+      "body": [
+        {
+          "h3": "6.1 Integrations"
+        },
+        {
+          "p": "Steps AI integrates with third-party platforms that you choose to connect, including (without limitation) Meta Platforms, Shopify, WooCommerce, BigCommerce, HubSpot, Salesforce, Calendly, Google Drive, OneDrive, Notion, Confluence, Intercom, Jira, Slack, Microsoft Teams, Webflow, Framer, Stripe, Razorpay, and others. Each of these platforms is governed by its own terms and privacy policy. We are not responsible for the privacy practices of third-party services."
+        },
+        {
+          "p": "Disconnecting an integration stops new data from flowing to Steps AI; previously cached or indexed data is removed in line with Section 5.3."
+        },
+        {
+          "h3": "6.2 Who We Share Data With"
+        },
+        {
+          "p": "We do not sell personal data. We may share information with:"
+        },
+        {
+          "ul": [
+            "Service providers and subprocessors: hosting, AI model providers, analytics, communications, under contractual confidentiality obligations",
+            "Channels and integrations: you authorize, to deliver the features you enabled",
+            "Professional advisors: legal, accounting, audit, under professional duties of confidentiality",
+            "Legal and regulatory authorities: when required by law or to protect rights, property, or safety",
+            "In connection with a corporate transaction: such as a merger, acquisition, or sale of assets; we will notify affected customers as required by law"
+          ]
+        },
+        {
+          "p": "A list of our key subprocessors is available on request by emailing support@stepsai.ca."
+        }
+      ]
+    },
+    {
+      "title": "7. Your Rights and Choices",
+      "paragraphs": [
+        "Depending on where you are located and applicable law, you may have certain rights regarding your personal information, such as the right to access, correct, delete, restrict processing of, or receive a portable copy of your data, withdraw consent, opt out of marketing, or lodge a complaint with a relevant authority.",
+        "If we deny a data rights request, we will explain why and how you can appeal. Appeals can be submitted by emailing support@stepsai.ca with \"Appeal\" in the subject line.",
+        "Account owners can exercise many rights directly from their workspace settings. For all other requests, or if you are an end user of a business that uses Steps AI, contact support@stepsai.ca. If you are an end user, we may forward your request to the business that deployed the agent, as they typically control how your data is used.",
+        "We will not discriminate against you for exercising your privacy rights."
+      ],
+      "body": [
+        {
+          "p": "Depending on where you are located and applicable law, you may have certain rights regarding your personal information, such as the right to access, correct, delete, restrict processing of, or receive a portable copy of your data, withdraw consent, opt out of marketing, or lodge a complaint with a relevant authority."
+        },
+        {
+          "p": "If we deny a data rights request, we will explain why and how you can appeal. Appeals can be submitted by emailing support@stepsai.ca with \"Appeal\" in the subject line."
+        },
+        {
+          "p": "Account owners can exercise many rights directly from their workspace settings. For all other requests, or if you are an end user of a business that uses Steps AI, contact support@stepsai.ca. If you are an end user, we may forward your request to the business that deployed the agent, as they typically control how your data is used."
+        },
+        {
+          "p": "We will not discriminate against you for exercising your privacy rights."
+        }
+      ]
+    },
+    {
+      "title": "8. Cookies and Tracking Technologies",
+      "paragraphs": [
+        "We use cookies, local storage, and similar technologies to operate the Services, remember your preferences, understand usage patterns, and secure our systems.",
+        "You can manage cookies through your browser settings or, where applicable, through a consent banner on our site. Blocking certain cookies may affect platform functionality. We do not currently respond to Do Not Track signals due to the absence of a common standard. Where required by law, we honor Global Privacy Control signals."
+      ],
+      "body": [
+        {
+          "p": "We use cookies, local storage, and similar technologies to operate the Services, remember your preferences, understand usage patterns, and secure our systems."
+        },
+        {
+          "h3": "Types of technologies we use:"
+        },
+        {
+          "ul": [
+            "Strictly necessary: authentication, security, core platform functions",
+            "Functional: preferences such as language and theme",
+            "Analytics: understanding how our site and product are used (e.g., Google Analytics)",
+            "Marketing: measuring campaign performance on marketing pages (we do not use cookies for cross-context behavioral advertising)"
+          ]
+        },
+        {
+          "h3": "Your choices"
+        },
+        {
+          "p": "You can manage cookies through your browser settings or, where applicable, through a consent banner on our site. Blocking certain cookies may affect platform functionality. We do not currently respond to Do Not Track signals due to the absence of a common standard. Where required by law, we honor Global Privacy Control signals."
+        }
+      ]
+    },
+    {
+      "title": "9. Legal and Regulatory",
+      "paragraphs": [
+        "Steps AI is a Canadian company and we endeavor to handle personal information in a manner consistent with applicable Canadian privacy law (PIPEDA). We also aim to respect the privacy rights recognized under other frameworks that may apply to our users, including the CCPA/CPRA (California), DPDPA (India), GDPR (EU/UK), and others.",
+        "Nothing in this Privacy Policy should be interpreted as a representation that we meet the requirements of any specific regulatory framework or industry standard unless we have explicitly stated so in a separate written agreement with you.",
+        "We may disclose personal data when we believe in good faith that it is required by law or necessary to protect the safety, rights, or property of Steps AI, our customers, or the public. Where permitted by law, we will attempt to notify affected customers before disclosure.",
+        "Steps AI is intended for business use by individuals aged 18 and older. We do not knowingly collect personal data from children. If you believe a child has provided personal data to us, please contact support@stepsai.ca and we will take steps to delete it."
+      ],
+      "body": [
+        {
+          "h3": "9.1 Our Approach"
+        },
+        {
+          "p": "Steps AI is a Canadian company and we endeavor to handle personal information in a manner consistent with applicable Canadian privacy law (PIPEDA). We also aim to respect the privacy rights recognized under other frameworks that may apply to our users, including the CCPA/CPRA (California), DPDPA (India), GDPR (EU/UK), and others."
+        },
+        {
+          "p": "Nothing in this Privacy Policy should be interpreted as a representation that we meet the requirements of any specific regulatory framework or industry standard unless we have explicitly stated so in a separate written agreement with you."
+        },
+        {
+          "h3": "9.2 Legal Requests"
+        },
+        {
+          "p": "We may disclose personal data when we believe in good faith that it is required by law or necessary to protect the safety, rights, or property of Steps AI, our customers, or the public. Where permitted by law, we will attempt to notify affected customers before disclosure."
+        },
+        {
+          "h3": "9.3 Children"
+        },
+        {
+          "p": "Steps AI is intended for business use by individuals aged 18 and older. We do not knowingly collect personal data from children. If you believe a child has provided personal data to us, please contact support@stepsai.ca and we will take steps to delete it."
+        }
+      ]
+    },
+    {
+      "title": "10. International Data Transfers",
+      "paragraphs": [
+        "Steps AI may process personal data in Canada, the United States, India, and other jurisdictions where we or our service providers operate. These jurisdictions may have different data protection laws than your own. We take reasonable steps to protect your data in connection with such transfers, including contractual confidentiality obligations with service providers and technical safeguards such as encryption.",
+        "We do not currently have formal international data transfer mechanisms (such as Standard Contractual Clauses) in place, but intend to implement them as needed. If you have questions about how your data is transferred, contact support@stepsai.ca."
+      ],
+      "body": [
+        {
+          "p": "Steps AI may process personal data in Canada, the United States, India, and other jurisdictions where we or our service providers operate. These jurisdictions may have different data protection laws than your own. We take reasonable steps to protect your data in connection with such transfers, including contractual confidentiality obligations with service providers and technical safeguards such as encryption."
+        },
+        {
+          "p": "We do not currently have formal international data transfer mechanisms (such as Standard Contractual Clauses) in place, but intend to implement them as needed. If you have questions about how your data is transferred, contact support@stepsai.ca."
+        }
+      ]
+    },
+    {
+      "title": "11. Disclaimer and Limitation of Liability",
+      "paragraphs": [
+        "This Privacy Policy describes our current practices and intentions in good faith. It is provided for informational purposes and does not constitute a warranty, guarantee, or contractual commitment regarding the security, confidentiality, or regulatory compliance of the Services beyond what is required by applicable law.",
+        "To the maximum extent permitted by law, Steps AI Technologies Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to this Privacy Policy or any breach of personal data, except where such limitation is prohibited by applicable law.",
+        "Your use of the Services is also governed by our Terms of Service, which contain additional limitations of liability and disclaimers."
+      ],
+      "body": [
+        {
+          "p": "This Privacy Policy describes our current practices and intentions in good faith. It is provided for informational purposes and does not constitute a warranty, guarantee, or contractual commitment regarding the security, confidentiality, or regulatory compliance of the Services beyond what is required by applicable law."
+        },
+        {
+          "p": "To the maximum extent permitted by law, Steps AI Technologies Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to this Privacy Policy or any breach of personal data, except where such limitation is prohibited by applicable law."
+        },
+        {
+          "p": "Your use of the Services is also governed by our Terms of Service, which contain additional limitations of liability and disclaimers."
+        }
+      ]
+    },
+    {
+      "title": "12. Changes to This Privacy Policy",
+      "paragraphs": [
+        "We may update this Privacy Policy at any time. When we make material changes, we will update the Effective Date and post a notice on our website. Where practicable, we will notify account owners by email before material changes take effect.",
+        "Your continued use of Steps AI after changes are posted constitutes acceptance of the updated policy. If you do not agree, please stop using the Services."
+      ],
+      "body": [
+        {
+          "p": "We may update this Privacy Policy at any time. When we make material changes, we will update the Effective Date and post a notice on our website. Where practicable, we will notify account owners by email before material changes take effect."
+        },
+        {
+          "p": "Your continued use of Steps AI after changes are posted constitutes acceptance of the updated policy. If you do not agree, please stop using the Services."
+        }
+      ]
+    },
+    {
+      "title": "Contact Us",
+      "paragraphs": [
+        "For questions about this Privacy Policy, to exercise your data rights, or for any other privacy inquiry:",
+        "Steps AI Technologies Inc.",
+        "Email: support@stepsai.ca"
+      ],
+      "body": [
+        {
+          "p": "For questions about this Privacy Policy, to exercise your data rights, or for any other privacy inquiry:"
+        },
+        {
+          "p": "Steps AI Technologies Inc."
+        },
+        {
+          "p": "Email: support@stepsai.ca"
+        }
       ]
     }
   ],

@@ -12,7 +12,13 @@
   "hero": {
     "kicker": "Case studies · AI sales agent",
     "title": "How stores use an AI sales agent to help customers choose.",
-    "body": "Customers describe what they need in their own words. These businesses use Steps AI to point shoppers to products that make sense, including after the team has gone home."
+    "body": "Customers describe what they need in their own words. These businesses use Steps AI to point shoppers to products that make sense, including after the team has gone home.",
+    "image": {
+      "src": "/photos/cs-sales.jpg",
+      "alt": "Clothing shopkeeper serving a customer at the counter",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "stories": [
     {

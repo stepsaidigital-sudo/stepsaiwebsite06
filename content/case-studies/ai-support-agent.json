@@ -12,7 +12,13 @@
   "hero": {
     "kicker": "Case studies · AI support agent",
     "title": "How support teams use an AI agent to clear repeat questions.",
-    "body": "Order status, delivery, sizing and help centre questions arrive all day. These teams let Steps AI answer them, so people can focus on the customers who need help."
+    "body": "Order status, delivery, sizing and help centre questions arrive all day. These teams let Steps AI answer them, so people can focus on the customers who need help.",
+    "image": {
+      "src": "/photos/support.jpg",
+      "alt": "Online seller checking orders on a laptop among packed parcels",
+      "width": 1600,
+      "height": 1068
+    }
   },
   "stories": [
     {

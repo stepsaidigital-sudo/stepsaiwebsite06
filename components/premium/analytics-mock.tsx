@@ -54,7 +54,7 @@ function LineChart({ p }: { p: number }) {
     <defs>
       <linearGradient id="am-g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2c9cfa" stopOpacity=".28" /><stop offset="1" stopColor="#2c9cfa" stopOpacity="0" /></linearGradient>
       <linearGradient id="am-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0c3474" stopOpacity=".18" /><stop offset="1" stopColor="#0c3474" stopOpacity="0" /></linearGradient>
-      <clipPath id="am-clip"><rect x="-4" y="-10" width={(w + 8) * p} height={h + 20} /></clipPath>
+      <clipPath id="am-clip"><rect x="-4" y="-10" width={Math.max(0, (w + 8) * p)} height={h + 20} /></clipPath>
     </defs>
     {[0, 35, 70, 105, 140].map(v => <g key={v}><line x1="0" x2={w} y1={h - (v / max) * h} y2={h - (v / max) * h} className="am-grid" /><text x="-8" y={h - (v / max) * h + 4} className="am-tick" textAnchor="end">{v}</text></g>)}
     {LINE.labels.map((l, i) => <text key={l} x={i * (w / 8)} y={h + 20} className="am-tick" textAnchor="middle">{l}</text>)}

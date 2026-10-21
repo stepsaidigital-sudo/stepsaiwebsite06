@@ -12,7 +12,13 @@
   "hero": {
     "kicker": "Case studies · AI booking agent",
     "title": "How teams use an AI agent before the first booked call.",
-    "body": "Prospects want answers before they book. Steps AI handles those questions, so by the time someone books, they already know whether you are the right fit."
+    "body": "Prospects want answers before they book. Steps AI handles those questions, so by the time someone books, they already know whether you are the right fit.",
+    "image": {
+      "src": "/photos/cs-booking.jpg",
+      "alt": "Receptionist at a front desk greeting a visitor",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "stories": [
     {

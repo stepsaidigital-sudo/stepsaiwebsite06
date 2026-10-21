@@ -238,19 +238,23 @@ function Security({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
 
 /* ---------------- Legal ---------------- */
 
+// Anchor for a legal section heading: "3. Information We Collect" becomes "information-we-collect".
+const legalId = (title: string) => title.toLowerCase().replace(/^\d+\.\s*/, '').replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+
 function Legal({ page, onOpen, points }: { page: ContentPage; onOpen: Open; points: [ReactNode, string][] }) {
   return <>
     <section className="wb-hero pp-hero co-hero co-legal-hero"><div className="container">
       <div className="wb-kicker pp-kicker"><span className="pp-kicker-ico"><FileText size={16} /></span>{page.hero.kicker}</div>
       <h1>{page.hero.title}</h1>
-      <span className="co-pill is-amber"><PenLine size={13} />Full text being finalised</span>
+      {page.status !== 'final' && <span className="co-pill is-amber"><PenLine size={13} />Full text being finalised</span>}
       <p className="wb-lead">{page.hero.body}</p>
+      {page.hero.reassurance && <p className="co-legal-date">{page.hero.reassurance}</p>}
     </div></section>
     <section className="container co-legal">
-      <aside className="co-toc"><small>On this page</small>{page.sections.map(s => <a key={s.title} href={`#${s.title.toLowerCase().replace(/[^a-z]+/g, '-')}`}>{s.title.replace(/\.$/, '')}</a>)}<a href="#questions">Questions</a></aside>
+      <aside className="co-toc"><small>On this page</small>{page.sections.map(s => <a key={s.title} href={`#${legalId(s.title)}`}>{s.title.replace(/\.$/, '')}</a>)}<a href="#questions">Questions</a></aside>
       <div>
         <div className="co-points">{points.map(([icon, label]) => <Reveal key={label} className="co-point"><span>{icon}</span>{label}</Reveal>)}</div>
-        {page.sections.map(s => <Reveal key={s.title} className="co-legal-block"><h2 id={s.title.toLowerCase().replace(/[^a-z]+/g, '-')}>{s.title}</h2>{s.paragraphs.map(p => <p key={p}>{p}</p>)}</Reveal>)}
+        {page.sections.map(s => <Reveal key={s.title} className="co-legal-block"><h2 id={legalId(s.title)}>{s.title}</h2>{s.body ? s.body.map((b, i) => 'h3' in b ? <h3 key={i}>{b.h3}</h3> : 'ul' in b ? <ul key={i}>{b.ul.map(t => <li key={t}>{t}</li>)}</ul> : <p key={i}>{b.p}</p>) : s.paragraphs.map(p => <p key={p}>{p}</p>)}</Reveal>)}
         <Reveal className="co-legal-block co-legal-ask"><h2 id="questions">{page.cta.title}</h2><p>{page.cta.body}</p><Link className="wb-btn" href="/contact/">Contact us <ArrowRight size={16} /></Link></Reveal>
       </div>
     </section>

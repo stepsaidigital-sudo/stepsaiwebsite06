@@ -10,7 +10,13 @@
     "kicker": "Partner with us",
     "title": "Offer AI agents to your clients without building them.",
     "body": "Your clients are asking for AI. Steps AI gives your agency the agents, channels and integrations to deliver it, under one account you manage.",
-    "reassurance": "Unlimited agents on paid plans. One account, one bill. Commission on clients you bring."
+    "reassurance": "Unlimited agents on paid plans. One account, one bill. Commission on clients you bring.",
+    "image": {
+      "src": "/photos/pg-partners.jpg",
+      "alt": "Three people planning work together over a document at a table",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "sections": [
     {

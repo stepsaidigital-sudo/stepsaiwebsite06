@@ -10,7 +10,13 @@
     "kicker": "Case studies",
     "title": "How businesses use Steps AI, in their own words.",
     "body": "Ecommerce brands and SaaS teams share what changed after their AI agent started answering customers. Choose an agent to see the stories behind it.",
-    "reassurance": "Real customers. Their own words. Grouped by the job the agent does."
+    "reassurance": "Real customers. Their own words. Grouped by the job the agent does.",
+    "image": {
+      "src": "/photos/pg-case-studies.jpg",
+      "alt": "Smiling owner inside his clothing store",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "agents": [
     {

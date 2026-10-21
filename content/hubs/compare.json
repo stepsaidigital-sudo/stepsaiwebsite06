@@ -10,7 +10,13 @@
     "kicker": "Compare",
     "title": "Compare Steps AI with the tools you are considering.",
     "body": "Each comparison covers channels, order lookups and pricing model, and says plainly when the other tool is the better choice.",
-    "reassurance": "Plain comparisons. Where we fit. Where we do not."
+    "reassurance": "Plain comparisons. Where we fit. Where we do not.",
+    "image": {
+      "src": "/photos/pg-compare.jpg",
+      "alt": "Man at a laptop thinking through his options",
+      "width": 1600,
+      "height": 1067
+    }
   },
   "cards": [
     {
