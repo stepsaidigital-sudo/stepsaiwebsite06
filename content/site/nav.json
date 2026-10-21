@@ -12,7 +12,7 @@
           "items": [
             {
               "label": "WhatsApp broadcast",
-              "href": "/features/whatsapp-broadcast/",
+              "href": "/features/whatsapp-broadcasting/",
               "body": "Personalised WhatsApp campaigns"
             },
             {
@@ -48,22 +48,22 @@
           "items": [
             {
               "label": "Website chatbot",
-              "href": "/channels/website-chatbot/",
+              "href": "/channels/website-ai-agent/",
               "body": ""
             },
             {
               "label": "WhatsApp chatbot",
-              "href": "/channels/whatsapp-chatbot/",
+              "href": "/channels/whatsapp-ai-agent/",
               "body": ""
             },
             {
               "label": "Instagram chatbot",
-              "href": "/channels/instagram-chatbot/",
+              "href": "/channels/instagram-ai-agent/",
               "body": ""
             },
             {
               "label": "Messenger chatbot",
-              "href": "/channels/messenger-chatbot/",
+              "href": "/channels/messenger-ai-agent/",
               "body": ""
             }
           ]
@@ -96,16 +96,6 @@
               "label": "AI booking agent",
               "href": "/use-cases/ai-booking-agent/",
               "body": "Book appointments and demos"
-            },
-            {
-              "label": "AI receptionist",
-              "href": "/use-cases/ai-receptionist/",
-              "body": "Answer calls and take bookings"
-            },
-            {
-              "label": "AI marketing agent",
-              "href": "/use-cases/ai-marketing-agent/",
-              "body": "Campaigns and comment replies"
             }
           ]
         },
@@ -115,42 +105,42 @@
           "items": [
             {
               "label": "Ecommerce",
-              "href": "/industries/ecommerce/",
+              "href": "/solutions/ecommerce/",
               "body": ""
             },
             {
               "label": "Healthcare",
-              "href": "/industries/healthcare/",
+              "href": "/solutions/healthcare/",
               "body": ""
             },
             {
               "label": "Education",
-              "href": "/industries/education/",
+              "href": "/solutions/education/",
               "body": ""
             },
             {
               "label": "Real estate",
-              "href": "/industries/real-estate/",
+              "href": "/solutions/real-estate/",
               "body": ""
             },
             {
               "label": "Travel and hospitality",
-              "href": "/industries/travel-and-hospitality/",
+              "href": "/solutions/travel-and-hospitality/",
               "body": ""
             },
             {
               "label": "SaaS",
-              "href": "/industries/saas/",
+              "href": "/solutions/saas/",
               "body": ""
             },
             {
               "label": "Financial services",
-              "href": "/industries/financial-services/",
+              "href": "/solutions/financial-services/",
               "body": ""
             },
             {
               "label": "All industries",
-              "href": "/industries/",
+              "href": "/solutions/",
               "body": ""
             }
           ]

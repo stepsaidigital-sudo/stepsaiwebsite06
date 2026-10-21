@@ -1,0 +1,45 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "hub",
+  "seo": {
+    "title": "Omnichannel Chatbot and AI Agent for WhatsApp, Instagram and Web",
+    "description": "Run one AI agent across your website, WhatsApp, Instagram and more with shared knowledge, skills and brand voice across every channel."
+  },
+  "hero": {
+    "kicker": "Channels",
+    "title": "One AI agent, working on every channel.",
+    "body": "Your agent answers on your website, WhatsApp, Instagram and Messenger with the same knowledge, skills and brand voice. Every conversation lands in one inbox for your team."
+  },
+  "cta": {
+    "title": "Not sure which channels to start with?",
+    "body": "Book a demo and we will show you how one agent would work across the channels your customers use."
+  },
+  "cardsTitle": "Explore channels.",
+  "cards": [
+    {
+      "label": "Website AI agent",
+      "href": "/channels/website-ai-agent/",
+      "body": "Add an AI agent to your website in minutes. Works with WordPress, Wix, Webflow, Framer and custom sites.",
+      "built": true
+    },
+    {
+      "label": "WhatsApp AI agent",
+      "href": "/channels/whatsapp-ai-agent/",
+      "body": "Answer questions, share products and send order updates on WhatsApp, and hand over to your team.",
+      "built": true
+    },
+    {
+      "label": "Instagram AI agent",
+      "href": "/channels/instagram-ai-agent/",
+      "body": "Answer Instagram DMs, turn comments into conversations and reply to story mentions.",
+      "built": true
+    },
+    {
+      "label": "Messenger AI agent",
+      "href": "/channels/messenger-ai-agent/",
+      "body": "Answer customers who message your Facebook page with an agent that knows your business.",
+      "built": true
+    }
+  ]
+}

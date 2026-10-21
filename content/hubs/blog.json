@@ -4,6 +4,28 @@
   "fetched": "2026-10-12",
   "posts": [
     {
+      "id": 95,
+      "slug": "whatsapp-template-message-categories",
+      "url": "https://stepsai.co/blog/whatsapp-template-message-categories/",
+      "title": "WhatsApp Template Message Categories Explained: Marketing, Utility and Authentication",
+      "excerpt": "Marketing, utility or authentication? Learn how WhatsApp template message categories work, what each costs in India, and how to pick the right one.",
+      "image": "https://cdn.sanity.io/images/6wg7mum3/production/8e9b5d0c2b771f3fd75aabfc43d38cb3a6d12d71-1448x1086.webp?w=800&fm=webp&q=70",
+      "author": "Tanu Adhikari",
+      "date": "Oct 16, 2026",
+      "topic": "WhatsApp"
+    },
+    {
+      "id": 94,
+      "slug": "what-is-whatsapp-business-api",
+      "url": "https://stepsai.co/blog/what-is-whatsapp-business-api/",
+      "title": "What Is WhatsApp Business API? How It Works and Whether You Need It",
+      "excerpt": "WhatsApp Business API explained in the easiest way: how it differs from the free app, the rules to follow, and how to get started without a developer.",
+      "image": "https://cdn.sanity.io/images/6wg7mum3/production/c78c90238867d898345c4502ee00dbb02d546951-1448x1086.webp?w=800&fm=webp&q=70",
+      "author": "Tanu Adhikari",
+      "date": "Oct 14, 2026",
+      "topic": "WhatsApp"
+    },
+    {
       "id": 93,
       "slug": "diwali-wishes-for-customers",
       "url": "https://stepsai.co/blog/diwali-wishes-for-customers/",

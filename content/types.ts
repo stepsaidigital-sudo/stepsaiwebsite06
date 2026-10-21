@@ -81,7 +81,8 @@ export type ComparePage = Status & {
   ours: Block; theirs: Block; switching: Block; goodToKnow: Notes; faq: FaqBlock; cta: Cta;
 };
 
-export type HubPage = Status & { kind: 'hub'; seo: Seo; hero: Hero; cards: (Related & { built: boolean })[]; cta: Cta };
+// cardsTitle: heading above the cards; defaults to one built from the SEO title.
+export type HubPage = Status & { kind: 'hub'; seo: Seo; hero: Hero; cardsTitle?: string; cards: (Related & { built: boolean })[]; cta: Cta };
 
 export type PricingPage = Status & {
   kind: 'pricing'; seo: Seo; hero: Hero;

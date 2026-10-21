@@ -168,7 +168,7 @@ function Team({ page, onOpen }: { page: ContentPage; onOpen: Open }) {
     </div>} />
     {founder && <section className="container"><Reveal className="co-founder-card">
       <RealPhoto src="/photos/team/reshmanth.jpg" alt={founder.title} note="Real photo needed: a natural portrait of Reshmanth Jonnalagadda (4:5). Please use a real photo, not an AI image." />
-      <div><span className="wb-eyebrow">Founder</span><h2>{founder.title}</h2><p>{founder.body}</p><Link className="co-link" href="/founders-note/">Read the founder’s note <ArrowRight size={15} /></Link></div>
+      <div><span className="wb-eyebrow">Founder</span><h2>{founder.title}</h2><p>{founder.body}</p><Link className="co-link" href="/note/">Read the founder’s note <ArrowRight size={15} /></Link></div>
     </Reveal></section>}
     <section className="co-band"><div className="container">
       <Head eyebrow="The team" title={team.title} intro={team.paragraphs[0]} center />

@@ -1,0 +1,57 @@
+{
+  "status": "draft",
+  "source": "draft, pending specialist copy",
+  "kind": "hub",
+  "seo": {
+    "title": "Platform Features: Skills, CRM, Analytics & More | Steps AI",
+    "description": "Explore Steps AI features for analytics, lead capture, CRM, ticketing, agent skills, integrations, and omnichannel AI automation."
+  },
+  "hero": {
+    "kicker": "Features",
+    "title": "Everything your AI agent and your team need, in one place.",
+    "body": "Give your agent skills, keep every conversation in one inbox, track customers in the CRM and see what is working. Pick a feature to see how it works."
+  },
+  "cta": {
+    "title": "Want to see these features on your business?",
+    "body": "Book a demo and we will show you how Steps AI would work with your customers and your tools."
+  },
+  "cardsTitle": "Explore features.",
+  "cards": [
+    {
+      "label": "Agent skills",
+      "href": "/features/skills/",
+      "body": "Book appointments, create tickets, save leads and hand over to your team, with rules you write in plain English.",
+      "built": true
+    },
+    {
+      "label": "Unified inbox",
+      "href": "/features/unified-inbox/",
+      "body": "Every conversation from every agent and channel in one inbox. Take over from the AI and reply as your team.",
+      "built": true
+    },
+    {
+      "label": "CRM",
+      "href": "/features/crm/",
+      "body": "Customer records, support tickets and live requests from every chat in one place, or sent to HubSpot.",
+      "built": true
+    },
+    {
+      "label": "Analytics",
+      "href": "/features/analytics/",
+      "body": "See how many chats your agents handle, what customers ask and which channels they use.",
+      "built": true
+    },
+    {
+      "label": "Workflow builder",
+      "href": "/features/workflow-builder/",
+      "body": "Recover carts, confirm COD orders and send updates with ready-made workflows, or build your own without code.",
+      "built": true
+    },
+    {
+      "label": "WhatsApp broadcasting",
+      "href": "/features/whatsapp-broadcasting/",
+      "body": "Send personalised WhatsApp campaigns to the right customers. Your AI agent answers every reply.",
+      "built": true
+    }
+  ]
+}

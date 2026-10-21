@@ -19,8 +19,6 @@ import websiteChatbotChannelJson from '@/content/channels/website-chatbot.json';
 import whatsappChatbotChannelJson from '@/content/channels/whatsapp-chatbot.json';
 import aiBookingAgentUseCaseJson from '@/content/use-cases/ai-booking-agent.json';
 import aiLeadCaptureAgentUseCaseJson from '@/content/use-cases/ai-lead-capture-agent.json';
-import aiMarketingAgentUseCaseJson from '@/content/use-cases/ai-marketing-agent.json';
-import aiReceptionistUseCaseJson from '@/content/use-cases/ai-receptionist.json';
 import aiSalesAgentUseCaseJson from '@/content/use-cases/ai-sales-agent.json';
 import aiSupportAgentUseCaseJson from '@/content/use-cases/ai-support-agent.json';
 import ecommerceIndustryJson from '@/content/industries/ecommerce.json';
@@ -31,6 +29,8 @@ import realEstateIndustryJson from '@/content/industries/real-estate.json';
 import saasIndustryJson from '@/content/industries/saas.json';
 import travelAndHospitalityIndustryJson from '@/content/industries/travel-and-hospitality.json';
 import industriesHub from '@/content/hubs/industries.json';
+import featuresHub from '@/content/hubs/features.json';
+import channelsHub from '@/content/hubs/channels.json';
 import pricingPage from '@/content/pages/pricing.json';
 import aboutPage from '@/content/pages/about.json';
 import notFoundPage from '@/content/pages/not-found.json';
@@ -84,17 +84,19 @@ import zendeskIntegration from '@/content/integrations/zendesk.json';
 
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
-const features = { 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcast': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
+const features = { 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcasting': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
 // Chat page is switched off for now; its content stays in content/channels/chat-page.json.
-const channels = { 'instagram-chatbot': instagramChatbotChannelJson, 'messenger-chatbot': messengerChatbotChannelJson, 'website-chatbot': websiteChatbotChannelJson, 'whatsapp-chatbot': whatsappChatbotChannelJson } satisfies Record<string, Json<ChannelPage>>;
-const useCases = { 'ai-booking-agent': aiBookingAgentUseCaseJson, 'ai-lead-capture-agent': aiLeadCaptureAgentUseCaseJson, 'ai-marketing-agent': aiMarketingAgentUseCaseJson, 'ai-receptionist': aiReceptionistUseCaseJson, 'ai-sales-agent': aiSalesAgentUseCaseJson, 'ai-support-agent': aiSupportAgentUseCaseJson } satisfies Record<string, Json<UseCasePage>>;
+const channels = { 'instagram-ai-agent': instagramChatbotChannelJson, 'messenger-ai-agent': messengerChatbotChannelJson, 'website-ai-agent': websiteChatbotChannelJson, 'whatsapp-ai-agent': whatsappChatbotChannelJson } satisfies Record<string, Json<ChannelPage>>;
+// AI receptionist (held until voice is live) and AI marketing agent (not published) keep their
+// content in content/use-cases/ but have no page.
+const useCases = { 'ai-booking-agent': aiBookingAgentUseCaseJson, 'ai-lead-capture-agent': aiLeadCaptureAgentUseCaseJson, 'ai-sales-agent': aiSalesAgentUseCaseJson, 'ai-support-agent': aiSupportAgentUseCaseJson } satisfies Record<string, Json<UseCasePage>>;
 const industries = { 'ecommerce': ecommerceIndustryJson, 'education': educationIndustryJson, 'financial-services': financialServicesIndustryJson, 'healthcare': healthcareIndustryJson, 'real-estate': realEstateIndustryJson, 'saas': saasIndustryJson, 'travel-and-hospitality': travelAndHospitalityIndustryJson } satisfies Record<string, Json<IndustryPage>>;
 const integrations = { 'airtable': airtableIntegration, 'cal-com': calComIntegration, 'calendly': calendlyIntegration, 'delhivery': delhiveryIntegration, 'dtdc': dtdcIntegration, 'google-calendar': googleCalendarIntegration, 'google-drive': googleDriveIntegration, 'google-sheets': googleSheetsIntegration, 'hubspot': hubspotIntegration, 'ithink-logistics': ithinkLogisticsIntegration, 'klaviyo': klaviyoIntegration, 'notion': notionIntegration, 'outlook-calendar': outlookCalendarIntegration, 'outlook': outlookIntegration, 'shiprocket': shiprocketIntegration, 'shopify': shopifyIntegration, 'slack': slackIntegration, 'square-appointments': squareAppointmentsIntegration, 'wareiq': wareiqIntegration, 'woocommerce': woocommerceIntegration, 'zendesk': zendeskIntegration } satisfies Record<string, Json<IntegrationPage>>;
 const integrationsIndex = integrationsHub satisfies Json<IntegrationsHub>;
 const caseStudies = { 'ai-booking-agent': aiBookingAgentCase, 'ai-lead-capture-agent': aiLeadCaptureAgentCase, 'ai-marketing-agent': aiMarketingAgentCase, 'ai-receptionist': aiReceptionistCase, 'ai-sales-agent': aiSalesAgentCase, 'ai-support-agent': aiSupportAgentCase } satisfies Record<string, Json<CaseStudyPage>>;
 const caseStudiesIndex = caseStudiesHub satisfies Json<CaseStudiesHub>;
 const compares = { 'aisensy': vsAisensy, 'chatbase': vsChatbase, 'gorgias': vsGorgias, 'manychat': vsManychat, 'tidio': vsTidio, 'verifast': vsVerifast, 'wati': vsWati } satisfies Record<string, Json<ComparePage>>;
-const hubs = { industries: industriesHub, compare: compareHub } satisfies Record<string, Json<HubPage>>;
+const hubs = { industries: industriesHub, compare: compareHub, features: featuresHub, channels: channelsHub } satisfies Record<string, Json<HubPage>>;
 const pricing = pricingPage satisfies Json<PricingPage>;
 const pages = { about: aboutPage, 'not-found': notFoundPage, 'partners': partnersPage, 'affiliate-program': affiliateProgramPage, 'hire-an-agency': hireAnAgencyPage, 'founders-note': foundersNotePage, 'careers': careersPage, 'team': teamPage, 'contact': contactPage, 'security': securityPage, 'privacy-policy': privacyPolicyPage, 'terms-of-service': termsOfServicePage } satisfies Record<string, Json<ContentPage>>;
 

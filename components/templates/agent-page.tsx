@@ -2,6 +2,7 @@
 import { Face } from '@/components/site/face';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import { isPublishedUseCase } from '@/lib/published';
 import {
   ArrowRight, BadgeCheck, BarChart3, BookOpen, Bot, CalendarCheck, CalendarDays, Check, CircleCheck, Clock, FileText, Globe, Headphones,
   Inbox, Languages, Link2, Mail, Megaphone, MessageCircle, MessageSquare, PackageCheck, PhoneCall, PhoneIncoming, Search, Send,
@@ -85,7 +86,7 @@ const agents = [
 export function OtherAgents({ current, title = 'One agent can do more than one job.' }: { current: string; title?: string }) {
   return <section className="container pp-agents-wrap">
     <div className="pp-head"><span className="wb-eyebrow">One agent, many jobs</span><h2>{title}</h2><p>Give the same agent the skills it needs, or run a separate agent for each job. They share your information, inbox and contacts.</p></div>
-    <div className="pp-agents">{agents.filter(a => a.slug !== current).map(a => <Reveal key={a.slug}><Link className="pp-agent" href={`/use-cases/${a.slug}/`}>
+    <div className="pp-agents">{agents.filter(a => a.slug !== current && isPublishedUseCase(a.slug)).map(a => <Reveal key={a.slug}><Link className="pp-agent" href={`/use-cases/${a.slug}/`}>
       <span className={`pp-cap-ico wb-${a.tint}`}>{a.icon}</span><span><strong>{a.label}</strong><small>{a.body}</small></span><ArrowRight size={15} />
     </Link></Reveal>)}</div>
   </section>;
@@ -316,7 +317,7 @@ export function AgentPageTemplate({ page }: { page: UseCasePage }) {
     <Capabilities title={page.capabilities.title} intro={page.capabilities.intro} items={page.capabilities.items} icons={d.capIcons} />
     {d.stories}
     <ToolCards title={page.tools.title} intro={page.tools.intro} names={page.tools.names} />
-    {page.quote && <QuoteBlock excerpt={page.quote.excerpt} attribution={page.quote.attribution} href={`/case-studies/${page.slug}/`} />}
+    {page.quote && <QuoteBlock excerpt={page.quote.excerpt} attribution={page.quote.attribution} href="/case-studies/" />}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />
     <OtherAgents current={page.slug} />

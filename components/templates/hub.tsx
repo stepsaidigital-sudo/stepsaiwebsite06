@@ -8,7 +8,7 @@ import type { HubPage } from '@/content/types';
 export function HubTemplate({ page }: { page: HubPage }) {
   return <SiteFrame>{onOpen => <>
     <PageHero hero={page.hero} onOpen={onOpen} />
-    <RelatedCards title={`Explore ${page.seo.title.split(' | ')[0].toLowerCase()}.`} items={page.cards} onOpen={onOpen} />
+    <RelatedCards title={page.cardsTitle ?? `Explore ${page.seo.title.split(' | ')[0].toLowerCase()}.`} items={page.cards} onOpen={onOpen} />
     <Reveal><CtaBand cta={page.cta} onOpen={onOpen} /></Reveal>
   </>}</SiteFrame>;
 }

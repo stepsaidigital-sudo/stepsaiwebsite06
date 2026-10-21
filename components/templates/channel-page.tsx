@@ -31,10 +31,10 @@ const side = (lines: [('customer' | 'agent'), string][], done: string) => <div c
 </div>;
 
 const ind = {
-  ecommerce: { industry: 'Ecommerce', href: '/industries/ecommerce/', photo: '/photos/industry-ecommerce.jpg', icon: <ShoppingBag size={16} /> },
-  healthcare: { industry: 'Healthcare', href: '/industries/healthcare/', photo: '/photos/industry-healthcare.jpg', icon: <Stethoscope size={16} /> },
-  education: { industry: 'Education', href: '/industries/education/', photo: '/photos/industry-education.jpg', icon: <GraduationCap size={16} /> },
-  realestate: { industry: 'Real estate', href: '/industries/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
+  ecommerce: { industry: 'Ecommerce', href: '/solutions/ecommerce/', photo: '/photos/industry-ecommerce.jpg', icon: <ShoppingBag size={16} /> },
+  healthcare: { industry: 'Healthcare', href: '/solutions/healthcare/', photo: '/photos/industry-healthcare.jpg', icon: <Stethoscope size={16} /> },
+  education: { industry: 'Education', href: '/solutions/education/', photo: '/photos/industry-education.jpg', icon: <GraduationCap size={16} /> },
+  realestate: { industry: 'Real estate', href: '/solutions/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
 };
 
 // Industry examples for a channel: reuse the agent pages' conversations on that channel, one per industry,

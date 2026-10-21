@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
+import { isPublishedUseCase } from '@/lib/published';
 import {
   ArrowRight, BookOpen, Building2, CalendarCheck, CalendarDays, Check, CircleCheck, Clock, CreditCard, GraduationCap, Headphones, Home,
   IndianRupee, Landmark, Link2, Megaphone, Package, Plane, Search, Shirt, ShoppingBag, ShoppingCart, Stethoscope, Ticket, Truck, UserPlus,
@@ -107,7 +108,9 @@ function Problems({ data }: { data: NonNullable<IndustryPage['problems']> }) {
             <div className="pp-ps-a"><span className="pp-ps-bot"><img src="/brands/steps-original.png" alt="" /></span><p>{item.reply ?? item.fix}</p></div>
           </div>
           <span className="pp-ps-stamp"><CircleCheck size={16} />Answered in seconds</span>
-          {agentInfo[item.agent] && <Link className="pp-ps-agent" href={`/use-cases/${item.agent}/`}>{agentInfo[item.agent].icon}Handled by the {agentInfo[item.agent].label}<ArrowRight size={14} /></Link>}
+          {agentInfo[item.agent] && (isPublishedUseCase(item.agent)
+            ? <Link className="pp-ps-agent" href={`/use-cases/${item.agent}/`}>{agentInfo[item.agent].icon}Handled by the {agentInfo[item.agent].label}<ArrowRight size={14} /></Link>
+            : <a className="pp-ps-agent">{agentInfo[item.agent].icon}Handled by the {agentInfo[item.agent].label}<ArrowRight size={14} /></a>)}
         </div>
       </div>
     </div>
@@ -120,14 +123,16 @@ function Agents({ data }: { data: NonNullable<IndustryPage['agents']> }) {
       <div><span className="wb-eyebrow">Your agents</span><h2 aria-label={data.title}><SplitWords text={data.title} /></h2></div>
       <p>{data.intro}</p>
     </div>
-    <div className="pp-agent-cards">{data.items.map(a => <Reveal key={a.slug}><Link className="pp-agent-card" href={`/use-cases/${a.slug}/`}>
+    <div className="pp-agent-cards">{data.items.map(a => { const card = <>
       <figure className={a.photo ? '' : 'is-empty'}>{a.photo ? <img src={a.photo} alt="" loading="lazy" decoding="async" /> : <span className="pp-agent-big">{agentInfo[a.slug]?.icon}</span>}<span className="pp-agent-badge">{agentInfo[a.slug]?.icon}</span></figure>
       <div className="pp-agent-body">
         <h3>{agentInfo[a.slug]?.label}</h3>
         <ul>{a.does.map(x => <li key={x}><Check size={14} />{x}</li>)}</ul>
         <span className="pp-agent-cta">See how it works <ArrowRight size={14} /></span>
       </div>
-    </Link></Reveal>)}</div>
+    </>;
+      return <Reveal key={a.slug}>{isPublishedUseCase(a.slug) ? <Link className="pp-agent-card" href={`/use-cases/${a.slug}/`}>{card}</Link> : <a className="pp-agent-card">{card}</a>}</Reveal>;
+    })}</div>
   </div></section>;
 }
 

@@ -113,17 +113,17 @@
     "items": [
       {
         "label": "Instagram chatbot",
-        "href": "/channels/instagram-chatbot/",
+        "href": "/channels/instagram-ai-agent/",
         "body": "Reply to direct messages and turn comments into conversations."
       },
       {
         "label": "Messenger chatbot",
-        "href": "/channels/messenger-chatbot/",
+        "href": "/channels/messenger-ai-agent/",
         "body": "Answer customers who message your Facebook page."
       },
       {
         "label": "Website chatbot",
-        "href": "/channels/website-chatbot/",
+        "href": "/channels/website-ai-agent/",
         "body": "Welcome visitors on your website and help them take the next step."
       }
     ]

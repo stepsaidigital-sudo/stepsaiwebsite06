@@ -21,43 +21,43 @@
   "cards": [
     {
       "label": "Ecommerce",
-      "href": "/industries/ecommerce/",
+      "href": "/solutions/ecommerce/",
       "body": "Recommend products, help with checkout and answer order questions.",
       "built": true
     },
     {
       "label": "Healthcare",
-      "href": "/industries/healthcare/",
+      "href": "/solutions/healthcare/",
       "body": "Share clinic information, answer booking questions and collect appointment details.",
       "built": true
     },
     {
       "label": "Education",
-      "href": "/industries/education/",
+      "href": "/solutions/education/",
       "body": "Share course information, capture enquiries and book counselling.",
       "built": true
     },
     {
       "label": "Real estate",
-      "href": "/industries/real-estate/",
+      "href": "/solutions/real-estate/",
       "body": "Ask about requirements, answer property questions and arrange a visit.",
       "built": true
     },
     {
       "label": "Travel and hospitality",
-      "href": "/industries/travel-and-hospitality/",
+      "href": "/solutions/travel-and-hospitality/",
       "body": "Answer questions about rooms, packages and policies. Collect travel enquiries and arrange a call with your team.",
       "built": true
     },
     {
       "label": "SaaS",
-      "href": "/industries/saas/",
+      "href": "/solutions/saas/",
       "body": "Answer product questions, collect requirements and book a demo.",
       "built": true
     },
     {
       "label": "Financial services",
-      "href": "/industries/financial-services/",
+      "href": "/solutions/financial-services/",
       "body": "Explain application requirements, collect enquiries and arrange a call with your team.",
       "built": true
     }

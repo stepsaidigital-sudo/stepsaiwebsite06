@@ -264,7 +264,6 @@ function Banner({ image }: { image: HeroImage }) {
 function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
   const p = person(e.story.attribution);
   const inspire = brandInspireMap[e.story.brand];
-  const targetSlug = inspire?.brandSlug || e.slug;
 
   const content = (
     <>
@@ -320,15 +319,7 @@ function StoryCard({ e, open }: { e: Entry; open?: boolean }) {
     return <article className="cs2-card cs2-card-static">{content}</article>;
   }
 
-  return (
-    <Link
-      href={`/case-studies/${targetSlug}/`}
-      className="cs2-card cs2-card-link"
-      title={`Read full ${e.story.brand} detail case study`}
-    >
-      {content}
-    </Link>
-  );
+  return <a className="cs2-card cs2-card-link">{content}</a>;
 }
 
 /* Featured Spotlight Wide Card (Spans 2 columns on desktop) */
@@ -336,14 +327,10 @@ function SpotlightCard({ e }: { e: Entry }) {
   const p = person(e.story.attribution);
   const inspire = brandInspireMap[e.story.brand];
   const photo = inspire?.photo || brandPhotos[e.story.brand] || '/images/case-studies/mysa-living.jpg';
-  const targetSlug = inspire?.brandSlug || e.slug;
 
+  // Not a link until per-customer case study pages are published.
   return (
-    <Link
-      href={`/case-studies/${targetSlug}/`}
-      className="cs2-card cs2-spotlight-card"
-      title={`Read full ${e.story.brand} featured case study`}
-    >
+    <a className="cs2-card cs2-spotlight-card">
       <div className="cs2-spotlight-visual">
         <img src={photo} alt={e.story.brand} className="cs2-spotlight-img" loading="lazy" />
         <div className="cs2-spotlight-overlay">
@@ -401,7 +388,7 @@ function SpotlightCard({ e }: { e: Entry }) {
           </span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

@@ -6,10 +6,10 @@ import { useCaseIndustryImages } from './usecase-images';
 // every action shown is one the product supports (catalogue, orders, tickets, leads, bookings, calls, campaigns).
 
 const ind = {
-  ecommerce: { industry: 'Ecommerce', href: '/industries/ecommerce/', photo: '/photos/industry-ecommerce.jpg', icon: <ShoppingBag size={16} /> },
-  healthcare: { industry: 'Healthcare', href: '/industries/healthcare/', photo: '/photos/industry-healthcare.jpg', icon: <Stethoscope size={16} /> },
-  education: { industry: 'Education', href: '/industries/education/', photo: '/photos/industry-education.jpg', icon: <GraduationCap size={16} /> },
-  realestate: { industry: 'Real estate', href: '/industries/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
+  ecommerce: { industry: 'Ecommerce', href: '/solutions/ecommerce/', photo: '/photos/industry-ecommerce.jpg', icon: <ShoppingBag size={16} /> },
+  healthcare: { industry: 'Healthcare', href: '/solutions/healthcare/', photo: '/photos/industry-healthcare.jpg', icon: <Stethoscope size={16} /> },
+  education: { industry: 'Education', href: '/solutions/education/', photo: '/photos/industry-education.jpg', icon: <GraduationCap size={16} /> },
+  realestate: { industry: 'Real estate', href: '/solutions/real-estate/', photo: '/photos/industry-realestate.jpg', icon: <Building2 size={16} /> },
 };
 
 const scenariosByAgent: Record<string, { title: string; intro: string; scenarios: Scenario[] }> = {

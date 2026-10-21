@@ -108,17 +108,17 @@
     "items": [
       {
         "label": "Website chatbot",
-        "href": "/channels/website-chatbot/",
+        "href": "/channels/website-ai-agent/",
         "body": "Answer visitors on your website."
       },
       {
         "label": "WhatsApp chatbot",
-        "href": "/channels/whatsapp-chatbot/",
+        "href": "/channels/whatsapp-ai-agent/",
         "body": "Answer customers on WhatsApp."
       },
       {
         "label": "Messenger chatbot",
-        "href": "/channels/messenger-chatbot/",
+        "href": "/channels/messenger-ai-agent/",
         "body": "Answer customers who message your Facebook page."
       }
     ]
