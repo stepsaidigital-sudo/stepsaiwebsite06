@@ -128,10 +128,13 @@
   display: none;
 }
 
-/* Universal Card Base: Sized so 4 full cards display across desktop */
+/* Universal Card Base: Sized so 4 full cards display across desktop, all strictly equal in size */
 .exp-card {
   flex: 0 0 clamp(290px, 22.8vw, 345px);
-  min-height: 395px;
+  height: 410px;
+  min-height: 410px;
+  max-height: 410px;
+  box-sizing: border-box;
   scroll-snap-align: start;
   border-radius: 24px;
   display: flex;
@@ -184,11 +187,15 @@
 }
 
 .exp-gold-quote {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   font-size: 0.95rem;
   line-height: 1.6;
   color: #1f2937;
-  flex-grow: 1;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .exp-gold-footer {
@@ -196,6 +203,7 @@
   align-items: center;
   gap: 14px;
   padding-top: 14px;
+  margin-top: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -264,11 +272,15 @@
 }
 
 .exp-quote-text {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   font-size: 0.9375rem;
-  line-height: 1.68;
+  line-height: 1.65;
   color: #1e293b;
-  flex-grow: 1;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .exp-author {
@@ -276,6 +288,7 @@
   align-items: center;
   gap: 12px;
   padding-top: 14px;
+  margin-top: auto;
   border-top: 1px solid rgba(226, 232, 240, 0.85);
 }
 
