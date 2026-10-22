@@ -13,7 +13,11 @@ const pages = [
   '/features/', '/channels/', '/solutions/', '/case-studies/', '/compare/', '/integrations/', '/help/', '/help/faqs/', '/blog/',
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Blog posts come from Sanity, so new posts join the sitemap without a deploy.
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await listPosts().catch(() => []);
   const paths = [
     ...pages,
     ...listFeatures().map(s => `/features/${s}/`),
@@ -23,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...listCompares().map(s => `/compare/steps-ai-vs-${s}/`),
     ...listIntegrations().map(s => `/integrations/${s}/`),
     ...helpLessons.map(l => `/help/${l.slug}/`),
-    ...listPosts().map(p => `/blog/${p.slug}/`),
+    ...posts.map(p => `/blog/${p.slug}/`),
   ];
   return [...new Set(paths)].map(path => ({ url: site + path }));
 }
