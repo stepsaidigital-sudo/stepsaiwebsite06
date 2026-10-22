@@ -1,0 +1,50 @@
+[
+  {
+    "page": "website",
+    "asset": "public/images/channels/website/evening-furniture-chat.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 96406,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-0f344093-c959-4da5-9373-b71109dfaee4.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/channels/website/evening-furniture-chat.webp"
+  },
+  {
+    "page": "whatsapp",
+    "asset": "public/images/channels/whatsapp/gift-delivery-message.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 154630,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-a3a7a338-78ef-4c0c-91fb-bd52fb477ef7.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/channels/whatsapp/gift-delivery-message.webp"
+  },
+  {
+    "page": "instagram",
+    "asset": "public/images/channels/instagram/linen-reel-studio.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 171668,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-c9690eb5-0bf8-4ac6-b374-bd3f25b87a3a.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/channels/instagram/linen-reel-studio.webp"
+  },
+  {
+    "page": "messenger",
+    "asset": "public/images/channels/messenger/local-shop-page-message.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 162254,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-80359f80-16e9-4863-bbd9-914308c18c71.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/channels/messenger/local-shop-page-message.webp"
+  }
+]

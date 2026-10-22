@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { IntegrationTemplate } from '@/components/templates/integration';
+import { IntegrationDetail } from '@/components/templates/integration-detail';
+import { ShopifyIntegration } from '@/components/templates/shopify-integration';
 import { getIntegration, getIntegrationsHub, listIntegrations } from '@/lib/content';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,5 +22,5 @@ export default async function IntegrationRoute({ params }: Props) {
   const apps = getIntegrationsHub().apps.filter(app => app.slug !== page.slug);
   const same = apps.filter(app => app.category === page.category);
   const related = [...same, ...apps.filter(app => !same.includes(app))].slice(0, Math.max(3, same.length));
-  return <IntegrationTemplate page={page} related={related} />;
+  return page.slug === 'shopify' ? <ShopifyIntegration page={page} related={related} /> : <IntegrationDetail page={page} related={related} />;
 }

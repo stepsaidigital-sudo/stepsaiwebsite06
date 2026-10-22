@@ -132,7 +132,7 @@
           "Shares document checklists",
           "Passes advice questions to your team"
         ],
-        "photo": "/photos/in-fin-story.jpg"
+        "photo": "/images/industries/financial-services/document-checklist-guidance.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -141,7 +141,7 @@
           "Notes the product of interest",
           "Saves enquiries to your CRM"
         ],
-        "photo": "/photos/ho-lead.jpg"
+        "photo": "/images/industries/financial-services/product-information-enquiry.webp"
       },
       {
         "slug": "ai-booking-agent",
@@ -150,7 +150,7 @@
           "Offers times from their calendars",
           "Sends the confirmation"
         ],
-        "photo": "/photos/ho-booking.jpg"
+        "photo": "/images/industries/financial-services/adviser-call-confirmation.webp"
       }
     ]
   },

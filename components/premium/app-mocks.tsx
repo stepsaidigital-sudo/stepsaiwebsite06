@@ -1,5 +1,5 @@
 'use client';
-import { Face } from '@/components/site/face';
+import { IllustratedFace as Face } from '@/components/site/illustrated-profile';
 import type { ReactNode } from 'react';
 import {
   BadgeCheck, Bell, Bot, CalendarDays, Check, CircleDot, Clock, Filter, GitBranch, Hand, Inbox, LayoutGrid, Mail, MessageSquare,

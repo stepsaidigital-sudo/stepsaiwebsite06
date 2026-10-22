@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BlogHubTemplate } from '@/components/templates/blog-hub';
-import { listPosts } from '@/lib/blog';
+import { blogConfigured, listPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Chatbot, WhatsApp and support guides | Steps AI',
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function BlogRoute() {
-  return <BlogHubTemplate posts={await listPosts()} />;
+  return <BlogHubTemplate posts={await listPosts()} unavailable={!blogConfigured} />;
 }

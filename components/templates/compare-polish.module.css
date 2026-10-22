@@ -1,0 +1,26 @@
+/* Shared comparison layout for every competitor. */
+.card { width: 100%; max-width: 520px; padding: 28px; box-shadow: 0 20px 50px -30px #143e7850; border-color: #d4e0ed; }
+.card :global(.vs-head) { display: grid; grid-template-columns: 1fr 32px 1fr; gap: 12px; padding-bottom: 22px; margin-bottom: 0; }
+.card :global(.vs-brand) { min-width: 0; font-size: 15px; gap: 10px; white-space: nowrap; }
+.card :global(.vs-brand):last-child { justify-content: flex-end; }
+.card :global(.vs-brand) img { flex-shrink: 0; object-fit: contain; border-radius: 0; max-width: none; }
+.card :global(.vs-brand.is-us) img { width: 56px; height: auto; aspect-ratio: 845 / 449; }
+.card :global(.vs-brand):last-child img { width: 30px; height: 30px; }
+.card :global(.vs-badge) { width: 30px; height: 30px; font-family: inherit; font-style: normal; font-size: 12px; }
+.card :global(.vs-mini) { padding: 20px 0; border-top: 1px solid #e0e7f0; animation: none; }
+.card :global(.vs-mini) small { color: #225789; font-size: 11px; margin-bottom: 12px; }
+.card :global(.vs-mini)>div { gap: 20px; }
+.card :global(.vs-mini) span { color: #24364b; font-size: 13px; line-height: 1.75; }
+.card :global(.vs-mini) span + span { border-left: 1px solid #dce5ef; padding-left: 16px; }
+.card :global(.vs-note) { padding-top: 16px; border-top: 1px solid #e0e7f0; color: #475569; line-height: 1.6; }
+:global(.sp-main):has(.card) :global(.sp-hero) { background: linear-gradient(120deg,#f8fafd,#eaf4ff); }
+:global(.sp-main):has(.card) :global(.sp-hero-copy) h1 { font-family: Manrope,Arial,sans-serif; font-size: clamp(34px,3.7vw,52px); font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
+:global(.sp-main):has(.card) :global(.sp-hero-inner) { gap: 48px; align-items: center; }
+:global(.sp-main):has(.card) :global(.vs-table) { border-color: #d4e0ed; box-shadow: none; }
+:global(.sp-main):has(.card) :global(.vs-row-head) { background: #eef4fc; }
+:global(.sp-main):has(.card) :global(.vs-row) > * { line-height: 1.8; padding: 22px 24px; }
+:global(.sp-main):has(.card) :global(.vs-row) p { color: #24364b; }
+:global(.sp-main):has(.card) :global(.vs-fit-col) { padding: 32px; border-color: #d4e0ed; }
+:global(.sp-main):has(.card) :global(.vs-fit-col) h2 { font-family: Manrope,Arial,sans-serif; font-weight: 600; line-height: 1.3; }
+:global(.sp-main):has(.card) :global(.vs-fit-col) li { padding-top: 18px; border-top: 1px solid #dce5ef; }
+@media(max-width:700px) { .card { padding: 22px 18px; max-width: none; } .card :global(.vs-brand) { font-size: 13px; gap: 6px; } .card :global(.vs-brand.is-us) img { width: 44px; } .card :global(.vs-head) { gap: 6px; } .card :global(.vs-mini)>div { gap: 16px; } .card :global(.vs-mini) span { display: block; } .card :global(.vs-mini) span::before { display: block; font-weight: 700; margin-bottom: 4px; content: attr(data-brand); } .card :global(.vs-mini) span + span::before { content: attr(data-brand); } .card :global(.vs-mini) span + span { padding-left: 0; border-left: 0; } .card :global(.vs-mini) svg { display: none; } :global(.sp-main):has(.card) :global(.vs-row)>* { padding: 16px; } :global(.sp-main):has(.card) :global(.vs-fit-col) { padding: 24px; } }

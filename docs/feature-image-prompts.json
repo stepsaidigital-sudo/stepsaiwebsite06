@@ -1,0 +1,34 @@
+[
+  {
+    "id": "illustrated-profile-sheet",
+    "prompt": "Create one square avatar sprite sheet, exactly 3 by 3 equal square cells, no gutters, no text, each cell a different friendly sophisticated paper-cut animal profile illustration centered with generous circular-crop-safe margins. Row1: orange fox on pale peach, teal owl on pale mint, blue whale on pale blue. Row2: purple rabbit on pale lavender, green turtle on cream, coral cat on pale pink. Row3: ochre bear on pale yellow, indigo penguin on ice blue, sage hummingbird on soft beige. Flat polished tactile illustration, crisp simple shapes readable at 32 pixels, no human faces, no human bodies, no logos, no borders. Consistent lighting, each animal distinct. This single sheet is for fictional customer profile pictures in business software."
+  },
+  {
+    "id": "support-desk",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. An empty customer support workstation, headset resting beside laptop with abstract blue conversation panels, a return parcel and a small notepad, warm window light, no people. Main action centered and crop-safe for a 536x440 section image with existing UI overlay. No visible human faces, heads, portrait avatars, reflections of people, brands, watermark or personal data. Realistic professional photography, no floating interface elements."
+  },
+  {
+    "id": "customer-records",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. Overhead cropped hands comparing garment order cards with a laptop showing generic customer record rows in a small clothing studio, linen swatches, no readable personal information. Centered activity, safe crop for 536x440 with UI overlay. No faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data. Natural professional photography."
+  },
+  {
+    "id": "customer-question-analysis",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. Angled close view of a tablet with simple blue bar charts and handwritten tally marks on a notebook at a retail planning desk, reading glasses and pen, no people. Centered tablet and notebook, safe crop for 536x440 with UI overlay. No faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data. Cool daylight and pale stone desk for variety."
+  },
+  {
+    "id": "appointment-setup",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. An empty wellness reception desk with a laptop showing a simple weekly appointment calendar, appointment cards and a small brass bell, sage and cream palette. Centered objects and crop-safe for hero with chat overlay. No faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data. Natural professional photography."
+  },
+  {
+    "id": "warranty-workflow",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. Cropped hands photographing a faulty compact coffee grinder beside a laptop and blank warranty form, repair studio oak workbench, natural daylight, no heads. Centered activity safe crop for 536x440 section with UI overlay. No visible faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data. Professional photography."
+  },
+  {
+    "id": "specialist-handoff",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. Quiet specialist service desk with an empty chair, headset on stand and laptop showing simple abstract conversation panels, open reference binder, soft warm side light, no people. Wide side angle, centered activity safe crop for 536x440 with UI overlay, muted navy and warm stone palette. No faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data."
+  },
+  {
+    "id": "order-follow-up",
+    "prompt": "Photorealistic natural editorial website photo, landscape 4:3. Side view of cropped hands sealing a small retail parcel on a packing table with a laptop showing a simple connected three-step flow and shipping labels without readable addresses, blue wrapping paper. Centered activity safe crop for 536x440 with UI overlay. No visible faces, heads, portrait avatars, reflections of people, brand logos, watermark or personal data. Bright neutral daylight, professional authentic photography."
+  }
+]

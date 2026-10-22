@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "generator": "Built-in image_gen",
+  "rule": "Five fresh distinct images; no reused assets or visible faces; preserve layout; WebP exports.",
+  "prompts": [
+    {
+      "id": "clinic-arrival",
+      "prompt": "Create one realistic editorial photograph for a healthcare website hero about patient enquiries and appointment booking. Landscape 4:3. A bright, welcoming small outpatient clinic reception area, seen from the patient arrival perspective: curved pale oak reception counter centered, a small blue appointment sign with a simple calendar icon and NO words, discreet desk telephone, tidy waiting chairs at right, frosted glass consultation door and soft sage wall behind. Warm morning daylight, calm clean practical environment, authentic photographic texture, professional but not a corporate office. No people at all, no faces, portraits or reflections of people, no visible patient records, branding or readable text. Compose the counter and recognizable clinic arrival setting centrally, surviving a narrow portrait crop of the center. The bottom right will have an existing website chat overlay, keep that area simple. One photograph, no collage, no interface mockup. Distinct architectural arrival scene rather than a close-up of a stethoscope or generic medical equipment."
+    },
+    {
+      "id": "appointment-booking",
+      "prompt": "One realistic editorial photograph for a healthcare AI booking agent card. Horizontal 4:3. Close over-the-hands view of an adult patient at home using a smartphone to select a clinic appointment, natural hands only, person's head and body outside frame. Phone screen clearly reads 'Clinic appointment', shows three large available time buttons '10:00', '11:30', '16:00' and a blue 'Book visit' button; no name, personal data, logos or other text. Phone occupies the center and is sufficiently large for card readability. Soft daylight on a pale linen sofa, light blue sleeve, a closed book at the side, understated calm palette. Do not put medical instruments in a patient's living room. Show the action of choosing a time, not generic healthcare decor. Centered crop-safe composition for a 366x252 card, all key content within central 75%. No faces, reflections of faces, portraits, branding or watermark. Photorealistic skin, hands, glass and fabric, no illustration or collage."
+    },
+    {
+      "id": "clinic-phone-reception",
+      "prompt": "Generate one photorealistic healthcare receptionist photograph, horizontal 4:3, for a 366x252 website card about answering clinic calls. No person present. Close still life from counter level of a modern white desk telephone with its handset resting correctly on its base and a separate small black single-ear receptionist headset on a pale teal clinic counter. Phone and headset are centered and dominant. A modest white standing sign behind them reads only 'Clinic reception'. In softly blurred background, clean empty clinic waiting seats and a frosted consultation door, cool morning light. No laptop, tablet, smartphone, appointment calendar, medical instruments or parcels. Visually unmistakable phone assistance in a clinic, simple premium natural photography with teal, white and dark charcoal contrast. All main objects fit the middle 75% so a 1.45:1 crop keeps the handset and headset complete. No faces, human figures, reflected people, patient information, brand logos or watermark. Not a call-center stock portrait, no collage."
+    },
+    {
+      "id": "clinic-visit-guidance",
+      "prompt": "Create one natural realistic healthcare patient-support photograph for a website agent card, landscape 4:3. Close-up from above and slightly in front of a clinic visitor's hands holding a clearly designed printed clinic information leaflet on a light stone waiting-room side table. Another cropped hand with a plain navy sleeve points helpfully to a simple location map on the leaflet. No heads or bodies shown. Leaflet has only the large headings 'Your clinic visit', 'Opening hours', and 'Getting here', with a simple abstract street map and a location pin; no specific address, medical advice, patient data, brand or extra readable words. A small plain appointment card and pen nearby, blurred empty waiting chair in background. Purpose is practical answers and directions for a patient, not treatment. Warm cream paper, navy ink, soft daylight and warm stone texture, visually distinct from screens, headsets and reception counter photos. Hands and leaflet centered, legible recognizable action in a 366x252 card, central 75% crop-safe. Realistic hands and paper, no visible human faces, portraits, logos or watermark. One photograph, not illustration or collage."
+    }
+  ]
+}

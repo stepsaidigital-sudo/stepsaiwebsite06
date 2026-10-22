@@ -68,7 +68,7 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
   }));
   return <SiteFrame>{onOpen => <div className="wb pp">
     <PremiumHero kicker={page.hero.kicker} icon={<Sparkles size={16} />} title={page.hero.title} accent={['finish the job']} body={page.hero.body} checks={checks} onOpen={onOpen} demoLabel="See how a skill works"
-      visual={<HeroScene photo={asset("/photos/skills.jpg")} alt="Team setting up agent skills, with a website chat booking an appointment">
+      visual={<HeroScene photo={asset("/images/features/skills/appointment-setup.webp")} alt="A calendar workstation prepared for appointment booking">
         <LivePhone kind="Website" business="City Care Clinic" className="pp-hero-phone" period={13000} lines={[
           { from: 'customer', text: 'Can I book a consultation for Friday?', at: 400 },
           { from: 'agent', text: 'Friday has 11:00 or 4:30 free. Which suits you?', at: 2400 },
@@ -89,13 +89,13 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
     <PhotoStory id="custom-skills" eyebrow="Custom skills" title="Teach your agent a job that is yours alone."
       body="When the ready-made skills do not cover it, build your own: an AI skill with your own instructions, or a flow skill that collects details and calls an app or a webhook."
       points={['Write when to use it in plain English', 'Collect exactly the fields you need', 'Send the result to an app, a webhook or an HTTP request']}
-      photo={asset("/photos/st-custom-skills.jpg")} alt="Planning a custom skill on a laptop"
+      photo={asset("/images/features/skills/warranty-workflow.webp")} alt="Hands preparing a product warranty claim"
       overlay={<Card title="Flow skill · Warranty claim" status={<Chip tone="green"><Check size={11} />Active</Chip>}>
         <Row icon={<MessageSquare size={15} />} title="When to use" sub="Customer reports a fault in warranty" delay={200} />
         <Row icon={<UserPlus size={15} />} title="Collect" sub="Order number, photo, email" delay={400} />
         <Row icon={<Webhook size={15} />} title="Then" sub="Send to your service desk" picked delay={600} />
       </Card>} />
-    {handoffStory({ customer: 'Priya Nair', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true, asset('/photos/ho-skills.jpg'))}
+    {handoffStory({ customer: 'Priya Nair', ask: 'I would rather talk to someone, please.', agentLine: 'No problem, I am handing you to our team now.', team: 'Hi Priya, Alex here. How can I help?' }, true, asset('/images/features/skills/specialist-handoff.webp'))}
 
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />

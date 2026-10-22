@@ -1,0 +1,22 @@
+[
+  {
+    "page": "website",
+    "id": "evening-furniture-chat",
+    "prompt": "Photorealistic editorial website hero, landscape 4:3. Evening at home, cropped hands browsing a furniture website on an open laptop at a walnut side table, grey sofa visible behind, screen shows a grey sofa product photo and a small blue chat widget, no readable long text. Warm desk lamp against cool dusk window, calm authentic shopping moment. Camera below shoulder level, no heads or visible faces, no portraits, reflections of people, brand logos or watermark. Main laptop and hands centered, crop-safe for 493x411 with existing chat overlays. Professional natural photography."
+  },
+  {
+    "page": "whatsapp",
+    "id": "gift-delivery-message",
+    "prompt": "Photorealistic editorial website hero, landscape 4:3. Close overhead view of cropped hands holding a smartphone with simple green-and-white messaging bubbles beside a cream ceramic gift vase, a partially wrapped gift box and delivery note on a natural oak kitchen table. Customer asking a shop about delivery, relaxed afternoon daylight, sage green and warm paper accents. Distinct from laptop shopping and product photography studio. No faces, heads, portrait avatars, reflections of people, logos, watermark or personal data. Minimal illegible screen text. Main phone, hands and gift centered for 493x411 crop with overlay UI."
+  },
+  {
+    "page": "instagram",
+    "id": "linen-reel-studio",
+    "prompt": "Photorealistic editorial website hero landscape 4:3. Small independent linen fashion studio preparing a social media product reel: a smartphone on a compact tripod filming a sand-coloured linen shirt laid neatly on an oak styling table, cropped hands adjusting one sleeve, subtle lilac backdrop, window daylight, fabric swatches at edge. Phone screen shows the shirt only, no person or portrait. Clearly communicates product discovery through social content. No heads, faces, mannequins, brand logos, watermark or readable long text. Center the styling activity, safe for 493x411 crop and existing chat overlays, natural professional photography."
+  },
+  {
+    "page": "messenger",
+    "id": "local-shop-page-message",
+    "prompt": "Photorealistic editorial website hero, landscape 4:3. Quiet neighbourhood homewares store after opening: a tablet propped at the blue-painted shop counter shows a generic local business page with a storefront cover image, opening-hours rows and a small blue message bubble, neat shelf of bowls and a glass entrance with an OPEN sign behind. Empty shop, no people anywhere, no faces or portraits on screen or reflections. Morning daylight, blue and terracotta palette, natural small-business detail. Communicates customers messaging a local business page to ask about opening hours. Center tablet and counter for 493x411 crop beneath existing chat overlay. No brand logos, no watermark, minimal text."
+  }
+]

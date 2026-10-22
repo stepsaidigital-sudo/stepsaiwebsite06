@@ -1,8 +1,9 @@
 'use client';
 
-import { useId, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { ArrowDown, ArrowRight, BookOpen, Bot, CalendarCheck, CalendarDays, Check, CheckCheck, ChevronRight, CircleCheck, FileText, Globe, Headphones, Inbox, Link2, Mail, MapPin, MessageCircle, Mic, MoreHorizontal, Package, Phone, Play, Search, Send, ShieldCheck, Shirt, ShoppingBag, ShoppingCart, Tag, Ticket, Truck, User, Users, Workflow } from 'lucide-react';
 import type { Item } from '@/content/types';
+import { IndustryCapability, industryStories } from './industry-capability';
 import {CommerceCapability,commercePhoto,commerceStories} from './commerce-capability';
 
 type Kind = 'answer' | 'shop' | 'delivery' | 'handoff' | 'booking' | 'lead' | 'campaign' | 'comments' | 'voice' | 'workflow' | 'analytics' | 'inbox' | 'records' | 'ticket' | 'search' | 'calculator';
@@ -109,31 +110,60 @@ function CalculatorScene() { return <div className="cv-composition cv-calculator
 
 const scenes: Record<Kind, (props: { title: string }) => ReactNode> = { answer: AnswerScene, shop: ShopScene, delivery: DeliveryScene, handoff: HandoffScene, booking: BookingScene, lead: LeadScene, campaign: CampaignScene, comments: CommentsScene, voice: VoiceScene, workflow: WorkflowScene, analytics: AnalyticsScene, inbox: InboxScene, records: RecordsScene, ticket: TicketScene, search: SearchScene, calculator: CalculatorScene };
 
-export function CapabilityStage({ title, intro, items, icons }: { title: string; intro: string; items: Item[]; icons: [ReactNode, string][] }) {
+export function CapabilityStage({ title, intro, items, icons, plainBackground = false, industry }: { title: string; intro: string; items: Item[]; icons: [ReactNode, string][]; plainBackground?: boolean; industry?: string }) {
   const [selected, setSelected] = useState(0);
+  const section = useRef<HTMLElement>(null);
+  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [pageVisible, setPageVisible] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(true);
+  useEffect(() => {
+    if (!industry || !section.current) return;
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateMotion = () => setReducedMotion(media.matches);
+    updateMotion();
+    media.addEventListener('change', updateMotion);
+    const updateVisibility = () => setPageVisible(!document.hidden);
+    updateVisibility();
+    document.addEventListener('visibilitychange', updateVisibility);
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.2 });
+    observer.observe(section.current);
+    return () => { observer.disconnect(); media.removeEventListener('change', updateMotion); document.removeEventListener('visibilitychange', updateVisibility); };
+  }, [industry]);
+  useEffect(() => {
+    if (!industry || paused || hovered || focused || !visible || !pageVisible || reducedMotion || items.length < 2) return;
+    const timer = window.setTimeout(() => {
+      if (!document.hidden) setSelected(current => (current + 1) % items.length);
+    }, 6000);
+    return () => window.clearTimeout(timer);
+  }, [industry, paused, hovered, focused, visible, pageVisible, reducedMotion, selected, items.length]);
   const uid = useId();
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const active = items[selected];
   const kind = capabilityKinds[active.title] ?? 'answer';
   const Scene = scenes[kind];
   const commerce=commerceStories[active.title];
-  return <section id="capabilities" className="container cv-section" aria-labelledby={`${uid}-heading`}>
+  const industryStory = industry ? industryStories[industry]?.[selected] : undefined;
+
+  return <section ref={section} id="capabilities" className="container cv-section" aria-labelledby={`${uid}-heading`}>
     <h2 id={`${uid}-heading`}>{title}</h2>
     <p className="cv-sr-only">{intro} Select a capability to view an illustrative demonstration.</p>
-    <div className="cv-theatre">
+    <div className="cv-theatre" onPointerEnter={event => { if (event.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)} onPointerDown={() => setPaused(true)} onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
       <div className="cv-tabs" role="tablist" aria-label={title}>
         {items.map((item, i) => { const itemKind = capabilityKinds[item.title] ?? 'answer'; const Icon = glyphs[itemKind]; return <button key={item.title} ref={el => { tabs.current[i] = el; }} role="tab" id={`${uid}-tab-${i}`} aria-controls={`${uid}-panel`} aria-selected={selected === i} aria-label={item.title} title={item.title} tabIndex={selected === i ? 0 : -1} onClick={() => setSelected(i)} onKeyDown={event => {
           const next = event.key === 'ArrowRight' || event.key === 'ArrowDown' ? (i + 1) % items.length : event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? (i + items.length - 1) % items.length : event.key === 'Home' ? 0 : event.key === 'End' ? items.length - 1 : -1;
           if (next >= 0) { event.preventDefault(); setSelected(next); tabs.current[next]?.focus(); }
         }}><span>{icons[i % icons.length]?.[0] ?? <Icon size={22} />}</span><span className="cv-tab-label">{shortLabels[item.title] ?? labels[itemKind]}</span></button>; })}
       </div>
-      <div className={`cv-stage cv-kind-${kind}${commerce?' cv-commerce':''}`} id={`${uid}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${uid}-tab-${selected}`} aria-describedby={`${uid}-description`}>
+      <div className={`cv-stage cv-kind-${kind}${commerce?' cv-commerce':''}${plainBackground&&!commerce?' cv-industry-plain':''}${industryStory?' cv-industry-story':''}`} id={`${uid}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${uid}-tab-${selected}`} aria-describedby={`${uid}-description`}>
         {commerce&&<img className="cv-commerce-backdrop" src={commercePhoto} width="1536" height="1024" alt="" loading="lazy"/>}
-        <div className="cv-stage-heading"><h3>{commerce?.benefit??active.title}</h3>{commerce&&<p>{active.title}</p>}</div>
+        <div className="cv-stage-heading"><h3>{commerce?.benefit??industryStory?.benefit??active.title}</h3>{(commerce||industryStory)&&<p>{active.title}</p>}</div>
         <p className="cv-sr-only" id={`${uid}-description`}>{active.body}</p>
-        <div className="cv-scene" key={selected}>{commerce?<CommerceCapability title={active.title}/>:<Scene title={active.title}/>}</div>
-        <span className="cv-demo-label">Illustrative example · sample data</span>
+        <div className="cv-scene" key={selected}>{commerce?<CommerceCapability title={active.title}/>:industryStory?<IndustryCapability industry={industry!} story={industryStory}/>:<Scene title={active.title}/>}</div>
       </div>
     </div>
+    {industry && !reducedMotion && <button className="cv-playback" onClick={() => setPaused(value => !value)} aria-pressed={paused}>{paused ? 'Resume walkthrough' : 'Pause walkthrough'}</button>}
   </section>;
 }

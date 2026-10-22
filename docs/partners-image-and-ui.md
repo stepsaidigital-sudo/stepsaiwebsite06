@@ -1,0 +1,8 @@
+# Partners image and UI
+
+Updated 22 October 2026. Scope: `/partners/` only. Existing hero copy, benefits, audience paragraphs and CTA are retained in their original section order. The page now uses a dedicated responsive template, three benefit cards, an agency category list and a working affiliate-program link.
+
+Image: `public/images/partners/agency-client-planning.webp`, 1440 × 1080, 138,316 bytes. Created with the built-in image generation tool; one generation, no people or faces. Uses the existing asset URL helper for future S3 hosting. Original stock file is retained but no longer rendered on this page.
+
+Prompt:
+Use case: photorealistic-natural. Create one premium editorial photograph for a software agency partnership webpage. Landscape 4:3 composition. An authentic creative agency planning desk seen from a calm elevated three-quarter angle: three neatly arranged distinct client project folders with blank unbranded covers in navy, ivory and pale blue, a laptop showing an abstract unreadable minimal blue workflow, neatly arranged paper wireframe sketches, one pencil and small blue material swatches. This is about preparing separate client projects, no handshake or generic meeting. Natural soft daylight from left, warm white desk, restrained navy and pastel blue accents, realistic tactile paper and brushed aluminium, uncluttered but lived-in. Main objects centered with generous crop-safe margins. Professional realistic photography, no illustration, no 3D render. No people, no hands, absolutely no faces or portraits even on screens, no logos, no readable words, no watermarks. Do not create a webpage screenshot.

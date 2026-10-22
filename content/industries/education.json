@@ -150,7 +150,7 @@
           "Answers fees and batch dates",
           "Moves students to counselling"
         ],
-        "photo": "/photos/sc-sales-education.jpg"
+        "photo": "/images/industries/education/course-guidance.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -159,7 +159,7 @@
           "Saves enquiries to your CRM",
           "Tags where they came from"
         ],
-        "photo": "/photos/sc-lead-education.jpg"
+        "photo": "/images/industries/education/student-enquiry-kiosk.webp"
       },
       {
         "slug": "ai-booking-agent",
@@ -168,7 +168,7 @@
           "Offers demo class times",
           "Adds them to your calendar"
         ],
-        "photo": "/photos/sc-booking-education.jpg"
+        "photo": "/images/industries/education/counselling-session-booking.webp"
       },
       {
         "slug": "ai-marketing-agent",
@@ -177,7 +177,7 @@
           "Answers every campaign reply",
           "Follows up with old enquiries"
         ],
-        "photo": "/photos/sc-mkt-education.jpg"
+        "photo": "/images/industries/education/new-batch-announcement.webp"
       }
     ]
   },

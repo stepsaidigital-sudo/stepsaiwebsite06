@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { CompanyTemplate } from '@/components/templates/company-page';
+import { LegalPage } from '@/components/templates/legal-page';
+import document from '@/content/legal/terms-of-service.json';
 import { getPage } from '@/lib/content';
 
 const page = getPage('terms-of-service');
@@ -7,5 +8,5 @@ const page = getPage('terms-of-service');
 export const metadata: Metadata = { title: page.seo.title, description: page.seo.description };
 
 export default function TermsOfServiceRoute() {
-  return <CompanyTemplate slug="terms-of-service" page={page} />;
+  return <LegalPage document={document} />;
 }

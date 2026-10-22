@@ -2,8 +2,6 @@
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Star, CheckCircle2 } from 'lucide-react';
-
-import { asset } from '@/lib/asset';
 type Experience = {
   id: string;
   isGold?: boolean;
@@ -11,7 +9,6 @@ type Experience = {
   quote: string;
   authorName?: string;
   authorSubtitle?: string;
-  avatar?: string;
   userCount?: string;
   userLabel?: string;
   avatars?: string[];
@@ -27,11 +24,7 @@ const experiences: Experience[] = [
       'Easy to deploy across all channels. Clear answers and instant support around the clock — super impressed.',
     userCount: '15k+',
     userLabel: 'Trusted Users',
-    avatars: [
-      asset('/photos/avatars/alex.webp'),
-      asset('/photos/avatars/ananya.webp'),
-      asset('/photos/avatars/priya.webp'),
-    ],
+    avatars: ['A', 'M', 'P'],
   },
   {
     id: 'ugolina',
@@ -39,7 +32,6 @@ const experiences: Experience[] = [
       'I was skeptical at first, but within 3 minutes I had real automated responses resolving sizing and stock questions. Deployed coverage the same day. Total game-changer.',
     authorName: 'Ugolina Buccellato',
     authorSubtitle: 'Chicago · Operations Director',
-    avatar: asset('/photos/avatars/priya.webp'),
     verified: true,
   },
   {
@@ -48,7 +40,6 @@ const experiences: Experience[] = [
       'The process was fast, the options were clear, and I actually understood what I was deploying. No pressure, just honest help. I’ve already recommended it to other founders.',
     authorName: 'Pamela Mollica',
     authorSubtitle: 'Phoenix · Founder & CEO',
-    avatar: asset('/photos/avatars/sneha.webp'),
     verified: true,
   },
   {
@@ -57,7 +48,6 @@ const experiences: Experience[] = [
       'The order-status questions have almost disappeared from our support queue. We still get the odd one, but it’s nowhere near what it used to be. Our specialists focus on VIPs now.',
     authorName: 'Maya Patel',
     authorSubtitle: 'London · Head of E-Commerce, North & Pine',
-    avatar: asset('/photos/avatars/maya.webp'),
     verified: true,
   },
   {
@@ -66,7 +56,6 @@ const experiences: Experience[] = [
       'Monday mornings used to be overwhelming with weekend WhatsApp queries. Now Steps AI handles 85% of delivery and sizing questions before we even open our laptops.',
     authorName: 'Sofia Alvarez',
     authorSubtitle: 'Madrid · Customer Operations, Casa Noma',
-    avatar: asset('/photos/avatars/divya.webp'),
     verified: true,
   },
   {
@@ -75,7 +64,6 @@ const experiences: Experience[] = [
       'Our help center was big and customers couldn’t find answers. Now they ask normally and get exact solutions in seconds. Support ticket volume dropped 52% across the board.',
     authorName: 'Jonathan Reed',
     authorSubtitle: 'San Francisco · VP Customer Success, Stacklane',
-    avatar: asset('/photos/avatars/sam.webp'),
     verified: true,
   },
   {
@@ -84,7 +72,6 @@ const experiences: Experience[] = [
       'Shoppers who talk to the sales agent are noticeably more likely to finish checkout. It answers the questions that used to make people hesitate, especially around dimensions and materials.',
     authorName: 'Anika Rao',
     authorSubtitle: 'Bengaluru · Digital Experience, Mysa Living',
-    avatar: asset('/photos/avatars/ananya.webp'),
     verified: true,
   },
   {
@@ -93,7 +80,6 @@ const experiences: Experience[] = [
       'Inbound leads get qualified in under two minutes. By the time our account executives join the demo, they already know the company size, tech stack, and pain points.',
     authorName: 'Ryan Collins',
     authorSubtitle: 'Austin · Head of Sales, Northstar SaaS',
-    avatar: asset('/photos/avatars/rohan.webp'),
     verified: true,
   },
   {
@@ -102,7 +88,6 @@ const experiences: Experience[] = [
       'A lot of our customers shop and message us after hours. Steps AI handles most of those questions now, so we’re not coming back every morning to a backlog. For a team of six, that’s been huge.',
     authorName: 'Priya Shah',
     authorSubtitle: 'London · Founder, Aster & Row',
-    avatar: asset('/photos/avatars/kavya.webp'),
     verified: true,
   },
   {
@@ -111,7 +96,6 @@ const experiences: Experience[] = [
       'Size, stock, shipping, and returns were half of our daily queries. Steps AI resolves them instantly, and our support team now focuses entirely on high-value shoppers.',
     authorName: 'Arjun Mehta',
     authorSubtitle: 'Mumbai · E-commerce Manager, Nivara',
-    avatar: asset('/photos/avatars/arjun.webp'),
     verified: true,
   },
   {
@@ -120,7 +104,6 @@ const experiences: Experience[] = [
       'Our sales team has full conversation context before every discovery call. We know company size, tech stack, and pain points before we say hello.',
     authorName: 'Rachel Morgan',
     authorSubtitle: 'New York · VP Growth, LatticeFlow Labs',
-    avatar: asset('/photos/avatars/anu.webp'),
     verified: true,
   },
   {
@@ -129,7 +112,6 @@ const experiences: Experience[] = [
       'Our Instagram inbox used to get flooded during new drops. Now questions about stock, fit, and tracking get resolved automatically in seconds.',
     authorName: 'Nina Kapoor',
     authorSubtitle: 'Berlin · E-Commerce Lead, Sunday Form',
-    avatar: asset('/photos/avatars/neha.webp'),
     verified: true,
   },
   {
@@ -138,7 +120,6 @@ const experiences: Experience[] = [
       'Prospects qualify themselves through the agent before booking a demo. Inbound meetings convert 40% higher because they arrive fully informed.',
     authorName: 'Kevin Morales',
     authorSubtitle: 'Toronto · Sales Director, RelayDesk',
-    avatar: asset('/photos/avatars/dev.webp'),
     verified: true,
   },
 ];
@@ -265,16 +246,8 @@ export function InspiringClientExperiences() {
 
                   <div className="exp-gold-footer">
                     <div className="exp-gold-avatars" aria-hidden="true">
-                      {item.avatars?.map((src, i) => (
-                        <img
-                          key={i}
-                          src={src}
-                          alt=""
-                          className="exp-gold-avatar"
-                          width={38}
-                          height={38}
-                          style={{ zIndex: 3 - i }}
-                        />
+                      {item.avatars?.map((initial, i) => (
+                        <span key={i} className="exp-gold-avatar" style={{ zIndex: 3 - i, display: 'inline-grid', placeItems: 'center', background: '#e8edf2', color: '#0c3474', fontSize: 12, fontWeight: 600 }}>{initial}</span>
                       ))}
                     </div>
                     <div className="exp-gold-users">
@@ -295,16 +268,7 @@ export function InspiringClientExperiences() {
                 <p className="exp-quote-text">{item.quote}</p>
 
                 <div className="exp-author">
-                  {item.avatar && (
-                    <img
-                      src={item.avatar}
-                      alt={item.authorName ?? ''}
-                      className="exp-author-avatar"
-                      width={46}
-                      height={46}
-                      loading="lazy"
-                    />
-                  )}
+                  {item.authorName && (<span className="exp-author-avatar" aria-hidden="true" style={{ display: 'inline-grid', placeItems: 'center', background: '#e8edf2', color: '#0c3474', fontSize: 13, fontWeight: 600 }}>{item.authorName.split(/\s+/).map(part => part[0]).slice(0, 2).join('')}</span>)}
                   <div className="exp-author-info">
                     <div className="exp-author-line">
                       <strong className="exp-author-name">{item.authorName}</strong>

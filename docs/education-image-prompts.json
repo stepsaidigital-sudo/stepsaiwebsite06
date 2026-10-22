@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-22",
+  "generator": "Built-in image_gen",
+  "rule": "Six fresh distinct photographs, no reuse or visible faces; WebP; preserve layout.",
+  "prompts": [
+    {
+      "id": "admissions-entrance",
+      "prompt": "Photorealistic editorial education website hero, landscape 4:3. Welcoming independent learning institute admissions entrance, seen from inside a sunlit corridor: a central open wood-and-glass doorway into an empty small classroom with neat desks, notebooks and a whiteboard, a simple navy wall sign beside doorway reading only 'Admissions', a small brochure shelf in foreground and warm terracotta architectural accent. Clear pathway from enquiry to study, genuine campus feel, not corporate office or medical reception. No people, faces, portraits, logos, institution names or readable small text. Central doorway must remain visible in portrait center crop, lower right quiet for existing chat overlay. Professional natural daylight photography, realistic architectural details, not illustration or collage."
+    },
+    {
+      "id": "course-guidance",
+      "prompt": "One realistic education course-advising photograph, horizontal 4:3 for a small website AI sales agent card. Top-down view of two adult hands comparing two open course brochures on a warm maple study table, one finger pointing at a course outline. Large clear headings only 'Data analytics' and 'Design fundamentals', small section headings 'Duration' and 'Course outline', simple diagrams and swatches instead of paragraphs. No fees, promises, personal information or other readable text. Closed notebook and pencil at edge, hands and brochures central with generous crop margins for a 275x189 image. Natural window light, cream paper, ink-blue and muted yellow accents, tangible real paper textures. Convey choosing the right course through guidance, not generic books or a graduation cap. No heads, faces, bodies, portraits, logos, screens or watermark. Professional editorial photo, not illustration."
+    },
+    {
+      "id": "student-enquiry-kiosk",
+      "prompt": "Photorealistic education enquiry capture scene, landscape 4:3 website card. An adult student's cropped hand using a stylus on an upright touchscreen enquiry kiosk at an institute open day. Tight three-quarter side view of the screen and hand, no head or body. Screen reads only 'Course enquiry', with three blank fields labelled 'Name', 'Phone', 'Course interest', and one blue button 'Send enquiry'. Blank fields, no personal data. A simple canvas tote holding a notebook hangs from the small stand; soft out-of-focus classroom tables behind. Bright cool daylight, muted blue and white palette. Make capturing student interest immediately understandable, no graduation caps or generic office desks. Center screen and action within 75% crop-safe area for 275x189 display, complete screen visible. No faces anywhere, reflected people, portraits, institution logos or watermarks. One realistic photo, not illustration or collage."
+    },
+    {
+      "id": "counselling-session-booking",
+      "prompt": "Realistic editorial photo for education counselling booking, horizontal 4:3 small website card. Quiet counselling table at a learning institute, seen diagonally from above. A physical weekly appointment planner is centered, a cropped adult hand with a pen circling one clearly marked entry 'Counselling 5 PM'. A small standing navy card reads 'Book a session', two empty chairs face one another beyond the table, and one neatly closed course folder rests at side. Only these readable words, other planner cells blank, no names, private data or logos. Sage upholstery, light birch table, soft afternoon light. Show reserving a one-to-one counselling slot, not a clinical appointment. No electronic screens, phone, headset, faces, people beyond the one cropped hand, graduation caps or watermark. Keep planner and booking cue in middle 75%, fit current 275x189 crop. Photographic tactile realism, not illustration or collage."
+    },
+    {
+      "id": "new-batch-announcement",
+      "prompt": "One photorealistic education marketing photograph in horizontal 4:3 for a small website card. Close editorial shot of a smartphone standing upright on a student's evening study desk, no people. Screen displays a simple green messaging announcement headed 'New batch open' with a small abstract data-chart course illustration and one button 'Course details'. No messaging brand logo, no other readable text, names or private data. A matching printed course announcement with only 'New batch' sits partly behind the phone; open notebook with non-readable pencil marks and a yellow desk lamp nearby. Deep indigo evening window, warm amber lamp and green message accent. Main story is an admission campaign arriving while a student studies, visibly different from a tablet enquiry form or a paper booking planner. Phone and announcement centered, readable in 275x189 crop, broad safe margins, no heads, faces, portraits, device reflections of people, institution branding or watermark. Natural material textures, not illustration or collage."
+    }
+  ]
+}

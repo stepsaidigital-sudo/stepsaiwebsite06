@@ -1,0 +1,283 @@
+[
+  {
+    "slug": "whatsapp-broadcasting",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 30,
+        "loaded": true,
+        "src": "/images/features/avatars/turtle.webp",
+        "w": 30
+      },
+      {
+        "h": 30,
+        "loaded": true,
+        "src": "/images/features/avatars/turtle.webp",
+        "w": 30
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "unified-inbox",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/fox.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/owl.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/whale.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/rabbit.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/turtle.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/cat.webp",
+        "w": 32
+      },
+      {
+        "h": 32,
+        "loaded": true,
+        "src": "/images/features/avatars/fox.webp",
+        "w": 32
+      },
+      {
+        "h": 14,
+        "loaded": true,
+        "src": "/images/features/avatars/bear.webp",
+        "w": 14
+      },
+      {
+        "h": 52,
+        "loaded": true,
+        "src": "/images/features/avatars/fox.webp",
+        "w": 52
+      },
+      {
+        "h": 440,
+        "loaded": false,
+        "src": "/images/features/unified-inbox/support-desk.webp",
+        "w": 536
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "crm",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/fox.webp",
+        "w": 26
+      },
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/owl.webp",
+        "w": 26
+      },
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/whale.webp",
+        "w": 26
+      },
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/rabbit.webp",
+        "w": 26
+      },
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/turtle.webp",
+        "w": 26
+      },
+      {
+        "h": 26,
+        "loaded": true,
+        "src": "/images/features/avatars/cat.webp",
+        "w": 26
+      },
+      {
+        "h": 52,
+        "loaded": true,
+        "src": "/images/features/avatars/fox.webp",
+        "w": 52
+      },
+      {
+        "h": 440,
+        "loaded": false,
+        "src": "/images/features/crm/customer-records.webp",
+        "w": 536
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "analytics",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 440,
+        "loaded": false,
+        "src": "/images/features/analytics/customer-question-analysis.webp",
+        "w": 536
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "skills",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 411,
+        "loaded": true,
+        "src": "/images/features/skills/appointment-setup.webp",
+        "w": 493
+      },
+      {
+        "h": 440,
+        "loaded": true,
+        "src": "/images/features/skills/warranty-workflow.webp",
+        "w": 536
+      },
+      {
+        "h": 440,
+        "loaded": false,
+        "src": "/images/features/skills/specialist-handoff.webp",
+        "w": 536
+      },
+      {
+        "h": 30,
+        "loaded": true,
+        "src": "/images/features/avatars/turtle.webp",
+        "w": 30
+      },
+      {
+        "h": 22,
+        "loaded": false,
+        "src": "/images/features/avatars/penguin.webp",
+        "w": 22
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "workflow-builder",
+    "viewport": "desktop",
+    "images": [
+      {
+        "h": 440,
+        "loaded": false,
+        "src": "/images/features/workflow-builder/order-follow-up.webp",
+        "w": 536
+      }
+    ],
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "unified-inbox",
+    "photo": "/images/features/unified-inbox/support-desk.webp",
+    "loaded": true
+  },
+  {
+    "slug": "crm",
+    "photo": "/images/features/crm/customer-records.webp",
+    "loaded": true
+  },
+  {
+    "slug": "analytics",
+    "photo": "/images/features/analytics/customer-question-analysis.webp",
+    "loaded": true
+  },
+  {
+    "slug": "skills",
+    "photo": "/images/features/skills/appointment-setup.webp",
+    "loaded": true
+  },
+  {
+    "slug": "skills",
+    "photo": "/images/features/skills/warranty-workflow.webp",
+    "loaded": true
+  },
+  {
+    "slug": "skills",
+    "photo": "/images/features/skills/specialist-handoff.webp",
+    "loaded": true
+  },
+  {
+    "slug": "workflow-builder",
+    "photo": "/images/features/workflow-builder/order-follow-up.webp",
+    "loaded": true
+  },
+  {
+    "slug": "whatsapp-broadcasting",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "unified-inbox",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "crm",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "analytics",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "skills",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  },
+  {
+    "slug": "workflow-builder",
+    "viewport": "mobile",
+    "oldPortraits": 0,
+    "overflow": false
+  }
+]

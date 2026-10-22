@@ -1,0 +1,170 @@
+[
+  {
+    "overflow": false,
+    "page": "/solutions/education/",
+    "seam": "none",
+    "src": "/images/industries/education/course-guidance.webp",
+    "title": "Answer course questions"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/education/",
+    "seam": "none",
+    "src": "/images/industries/education/student-enquiry-kiosk.webp",
+    "title": "Capture enquiries"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/education/",
+    "seam": "none",
+    "src": "/images/industries/education/counselling-session-booking.webp",
+    "title": "Book counselling"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/education/",
+    "seam": "none",
+    "src": "/images/industries/education/new-batch-announcement.webp",
+    "title": "Follow up"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/healthcare/",
+    "seam": "none",
+    "src": "/images/industries/healthcare/clinic-visit-guidance.webp",
+    "title": "Share clinic information"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/healthcare/",
+    "seam": "none",
+    "src": "/images/industries/healthcare/appointment-booking.webp",
+    "title": "Book appointments"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/healthcare/",
+    "seam": "none",
+    "src": "/images/industries/healthcare/clinic-phone-reception.webp",
+    "title": "Answer phone calls"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/healthcare/",
+    "seam": "none",
+    "src": "/images/industries/healthcare/clinic-arrival.webp",
+    "title": "Pass clinical questions to your team"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/real-estate/",
+    "seam": "none",
+    "src": "/images/industries/real-estate/floor-plan-guidance.webp",
+    "title": "Answer property questions"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/real-estate/",
+    "seam": "none",
+    "src": "/images/industries/real-estate/buyer-requirements.webp",
+    "title": "Ask about requirements"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/real-estate/",
+    "seam": "none",
+    "src": "/images/industries/real-estate/site-visit-confirmation.webp",
+    "title": "Book site visits"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/real-estate/",
+    "seam": "none",
+    "src": "/images/industries/real-estate/buyer-brief-summary.webp",
+    "title": "Hand over hot leads"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/travel-and-hospitality/",
+    "seam": "none",
+    "src": "/images/industries/travel-and-hospitality/guest-guide-support.webp",
+    "title": "Answer property and package questions"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/travel-and-hospitality/",
+    "seam": "none",
+    "src": "/images/industries/travel-and-hospitality/stay-enquiry-planning.webp",
+    "title": "Capture booking enquiries"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/travel-and-hospitality/",
+    "seam": "none",
+    "src": "/images/industries/travel-and-hospitality/reservation-enquiry-ledger.webp",
+    "title": "Hand over to your team"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/travel-and-hospitality/",
+    "seam": "none",
+    "src": "/images/industries/travel-and-hospitality/return-guest-offer.webp",
+    "title": "Send offers on WhatsApp"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/saas/",
+    "seam": "none",
+    "src": "/images/industries/saas/documentation-support.webp",
+    "title": "Answer from your docs"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/saas/",
+    "seam": "none",
+    "src": "/images/industries/saas/team-requirements-enquiry.webp",
+    "title": "Qualify leads"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/saas/",
+    "seam": "none",
+    "src": "/images/industries/saas/product-demo-scheduled.webp",
+    "title": "Book demos"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/saas/",
+    "seam": "none",
+    "src": "/images/industries/saas/qualified-team-brief.webp",
+    "title": "Create support tickets"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/financial-services/",
+    "seam": "none",
+    "src": "/images/industries/financial-services/product-information-enquiry.webp",
+    "title": "Explain products and processes"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/financial-services/",
+    "seam": "none",
+    "src": "/images/industries/financial-services/home-loan-enquiry-record.webp",
+    "title": "Capture enquiries"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/financial-services/",
+    "seam": "none",
+    "src": "/images/industries/financial-services/adviser-call-confirmation.webp",
+    "title": "Book adviser calls"
+  },
+  {
+    "overflow": false,
+    "page": "/solutions/financial-services/",
+    "seam": "none",
+    "src": "/images/industries/financial-services/document-checklist-guidance.webp",
+    "title": "Pass personal questions to a person"
+  }
+]

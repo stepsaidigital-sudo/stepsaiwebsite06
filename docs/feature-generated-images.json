@@ -1,0 +1,86 @@
+[
+  {
+    "page": "unified-inbox",
+    "asset": "public/images/features/unified-inbox/support-desk.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 103624,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-a7b0e320-64f9-429d-9c1a-4f4521ba75bd.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/unified-inbox/support-desk.webp"
+  },
+  {
+    "page": "crm",
+    "asset": "public/images/features/crm/customer-records.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 143368,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-e3f5d599-3411-488e-8603-d2caf15e47e4.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/crm/customer-records.webp"
+  },
+  {
+    "page": "analytics",
+    "asset": "public/images/features/analytics/customer-question-analysis.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 147538,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-18ef9bf6-26fd-4d60-ad21-3b563a73e27a.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/analytics/customer-question-analysis.webp"
+  },
+  {
+    "page": "skills",
+    "asset": "public/images/features/skills/appointment-setup.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 105820,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-c55a9f00-84ce-456d-9a92-d8e35772efa7.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/skills/appointment-setup.webp"
+  },
+  {
+    "page": "skills",
+    "asset": "public/images/features/skills/warranty-workflow.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 127020,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-5302fa29-12aa-4235-9996-5fa73f48d253.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/skills/warranty-workflow.webp"
+  },
+  {
+    "page": "skills",
+    "asset": "public/images/features/skills/specialist-handoff.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 117426,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-3f40cbd8-f921-4066-9353-73b7b61e2730.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/skills/specialist-handoff.webp"
+  },
+  {
+    "page": "workflow-builder",
+    "asset": "public/images/features/workflow-builder/order-follow-up.webp",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 97396,
+    "source": "C:/Users/user/.codex/generated_images/01a1627f-5402-7450-9ce3-ddfa266d4395/exec-1a6ff239-07d2-4704-8a6e-5eb3a317eeee.png",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-22",
+    "s3Key": "website/public/images/features/workflow-builder/order-follow-up.webp"
+  }
+]

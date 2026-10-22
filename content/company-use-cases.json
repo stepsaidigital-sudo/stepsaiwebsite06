@@ -1,0 +1,410 @@
+[
+  {
+    "name": "Asiatique",
+    "slug": "asiatique",
+    "logo": "/brands/companies/asiatique.webp",
+    "researched": true,
+    "source": "https://asiatique.in/",
+    "industry": "Kitchen & bath fittings",
+    "about": "Offers quartz kitchen sinks, bath fittings, bathroom accessories and faucets.",
+    "title": "Guide a shopper through sink specifications",
+    "challenge": "A shopper needs to compare sink dimensions and configurations before ordering.",
+    "question": "How do I compare a single-bowl and double-bowl sink for my kitchen?",
+    "steps": [
+      "Ask for the available space and preferred bowl configuration.",
+      "Share the published dimensions and specifications of relevant models.",
+      "Send installation-fit questions to the brand team for confirmation."
+    ]
+  },
+  {
+    "name": "Argentum Arts",
+    "slug": "argentum-arts",
+    "logo": "/brands/companies/argentum-arts.webp",
+    "researched": true,
+    "source": "https://argentumarts.co.in/",
+    "industry": "Silver jewellery & gifting",
+    "about": "Offers silver jewellery, idols, home decor and gifting pieces.",
+    "title": "Help shoppers choose a silver gift",
+    "challenge": "A shopper needs help comparing an occasion, budget and product style.",
+    "question": "I need a silver gift for a housewarming. Where should I start?",
+    "steps": [
+      "Ask about the occasion, budget and preferred category.",
+      "Show relevant catalogue options with approved material and care information.",
+      "Pass detailed customisation or availability questions to the store team."
+    ]
+  },
+  {
+    "name": "Bombay Opticals",
+    "slug": "bombay-opticals",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Ilu Art Therapy",
+    "slug": "ilu-art-therapy",
+    "logo": "/brands/companies/ilu-art-therapy.webp",
+    "researched": true,
+    "source": "https://www.iluarttherapy.com/",
+    "industry": "Wall art & prints",
+    "about": "Offers wall art in multiple sizes and formats for homes and other spaces.",
+    "title": "Guide customers from wall space to artwork",
+    "challenge": "A customer likes an artwork but is unsure which size or format suits their room.",
+    "question": "Can you help me choose a print size for my living room?",
+    "steps": [
+      "Ask for the wall dimensions and preferred artwork.",
+      "Explain the available print and canvas formats using the catalogue.",
+      "Collect custom-size requirements for the team to review."
+    ]
+  },
+  {
+    "name": "Dr Praharsha",
+    "slug": "dr-praharsha",
+    "logo": null,
+    "researched": true,
+    "source": "https://drpraharshaortho.com/contact-us/",
+    "industry": "Clinic enquiries",
+    "about": "The practice website lists orthopaedic services and consultation locations in Hyderabad.",
+    "title": "Make appointment enquiries easier",
+    "challenge": "Someone needs the correct clinic location and help requesting an appointment.",
+    "question": "Which clinic can I visit, and how do I request an appointment?",
+    "steps": [
+      "Share approved clinic locations and administrative information.",
+      "Collect a preferred location and time with contact consent.",
+      "Forward the request to clinic staff for confirmation; clinical questions go to a professional."
+    ]
+  },
+  {
+    "name": "Mirorma",
+    "slug": "mirorma",
+    "logo": "/brands/companies/mirorma.webp",
+    "researched": true,
+    "source": "https://www.mirorma.in/about-us",
+    "industry": "Mirrors & furniture",
+    "about": "Offers mirrors, mirror clocks, console tables and other mirrored furniture.",
+    "title": "Answer size and delivery questions before purchase",
+    "challenge": "A shopper needs to confirm dimensions and delivery arrangements for a fragile item.",
+    "question": "Will this mirror fit a 90 cm space, and how is it packed?",
+    "steps": [
+      "Identify the exact product and the available space.",
+      "Retrieve dimensions and published packaging guidance.",
+      "Refer installation or delivery exceptions to the team before a commitment."
+    ]
+  },
+  {
+    "name": "Mantara",
+    "slug": "mantara",
+    "logo": null,
+    "researched": true,
+    "source": "https://www.mantara.in/",
+    "industry": "Home hardware",
+    "about": "Offers handles, knobs and hooks, with catalogue and consultation options.",
+    "title": "Help shoppers match handles to their cabinets",
+    "challenge": "A customer needs the right size, finish and quantity for a renovation.",
+    "question": "I need brass handles for six drawers. How do I choose the size?",
+    "steps": [
+      "Ask for the fixing-hole measurement, finish and quantity.",
+      "Compare catalogue options without assuming compatibility.",
+      "Collect a consultation or quotation request for a specialist."
+    ]
+  },
+  {
+    "name": "Ample wings",
+    "slug": "ample-wings",
+    "logo": "/brands/companies/ample-wings.webp",
+    "researched": true,
+    "source": "https://amplewings.com/",
+    "industry": "Ecommerce services",
+    "about": "Provides marketplace management, store management and ecommerce services.",
+    "title": "Turn service enquiries into a useful brief",
+    "challenge": "A business wants support but has not decided which marketplace service it needs.",
+    "question": "Can you help us manage our marketplace listings?",
+    "steps": [
+      "Ask which platforms the business uses and what support it needs.",
+      "Explain relevant services from approved information.",
+      "Send a concise brief to the team for a discovery call."
+    ]
+  },
+  {
+    "name": "Dajinn",
+    "slug": "dajinn",
+    "logo": "/brands/companies/dajinn.webp",
+    "researched": true,
+    "source": "https://www.dajinn.in/",
+    "industry": "Online retail & gifting",
+    "about": "Its storefront presents seasonal collections and luxury gifting.",
+    "title": "Help a shopper explore a gift collection",
+    "challenge": "A visitor wants to narrow a collection by recipient, budget and occasion.",
+    "question": "I am looking for a gift. Can you help me choose?",
+    "steps": [
+      "Ask about the occasion and budget.",
+      "Suggest available catalogue categories and share product links.",
+      "Hand over bespoke requests or policy exceptions to the shop team."
+    ]
+  },
+  {
+    "name": "Sillvezo",
+    "slug": "sillvezo",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Rimple and Harpreet",
+    "slug": "rimple-and-harpreet",
+    "logo": "/brands/companies/rimple-and-harpreet.webp",
+    "researched": true,
+    "source": "https://www.rimpleandharpreet.com/",
+    "industry": "Couture & occasionwear",
+    "about": "Offers occasionwear, bridal collections, accessories and studio appointment requests.",
+    "title": "Prepare a studio enquiry before the visit",
+    "challenge": "A customer wants to explore occasionwear and arrange a studio conversation.",
+    "question": "Can I arrange a visit to explore outfits for an upcoming wedding?",
+    "steps": [
+      "Ask for the occasion, preferred collection and visit location.",
+      "Share approved collection and appointment information.",
+      "Pass preferred dates and requirements to the studio for confirmation."
+    ]
+  },
+  {
+    "name": "Fatafat",
+    "slug": "fatafat",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Boot & Boost",
+    "slug": "boot-and-boost",
+    "logo": "/brands/companies/boot-and-boost.webp",
+    "researched": true,
+    "source": "https://www.bootboost.in/",
+    "industry": "Business services",
+    "about": "Offers business registration, technology, branding and growth services.",
+    "title": "Route a business enquiry to the right team",
+    "challenge": "A visitor is looking for several services and needs a clear starting point.",
+    "question": "I am starting a business and need a website and branding.",
+    "steps": [
+      "Ask about the business stage and requested services.",
+      "Explain relevant service categories without promising a result.",
+      "Create a brief for the appropriate team to follow up."
+    ]
+  },
+  {
+    "name": "Schon",
+    "slug": "schon",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Imports from china",
+    "slug": "imports-from-china",
+    "logo": "/brands/companies/imports-from-china.webp",
+    "researched": true,
+    "source": "https://importsfromchina.com/faq-2/",
+    "industry": "Sourcing & logistics",
+    "about": "Offers sourcing and shipping services for goods imported from China.",
+    "title": "Collect the details needed for a shipping quote",
+    "challenge": "An enquiry arrives without product, volume or destination details.",
+    "question": "Can you help me get a quote for shipping goods from China?",
+    "steps": [
+      "Collect product description, volume, weight and destination.",
+      "Explain the published enquiry process and available shipment options.",
+      "Send the brief to the logistics team for a current quote and compliance review."
+    ]
+  },
+  {
+    "name": "Brooklane",
+    "slug": "brooklane",
+    "logo": "/brands/companies/brooklane.webp",
+    "researched": true,
+    "source": "https://brooklane.shop/",
+    "industry": "Tea, coffee & gifts",
+    "about": "Offers tea, coffee, herbs, spices and gift options, alongside tea-factory experiences.",
+    "title": "Help a customer discover a suitable tea",
+    "challenge": "A shopper wants to compare blends and brewing preferences before ordering.",
+    "question": "I like a strong milk tea. Which collection should I look at?",
+    "steps": [
+      "Ask about taste and brewing preferences.",
+      "Share relevant products and approved brewing information.",
+      "Offer product links or route a gifting request to the team."
+    ]
+  },
+  {
+    "name": "Cyphon",
+    "slug": "cyphon",
+    "logo": "/brands/companies/cyphon.webp",
+    "researched": true,
+    "source": "https://cyphon.in/",
+    "industry": "VR, cameras & gaming",
+    "about": "Sells VR equipment, cameras, gaming products and related accessories.",
+    "title": "Clarify product compatibility before checkout",
+    "challenge": "A customer needs an accessory that works with their specific device.",
+    "question": "Which accessories work with my VR headset?",
+    "steps": [
+      "Ask for the exact device model and intended use.",
+      "Check compatibility against approved product specifications.",
+      "Escalate unclear matches rather than guessing."
+    ]
+  },
+  {
+    "name": "Elcera",
+    "slug": "elcera",
+    "logo": "/brands/companies/elcera.webp",
+    "researched": true,
+    "source": "https://elcera.in/",
+    "industry": "Womenswear",
+    "about": "Offers dresses, co-ord sets and other womenswear with size guidance.",
+    "title": "Answer fit questions while a shopper browses",
+    "challenge": "A shopper is between sizes and wants help reading the size guide.",
+    "question": "I am between two sizes. How should I compare the measurements?",
+    "steps": [
+      "Identify the product and the measurements the customer chooses to share.",
+      "Explain the published size chart and available fabric details.",
+      "Route uncertain fit advice or exchange exceptions to the brand team."
+    ]
+  },
+  {
+    "name": "Ignition India",
+    "slug": "ignition-india",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Indiabazar",
+    "slug": "indiabazar",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Theshroom collective",
+    "slug": "theshroom-collective",
+    "logo": "/brands/companies/theshroom-collective.webp",
+    "researched": true,
+    "source": "https://theshroomscollective.com/",
+    "industry": "Flow arts, decor & fashion",
+    "about": "Offers dapos, decorative lamps, wall butterflies and creative fashion accessories.",
+    "title": "Help a shopper find their first flow-art product",
+    "challenge": "A visitor is curious about dapo spinning and needs to understand the product choices.",
+    "question": "I am new to dapo spinning. What should I compare before choosing one?",
+    "steps": [
+      "Ask about experience and intended use.",
+      "Explain available product types using the published catalogue.",
+      "Share product links and hand over detailed learning or custom requests."
+    ]
+  },
+  {
+    "name": "SSV Fashion Collective",
+    "slug": "ssv-fashion-collective",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Yogufinch",
+    "slug": "yogufinch",
+    "logo": null,
+    "researched": false,
+    "source": null,
+    "industry": "Customer enquiries",
+    "about": null,
+    "title": "Give each enquiry a clear next step",
+    "challenge": "A visitor has a question and needs either an approved answer or help from the right team.",
+    "question": "Could you help me with an enquiry?",
+    "steps": [
+      "Ask what the visitor needs and collect only the relevant details.",
+      "Answer from approved company information when available.",
+      "Route unanswered questions to the team with the conversation context."
+    ]
+  },
+  {
+    "name": "Pardewale",
+    "slug": "pardewale",
+    "logo": "/brands/companies/pardewale.webp",
+    "researched": true,
+    "source": "https://pardewale.in/collections",
+    "industry": "Curtains & home textiles",
+    "about": "Offers curtain collections and custom-order options.",
+    "title": "Turn window measurements into a clear enquiry",
+    "challenge": "A customer needs to compare curtain styles and request a custom size.",
+    "question": "Can you help me choose curtains for a wide living-room window?",
+    "steps": [
+      "Ask for window measurements, preferred finish and light-control needs.",
+      "Explain relevant published collection and measurement guidance.",
+      "Forward custom stitching and quantity requirements for a quote."
+    ]
+  }
+]

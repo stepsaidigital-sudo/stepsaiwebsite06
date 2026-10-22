@@ -136,7 +136,7 @@
           "Turns real issues into tickets",
           "Hands over with context"
         ],
-        "photo": "/photos/ag-saas-support.jpg"
+        "photo": "/images/industries/saas/documentation-support.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -145,7 +145,7 @@
           "Saves leads to HubSpot",
           "Tags the source"
         ],
-        "photo": "/photos/ho-lead.jpg"
+        "photo": "/images/industries/saas/team-requirements-enquiry.webp"
       },
       {
         "slug": "ai-booking-agent",
@@ -154,7 +154,7 @@
           "Offers times across time zones",
           "Sends the confirmation"
         ],
-        "photo": "/photos/in-saas-story.jpg"
+        "photo": "/images/industries/saas/product-demo-scheduled.webp"
       }
     ]
   },

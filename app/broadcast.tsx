@@ -32,12 +32,12 @@ const HomeBar=()=><span className="ios-home" aria-hidden="true"/>;
 /* WhatsApp (iOS, light): an approved marketing template, a quick-reply tap, the agent's answer. */
 function WhatsAppScreen(){
   return <div className="scr wa">
-    <div className="bcw-nav"><StatusBar/><div className="bcw-head"><span className="bcw-back"><ChevronLeft size={26} strokeWidth={2.2}/>12</span><img className="bcw-av" src={asset("/industries/ecommerce.png")} alt=""/><div><strong>Your Store <svg className="bcw-badge" width="15" height="15" viewBox="0 0 24 24"><path d="M12 1.5l2.6 1.9 3.2-.2 1 3.1 2.6 1.9-1 3.1 1 3.1-2.6 1.9-1 3.1-3.2-.2L12 22.5l-2.6-1.9-3.2.2-1-3.1L2.6 15.8l1-3.1-1-3.1 2.6-1.9 1-3.1 3.2.2z"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg></strong><small>Business account</small></div><Video size={23} strokeWidth={1.8}/><Phone size={20} strokeWidth={1.8}/></div></div>
+    <div className="bcw-nav"><StatusBar/><div className="bcw-head"><span className="bcw-back"><ChevronLeft size={26} strokeWidth={2.2}/>12</span><img className="bcw-av" src={asset("/industries/ecommerce.webp")} alt=""/><div><strong>Your Store <svg className="bcw-badge" width="15" height="15" viewBox="0 0 24 24"><path d="M12 1.5l2.6 1.9 3.2-.2 1 3.1 2.6 1.9-1 3.1 1 3.1-2.6 1.9-1 3.1-3.2-.2L12 22.5l-2.6-1.9-3.2.2-1-3.1L2.6 15.8l1-3.1-1-3.1 2.6-1.9 1-3.1 3.2.2z"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg></strong><small>Business account</small></div><Video size={23} strokeWidth={1.8}/><Phone size={20} strokeWidth={1.8}/></div></div>
     <div className="bcw-chat">
       <span className="bcw-day">Today</span>
       <B d={700} className="bcw-tpl-wrap">
         <div className="bcw-b bcw-in bcw-tpl">
-          <img className="bcw-img" src={asset("/industries/ecommerce.png")} alt=""/>
+          <img className="bcw-img" src={asset("/industries/ecommerce.webp")} alt=""/>
           <p><b>The weekend sale is live</b><br/>Hi Priya, members get early access to the new ceramics.</p>
           <small className="bcw-foot">Reply STOP to opt out</small><small className="bcw-time">10:00</small>
         </div>
@@ -64,7 +64,7 @@ function CommentScreen(){
       <div className="c2d-pane">
         <div className="bci-nav"><StatusBar/><div className="bcp-top"><ChevronLeft size={28} strokeWidth={1.9}/><div><small>YOURSTORE</small><strong>Posts</strong></div></div></div>
         <div className="bcp-head"><span className="bci-ring sm"><span>ys</span></span><strong>yourstore</strong><MoreHorizontal size={20}/></div>
-        <img className="bcp-img" src={asset("/industries/ecommerce.png")} alt=""/>
+        <img className="bcp-img" src={asset("/industries/ecommerce.webp")} alt=""/>
         <div className="bcp-actions"><Heart size={24} strokeWidth={1.8}/><MessageCircle size={23} strokeWidth={1.8}/><Send size={22} strokeWidth={1.8}/><Bookmark size={23} strokeWidth={1.8}/></div>
         <p className="bcp-likes">1,204 likes</p>
         <p className="bcp-cap"><b>yourstore</b> New arrivals are here. Comment <b>LINK</b> and we’ll send you the details.</p>
@@ -79,7 +79,7 @@ function CommentScreen(){
         <div className="bci-thread">
           <span className="bci-stamp">Today 10:04</span>
           <B d={3400} className="bci-m bci-in">Hi Priya! Here’s the new arrivals collection you asked about.</B>
-          <B d={3900} className="bci-card"><img className="bci-card-img" src={asset("/industries/ecommerce.png")} alt=""/><div><strong>New arrivals</strong><small>yourstore.com</small></div></B>
+          <B d={3900} className="bci-card"><img className="bci-card-img" src={asset("/industries/ecommerce.webp")} alt=""/><div><strong>New arrivals</strong><small>yourstore.com</small></div></B>
           <B d={4700} className="bci-m bci-out">Do you have it in medium?</B>
           <Typing d={5200} className="bci-m bci-in"/>
           <B d={6100} className="bci-m bci-in">Yes, medium is in stock. Shall I hold one for you?</B>
@@ -97,7 +97,7 @@ function DmScreen(){
     <IgHead/>
     <div className="bci-thread">
       <span className="bci-stamp">Today 21:18</span>
-      <B d={500} className="bci-story"><small>You replied to their story</small><img className="bci-story-img" src={asset("/industries/ecommerce.png")} alt=""/></B>
+      <B d={500} className="bci-story"><small>You replied to their story</small><img className="bci-story-img" src={asset("/industries/ecommerce.webp")} alt=""/></B>
       <B d={1100} className="bci-m bci-out">Do you deliver to Bengaluru?</B>
       <Typing d={1700} className="bci-m bci-in"/>
       <B d={2800} className="bci-m bci-in">Yes, we do. Share your pin code and I’ll check delivery times.</B>

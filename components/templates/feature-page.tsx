@@ -1,5 +1,5 @@
 'use client';
-import { Face } from '@/components/site/face';
+import { IllustratedFace as Face } from '@/components/site/illustrated-profile';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
@@ -17,6 +17,7 @@ import { CrmMock, InboxMock, WorkflowMock } from '@/components/premium/app-mocks
 import type { FeaturePage } from '@/content/types';
 
 import { asset } from '@/lib/asset';
+import { WorkflowTemplateLibrary } from '@/components/premium/workflow-template-library';
 // Feature pages on the premium template. Copy comes from content/features/*.json; the product
 // mockups follow the real Steps AI screens (sample data only).
 
@@ -71,7 +72,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="asks" id="questions" eyebrow="What customers ask" title="Know the questions before your team does."
         body="Analytics ranks the questions customers ask most, so you can improve your answers, your product pages and your policies where it matters."
         points={['A ranked list of the most asked questions', 'Busiest days and hours on a heat map', 'Leads by topic and marketing source']}
-        photo={asset("/photos/f-analytics.jpg")} alt="Store manager reviewing sales reports on a tablet at her desk"
+        photo={asset("/images/features/analytics/customer-question-analysis.webp")} alt="A tablet and notes for reviewing customer questions"
         overlay={<Card title="Top questions" status={<Chip>Last 30 days</Chip>}>
           {[['Where is my order?', '34%'], ['Which size should I pick?', '22%'], ['How do returns work?', '15%'], ['Is COD available?', '11%']].map(([q, v], i) => <Row key={q} icon={<MessageSquare size={15} />} title={q} end={<Chip tone={i === 0 ? 'soft' : 'plain'}>{v}</Chip>} picked={i === 0} delay={200 + i * 150} />)}
         </Card>} />,
@@ -115,7 +116,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="team" id="team" eyebrow="Your team" title="Step in only when it matters."
         body="The agent answers first. Your team sees who needs a person and picks up the thread with the full history."
         points={['Live requests stand out in the list', 'Claim once, so nobody answers twice', 'Customer details beside every chat']}
-        photo={asset("/photos/f-inbox.jpg")} alt="Support team with headsets replying to customers on laptops"
+        photo={asset("/images/features/unified-inbox/support-desk.webp")} alt="An unattended support desk ready to resolve customer conversations"
         overlay={<Card title="Needs a person" status={<Chip tone="soft">Live</Chip>}>
           <Row icon={ch('WhatsApp')} title="Anu Sharma" sub="Damaged order" picked delay={200} />
           <Row icon={ch('Website')} title="Meera Iyer" sub="Bulk order quote" delay={350} />
@@ -161,7 +162,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="records" id="records" eyebrow="Records" title="Know who you are talking to."
         body="Every chat can add to a customer record, so the next conversation starts with the full picture."
         points={['Fields you choose, filled from the chat', 'Notes and activity on every record', 'HubSpot if your team already uses it']}
-        photo={asset("/photos/f-crm.jpg")} alt="Clothing studio owner checking customer details on a laptop"
+        photo={asset("/images/features/crm/customer-records.webp")} alt="Hands checking customer order records in a clothing studio"
         reverse tint="warm"
         overlay={<Card title="Anu Sharma" status={<Chip tone="green"><BadgeCheck size={11} />Verified</Chip>}>
           <Row icon={ch('WhatsApp')} title="Came from WhatsApp" sub="Support desk" delay={200} />
@@ -210,7 +211,7 @@ const designs: Record<string, Design> = {
       <PhotoStory key="followups" id="followups" eyebrow="Follow-ups" title="The follow-ups happen while you pack orders."
         body="Cart reminders, COD checks and review requests go out on time, without anyone on your team remembering to send them."
         points={['Ready-made templates for Shopify stores', 'WhatsApp, website messages and email', 'Run history for every workflow']}
-        photo={asset("/photos/f-workflow.jpg")} alt="Two founders packing a customer order at their studio table"
+        photo={asset("/images/features/workflow-builder/order-follow-up.webp")} alt="Hands packing an order ready for an automated follow-up"
         overlay={<Card title="This month" status={<Chip tone="green">Automated</Chip>}>
           <Row icon={<ShoppingCart size={15} />} title="14 checkouts recovered" sub="Cart recovery" picked delay={200} />
           <Row icon={<Check size={15} />} title="COD orders confirmed" sub="COD confirmation" delay={350} />
@@ -239,15 +240,17 @@ export function FeaturePageTemplate({ page }: { page: FeaturePage }) {
           <div className="wb-actions">
             <button className="wb-btn" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
             <a className="wb-btn-ghost" href="#how"><span><Play size={11} fill="currentColor" /></span>See how it works</a>
+            {page.slug === 'workflow-builder' && <a className="wb-btn-ghost" href="#workflow-templates">Browse templates <ArrowRight size={16} /></a>}
           </div>
           <ul className="wb-checks">{checks.map(c => <li key={c}><CircleCheck size={15} />{c}</li>)}</ul>
         </div>
-        <div className="pp-wide-visual">{d.hero}<span className="pp-illus">Illustration with sample data</span></div>
+        <div className="pp-wide-visual">{d.hero}</div>
       </div>
     </section>
     <section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">How it works</span><h2>{page.steps.title}</h2><p>{page.steps.intro}</p></section>
     <StepBand stages={stages} cta={d.bandCta} onOpen={onOpen} label={page.steps.title} />
     <Capabilities title={page.features.title} intro={page.features.intro} items={page.features.items} icons={d.capIcons} />
+    {page.slug === 'workflow-builder' && <WorkflowTemplateLibrary />}
     {d.stories}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />

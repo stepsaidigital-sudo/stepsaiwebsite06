@@ -1,0 +1,340 @@
+[
+  {
+    "low": [
+      {
+        "class": "logo-motion-control",
+        "ratio": 4.2,
+        "text": "Pause motion"
+      }
+    ],
+    "path": "/"
+  },
+  {
+    "low": [],
+    "path": "/pricing/"
+  },
+  {
+    "low": [],
+    "path": "/features/"
+  },
+  {
+    "low": [],
+    "path": "/channels/"
+  },
+  {
+    "low": [],
+    "path": "/solutions/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/"
+  },
+  {
+    "low": [],
+    "path": "/compare/"
+  },
+  {
+    "low": [],
+    "path": "/case-studies/"
+  },
+  {
+    "low": [],
+    "path": "/blog/"
+  },
+  {
+    "low": [],
+    "path": "/help/"
+  },
+  {
+    "low": [],
+    "path": "/help/faqs/"
+  },
+  {
+    "low": [],
+    "path": "/about/"
+  },
+  {
+    "low": [],
+    "path": "/note/"
+  },
+  {
+    "low": [],
+    "path": "/team/"
+  },
+  {
+    "low": [],
+    "path": "/careers/"
+  },
+  {
+    "low": [],
+    "path": "/contact/"
+  },
+  {
+    "low": [],
+    "path": "/security/"
+  },
+  {
+    "low": [],
+    "path": "/partners/"
+  },
+  {
+    "low": [],
+    "path": "/hire-an-agency/"
+  },
+  {
+    "low": [],
+    "path": "/affiliate-program/"
+  },
+  {
+    "low": [],
+    "path": "/book-a-demo/"
+  },
+  {
+    "low": [],
+    "path": "/privacy-policy/"
+  },
+  {
+    "low": [],
+    "path": "/terms-of-service/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01The same questions, all day long."
+      }
+    ],
+    "path": "/solutions/ecommerce/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01Enquiries arrive at night."
+      }
+    ],
+    "path": "/solutions/education/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01The same process questions, every day."
+      }
+    ],
+    "path": "/solutions/financial-services/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01The phone never stops."
+      }
+    ],
+    "path": "/solutions/healthcare/"
+  },
+  {
+    "low": [],
+    "path": "/solutions/real-estate/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01Visitors leave with unanswered questions."
+      }
+    ],
+    "path": "/solutions/saas/"
+  },
+  {
+    "low": [
+      {
+        "class": "is-active",
+        "ratio": 1.42,
+        "text": "01Guests ask at midnight."
+      }
+    ],
+    "path": "/solutions/travel-and-hospitality/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/airtable/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/cal-com/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/calendly/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/delhivery/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/dtdc/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/google-calendar/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/google-drive/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/google-sheets/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/hubspot/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/ithink-logistics/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/klaviyo/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/notion/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/outlook-calendar/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/outlook/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/shiprocket/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/shopify/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/slack/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/square-appointments/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/wareiq/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/woocommerce/"
+  },
+  {
+    "low": [],
+    "path": "/integrations/zendesk/"
+  },
+  {
+    "low": [],
+    "path": "/features/analytics/"
+  },
+  {
+    "low": [],
+    "path": "/features/crm/"
+  },
+  {
+    "low": [],
+    "path": "/features/skills/"
+  },
+  {
+    "low": [],
+    "path": "/features/unified-inbox/"
+  },
+  {
+    "low": [],
+    "path": "/features/whatsapp-broadcast/"
+  },
+  {
+    "low": [],
+    "path": "/features/workflow-builder/"
+  },
+  {
+    "low": [],
+    "path": "/channels/instagram-chatbot/"
+  },
+  {
+    "low": [],
+    "path": "/channels/messenger-chatbot/"
+  },
+  {
+    "low": [],
+    "path": "/channels/website-chatbot/"
+  },
+  {
+    "low": [],
+    "path": "/channels/whatsapp-chatbot/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-booking-agent/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-lead-capture-agent/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-marketing-agent/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-receptionist/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-sales-agent/"
+  },
+  {
+    "low": [],
+    "path": "/use-cases/ai-support-agent/"
+  },
+  {
+    "low": [],
+    "path": "/compare/aisensy/"
+  },
+  {
+    "low": [],
+    "path": "/compare/chatbase/"
+  },
+  {
+    "low": [],
+    "path": "/compare/gorgias/"
+  },
+  {
+    "low": [],
+    "path": "/compare/manychat/"
+  },
+  {
+    "low": [],
+    "path": "/compare/tidio/"
+  },
+  {
+    "low": [],
+    "path": "/compare/verifast/"
+  },
+  {
+    "low": [],
+    "path": "/compare/wati/"
+  }
+]

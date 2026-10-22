@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
-import { facePhoto } from '@/components/site/faces';
+import { illustratedProfile as facePhoto } from '@/components/site/illustrated-profile';
 import { Reveal } from '@/components/sections';
 import { SplitWords } from '@/components/site/motion';
 import type { FeaturePage } from '@/content/types';
@@ -57,7 +57,7 @@ function Phone() {
       <div className="wb-phone-head"><span className="wb-phone-logo">S</span><strong>Your Business</strong><BadgeCheck size={13} className="wb-verified" /></div>
       <div className="wb-phone-chat">
         <div className="wb-tpl">
-          <img src={asset("/industries/ecommerce.png")} alt="" />
+          <img src={asset("/industries/ecommerce.webp")} alt="" />
           <p><b>Hi Priya,</b> our new collection is live. See the latest styles and the offers picked for you.</p>
           <small>11:42 AM</small>
           <span className="wb-tpl-btn"><ExternalLink size={12} />View collection</span>

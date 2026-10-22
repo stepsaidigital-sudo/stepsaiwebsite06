@@ -150,7 +150,7 @@
           "Shares brochures and floor plans",
           "Hands hot buyers to your team"
         ],
-        "photo": "/photos/sc-sales-realestate.jpg"
+        "photo": "/images/industries/real-estate/floor-plan-guidance.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -159,7 +159,7 @@
           "Saves them as CRM fields",
           "Tags where each lead came from"
         ],
-        "photo": "/photos/sc-lead-realestate.jpg"
+        "photo": "/images/industries/real-estate/buyer-requirements.webp"
       },
       {
         "slug": "ai-booking-agent",
@@ -168,7 +168,7 @@
           "Offers weekend slots",
           "Adds visits to your calendar"
         ],
-        "photo": "/photos/sc-booking-realestate.jpg"
+        "photo": "/images/industries/real-estate/site-visit-confirmation.webp"
       }
     ]
   },

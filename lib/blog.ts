@@ -1,4 +1,4 @@
-import { client } from '@/sanity/lib/client';
+export const blogConfigured = Boolean(process.env.NEXT_PUBLIC_SANITY_DATASET && process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
 
 // Blog posts from Sanity (project and dataset in sanity/env.ts), newest first. Posts are written in
 // /studio or published by Unvoro straight to the dataset; `slug` is the URL: /blog/<slug>/.
@@ -53,11 +53,15 @@ const formatDate = (iso?: string) =>
 const withDate = <T extends { publishedAt?: string }>(p: T) => ({ ...p, date: formatDate(p.publishedAt) });
 
 export async function listPosts(): Promise<BlogPost[]> {
+  if (!blogConfigured) return [];
+  const { client } = await import('@/sanity/lib/client');
   const rows = await client.fetch<(Omit<BlogPost, 'date'> & { publishedAt?: string })[]>(LIST, {}, cache);
   return rows.map(withDate);
 }
 
 export async function getPost(slug: string): Promise<BlogArticle | null> {
+  if (!blogConfigured) return null;
+  const { client } = await import('@/sanity/lib/client');
   const row = await client.fetch<Omit<BlogArticle, 'date'> | null>(ONE, { slug }, cache);
   return row && withDate(row);
 }

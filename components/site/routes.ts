@@ -12,6 +12,8 @@ export const builtRoutes: Record<string, string> = {
   'Start free': 'https://app.stepsai.co/signup',
   'Developer docs': 'https://docs.stepsai.co',
   Blog: '/blog/',
+  Features: '/features/',
+  Channels: '/channels/',
   'Help centre': '/help/',
   // In-app setup actions go to sign-up, where they happen.
   'Connect HubSpot': 'https://app.stepsai.co/signup',

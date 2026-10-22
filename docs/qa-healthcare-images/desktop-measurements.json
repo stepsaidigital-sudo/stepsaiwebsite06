@@ -1,0 +1,59 @@
+{
+  "images": [
+    {
+      "height": 411,
+      "loaded": true,
+      "natural": [
+        1200,
+        900
+      ],
+      "src": "/images/industries/healthcare/clinic-arrival.webp",
+      "width": 493
+    },
+    {
+      "height": 256,
+      "loaded": true,
+      "natural": [
+        960,
+        720
+      ],
+      "src": "/images/industries/healthcare/appointment-booking.webp",
+      "width": 372
+    },
+    {
+      "height": 256,
+      "loaded": true,
+      "natural": [
+        960,
+        720
+      ],
+      "src": "/images/industries/healthcare/clinic-phone-reception.webp",
+      "width": 372
+    },
+    {
+      "height": 256,
+      "loaded": true,
+      "natural": [
+        960,
+        661
+      ],
+      "src": "/images/industries/healthcare/clinic-visit-guidance.webp",
+      "width": 372
+    },
+    {
+      "height": 440,
+      "loaded": true,
+      "natural": [
+        1200,
+        900
+      ],
+      "src": "/images/industries/healthcare/clinic-calendar-availability.webp",
+      "width": 536
+    }
+  ],
+  "overflow": false,
+  "viewport": [
+    1280,
+    720
+  ]
+}

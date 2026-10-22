@@ -2,12 +2,12 @@
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
 
 import { asset } from '@/lib/asset';
-// Closing section: stock photo tiles fly in from outside the frame when the section scrolls into view and settle
+// Closing section: industry photo tiles fly in from outside the frame when the section scrolls into view and settle
 // into a mosaic around the headline. Six tiles on top, one tall tile either side of the headline, six below.
 // The photos are decorative, so they have empty alt text.
-const top=['ho-sales','ch-whatsapp','ho-support','in-health-hero','ho-booking','ch-instagram'];
-const sides=['ho-receptionist','ho-lead'];
-const bottom=['in-ecom-hero','ho-marketing','in-edu-hero','ch-website','in-fin-hero','ch-messenger'];
+const top=['retail-payment','ecommerce-order-packing','appliance-repair','physiotherapy-studio','hospitality-reception','fashion-boutique'];
+const sides=['restaurant-reservation','property-viewing'];
+const bottom=['ecommerce-inventory','product-campaign-studio','education-campus','grocery-order','financial-planning','ecommerce-shoe-return'];
 
 // Each tile starts pushed out from the centre of the mosaic, further for tiles further out; the delay grows the same way.
 function Tile({name,col,row,className=''}:{name:string;col:number;row:number;className?:string}){

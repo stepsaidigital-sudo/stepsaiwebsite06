@@ -1,0 +1,318 @@
+{
+  "desktop": [
+    {
+      "answer": true,
+      "heading": "Help students find the right course.",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "photo": "/images/industries/education/course-guidance.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Turn course interest into a clear enquiry.",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "photo": "/images/industries/education/student-enquiry-kiosk.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Make counselling easier to arrange.",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "photo": "/images/industries/education/counselling-session-booking.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Reconnect when the next batch opens.",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "photo": "/images/industries/education/new-batch-announcement.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Give visitors clear clinic information.",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "photo": "/images/industries/healthcare/clinic-visit-guidance.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Help patients find a suitable appointment.",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "photo": "/images/industries/healthcare/appointment-booking.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Make routine calls easier to handle.",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "photo": "/images/industries/healthcare/clinic-phone-reception.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Leave clinical questions with your team.",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "photo": "/images/industries/healthcare/clinic-arrival.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Help buyers understand the property.",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "photo": "/images/industries/real-estate/floor-plan-guidance.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Understand what each buyer is looking for.",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "photo": "/images/industries/real-estate/buyer-requirements.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Turn interest into a scheduled site visit.",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "photo": "/images/industries/real-estate/site-visit-confirmation.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Give your team the context to follow up.",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "photo": "/images/industries/real-estate/buyer-brief-summary.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Help guests plan with confidence.",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "photo": "/images/industries/travel-and-hospitality/guest-guide-support.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Capture the details of the next stay.",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "photo": "/images/industries/travel-and-hospitality/stay-enquiry-planning.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Keep special requests connected to your team.",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "photo": "/images/industries/travel-and-hospitality/reservation-enquiry-ledger.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Turn a stay offer into a useful conversation.",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "photo": "/images/industries/travel-and-hospitality/return-guest-offer.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Make your documentation easier to use.",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "photo": "/images/industries/saas/documentation-support.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Understand the team behind an enquiry.",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "photo": "/images/industries/saas/team-requirements-enquiry.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Move a product question towards a demo.",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "photo": "/images/industries/saas/product-demo-scheduled.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Give support the details they need.",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "photo": "/images/industries/saas/qualified-team-brief.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Make application information easier to find.",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "photo": "/images/industries/financial-services/product-information-enquiry.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Collect the right details for a follow-up.",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "photo": "/images/industries/financial-services/home-loan-enquiry-record.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Make it easier to speak with an adviser.",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "photo": "/images/industries/financial-services/adviser-call-confirmation.webp"
+    },
+    {
+      "answer": true,
+      "heading": "Keep personal advice with your advisers.",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "photo": "/images/industries/financial-services/document-checklist-guidance.webp"
+    }
+  ],
+  "mobile": [
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "tab": "Answer course questions"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "tab": "Capture enquiries"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "tab": "Book counselling"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/education/",
+      "tab": "Follow up"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "tab": "Share clinic information"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "tab": "Book appointments"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "tab": "Answer phone calls"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/healthcare/",
+      "tab": "Pass clinical questions to your team"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "tab": "Answer property questions"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "tab": "Ask about requirements"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "tab": "Book site visits"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/real-estate/",
+      "tab": "Hand over hot leads"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "tab": "Answer property and package questions"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "tab": "Capture booking enquiries"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "tab": "Hand over to your team"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/travel-and-hospitality/",
+      "tab": "Send offers on WhatsApp"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "tab": "Answer from your docs"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "tab": "Qualify leads"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "tab": "Book demos"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/saas/",
+      "tab": "Create support tickets"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "tab": "Explain products and processes"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "tab": "Explain products and processes"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "tab": "Explain products and processes"
+    },
+    {
+      "columns": "299.2px",
+      "overflow": false,
+      "path": "/solutions/financial-services/",
+      "tab": "Pass personal questions to a person"
+    }
+  ]
+}

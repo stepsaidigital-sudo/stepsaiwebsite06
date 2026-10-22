@@ -1,0 +1,23 @@
+// Distinct, face-free editorial scenes for each integration; all assets use WebP.
+export const integrationImages: Record<string, { src: string; alt: string }> = {
+  'google-calendar': { src: '/images/industries/healthcare/clinic-calendar-availability.webp', alt: 'Appointment calendar at a clinic reception desk' },
+  calendly: { src: '/images/industries/saas/product-demo-scheduled.webp', alt: 'Workspace prepared for a scheduled product consultation' },
+  'cal-com': { src: '/images/jobs/ai-booking-agent/consultation-times.webp', alt: 'Consultation desk with appointment planning materials' },
+  'outlook-calendar': { src: '/images/industries/financial-services/adviser-call-confirmation.webp', alt: 'Adviser workspace prepared for a booked call' },
+  'square-appointments': { src: '/images/jobs/ai-booking-agent/store-styling-session.webp', alt: 'Retail studio prepared for a styling appointment' },
+  hubspot: { src: '/images/jobs/ai-lead-capture-agent/business-enquiry.webp', alt: 'Business enquiry materials prepared for a sales team' },
+  zendesk: { src: '/images/features/unified-inbox/support-desk.webp', alt: 'Customer support workspace with no people present' },
+  shiprocket: { src: '/images/cta-tiles/ecommerce-order-packing.webp', alt: 'Online order being prepared for shipping' },
+  delhivery: { src: '/images/jobs/ai-support-agent/delivery-help.webp', alt: 'Parcel delivery information at a support workspace' },
+  dtdc: { src: '/images/jobs/ai-support-agent/replacement-dispatch.webp', alt: 'Replacement order prepared for dispatch' },
+  'ithink-logistics': { src: '/images/features/workflow-builder/order-follow-up.webp', alt: 'Shipping parcel and order follow-up workspace' },
+  wareiq: { src: '/images/cta-tiles/ecommerce-inventory.webp', alt: 'Organized ecommerce stockroom with shelves of inventory' },
+  woocommerce: { src: '/images/jobs/ai-sales-agent/ceramic-catalogue.webp', alt: 'Ceramic products arranged for an online store catalogue' },
+  airtable: { src: '/images/features/crm/customer-records.webp', alt: 'Organized customer records and business workspace' },
+  'google-sheets': { src: '/images/features/analytics/customer-question-analysis.webp', alt: 'Desk prepared for reviewing customer information and reports' },
+  'google-drive': { src: '/images/industries/financial-services/document-checklist-guidance.webp', alt: 'Organized documents and reference materials on a desk' },
+  notion: { src: '/images/industries/saas/documentation-support.webp', alt: 'Workspace with organized product documentation' },
+  slack: { src: '/images/features/skills/specialist-handoff.webp', alt: 'Workspace prepared for a specialist team handoff' },
+  outlook: { src: '/images/jobs/ai-lead-capture-agent/sales-callback.webp', alt: 'Business communication desk prepared for a sales follow-up' },
+  klaviyo: { src: '/images/cta-tiles/product-campaign-studio.webp', alt: 'Product photography studio prepared for a marketing campaign' },
+};

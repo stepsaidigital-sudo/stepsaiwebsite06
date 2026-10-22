@@ -194,7 +194,7 @@
           "Checks stock before suggesting",
           "Adds to cart and shares a checkout link"
         ],
-        "photo": "/photos/ag-ecom-sales.jpg"
+        "photo": "/images/industries/ecommerce/evening-online-shopping.webp"
       },
       {
         "slug": "ai-support-agent",
@@ -203,7 +203,7 @@
           "Answers return and exchange questions",
           "Opens a ticket and hands over when needed"
         ],
-        "photo": "/photos/ag-ecom-support.jpg"
+        "photo": "/images/industries/ecommerce/order-support-desk.webp"
       },
       {
         "slug": "ai-marketing-agent",
@@ -212,7 +212,7 @@
           "Turns Instagram comments into DMs",
           "Recovers carts and confirms COD orders"
         ],
-        "photo": "/photos/ag-ecom-marketing.jpg"
+        "photo": "/images/cta-tiles/product-campaign-studio.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -221,7 +221,7 @@
           "Saves them to your CRM or HubSpot",
           "Tags where each lead came from"
         ],
-        "photo": "/photos/ag-ecom-lead.jpg"
+        "photo": "/images/industries/ecommerce/wholesale-enquiry.webp"
       }
     ]
   },

@@ -13,7 +13,7 @@
   "hero": {
     "kicker": "Shopify integration",
     "title": "Answer order questions and sell in the chat with Shopify.",
-    "body": "Your agent checks real orders, stock and discounts in your Shopify store before it replies. Customers can choose a product, add it to a cart and check out without leaving the conversation.",
+    "body": "Your agent checks real orders, stock and discounts in your Shopify store before it replies. Customers can choose a product and build a cart in the conversation, then pay on your own Shopify checkout.",
     "reassurance": "Live store data. Checkout on your own Shopify checkout. Workflows ready to switch on.",
     "channels": [
       "Website",

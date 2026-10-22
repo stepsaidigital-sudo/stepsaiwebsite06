@@ -2,9 +2,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import copy from '@/app/copy.json';
+import nav from '@/content/site/nav.json';
 import { resolveLabel } from './routes';
 import { MegaMenus } from './mega-menu';
 import { useSiteMotion } from './motion';
+import './ui-readability.css';
 
 import { asset } from '@/lib/asset';
 export type Open = { onOpen: (label: string) => void };
@@ -64,7 +66,7 @@ export function Header({ onOpen, onHome = true }: Open & Place) {
 }
 
 export function Footer({ onOpen, onHome = true }: Open & Place) {
-  return <footer className="container"><div className="footer-top"><Brand onHome={onHome} /><p>{copy.footer.paragraphs[0]}</p></div><div className="footer-groups">{copy.footer.paragraphs.slice(1).map(group => { const [title, links] = group.split(': '); return <div key={title}><h3>{title}</h3>{links?.split(' | ').map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div>; })}</div><div className="footer-bottom"><span>Steps AI</span></div></footer>;
+  return <footer className="container"><div className="footer-top"><Brand onHome={onHome} /><p>{copy.footer.paragraphs[0]}</p></div><div className="footer-groups">{copy.footer.paragraphs.slice(1).map(group => { const [title, links] = group.split(': '); return <div key={title}><h3>{title}</h3>{links?.split(' | ').flatMap(label => label === 'Use cases' ? nav.menus.find(menu => menu.label === 'Solutions')?.columns.find(column => column.title === 'By job')?.items.map(item => item.label) ?? [] : [label]).map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div>; })}</div><div className="footer-bottom"><span>Steps AI</span></div></footer>;
 }
 
 // Subpage wrapper: shared header and footer, plus the preview notice for

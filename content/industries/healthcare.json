@@ -154,7 +154,7 @@
           "Collects name and phone",
           "Adds the visit to your calendar"
         ],
-        "photo": "/photos/sc-booking-healthcare.jpg"
+        "photo": "/images/industries/healthcare/appointment-booking.webp"
       },
       {
         "slug": "ai-receptionist",
@@ -163,7 +163,7 @@
           "Books visits on the phone",
           "Turns after-hours calls into callbacks"
         ],
-        "photo": "/photos/sc-recep-healthcare.jpg"
+        "photo": "/images/industries/healthcare/clinic-phone-reception.webp"
       },
       {
         "slug": "ai-support-agent",
@@ -172,7 +172,7 @@
           "Shares test preparation steps",
           "Passes medical questions to your team"
         ],
-        "photo": "/photos/sc-support-healthcare.jpg"
+        "photo": "/images/industries/healthcare/clinic-visit-guidance.webp"
       }
     ]
   },

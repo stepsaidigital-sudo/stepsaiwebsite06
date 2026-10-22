@@ -1,0 +1,322 @@
+[
+  {
+    "images": [],
+    "section": "hero container"
+  },
+  {
+    "images": [
+      {
+        "fit": "cover",
+        "height": 85,
+        "naturalHeight": 640,
+        "naturalWidth": 640,
+        "position": "50% 50%",
+        "src": "/images/journey/silver-floral.webp",
+        "width": 66
+      },
+      {
+        "fit": "cover",
+        "height": 85,
+        "naturalHeight": 640,
+        "naturalWidth": 640,
+        "position": "50% 50%",
+        "src": "/images/journey/pink-statement.webp",
+        "width": 66
+      },
+      {
+        "fit": "cover",
+        "height": 51,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 45%",
+        "src": "/industries/healthcare.webp",
+        "width": 172
+      },
+      {
+        "fit": "cover",
+        "height": 30,
+        "naturalHeight": 1024,
+        "naturalWidth": 1536,
+        "position": "50% 50%",
+        "src": "/images/stories/homeware-still-life.webp",
+        "width": 30
+      },
+      {
+        "fit": "cover",
+        "height": 90,
+        "naturalHeight": 1024,
+        "naturalWidth": 1536,
+        "position": "50% 50%",
+        "src": "/images/stories/homeware-still-life.webp",
+        "width": 189
+      },
+      {
+        "fit": "cover",
+        "height": 49,
+        "naturalHeight": 1024,
+        "naturalWidth": 1536,
+        "position": "50% 50%",
+        "src": "/images/stories/homeware-still-life.webp",
+        "width": 43
+      }
+    ],
+    "section": "product"
+  },
+  {
+    "images": [
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/ecommerce.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 32%",
+        "src": "/industries/healthcare.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 37%",
+        "src": "/industries/education.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 115,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/realestate.webp",
+        "width": 262
+      }
+    ],
+    "section": "solutions"
+  },
+  {
+    "images": [],
+    "section": "team"
+  },
+  {
+    "images": [
+      {
+        "fit": "cover",
+        "height": 105,
+        "naturalHeight": 1024,
+        "naturalWidth": 1536,
+        "position": "50% 50%",
+        "src": "/images/stories/homeware-still-life.webp",
+        "width": 126
+      },
+      {
+        "fit": "cover",
+        "height": 191,
+        "naturalHeight": 1024,
+        "naturalWidth": 1536,
+        "position": "50% 50%",
+        "src": "/images/stories/homeware-still-life.webp",
+        "width": 256
+      }
+    ],
+    "section": "setup"
+  },
+  {
+    "images": [
+      {
+        "fit": "cover",
+        "height": 36,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/ecommerce.webp",
+        "width": 36
+      },
+      {
+        "fit": "cover",
+        "height": 84,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 40%",
+        "src": "/industries/ecommerce.webp",
+        "width": 212
+      },
+      {
+        "fit": "cover",
+        "height": 118,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/ecommerce.webp",
+        "width": 78
+      },
+      {
+        "fit": "cover",
+        "height": 282,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/ecommerce.webp",
+        "width": 282
+      },
+      {
+        "fit": "cover",
+        "height": 92,
+        "naturalHeight": 1254,
+        "naturalWidth": 1254,
+        "position": "50% 50%",
+        "src": "/industries/ecommerce.webp",
+        "width": 158
+      }
+    ],
+    "section": "broadcast"
+  },
+  {
+    "images": [],
+    "section": "stories"
+  },
+  {
+    "images": [],
+    "section": "faq"
+  },
+  {
+    "images": [
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/retail-payment.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/ecommerce-order-packing.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/appliance-repair.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/physiotherapy-studio.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/hospitality-reception.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/fashion-boutique.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/restaurant-reservation.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/property-viewing.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/ecommerce-inventory.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/product-campaign-studio.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 104,
+        "naturalHeight": 720,
+        "naturalWidth": 960,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/education-campus.webp",
+        "width": 106
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/grocery-order.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/financial-planning.webp",
+        "width": 0
+      },
+      {
+        "fit": "cover",
+        "height": 0,
+        "naturalHeight": 0,
+        "naturalWidth": 0,
+        "position": "50% 50%",
+        "src": "/images/cta-tiles/ecommerce-shoe-return.webp",
+        "width": 0
+      }
+    ],
+    "section": "final-section"
+  }
+]

@@ -23,7 +23,7 @@ import { asset } from '@/lib/asset';
 // Platform screens follow each platform's own look; everything around them uses the Steps AI palette.
 // Mockups are illustrations with fictional sample data.
 
-const PRODUCT = asset('/industries/ecommerce.png');
+const PRODUCT = asset('/industries/ecommerce.webp');
 const result = (icon: ReactNode, title: string, sub: string) => <div className="pp-result"><span>{icon}</span><div><strong>{title}</strong><small>{sub}</small></div></div>;
 const stack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items.map((item, i) => <Float key={i}>{item}</Float>)}</div>;
 const side = (lines: [('customer' | 'agent'), string][], done: string) => <div className="wb-chat">
@@ -91,8 +91,8 @@ const waHero: Line[] = [
 
 const designs: Record<string, Design> = {
   'whatsapp-chatbot': {
-    accent: ['day and night'], photo: asset('/photos/ch-whatsapp.jpg'), alt: 'Customer chatting on WhatsApp, answered by an AI agent', logo: <ChannelLogo channel="WhatsApp" />,
-    hero: <HeroScene photo={asset("/photos/ch-whatsapp.jpg")} alt="Customer chatting on WhatsApp, answered by an AI agent">
+    accent: ['day and night'], photo: asset('/images/channels/whatsapp/gift-delivery-message.webp'), alt: 'Hands messaging a shop about delivery of a ceramic gift', logo: <ChannelLogo channel="WhatsApp" />,
+    hero: <HeroScene photo={asset("/images/channels/whatsapp/gift-delivery-message.webp")} alt="Hands messaging a shop about delivery of a ceramic gift">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={11000} lines={waHero} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><BadgeCheck size={14} />Official WhatsApp Business API</div><Row icon={<ChannelLogo channel="WhatsApp" />} title="+91 98xxx xxx10" sub="Connected through Meta" /></Float>
       <Float className="pp-pos-br">{result(<Clock size={16} />, 'Answered at 11:42 PM', 'No waiting for opening hours')}</Float>
@@ -131,8 +131,8 @@ const designs: Record<string, Design> = {
   },
 
   'instagram-chatbot': {
-    accent: ['into sales'], photo: asset('/photos/ch-instagram.jpg'), alt: 'Brand owner creating product content for Instagram', logo: <ChannelLogo channel="Instagram" />,
-    hero: <HeroScene photo={asset("/photos/ch-instagram.jpg")} alt="Brand owner creating product content for Instagram">
+    accent: ['into sales'], photo: asset('/images/channels/instagram/linen-reel-studio.webp'), alt: 'Hands arranging a linen shirt for a product Reel', logo: <ChannelLogo channel="Instagram" />,
+    hero: <HeroScene photo={asset("/images/channels/instagram/linen-reel-studio.webp")} alt="Hands arranging a linen shirt for a product Reel">
       <LivePhone kind="Instagram" business="Lumen Home" handle="lumenhome" className="pp-hero-phone" period={11000} lines={[
         { from: 'agent', text: 'Thanks for commenting PRICE! The linen set is ₹2,800.', at: 400 },
         { from: 'customer', text: 'Is M available?', at: 2600 },
@@ -174,8 +174,8 @@ const designs: Record<string, Design> = {
   },
 
   'messenger-chatbot': {
-    accent: ['your Facebook page'], photo: asset('/photos/ch-messenger.jpg'), alt: 'Customer messaging a business on Messenger', logo: <ChannelLogo channel="Messenger" />,
-    hero: <HeroScene photo={asset("/photos/ch-messenger.jpg")} alt="Customer messaging a business on Messenger">
+    accent: ['your Facebook page'], photo: asset('/images/channels/messenger/local-shop-page-message.webp'), alt: 'A local shop business page with opening hours and a customer message', logo: <ChannelLogo channel="Messenger" />,
+    hero: <HeroScene photo={asset("/images/channels/messenger/local-shop-page-message.webp")} alt="A local shop business page with opening hours and a customer message">
       <LivePhone kind="Messenger" business="Lumen Home" className="pp-hero-phone" period={11000} lines={convo(
         ['Are you open on Sunday?', 'Yes, our store is open 10 to 6 on Sundays.'],
         ['Do you have the bowl set?', 'Yes, it is in stock. Here is the link.'])} />
@@ -212,8 +212,8 @@ const designs: Record<string, Design> = {
   },
 
   'website-chatbot': {
-    accent: ['even at 11pm'], photo: asset('/photos/ch-website.jpg'), alt: 'Visitor browsing a website in the evening, with the chat widget answering', logo: <Globe size={16} />,
-    hero: <HeroScene photo={asset("/photos/ch-website.jpg")} alt="Visitor browsing a website in the evening, with the chat widget answering">
+    accent: ['even at 11pm'], photo: asset('/images/channels/website/evening-furniture-chat.webp'), alt: 'Hands browsing a furniture website with chat available in the evening', logo: <Globe size={16} />,
+    hero: <HeroScene photo={asset("/images/channels/website/evening-furniture-chat.webp")} alt="Hands browsing a furniture website with chat available in the evening">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={11000} lines={convo(
         ['Does the Arlo sofa come in grey?', 'Yes, it comes in grey and it is in stock.'],
         ['Add it to my cart.', 'Added. You can check out right here.'])} />
@@ -310,7 +310,7 @@ export function ChannelPageTemplate({ page }: { page: ChannelPage }) {
     <StepBand stages={stages} cta={d.bandCta} onOpen={onOpen} label={page.triggers.title} />
     {d.industries && scenarios.length > 1 && <IndustryExamples title={d.industries.title} intro={d.industries.intro} scenarios={scenarios} noPhoto />}
     <FlowStrip eyebrow="Setup" title={page.setup.title} intro={page.setup.intro} items={page.setup.items.map((item, i) => ({ ...item, icon: d.setupIcons[i], tint: i % 2 ? 'violet' : 'blue' }))} />
-    {handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about a bulk order?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. How many pieces do you need?' })}
+    {handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about a bulk order?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. How many pieces do you need?' }, false, undefined, ['website-chatbot', 'whatsapp-chatbot', 'instagram-chatbot', 'messenger-chatbot'].includes(page.slug))}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />
     <section className="container wb-split wb-related">

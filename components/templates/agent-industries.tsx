@@ -1,6 +1,7 @@
 import { Building2, GraduationCap, ShoppingBag, Stethoscope } from 'lucide-react';
 import { convo, type Scenario } from '@/components/premium/kit';
 import { useCaseIndustryImages } from './usecase-images';
+import { jobIndustryImages } from './job-industry-images';
 
 import { asset } from '@/lib/asset';
 // How each agent works in four industries. Illustrative conversations with fictional businesses;
@@ -131,7 +132,7 @@ export const industryScenarios: typeof scenariosByAgent = Object.fromEntries(
   Object.entries(scenariosByAgent).map(([slug, page]) => [slug, {
     ...page,
     scenarios: page.scenarios.map(scenario => {
-      const image = useCaseIndustryImages[slug === 'ai-receptionist' ? 'call' : 'chat'][scenario.industry];
+      const image = jobIndustryImages[slug]?.[scenario.industry] ?? useCaseIndustryImages[slug === 'ai-receptionist' ? 'call' : 'chat'][scenario.industry];
       return image ? { ...scenario, photo: image.src, photoAlt: image.alt } : scenario;
     }),
   }]),

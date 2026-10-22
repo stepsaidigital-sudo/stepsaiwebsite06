@@ -1,0 +1,5 @@
+.page { --wb-muted: #24364b; }
+.page :global(.pp-head) > p,
+.page :global(.pp-story-copy) > p,
+.page :global(.pp-cap) > p,
+.page :global(.sp-intro) > p { color: #24364b; letter-spacing: normal; }

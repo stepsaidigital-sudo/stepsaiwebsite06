@@ -1,11 +1,11 @@
 'use client';
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Link from 'next/link';
 import { isPublishedUseCase } from '@/lib/published';
 import {
   ArrowRight, BookOpen, Building2, CalendarCheck, CalendarDays, Check, CircleCheck, Clock, CreditCard, GraduationCap, Headphones, Home,
   IndianRupee, Landmark, Link2, Megaphone, Package, Plane, Search, Shirt, ShoppingBag, ShoppingCart, Stethoscope, Ticket, Truck, UserPlus,
-  Users, X,
+  Users,
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
@@ -19,7 +19,7 @@ import type { IndustryPage } from '@/content/types';
 
 import { asset } from '@/lib/asset';
 // Industry pages on the premium template. Copy comes from content/industries/*.json, including the
-// problem-and-fix rows, the agents each industry runs and one end-to-end journey. Mockups are
+// agents each industry runs and one end-to-end journey. Mockups are
 // illustrations with fictional sample data.
 
 const icons: Record<string, ReactNode> = {
@@ -42,6 +42,13 @@ const agentInfo: Record<string, { label: string; icon: ReactNode }> = {
 const photoKey: Record<string, string> = { ecommerce: 'ecom', healthcare: 'health', education: 'edu', 'real-estate': 're', 'travel-and-hospitality': 'travel', saas: 'saas', 'financial-services': 'fin' };
 // One unique hero photo per industry (public/photos/in-*-hero.jpg, credits in docs/photo-credits.md).
 const heroPhotos: Record<string, string> = Object.fromEntries(Object.entries(photoKey).map(([slug, k]) => [slug, asset(`/photos/in-${k}-hero.jpg`)]));
+heroPhotos.ecommerce = asset('/images/cta-tiles/fashion-boutique.webp');
+heroPhotos.healthcare = asset('/images/industries/healthcare/clinic-arrival.webp');
+heroPhotos.education = asset('/images/industries/education/admissions-entrance.webp');
+heroPhotos['real-estate'] = asset('/images/industries/real-estate/residential-arrival.webp');
+heroPhotos['travel-and-hospitality'] = asset('/images/industries/travel-and-hospitality/coastal-hotel-arrival.webp');
+heroPhotos['saas'] = asset('/images/industries/saas/software-workspace.webp');
+heroPhotos['financial-services'] = asset('/images/industries/financial-services/customer-enquiry-lounge.webp');
 const kickerIcon: Record<string, ReactNode> = {
   ecommerce: <ShoppingBag size={16} />, healthcare: <Stethoscope size={16} />, education: <GraduationCap size={16} />, 'real-estate': <Building2 size={16} />,
   'travel-and-hospitality': <Plane size={16} />, saas: <Users size={16} />, 'financial-services': <Landmark size={16} />,
@@ -59,63 +66,6 @@ function QuestionMarquee({ title, intro, items }: IndustryPage['questions']) {
       {[0, 1].map(r => <div key={r} className={`pp-q-row ${r ? 'is-reverse' : ''}`}><div className="pp-q-track">{(r ? [...row].reverse() : row).map((q, i) => <span key={i} className="pp-q" aria-hidden={i >= items.length || undefined}><ChannelLogo channel={q.channel} />{q.text}</span>)}</div></div>)}
     </div>
   </section>;
-}
-
-function Problems({ data }: { data: NonNullable<IndustryPage['problems']> }) {
-  // Before/after switcher: each problem shows the pile-up first, then flips to the agent handling it.
-  const root = useRef<HTMLElement>(null);
-  const [i, setI] = useState(0), [after, setAfter] = useState(false), [held, setHeld] = useState(false), [seen, setSeen] = useState(false);
-  const n = data.items.length, item = data.items[i];
-  useEffect(() => {
-    const io = new IntersectionObserver(([e]) => setSeen(e.isIntersecting), { threshold: .3 });
-    if (root.current) io.observe(root.current);
-    return () => io.disconnect();
-  }, []);
-  useEffect(() => {
-    if (!seen) return;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setAfter(true); return; }
-    const t = window.setTimeout(() => {
-      if (!after) setAfter(true);
-      else if (!held) { setI(x => (x + 1) % n); setAfter(false); }
-    }, after ? 5600 : 2600);
-    return () => window.clearTimeout(t);
-  }, [i, after, held, seen, n]);
-  const pick = (k: number) => { setI(k); setAfter(false); setHeld(true); };
-  return <section ref={root} className="pp-ps-wrap"><div className="container">
-    <div className="pp-split-head">
-      <div><span className="wb-eyebrow">Problems we solve</span><h2 aria-label={data.title}><SplitWords text={data.title} /></h2></div>
-      <p>{data.intro}</p>
-    </div>
-    <div className="pp-ps">
-      <ol className="pp-ps-tabs" role="tablist" aria-label="Store problems">{data.items.map((p, k) => <li key={p.pain}>
-        <button role="tab" aria-selected={k === i} className={k === i ? 'is-active' : ''} onClick={() => pick(k)}>
-          <span className="pp-ps-num">{String(k + 1).padStart(2, '0')}</span><span className="pp-ps-pain">{p.pain}</span>
-          {k === i && !held && <i className="pp-ps-bar" key={`${i}-${after}`} style={{ animationDuration: after ? '5.6s' : '2.6s' }} />}
-        </button>
-      </li>)}</ol>
-      <div className={`pp-ps-stage ${after ? 'is-after' : ''}`} key={i}>
-        <div className="pp-ps-switch" role="group" aria-label="Compare">
-          <button className={!after ? 'is-on' : ''} onClick={() => { setAfter(false); setHeld(true); }}>Without an agent</button>
-          <button className={after ? 'is-on' : ''} onClick={() => { setAfter(true); setHeld(true); }}>With Steps AI</button>
-        </div>
-        <div className="pp-ps-before" aria-hidden={after}>
-          <div className="pp-ps-pile">{[0, 1, 2].map(k => <div key={k} className="pp-ps-msg" style={{ animationDelay: `${k * 180}ms` }}><span className="wb-avatar wb-peach">{'PRA'[k]}</span><p>{item.ask ?? item.pain}</p><small>unread</small></div>)}</div>
-          {item.count && <span className="pp-ps-count"><X size={13} />{item.count}</span>}
-        </div>
-        <div className="pp-ps-after" aria-hidden={!after}>
-          <div className="pp-ps-chat">
-            {item.ask && <div className="pp-ps-q">{item.ask}</div>}
-            {after && <div className="pp-ps-typing"><span className="pp-ps-bot"><img src={asset("/brands/steps-original.png")} alt="" /></span><i /><i /><i /></div>}
-            <div className="pp-ps-a"><span className="pp-ps-bot"><img src={asset("/brands/steps-original.png")} alt="" /></span><p>{item.reply ?? item.fix}</p></div>
-          </div>
-          <span className="pp-ps-stamp"><CircleCheck size={16} />Answered in seconds</span>
-          {agentInfo[item.agent] && (isPublishedUseCase(item.agent)
-            ? <Link className="pp-ps-agent" href={`/use-cases/${item.agent}/`}>{agentInfo[item.agent].icon}Handled by the {agentInfo[item.agent].label}<ArrowRight size={14} /></Link>
-            : <a className="pp-ps-agent">{agentInfo[item.agent].icon}Handled by the {agentInfo[item.agent].label}<ArrowRight size={14} /></a>)}
-        </div>
-      </div>
-    </div>
-  </div></section>;
 }
 
 function Agents({ data }: { data: NonNullable<IndustryPage['agents']> }) {
@@ -145,7 +95,7 @@ const stories: Record<string, ReactNode[]> = {
     <PhotoStory key="shopify" id="shopify" eyebrow="Built for Shopify" title="Connect your store once. Your agent knows every product and order."
       body="Steps AI reads your Shopify catalogue, stock and orders, and your delivery partner's tracking. Your agent answers from real data, not from guesses."
       points={['Products, prices and stock from Shopify or WooCommerce', 'Order status from Shiprocket, Delhivery, DTDC, iThink Logistics or WareIQ', 'Cart reminders and COD confirmation for Shopify stores']}
-      photo={asset("/photos/in-ecom-shopify.jpg")} alt="Team packing and labelling online orders"
+      photo={asset("/images/cta-tiles/ecommerce-order-packing.webp")} alt="Hands preparing an online order for shipping"
       overlay={<Card title="Connected" status={<Chip tone="green"><Check size={11} />Live</Chip>}>
         <Row icon={<img src={asset("/brands/integrations/shopify.svg")} alt="" width={16} height={16} />} title="Shopify" sub="1,240 products · Orders synced" picked delay={200} />
         <Row icon={<img src={asset("/brands/integrations/shiprocket.svg")} alt="" width={16} height={16} />} title="Shiprocket" sub="Tracking for every shipment" delay={400} />
@@ -154,7 +104,7 @@ const stories: Record<string, ReactNode[]> = {
     <PhotoStory key="sale" id="sale-days" reverse eyebrow="Sale days and launches" title="When messages pour in, every customer still gets an answer."
       body="On a sale day, hundreds of people ask about sizes, stock and delivery at once. Your agent answers each message as it arrives, so nobody waits in a queue."
       points={['Answers at any hour, including late at night', 'Every reply to your campaign handled by your agent', 'Your team picks up the conversations that need a person']}
-      photo={asset("/photos/in-ecom-sale.jpg")} alt="Shopper browsing a sale on her laptop in the evening"
+      photo={asset("/images/industries/ecommerce/evening-online-shopping.webp")} alt="Hands browsing clothing on a laptop at night"
       overlay={<Card title="Tonight" status={<Chip tone="soft">Sale live</Chip>}>
         <div className="pp-kpi-grid"><div><small>Chats answered</small><strong>418</strong></div><div><small>Avg AI response</small><strong>2.1 sec</strong></div><div><small>Checkout links</small><strong>96</strong></div><div><small>Passed to team</small><strong>11</strong></div></div>
       </Card>} />,
@@ -186,7 +136,7 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
   const stages: Stage[] = j.map((s, i) => ({
     pill: `Step ${i + 1} of ${j.length}`, title: s.title, body: s.body,
     card: <Card title={s.card.title} status={<Chip tone="green"><Check size={11} />{s.card.chip}</Chip>}>{s.card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === s.card.rows.length - 1} delay={200 + k * 220} />)}</Card>,
-    side: <div className="wb-chat"><Bubble who="customer" delay={300}>{s.customer}</Bubble><Bubble who="agent" delay={1300}>{s.agent}</Bubble><div className="pp-step-result" style={{ animationDelay: '2200ms' }}><CircleCheck size={14} />{s.result}</div></div>,
+    side: <div className="wb-chat"><Bubble who="customer" delay={150}>{s.customer}</Bubble><Bubble who="agent" delay={700}>{s.agent}</Bubble><div className="pp-step-result" style={{ animationDelay: '1300ms' }}><CircleCheck size={14} />{s.result}</div></div>,
   }));
   const capIcons: [ReactNode, string][] = [[<ShoppingBag key="a" size={20} />, 'blue'], [<Truck key="b" size={20} />, 'violet'], [<ShoppingCart key="c" size={20} />, 'blue'], [<Megaphone key="d" size={20} />, 'violet'], [<BookOpen key="e" size={20} />, 'blue'], [<Users key="f" size={20} />, 'violet']];
   return <SiteFrame>{onOpen => <div className="wb pp">
@@ -199,12 +149,11 @@ export function IndustryPageTemplate({ page }: { page: IndustryPage }) {
       </HeroScene>} />
     {page.hero.channels && <ChannelRow channels={page.hero.channels} />}
     <QuestionMarquee {...page.questions} />
-    {page.problems && <Problems data={page.problems} />}
+    <Capabilities title={page.jobs.title} intro={page.jobs.intro} items={page.jobs.items} icons={capIcons} plainBackground={page.slug !== 'ecommerce'} industry={page.slug} />
     {page.agents && <Agents data={page.agents} />}
     {page.journey && <><section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">Customer journey</span><h2>{page.journey.title}</h2><p>{page.journey.intro}</p></section>
       <StepBand stages={stages} cta={page.slug === 'ecommerce' ? { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> } : { label: 'Book a demo', icon: <CalendarDays size={18} /> }} onOpen={onOpen} label={page.journey.title} /></>}
-    <Capabilities title={page.jobs.title} intro={page.jobs.intro} items={page.jobs.items} icons={capIcons} />
-    {stories[page.slug] ?? (j[1] && <PhotoStory id="in-practice" eyebrow="In practice" title={page.journey!.stages[1].title + '.'} body={page.journey!.stages[1].body} points={page.jobs.items.slice(0, 3).map(x => x.title)} photo={asset(`/photos/in-${key}-story.jpg`)} alt={page.hero.kicker + ' team helping a customer'} overlay={<Card title={j[1].card.title} status={<Chip tone="green"><Check size={11} />{j[1].card.chip}</Chip>}>{j[1].card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === j[1].card.rows.length - 1} delay={200 + k * 220} />)}</Card>} />)}
+    {stories[page.slug] ?? (j[1] && <PhotoStory id="in-practice" eyebrow="In practice" title={page.journey!.stages[1].title + '.'} body={page.journey!.stages[1].body} points={page.jobs.items.slice(0, 3).map(x => x.title)} photo={asset(page.slug === 'healthcare' ? '/images/industries/healthcare/clinic-calendar-availability.webp' : page.slug === 'education' ? '/images/industries/education/admissions-enquiry-followup.webp' : page.slug === 'real-estate' ? '/images/industries/real-estate/buyer-brief-summary.webp' : page.slug === 'travel-and-hospitality' ? '/images/industries/travel-and-hospitality/reservation-enquiry-ledger.webp' : page.slug === 'saas' ? '/images/industries/saas/qualified-team-brief.webp' : page.slug === 'financial-services' ? '/images/industries/financial-services/home-loan-enquiry-record.webp' : `/photos/in-${key}-story.jpg`)} alt={page.slug === 'healthcare' ? 'Clinic calendar with available appointment times' : page.slug === 'education' ? 'Admissions enquiry saved for course follow-up' : page.slug === 'real-estate' ? 'Buyer requirements recorded for the property sales team' : page.slug === 'travel-and-hospitality' ? 'Travel dates and guest count recorded for the reservations team' : page.slug === 'saas' ? 'Team size and software requirements recorded for sales follow-up' : page.slug === 'financial-services' ? 'Home loan enquiry recorded for the financial services team' : page.hero.kicker + ' team helping a customer'} overlay={<Card title={j[1].card.title} status={<Chip tone="green"><Check size={11} />{j[1].card.chip}</Chip>}>{j[1].card.rows.map(([icon, title, sub], k) => <Row key={title} icon={icons[icon]} title={title} sub={sub} picked={k === j[1].card.rows.length - 1} delay={200 + k * 220} />)}</Card>} />)}
     <ToolCards title={page.tools.title} intro={page.tools.intro} names={page.tools.names} />
     {page.quotes.map(q => <QuoteBlock key={q.attribution} excerpt={q.excerpt} attribution={q.attribution} />)}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />

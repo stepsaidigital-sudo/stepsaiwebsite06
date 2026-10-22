@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "privacy-policy",
+    "source": "https://stepsai.co/privacy-policy/",
+    "captured": "2026-10-22",
+    "articleCharacters": 14944,
+    "articleSha256": "1986f0727c512ee9826ad72712918e93212456ebb3cd93706981019050510f0e",
+    "sections": 13,
+    "exactTextMatch": true
+  },
+  {
+    "slug": "terms-of-service",
+    "source": "https://stepsai.co/terms-of-service/",
+    "captured": "2026-10-22",
+    "articleCharacters": 19647,
+    "articleSha256": "f47f86c16e4bc3423793b7b73ac5657528a3c8760bdfbff7bcad0d45275ac8ee",
+    "sections": 13,
+    "exactTextMatch": true
+  }
+]

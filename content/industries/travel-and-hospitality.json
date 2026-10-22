@@ -136,7 +136,7 @@
           "Shares directions and amenities",
           "Passes requests to your team"
         ],
-        "photo": "/photos/cs-booking.jpg"
+        "photo": "/images/industries/travel-and-hospitality/guest-guide-support.webp"
       },
       {
         "slug": "ai-lead-capture-agent",
@@ -145,7 +145,7 @@
           "Saves contact details",
           "Hands the enquiry to your team"
         ],
-        "photo": "/photos/in-travel-story.jpg"
+        "photo": "/images/industries/travel-and-hospitality/stay-enquiry-planning.webp"
       },
       {
         "slug": "ai-marketing-agent",
@@ -154,7 +154,7 @@
           "Answers every reply",
           "Brings guests back in the off season"
         ],
-        "photo": "/photos/cs-marketing.jpg"
+        "photo": "/images/industries/travel-and-hospitality/return-guest-offer.webp"
       }
     ]
   },

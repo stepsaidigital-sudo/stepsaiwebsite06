@@ -1,0 +1,292 @@
+[
+  {
+    "heading": "Book appointments into Google Calendar from the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/google-calendar/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Book appointments into Calendly from the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/calendly/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Book appointments into Cal.com from the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/cal-com/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Book appointments into Outlook Calendar from the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/outlook-calendar/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Book appointments into Square Appointments from the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/square-appointments/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Send every new lead from the chat to HubSpot.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/hubspot/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Answer the common questions. Send the rest to Zendesk.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/zendesk/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Let customers track Shiprocket deliveries in the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/shiprocket/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Let customers track Delhivery deliveries in the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/delhivery/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Let customers track DTDC deliveries in the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/dtdc/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Let customers track iThink Logistics deliveries in the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/ithink-logistics/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Let customers track WareIQ deliveries in the chat.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/wareiq/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Give your WooCommerce store an agent that knows your orders.",
+    "heroLoaded": false,
+    "overflow": false,
+    "path": "/integrations/woocommerce/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Answer customers from what is already in Airtable.",
+    "heroLoaded": false,
+    "overflow": false,
+    "path": "/integrations/airtable/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Run your agent from a Google Sheet.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/google-sheets/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Answer customers from what is already in Google Drive.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/google-drive/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Answer customers from what is already in Notion.",
+    "heroLoaded": false,
+    "overflow": false,
+    "path": "/integrations/notion/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Keep your team in the loop in Slack.",
+    "heroLoaded": false,
+    "overflow": false,
+    "path": "/integrations/slack/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Bring Steps AI into your team’s Outlook.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/outlook/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "heading": "Connect your chat conversations to Klaviyo.",
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/klaviyo/",
+    "steps": 3,
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/google-calendar/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/calendly/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/cal-com/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/outlook-calendar/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/square-appointments/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/hubspot/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/zendesk/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/shiprocket/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/delhivery/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/integrations/dtdc/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/ithink-logistics/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/wareiq/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/woocommerce/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/airtable/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/google-sheets/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/google-drive/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/notion/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/slack/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/outlook/",
+    "steps": 3,
+    "width": 390
+  },
+  {
+    "heroLoaded": true,
+    "overflow": false,
+    "path": "/integrations/klaviyo/",
+    "steps": 3,
+    "width": 390
+  }
+]

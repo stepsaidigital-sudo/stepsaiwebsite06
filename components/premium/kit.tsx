@@ -277,23 +277,36 @@ export function FlowStrip({ eyebrow = 'How it works', title, intro, items }: { e
 export type Stage = { pill: string; title: string; body: string; card: ReactNode; side: ReactNode };
 
 export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta: { label: string; icon: ReactNode }; onOpen: (l: string) => void; label: string }) {
+  const root = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0), [paused, setPaused] = useState(false);
+  const [visible, setVisible] = useState(false), [reduced, setReduced] = useState(false);
   useEffect(() => {
-    if (paused || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setTimeout(() => setActive(a => (a + 1) % stages.length), 6500);
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const updateMotion = () => setReduced(motion.matches);
+    updateMotion();
+    motion.addEventListener('change', updateMotion);
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: .1 });
+    if (root.current) observer.observe(root.current);
+    return () => { observer.disconnect(); motion.removeEventListener('change', updateMotion); };
+  }, []);
+  const running = visible && !paused && !reduced;
+  useEffect(() => {
+    if (!running || stages.length < 2) return;
+    const timer = window.setTimeout(() => setActive(a => (a + 1) % stages.length), 5000);
     return () => window.clearTimeout(timer);
-  }, [active, paused, stages.length]);
+  }, [active, running, stages.length]);
   const stage = stages[active];
-  return <section className="container wb-band-wrap"><Reveal className="wb-band pp-band">
-    <div className="wb-band-inner" onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)}>
+  return <section ref={root} className="container wb-band-wrap" data-journey-running={running}><Reveal className="wb-band pp-band">
+    <div className="wb-band-inner">
       <div className="wb-band-copy">
         <span className="wb-pill">{stage.pill}</span>
         <h2 key={`t${active}`} className="wb-swap">{stage.title}.</h2>
         <p key={`p${active}`} className="wb-swap">{stage.body}</p>
         <button className="wb-btn-light" onClick={() => onOpen(cta.label)}>{cta.icon}{cta.label} <ArrowRight size={15} /></button>
-        <div className="wb-dots" role="tablist" aria-label={label}>
-          {stages.map((s, i) => <button key={s.pill} role="tab" aria-selected={i === active} aria-label={`${s.pill}: ${s.title}`} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}><i style={{ animationPlayState: paused ? 'paused' : 'running' }} /></button>)}
+        <div className="wb-dots" role="group" aria-label={label}>
+          {stages.map((s, i) => <button key={s.pill} aria-pressed={i === active} aria-label={`${s.pill}: ${s.title}`} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}><i key={`${active}-${running}`} style={{ animationDuration: '5s', animationPlayState: running ? 'running' : 'paused' }} /></button>)}
         </div>
+        {!reduced && stages.length > 1 && <button className="wb-journey-playback" aria-pressed={paused} onClick={() => setPaused(value => !value)}>{paused ? 'Resume walkthrough' : 'Pause walkthrough'}</button>}
       </div>
       <div className="wb-band-card" key={`c${active}`}>{stage.card}</div>
       <div className="wb-band-side" key={`s${active}`}>{stage.side}</div>
@@ -302,8 +315,8 @@ export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta:
   </Reveal></section>;
 }
 
-export function Capabilities({ title, intro, items, icons }: { title: string; intro: string; items: Item[]; icons: [ReactNode, string][] }) {
-  return <CapabilityStage title={title} intro={intro} items={items} icons={icons} />;
+export function Capabilities({ title, intro, items, icons, plainBackground, industry }: { title: string; intro: string; items: Item[]; icons: [ReactNode, string][]; plainBackground?: boolean; industry?: string }) {
+  return <CapabilityStage title={title} intro={intro} items={items} icons={icons} plainBackground={plainBackground} industry={industry} />;
 }
 
 export function PhotoStory({ id, eyebrow, title, body, points, photo, prompt, alt, overlay, reverse = false, tint = 'soft' }: {

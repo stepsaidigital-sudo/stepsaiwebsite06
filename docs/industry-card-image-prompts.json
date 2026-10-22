@@ -1,0 +1,44 @@
+{
+  "tool": "Built-in image generation",
+  "format": "WebP",
+  "width": 960,
+  "height": 720,
+  "brief": "Photorealistic landscape industry navigation backgrounds. No people, faces, logos or readable text. Centered crop-safe subjects; lower quarter quiet. Blur applied in CSS only.",
+  "entries": [
+    {
+      "slug": "ecommerce",
+      "scene": "An independent colorful online shop fulfilment counter with neatly packed kraft parcels, folded blue and coral garments and a small unbranded product display. Warm amber daylight.",
+      "file": "exec-df2eeb76-7fc4-4d34-a932-00a4468c4e59.png"
+    },
+    {
+      "slug": "healthcare",
+      "scene": "A bright contemporary clinic reception with teal chairs, a white curved reception desk, a stethoscope beside a closed appointment notebook and a small plant. Cool turquoise and soft green.",
+      "file": "exec-48a2a041-0d40-414f-a608-66e4db7c1216.png"
+    },
+    {
+      "slug": "education",
+      "scene": "A sunlit university study room with open textbooks, a blue notebook and a globe on a wooden table, bookshelves in the background. Warm golden and blue accents.",
+      "file": "exec-670f1937-60bb-467f-98a0-c44d55dc0997.png"
+    },
+    {
+      "slug": "real-estate",
+      "scene": "An elegant contemporary home with terracotta accents, large windows, a welcoming living room opening to a green garden, property keys on the foreground console. Warm sunset light.",
+      "file": "exec-651d5183-ec0c-42ad-8ae3-47d1f048bd44.png"
+    },
+    {
+      "slug": "travel-and-hospitality",
+      "scene": "A boutique coastal hotel terrace with turquoise pool, woven lounge chairs and folded towels overlooking the sea. Rich aqua and warm coral accents.",
+      "file": "exec-df2ebbac-8a44-45e2-921e-0d2e5daa171a.png"
+    },
+    {
+      "slug": "saas",
+      "scene": "A modern software product workspace with two unbranded monitors displaying abstract indigo workflow blocks, keyboard and cobalt task lamp, no readable UI text. Blue and violet accents.",
+      "file": "exec-d2b47af8-431f-4dd6-8e5a-6c41b1036164.png"
+    },
+    {
+      "slug": "financial-services",
+      "scene": "A quiet financial adviser consultation desk with a calculator, neatly arranged document folders, a closed navy notebook and a pen, elegant green glass partitions behind it. Emerald and warm brass accents.",
+      "file": "exec-51484ed0-3638-4c08-a4ab-ec472ab4e015.png"
+    }
+  ]
+}

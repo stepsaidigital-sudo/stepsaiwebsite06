@@ -1,0 +1,184 @@
+[
+  {
+    "asset": "public/images/jobs/ai-sales-agent/gift-selection.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/online-gift-checkout.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/property-floorplan-selection.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/course-comparison.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/health-package-selection.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/ceramic-catalogue.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-sales-agent/bulk-order-assistance.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/delivery-help.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/damaged-order-ticket.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/clinic-preparation-guide.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/admissions-document-help.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/property-maintenance-help.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-support-agent/replacement-dispatch.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/business-enquiry.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/property-brochure-request.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/school-interest-form.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/wholesale-quote-request.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/employee-health-enquiry.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/enquiry-record.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-lead-capture-agent/sales-callback.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/clinic-appointment.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/consultation-times.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/demo-class-reservation.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/sample-flat-visit.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/store-styling-session.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  },
+  {
+    "asset": "public/images/jobs/ai-booking-agent/front-desk-help.webp",
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "status": 200
+  }
+]

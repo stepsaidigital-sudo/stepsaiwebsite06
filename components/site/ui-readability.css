@@ -1,0 +1,23 @@
+/* Shared footer and text surfaces. Keep product mockups and dark callouts unchanged. */
+footer.container .footer-groups { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 24px; }
+footer.container .footer-top p { color: #334155; line-height: 1.8; }
+footer.container .footer-groups h3 { font-size: 14px; color: #10264b; margin-bottom: 12px; }
+footer.container .footer-groups a,
+footer.container .footer-groups button { color: #334155; font-size: 14px; line-height: 1.6; min-height: 44px; padding: 10px 0; overflow-wrap: anywhere; }
+footer.container .footer-groups a:hover { color: #124f91; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+footer.container a:focus-visible,
+.sp-main a:focus-visible,
+.sp-main button:focus-visible,
+.sp-main summary:focus-visible { outline: 3px solid #2479cb; outline-offset: 4px; }
+.sp-prose > p,
+.sp-prose .sp-card > p,
+.sp-hero-copy > p,
+.vs-fit-intro,
+.vs-fit-col li p,
+.vs-row > p:not(.is-us) { color: #24364b; letter-spacing: normal; line-height: 1.8; }
+.sp-prose .sp-card { min-width: 0; }
+.sp-prose .sp-card h3 { letter-spacing: normal; line-height: 1.4; }
+.bl-empty { color: #334155; border: 1px solid #dce5ef; border-radius: 16px; background: #fff; padding: 32px; }
+@media (min-width: 1100px) { footer.container { column-gap: 44px; grid-template-columns: 220px minmax(0,1fr); } }
+@media (min-width: 701px) and (max-width: 1099px) { footer.container .footer-groups { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media (max-width: 700px) { footer.container .footer-groups { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 24px; } }

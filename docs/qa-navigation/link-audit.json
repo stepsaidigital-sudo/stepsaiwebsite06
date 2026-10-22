@@ -1,0 +1,608 @@
+{
+  "items": [
+    {
+      "label": "WhatsApp broadcast",
+      "href": "/features/whatsapp-broadcasting/"
+    },
+    {
+      "label": "Unified inbox",
+      "href": "/features/unified-inbox/"
+    },
+    {
+      "label": "CRM",
+      "href": "/features/crm/"
+    },
+    {
+      "label": "Analytics",
+      "href": "/features/analytics/"
+    },
+    {
+      "label": "Agent skills",
+      "href": "/features/skills/"
+    },
+    {
+      "label": "Workflow builder",
+      "href": "/features/workflow-builder/"
+    },
+    {
+      "label": "Website chatbot",
+      "href": "/channels/website-ai-agent/"
+    },
+    {
+      "label": "WhatsApp chatbot",
+      "href": "/channels/whatsapp-ai-agent/"
+    },
+    {
+      "label": "Instagram chatbot",
+      "href": "/channels/instagram-ai-agent/"
+    },
+    {
+      "label": "Messenger chatbot",
+      "href": "/channels/messenger-ai-agent/"
+    },
+    {
+      "label": "AI sales agent",
+      "href": "/use-cases/ai-sales-agent/"
+    },
+    {
+      "label": "AI support agent",
+      "href": "/use-cases/ai-support-agent/"
+    },
+    {
+      "label": "AI lead capture agent",
+      "href": "/use-cases/ai-lead-capture-agent/"
+    },
+    {
+      "label": "AI booking agent",
+      "href": "/use-cases/ai-booking-agent/"
+    },
+    {
+      "label": "Ecommerce",
+      "href": "/solutions/ecommerce/"
+    },
+    {
+      "label": "Healthcare",
+      "href": "/solutions/healthcare/"
+    },
+    {
+      "label": "Education",
+      "href": "/solutions/education/"
+    },
+    {
+      "label": "Real estate",
+      "href": "/solutions/real-estate/"
+    },
+    {
+      "label": "Travel and hospitality",
+      "href": "/solutions/travel-and-hospitality/"
+    },
+    {
+      "label": "SaaS",
+      "href": "/solutions/saas/"
+    },
+    {
+      "label": "Financial services",
+      "href": "/solutions/financial-services/"
+    },
+    {
+      "label": "All industries",
+      "href": "/solutions/"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog/"
+    },
+    {
+      "label": "Compare",
+      "href": "/compare/"
+    },
+    {
+      "label": "Customer stories",
+      "href": "/case-studies/"
+    },
+    {
+      "label": "Help centre",
+      "href": "/help/"
+    },
+    {
+      "label": "Developer docs",
+      "href": "https://docs.stepsai.co"
+    },
+    {
+      "label": "Features",
+      "href": "/features/"
+    },
+    {
+      "label": "Channels",
+      "href": "/channels/"
+    },
+    {
+      "label": "Integrations",
+      "href": "/integrations/"
+    },
+    {
+      "label": "Industries",
+      "href": "/solutions/"
+    },
+    {
+      "label": "Customer stories",
+      "href": "/case-studies/"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog/"
+    },
+    {
+      "label": "Help centre",
+      "href": "/help/"
+    },
+    {
+      "label": "Developer docs",
+      "href": "https://docs.stepsai.co"
+    },
+    {
+      "label": "Partner with us",
+      "href": "/partners/"
+    },
+    {
+      "label": "Hire an agency",
+      "href": "/hire-an-agency/"
+    },
+    {
+      "label": "Become an affiliate",
+      "href": "/affiliate-program/"
+    },
+    {
+      "label": "vs. Manychat",
+      "href": "/compare/steps-ai-vs-manychat/"
+    },
+    {
+      "label": "vs. Wati",
+      "href": "/compare/steps-ai-vs-wati/"
+    },
+    {
+      "label": "vs. AiSensy",
+      "href": "/compare/steps-ai-vs-aisensy/"
+    },
+    {
+      "label": "vs. Gorgias",
+      "href": "/compare/steps-ai-vs-gorgias/"
+    },
+    {
+      "label": "vs. Chatbase",
+      "href": "/compare/steps-ai-vs-chatbase/"
+    },
+    {
+      "label": "vs. Verifast",
+      "href": "/compare/steps-ai-vs-verifast/"
+    },
+    {
+      "label": "vs. Tidio",
+      "href": "/compare/steps-ai-vs-tidio/"
+    },
+    {
+      "label": "Book a demo",
+      "href": "/book-a-demo/"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing/"
+    },
+    {
+      "label": "Sign up",
+      "href": "https://app.stepsai.co/signup"
+    },
+    {
+      "label": "Log in",
+      "href": "https://app.stepsai.co/login"
+    },
+    {
+      "label": "About",
+      "href": "/about/"
+    },
+    {
+      "label": "Founder’s note",
+      "href": "/note/"
+    },
+    {
+      "label": "Careers",
+      "href": "/careers/"
+    },
+    {
+      "label": "Team",
+      "href": "/team/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    },
+    {
+      "label": "Security",
+      "href": "/security/"
+    },
+    {
+      "label": "Privacy policy",
+      "href": "/privacy-policy/"
+    },
+    {
+      "label": "Terms of service",
+      "href": "/terms-of-service/"
+    }
+  ],
+  "results": [
+    {
+      "href": "/features/analytics/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/analytics/",
+      "title": "Chatbot analytics: questions and busy hours | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/whatsapp-broadcasting/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/whatsapp-broadcasting/",
+      "title": "WhatsApp broadcast | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/crm/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/crm/",
+      "title": "Built-in CRM for customers and tickets | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/unified-inbox/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/unified-inbox/",
+      "title": "Unified inbox for WhatsApp, Instagram and chat | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/skills/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/skills/",
+      "title": "AI agent skills: bookings, tickets and handoff | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/workflow-builder/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/workflow-builder/",
+      "title": "No-code workflow builder for WhatsApp and Shopify | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/channels/website-ai-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/channels/website-ai-agent/",
+      "title": "AI website chatbot for any site | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/channels/whatsapp-ai-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/channels/whatsapp-ai-agent/",
+      "title": "WhatsApp chatbot for business | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/channels/messenger-ai-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/channels/messenger-ai-agent/",
+      "title": "Facebook Messenger AI chatbot | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/channels/instagram-ai-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/channels/instagram-ai-agent/",
+      "title": "Instagram DM automation and comment-to-DM | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/use-cases/ai-sales-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/use-cases/ai-sales-agent/",
+      "title": "AI sales agent for WhatsApp and Instagram | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/use-cases/ai-support-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/use-cases/ai-support-agent/",
+      "title": "AI support agent for WhatsApp and web chat | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/use-cases/ai-lead-capture-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/use-cases/ai-lead-capture-agent/",
+      "title": "AI lead capture agent for web and WhatsApp | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/use-cases/ai-booking-agent/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/use-cases/ai-booking-agent/",
+      "title": "AI appointment booking agent | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/healthcare/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/healthcare/",
+      "title": "AI receptionist and chatbot for clinics | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/ecommerce/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/ecommerce/",
+      "title": "AI agent for ecommerce stores | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/education/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/education/",
+      "title": "AI chatbot for schools and coaching centres | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/travel-and-hospitality/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/travel-and-hospitality/",
+      "title": "AI chatbot for hotels and travel businesses | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/real-estate/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/real-estate/",
+      "title": "AI chatbot for real estate enquiries | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/saas/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/saas/",
+      "title": "AI support and lead capture agent for SaaS | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/financial-services/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/financial-services/",
+      "title": "AI chatbot for financial services enquiries | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/solutions/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/solutions/",
+      "title": "Industries | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/",
+      "title": "Comparisons | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/blog/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/blog/",
+      "title": "Chatbot, WhatsApp and support guides | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/case-studies/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/case-studies/",
+      "title": "Companies using Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/help/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/help/",
+      "title": "Help centre | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/features/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/features/",
+      "title": "Platform Features: Skills, CRM, Analytics &amp; More | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "https://docs.stepsai.co",
+      "status": 200,
+      "finalUrl": "https://docs.stepsai.co/introduction",
+      "title": "Welcome to Steps AI - Steps AI Documentation",
+      "notFound": false
+    },
+    {
+      "href": "/partners/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/partners/",
+      "title": "Partner program for agencies | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/channels/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/channels/",
+      "title": "Omnichannel Chatbot and AI Agent for WhatsApp, Instagram and Web",
+      "notFound": false
+    },
+    {
+      "href": "/integrations/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/integrations/",
+      "title": "Integrations | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/hire-an-agency/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/hire-an-agency/",
+      "title": "Hire an agency to set up Steps AI | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/affiliate-program/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/affiliate-program/",
+      "title": "Affiliate program | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-manychat/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-manychat/",
+      "title": "Steps AI vs Manychat: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-aisensy/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-aisensy/",
+      "title": "Steps AI vs AiSensy: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-wati/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-wati/",
+      "title": "Steps AI vs Wati: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-gorgias/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-gorgias/",
+      "title": "Steps AI vs Gorgias: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-verifast/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-verifast/",
+      "title": "Steps AI vs Verifast: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-chatbase/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-chatbase/",
+      "title": "Steps AI vs Chatbase: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/compare/steps-ai-vs-tidio/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/compare/steps-ai-vs-tidio/",
+      "title": "Steps AI vs Tidio: an honest comparison | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "https://app.stepsai.co/login",
+      "status": 200,
+      "finalUrl": "https://app.stepsai.co/login",
+      "title": "Get Started | StepsAI | Revolutionize Your Workflow with Aide by Steps AI",
+      "notFound": false,
+      "bundledNotFoundString": true,
+      "browserVerified": "Welcome back form displayed"
+    },
+    {
+      "href": "https://app.stepsai.co/signup",
+      "status": 200,
+      "finalUrl": "https://app.stepsai.co/signup",
+      "title": "Get Started | StepsAI | Revolutionize Your Workflow with Aide by Steps AI",
+      "notFound": false,
+      "bundledNotFoundString": true,
+      "browserVerified": "Create an account form displayed"
+    },
+    {
+      "href": "/pricing/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/pricing/",
+      "title": "Pricing: plans from ₹2,499 a month | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/book-a-demo/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/book-a-demo/",
+      "title": "Book a demo | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/about/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/about/",
+      "title": "About Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/team/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/team/",
+      "title": "Team | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/note/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/note/",
+      "title": "Founder’s note | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/careers/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/careers/",
+      "title": "Careers | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/security/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/security/",
+      "title": "Security | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/contact/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/contact/",
+      "title": "Contact | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/terms-of-service/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/terms-of-service/",
+      "title": "Terms of service | Steps AI",
+      "notFound": false
+    },
+    {
+      "href": "/privacy-policy/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3010/privacy-policy/",
+      "title": "Privacy policy | Steps AI",
+      "notFound": false
+    }
+  ],
+  "fixes": [
+    "Footer Features points to /features/",
+    "Footer Channels points to /channels/",
+    "Navbar Customer stories matches footer and points to /case-studies/"
+  ],
+  "mobileCheck": "390px: four agent links present, booking link navigated correctly, menu closed, no horizontal overflow"
+}

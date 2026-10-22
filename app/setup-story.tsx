@@ -22,7 +22,7 @@ export function SetupStory(){
    <div className="sj-journey">
     <section aria-labelledby="sj-business-title"><div className="sj-step"><span>1</span><h3 id="sj-business-title">Your business</h3></div>
      <div className="sj-business-content"><div className="sj-field"><span>Business name</span><strong>Lumen Home</strong></div><div className="sj-field"><span>Website</span><strong><Globe size={14}/>lumenhome.in</strong></div>
-      <div className="sj-site-preview"><img src={photo} width="1536" height="1024" alt="Sample homeware website with an ivory vase, blue bowl and linen" loading="lazy"/><span>Lumen Home<small>Made for everyday living.</small></span></div>
+      <div className="sj-site-preview"><img src={photo} width="1536" height="1024" alt="Sample homeware website with a cream ceramic vase" loading="lazy"/><span>Lumen Home<small>Made for everyday living.</small></span></div>
       <div className="sj-discovery"><span><Check size={14}/></span><div><strong>Home &amp; living</strong><small>Industry from your website</small></div></div>
      </div>
     </section>

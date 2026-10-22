@@ -1,0 +1,285 @@
+{
+  "width": 390,
+  "timedChecks": [
+    {
+      "slug": "ecommerce",
+      "before": "Recover carts and confirm COD orders",
+      "advanced": "Turn Instagram comments into DMs",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Turn Instagram comments into DMs"
+    },
+    {
+      "slug": "education",
+      "before": "Answer course questions",
+      "advanced": "Capture enquiries",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Capture enquiries"
+    },
+    {
+      "slug": "healthcare",
+      "before": "Share clinic information",
+      "advanced": "Book appointments",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Book appointments"
+    },
+    {
+      "slug": "real-estate",
+      "before": "Answer property questions",
+      "advanced": "Ask about requirements",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Ask about requirements"
+    },
+    {
+      "slug": "travel-and-hospitality",
+      "before": "Answer property and package questions",
+      "advanced": "Capture booking enquiries",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Capture booking enquiries"
+    },
+    {
+      "slug": "saas",
+      "before": "Answer from your docs",
+      "advanced": "Qualify leads",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Qualify leads"
+    },
+    {
+      "slug": "financial-services",
+      "before": "Explain products and processes",
+      "advanced": "Capture enquiries",
+      "autoAdvanced": true,
+      "paused": true,
+      "agentGap": 40,
+      "control": "Resume walkthrough",
+      "order": [
+        "wb-hero pp-hero",
+        "pp-q-wrap",
+        "capabilities",
+        "pp-agents-band",
+        "how"
+      ],
+      "overflow": false,
+      "tab": "Capture enquiries"
+    }
+  ],
+  "narrowWidth": 320,
+  "narrowChecks": [
+    {
+      "overflow": false,
+      "page": "/solutions/ecommerce/",
+      "tab": "Answer product, size and stock questions"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/ecommerce/",
+      "tab": "Tell customers where their order is"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/ecommerce/",
+      "tab": "Recover carts and confirm COD orders"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/ecommerce/",
+      "tab": "Turn Instagram comments into DMs"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/ecommerce/",
+      "tab": "Answer return questions from your policy"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/education/",
+      "tab": "Answer course questions"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/education/",
+      "tab": "Capture enquiries"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/education/",
+      "tab": "Book counselling"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/education/",
+      "tab": "Follow up"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/healthcare/",
+      "tab": "Share clinic information"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/healthcare/",
+      "tab": "Book appointments"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/healthcare/",
+      "tab": "Answer phone calls"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/healthcare/",
+      "tab": "Pass clinical questions to your team"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/real-estate/",
+      "tab": "Answer property questions"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/real-estate/",
+      "tab": "Ask about requirements"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/real-estate/",
+      "tab": "Book site visits"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/real-estate/",
+      "tab": "Hand over hot leads"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/travel-and-hospitality/",
+      "tab": "Answer property and package questions"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/travel-and-hospitality/",
+      "tab": "Capture booking enquiries"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/travel-and-hospitality/",
+      "tab": "Hand over to your team"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/travel-and-hospitality/",
+      "tab": "Send offers on WhatsApp"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/saas/",
+      "tab": "Answer from your docs"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/saas/",
+      "tab": "Qualify leads"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/saas/",
+      "tab": "Book demos"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/saas/",
+      "tab": "Create support tickets"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/financial-services/",
+      "tab": "Explain products and processes"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/financial-services/",
+      "tab": "Capture enquiries"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/financial-services/",
+      "tab": "Book adviser calls"
+    },
+    {
+      "overflow": false,
+      "page": "/solutions/financial-services/",
+      "tab": "Pass personal questions to a person"
+    }
+  ],
+  "resume": {
+    "before": "Pass personal questions to a person",
+    "after": "Explain products and processes",
+    "passed": true
+  },
+  "note": "Mobile viewport browser checks. Pointer interaction exercised; physical touch device not available."
+}

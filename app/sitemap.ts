@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { helpLessons } from '@/components/templates/help-data';
 import { listPosts } from '@/lib/blog';
 import { listChannels, listCompares, listFeatures, listIndustries, listIntegrations, listUseCases } from '@/lib/content';
+import companyCases from '@/content/company-use-cases.json';
 
 const site = 'https://stepsai.co';
 
@@ -20,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await listPosts().catch(() => []);
   const paths = [
     ...pages,
+    ...companyCases.map(company => `/case-studies/${company.slug}/`),
     ...listFeatures().map(s => `/features/${s}/`),
     ...listChannels().map(s => `/channels/${s}/`),
     ...listIndustries().map(s => `/solutions/${s}/`),

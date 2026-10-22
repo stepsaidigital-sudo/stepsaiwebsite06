@@ -1,0 +1,57 @@
+{
+  "images": [
+    {
+      "loaded": true,
+      "size": [
+        287,
+        359
+      ],
+      "src": "/images/industries/education/admissions-entrance.webp"
+    },
+    {
+      "loaded": true,
+      "size": [
+        334,
+        229
+      ],
+      "src": "/images/industries/education/course-guidance.webp"
+    },
+    {
+      "loaded": true,
+      "size": [
+        334,
+        229
+      ],
+      "src": "/images/industries/education/student-enquiry-kiosk.webp"
+    },
+    {
+      "loaded": true,
+      "size": [
+        334,
+        229
+      ],
+      "src": "/images/industries/education/counselling-session-booking.webp"
+    },
+    {
+      "loaded": true,
+      "size": [
+        334,
+        229
+      ],
+      "src": "/images/industries/education/new-batch-announcement.webp"
+    },
+    {
+      "loaded": true,
+      "size": [
+        335,
+        240
+      ],
+      "src": "/images/industries/education/admissions-enquiry-followup.webp"
+    }
+  ],
+  "overflow": false,
+  "viewport": [
+    390,
+    844
+  ]
+}

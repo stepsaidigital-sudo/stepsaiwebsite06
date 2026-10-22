@@ -5,22 +5,8 @@ import { SiteFrame, Action } from '@/components/site/shell';
 import { CtaBand, Faq, Reveal, SectionIntro } from '@/components/sections';
 import type { IntegrationsHub } from '@/content/types';
 import { AppLogo } from './integration';
-import { HubDiagram, LogoStack, TrackingStrip, type HubApp } from './integrations-hub-visuals';
-
-// Apps shown in the hero, with the question each one lets the agent answer.
-import shopify from '@/content/integrations/shopify.json';
-import googleCalendar from '@/content/integrations/google-calendar.json';
-import hubspot from '@/content/integrations/hubspot.json';
-import shiprocket from '@/content/integrations/shiprocket.json';
-import notion from '@/content/integrations/notion.json';
-type Demo = { slug: string; name: string; category: string; demo: { channel: string; lines: { from: string; text: string }[]; lookup?: { title: string; rows: string[][] } } };
-// "Shopify · Order 1042" + first row "Fulfilled" becomes "Order 1042 · Fulfilled".
-const found = (l?: { title: string; rows: string[][] }) => l && [l.title.split(' · ').slice(1).join(' · '), l.rows[0]?.[1]].filter(Boolean).join(' · ');
-const demoApps: HubApp[] = ([shopify, googleCalendar, hubspot, shiprocket, notion] as Demo[]).map(j => ({
-  slug: j.slug, name: j.name, channel: j.demo.channel,
-  question: j.demo.lines.find(l => l.from === 'customer')?.text, answer: j.demo.lines.find(l => l.from === 'agent')?.text,
-  found: found(j.demo.lookup),
-}));
+import { LogoStack, TrackingStrip } from './integrations-hub-visuals';
+import { asset } from '@/lib/asset';
 
 const CONNECT = [
   { icon: <LayoutGrid size={20} />, title: 'Open Apps', note: 'Resources, then Apps' },
@@ -39,7 +25,7 @@ export function IntegrationsHubTemplate({ page }: { page: IntegrationsHub }) {
         <p>{page.hero.body}</p>
         <div className="igh-actions"><Action onOpen={onOpen} /><a className="igh-ghost" href="#directory">Browse apps <ArrowRight size={16} /></a></div>
       </div>
-      <div className="container"><HubDiagram apps={demoApps} /></div>
+      <div className="container"><img src={asset('/images/integrations/pastel-blue-integration-network.webp')} width={1600} height={640} alt="Steps AI connects WhatsApp, Instagram, Facebook and websites with Shopify, Google Calendar, HubSpot, Shiprocket and Notion." style={{ display: 'block', width: '100%', height: 'auto', marginTop: 36 }} /></div>
     </section>
 
     <section className="sp-section container" id="directory">

@@ -5,21 +5,21 @@ import { CtaBand, Faq, GoodToKnow, PageHero, Reveal, SectionIntro, StepRows } fr
 import type { ComparePage } from '@/content/types';
 
 import { asset } from '@/lib/asset';
-// Two marks facing each other, with the first table rows ticking in.
-// Official competitor marks in public/brands/compare (sources in docs/photo-credits.md). Three only exist as PNG.
-const PNG_LOGOS = ['manychat', 'aisensy', 'verifast'];
-const competitorLogo = (name: string) => { const slug = name.toLowerCase().replace(/[^a-z]/g, ''); return asset(`/brands/compare/${slug}.${PNG_LOGOS.includes(slug) ? 'png' : 'svg'}`); };
+import styles from './compare-polish.module.css';
+// Preserve official marks: lossless WebP for raster sources, SVG for vector sources.
+const WEBP_LOGOS = ['manychat', 'aisensy', 'verifast'];
+const competitorLogo = (name: string) => { const slug = name.toLowerCase().replace(/[^a-z]/g, ''); return asset(`/brands/compare/${slug}.${WEBP_LOGOS.includes(slug) ? 'webp' : 'svg'}`); };
 
 function VersusCard({ page }: { page: ComparePage }) {
-  return <Reveal className="vs-card" >
+  return <Reveal className={`vs-card ${styles.card}`} >
     <div className="vs-head">
-      <span className="vs-brand is-us"><img src={asset("/brands/steps-original.png")} alt="" width={30} height={30} />Steps AI</span>
+      <span className="vs-brand is-us"><img src={asset('/brands/compare/steps-ai.webp')} alt="" width={56} height={30} />Steps AI</span>
       <span className="vs-badge">vs</span>
       <span className="vs-brand"><img src={competitorLogo(page.competitor)} alt="" width={30} height={30} />{page.competitor}</span>
     </div>
     {page.glance.rows.slice(0, 3).map((row, i) => <div key={row.label} className="vs-mini" style={{ animationDelay: `${300 + i * 260}ms` }}>
       <small>{row.label}</small>
-      <div><span><Check size={13} />{row.steps}</span><span><Minus size={13} />{row.them}</span></div>
+      <div><span data-brand="Steps AI"><Check size={13} />{row.steps}</span><span data-brand={page.competitor}><Minus size={13} />{row.them}</span></div>
     </div>)}
     <p className="vs-note">Illustration based on public information</p>
   </Reveal>;
@@ -31,10 +31,10 @@ export function CompareTemplate({ page }: { page: ComparePage }) {
 
     <section className="sp-section container">
       <SectionIntro eyebrow="Side by side" title={page.glance.title} intro={page.glance.intro} />
-      <Reveal className="vs-table" >
-        <div className="vs-row vs-row-head" role="row"><span /><strong className="is-us">Steps AI</strong><strong>{page.competitor}</strong></div>
-        {page.glance.rows.map(row => <div key={row.label} className="vs-row" role="row"><span className="vs-label">{row.label}</span><p className="is-us" data-label="Steps AI">{row.steps}</p><p data-label={page.competitor}>{row.them}</p></div>)}
-      </Reveal>
+      <Reveal className="vs-table"><div role="table" aria-label={page.glance.title}>
+        <div className="vs-row vs-row-head" role="row"><span role="columnheader" aria-label="Comparison topic" /><strong role="columnheader" className="is-us">Steps AI</strong><strong role="columnheader">{page.competitor}</strong></div>
+        {page.glance.rows.map(row => <div key={row.label} className="vs-row" role="row"><span role="rowheader" className="vs-label">{row.label}</span><p role="cell" className="is-us" data-label="Steps AI">{row.steps}</p><p role="cell" data-label={page.competitor}>{row.them}</p></div>)}
+      </div></Reveal>
     </section>
 
     <section className="sp-section container vs-fit">

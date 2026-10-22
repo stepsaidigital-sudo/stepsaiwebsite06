@@ -1,0 +1,107 @@
+[
+  {
+    "page": "real-estate",
+    "id": "residential-arrival",
+    "prompt": "Realistic editorial real-estate website hero photo, landscape 4:3. Centered inviting contemporary apartment building entrance with landscaped courtyard, glass lobby and sunlit balconies, warm stone and muted green foliage, late afternoon light, no people. Clear residential property context, not office or hotel. Central architecture survives portrait center crop and existing chat overlay at bottom right. No faces, portraits, signage, text, logos, cars or watermark. Natural professional architectural photography, no futuristic render."
+  },
+  {
+    "page": "real-estate",
+    "id": "floor-plan-guidance",
+    "prompt": "Photorealistic real-estate sales guidance, landscape 4:3 website card. Overhead close view of two adults' cropped hands comparing a clean printed apartment floor plan and an unbranded property brochure on pale stone table; one hand points at living-room layout. Small building scale model at back, warm cream and forest-green details, natural daylight. Large heading only 'Floor plan', no prices, addresses, personal data or other readable text. Show answering buyer questions, not paperwork signing. Centered action within middle 75% for 372x256 crop, no faces, heads, bodies, portraits, logos or watermark, no electronic screens, realistic hands and materials."
+  },
+  {
+    "page": "real-estate",
+    "id": "buyer-requirements",
+    "prompt": "Photorealistic property buyer enquiry capture, horizontal 4:3. Cropped adult hand selecting preferences on a tablet resting in a bright apartment viewing lounge. Screen reads 'Find your home' with three simple blank fields labelled 'Budget', 'Bedrooms', 'Move-in date' and blue button 'Send enquiry'. No personal data, addresses, prices or logos. A house key and small material swatches at side, softly blurred balcony beyond, cool blue and cream daylight palette. Center tablet and hand, all screen inside middle 75% for 372x256 crop. No faces, heads, bodies, portraits, reflected people or watermark. Show collecting buyer requirements, not signing a sale agreement; realistic photography."
+  },
+  {
+    "page": "real-estate",
+    "id": "site-visit-confirmation",
+    "prompt": "Realistic real-estate site-visit booking photograph, horizontal 4:3. Close view of a cropped adult hand holding a smartphone at the threshold of a bright empty apartment, open door and sunlit interior softly behind. Screen reads 'Site visit confirmed' with green check and 'Saturday 11:00'. A key with plain brass tag rests on entry console. No personal data, address, brand or other readable text. Warm rust sleeve, pale oak and warm white tones. Phone and doorway central within 75% safe area for a small card; convey a booked property viewing, not purchase or generic chat. No faces, heads, body, portraits, reflected people, logos or watermark. Photorealistic hands and materials."
+  },
+  {
+    "page": "real-estate",
+    "id": "buyer-brief-summary",
+    "prompt": "Photorealistic real-estate buyer requirements summary, landscape 4:3 for a large website story image. A neatly organized physical clipboard centered on a dark walnut sales desk beside an apartment model, a cropped adult hand finishing a tick with a pen. Clipboard heading 'Buyer brief', three clear lines '3 bedrooms', 'Budget discussed', 'Moving this year', with check marks. No names, prices, personal data, logos or other readable text. Navy folder under clipboard, soft afternoon side light, close elevated composition, realistic paper and hand. Main checklist in upper central 65%, bottom right uncluttered for existing UI overlay, works in near-square crop. No screens, phones, faces, bodies, portraits, reflected people or watermark. Communicate recording buyer requirements for the sales team, not a purchase contract."
+  },
+  {
+    "page": "travel-and-hospitality",
+    "id": "coastal-hotel-arrival",
+    "prompt": "Photorealistic travel and hospitality website hero, landscape 4:3. Inviting boutique coastal hotel arrival scene, centered open lobby leading to a shaded terrace and distant sea, linen lounge chairs, woven lamps, tropical foliage, terracotta pots and a discreet luggage trolley at side. Warm morning light, authentic relaxed hospitality, no people. Clear hotel guest arrival context, not residential building. Main open passage centered to survive portrait crop, lower right simple for chat overlay. No faces, portraits, signage, logos, readable text or watermark. Professional natural architectural photo, not CGI."
+  },
+  {
+    "page": "travel-and-hospitality",
+    "id": "guest-guide-support",
+    "prompt": "Photorealistic hotel guest support scene, landscape 4:3. A concierge's cropped hand points to a simple local map in a guest guide held by a guest's cropped hands over a woven lounge table. Large headings 'Guest guide', 'Getting around', 'Hotel amenities'; simple map and small icons, no real address, names or fine print. A plain room keycard at edge, tropical plants and luggage softly behind. Cream paper, turquoise map, daylight. Explain help with directions and amenities, no reception portrait. Center hands and guide within middle 75% for 372x256 crop. No faces, heads, bodies, logos, passports, private data or watermark. Natural real photography."
+  },
+  {
+    "page": "travel-and-hospitality",
+    "id": "stay-enquiry-planning",
+    "prompt": "Realistic travel enquiry photograph, landscape 4:3. Close side view of adult hands planning a hotel stay on a tablet beside an open carry-on suitcase with neatly folded clothes, daylight bedroom, coral and cream tones. Screen reads 'Plan your stay', three blank fields 'Arrival', 'Departure', 'Guests', and 'Send enquiry' button. No personal information, passport, brands or fine print. Clearly collecting travel dates and guest count, not payment or booking confirmation. Center tablet in middle 75% with hands for card crop, no face, head, body, portraits, reflections of people or watermark. Natural photographic materials, not illustration."
+  },
+  {
+    "page": "travel-and-hospitality",
+    "id": "return-guest-offer",
+    "prompt": "Photorealistic hospitality return-guest offer scene, horizontal 4:3. Smartphone standing on a small poolside stone table beside a folded striped towel and sunhat, softly blurred empty resort pool and palms beyond. Screen shows an unbranded green message card with a room photograph, heading 'Your next getaway' and button 'View offer'. No prices, dates, discounts or personal data. Gentle early evening light, aqua pool and warm apricot tones, calm sophisticated travel photography. Phone and message central and readable in 372x256 crop with safe margins. No people, faces, portraits, reflections, logos or watermark. Convey a travel offer reaching a past guest, not a booking form."
+  },
+  {
+    "page": "travel-and-hospitality",
+    "id": "reservation-enquiry-ledger",
+    "prompt": "Photorealistic hospitality reservation enquiry preparation, landscape 4:3. Elevated close view of a hotel reservations desk with an open cream guest enquiry ledger, one cropped hand writing with a pen. Legible heading 'Stay enquiry', neat entries '12–14 March' and '2 adults', small tick labelled 'Details saved'. No names, phone numbers, passport details or other text. A brass service bell and neatly stacked blank keycard sleeves at edges, dark teal backdrop and warm lamp lighting. Ledger central upper 65%, lower right uncluttered desk for website overlay, safe near-square crop. Different from a phone offer or tablet form. No faces, bodies, portraits, brand logos or watermark. Realistic paper, pen and hand; no booking or payment guarantee."
+  },
+  {
+    "page": "saas",
+    "id": "software-workspace",
+    "prompt": "Photorealistic SaaS website hero, landscape 4:3. Calm independent software workspace with a centered slim laptop on a pale oak desk by a large window, screen showing a simple unbranded software workspace with clean task cards and small chat panel, no readable text or metrics. A closed notebook, pen and compact monitor stand, warm white and muted cobalt palette, softly blurred plant and shelves. No corporate boardroom, no people or faces or portraits on screens. Natural morning light, tactile materials, believable hardware. Center main laptop for portrait crop, lower right quiet for existing chat overlay. No logos, code walls, glowing AI brains, holograms or watermark. Real editorial photograph."
+  },
+  {
+    "page": "saas",
+    "id": "documentation-support",
+    "prompt": "Photorealistic SaaS technical support photograph, landscape 4:3. Close three-quarter desk scene with a modest monitor displaying an unbranded help article titled 'Help centre', a small adjacent panel titled 'Support ticket' with a green tick; no other readable text, personal data or metrics. A black single-ear headset resting prominently beside keyboard and an open printed quick-start guide with simple diagrams. Cool blue grey wall, natural side light, real small support workspace, no people. Screen and headset centered for 372x256 crop. No faces on screen, logos, portraits, code walls, parcels, medical objects or watermark. Clear documentation-to-support context rather than abstract software graphics."
+  },
+  {
+    "page": "saas",
+    "id": "team-requirements-enquiry",
+    "prompt": "Photorealistic SaaS business enquiry capture, horizontal 4:3. Overhead close photograph of an adult hand using a tablet flat on a charcoal felt work mat; screen heading 'Tell us about your team', blank fields 'Company size', 'Use case', 'Work email', blue 'Send enquiry' button. No personal data or logo. Nearby a mechanical keyboard edge and a small notebook with simple workflow boxes, restrained mint green accent and soft daylight. Show collecting business requirements, not consumer shopping. Center tablet and hand with 75% safe margins for 372x256 crop. No faces, heads, bodies, portraits, reflections of people, brands, code or watermark, genuine photographic realism."
+  },
+  {
+    "page": "saas",
+    "id": "product-demo-scheduled",
+    "prompt": "Photorealistic SaaS product demo scheduling scene, horizontal 4:3. An empty small video-demo setup on a walnut desk: a laptop with external webcam clipped correctly atop screen, screen showing a simple calendar invitation headed 'Product demo', 'Thursday 15:00', and green 'Confirmed' label; no video tiles, people or personal data. A small analog clock and wireless mouse nearby, warm peach wall and late afternoon light. Focus on scheduled software demonstration, no headset or tablet. Complete laptop and webcam centered within 75% safe crop, readable at small card size. No faces, portraits, brand logos, metrics or watermark. Natural editorial photograph."
+  },
+  {
+    "page": "saas",
+    "id": "qualified-team-brief",
+    "prompt": "Photorealistic SaaS lead qualification story, horizontal 4:3. Close elevated view of a real software discovery workshop table: a cream notepad headed 'Team requirements', three neatly written checked lines '40 people', 'Customer support', 'Demo requested', a cropped adult hand arranging a blue note beside it. Small workflow sketch on separate paper and closed laptop at left edge, muted lilac and navy stationery, soft daylight. No personal contact details, brand or other readable text. Clear gathering of business needs for sales handover; not a generic meeting or fake dashboard. Main notes in upper central 65% and lower right quiet for existing UI overlay, works near-square crop. No faces, heads, bodies, portraits or watermark; realistic hands and paper."
+  },
+  {
+    "page": "financial-services",
+    "id": "customer-enquiry-lounge",
+    "prompt": "Photorealistic financial-services website hero, landscape 4:3. Welcoming private enquiry desk in a small financial-services branch: two empty visitor chairs facing a warm oak desk, neatly closed document folder and understated calculator, frosted glass partition, a small plain sign 'Customer enquiries'. Deep navy upholstery, limestone wall, daylight, approachable and professional not a corporate boardroom. Center desk and chairs for portrait crop, bottom right simple for website chat overlay. No people, faces, portraits, money stacks, coins, charts, investment promises, bank logos, account details or watermark. Genuine editorial interior photograph."
+  },
+  {
+    "page": "financial-services",
+    "id": "document-checklist-guidance",
+    "prompt": "Photorealistic financial-services document support, landscape 4:3. Close overhead view of cropped adult hands reviewing an information folder and a printed checklist on light stone table. Heading 'Document checklist'; three simple rows 'Identity proof', 'Address proof', 'Income documents', with empty check boxes. Only generic labels, no identity photos, actual documents, account numbers, signatures, rates or personal data. One hand points to a checklist row, small calculator and navy folder at edge. Natural soft daylight, restrained burgundy and cream accents. Communicate explaining required paperwork, not giving financial advice or approving a loan. Centered for 372x256 crop. No faces, heads, portraits, brand logos or watermark; realistic photo."
+  },
+  {
+    "page": "financial-services",
+    "id": "product-information-enquiry",
+    "prompt": "Photorealistic financial-services enquiry capture, landscape 4:3. Side-angle close-up at a warm wood customer counter: cropped adult hand using a smartphone displaying a clean simple form titled 'Request information' with blank fields 'Contact' and 'Product interest'. A cream unbranded Home loan information booklet and a small architectural house model nearby explain the context. Daylight, muted teal and warm stone, real material detail. Only hand and forearm, no people beyond frame, no faces or heads, no portraits. No actual personal data, bank logos, rates, money piles or approval promises. Center the phone and house in a crop-safe arrangement for a website card 372x256. Professional editorial photograph, no watermark."
+  },
+  {
+    "page": "financial-services",
+    "id": "adviser-call-confirmation",
+    "prompt": "Photorealistic adviser appointment scheduling at a financial services office, landscape 4:3. An elegant small consultation desk with two empty chairs, a centered open paper appointment diary and a phone on a stand showing only 'Adviser call' and 'Appointment confirmed' with a simple calendar check icon. A pen and closed navy document folder, soft afternoon window light, refined but approachable real office. Composition from desk level, phone and diary clearly readable within central crop, shallow depth of field. No people, faces, portrait pictures, logos, personal data, interest rates or approval promises. Distinct natural editorial photograph, no watermark."
+  },
+  {
+    "page": "financial-services",
+    "id": "home-loan-enquiry-record",
+    "prompt": "Realistic editorial photograph of a financial-services enquiry follow-up workspace, landscape 4:3. On a quiet pale stone desk, an open laptop prominently displays a simple generic record with the headings 'Enquiry saved', 'Home loan', 'Follow-up requested', with a small check icon. Beside it are neatly arranged unbranded information folders, one muted sage green and one cream, a silver pen and small glass of water. View from slightly above, laptop centered, daylight from left, warm neutral office background softly blurred. Keep important subject in central area for near-square website story crop. No people or faces, no logos, no actual customer data, no monetary figures, no approval or investment promise. Photographic, tactile, professional, no watermark."
+  },
+  {
+    "page": "all-industries",
+    "id": "business-courtyard",
+    "prompt": "Photorealistic editorial photograph for an All industries business website, landscape 4:3. A welcoming contemporary pedestrian business courtyard in India, photographed at eye level on a quiet morning before opening. Three adjacent small independent businesses clearly visible in one coherent real architectural scene: a warm homewares shop with ceramic objects and parcels visible through the window on the left, a clean community clinic entrance with discreet sign 'Clinic' at center, and a boutique hotel entrance with luggage trolley and small sign 'Hotel' on the right. Upper floor glass workspace, lush restrained plants, stone and warm wood, naturally varied materials, soft daylight. No people anywhere, no faces or portrait advertising, no brand logos, no watermark. Not a collage, not an isometric render. Center the three entrances in the middle crop-safe area, composed for a website hero displayed at 440x330. Lifelike high-end architecture photography, approachable small businesses, realistic proportions."
+  }
+]

@@ -1,5 +1,6 @@
 'use client';
 import { Face } from '@/components/site/face';
+import { IllustratedFace } from '@/components/site/illustrated-profile';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { isPublishedUseCase } from '@/lib/published';
@@ -19,32 +20,34 @@ import type { UseCasePage } from '@/content/types';
 import { industryScenarios } from './agent-industries';
 
 import { asset } from '@/lib/asset';
+import readability from './usecase-readability.module.css';
 // The six AI agent pages, on the premium template. Copy comes from content/use-cases/*.json;
 // this file only adds each page's colour, photos and illustrative mockups (fictional sample data).
 
-const PRODUCT = asset('/industries/ecommerce.png');
+const PRODUCT = asset('/images/jobs/ai-sales-agent/ceramic-catalogue.webp');
 
 /* ---------- shared stories (sections inside pages, not pages of their own) ---------- */
 
-function InboxHandoff({ customer, ask, agentLine, team }: { customer: string; ask: string; agentLine: string; team: string }) {
+function InboxHandoff({ customer, ask, agentLine, team, noFaces = false, illustrated = false }: { customer: string; ask: string; agentLine: string; team: string; noFaces?: boolean; illustrated?: boolean }) {
+  const Profile = illustrated ? IllustratedFace : Face;
   return <div className="pp-inbox">
-    <div className="pp-inbox-head"><span className="wb-avatar wb-peach"><Face name={customer} initials={customer[0]} /></span><div><strong>{customer}</strong><small>Unified inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
+    <div className="pp-inbox-head"><span className="wb-avatar wb-peach">{noFaces ? customer[0] : <Profile name={customer} initials={customer[0]} />}</span><div><strong>{customer}</strong><small>Unified inbox · Live request</small></div><Chip tone="soft"><Headphones size={11} />Needs a person</Chip></div>
     <div className="pp-inbox-thread">
       <p className="is-customer">{ask}</p>
       <p className="is-agent">{agentLine}</p>
-      <span className="pp-inbox-event"><span className="wb-avatar wb-mini"><Face name="Alex" initials="A" /></span>Alex joined with the full history</span>
+      <span className="pp-inbox-event"><span className="wb-avatar wb-mini">{noFaces ? 'A' : <Profile name="Alex" initials="A" />}</span>Alex joined with the full history</span>
       <p className="is-team">{team}</p>
     </div>
     <div className="pp-inbox-foot"><span><i className="pp-online" />Assigned to Alex</span><span><Bot size={13} />AI replies paused</span></div>
   </div>;
 }
 
-export function handoffStory(theme: { customer: string; ask: string; agentLine: string; team: string }, reverse = false, photo?: string) {
+export function handoffStory(theme: { customer: string; ask: string; agentLine: string; team: string }, reverse = false, photo?: string, noFaces = photo?.includes('/images/jobs/')) {
   return <PhotoStory key="handoff" id="handoff" reverse={reverse} tint="warm" eyebrow="Human handoff" title="Your team steps in, with the whole conversation."
     body="When a customer asks for a person, or the agent reaches something it should not handle, the chat moves to your unified inbox with the full history. Nobody has to repeat themselves."
     points={['Set a wait time and a fallback message', 'Email the right person when someone is needed', 'On Instagram, replying from the app pauses the AI']}
-    photo={photo} alt="A team member stepping in to help a customer"
-    overlay={<InboxHandoff {...theme} />} />;
+    photo={photo} alt={photo?.includes('/images/') ? 'Workspace prepared for the team to help with the customer enquiry' : 'A team member stepping in to help a customer'}
+    overlay={<InboxHandoff {...theme} noFaces={noFaces} illustrated={photo?.includes('/images/features/')} />} />;
 }
 
 function catalogStory(photo: string) {
@@ -66,7 +69,7 @@ function catalogStory(photo: string) {
 const leadStory = <PhotoStory key="lead" id="leads" reverse eyebrow="Lead generation" title="Every interested visitor becomes a lead you can follow up."
   body="Your agent answers first, then asks only for the details you switched on. Each lead is saved with where it came from, so your team follows up with context."
   points={['Name, email, company and your own custom fields', 'Verify by email or phone code', 'Saved to your CRM or HubSpot, tagged by source']}
-  photo={asset("/photos/st-leads.jpg")} alt="Business meeting about a new enquiry"
+  photo={asset("/images/jobs/ai-lead-capture-agent/enquiry-record.webp")} alt="A business enquiry saved with its source for follow-up"
   overlay={<Card title="New lead" status={<Chip tone="green"><Check size={11} />Saved</Chip>}>
     <Row icon={<UserPlus size={15} />} title="Meera" sub="meera@example.com · Verified" />
     <Row icon={<Tag size={15} />} title="Lumen Home" sub="Tag: quote request · Source: website" />
@@ -112,8 +115,8 @@ const ctaStack = (...items: ReactNode[]) => <div className="pp-cta-stack">{items
 
 const designs: Record<string, Design> = {
   'ai-sales-agent': {
-    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: asset('/photos/use-cases/sales.webp'), alt: 'Customer shopping on her phone, with a WhatsApp sales conversation',
-    hero: page => <HeroScene photo={asset("/photos/use-cases/sales.webp")} alt="Customer shopping on her phone, with a WhatsApp sales conversation">
+    icon: <ShoppingBag size={16} />, accent: ['choose and buy'], photo: asset('/images/jobs/ai-sales-agent/gift-selection.webp'), alt: 'Hands choosing a ceramic gift in a homeware shop',
+    hero: page => <HeroScene photo={asset("/images/jobs/ai-sales-agent/gift-selection.webp")} alt="Hands choosing a ceramic gift in a homeware shop">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 3])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Sparkles size={14} />Picked from your catalogue</div><div className="pp-products"><div className="pp-product"><img src={PRODUCT} alt="" /><div><strong>Ceramic vase</strong><small>₹2,450 · In stock</small></div></div></div></Float>
       <Float className="pp-pos-br">{result(<ShoppingCart size={16} />, 'Checkout link sent', 'Payment on your own checkout')}</Float>
@@ -140,13 +143,13 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> },
     capIcons: [[<Sparkles key="a" size={20} />, 'violet'], [<PackageCheck key="b" size={20} />, 'teal'], [<ShoppingCart key="c" size={20} />, 'rose'], [<UserPlus key="d" size={20} />, 'amber'], [<Tag key="e" size={20} />, 'violet'], [<Headphones key="f" size={20} />, 'blue']],
-    stories: [catalogStory(asset('/photos/st-catalog-sales.jpg')), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true, asset('/photos/ho-sales.jpg'))],
+    stories: [catalogStory(asset('/images/jobs/ai-sales-agent/ceramic-catalogue.webp')), handoffStory({ customer: 'Rahul Mehta', ask: 'I need 40 vases for an event. Can someone help?', agentLine: 'That is a large order, so I am bringing in our team.', team: 'Hi Rahul, Alex here. I can do a bulk price for 40.' }, true, asset('/images/jobs/ai-sales-agent/bulk-order-assistance.webp'))],
     ctaArt: [ctaStack(result(<Sparkles size={15} />, 'Two picks', 'From your catalogue'), result(<PackageCheck size={15} />, 'In stock', 'Checked in your store')), ctaStack(result(<ShoppingCart size={15} />, 'Added to cart', 'Ceramic vase'), result(<Link2 size={15} />, 'Checkout link', 'Sent in the chat'))],
   },
 
   'ai-support-agent': {
-    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: asset('/photos/use-cases/support.webp'), alt: 'Customer asking about a delivery, with a WhatsApp support conversation',
-    hero: page => <HeroScene photo={asset("/photos/use-cases/support.webp")} alt="Customer asking about a delivery, with a WhatsApp support conversation">
+    icon: <Headphones size={16} />, accent: ['before they reach your team'], photo: asset('/images/jobs/ai-support-agent/delivery-help.webp'), alt: 'Parcel tracking and order support at home',
+    hero: page => <HeroScene photo={asset("/images/jobs/ai-support-agent/delivery-help.webp")} alt="Parcel tracking and order support at home">
       <LivePhone kind="WhatsApp" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Truck size={14} />Order #2087</div><div className="pp-track"><i className="is-done" /><i className="is-done" /><i className="is-now" /><i /></div><small className="pp-track-label">Out for delivery today</small></Float>
       <Float className="pp-pos-br">{result(<Ticket size={16} />, 'Ticket #431 created', 'Photo attached · Team notified')}</Float>
@@ -173,13 +176,13 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your store', icon: <img src={asset("/brands/integrations/shopify.svg")} alt="" /> },
     capIcons: [[<Truck key="a" size={20} />, 'teal'], [<BookOpen key="b" size={20} />, 'blue'], [<Ticket key="c" size={20} />, 'amber'], [<Headphones key="d" size={20} />, 'violet'], [<PhoneIncoming key="e" size={20} />, 'green']],
-    stories: [handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, asset('/photos/ho-support.jpg'))],
+    stories: [handoffStory({ customer: 'Priya Nair', ask: 'Can I speak to someone about the damaged vase?', agentLine: 'Of course. I have passed this to our team.', team: 'Hi Priya, Alex here. A replacement is on its way.' }, false, asset('/images/jobs/ai-support-agent/replacement-dispatch.webp'))],
     ctaArt: [ctaStack(result(<Truck size={15} />, 'Order checked', 'Out for delivery'), result(<BookOpen size={15} />, 'Policy answered', 'From your returns page')), ctaStack(result(<Ticket size={15} />, 'Ticket created', 'Photo attached'), result(<UserCheck size={15} />, 'Team joined', 'Full history'))],
   },
 
   'ai-lead-capture-agent': {
-    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: asset('/photos/use-cases/lead-capture.webp'), alt: 'Business buyer on a laptop, with a website chat collecting lead details',
-    hero: page => <HeroScene photo={asset("/photos/use-cases/lead-capture.webp")} alt="Business buyer on a laptop, with a website chat collecting lead details">
+    icon: <UserPlus size={16} />, accent: ['still talking to you'], photo: asset('/images/jobs/ai-lead-capture-agent/business-enquiry.webp'), alt: 'Business buyer submitting a quote enquiry',
+    hero: page => <HeroScene photo={asset("/images/jobs/ai-lead-capture-agent/business-enquiry.webp")} alt="Business buyer submitting a quote enquiry">
       <LivePhone kind="Website" business="Lumen Home" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><UserPlus size={14} />Collecting details</div><div className="pp-fields"><span><b>Name</b>Meera</span><span><b>Work email</b>meera@example.com</span><span><b>Company</b>Lumen Home</span></div></Float>
       <Float className="pp-pos-br">{result(<img src={asset("/brands/integrations/hubspot.svg")} alt="" width={18} height={18} />, 'Lead saved to HubSpot', 'Tagged: quote request')}</Float>
@@ -203,13 +206,13 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect HubSpot', icon: <img src={asset("/brands/integrations/hubspot.svg")} alt="" /> },
     capIcons: [[<FileText key="a" size={20} />, 'amber'], [<ShieldCheck key="b" size={20} />, 'green'], [<UserPlus key="c" size={20} />, 'blue'], [<Tag key="d" size={20} />, 'violet']],
-    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' }, false, asset('/photos/ho-lead.jpg'))],
+    stories: [leadStory, handoffStory({ customer: 'Meera Shah', ask: 'We have three stores. Could someone call me today?', agentLine: 'I have saved your details and alerted our team.', team: 'Hi Meera, Alex here. Free at 4 for a quick call?' }, false, asset('/images/jobs/ai-lead-capture-agent/sales-callback.webp'))],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', 'Before any form'), result(<Mail size={15} />, 'Email verified', 'By code')), ctaStack(result(<UserPlus size={15} />, 'Lead saved', 'With its source'), result(<Users size={15} />, 'Team follows up', 'With context'))],
   },
 
   'ai-booking-agent': {
-    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: asset('/photos/use-cases/booking.webp'), alt: 'Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation',
-    hero: page => <HeroScene photo={asset("/photos/use-cases/booking.webp")} alt="Customer scheduling a clinic visit on her phone, with a WhatsApp booking conversation">
+    icon: <CalendarDays size={16} />, accent: ['any time of day'], photo: asset('/images/jobs/ai-booking-agent/clinic-appointment.webp'), alt: 'A confirmed appointment at a clinic',
+    hero: page => <HeroScene photo={asset("/images/jobs/ai-booking-agent/clinic-appointment.webp")} alt="A confirmed appointment at a clinic">
       <LivePhone kind="WhatsApp" business="City Care Clinic" className="pp-hero-phone" period={14000} lines={chat(page, [0, 1, 2])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><CalendarDays size={14} />Thursday</div><div className="pp-slots"><span>11:00</span><span className="is-picked">3:30 <Check size={11} /></span><span>5:00</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Booked · Thu 3:30', 'Added to Google Calendar')}</Float>
@@ -230,7 +233,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect your calendar', icon: <img src={asset("/brands/integrations/google-calendar.svg")} alt="" /> },
     capIcons: [[<CalendarCheck key="a" size={20} />, 'green'], [<UserCheck key="b" size={20} />, 'blue'], [<CalendarDays key="c" size={20} />, 'teal'], [<MessageSquare key="d" size={20} />, 'violet']],
-    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, asset('/photos/ho-booking.jpg'))],
+    stories: [handoffStory({ customer: 'Priya Rao', ask: 'Can I ask the doctor something before I book?', agentLine: 'Let me bring in the clinic team for that.', team: 'Hi Priya, this is the front desk. Happy to help.' }, false, asset('/images/jobs/ai-booking-agent/front-desk-help.webp'))],
     ctaArt: [ctaStack(result(<MessageSquare size={15} />, 'Question answered', '30 min consultation'), result(<CalendarDays size={15} />, 'Times offered', 'From your calendar')), ctaStack(result(<CalendarCheck size={15} />, 'Booked', 'Thursday, 3:30'), result(<Check size={15} />, 'Details saved', 'Name and phone'))],
   },
 
@@ -309,7 +312,7 @@ export function AgentPageTemplate({ page }: { page: UseCasePage }) {
       {step.result && <div className="pp-step-result" style={{ animationDelay: '2200ms' }}><CircleCheck size={14} />{step.result}</div>}
     </div>,
   }));
-  return <SiteFrame>{onOpen => <div className={`wb pp`}>
+  return <SiteFrame>{onOpen => <div className={`wb pp ${readability.page}`}>
     <PremiumHero kicker={page.hero.kicker} icon={d.icon} title={page.hero.title} accent={d.accent} body={page.hero.body} checks={checks} visual={d.hero(page)} onOpen={onOpen} />
     {page.hero.channels && <ChannelRow channels={page.hero.channels} />}
     <section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">Walkthrough</span><h2>{page.walkthrough.title}</h2><p>{page.walkthrough.intro}</p></section>
