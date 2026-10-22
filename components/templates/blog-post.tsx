@@ -1,14 +1,17 @@
 'use client';
+import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
-import { Reveal } from '@/components/sections';
+import { Faq, Reveal } from '@/components/sections';
 import type { BlogPost } from '@/lib/blog';
 
-// /blog/<slug>/: one article. The full text still lives on stepsai.co, so the page
-// shows the summary and links there, followed by related posts.
+// /blog/<slug>/: one article from Sanity. `body` is the article text, rendered on the server by
+// BlogBody; FAQs come from the post and are followed by related posts.
 
-export function BlogPostTemplate({ post, related }: { post: BlogPost; related: BlogPost[] }) {
+export function BlogPostTemplate({ post, imageAlt, body, faqs, related }: {
+  post: BlogPost; imageAlt?: string; body: ReactNode; faqs: { q: string; a: string }[]; related: BlogPost[];
+}) {
   return <SiteFrame>{() => <div className="wb pp">
     <article className="wb-hero pp-hero bl-hero bl-post"><div className="container">
       <Link className="bl-back" href="/blog/"><ArrowLeft size={15} />All articles</Link>
@@ -17,12 +20,12 @@ export function BlogPostTemplate({ post, related }: { post: BlogPost; related: B
         <h1>{post.title}</h1>
         <small>{post.author} · {post.date}</small>
       </header>
-      {post.image && <figure className="bl-post-img"><img src={post.image} alt="" /></figure>}
-      <div className="bl-post-body">
-        <p className="wb-lead">{post.excerpt}</p>
-        <a className="wb-btn" href={post.url}>Read the full article <ArrowUpRight size={16} /></a>
-      </div>
+      {post.image && <figure className="bl-post-img"><img src={post.image} alt={imageAlt || ''} /></figure>}
+      {post.excerpt && <p className="wb-lead bl-post-lead">{post.excerpt}</p>}
+      {body}
     </div></article>
+
+    {faqs.length > 0 && <Faq title="Frequently asked questions" items={faqs} />}
 
     {related.length > 0 && <section className="container bl-list">
       <h2 className="bl-related">Keep reading</h2>

@@ -6,7 +6,7 @@ import { SiteFrame } from '@/components/site/shell';
 import { Reveal } from '@/components/sections';
 import type { BlogPost } from '@/lib/blog';
 
-// /blog/: every article from the Steps AI blog (content/hubs/blog.json, read from stepsai.co/blog/).
+// /blog/: every article from the Steps AI blog, read from Sanity by lib/blog.ts.
 // Cards open the article page at /blog/<slug>/.
 
 const PAGE = 12;

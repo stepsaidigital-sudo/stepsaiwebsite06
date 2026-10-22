@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: 'Practical guides on AI agents, WhatsApp, Instagram, ecommerce support and choosing the right tools, from the Steps AI team.',
 };
 
-export default function BlogRoute() {
-  return <BlogHubTemplate posts={listPosts()} />;
+export const revalidate = 60;
+
+export default async function BlogRoute() {
+  return <BlogHubTemplate posts={await listPosts()} />;
 }
