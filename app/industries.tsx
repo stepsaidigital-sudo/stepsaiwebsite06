@@ -23,7 +23,7 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
   const prior=useRef<DOMRect[]>([]);
   const animations=useRef<Animation[]>([]);
   const [visible,setVisible]=useState(false),[desktopMotion,setDesktopMotion]=useState(false);
-  const [hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[scrolling,setScrolling]=useState(false),[paused,setPaused]=useState(false);
+  const [hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[scrolling,setScrolling]=useState(false);
   const select=useCallback((index:number)=>{
     if(index===active)return;
     animations.current.forEach(animation=>animation.cancel());
@@ -41,10 +41,10 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
     return()=>{media.removeEventListener('change',sync);observer.disconnect();clearTimeout(settling);window.removeEventListener('scroll',onScroll);document.removeEventListener('visibilitychange',onVisibility)};
   },[]);
   useEffect(()=>{
-    if(!desktopMotion||!visible||hovered||focused||scrolling||paused)return;
+    if(!desktopMotion||!visible||hovered||focused||scrolling)return;
     const timer=setTimeout(()=>select((active+1)%featured.length),4000);
     return()=>clearTimeout(timer);
-  },[active,desktopMotion,visible,hovered,focused,scrolling,paused,select]);
+  },[active,desktopMotion,visible,hovered,focused,scrolling,select]);
   useLayoutEffect(()=>{
     if(!prior.current.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const cards=Array.from(row.current!.children) as HTMLElement[];
@@ -68,6 +68,6 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
         <div className="industry-art"><div className="industry-arc" aria-hidden="true"/><div className="industry-active-visual" id={`industry-visual-${key}`} aria-hidden={active!==i}><IndustryMockup kind={key}/></div></div></div>
       </article>})}
     </div>
-    <div className="industry-deck-footer"><div className="industry-playback"><span className="industry-page-count" aria-hidden="true"><b>0{active+1}</b><span>/ 04</span><i/></span>{desktopMotion&&<button className="industry-cycle-toggle" aria-pressed={paused} onClick={()=>setPaused(value=>!value)}>{paused?'Resume':'Pause'} rotation</button>}</div><button className="text-link" onClick={()=>onOpen('Explore Solutions')}>Explore Industries <ArrowUpRight size={17}/></button></div>
+    <div className="industry-deck-footer"><div className="industry-playback"><span className="industry-page-count" aria-hidden="true"><b>0{active+1}</b><span>/ 04</span><i/></span></div><button className="text-link" onClick={()=>onOpen('Explore Solutions')}>Explore Industries <ArrowUpRight size={17}/></button></div>
   </div></section>
 }

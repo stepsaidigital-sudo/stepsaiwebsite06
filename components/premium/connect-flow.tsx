@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { Bot, Check, KeyRound, LayoutGrid, Lock, LogIn, MessageSquare, MousePointerClick, Pause, Play, Search, ShieldCheck, ToggleRight, Zap } from 'lucide-react';
+import { Bot, Check, KeyRound, LayoutGrid, Lock, LogIn, MessageSquare, MousePointerClick, Search, ShieldCheck, ToggleRight, Zap } from 'lucide-react';
 
 import { asset } from '@/lib/asset';
 // "How to connect" walkthrough: the real steps in the Steps AI dashboard
@@ -79,7 +79,7 @@ export function ConnectFlow({ app, apps, title, intro }: { app?: ConnectApp; app
     <div className="cf-stage">
       <div className="cf-screen" aria-hidden="true">
         <div className="cf-bar-top"><i /><i /><i /><span><Lock size={11} />app.stepsai.co/resources/apps{step >= 1 ? `/${a.slug}` : ''}</span>
-          <button className="cf-play" onClick={() => setPaused(p => !p)} aria-label={paused ? 'Play' : 'Pause'} tabIndex={-1}>{paused ? <Play size={12} /> : <Pause size={12} />}</button></div>
+          </div>
         <div className="cf-body">
           <nav className="cf-side"><img src={asset("/brands/steps-original.png")} alt="" /><span>Home</span><span>Agents</span><span className="is-on">Resources</span><span>Workflows</span><span>Inbox</span><span>CRM</span></nav>
           <div className="cf-main" key={`${ai}-${step}`}>

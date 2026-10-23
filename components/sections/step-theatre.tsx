@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { ArrowDown, Check, CheckCheck, Pause, Play, RotateCcw } from 'lucide-react';
+import { ArrowDown, Check, CheckCheck, RotateCcw } from 'lucide-react';
 import { channelKind } from '@/app/channel-chat';
 import type { Item } from '@/content/types';
 
@@ -98,7 +98,7 @@ export function StepTheatre({ items, scenes }: { items: Item[]; scenes: Scene[] 
           <div className="channel-demo-canvas"><span className="scene-illustration">Illustration</span>{scene.render(current ? time : 0)}<div className={`channel-demo-result ${time >= END - 800 && current ? 'result-arrived' : 'result-waiting'}`}><span><Check size={15} /></span>{scene.result}</div></div>
         </article>;
       })}</div>
-      <div className="conversation-playback"><span>{time >= END ? 'Step complete' : paused ? 'Animation paused' : 'Each step, played out'}</span><button aria-label={paused ? 'Resume animation' : 'Pause animation'} onClick={() => setPaused(!paused)}>{paused ? <Play size={13} /> : <Pause size={13} />}</button><button aria-label="Replay step" onClick={() => { setReplay(value => value + 1); setPaused(false); }}><RotateCcw size={13} /></button></div>
+      <div className="conversation-playback"><span>{time >= END ? 'Step complete' : paused ? 'Animation paused' : 'Each step, played out'}</span><button aria-label="Replay step" onClick={() => { setReplay(value => value + 1); setPaused(false); }}><RotateCcw size={13} /></button></div>
       <div className="channel-scroll-cue"><span>0{active + 1} <i>/ 0{count}</i></span><span>{pinned ? 'Scroll to follow each step' : 'Choose a step above'} <ArrowDown size={14} /></span><div aria-hidden="true">{items.map((item, i) => <i key={item.title} className={i === active ? 'active' : ''} />)}</div></div>
     </div>
   </div>;

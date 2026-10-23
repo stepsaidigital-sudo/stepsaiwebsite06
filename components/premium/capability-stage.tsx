@@ -164,6 +164,5 @@ export function CapabilityStage({ title, intro, items, icons, plainBackground = 
         <div className="cv-scene" key={selected}>{commerce?<CommerceCapability title={active.title}/>:industryStory?<IndustryCapability industry={industry!} story={industryStory}/>:<Scene title={active.title}/>}</div>
       </div>
     </div>
-    {industry && !reducedMotion && <button className="cv-playback" onClick={() => setPaused(value => !value)} aria-pressed={paused}>{paused ? 'Resume walkthrough' : 'Pause walkthrough'}</button>}
   </section>;
 }

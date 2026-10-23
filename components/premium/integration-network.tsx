@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useId, useRef, useState } from 'react';
-import { Globe, Pause, Play } from 'lucide-react';
+import { useEffect, useId, useRef } from 'react';
+import { Globe } from 'lucide-react';
 import { asset } from '@/lib/asset';
 import styles from './integration-network.module.css';
 
@@ -78,9 +78,8 @@ function Diagram({ compact, paused }: { compact: boolean; paused: boolean }) {
 }
 
 export function IntegrationNetwork() {
-  const [paused, setPaused] = useState(false);
+
   return <div className={styles.network}>
-    <Diagram compact={false} paused={paused}/><Diagram compact paused={paused}/>
-    <button className={styles.control} onClick={() => setPaused(!paused)} aria-pressed={paused}>{paused ? <Play size={13}/> : <Pause size={13}/>}<span>{paused ? 'Resume motion' : 'Pause motion'}</span></button>
+    <Diagram compact={false} paused={false}/><Diagram compact paused={false}/>
   </div>;
 }

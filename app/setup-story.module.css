@@ -1,0 +1,113 @@
+.section{padding:0 0 48px;color:#0c3474}.heading{max-width:760px;margin-bottom:40px}.heading>span{font-size:12px;font-weight:600;color:#49617f}.heading h2{font-family:Newsreader,Georgia,serif;font-size:clamp(36px,3.8vw,52px);font-weight:500;line-height:1.13;margin:16px 0 20px;text-wrap:balance}.heading p{font-size:18px;line-height:1.75;color:#49617f;text-wrap:pretty;margin:0}.layout{display:grid;grid-template-columns:.85fr 1.3fr;gap:48px;align-items:start}.steps{display:grid;gap:12px;padding-top:12px}.steps button{display:flex;align-items:flex-start;gap:18px;width:100%;padding:24px 20px;border:1px solid transparent;border-radius:16px;background:transparent;text-align:left;color:inherit;cursor:pointer}.steps button[aria-pressed=true]{background:#edf5fc;border-color:#cbdff2}.steps button:hover{background:#f0f6fc}.number{font-size:13px;border-bottom:2px solid #c8d9ea;padding:6px 0;flex-shrink:0}.steps button[aria-pressed=true] .number{border-color:#0c3474}.steps button>span:nth-child(2){flex:1}.steps strong{display:block;font-size:22px;line-height:1.35;font-weight:600;margin-bottom:10px}.steps button>span>span{display:block;font-size:16px;line-height:1.7;color:#49617f}.steps button>svg{flex-shrink:0;margin-top:6px}.demo{display:inline-flex;align-items:center;gap:10px;justify-self:start;margin:12px 20px 0;min-height:44px;font-size:15px;font-weight:600;color:#0c3474}.workspace{min-width:0;background:#fff;border:1px solid #d9e4ef;border-radius:22px;overflow:hidden;box-shadow:0 20px 44px -32px #0c347447}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 28px;border-bottom:1px solid #e7edf4}.topbar>span{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}.topbar small{font-size:12px;color:#49617f}.progress{display:flex;gap:22px;padding:20px 28px;background:#f8fafc;border-bottom:1px solid #e7edf4}.progress>span{display:flex;align-items:center;gap:8px;font-size:12px;color:#52677f}.progress>span[data-current=true]{color:#0c3474;font-weight:700}.panel{padding:28px;min-height:420px;box-sizing:border-box}.panelTitle>span{font-size:11px;color:#52677f}.panelTitle h3{font-size:25px;font-weight:500;line-height:1.3;margin:9px 0 24px;max-width:30ch;text-wrap:balance}.business{display:grid;grid-template-columns:1fr 160px;gap:24px;align-items:center}.business dl{margin:0;display:grid;gap:20px}.business dt{font-size:12px;color:#49617f;margin-bottom:8px}.business dd{display:flex;align-items:center;gap:8px;font-size:15px;margin:0;padding:12px;border:1px solid #dce5ef;border-radius:8px}.site{background:#f3f7fa;border-radius:12px;overflow:hidden}.site>img{display:block;width:100%;height:115px;object-fit:cover}.site>div{padding:12px}.site strong{font-size:15px}.site span{display:block;font-size:11px;color:#49617f;margin-top:5px;line-height:1.5}.resources,.tools{display:grid;gap:12px}.resources>div,.tools>div{display:flex;align-items:center;gap:14px;border:1px solid #e0e8f1;border-radius:10px;padding:16px}.resources>div>span,.tools>div>span:not(.connected){flex:1;min-width:0}.resources svg,.tools img{flex-shrink:0}.resources strong,.tools strong{font-size:15px;line-height:1.4}.resources small,.tools small{display:block;font-size:13px;line-height:1.5;color:#49617f;margin-top:5px}.connected{display:flex;align-items:center;gap:4px;font-size:11px;color:#32694f}.note{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.6;color:#32694f;margin-top:22px}.note svg{flex-shrink:0;margin-top:2px}.outcome{display:flex;align-items:flex-start;gap:16px;background:#edf5fc;padding:24px 28px;border-top:1px solid #dce8f3}.outcomeIcon{display:grid;place-items:center;width:42px;height:42px;background:#fff;border-radius:12px;flex-shrink:0}.outcome strong{font-size:16px;line-height:1.5}.outcome p{font-size:14px;line-height:1.65;color:#49617f;margin:7px 0 0}.section a:focus-visible,.section button:focus-visible{outline:3px solid #2c9cfa;outline-offset:4px}
+@media(max-width:1000px){.layout{gap:24px;grid-template-columns:1fr 1.2fr}.business{grid-template-columns:1fr}.site{display:none}.progress{gap:14px}.tools .connected{font-size:0}.tools .connected svg{width:16px}.steps button{padding:20px 14px;gap:14px}}
+@media(max-width:760px){.section{padding:0 0 32px}.heading{margin-bottom:28px}.heading p{font-size:17px}.layout{grid-template-columns:1fr;gap:28px}.steps{gap:8px;padding:0}.steps button{padding:18px 16px}.steps strong{font-size:20px;margin-bottom:7px}.steps button>span>span{font-size:15px}.demo{margin:8px 16px 0}.panel{min-height:0;padding:24px}.topbar{padding:20px 24px}.progress{padding:18px 24px;justify-content:space-between;gap:8px}.panelTitle h3{font-size:24px}.outcome{padding:22px 24px}.business{grid-template-columns:1fr}.resources>div,.tools>div{padding:14px}.connected{font-size:0}.note{font-size:13px}}
+@media(max-width:380px){.topbar small{font-size:10px}.topbar,.panel,.outcome{padding-inline:18px}.progress{padding-inline:18px;gap:6px}.progress>span{font-size:11px;gap:5px}.resources>div,.tools>div{gap:10px}.outcomeIcon{display:none}}
+
+/* Compact setup overview with one focused workspace preview. */
+.section{padding-bottom:32px}
+.heading{max-width:720px;margin-bottom:32px}
+.heading h2{font-size:clamp(34px,3.5vw,46px);margin:12px 0 14px}
+.heading p{font-size:17px;line-height:1.65;max-width:58ch}
+.layout{grid-template-columns:.8fr 1.35fr;gap:40px;align-items:center}
+.steps{gap:8px;padding:0}
+.steps button{padding:22px 20px;border-radius:14px}
+.steps strong{font-size:20px;margin-bottom:6px}
+.steps button>span>span{font-size:15px;line-height:1.5}
+.workspace{border-radius:20px}
+.topbar{padding:17px 24px}
+.progress{padding:14px 24px}
+.panel{padding:24px;min-height:350px}
+.panelTitle h3{font-size:24px;margin:8px 0 20px}
+.resources>div,.tools>div{padding:12px 14px}
+.resources,.tools{gap:10px}
+.note{margin-top:16px}
+.outcome{padding:18px 24px;align-items:center}
+.outcome p{margin-top:4px;font-size:13px}
+.demo{margin-top:12px}
+@media(max-width:760px){
+ .layout{grid-template-columns:1fr;gap:20px}
+ .heading{margin-bottom:24px}
+ .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .steps button{padding:14px 10px;display:flex;flex-direction:column;gap:10px}
+ .steps strong{font-size:14px;line-height:1.4;margin:0}
+ .steps button>span>span,.steps button>svg{display:none}
+ .number{font-size:12px}
+ .demo{grid-column:1/-1;margin:0;justify-self:end}
+ .panel{min-height:0;padding:20px}
+ .topbar,.progress{padding-inline:20px}
+ .outcome{padding:18px 20px}
+ .panelTitle h3{font-size:23px}
+}
+@media(max-width:380px){
+ .steps button{padding:12px 8px}
+ .steps strong{font-size:13px}
+ .panel,.topbar,.progress,.outcome{padding-inline:16px}
+ .outcomeIcon{display:none}
+}
+
+/* Preserve the original mark's proportions and let the setup content lead. */
+.topbar>span{font-size:20px;gap:10px}
+.topbar img{display:block;width:44px;height:auto;aspect-ratio:845/449;object-fit:contain}
+.business{grid-template-columns:1fr}
+.business dl{gap:18px}
+.business dd{padding:14px 16px;font-size:16px;background:#fbfcfe}
+.panel{min-height:370px}
+.layout:not([data-manual=true]) .panel{animation:setup-panel-in 400ms ease-out both}
+.layout:not([data-manual=true]) .resources>div,.layout:not([data-manual=true]) .tools>div{animation:setup-row-in 400ms ease-out both}
+.layout:not([data-manual=true]) .resources>div:nth-child(2),.layout:not([data-manual=true]) .tools>div:nth-child(2){animation-delay:100ms}
+.layout:not([data-manual=true]) .resources>div:nth-child(3),.layout:not([data-manual=true]) .tools>div:nth-child(3){animation-delay:200ms}
+@keyframes setup-panel-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes setup-row-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.topbar{padding-block:16px}.panel{min-height:400px}.topbar img{width:40px}}
+@media(prefers-reduced-motion:reduce){.layout .panel,.layout .resources>div,.layout .tools>div{animation:none!important}}
+
+/* Keep the complete setup story together in a compact viewport. */
+.layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto 1fr;gap:22px 48px;align-items:start}
+.heading{grid-column:1;grid-row:1;margin:0;align-self:end}
+.heading h2{font-size:clamp(30px,3vw,42px);margin:10px 0 12px;line-height:1.12}
+.heading p{font-size:16px;line-height:1.55;max-width:44ch}
+.heading>span{font-size:11px}
+.steps{grid-column:1;grid-row:2;gap:4px}
+.steps button{padding:12px 14px;gap:14px}
+.steps strong{font-size:18px;margin-bottom:3px}
+.steps button>span>span{font-size:14px;line-height:1.45}
+.demo{margin:2px 14px 0}
+.workspace{grid-column:2;grid-row:1/3;align-self:center}
+.topbar{padding:14px 20px}
+.progress{padding:11px 20px}
+.panel{padding:20px;min-height:326px}
+.panelTitle h3{font-size:23px;margin:5px 0 14px}
+.resources,.tools{gap:8px}
+.resources>div,.tools>div{padding:10px 12px;gap:10px}
+.resources small,.tools small{margin-top:2px}
+.note{margin-top:12px}
+@media(max-width:1000px) and (min-width:761px){.layout{gap:18px 24px}.heading h2{font-size:32px}.panel{padding:16px;min-height:350px}}
+@media(max-width:760px){
+ .layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;gap:12px}
+ .heading{grid-column:1;grid-row:1}
+ .heading h2{font-size:30px;margin:6px 0 8px;max-width:22ch}
+ .heading p{font-size:15px;line-height:1.45}
+ .heading>span{font-size:10px}
+ .steps{grid-column:1;grid-row:2;gap:4px}
+ .steps button{padding:8px;gap:4px;min-height:64px}
+ .steps strong{font-size:13px;line-height:1.3;margin:0}
+ .number{font-size:11px;padding:0 0 2px}
+ .demo{min-height:36px;font-size:13px;margin:0}
+ .workspace{grid-column:1;grid-row:3;border-radius:16px}
+ .topbar{padding:10px 14px}.topbar>span{font-size:17px}.topbar img{width:36px}
+ .progress{padding:8px 14px}.progress>span{font-size:11px;gap:5px}
+ .panel{padding:14px;min-height:274px}
+ .panelTitle>span{display:none}.panelTitle h3{font-size:20px;margin:0 0 12px}
+ .resources>div,.tools>div{padding:8px 10px;gap:9px}
+ .resources strong,.tools strong{font-size:14px}
+ .resources small,.tools small{font-size:12px;line-height:1.35}
+ .resources svg{width:19px}.tools img{width:25px;height:25px}
+ .note{font-size:11px;margin-top:10px}
+ .business dl{gap:12px}.business dd{padding:10px 12px;font-size:14px}
+}
+@media(max-width:760px){
+ .progress{display:none}
+ .panel{min-height:266px}
+ .note{display:none}
+}
+@media(max-width:760px){.heading>span,.steps .number{display:none}.steps button{min-height:52px;justify-content:center}.heading h2{margin-top:0}}

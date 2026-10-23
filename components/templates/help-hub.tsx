@@ -129,7 +129,6 @@ function Player({ lesson }: { lesson: HelpLesson }) {
       </div>
     </div>
     <div className="hx-player-bar">
-      <button onClick={() => setOn(v => !v)} aria-label={on ? 'Pause walkthrough' : 'Play walkthrough'}>{on ? <span className="hx-pause" /> : <Play size={14} fill="currentColor" />}</button>
       <div className="hx-ticks">{lesson.steps.map((x, i) => <button key={x.title} className={i < step ? 'is-done' : i === step ? 'is-now' : ''} onClick={() => { setStep(i); setOn(false); }} aria-label={`Step ${i + 1}: ${x.title}`}><i style={i === step && on ? { animationDuration: `${STEP_MS}ms` } : undefined} /></button>)}</div>
       <Link href={`/help/${lesson.slug}/`}>Open guide</Link>
     </div>

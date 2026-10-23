@@ -279,7 +279,7 @@ export type Stage = { pill: string; title: string; body: string; card: ReactNode
 
 export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta: { label: string; icon: ReactNode }; onOpen: (l: string) => void; label: string }) {
   const root = useRef<HTMLElement>(null);
-  const [active, setActive] = useState(0), [paused, setPaused] = useState(false);
+  const [active, setActive] = useState(0);
   const [visible, setVisible] = useState(false), [reduced, setReduced] = useState(false);
   useEffect(() => {
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -290,7 +290,7 @@ export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta:
     if (root.current) observer.observe(root.current);
     return () => { observer.disconnect(); motion.removeEventListener('change', updateMotion); };
   }, []);
-  const running = visible && !paused && !reduced;
+  const running = visible && !reduced;
   useEffect(() => {
     if (!running || stages.length < 2) return;
     const timer = window.setTimeout(() => setActive(a => (a + 1) % stages.length), 5000);
@@ -307,7 +307,6 @@ export function StepBand({ stages, cta, onOpen, label }: { stages: Stage[]; cta:
         <div className="wb-dots" role="group" aria-label={label}>
           {stages.map((s, i) => <button key={s.pill} aria-pressed={i === active} aria-label={`${s.pill}: ${s.title}`} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}><i key={`${active}-${running}`} style={{ animationDuration: '5s', animationPlayState: running ? 'running' : 'paused' }} /></button>)}
         </div>
-        {!reduced && stages.length > 1 && <button className="wb-journey-playback" aria-pressed={paused} onClick={() => setPaused(value => !value)}>{paused ? 'Resume walkthrough' : 'Pause walkthrough'}</button>}
       </div>
       <div className="wb-band-card" key={`c${active}`}>{stage.card}</div>
       <div className="wb-band-side" key={`s${active}`}>{stage.side}</div>

@@ -26,8 +26,6 @@ import {
   ShieldCheck,
   Megaphone,
   BookOpen,
-  Pause,
-  Play,
 } from "lucide-react";
 import { demos } from "./product-demos";
 import { ChannelChat, ChannelLogo } from "./channel-chat";
@@ -90,14 +88,14 @@ export function ScrollPolish() {
 export function HeroScene() {
   const [channel, setChannel] = useState(0);
   const [replay, setReplay] = useState(0);
-  const [paused, setPaused] = useState(false);
+
   const ref = useEntrance();
   const icons = [Globe, MessageSquare, Camera, MessageSquare];
   return (
     <div
       id="showcase"
       ref={ref}
-      className={`hero-scene scene ${paused ? "motion-paused" : ""}`}
+      className="hero-scene scene"
     >
       <div className="ocean-light ocean-one" />
       <div className="ocean-light ocean-two" />
@@ -126,12 +124,7 @@ export function HeroScene() {
           })}
         </div>
         <div className="scene-tools">
-          <button
-            aria-label={paused ? "Play visual motion" : "Pause visual motion"}
-            onClick={() => setPaused(!paused)}
-          >
-            {paused ? <Play size={16} /> : <Pause size={16} />}
-          </button>
+
           <button
             aria-label="Replay conversation illustration"
             onClick={() => setReplay(replay + 1)}
