@@ -10,7 +10,6 @@ import {Integrations} from './integrations';
 import {TeamStory} from './team-story';
 import {Industries} from './industries';
 import {ClientWall} from '@/components/site/client-wall';
-import {InspiringClientExperiences} from '@/components/site/inspiring-experiences';
 import {ScrollPolish} from './showcase';
 import {HeroChannels} from './hero-channels';
 import {OfficialPartners} from './official-partners';
@@ -29,7 +28,6 @@ function ProductJourney(){return <section id="product" className="product-sectio
 function TeamOverview(){return <TeamStory/>}
 function Setup({onOpen}:Open){return <section id="setup" className="setup-section container"><SetupStory/><Integrations onOpen={onOpen}/></section>}
 function BusinessFit({onOpen}:Open){return <Industries onOpen={onOpen}/>}
-function Testimonials(){return <InspiringClientExperiences/>}
 function FAQ({onOpen}:Open){return <section id="faq" className="faq-section container"><div><span className="section-kicker">FAQ</span><h2 aria-label={copy.faq.title}><SplitWords text={copy.faq.title}/></h2></div><div className="faq-list">{copy.faq.items.map((item,i)=><details key={item.title}><summary>{item.title}<Plus size={18}/></summary><p>{item.paragraphs[0]}</p>{i===6&&<button className="text-link" onClick={()=>onOpen('View pricing')}>View pricing</button>}</details>)}</div></section>}
-export default function Home(){const open=openOrGo(true);return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header onOpen={open}/><ScrollPolish/><HomeMotion/><main id="main"><Hero onOpen={open}/><OfficialPartners/><ProductJourney/><BusinessFit onOpen={open}/><TeamOverview/><Setup onOpen={open}/><Broadcast/><Testimonials/><FAQ onOpen={open}/><section className="final-section"><div className="container"><FinalTiles><img className="final-original" src={asset("/brands/steps-original.png")} alt=""/><h2 aria-label={copy.final.title}><SplitWords text={copy.final.title}/></h2><p>{copy.final.paragraphs[0]}</p><div><Action onOpen={open} className="yellow"/></div></FinalTiles></div></section></main><Footer onOpen={open}/></>}
+export default function Home(){const open=openOrGo(true);return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header onOpen={open}/><ScrollPolish/><HomeMotion/><main id="main"><Hero onOpen={open}/><OfficialPartners/><ProductJourney/><BusinessFit onOpen={open}/><TeamOverview/><Setup onOpen={open}/><Broadcast/><FAQ onOpen={open}/><section className="final-section"><div className="container"><FinalTiles><img className="final-original" src={asset("/brands/steps-original.png")} alt=""/><h2 aria-label={copy.final.title}><SplitWords text={copy.final.title}/></h2><p>{copy.final.paragraphs[0]}</p><div><Action onOpen={open} className="yellow"/></div></FinalTiles></div></section></main><Footer onOpen={open}/></>}
 

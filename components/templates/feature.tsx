@@ -37,7 +37,7 @@ const scenes: Record<string, Scene[]> = {
     {
       tab: 'Schedule', icon: <CalendarDays size={20} />, label: 'Make it personal', result: 'Scheduled for Friday, 10:00 AM',
       render: t => <>
-        <ContextCard media={<img src={asset("/industries/ecommerce.png")} alt="" />} small="A message worth opening" title="A little something, picked for you." note="Personalised for each customer" />
+        <ContextCard media={<img src={asset("/industries/ecommerce.webp")} alt="" />} small="A message worth opening" title="A little something, picked for you." note="Personalised for each customer" />
         <SceneWindow icon={<ChannelLogo channel="WhatsApp" />} title="Message preview" sub="Template · New arrivals">
           <div className={`sp-template-bubble ${t >= 400 ? 'message-arrived' : 'message-waiting'}`}>Hi <b className={t >= 1800 ? 'is-filled' : ''}>{t >= 1800 ? 'Priya' : 'first_name'}</b>, our new collection is in. Reply SIZE and we will help you choose.</div>
           <SceneRow show={t >= 2800} icon={<CalendarDays size={15} />} label="Send on" value="Friday, 10:00 AM" />
