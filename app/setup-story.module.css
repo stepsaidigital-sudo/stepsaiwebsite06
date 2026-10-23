@@ -111,3 +111,35 @@
  .note{display:none}
 }
 @media(max-width:760px){.heading>span,.steps .number{display:none}.steps button{min-height:52px;justify-content:center}.heading h2{margin-top:0}}
+
+/* A light product frame separates setup from the integrations that follow. */
+.section{
+ margin-inline:-24px;
+ margin-bottom:32px;
+ padding:24px;
+ background:#edf5fc;
+ border:1px solid #d7e6f4;
+ border-radius:28px;
+ box-shadow:0 12px 32px -24px rgb(12 52 116 / 18%);
+}
+.steps button{border-color:transparent}
+.steps button:hover{background:#f7fbff}
+.steps button[aria-pressed=true]{
+ background:#fff;
+ border-color:#d7e6f4;
+ box-shadow:inset 3px 0 0 #2861b4,0 5px 14px -10px rgb(12 52 116 / 24%);
+}
+.workspace{
+ border-color:#d5e3f0;
+ box-shadow:0 12px 28px -20px rgb(12 52 116 / 24%);
+}
+.topbar{background:#f7fbff;border-bottom-color:#e2ecf5}
+.progress{background:#fbfdff;border-bottom-color:#e2ecf5}
+.resources>div,.tools>div{border-color:#e2eaf3;background:#fff}
+@media(max-width:760px){
+ .section{margin-inline:-12px;margin-bottom:24px;padding:14px 11px;border-radius:22px}
+ .steps button[aria-pressed=true]{box-shadow:inset 0 -2px 0 #2861b4,0 4px 12px -9px rgb(12 52 116 / 20%)}
+}
+/* Keep the rounded frame inside the page container's clipping boundary. */
+.section{margin-inline:0}
+@media(min-width:761px){.layout{column-gap:32px}}
