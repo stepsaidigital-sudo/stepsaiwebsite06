@@ -11,7 +11,7 @@ export const builtRoutes: Record<string, string> = {
   'Start now': 'https://app.stepsai.co/signup',
   'Send us a note': 'mailto:support@stepsai.ca?subject=Careers%20enquiry',
   'Apply': 'mailto:support@stepsai.ca?subject=Affiliate%20program%20application',
-  'Log in': 'https://app.stepsai.co/login',
+  'Sign in': 'https://app.stepsai.co/login',
   'Sign up': 'https://app.stepsai.co/signup',
   'Start free': 'https://app.stepsai.co/signup',
   'Developer docs': 'https://docs.stepsai.co',

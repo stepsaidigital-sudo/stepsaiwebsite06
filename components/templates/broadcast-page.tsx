@@ -245,7 +245,7 @@ export function BroadcastPageTemplate({ page }: { page: FeaturePage }) {
           <p className="wb-lead">{page.hero.body}</p>
           <div className="wb-actions">
             <button className="wb-btn" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
-            <a className="wb-btn-ghost" href={builtRoutes['Log in']}>Log in <ArrowRight size={16} /></a>
+            <a className="wb-btn-ghost" href={builtRoutes['Sign in']}>Sign in <ArrowRight size={16} /></a>
           </div>
           <ul className="wb-checks">{checks.map(c => <li key={c}><CircleCheck size={15} />{c}</li>)}</ul>
         </div>
