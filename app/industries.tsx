@@ -1,6 +1,6 @@
 'use client';
 import { SplitWords } from '@/components/site/motion';
-import {useLayoutEffect,useRef,useState} from 'react';
+import {useCallback,useEffect,useLayoutEffect,useRef,useState} from 'react';
 import {ArrowUpRight,Check,CalendarDays,MessageSquare,BookOpen,MapPin,ChevronRight} from 'lucide-react';
 import copy from './copy.json';
 import {ChannelLogo} from './channel-chat';
@@ -22,12 +22,29 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
   const row=useRef<HTMLDivElement>(null);
   const prior=useRef<DOMRect[]>([]);
   const animations=useRef<Animation[]>([]);
-  function select(index:number){
+  const [visible,setVisible]=useState(false),[desktopMotion,setDesktopMotion]=useState(false);
+  const [hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[scrolling,setScrolling]=useState(false),[paused,setPaused]=useState(false);
+  const select=useCallback((index:number)=>{
     if(index===active)return;
     animations.current.forEach(animation=>animation.cancel());
     prior.current=Array.from(row.current!.children).map(element=>element.getBoundingClientRect());
     setActive(index);
-  }
+  },[active]);
+  useEffect(()=>{
+    const media=matchMedia('(min-width: 851px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const sync=()=>setDesktopMotion(media.matches);sync();media.addEventListener('change',sync);
+    const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.5});observer.observe(row.current!);
+    let settling:ReturnType<typeof setTimeout>;
+    const onScroll=()=>{setScrolling(true);clearTimeout(settling);settling=setTimeout(()=>setScrolling(false),250)};
+    const onVisibility=()=>{if(document.hidden)setVisible(false);else {const box=row.current!.getBoundingClientRect();setVisible(box.top<innerHeight-box.height/2&&box.bottom>box.height/2)}};
+    window.addEventListener('scroll',onScroll,{passive:true});document.addEventListener('visibilitychange',onVisibility);
+    return()=>{media.removeEventListener('change',sync);observer.disconnect();clearTimeout(settling);window.removeEventListener('scroll',onScroll);document.removeEventListener('visibilitychange',onVisibility)};
+  },[]);
+  useEffect(()=>{
+    if(!desktopMotion||!visible||hovered||focused||scrolling||paused)return;
+    const timer=setTimeout(()=>select((active+1)%featured.length),4000);
+    return()=>clearTimeout(timer);
+  },[active,desktopMotion,visible,hovered,focused,scrolling,paused,select]);
   useLayoutEffect(()=>{
     if(!prior.current.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const cards=Array.from(row.current!.children) as HTMLElement[];
@@ -44,13 +61,13 @@ export function Industries({onOpen}:{onOpen:(label:string)=>void}){
   return <section id="solutions" className="industry-showcase"><div className="container">
     <div className="section-intro"><h2 aria-label={copy.business.title}><SplitWords text={copy.business.title}/></h2><p>{copy.business.paragraphs[0]}</p></div>
     <p className="industry-selection-hint">Select an industry to see it in action.</p>
-    <div ref={row} className="industry-deck" data-active={active}>
+    <div ref={row} className="industry-deck" data-active={active} onPointerEnter={event=>{if(event.pointerType==='mouse')setHovered(true)}} onPointerLeave={()=>setHovered(false)} onFocusCapture={()=>setFocused(true)} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget))setFocused(false)}}>
       {featured.map(({index,key},i)=>{const item=copy.business.items[index];return <article className={`industry-expand-card industry-${key} ${i===active?'is-selected':''}`} key={key} onPointerEnter={event=>{if(event.pointerType==='mouse'&&matchMedia('(hover: hover) and (pointer: fine)').matches)select(i)}} onClick={()=>select(i)}>
         <div className="industry-card-skin" aria-hidden="true"/>
         <div className="industry-card-content"><div className="industry-card-heading"><h3><button aria-expanded={active===i} aria-controls={`industry-visual-${key}`} onClick={()=>select(i)} onFocus={()=>select(i)} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(i+(event.key==='ArrowRight'?1:3))%4;select(next);(row.current!.children[next].querySelector('button') as HTMLButtonElement).focus()}}}>{item.title}<ChevronRight size={18}/></button></h3><p>{item.paragraphs[1]}</p><p className="industry-customer-question">{item.paragraphs[0]}</p></div>
         <div className="industry-art"><div className="industry-arc" aria-hidden="true"/><div className="industry-active-visual" id={`industry-visual-${key}`} aria-hidden={active!==i}><IndustryMockup kind={key}/></div></div></div>
       </article>})}
     </div>
-    <div className="industry-deck-footer"><span className="industry-page-count" aria-hidden="true"><b>0{active+1}</b><span>/ 04</span><i/></span><button className="text-link" onClick={()=>onOpen('Explore solutions')}>Explore solutions <ArrowUpRight size={17}/></button></div>
+    <div className="industry-deck-footer"><div className="industry-playback"><span className="industry-page-count" aria-hidden="true"><b>0{active+1}</b><span>/ 04</span><i/></span>{desktopMotion&&<button className="industry-cycle-toggle" aria-pressed={paused} onClick={()=>setPaused(value=>!value)}>{paused?'Resume':'Pause'} rotation</button>}</div><button className="text-link" onClick={()=>onOpen('Explore Solutions')}>Explore Industries <ArrowUpRight size={17}/></button></div>
   </div></section>
 }

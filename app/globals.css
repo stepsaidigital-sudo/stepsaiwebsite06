@@ -131,6 +131,15 @@ ul.reassurance-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 
 
 /* The entire card is a pointer/touch target; headings retain keyboard access. */
 .industry-expand-card{cursor:pointer;touch-action:pan-y}.industry-card-heading h3 svg{opacity:.7}.industry-expand-card.is-selected h3 svg{transform:rotate(90deg)}
+/* Carry the industry tint through the card instead of starting it at a hard horizontal edge. */
+.industry-showcase .industry-art{inset:0;border-radius:28px}
+.industry-showcase .industry-art:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#ffffffed 0%,#ffffffc7 28%,#ffffff40 48%,transparent 68%);pointer-events:none}
+.industry-showcase .industry-arc{top:230px;opacity:.35}
+.industry-showcase .is-selected .industry-arc{opacity:0}
+.industry-showcase .industry-active-visual{padding:195px 20px 26px}
+@media(min-width:851px){.industry-showcase .industry-demo{max-width:350px}.industry-showcase .commerce-product>img{width:88px;height:110px}.industry-showcase .industry-demo-bar{padding-top:16px;padding-bottom:12px}.industry-showcase .industry-demo-message{padding-top:12px;padding-bottom:12px}.industry-showcase .education-photo,.industry-showcase .property-photo{height:138px}.industry-showcase .clinic-profile>img{height:88px;width:72px}}
+@media(max-width:850px){.industry-showcase .industry-active-visual{padding:190px 18px 20px}}
+@media(max-width:550px){.industry-showcase .is-selected .industry-art{inset:0}.industry-showcase .industry-active-visual{padding:205px 22px 26px}}
 @media(max-width:850px) and (min-width:551px){.industry-expand-card{height:480px}.industry-art{inset:220px 0 0}.industry-active-visual{padding-bottom:18px}}
 
 /* ---- hero-channels.css ---- */
@@ -213,6 +222,10 @@ ul.reassurance-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 
 .channel-demo-canvas.is-call{background:linear-gradient(150deg,#eef6ff,#dcebfb);align-items:center}
 .hero-call{--pa:#0c3474;--pa2:#2c9cfa;--pa-soft:#e6f4fe;--pa-glow:#c4ecfc;--pa-wash:#f7fbff;--pa-wash2:#e2f1fd;--pa-yellow:#f8b403;zoom:.78;margin:auto}
 .hero-call .pp-phone{height:530px;margin:0 auto}
+.hero-call .pp-call{min-height:0}
+.hero-call .pp-call-live{min-height:0}
+.hero-call .pp-call-top,.hero-call .pp-call-keys,.hero-call .pp-call-end{flex-shrink:0}
+.hero-call .pp-call-live p,.hero-call .pp-call-live>small i{animation:none}
 
 /* Website tab: the real Steps AI Shopper widget (matches the live widget: blue customer bubble on the right, grey agent
    bubble on the left, product cards with a purple Add to cart, fixed-height body that scrolls to the newest message). */
@@ -7964,3 +7977,24 @@ body .jv-price s{font-size:11px}
 .wb-band-wrap[data-journey-running="false"] .wb-band-side *{animation-play-state:paused}
 .wb-journey-playback{display:block;margin-top:12px;padding:8px 0;background:transparent;color:inherit;font-size:.8125rem;text-decoration:underline;text-underline-offset:4px}
 .wb-journey-playback:focus-visible,.wb-dots button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* Preserve avatar dimensions and the online indicator around profile artwork. */
+.jv-avatar,.hc-w-avatar{flex-shrink:0}
+.jv-avatar>img,.hc-w-avatar>img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.industry-playback{display:flex;align-items:center;gap:18px}.industry-cycle-toggle{background:transparent;border:0;color:#52677f;font-size:12px;padding:10px 4px;min-height:44px;cursor:pointer}.industry-cycle-toggle:focus-visible{outline:2px solid #2c9cfa;outline-offset:3px;border-radius:4px}
+
+/* Homepage Results uses the same Overview dashboard as the Analytics feature page. */
+.tv-stage.is-results{display:flex;align-items:center;padding:28px 0 28px 20px;min-width:0}
+.tv-stage.is-results .am{width:100%;min-width:0;box-shadow:0 22px 50px -25px #0c34743d}
+.tv-stage.is-results .am-menu,.tv-stage.is-results .am-store{display:none}
+.tv-stage.is-results .am-rail{width:42px}
+.tv-stage.is-results .am-main{padding:18px;min-width:0}
+.tv-stage.is-results .am-head{flex-wrap:wrap;gap:8px}
+.tv-stage.is-results .am-head>div{flex-basis:100%}
+.tv-stage.is-results .am-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tv-stage.is-results .am-kpis>div{padding:12px}
+.tv-stage.is-results .am-kpis em{flex-wrap:wrap}
+.tv-stage.is-results .am-charts{grid-template-columns:1fr;margin-bottom:0}
+.tv-stage.is-results .am-charts>.am-card:not(.am-card-line){display:none}
+.tv-stage.is-results .am-kpis small,.tv-stage.is-results .am-head small{color:#52677f}
+@media(max-width:760px){.tv-stage.is-results{padding:20px 0;min-height:0}.tv-stage.is-results .am-rail{display:none}.tv-stage.is-results .am-main{padding:14px}.tv-stage.is-results .am-head>span{font-size:11px;padding:6px 8px}.tv-stage.is-results .am-kpis strong{font-size:22px}.tv-stage.is-results .am-kpis small{font-size:11px}.tv-stage.is-results .am-kpis em{font-size:10px}.tv-stage.is-results .am-card{padding:12px}}

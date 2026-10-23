@@ -30,6 +30,12 @@
       "built": true
     },
     {
+      "label": "Human handoff",
+      "href": "/features/human-handoff/",
+      "body": "Let your team claim a request and reply with the full conversation history.",
+      "built": true
+    },
+    {
       "label": "CRM",
       "href": "/features/crm/",
       "body": "Customer records, support tickets and live requests from every chat in one place, or sent to HubSpot.",

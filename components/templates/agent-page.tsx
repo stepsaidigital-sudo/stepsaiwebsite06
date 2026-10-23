@@ -83,6 +83,7 @@ const agents = [
   { slug: 'ai-support-agent', label: 'AI support agent', body: 'Answer questions at any hour', icon: <Headphones size={18} />, tint: 'teal' },
   { slug: 'ai-lead-capture-agent', label: 'AI lead capture agent', body: 'Collect details in the chat', icon: <UserPlus size={18} />, tint: 'amber' },
   { slug: 'ai-booking-agent', label: 'AI booking agent', body: 'Book appointments and demos', icon: <CalendarDays size={18} />, tint: 'green' },
+  { slug: 'ai-calling-agent', label: 'AI calling agent', body: 'Voice calls and lead qualification', icon: <PhoneCall size={18} />, tint: 'blue' },
   { slug: 'ai-receptionist', label: 'AI receptionist', body: 'Answer calls and take bookings', icon: <PhoneCall size={18} />, tint: 'blue' },
   { slug: 'ai-marketing-agent', label: 'AI marketing agent', body: 'Campaigns and comment replies', icon: <Megaphone size={18} />, tint: 'rose' },
 ];
@@ -238,8 +239,8 @@ const designs: Record<string, Design> = {
   },
 
   'ai-receptionist': {
-    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: asset('/photos/use-cases/receptionist.webp'), alt: 'Front desk on a phone call, with a live call transcript',
-    hero: page => <HeroScene photo={asset("/photos/use-cases/receptionist.webp")} alt="Front desk on a phone call, with a live call transcript">
+    icon: <PhoneCall size={16} />, accent: ['even when you cannot'], photo: asset('/images/jobs/ai-calling-agent/voice-consultation-desk.webp'), alt: 'Phone and headset on a quiet consultation desk',
+    hero: page => <HeroScene photo={asset("/images/jobs/ai-calling-agent/voice-consultation-desk.webp")} alt="Phone and headset on a quiet consultation desk">
       <LiveCall business="City Care Clinic" className="pp-hero-phone" period={13000} transcript={page.walkthrough.steps.flatMap((s, i) => [{ who: 'Caller', text: s.customer, at: 600 + i * 4000 }, { who: 'AI receptionist', text: s.agent, at: 2400 + i * 4000 }])} />
       <Float className="pp-pos-tr"><div className="pp-float-head"><Languages size={14} />Speaks</div><div className="pp-langs"><span className="is-picked">English</span><span>हिन्दी</span><span>తెలుగు</span></div></Float>
       <Float className="pp-pos-br">{result(<CalendarCheck size={16} />, 'Saturday 11:00 booked', 'Confirmation sent')}</Float>
@@ -261,7 +262,7 @@ const designs: Record<string, Design> = {
     ],
     bandCta: { label: 'Connect a phone number', icon: <PhoneCall size={18} /> },
     capIcons: [[<PhoneIncoming key="a" size={20} />, 'blue'], [<Languages key="b" size={20} />, 'violet'], [<Voicemail key="c" size={20} />, 'amber'], [<PhoneCall key="d" size={20} />, 'green'], [<Inbox key="e" size={20} />, 'teal']],
-    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr Nair’s desk' }, false, asset('/photos/ho-receptionist.jpg'))],
+    stories: [handoffStory({ customer: 'Caller · +91 98xxx', ask: 'Can I speak to the doctor about my report?', agentLine: 'Of course, I will transfer you to the team now.', team: 'Call transferred · Dr Nair’s desk' }, false, asset('/images/jobs/ai-calling-agent/voice-consultation-desk.webp'), true)],
     ctaArt: [ctaStack(result(<PhoneIncoming size={15} />, 'Call answered', 'In three languages'), result(<CalendarCheck size={15} />, 'Visit booked', 'Saturday, 11:00')), ctaStack(result(<Headphones size={15} />, 'Transferred', 'To your team'), result(<Voicemail size={15} />, 'Callback ticket', 'After hours'))],
   },
 
@@ -324,6 +325,7 @@ export function AgentPageTemplate({ page }: { page: UseCasePage }) {
     {page.quote && <QuoteBlock excerpt={page.quote.excerpt} attribution={page.quote.attribution} href="/case-studies/" />}
     <GoodToKnow title={page.goodToKnow.title} items={page.goodToKnow.items} />
     <FaqBlock title={page.faq.title} items={page.faq.items} />
+    {page.slug === 'ai-receptionist' && <section className="container pp-head"><span className="wb-eyebrow">More ways to use voice</span><h2>Need outbound calls or qualification flows?</h2><p>The AI calling agent also handles outbound campaigns and web voice.</p><Link className="wb-btn" href="/channels/ai-calling-agent/">Explore the AI calling agent <ArrowRight size={16}/></Link></section>}
     <OtherAgents current={page.slug} />
     <CtaBlock title={page.cta.title} body={page.cta.body} onOpen={onOpen} art={d.ctaArt[0]} artRight={d.ctaArt[1]} />
   </div>}</SiteFrame>;

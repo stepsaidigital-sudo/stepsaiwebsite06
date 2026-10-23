@@ -67,7 +67,7 @@ export function SkillsPageTemplate({ page }: { page: FeaturePage }) {
     </div>,
   }));
   return <SiteFrame>{onOpen => <div className="wb pp">
-    <PremiumHero kicker={page.hero.kicker} icon={<Sparkles size={16} />} title={page.hero.title} accent={['finish the job']} body={page.hero.body} checks={checks} onOpen={onOpen} demoLabel="See how a skill works"
+    <PremiumHero kicker={page.hero.kicker} icon={<Sparkles size={16} />} title={page.hero.title} accent={['finish the job']} body={page.hero.body} checks={checks} onOpen={onOpen}
       visual={<HeroScene photo={asset("/images/features/skills/appointment-setup.webp")} alt="A calendar workstation prepared for appointment booking">
         <LivePhone kind="Website" business="City Care Clinic" className="pp-hero-phone" period={13000} lines={[
           { from: 'customer', text: 'Can I book a consultation for Friday?', at: 400 },

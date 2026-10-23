@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
-import {Megaphone,AtSign,MessageCircle,ChevronLeft,Phone,Video,MoreHorizontal,CheckCheck,ExternalLink,CornerUpLeft,Heart,Send,Bookmark,Camera,Mic,Image as ImageIcon,Plus,Sticker,Users,Tag,Check,Bot} from 'lucide-react';
+import {Megaphone,MessageCircle,ChevronLeft,Phone,Video,MoreHorizontal,CheckCheck,ExternalLink,CornerUpLeft,Heart,Send,Bookmark,Camera,Mic,Image as ImageIcon,Plus,Sticker,Users,Tag,Check,Bot} from 'lucide-react';
 import {ChannelLogo} from './channel-chat';
 
 import { asset } from '@/lib/asset';
@@ -13,7 +13,7 @@ const DURATION=7000;
 const tabs=[
   {key:'wa',channel:'WhatsApp',icon:Megaphone,title:'WhatsApp broadcast',line:'Send an approved template to a tagged audience. Replies go straight to your agent.'},
   {key:'dm',channel:'Instagram',icon:MessageCircle,title:'Instagram DM',line:'Story replies and DMs get an answer straight away, day or night.'},
-  {key:'c2d',channel:'Instagram',icon:AtSign,title:'Comment-to-DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
+  {key:'c2d',channel:'Instagram',icon:MessageCircle,title:'Comment-to-DM',line:'A keyword comment on your post opens a DM, and your agent takes it from there.'},
 ];
 
 const B=({d,className='',children}:{d:number;className?:string;children?:ReactNode})=><div className={`bx ${className}`} style={{'--d':`${d}ms`} as CSSProperties}>{children}</div>;
@@ -166,7 +166,7 @@ export function Broadcast(){
         <h2 id="broadcast-title">Send a campaign. Every reply lands with your agent.</h2>
         <p className="bc-lead">Broadcast on WhatsApp, turn Instagram comments into DMs and let your agent answer everyone who writes back.</p>
         <div className="bc-tabs" role="tablist" aria-label="Campaign channels">{tabs.map((t,i)=>{const Icon=t.icon;return <button key={t.key} role="tab" aria-selected={tab===i} aria-controls="bc-stage" className={`bc-tab bc-tab-${i} ${tab===i?'is-active':''}`} onClick={()=>pick(i)}>
-          <span className="bc-tab-icon"><Icon size={18}/></span><span className="bc-tab-text"><small>0{i+1}</small><strong>{t.title}</strong><span>{t.line}</span></span><span className="bc-tab-logo"><ChannelLogo channel={t.channel}/></span>
+          <span className="bc-tab-icon">{t.key==='c2d'?<ChannelLogo channel="Instagram"/>:<Icon size={18}/>}</span><span className="bc-tab-text"><small>0{i+1}</small><strong>{t.title}</strong><span>{t.line}</span></span><span className="bc-tab-logo"><ChannelLogo channel={t.channel}/></span>
           <span className="bc-tab-bar"><i ref={el=>{bars.current[i]=el}}/></span>
         </button>})}</div>
       </div>

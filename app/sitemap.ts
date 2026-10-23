@@ -9,6 +9,7 @@ const site = 'https://stepsai.co';
 // Pages marked "In sitemap.xml at launch: Yes" on the SEO URL map that exist on the site.
 // Held and unpublished pages are left out; add new pages here when they are built.
 const pages = [
+  '/channels/ai-calling-agent/',
   '/', '/pricing/', '/book-a-demo/', '/about/', '/careers/', '/team/', '/note/', '/contact/', '/security/',
   '/partners/', '/affiliate-program/', '/hire-an-agency/', '/privacy-policy/', '/terms-of-service/',
   '/features/', '/channels/', '/solutions/', '/case-studies/', '/compare/', '/integrations/', '/help/', '/help/faqs/', '/blog/',

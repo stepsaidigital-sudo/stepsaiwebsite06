@@ -1,4 +1,4 @@
-// Use-case pages that go live at launch (see the SEO URL map). AI receptionist is held until
-// voice calling is live and AI marketing agent is not published, so nothing links to them.
-export const publishedUseCases = ['ai-sales-agent', 'ai-support-agent', 'ai-lead-capture-agent', 'ai-booking-agent'];
+// Voice calling is live in the supplementary product update dated 2026-10-07.
+// AI marketing remains unpublished.
+export const publishedUseCases = ['ai-receptionist', 'ai-sales-agent', 'ai-support-agent', 'ai-lead-capture-agent', 'ai-booking-agent'];
 export const isPublishedUseCase = (slug: string) => publishedUseCases.includes(slug);

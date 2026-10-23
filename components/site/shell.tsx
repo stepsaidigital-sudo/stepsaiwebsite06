@@ -20,30 +20,20 @@ export function Action({ children = 'Book a demo', onOpen, className = '' }: Ope
   return <button className={`button ${className}`} onClick={() => onOpen(children)}>{children}</button>;
 }
 
-// A label becomes a link when it has somewhere real to go, otherwise a button
-// that opens the preview notice.
+// Navigation labels resolve to their public destinations.
 function LabelLink({ label, onOpen, onHome, after }: Open & { label: string; onHome: boolean; after?: () => void }) {
   const { href } = resolveLabel(label, onHome);
   if (href) return <a href={href} onClick={after}>{label}</a>;
   return <button onClick={() => { after?.(); onOpen(label); }}>{label}</button>;
 }
 
-// The onOpen used by page content: a label with a built page or a homepage
-// section navigates there, anything else opens the preview notice.
-export function openOrGo(setRoute: (label: string) => void, onHome: boolean) {
+// Shared action navigation. Unmapped enquiries lead to the contact page.
+export function openOrGo(onHome: boolean) {
   return (label: string) => {
     const { href } = resolveLabel(label, onHome);
-    if (href) window.location.assign(href);
-    else setRoute(label);
+    window.location.assign(href ?? '/contact/');
   };
 }
-
-export function UnresolvedDialog({ label, close }: { label: string; close: () => void }) {
-  const ref = useRef<HTMLDialogElement>(null);
-  useEffect(() => { ref.current?.showModal(); return () => ref.current?.close(); }, []);
-  return <dialog ref={ref} className="route-dialog" onCancel={close} onClick={e => { if (e.target === e.currentTarget) close(); }}><button className="icon-button close" onClick={close} aria-label="Close"><X size={22} /></button><span className="section-kicker">Design preview</span><h2>{label}</h2><p>This preview does not include that destination yet. The production page still needs to be connected.</p><button className="button" onClick={close}>Back to the preview</button></dialog>;
-}
-
 export function Header({ onOpen, onHome = true }: Open & Place) {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -69,11 +59,9 @@ export function Footer({ onOpen, onHome = true }: Open & Place) {
   return <footer className="container"><div className="footer-top"><Brand onHome={onHome} /><p>{copy.footer.paragraphs[0]}</p></div><div className="footer-groups">{copy.footer.paragraphs.slice(1).map(group => { const [title, links] = group.split(': '); return <div key={title}><h3>{title}</h3>{links?.split(' | ').flatMap(label => label === 'Use cases' ? nav.menus.find(menu => menu.label === 'Solutions')?.columns.find(column => column.title === 'By job')?.items.map(item => item.label) ?? [] : [label]).map(label => <LabelLink key={label} label={label} onOpen={onOpen} onHome={onHome} />)}</div>; })}</div><div className="footer-bottom"><span>Steps AI</span></div></footer>;
 }
 
-// Subpage wrapper: shared header and footer, plus the preview notice for
-// destinations that are not built yet. Children receive onOpen via render prop.
+// Subpage wrapper with shared navigation. Children receive onOpen via render prop.
 export function SiteFrame({ children }: { children: (onOpen: (label: string) => void) => React.ReactNode }) {
-  const [route, setRoute] = useState('');
-  const open = openOrGo(setRoute, false);
+  const open = openOrGo(false);
   useSiteMotion();
-  return <><div className="m-progress" aria-hidden="true" /><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={open} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={open} onHome={false} />{route && <UnresolvedDialog label={route} close={() => setRoute('')} />}</>;
+  return <><div className="m-progress" aria-hidden="true" /><a className="skip-link" href="#main">Skip to content</a><div id="top" /><Header onOpen={open} onHome={false} /><main id="main" className="sp-main">{children(open)}</main><Footer onOpen={open} onHome={false} /></>;
 }

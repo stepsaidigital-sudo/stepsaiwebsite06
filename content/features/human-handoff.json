@@ -1,0 +1,122 @@
+{
+  "status": "draft",
+  "source": "Existing product help: set-up-human-handoff and live-requests; unified-inbox feature content. No new capabilities claimed.",
+  "kind": "feature",
+  "slug": "human-handoff",
+  "seo": {
+    "title": "Human handoff with conversation history | Steps AI",
+    "description": "Let your team take over from your AI agent with the full conversation. Set wait times, fallback messages and email alerts, then reply from the unified inbox."
+  },
+  "hero": {
+    "kicker": "Human handoff",
+    "title": "A person steps in. The conversation stays together.",
+    "body": "When a customer needs your team, pass the conversation from your AI agent to a person. Your teammate reads the history, claims the request and replies in the same thread.",
+    "reassurance": "Full conversation history. A clear owner for each request. Replies from your inbox."
+  },
+  "steps": {
+    "title": "From a request for help to a human reply.",
+    "intro": "Your team picks up where the agent left off.",
+    "items": [
+      {
+        "title": "The customer asks for a person",
+        "body": "The conversation becomes a live request for your team to review."
+      },
+      {
+        "title": "A teammate claims the request",
+        "body": "Open the live request and claim it before replying. The conversation is assigned to the teammate who takes over."
+      },
+      {
+        "title": "Read the history and reply",
+        "body": "The full chat is already available. Continue in the same thread without asking the customer to start again."
+      },
+      {
+        "title": "Resolve the handoff",
+        "body": "When your team has finished helping, resolve the handoff. The conversation remains in the inbox for reference."
+      }
+    ]
+  },
+  "features": {
+    "title": "Decide what happens while customers wait.",
+    "intro": "Configure human handoff in your agent’s skills, with a clear message when your team cannot join.",
+    "items": [
+      {
+        "title": "Set a wait time",
+        "body": "Choose 10 seconds, 30 seconds, 1 minute or 2 minutes before the fallback message appears."
+      },
+      {
+        "title": "Write a fallback message",
+        "body": "Use your own text to explain what happens if nobody joins within the wait time."
+      },
+      {
+        "title": "Choose email recipients",
+        "body": "Add the people who should receive an email when a customer needs your team. Leave recipients empty to turn alerts off."
+      },
+      {
+        "title": "Keep the conversation history",
+        "body": "Your teammate sees what the customer asked and what the agent already answered."
+      },
+      {
+        "title": "Claim before replying",
+        "body": "A team member claims the conversation and replies once it is assigned to them."
+      },
+      {
+        "title": "Continue from the unified inbox",
+        "body": "Read, reply and resolve the handoff in the same place as your other customer conversations."
+      }
+    ]
+  },
+  "goodToKnow": {
+    "title": "Before you switch it on.",
+    "items": [
+      "Human handoff is available on Starter and above.",
+      "Enable Hand over to a person under Agent → Intelligence → Skills.",
+      "A handoff request does not guarantee an immediate reply. Set a fallback message for times when nobody joins.",
+      "Once a person takes over, the conversation stays with your team until the handoff is resolved."
+    ]
+  },
+  "faq": {
+    "title": "Questions about human handoff.",
+    "items": [
+      {
+        "q": "Does my customer need to repeat the question?",
+        "a": "Your teammate can read the full conversation before replying, including the customer’s messages and the agent’s answers."
+      },
+      {
+        "q": "What if nobody is available?",
+        "a": "You set how long the customer waits and the fallback message shown if nobody joins in time."
+      },
+      {
+        "q": "How does my team know someone needs help?",
+        "a": "The conversation appears as a live request. You can also configure email alerts for the recipients you choose."
+      },
+      {
+        "q": "Does the AI keep answering during the handoff?",
+        "a": "Once a person takes over, the conversation is with your team until the handoff is resolved."
+      }
+    ]
+  },
+  "related": {
+    "title": "Keep your team connected.",
+    "items": [
+      {
+        "label": "Unified inbox",
+        "href": "/features/unified-inbox/",
+        "body": "Manage the conversation before, during and after a handoff."
+      },
+      {
+        "label": "Agent skills",
+        "href": "/features/skills/",
+        "body": "Configure when your agent should ask for human help."
+      },
+      {
+        "label": "Set up human handoff",
+        "href": "/help/set-up-human-handoff/",
+        "body": "Follow the setup guide for wait times, fallback messages and email alerts."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See how your team takes over.",
+    "body": "Book a demo to walk through a customer request, the conversation history and a reply from your team."
+  }
+}

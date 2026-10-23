@@ -1,4 +1,6 @@
 'use client';
+import { builtRoutes } from '@/components/site/routes';
+import { HandoffVisual } from '@/components/premium/handoff-visual';
 import { IllustratedFace as Face } from '@/components/site/illustrated-profile';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
@@ -43,6 +45,20 @@ type Design = {
 };
 
 const designs: Record<string, Design> = {
+ 'human-handoff': {
+  icon:<Hand size={16}/>, hero:<HandoffVisual/>,
+  cards:[
+   <Card key="request" title="Live request" status={<Chip>Needs a person</Chip>}><Row icon={<MessageSquare size={16}/>} title="Customer asked for help" sub="Can I speak to someone about my order?" picked/></Card>,
+   <Card key="claim" title="Request claimed" status={<Chip>With your team</Chip>}><Row icon={<Hand size={16}/>} title="Assigned to your teammate" sub="Claim before replying" picked/></Card>,
+   <Card key="reply" title="Conversation history" status={<Chip>Same thread</Chip>}><Row icon={<MessageSquare size={16}/>} title="Read the earlier messages" sub="Then continue the conversation" picked/></Card>,
+   <Card key="resolve" title="Handoff resolved" status={<Chip tone="green">Resolved</Chip>}><Row icon={<Check size={16}/>} title="Conversation kept in the inbox" sub="Available for your team to refer to" picked/></Card>
+  ],
+  sides:[results([<Hand key="a" size={14}/>, 'Live request created']),results([<Users key="b" size={14}/>, 'A teammate takes ownership']),results([<MessageSquare key="c" size={14}/>, 'Full history included']),results([<Check key="d" size={14}/>, 'Handoff resolved'])],
+  bandCta:{label:'See human handoff in a demo',icon:<Hand size={18}/>},
+  capIcons:[[<Clock key="a" size={20}/>, 'blue'],[<MessageSquare key="b" size={20}/>, 'blue'],[<Mail key="c" size={20}/>, 'blue'],[<Copy key="d" size={20}/>, 'blue'],[<Hand key="e" size={20}/>, 'blue'],[<Inbox key="f" size={20}/>, 'blue']],
+  stories:[],
+  ctaArt:[stack(result(<MessageSquare size={15}/>, 'Full chat history', 'Context for your team')),stack(result(<Inbox size={15}/>, 'One inbox', 'Reply and resolve'))]
+ },
   analytics: {
     icon: <BarChart3 size={16} />,
     hero: <ScaleBox width={1000}><AnalyticsMock /></ScaleBox>,
@@ -239,7 +255,7 @@ export function FeaturePageTemplate({ page }: { page: FeaturePage }) {
           <p className="wb-lead">{page.hero.body}</p>
           <div className="wb-actions">
             <button className="wb-btn" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
-            <a className="wb-btn-ghost" href="#how"><span><Play size={11} fill="currentColor" /></span>See how it works</a>
+            <a className="wb-btn-ghost" href={builtRoutes['Log in']}>Log in <ArrowRight size={16} /></a>
             {page.slug === 'workflow-builder' && <a className="wb-btn-ghost" href="#workflow-templates">Browse templates <ArrowRight size={16} /></a>}
           </div>
           <ul className="wb-checks">{checks.map(c => <li key={c}><CircleCheck size={15} />{c}</li>)}</ul>

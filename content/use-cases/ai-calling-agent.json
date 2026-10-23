@@ -1,0 +1,127 @@
+{
+  "status": "draft",
+  "source": "Supplementary Product Update 2026-10-07 supplied by user: Voice Agents. Existing booking/receptionist content retained separately. Industry dialogues are illustrative configurations, not customer results.",
+  "kind": "usecase",
+  "slug": "ai-calling-agent",
+  "seo": {
+    "title": "AI calling agent for inbound, outbound and web voice | Steps AI",
+    "description": "Talk to customers on the web or phone in English, Hindi and Telugu. Qualify leads, run outbound call campaigns, transfer calls and manage voice conversations in Steps AI."
+  },
+  "hero": {
+    "kicker": "AI calling agent",
+    "title": "A conversation starts. Your next step takes shape.",
+    "body": "Answer inbound calls, speak to leads and let website visitors talk to your AI agent. Give every call a purpose, from understanding a course enquiry to connecting a customer with your team.",
+    "reassurance": "Web voice, inbound and outbound calls. English, Hindi and Telugu. Connected to your inbox and CRM."
+  },
+  "walkthrough": {
+    "title": "Set up the conversation before the phone rings.",
+    "intro": "Configure your agent in the dashboard, then choose the flow for each type of call.",
+    "steps": [
+      {
+        "label": "Connect your telephony provider",
+        "customer": "",
+        "agent": "",
+        "note": "Connect a provider from the dashboard for real phone calls. Inbound calls reach the business agent linked to the number dialled."
+      },
+      {
+        "label": "Choose the voice and greeting",
+        "customer": "",
+        "agent": "",
+        "note": "In Agent → Voice, choose a language, preview the greeting and add pronunciations for names."
+      },
+      {
+        "label": "Select a qualification flow",
+        "customer": "",
+        "agent": "",
+        "note": "Save several flows per agent. Choose which questions are used for inbound calls, outbound calls and each campaign."
+      },
+      {
+        "label": "Review calls and follow up",
+        "customer": "",
+        "agent": "",
+        "note": "Find voice conversations in the Inbox and qualified leads in their own view. Recordings are stored for review."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Built around what happens next.",
+    "intro": "Voice is part of the same agent, inbox and CRM your team already uses.",
+    "items": [
+      {
+        "title": "Ask the questions that matter",
+        "body": "Build qualification flows for your business. The agent chooses the next question, handles refusals and requests to repeat, and ends the call politely."
+      },
+      {
+        "title": "Reach leads with a campaign",
+        "body": "Run outbound campaigns with automatic pacing. Calls can retry after no answer, a busy line or a temporary error."
+      },
+      {
+        "title": "Respect the do-not-call list",
+        "body": "Outbound calling respects the do-not-call list. Manage phone numbers and start an AI call from the CRM."
+      },
+      {
+        "title": "Bring in your team",
+        "body": "Transfer a call to a person when the conversation needs human help."
+      },
+      {
+        "title": "Keep after-hours enquiries",
+        "body": "Calls outside business hours leave a voicemail that becomes a callback ticket."
+      },
+      {
+        "title": "Keep voice alongside chat",
+        "body": "Voice has its own Inbox badge and filter. Call recordings are stored, and qualified leads have a dedicated view."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Part of your everyday workflow.",
+    "intro": "Your voice agent connects to the same workspace.",
+    "names": [
+      "Unified inbox",
+      "CRM",
+      "Agent skills"
+    ]
+  },
+  "goodToKnow": {
+    "title": "What to know before you connect.",
+    "items": [
+      "Real phone calls require a connected telephony provider.",
+      "Voice minutes are billed as credits.",
+      "English, Hindi and Telugu are supported. You can lock an agent to one language.",
+      "The conversations shown here demonstrate example call flows you can configure for your business."
+    ]
+  },
+  "faq": {
+    "title": "Questions about AI calling.",
+    "items": [
+      {
+        "q": "Can customers call a real phone number?",
+        "a": "Yes. Connect a telephony provider from the dashboard. Inbound calls are routed to the right business agent by the number dialled."
+      },
+      {
+        "q": "Can the agent call leads?",
+        "a": "Yes. Outbound calls and call campaigns are supported, with automatic pacing, retries for no-answer, busy and temporary errors, and a do-not-call list that is respected."
+      },
+      {
+        "q": "Which languages are supported?",
+        "a": "English, Hindi and Telugu. Choose the language in the Voice tab, preview the greeting and configure how names are pronounced."
+      },
+      {
+        "q": "What happens if a caller needs a person?",
+        "a": "Calls can be transferred to a human. Outside business hours, a voicemail becomes a callback ticket."
+      },
+      {
+        "q": "Is this different from the AI receptionist?",
+        "a": "The receptionist page focuses on inbound front-desk calls. The calling agent also covers outbound campaigns, qualification flows and voice conversations on your website."
+      },
+      {
+        "q": "How is voice billed?",
+        "a": "Voice minutes are billed as credits. Connect your telephony provider from the dashboard before using real phone calls."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bring a real customer question to the demo.",
+    "body": "We’ll walk through how your voice agent can answer, qualify the enquiry and connect the caller with the next step."
+  }
+}

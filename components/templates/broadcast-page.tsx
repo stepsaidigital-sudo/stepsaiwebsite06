@@ -1,9 +1,10 @@
 'use client';
+import { builtRoutes } from '@/components/site/routes';
 import { Fragment, useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight, BadgeCheck, BarChart3, Bot, Calculator, CalendarDays, Check, ChevronRight, CircleCheck, ExternalLink, FileCheck2,
-  FileSpreadsheet, FileText, Lightbulb, Play, Plus, Reply, Send, ShieldCheck, ShoppingBag, Sparkles, Tag, Type, Users, Webhook,
+  FileSpreadsheet, FileText, Lightbulb, Plus, Reply, Send, ShieldCheck, ShoppingBag, Sparkles, Tag, Type, Users, Webhook,
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { SiteFrame } from '@/components/site/shell';
@@ -244,7 +245,7 @@ export function BroadcastPageTemplate({ page }: { page: FeaturePage }) {
           <p className="wb-lead">{page.hero.body}</p>
           <div className="wb-actions">
             <button className="wb-btn" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
-            <a className="wb-btn-ghost" href="#how"><span><Play size={11} fill="currentColor" /></span>See how it works</a>
+            <a className="wb-btn-ghost" href={builtRoutes['Log in']}>Log in <ArrowRight size={16} /></a>
           </div>
           <ul className="wb-checks">{checks.map(c => <li key={c}><CircleCheck size={15} />{c}</li>)}</ul>
         </div>

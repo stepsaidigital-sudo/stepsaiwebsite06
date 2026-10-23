@@ -1,3 +1,6 @@
+import aiCallingAgentUseCaseJson from '@/content/use-cases/ai-calling-agent.json';
+import aiReceptionistUseCaseJson from '@/content/use-cases/ai-receptionist.json';
+import humanHandoffFeatureJson from '@/content/features/human-handoff.json';
 // Subpage copy, one JSON file per page. Each file is registered here so the
 // type check fails when a file is missing a field or has the wrong shape.
 // JSON imports widen string literals, so files are checked against Json<T>
@@ -85,12 +88,12 @@ import zendeskIntegration from '@/content/integrations/zendesk.json';
 import { asset, isAssetPath } from '@/lib/asset';
 type Json<T> = T extends string ? string : T extends (infer U)[] ? Json<U>[] : T extends object ? { [K in keyof T]: Json<T[K]> } : T;
 
-const features = { 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcasting': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
+const features = { 'human-handoff': humanHandoffFeatureJson, 'analytics': analyticsFeatureJson, 'crm': crmFeatureJson, 'skills': skillsFeatureJson, 'unified-inbox': unifiedInboxFeatureJson, 'whatsapp-broadcasting': whatsappBroadcastFeatureJson, 'workflow-builder': workflowBuilderFeatureJson } satisfies Record<string, Json<FeaturePage>>;
 // Chat page is switched off for now; its content stays in content/channels/chat-page.json.
 const channels = { 'instagram-ai-agent': instagramChatbotChannelJson, 'messenger-ai-agent': messengerChatbotChannelJson, 'website-ai-agent': websiteChatbotChannelJson, 'whatsapp-ai-agent': whatsappChatbotChannelJson } satisfies Record<string, Json<ChannelPage>>;
 // AI receptionist (held until voice is live) and AI marketing agent (not published) keep their
 // content in content/use-cases/ but have no page.
-const useCases = { 'ai-booking-agent': aiBookingAgentUseCaseJson, 'ai-lead-capture-agent': aiLeadCaptureAgentUseCaseJson, 'ai-sales-agent': aiSalesAgentUseCaseJson, 'ai-support-agent': aiSupportAgentUseCaseJson } satisfies Record<string, Json<UseCasePage>>;
+const useCases = { 'ai-receptionist': aiReceptionistUseCaseJson, 'ai-booking-agent': aiBookingAgentUseCaseJson, 'ai-lead-capture-agent': aiLeadCaptureAgentUseCaseJson, 'ai-sales-agent': aiSalesAgentUseCaseJson, 'ai-support-agent': aiSupportAgentUseCaseJson } satisfies Record<string, Json<UseCasePage>>;
 const industries = { 'ecommerce': ecommerceIndustryJson, 'education': educationIndustryJson, 'financial-services': financialServicesIndustryJson, 'healthcare': healthcareIndustryJson, 'real-estate': realEstateIndustryJson, 'saas': saasIndustryJson, 'travel-and-hospitality': travelAndHospitalityIndustryJson } satisfies Record<string, Json<IndustryPage>>;
 const integrations = { 'airtable': airtableIntegration, 'cal-com': calComIntegration, 'calendly': calendlyIntegration, 'delhivery': delhiveryIntegration, 'dtdc': dtdcIntegration, 'google-calendar': googleCalendarIntegration, 'google-drive': googleDriveIntegration, 'google-sheets': googleSheetsIntegration, 'hubspot': hubspotIntegration, 'ithink-logistics': ithinkLogisticsIntegration, 'klaviyo': klaviyoIntegration, 'notion': notionIntegration, 'outlook-calendar': outlookCalendarIntegration, 'outlook': outlookIntegration, 'shiprocket': shiprocketIntegration, 'shopify': shopifyIntegration, 'slack': slackIntegration, 'square-appointments': squareAppointmentsIntegration, 'wareiq': wareiqIntegration, 'woocommerce': woocommerceIntegration, 'zendesk': zendeskIntegration } satisfies Record<string, Json<IntegrationPage>>;
 const integrationsIndex = integrationsHub satisfies Json<IntegrationsHub>;
@@ -129,3 +132,5 @@ export const getIntegrationsHub = () => withAssets(integrationsIndex as Integrat
 export const getCaseStudy = cs.get, listCaseStudies = cs.list;
 export const getCaseStudiesHub = () => withAssets(caseStudiesIndex as CaseStudiesHub);
 export const getCompare = cp.get, listCompares = cp.list;
+
+export const getCallingAgent = () => withAssets(aiCallingAgentUseCaseJson as UseCasePage);

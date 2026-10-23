@@ -1,4 +1,5 @@
 'use client';
+import readability from './channel-readability.module.css';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
@@ -303,7 +304,7 @@ export function ChannelPageTemplate({ page }: { page: ChannelPage }) {
     pill: `Step ${i + 1} of ${page.triggers.items.length}`, title: item.title, body: item.body, card: d.stageCards[i], side: d.stageSides[i],
   }));
   const scenarios = d.industries ? channelScenarios(d.industries.kind) : [];
-  return <SiteFrame>{onOpen => <div className="wb pp">
+  return <SiteFrame>{onOpen => <div className={`wb pp ${readability.page}`}>
     <PremiumHero kicker={page.hero.kicker} icon={d.logo} title={page.hero.title} accent={d.accent} body={page.hero.body} checks={checks} visual={d.hero} onOpen={onOpen} />
     <Capabilities title={page.jobs.title} intro={page.jobs.intro} items={page.jobs.items} icons={d.jobIcons} />
     <section id="how" className="container pp-head pp-walk-head"><span className="wb-eyebrow">{page.triggers.title.startsWith('Why') ? 'Why it helps' : 'Start more conversations'}</span><h2>{page.triggers.title}</h2><p>{page.triggers.intro}</p></section>

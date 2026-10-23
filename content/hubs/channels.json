@@ -3,13 +3,13 @@
   "source": "draft, pending specialist copy",
   "kind": "hub",
   "seo": {
-    "title": "Omnichannel Chatbot and AI Agent for WhatsApp, Instagram and Web",
-    "description": "Run one AI agent across your website, WhatsApp, Instagram and more with shared knowledge, skills and brand voice across every channel."
+    "title": "AI agents for Website, WhatsApp, Instagram and Phone Calls | Steps AI",
+    "description": "Connect with customers through website chat, WhatsApp, Instagram, Messenger and AI voice calls. Explore the channels for your business."
   },
   "hero": {
     "kicker": "Channels",
-    "title": "One AI agent, working on every channel.",
-    "body": "Your agent answers on your website, WhatsApp, Instagram and Messenger with the same knowledge, skills and brand voice. Every conversation lands in one inbox for your team."
+    "title": "Meet customers where the conversation starts.",
+    "body": "On your website, in a message or over the phone. Give customers an AI agent that knows your business—and give your team the context to help."
   },
   "cta": {
     "title": "Not sure which channels to start with?",
@@ -39,6 +39,12 @@
       "label": "Messenger AI agent",
       "href": "/channels/messenger-ai-agent/",
       "body": "Answer customers who message your Facebook page with an agent that knows your business.",
+      "built": true
+    },
+    {
+      "label": "AI calling agent",
+      "href": "/channels/ai-calling-agent/",
+      "body": "Answer incoming calls, qualify leads with outbound calls and let website visitors speak to your AI agent.",
       "built": true
     }
   ]

@@ -1,28 +1,29 @@
 'use client';
 import {useEffect,useRef} from 'react';
-import {ArrowUpRight,Check,CheckCheck,ChevronLeft,Mic,MoreHorizontal,Plus,SendHorizontal,ShoppingCart,UserRound,X} from 'lucide-react';
+import {ArrowUpRight,Check,CheckCheck,ChevronLeft,Mic,MoreHorizontal,Plus,SendHorizontal,ShoppingCart,X} from 'lucide-react';
+import {asset} from '@/lib/asset';
 import {channelKind} from './channel-chat';
 
 export type Product={name:string;price:string;was:string;off:string;description:string;image:string};
-const arrivals=[700,3700,6900,10500];
+const arrival=(index:number)=>400+index*1800;
 
-// Four messages, customer first, then alternating customer / agent. Shown from the customer’s phone: their own
+// Messages alternate between customer and agent, starting with the customer. Shown from the customer’s phone: their own
 // messages on the right in the app colour, the business agent’s replies on the left (typing dots only for the agent).
 export function LiveConversation({channel,messages,products,time}:{channel:string;messages:string[];products?:Product[];time:number}){
   const kind=channelKind(channel);
   if(kind==='website')return <ShopperWidget messages={messages} products={products??[]} time={time}/>;
-  return <div className={`channel-chat channel-${kind} live-chat`} aria-label={`${channel} animated conversation illustration`}><div className="native-chat-body">{messages.map((message,i)=>{const shown=time>=arrivals[i];const typing=!shown&&time>=arrivals[i]-(i%2?1900:550);const agent=i%2===1;return <div className={`live-message-slot slot-${i} ${agent?'from-agent':'from-customer'}`} key={message}><div className={`native-message ${agent?'incoming':'outgoing'} ${shown?'message-arrived':'message-waiting'}`} aria-hidden={!shown}>{message}<small>10:{i<2?'24':'25'} {kind==='whatsapp'&&!agent&&<CheckCheck size={12}/>}</small></div>{typing&&agent&&<div className="chat-typing agent-typing" aria-label="Agent is typing"><i/><i/><i/></div>}</div>})}</div></div>
+  return <div className={`channel-chat channel-${kind} live-chat`} aria-label={`${channel} animated conversation illustration`}><div className="native-chat-body">{messages.map((message,i)=>{const shown=time>=arrival(i);const typing=!shown&&time>=arrival(i)-(i%2?900:300);const agent=i%2===1;return <div className={`live-message-slot slot-${i} ${agent?'from-agent':'from-customer'}`} key={message}><div className={`native-message ${agent?'incoming':'outgoing'} ${shown?'message-arrived':'message-waiting'}`} aria-hidden={!shown}>{message}<small>10:{i<2?'24':'25'} {kind==='whatsapp'&&!agent&&<CheckCheck size={12}/>}</small></div>{typing&&agent&&<div className="chat-typing agent-typing" aria-label="Agent is typing"><i/><i/><i/></div>}</div>})}</div></div>
 }
 
 // Website tab: the real Steps AI "Shopper" widget. Customer on the right in blue, agent on the left in grey,
 // product cards under the agent's first reply, and a fixed-height body that keeps the newest message in view.
 function ShopperWidget({messages,products,time}:{messages:string[];products:Product[];time:number}){
   const body=useRef<HTMLDivElement>(null);
-  const added=time>=arrivals[3];
-  const step=arrivals.filter(a=>time>=a).length,typing=step<4&&step%2===1&&time>=arrivals[step]-1900;
+  const added=time>=arrival(3);
+  const step=messages.filter((_,i)=>time>=arrival(i)).length,typing=step<messages.length&&step%2===1&&time>=arrival(step)-900;
   useEffect(()=>{const el=body.current;if(el)el.scrollTo({top:el.scrollHeight,behavior:time===0?'auto':'smooth'})},[step,typing,time===0]);
   return <div className="hc-w" aria-label="Website shopping assistant animated conversation illustration">
-    <header className="hc-w-head"><ChevronLeft size={18}/><span className="hc-w-avatar"><UserRound size={18}/><i/></span><div><strong>Shopper</strong><small>Active</small></div><span className="hc-w-cart"><ShoppingCart size={18}/>{added&&<b>1</b>}</span><MoreHorizontal size={18}/><X size={17}/></header>
+    <header className="hc-w-head"><ChevronLeft size={18}/><span className="hc-w-avatar"><img src={asset("/images/features/avatars/cat.webp")} alt="" width="34" height="34"/><i/></span><div><strong>Shopper</strong><small>Active</small></div><span className="hc-w-cart"><ShoppingCart size={18}/>{added&&<b>1</b>}</span><MoreHorizontal size={18}/><X size={17}/></header>
     <div className="hc-w-body" ref={body}>
       {messages.slice(0,step).map((message,i)=><div key={message} className={`hc-w-msg ${i%2?'agent':'customer'}`}>
         <p>{message}</p>

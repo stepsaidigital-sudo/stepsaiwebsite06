@@ -1,5 +1,4 @@
-// Labels that have a real page. Everything not listed here (and not a homepage
-// anchor) opens the "Design preview" notice instead of a dead link.
+// Public action destinations shared by the homepage and subpages.
 // Demo booking: every "Book a demo" goes to the form, which sends the request to the webhook
 // (app/api/demo-request). After it is sent, the visitor can pick a time on Calendly.
 export const DEMO_URL = '/book-a-demo/';
@@ -7,6 +6,11 @@ export const CALENDLY_URL = 'https://calendly.com/reshmanth-stepsai/demo';
 
 export const builtRoutes: Record<string, string> = {
   'Book a demo': DEMO_URL,
+  'Book a call': DEMO_URL,
+  'Talk to sales': DEMO_URL,
+  'Start now': 'https://app.stepsai.co/signup',
+  'Send us a note': 'mailto:support@stepsai.ca?subject=Careers%20enquiry',
+  'Apply': 'mailto:support@stepsai.ca?subject=Affiliate%20program%20application',
   'Log in': 'https://app.stepsai.co/login',
   'Sign up': 'https://app.stepsai.co/signup',
   'Start free': 'https://app.stepsai.co/signup',
@@ -30,6 +34,7 @@ export const builtRoutes: Record<string, string> = {
   'See customer stories': '/case-studies/',
   Pricing: '/pricing/',
   Integrations: '/integrations/',
+  'Case study': '/case-studies/',
   'Case studies': '/case-studies/',
   'Partner with us': '/partners/',
   'Partner program': '/partners/',
@@ -61,10 +66,17 @@ export const builtRoutes: Record<string, string> = {
   'Agent skills': '/features/skills/',
   'Workflow builder': '/features/workflow-builder/',
   'Website chatbot': '/channels/website-ai-agent/',
+  'Website agent': '/channels/website-ai-agent/',
+  'WhatsApp agent': '/channels/whatsapp-ai-agent/',
+  'Instagram agent': '/channels/instagram-ai-agent/',
+  'Messenger agent': '/channels/messenger-ai-agent/',
   'Instagram chatbot': '/channels/instagram-ai-agent/',
   'Messenger chatbot': '/channels/messenger-ai-agent/',
   'AI support agent': '/use-cases/ai-support-agent/',
   'AI lead capture agent': '/use-cases/ai-lead-capture-agent/',
+  'AI calling agent': '/channels/ai-calling-agent/',
+  'Calling agent': '/channels/ai-calling-agent/',
+  'AI receptionist': '/use-cases/ai-receptionist/',
   'AI booking agent': '/use-cases/ai-booking-agent/',
   'Healthcare': '/solutions/healthcare/',
   'Education': '/solutions/education/',
@@ -75,6 +87,7 @@ export const builtRoutes: Record<string, string> = {
   'View pricing': '/pricing/',
   About: '/about/',
   Industries: '/solutions/',
+  'Explore Solutions': '/solutions/',
   'Explore solutions': '/solutions/',
   Ecommerce: '/solutions/ecommerce/',
   'WhatsApp broadcast': '/features/whatsapp-broadcasting/',

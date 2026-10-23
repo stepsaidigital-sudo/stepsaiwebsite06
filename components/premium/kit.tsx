@@ -1,9 +1,10 @@
 'use client';
+import { builtRoutes } from '@/components/site/routes';
 import { Fragment, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight, BadgeCheck, Camera, CheckCheck, ChevronLeft, CircleCheck, Image as ImageIcon, Lightbulb, Mic, MicOff, Phone as PhoneIcon,
-  PhoneOff, Play, Plus, Send, Smile, Sticker, Video, Volume2, Grid3x3,
+  PhoneOff, Plus, Send, Smile, Sticker, Video, Volume2, Grid3x3,
 } from 'lucide-react';
 import { ChannelLogo } from '@/app/channel-chat';
 import { Reveal } from '@/components/sections';
@@ -228,8 +229,8 @@ export function IndustryExamples({ title, intro, scenarios, noPhoto = false }: {
 
 /* ---------- page sections ---------- */
 
-export function PremiumHero({ kicker, icon, title, accent, body, checks, visual, onOpen, demoLabel = 'See it in action' }: {
-  kicker: string; icon: ReactNode; title: string; accent?: string[]; body: string; checks: string[]; visual: ReactNode; onOpen: (l: string) => void; demoLabel?: string;
+export function PremiumHero({ kicker, icon, title, accent, body, checks, visual, onOpen }: {
+  kicker: string; icon: ReactNode; title: string; accent?: string[]; body: string; checks: string[]; visual: ReactNode; onOpen: (l: string) => void;
 }) {
   return <section className="wb-hero pp-hero">
     <div className="container wb-hero-inner">
@@ -239,7 +240,7 @@ export function PremiumHero({ kicker, icon, title, accent, body, checks, visual,
         <p className="wb-lead">{body}</p>
         <div className="wb-actions">
           <button className="wb-btn" onClick={() => onOpen('Book a demo')}>Book a demo <ArrowRight size={16} /></button>
-          <a className="wb-btn-ghost" href="#how"><span><Play size={11} fill="currentColor" /></span>{demoLabel}</a>
+          <a className="wb-btn-ghost" href={builtRoutes['Log in']}>Log in <ArrowRight size={16} /></a>
         </div>
         <ul className="wb-checks">{checks.map(c => <li key={c}><CircleCheck size={15} />{c}</li>)}</ul>
       </div>

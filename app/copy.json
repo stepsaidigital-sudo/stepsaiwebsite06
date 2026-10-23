@@ -19,140 +19,101 @@
     "stages": [
       {
         "label": "Engage",
-        "title": "Start conversations with the right customers.",
+        "title": "Help every visitor find what they came for.",
         "paragraphs": [
-          "Send an offer on WhatsApp, reply to an Instagram comment or run an ad that opens a chat. Your AI agent can answer when people respond."
+          "Your agent greets visitors, asks what they need and shows the right option, whether that is a product, a course or a service."
         ],
         "items": [
           {
-            "title": "Send personalised WhatsApp campaigns",
-            "paragraphs": [
-              "Choose your customer list, add names and offers, and schedule your message. See the estimated messaging cost before you send."
-            ]
+            "title": "Asks what they need and suggests the right option",
+            "paragraphs": []
           },
           {
-            "title": "Turn Instagram comments into DMs",
-            "paragraphs": [
-              "Send a message when someone comments with a word like PRICE or LINK. Reply to story responses and mentions with a flow you choose."
-            ]
+            "title": "Shows photos, prices and details right in the chat",
+            "paragraphs": []
           },
           {
-            "title": "Run ads that open a WhatsApp chat",
-            "paragraphs": [
-              "Create click-to-WhatsApp ads and track their performance. Use a flow to ask questions and save details when someone messages you."
-            ]
+            "title": "Greets visitors with questions they can tap",
+            "paragraphs": []
           },
           {
-            "title": "Manage Instagram comments",
-            "paragraphs": [
-              "Let AI reply to questions in comments. Your team can also view, reply to and manage comments from the dashboard."
-            ]
+            "title": "Offers help when a visitor looks stuck",
+            "paragraphs": []
           }
         ]
       },
       {
         "label": "Convert",
-        "title": "Help interested customers buy or book.",
+        "title": "Turn interest into bookings and orders.",
         "paragraphs": [
-          "Answer what they want to know, find out what they need and help them take action in the chat."
+          "Your agent answers questions, finds out what each person needs and books the appointment, visit or demo in the same chat."
         ],
         "items": [
           {
-            "title": "Help shoppers choose and order",
-            "paragraphs": [
-              "Show products from your connected catalogue, recommend suitable options, add items to a cart and share a checkout link in WhatsApp or Instagram.",
-              "“StepsAI is good at the questions that don’t fit neatly into filters. People will say what they need, their budget, maybe what they’ve bought before, and StepsAI can point them to a few products that actually make sense.”",
-              "Anika Rao | Head of Digital | Mysa Living"
-            ]
+            "title": "Books appointments, visits and demos in your calendar",
+            "paragraphs": []
           },
           {
-            "title": "Collect useful lead details",
-            "paragraphs": [
-              "Ask for a name, contact details, budget or other information you need. Save the answers in your built-in CRM so your team can follow up.",
-              "“Now StepsAI gets the details while they’re already talking and passes the lead into our CRM with the conversation attached.”",
-              "Ryan Collins | Growth Lead | Northstar SaaS"
-            ]
+            "title": "Asks the right questions to find serious customers",
+            "paragraphs": []
           },
           {
-            "title": "Book appointments and demos",
-            "paragraphs": [
-              "Connect your calendar so customers can choose an available time during the conversation."
-            ]
+            "title": "Adds products to the cart for online stores",
+            "paragraphs": []
           },
           {
-            "title": "Send important enquiries to your team",
-            "paragraphs": [
-              "Use the answers customers give to decide what happens next. Bring in a person when an enquiry needs their attention."
-            ]
+            "title": "Sends important enquiries to your team",
+            "paragraphs": []
           }
         ]
       },
       {
         "label": "Support",
-        "title": "Keep helping customers when they need you.",
+        "title": "Give the right answer, by phone or chat.",
         "paragraphs": [
-          "Answer everyday questions, share order updates and pass conversations to your team when a person is needed."
+          "Whether customers call or message you on WhatsApp, Instagram or your website, your AI agent answers from your business information. It checks connected tools for live details and brings in your team when more help is needed."
         ],
         "items": [
           {
-            "title": "Answer from your own information",
-            "paragraphs": [
-              "Give the agent your website, FAQs and documents. It uses that information to answer questions about products, services and policies."
-            ]
+            "title": "Answers questions by voice and in chat, at any hour",
+            "paragraphs": []
           },
           {
-            "title": "Share order and delivery updates",
-            "paragraphs": [
-              "Connect your store and supported delivery tools so customers can ask about their orders in the chat.",
-              "“The order-status questions have almost disappeared from our support queue.”",
-              "Maya Patel | Head of E-commerce | North & Pine"
-            ]
+            "title": "Uses your website, documents and FAQs for answers",
+            "paragraphs": []
           },
           {
-            "title": "Create tickets for requests",
-            "paragraphs": [
-              "Save the question and customer details, create a ticket and notify the people who need to handle it."
-            ]
+            "title": "Checks connected tools for live details, like order status",
+            "paragraphs": []
           },
           {
-            "title": "Reply when you miss a WhatsApp call",
-            "paragraphs": [
-              "Send an automatic message when a customer calls and you cannot answer. Let them continue the conversation in chat."
-            ]
+            "title": "Opens support tickets and passes enquiries to your team",
+            "paragraphs": []
           }
         ]
       },
       {
         "label": "Bring customers back",
-        "title": "Follow up after the conversation ends.",
+        "title": "Follow up on its own.",
         "paragraphs": [
-          "Set up messages for unfinished purchases, customer updates and repeat orders. Choose the timing and what happens when someone replies."
+          "Send reminders, updates and offers at the right time. Your agent answers whoever replies, so a follow-up can turn into a sale or a booking."
         ],
         "items": [
           {
-            "title": "Recover abandoned Shopify checkouts",
-            "paragraphs": [
-              "Send a WhatsApp reminder when a shopper leaves before buying. Your AI agent can answer questions that come back."
-            ]
+            "title": "Reminds shoppers about carts they left behind",
+            "paragraphs": []
           },
           {
-            "title": "Confirm cash-on-delivery orders",
-            "paragraphs": [
-              "Ask Shopify customers to confirm their COD order on WhatsApp before your team ships it."
-            ]
+            "title": "Sends WhatsApp offers to one group, like past customers",
+            "paragraphs": []
           },
           {
-            "title": "Welcome customers and ask for reviews",
-            "paragraphs": [
-              "Use workflow templates to send welcome messages, order updates and review requests."
-            ]
+            "title": "Sends updates and reminders at the time you choose",
+            "paragraphs": []
           },
           {
-            "title": "Give customers a reason to return",
-            "paragraphs": [
-              "Send relevant offers and new-product updates to selected WhatsApp audiences.",
-              "Book a demo"
-            ]
+            "title": "Welcomes new customers and asks for reviews",
+            "paragraphs": []
           }
         ]
       }
@@ -171,9 +132,9 @@
         ]
       },
       {
-        "title": "Customer details saved as you talk",
+        "title": "Customer details saved while your agent chats",
         "paragraphs": [
-          "Keep contact details, tickets and requests in the built-in CRM. Add the fields your business needs and group contacts for follow-up."
+          "Your agent saves each customer's name, email and request in the built-in CRM while it chats. Add the fields your business needs and tag contacts for follow-up. There is no limit on contacts, and if you already use HubSpot, you can connect it instead."
         ]
       },
       {
@@ -289,7 +250,7 @@
         "paragraphs": [
           "“What documents do I need?”",
           "Explain application requirements, collect enquiries and arrange a call with your team.",
-          "Explore solutions"
+          "Explore Solutions"
         ]
       }
     ]
@@ -330,9 +291,9 @@
         ]
       },
       {
-        "title": "Do all features work on every channel?",
+        "title": "How does the agent work across different channels?",
         "paragraphs": [
-          "No. WhatsApp supports broadcasts, Shopify cart recovery and COD confirmation. Instagram supports comment-to-DM and story triggers. Your demo will show what works on the channels you use."
+          "Your agent uses your business information to help customers on your website, WhatsApp, Instagram, Messenger and phone calls. Each channel offers different ways to connect: WhatsApp for messages and follow-ups, Instagram for DMs and comment replies, and the calling agent for voice conversations. Available actions depend on the channel and the tools you connect."
         ]
       },
       {
@@ -364,7 +325,7 @@
       "Your AI agent, customer messages and follow-ups in one platform.",
       "Product: Features | Channels | Integrations",
       "Solutions: Industries | Use cases",
-      "Resources: Customer stories | Blog | Help centre | Developer docs",
+      "Resources: Case study | Blog | Help centre | Developer docs",
       "Partners: Partner with us | Hire an agency | Become an affiliate",
       "Compare: vs. Manychat | vs. Wati | vs. AiSensy | vs. Gorgias | vs. Chatbase | vs. Verifast | vs. Tidio",
       "Account: Book a demo | Pricing | Sign up | Log in",

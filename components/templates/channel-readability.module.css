@@ -1,0 +1,35 @@
+/* Scoped to individual channel pages; shared mockup geometry stays intact. */
+.page p { text-wrap: pretty; }
+.page h2,.page h3 { text-wrap: balance; }
+.page :global(.wb-hero-copy) h1 { font-weight: 500; line-height: 1.15; }
+.page :global(.wb-hero-inner) { gap: 40px; }
+.page :global(.wb-lead) { font-size: 18px; line-height: 1.75; max-width: 52ch; }
+.page :global(.wb-checks) { gap: 12px; font-size: 14px; line-height: 1.6; }
+.page :global(.pp-head) { max-width: 780px; margin-bottom: 36px; }
+.page :global(.pp-head) h2,.page :global(.pp-story-copy) h2 { line-height: 1.22; font-weight: 500; }
+.page :global(.pp-head) p,.page :global(.pp-story-copy)>p,
+.page :global(.wb-how-copy)>p { font-size: 17px; line-height: 1.75; }
+.page :global(.pp-caps) { gap: 24px; }
+.page :global(.pp-cap) { flex-basis: calc((100% - 48px) / 3); padding: 28px; }
+.page :global(.pp-cap) h3 { font-size: 21px; line-height: 1.35; font-weight: 600; margin-bottom: 12px; }
+.page :global(.pp-cap) p,.page :global(.wb-flow-step) small,
+.page :global(.wb-band-copy)>p,.page :global(.wb-faq-list) details p { font-size: 16px; line-height: 1.75; }
+.page :global(.wb-flow-step) strong { font-size: 18px; line-height: 1.4; }
+.page :global(.wb-flow-step) small { display: block; margin-top: 10px; }
+.page :global(.pp-story-copy) li { font-size: 16px; line-height: 1.65; }
+.page :global(.wb-band-copy) h2 { line-height: 1.2; }
+.page :global(.wb-row) small { font-size: 13px; line-height: 1.55; }
+.page :global(.wb-bubble) p { font-size: 14px; line-height: 1.65; }
+.page :global(.wb-faq-list) summary { font-size: 17px; line-height: 1.5; padding-block: 22px; }
+.page :global(.wb-related-card) p { font-size: 15px; line-height: 1.7; }
+@media(max-width:1100px) {
+  .page :global(.pp-cap) { flex-basis: calc((100% - 24px) / 2); }
+  .page :global(.wb-hero-inner) { gap: 28px; }
+}
+@media(max-width:700px) {
+  .page :global(.pp-cap) { flex-basis: 100%; padding: 24px; }
+  .page :global(.wb-lead) { font-size: 17px; }
+  .page :global(.pp-head) p,.page :global(.pp-story-copy)>p,
+  .page :global(.wb-how-copy)>p { font-size: 16px; }
+  .page :global(.pp-caps) { gap: 20px; }
+}

@@ -47,22 +47,27 @@
           "style": "links",
           "items": [
             {
-              "label": "Website chatbot",
+              "label": "Website agent",
               "href": "/channels/website-ai-agent/",
               "body": ""
             },
             {
-              "label": "WhatsApp chatbot",
+              "label": "WhatsApp agent",
               "href": "/channels/whatsapp-ai-agent/",
               "body": ""
             },
             {
-              "label": "Instagram chatbot",
+              "label": "Calling agent",
+              "href": "/channels/ai-calling-agent/",
+              "body": ""
+            },
+            {
+              "label": "Instagram agent",
               "href": "/channels/instagram-ai-agent/",
               "body": ""
             },
             {
-              "label": "Messenger chatbot",
+              "label": "Messenger agent",
               "href": "/channels/messenger-ai-agent/",
               "body": ""
             }
@@ -96,6 +101,11 @@
               "label": "AI booking agent",
               "href": "/use-cases/ai-booking-agent/",
               "body": "Book appointments and demos"
+            },
+            {
+              "label": "AI receptionist",
+              "href": "/use-cases/ai-receptionist/",
+              "body": "Handle incoming front-desk calls"
             }
           ]
         },
@@ -165,7 +175,7 @@
               "body": "Steps AI and the alternatives"
             },
             {
-              "label": "Customer stories",
+              "label": "Case study",
               "href": "/case-studies/",
               "body": "How businesses use Steps AI"
             }

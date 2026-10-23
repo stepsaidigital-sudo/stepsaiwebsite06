@@ -1,0 +1,13 @@
+.network { position: relative; margin-top: 36px; border-radius: 28px; background: #fcfcfc; }
+.desktop,.mobile { display: block; width: 100%; height: auto; overflow: visible; }
+.mobile { display: none; }
+.label { fill: #0C3474; font-family: inherit; font-size: 21px; font-weight: 600; }
+.control { display: flex; align-items: center; gap: 6px; margin: 0 12px 0 auto; padding: 8px 12px; background: #fff; border: 1px solid #dce7f3; border-radius: 20px; color: #0C3474; font: inherit; font-size: 12px; min-height: 44px; cursor: pointer; }
+.control:focus-visible { outline: 2px solid #0C3474; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .desktop { display: none; }
+  .mobile { display: block; }
+  .network { margin-top: 16px; background: transparent; border-radius: 0; }
+  .label { font-size: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .particle,.control { display: none; } }

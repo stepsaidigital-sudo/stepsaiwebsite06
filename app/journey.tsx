@@ -1,13 +1,13 @@
 'use client';
 import {Fragment,useEffect,useRef,type ReactNode} from 'react';
-import {ArrowRight,ArrowUpRight,Check,CheckCheck,ChevronLeft,ShoppingCart,MoreHorizontal,X,Mic,Send,Phone,Video,Camera,Image as ImageIcon,Smile,Plus,GraduationCap,MicOff,Grid3x3,Volume2,PhoneOff,UserRound,FileText,Signal,Wifi,Battery} from 'lucide-react';
+import {ArrowRight,ArrowUpRight,Check,CheckCheck,ChevronLeft,ShoppingCart,MoreHorizontal,X,Mic,Send,Phone,Video,Camera,Image as ImageIcon,Smile,Plus,GraduationCap,MicOff,Grid3x3,Volume2,PhoneOff,FileText,Signal,Wifi,Battery} from 'lucide-react';
 import copy from './copy.json';
 
 import { asset } from '@/lib/asset';
 const stages=copy.journey.stages;
 const products=[{name:'Silver Floral Set',price:'₹2,790',was:'₹4,649',image:'silver-floral',description:'Silver-tone floral necklace and matching earrings.'},{name:'Pink Statement Set',price:'₹3,479',was:'₹5,799',image:'pink-statement',description:'Pink gemstones with a delicate silver-tone finish.'}];
 function ShoppingMock(){
- return <div className="jv-shop"><header className="jv-shop-head"><ChevronLeft size={17}/><span className="jv-avatar"><UserRound size={21}/><i/></span><div><strong>Shopper</strong><small>Active</small></div><span className="jv-cart" aria-hidden="true"><ShoppingCart size={20}/></span><MoreHorizontal size={19}/><X size={18}/></header>
+ return <div className="jv-shop"><header className="jv-shop-head"><ChevronLeft size={17}/><span className="jv-avatar"><img src={asset("/images/features/avatars/cat.webp")} alt="" width="31" height="31"/><i/></span><div><strong>Shopper</strong><small>Active</small></div><span className="jv-cart" aria-hidden="true"><ShoppingCart size={20}/></span><MoreHorizontal size={19}/><X size={18}/></header>
  <div className="jv-shop-body"><p className="jv-shop-question">Suggest jewellery for a wedding.</p><p className="jv-shop-answer">These two sets fit your budget.</p><span className="jv-showing">Showing 2 products</span><div className="jv-products">{products.map(p=><div className="jv-product" key={p.name}><img src={asset(`/images/journey/${p.image}.webp`)} width="110" height="110" alt={p.name} loading="lazy"/><div><strong>{p.name}<ArrowUpRight size={12}/></strong><div className="jv-price"><b>{p.price}</b><s>{p.was}</s><em>40% off</em></div><p>{p.description}</p><span className="jv-add" aria-hidden="true"><Plus size={14}/> Add to cart</span></div></div>)}</div></div>
  <footer className="jv-shop-footer"><div><span>Hop in! I’ll help you</span><Mic size={15}/><Send size={16}/></div><small>Powered by <b>STEPS AI</b></small></footer></div>;
 }

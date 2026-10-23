@@ -22,14 +22,15 @@ const tiles: Record<string, [ReactNode, string]> = {
   'AI lead capture agent': [<UserPlus key="i" size={19} />, 'lilac'],
   'AI booking agent': [<CalendarCheck key="i" size={19} />, 'yellow'],
   'AI marketing agent': [<Megaphone key="i" size={19} />, 'peach'],
+  'AI calling agent': [<PhoneCall key="i" size={19} />, 'blue'],
   'AI receptionist': [<PhoneCall key="i" size={19} />, 'mint'],
   Blog: [<FileText key="i" size={19} />, 'blue'],
-  'Customer stories': [<Star key="i" size={19} />, 'yellow'],
+  'Case study': [<Star key="i" size={19} />, 'yellow'],
   Compare: [<Scale key="i" size={19} />, 'lilac'],
   'Help centre': [<LifeBuoy key="i" size={19} />, 'mint'],
   'Developer docs': [<Code2 key="i" size={19} />, 'peach'],
 };
-const channelOf: Record<string, string> = { 'Website chatbot': 'Website', 'WhatsApp chatbot': 'WhatsApp', 'Instagram chatbot': 'Instagram', 'Messenger chatbot': 'Messenger', 'Chat page': 'Website' };
+const channelOf: Record<string, string> = { 'Website agent': 'Website', 'WhatsApp agent': 'WhatsApp', 'Instagram agent': 'Instagram', 'Messenger agent': 'Messenger', 'Chat page': 'Website' };
 
 const live = new Set(Object.values(builtRoutes));
 
@@ -38,7 +39,7 @@ function Entry({ item, tile, onOpen, done }: { item: NavItem; tile: boolean; onO
   const [icon, tint] = tiles[item.label] ?? [<BookOpen key="i" size={19} />, 'blue'];
   const inner = tile
     ? <><span className={`mm-tile mm-${tint}`}>{icon}</span><span className="mm-text"><strong>{item.label}</strong>{item.body && <small>{item.body}</small>}</span></>
-    : <>{channelOf[item.label] && <ChannelLogo channel={channelOf[item.label]} />}<span>{item.label}</span>{live.has(item.href) && <ArrowUpRight size={14} className="mm-live" />}</>;
+    : <>{item.label === 'Calling agent' ? <PhoneCall size={19} aria-hidden="true" /> : channelOf[item.label] && <ChannelLogo channel={channelOf[item.label]} />}<span>{item.label}</span>{live.has(item.href) && <ArrowUpRight size={14} className="mm-live" />}</>;
   const cls = tile ? 'mm-entry mm-tile-entry' : 'mm-entry mm-link-entry';
   return live.has(item.href)
     ? <a className={cls} href={item.href} onClick={done}>{inner}</a>

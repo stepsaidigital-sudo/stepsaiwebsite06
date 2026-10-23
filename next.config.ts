@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 // Old stepsai.co URLs that move or go away at launch (SEO URL map, "301 redirects" tab).
 // Each goes straight to its final URL in one hop, with and without the trailing slash.
 const moved: [from: string, to: string][] = [
+  ["/use-cases/ai-calling-agent", "/channels/ai-calling-agent/"],
   ["/why-stepsai/security", "/security/"],
   ["/product/analytics-insights", "/features/analytics/"],
   ["/channels/website", "/channels/website-ai-agent/"],

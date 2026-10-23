@@ -5,30 +5,28 @@ import {ChannelLogo} from './channel-chat';
 import copy from './copy.json';
 
 import { asset } from '@/lib/asset';
+import { AnalyticsMock } from '@/components/premium/analytics-mock';
 // "See the conversations, customers and results in one place": the same pattern as the hero. Tabs pick one of the
 // four team.items. Each one plays a platform-accurate customer chat (messages arrive one by one, with typing dots),
 // and a floating Steps AI card shows what your team sees on its side. Sample business and data throughout.
 type Msg={from:'customer'|'agent'|'human'|'event';text:ReactNode};
-type Story={label:string;Icon:LucideIcon;channel:'WhatsApp'|'Website'|'Instagram';href:string;contact:string;handle:string;messages:Msg[];card:ReactNode};
+type Story={label:string;cta:string;Icon:LucideIcon;channel:'WhatsApp'|'Website'|'Instagram';href:string;contact:string;handle:string;messages:Msg[];card:ReactNode};
 
 const stories:Story[]=[
- {label:'Inbox',Icon:Inbox,channel:'WhatsApp',href:'/features/unified-inbox/',contact:'',handle:'',messages:[],card:null},
- {label:'Customer details',Icon:UserRound,channel:'Website',href:'/features/crm/',contact:'Steps AI',handle:'Typically replies instantly',
+ {label:'Inbox',cta:'Manage conversations',Icon:Inbox,channel:'WhatsApp',href:'/features/unified-inbox/',contact:'',handle:'',messages:[],card:null},
+ {label:'Customer details',cta:'See how it works',Icon:UserRound,channel:'Website',href:'/features/crm/',contact:'Steps AI',handle:'Typically replies instantly',
   messages:[{from:'customer',text:'Can I book a store visit on Friday?'},{from:'agent',text:'Of course. Could I have your name and email to confirm the visit?'},{from:'customer',text:'Aisha Khan, aisha@example.com'},{from:'agent',text:'Thanks, Aisha. Friday is noted, and the team will confirm your time by email.'}],
   card:<><header className="tv-card-head"><UserRound size={16}/><strong>Contact saved</strong><span className="tv-pill tv-pill-ok"><Check size={12}/>CRM</span></header>
    <div className="tv-profile"><span className="tv-avatar tv-avatar-2">A</span><div><strong>Aisha Khan</strong><small><ChannelLogo channel="Website"/>From website chat</small></div></div>
    <dl className="tv-fields"><div><dt><Mail size={13}/>Email</dt><dd>aisha@example.com</dd></div><div><dt><CalendarDays size={13}/>Preferred day</dt><dd>Friday</dd></div><div><dt><Info size={13}/>Request</dt><dd>Store visit</dd></div></dl>
    <div className="tv-tags"><span><Tag size={12}/>Booking enquiry</span><span><Tag size={12}/>Follow up this week</span></div></>},
- {label:'Human help',Icon:Headphones,channel:'Instagram',href:'/features/unified-inbox/',contact:'yourstore',handle:'Your Store',
+ {label:'Human help',cta:'Human handoff',Icon:Headphones,channel:'Instagram',href:'/features/human-handoff/',contact:'yourstore',handle:'Your Store',
   messages:[{from:'customer',text:'Is this jacket available in blue?'},{from:'agent',text:'Yes, the blue jacket is in stock in M and L.'},{from:'customer',text:'Can I change the size after it arrives?'},{from:'event',text:'Priya joined from the Instagram app'},{from:'human',text:'Hi James, Priya here. Yes, we can help you exchange the size.'}],
   card:<><header className="tv-card-head"><Headphones size={16}/><strong>Team handover</strong><span className="tv-pill tv-pill-warm">Priya</span></header>
    <ol className="tv-steps"><li><Check size={13}/>Priya read the full chat first</li><li><Check size={13}/>Replied from the Instagram app</li><li className="is-paused"><PauseCircle size={13}/>AI paused in this chat</li></ol>
    <div className="tv-toggle"><span>AI agent</span><i aria-hidden="true"><b/></i><small>Paused</small></div></>},
- {label:'Results',Icon:ChartNoAxesCombined,channel:'WhatsApp',href:'/features/analytics/',contact:'Your Store',handle:'Business account',
-  messages:[{from:'agent',text:<><span className="tv-template"><b>Weekend sale</b>The Sol collection is 20% off until Sunday.<span className="tv-template-btn"><ShoppingBag size={13}/>Shop the sale</span></span></>},{from:'customer',text:'Is the Sol vase included?'},{from:'agent',text:'Yes, it is. Here’s your link to order it.'},{from:'event',text:'Order placed · ₹1,890'}],
-  card:<><header className="tv-card-head"><ChartNoAxesCombined size={16}/><strong>Results</strong><span className="tv-pill">Example data</span></header>
-   <div className="tv-metrics"><div><small><ChannelLogo channel="WhatsApp"/>Orders from chats</small><strong>48</strong></div><div><small><ShoppingBag size={13}/>Campaign revenue</small><strong>₹86,400</strong></div></div>
-   <div className="tv-bars"><small>What customers ask</small>{[['Order status',100],['Delivery',64],['Returns',38]].map(([l,w])=><div key={l}><span>{l}</span><i><em style={{width:`${w}%`}}/></i></div>)}</div></>}
+ {label:'Results',cta:'Track results',Icon:ChartNoAxesCombined,channel:'WhatsApp',href:'/features/analytics/',contact:'Your Store',handle:'Business account',
+  messages:[],card:null}
 ];
 const TOTAL=9000;
 
@@ -79,8 +77,8 @@ export function TeamStory(){
   <header className="tv-heading"><h2 id="workspace-title">{copy.team.title}</h2><p>{copy.team.paragraphs[0]}</p></header>
   <div className="tv-tabs" role="tablist" aria-label="What your team can see">{stories.map((s,i)=><button key={s.label} role="tab" id={`tv-tab-${i}`} aria-selected={active===i} aria-controls="tv-panel" onClick={()=>pick(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:-1)+stories.length)%stories.length;pick(n);(e.currentTarget.parentElement?.children[n] as HTMLElement|undefined)?.focus()}}}><s.Icon size={19}/><span>{s.label}</span>{active===i&&auto&&!reduced&&<i className="tv-progress" style={{transform:`scaleX(${Math.min(1,shownTime/(TOTAL+1800))})`}}/>}</button>)}</div>
   <div className="tv-panel" id="tv-panel" role="tabpanel" aria-labelledby={`tv-tab-${active}`} key={active}>
-   <div className="tv-copy"><span className="tv-kicker"><b>0{active+1}</b>{story.label}</span><h3>{item.title}</h3><p>{item.paragraphs[0]}</p><a href={story.href} className="tv-link">See how it works <ArrowRight size={16}/></a></div>
-   <div className={`tv-stage${active===0?' is-inbox':''}`}>{active===0?<UnifiedInbox/>:<><Chat story={story} time={shownTime}/><div className={`tv-card${shownTime>=TOTAL*.55?' is-in':''}`}><div className="tv-card-brand"><span>s</span>Steps AI · your team’s view</div>{story.card}</div></>}</div>
+   <div className="tv-copy"><span className="tv-kicker"><b>0{active+1}</b>{story.label}</span><h3>{item.title}</h3><p>{item.paragraphs[0]}</p><a href={story.href} className="tv-link">{story.cta} <ArrowRight size={16}/></a></div>
+   <div className={`tv-stage${active===0?' is-inbox':active===3?' is-results':''}`}>{active===0?<UnifiedInbox/>:active===3?<AnalyticsMock compact/>:<><Chat story={story} time={shownTime}/><div className={`tv-card${shownTime>=TOTAL*.55?' is-in':''}`}><div className="tv-card-brand"><span>s</span>Steps AI · your team’s view</div>{story.card}</div></>}</div>
   </div>
  </div></section>;
 }

@@ -6,7 +6,7 @@ import { CtaBand, Faq, Reveal, SectionIntro } from '@/components/sections';
 import type { IntegrationsHub } from '@/content/types';
 import { AppLogo } from './integration';
 import { LogoStack, TrackingStrip } from './integrations-hub-visuals';
-import { asset } from '@/lib/asset';
+import { IntegrationNetwork } from '@/components/premium/integration-network';
 
 const CONNECT = [
   { icon: <LayoutGrid size={20} />, title: 'Open Apps', note: 'Resources, then Apps' },
@@ -25,7 +25,7 @@ export function IntegrationsHubTemplate({ page }: { page: IntegrationsHub }) {
         <p>{page.hero.body}</p>
         <div className="igh-actions"><Action onOpen={onOpen} /><a className="igh-ghost" href="#directory">Browse apps <ArrowRight size={16} /></a></div>
       </div>
-      <div className="container"><img src={asset('/images/integrations/pastel-blue-integration-network.webp')} width={1600} height={640} alt="Steps AI connects WhatsApp, Instagram, Facebook and websites with Shopify, Google Calendar, HubSpot, Shiprocket and Notion." style={{ display: 'block', width: '100%', height: 'auto', marginTop: 36 }} /></div>
+      <div className="container"><IntegrationNetwork /></div>
     </section>
 
     <section className="sp-section container" id="directory">
