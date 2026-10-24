@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
 import { DEMO_URL } from '@/components/site/routes';
 import { asset } from '@/lib/asset';
@@ -54,11 +54,15 @@ export function MetaPartnerPage() {
     <section className={styles.hero}>
       <div className={styles.backdrop} aria-hidden="true"/>
       <div className={styles.wrap}><div className={styles.heroGrid}>
-        <div className={styles.intro}><div className={styles.partnership}><img src={asset('/brands/meta.svg')} alt="Meta" width={38} height={26}/><span>Meta Business Partner</span></div><h1>AI agents for<br/><span>WhatsApp, Instagram and Messenger.</span></h1><p>Send WhatsApp broadcasts and answer customer questions across all three channels.</p><div className={styles.actions}><Link className={styles.primary} href={DEMO_URL}>Request a demo <ArrowRight size={17}/></Link></div></div>
+        <div className={styles.intro}><div className={styles.partnership}><img src={asset('/brands/meta.svg')} alt="Meta" width={38} height={26}/><span>Meta Business Partner</span></div><h1>AI agents for<span>WhatsApp, Instagram</span><span>and Messenger.</span></h1><p>Send WhatsApp broadcasts and answer customer questions across all three channels.</p><div className={styles.actions}><Link className={styles.primary} href={DEMO_URL}>Request a demo <ArrowRight size={17}/></Link></div><div className={styles.assurances}><span><CheckCircle2 size={15}/>No code setup</span><span><CheckCircle2 size={15}/>Your business knowledge</span></div></div>
         <div ref={previewRef} className={styles.heroVisual} onPointerEnter={event => { if (event.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)} onPointerDown={event => { if (event.pointerType !== 'mouse') setStopped(true); }} onFocusCapture={event => { if (event.target.matches(':focus-visible')) setStopped(true); }}>
 
           <div className={styles.channelSwitch} role="group" aria-label="Preview a channel">{channels.map((channel, i) => <button key={channel.name} type="button" aria-pressed={selected === i} onPointerEnter={event => { if (event.pointerType === 'mouse') setSelected(i); }} onClick={() => setSelected(i)} onKeyDown={() => setStopped(true)}><img src={asset('/brands/' + channel.icon)} alt="" width={24} height={24}/>{channel.name}</button>)}</div>
-          <div className={styles.heroChat} key={selected}><ChannelPreview channel={channels[selected]}/></div>
+          <div className={styles.phoneScene}>
+            <div className={styles.orbit} aria-hidden="true"/>
+            {channels.map((channel, index) => <div className={styles.floatingIcon} data-position={index} key={channel.name} aria-hidden="true"><img src={asset('/brands/' + channel.icon)} alt="" width={38} height={38}/></div>)}
+            <div className={styles.phone}><div className={styles.phoneTop} aria-hidden="true"><span>9:41</span><i/><span>•••</span></div><div className={styles.heroChat} key={selected}><ChannelPreview channel={channels[selected]} compact/></div><div className={styles.homeBar} aria-hidden="true"/></div>
+          </div>
         </div>
       </div></div>
     </section>
