@@ -1,0 +1,55 @@
+.details{background:#fff;color:#0c3474}
+.section{padding:88px 32px}
+.split{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:72px}
+.eyebrow{display:block;color:#41658d;font-size:11px;font-weight:700;letter-spacing:.12em;margin-bottom:18px}
+.copy h2,.preferenceHeading h2{font-family:Newsreader,Georgia,serif;font-size:clamp(32px,3.2vw,45px);line-height:1.12;font-weight:500;letter-spacing:-.03em;margin:0 0 20px;color:#0c3474;text-wrap:balance}
+.copy>p,.preferenceHeading>p{font-size:16px;line-height:1.7;color:#506984;margin:0 0 28px}
+.outcomes{list-style:none;padding:0;margin:0;display:grid;gap:22px}
+.outcomes li{display:flex;gap:13px;align-items:flex-start}.outcomes svg{margin-top:3px;color:#2861b4}
+.details h3{font-size:16px;font-weight:650;line-height:1.4;letter-spacing:-.015em;color:#123c70;margin:0 0 6px}
+.outcomes p,.steps p,.preferenceRows p{font-size:14px;line-height:1.7;color:#506984;margin:0}
+.visual{margin:0;overflow:hidden;border-radius:24px;background:#edf4fb;border:1px solid #e0eaf3}
+.visual img{display:block;width:100%;height:370px;object-fit:cover}
+.visual figcaption{display:flex;align-items:center;gap:12px;padding:21px 24px;font-size:13px;line-height:1.6;color:#426181;background:#f2f7fc}.visual strong{color:#123c70;font-weight:600}
+.onboarding{background:#f3f7fb;border-block:1px solid #e7eef5}
+.steps{list-style:none;padding:0;margin:0}.steps li{display:flex;gap:18px;padding:19px 0;border-top:1px solid #dce6f0}.steps li>span{font-size:12px;font-weight:650;color:#2861b4;padding-top:4px}
+.preferences{background:#fff;padding-block:76px}
+.preferenceInner{max-width:1120px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:96px;align-items:center}
+.preferenceHeading a{display:inline-flex;gap:10px;align-items:center;color:#0c3474;font-size:15px;font-weight:650;padding:8px 0;border-bottom:1px solid #adc5df;text-decoration:none}.preferenceHeading a:focus-visible{outline:3px solid #2861b4;outline-offset:5px}
+.preferenceRows article{display:flex;gap:20px;padding:26px 0}.preferenceRows article+article{border-top:1px solid #e0e9f2}
+.icon{width:48px;height:48px;display:grid;place-items:center;flex-shrink:0;background:#edf5fe;border:1px solid #dce9f8;border-radius:14px;color:#2861b4}
+.languageTags{display:flex;gap:8px;margin-top:14px}.languageTags span{padding:5px 12px;border:1px solid #d8e5f2;border-radius:6px;font-size:12px;color:#204b7c;background:#f6f9fd}
+@media(max-width:1000px){.split{gap:36px}.preferenceInner{gap:48px}.visual img{height:340px}}
+@media(max-width:760px){.section{padding:48px 20px}.split,.preferenceInner{grid-template-columns:minmax(0,1fr);gap:28px}.copy h2,.preferenceHeading h2{font-size:34px}.copy>p,.preferenceHeading>p{font-size:15px;margin-bottom:24px}.visual img{height:auto;aspect-ratio:3/2}.visual figcaption{padding:16px 18px;font-size:12px}.reverse .copy{order:-1}.outcomes{gap:20px}.preferenceRows article{gap:14px;padding:22px 0}.preferences{padding-block:44px}.preferenceHeading>p{margin-bottom:16px}.icon{width:42px;height:42px}.eyebrow{font-size:10px;margin-bottom:14px}.steps li{padding:17px 0}}
+@media(max-width:350px){.section{padding-inline:16px}.copy h2,.preferenceHeading h2{font-size:30px}}
+/* Shorter editorial sections with consistent image proportions. */
+.section{padding-block:68px}
+.split{gap:64px}
+.copy{max-width:490px}
+.copy h2,.preferenceHeading h2{margin-bottom:16px;font-size:clamp(32px,3vw,42px)}
+.copy>p,.preferenceHeading>p{margin-bottom:24px;line-height:1.6}
+.visual{border-radius:20px;box-shadow:0 16px 36px -26px #173d6c55}
+.visual img{height:auto;aspect-ratio:4/3;object-fit:cover}
+.visual figcaption{padding:17px 20px}
+.outcomes{gap:18px}.steps li{padding:16px 0}
+.preferenceInner{gap:72px}.preferenceRows article{padding:22px 0}.languageTags{flex-wrap:wrap}
+@media(max-width:1000px){.split{gap:36px}.preferenceInner{gap:40px}}
+@media(max-width:760px){.section{padding-block:42px}.split,.preferenceInner{gap:24px}.copy{max-width:none}.copy h2,.preferenceHeading h2{font-size:32px}.visual img{aspect-ratio:3/2}.visual figcaption{padding:14px 16px}.outcomes{gap:16px}.copy>p{margin-bottom:22px}.preferenceRows article{padding:18px 0}}
+/* Closing CTA: a distinct destination, with calm glass detail over the landscape. */
+.preferences{background:#f5f8fc;padding-block:64px}
+.preferenceInner{padding:48px;border:1px solid #c9dcec;border-radius:28px;gap:48px;background:linear-gradient(100deg,rgba(8,35,66,.86),rgba(26,67,99,.45)),url('/images/demo-mountains-v1.webp') center/cover;box-shadow:0 22px 50px -34px #0c347466}
+.preferenceHeading .eyebrow{color:#d4e8fc}
+.preferenceHeading h2{color:#fff;font-size:44px}
+.preferenceHeading>p{color:#e1edf9;font-size:15px}
+.preferenceHeading a{background:#f8b403;border:1px solid #f8b403;border-radius:10px;min-height:48px;padding:12px 20px;box-shadow:0 8px 20px #041d3426;color:#0c3474;transition:background .16s ease,box-shadow .16s ease}
+.preferenceHeading a:hover{background:#ffca30;box-shadow:0 10px 24px #041d3440}
+.preferenceHeading a:focus-visible{outline-color:#fff}
+.preferenceRows{padding:4px 24px;background:linear-gradient(140deg,rgba(255,255,255,.95),rgba(231,242,251,.86));border:1px solid #ffffffb3;border-radius:20px;box-shadow:inset 0 1px 0 #fff,0 12px 32px #08294626;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.preferenceRows article{gap:14px;padding:24px 0}.preferenceRows article+article{border-color:#bfcedf}
+.preferenceRows .icon{background:#ffffffbd;border-color:#d2e1ef}
+.preferenceRows .languageTags span{background:#ffffffb8;border-color:#bdcfe1}
+@media(max-width:1000px){.preferenceInner{padding:32px;gap:28px;grid-template-columns:1fr 1.15fr}.preferenceHeading h2{font-size:38px}.preferenceRows{padding-inline:20px}}
+@media(max-width:760px){.preferences{padding:32px 16px}.preferenceInner{grid-template-columns:minmax(0,1fr);padding:26px 20px;gap:26px;border-radius:22px;background-position:58% center}.preferenceHeading h2{font-size:34px}.preferenceHeading a{display:flex;justify-content:center;width:100%;margin-top:22px}.preferenceRows{padding:0 16px;border-radius:16px}.preferenceRows article{padding:20px 0;gap:12px}.preferenceRows .icon{width:36px;height:36px}.preferenceRows p{font-size:13px}.preferenceRows h3{font-size:15px}.preferenceHeading>p{font-size:14px}.languageTags{gap:6px}.languageTags span{padding:4px 8px}}
+@media(max-width:350px){.preferences{padding-inline:12px}.preferenceInner{padding:24px 16px}.preferenceRows article{display:block}.preferenceRows .icon{margin-bottom:12px}}
+@media(prefers-reduced-transparency:reduce){.preferenceRows{background:#f0f6fc;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.preferenceHeading a{transition:none}}
