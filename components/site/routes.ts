@@ -6,6 +6,8 @@ export const CALENDLY_URL = 'https://calendly.com/reshmanth-stepsai/demo';
 
 export const builtRoutes: Record<string, string> = {
   'Book a demo': DEMO_URL,
+  'Request a demo': DEMO_URL,
+  'Request your demo': DEMO_URL,
   'Book a call': DEMO_URL,
   'Talk to sales': DEMO_URL,
   'Start now': 'https://app.stepsai.co/signup',
