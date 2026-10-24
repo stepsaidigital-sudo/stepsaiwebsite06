@@ -54,3 +54,7 @@ The mobile page title is visually hidden (retained for screen readers); the form
 ## Final build result
 
 TypeScript (`npx tsc --noEmit`) passed. `git diff --check` passed. The default Turbopack build stalled during compilation and was stopped. Webpack production build (`npm run build -- --webpack`, retried outside the sandbox) failed in the Sanity dependency chain: @mux/playback-core could not resolve hls.js; Sanity modules could not import AnimatePresence from motion/react. These errors are outside the demo source files. No dependency changes were made. Resolve these in the deployment repository before release; a successful production build or live deployment is NOT claimed.
+
+## Remote conflict discovered at push
+
+Remote main advanced to 3ffa6b1 during this work. Its commit 4636995 replaces the demo form with an inline Calendly scheduler, which conflicts with the owner-approved request-first flow in this handoff. To avoid overwriting concurrent/live work, this demo patch is published on codex/demo-request-ui rather than force-pushing or replacing remote main. The developer should compare that branch with current main, explicitly choose the request-first flow if approved for the deployment repo, and preserve the newer unrelated favicon, image optimization and Instagram changes. This branch is a handoff implementation, not a claim that live main has been updated.
