@@ -7,3 +7,32 @@
 @media(max-width:1100px){.chatHeader{padding:13px;gap:8px}.headerIcons{gap:12px}.thread{padding-inline:15px}.bubble{max-width:88%}}
 @media(max-width:760px){.preview{border-radius:16px}.chatHeader{min-height:62px;padding:11px 13px}.avatar{width:32px;height:32px;font-size:20px}.identity strong{font-size:14px}.identity span{font-size:10px}.headerIcons{gap:13px}.headerIcons svg{width:18px}.chatHeader>svg{width:18px}.thread{padding:12px 13px 14px;gap:9px;min-height:270px}.bubble{font-size:13px;line-height:1.4;padding:9px 11px;max-width:85%}.composer{gap:10px;padding:9px 12px;min-height:55px}.input{gap:11px;min-height:36px}.caption{font-size:9px;padding:7px}.date{font-size:9px;margin-bottom:3px}}
 @media(max-width:380px){.headerIcons{gap:9px}.identity strong{font-size:13px}.identity span{font-size:9px}.thread{padding-inline:11px;min-height:300px}.bubble{max-width:90%}.chatHeader{gap:7px}.composer{gap:8px}.input{gap:9px}}
+
+.compact.preview{border:0;border-radius:0;box-shadow:none}.compact .chatHeader{min-height:54px;padding:8px;gap:5px}.compact .avatar{width:25px;height:25px;font-size:16px}.compact .identity strong{font-size:11px}.compact .identity span{font-size:9px}.compact .headerIcons{gap:7px}.compact .headerIcons svg{width:14px}.compact .chatHeader>svg{width:15px}.compact .thread{min-height:300px;padding:13px 9px;gap:12px}.compact .bubble{font-size:11px;line-height:1.45;padding:9px;max-width:94%}.compact .bubble small{font-size:8px}.compact .date{font-size:8px}.compact .composer{padding:8px;min-height:43px;gap:6px}.compact .composer>svg{width:15px}.compact .input{min-height:30px;padding:5px 7px;gap:6px}.compact .input>span:not(.camera){font-size:10px}.compact .input svg{width:14px}.compact .camera{width:22px;height:22px;margin-left:-2px}
+
+@media all{
+ .compact.preview{display:flex;flex-direction:column;width:100%;min-height:0}
+ .compact .chatHeader,.compact .composer{flex-shrink:0}
+ .compact .thread{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;gap:10px;padding:12px 9px}
+ .compact .bubble{flex-shrink:0;font-size:11px;line-height:1.45;padding:8px 9px}
+ .compact .date{flex-shrink:0}
+}
+@media(min-width:901px){.compact .bubble{font-size:12px}.compact .identity strong{font-size:12px}}
+
+/* Readable, intrinsic showcase variant; the hero's compact variant is separate. */
+.showcase.preview{display:flex;flex-direction:column;border-radius:15px;border-color:#e1e6eb}
+.showcase .chatHeader{min-height:61px;padding:11px 12px;gap:7px}
+.showcase .avatar{width:29px;height:29px;font-size:18px}
+.showcase .identity strong{font-size:13px}.showcase .identity span{font-size:10px}
+.showcase .chatHeader>svg{width:17px}.showcase .headerIcons{gap:9px}.showcase .headerIcons svg{width:17px}
+.showcase .thread{flex:1;min-height:292px;padding:14px 11px;gap:10px}
+.showcase .bubble{max-width:92%;font-size:13px;line-height:1.45;padding:9px 11px;overflow-wrap:anywhere}
+.showcase .bubble small{font-size:9px;color:#64706e}
+.showcase .bubble[data-sender=customer] small{color:#ffffffe0}
+.showcase[data-app=WhatsApp] .bubble[data-sender=customer] small{color:#587261}
+.showcase .date{font-size:9px;margin-bottom:2px}
+.showcase .composer{padding:9px 10px;gap:8px;min-height:51px}
+.showcase .composer>svg{width:18px}.showcase .input{min-height:32px;padding:5px 9px;gap:9px}
+.showcase .input>span:not(.camera){font-size:12px}.showcase .input svg{width:17px}.showcase .camera{width:24px;height:24px;margin-left:-4px}
+@media(min-width:1024px) and (max-width:1150px){.showcase .headerIcons{gap:6px}.showcase .headerIcons svg{width:14px}.showcase .avatar{width:25px;height:25px}.showcase .identity strong{font-size:12px}.showcase .chatHeader{padding-inline:9px}.showcase .thread{padding-inline:9px}.showcase .bubble{padding:8px 9px}}
+@media(max-width:380px){.showcase .headerIcons{gap:6px}.showcase .headerIcons svg{width:14px}.showcase .chatHeader{padding-inline:8px}.showcase .thread{padding-inline:9px}.showcase .bubble{font-size:12px;padding:9px}.showcase .input{gap:7px}}
