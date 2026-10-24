@@ -39,6 +39,7 @@ export const builtRoutes: Record<string, string> = {
   'Case study': '/case-studies/',
   'Case studies': '/case-studies/',
   'Partner with us': '/partners/',
+  'Meta partnership': '/partners/meta/',
   'Partner program': '/partners/',
   'Partners': '/partners/',
   'Become an affiliate': '/affiliate-program/',
