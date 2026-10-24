@@ -11,7 +11,7 @@ const site = 'https://stepsai.co';
 const pages = [
   '/channels/ai-calling-agent/',
   '/', '/pricing/', '/book-a-demo/', '/about/', '/careers/', '/team/', '/note/', '/contact/', '/security/',
-  '/partners/', '/affiliate-program/', '/hire-an-agency/', '/privacy-policy/', '/terms-of-service/',
+  '/partners/', '/partners/meta/', '/affiliate-program/', '/hire-an-agency/', '/privacy-policy/', '/terms-of-service/',
   '/features/', '/channels/', '/solutions/', '/case-studies/', '/compare/', '/integrations/', '/help/', '/help/faqs/', '/blog/',
 ];
 
