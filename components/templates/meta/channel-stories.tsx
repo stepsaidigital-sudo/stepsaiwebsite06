@@ -6,6 +6,7 @@ import { asset } from '@/lib/asset';
 import { metaChannels } from './channel-content';
 import type { ChatMessage } from './channel-content';
 import { ChannelPreview } from './channel-preview';
+import { WhatsAppExamples } from './whatsapp-examples';
 import styles from './channel-stories.module.css';
 
 const scenes = ['whatsapp', 'instagram', 'messenger'];
@@ -48,7 +49,7 @@ export function ChannelStories() {
         <div className={styles.visual} data-showcase data-channel={channel.name}>
           <img className={styles.photo} src={asset('/images/meta-' + scenes[index] + '-story-v12.webp')} alt="" width={1200} height={900} loading="lazy"/>
           <div className={styles.platform}><img src={asset('/brands/' + channel.icon)} alt="" width={22} height={22}/><span>{channel.name === 'Instagram' ? 'Instagram DMs' : channel.name === 'WhatsApp' ? 'WhatsApp Business' : 'Facebook Messenger'}</span></div>
-          <ChannelPreview channel={{...channel, messages: conversations[index]}} showcase/>
+          {index === 0 ? <WhatsAppExamples/> : <ChannelPreview channel={{...channel, messages: conversations[index]}} showcase/>}
         </div>
       </article>)}</div>
     </div>

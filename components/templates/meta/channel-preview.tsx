@@ -1,9 +1,10 @@
 import { ArrowLeft, Phone, Video, MoreVertical, Smile, Plus, Mic, Camera, Image as ImageIcon, Heart, ThumbsUp, CheckCheck } from 'lucide-react';
 import { MetaChannel } from './channel-content';
 import styles from './channel-preview.module.css';
+import type { ReactNode } from 'react';
 
 /** Illustrative customer-side chat. Decorative app controls are not interactive. */
-export function ChannelPreview({ channel, compact = false, showcase = false }: { channel: MetaChannel; compact?: boolean; showcase?: boolean }) {
+export function ChannelPreview({ channel, compact = false, showcase = false, children }: { channel: MetaChannel; compact?: boolean; showcase?: boolean; children?: ReactNode }) {
   const whatsapp = channel.name === 'WhatsApp';
   const instagram = channel.name === 'Instagram';
   return <figure className={`${styles.preview} ${compact ? styles.compact : ''} ${showcase ? styles.showcase : ''}`} data-app={channel.name} aria-label={`${channel.name} example conversation`}>
@@ -19,6 +20,7 @@ export function ChannelPreview({ channel, compact = false, showcase = false }: {
         <span>{message.text}</span>
         {(whatsapp || showcase) && <small>{message.time}{whatsapp && message.sender === 'customer' && <CheckCheck size={14}/>}</small>}
       </div>)}
+      {children}
 
     </div>
     <div className={styles.composer} aria-hidden="true">
