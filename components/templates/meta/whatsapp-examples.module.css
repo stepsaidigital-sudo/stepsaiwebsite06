@@ -1,0 +1,23 @@
+.examples{display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+.switcher{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;border:1px solid #d2e5d8;border-radius:11px;background:#f8fcf9e8}
+.switcher button{min-height:38px;padding:7px 3px;border-radius:7px;font-size:11px;font-weight:600;color:#3e5e4d;cursor:pointer}
+.switcher button[aria-pressed=true]{background:#176b4b;color:#fff;box-shadow:0 2px 5px #143e2420}
+.switcher button:focus-visible{outline:3px solid #2861b4;outline-offset:3px}
+.panel{display:flex;min-height:520px;flex:1;min-width:0}
+.panel>figure{flex:1;width:100%;box-shadow:0 12px 24px -16px #1b3d6440}
+.template{background:white;border-radius:10px;overflow:hidden;border:1px solid #e3e3df;box-shadow:0 1px 1px #00000012;width:100%;max-width:100%;align-self:flex-start}
+.template .campaign,.template .productPhoto{display:block;width:100%;height:112px;object-fit:cover;object-position:center}
+.template .productPhoto{height:95px;object-position:50% 37%}
+.templateBody{padding:12px;font-size:12px;line-height:1.5;color:#172a26}
+.templateBody strong{font-size:13px;font-weight:600}.templateBody p{font-size:12px;line-height:1.5;margin:8px 0 12px;color:#263a34}
+.templateBody small{display:flex;justify-content:space-between;gap:5px;font-size:10px;color:#6b7b73}.templateBody time{white-space:nowrap}
+.templateAction{display:flex;align-items:center;justify-content:center;gap:7px;border-top:1px solid #e5e9e6;padding:10px;color:#0781ac;font-size:13px;font-weight:600}
+.customer,.reply{font-size:12px;line-height:1.45;padding:9px 10px;border-radius:8px;max-width:94%;color:#162721;box-shadow:0 1px 1px #00000012;flex-shrink:0}
+.customer{align-self:flex-end;background:#d9fdd3}.reply{align-self:flex-start;background:white}
+.customer small{display:flex;justify-content:flex-end;gap:4px;align-items:center;font-size:9px;color:#587261;margin-top:5px}.customer svg{color:#53bdeb}
+.productBody{padding:9px 11px;color:#172a26;font-size:12px;line-height:1.4}.productBody strong{font-size:13px}.productBody p{font-size:11px;color:#60736b;margin:3px 0}.productBody b{font-size:12px;font-weight:600}
+.productActions{border-top:1px solid #e5e9e6;display:grid;grid-template-columns:1fr 1fr;color:#138355;font-size:11px;font-weight:600}.productActions span{display:flex;align-items:center;justify-content:center;gap:5px;padding:12px 3px}.productActions span+span{border-left:1px solid #e5e9e6}
+.bookingLink{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #e5e9e6;color:#087fa9;font-weight:600}.bookingLink>span{display:flex;gap:5px;align-items:center}
+@media(max-width:767px){.switcher button{min-height:44px}.panel{min-height:520px}}
+@media(max-width:380px){.templateBody{padding:10px}.productActions{font-size:10px}.productActions svg{width:13px}}
+

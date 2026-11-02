@@ -11,7 +11,7 @@ import { asset } from '@/lib/asset';
 type Line = { from: 'customer' | 'agent'; text: string; at: number };
 const scene = (tab: string, Icon: typeof Package, channel: string, label: string, result: string, card: [string, string, string], lines: Line[], image = false): Scene => ({
   tab, icon: Icon === MessageSquare ? <ChannelLogo channel={channel} /> : <Icon size={20} />, label, result,
-  render: t => <><ContextCard media={image ? <img src={asset("/industries/ecommerce.png")} alt="" /> : <span className="context-orb"><Icon size={18} /></span>} small={card[0]} title={card[1]} note={card[2]} /><TimedChat channel={channel} time={t} lines={lines} /></>,
+  render: t => <><ContextCard media={image ? <img src={asset("/industries/ecommerce.webp")} alt="" /> : <span className="context-orb"><Icon size={18} /></span>} small={card[0]} title={card[1]} note={card[2]} /><TimedChat channel={channel} time={t} lines={lines} /></>,
 });
 
 // Animated scenes for "What your agent handles", keyed by industry slug.

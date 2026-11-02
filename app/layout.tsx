@@ -10,8 +10,12 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: asset("/steps-favicon.png"),
-    shortcut: asset("/steps-favicon.png"),
+    icon: [
+      { url: asset("/favicon.ico"), sizes: "any" },
+      { url: asset("/icon.png"), type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: asset("/favicon.ico"),
+    apple: asset("/apple-touch-icon.png"),
   },
 };
 

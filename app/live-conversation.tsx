@@ -7,12 +7,12 @@ import {channelKind} from './channel-chat';
 export type Product={name:string;price:string;was:string;off:string;description:string;image:string};
 const arrival=(index:number)=>400+index*1800;
 
-// Messages alternate between customer and agent, starting with the customer. Shown from the customer’s phone: their own
+// Messages alternate between customer and agent, starting with the customer (or the agent when `agentFirst`, e.g. a DM after a comment). Shown from the customer’s phone: their own
 // messages on the right in the app colour, the business agent’s replies on the left (typing dots only for the agent).
-export function LiveConversation({channel,messages,products,time}:{channel:string;messages:string[];products?:Product[];time:number}){
+export function LiveConversation({channel,messages,agentFirst,products,time}:{channel:string;messages:string[];agentFirst?:boolean;products?:Product[];time:number}){
   const kind=channelKind(channel);
   if(kind==='website')return <ShopperWidget messages={messages} products={products??[]} time={time}/>;
-  return <div className={`channel-chat channel-${kind} live-chat`} aria-label={`${channel} animated conversation illustration`}><div className="native-chat-body">{messages.map((message,i)=>{const shown=time>=arrival(i);const typing=!shown&&time>=arrival(i)-(i%2?900:300);const agent=i%2===1;return <div className={`live-message-slot slot-${i} ${agent?'from-agent':'from-customer'}`} key={message}><div className={`native-message ${agent?'incoming':'outgoing'} ${shown?'message-arrived':'message-waiting'}`} aria-hidden={!shown}>{message}<small>10:{i<2?'24':'25'} {kind==='whatsapp'&&!agent&&<CheckCheck size={12}/>}</small></div>{typing&&agent&&<div className="chat-typing agent-typing" aria-label="Agent is typing"><i/><i/><i/></div>}</div>})}</div></div>
+  return <div className={`channel-chat channel-${kind} live-chat`} aria-label={`${channel} animated conversation illustration`}><div className="native-chat-body">{messages.map((message,i)=>{const shown=time>=arrival(i);const agent=(i%2===1)!==!!agentFirst;const typing=!shown&&time>=arrival(i)-(agent?900:300);return <div className={`live-message-slot slot-${i} ${agent?'from-agent':'from-customer'}`} key={message}><div className={`native-message ${agent?'incoming':'outgoing'} ${shown?'message-arrived':'message-waiting'}`} aria-hidden={!shown}>{message}<small>10:{i<2?'24':'25'} {kind==='whatsapp'&&!agent&&<CheckCheck size={12}/>}</small></div>{typing&&agent&&<div className="chat-typing agent-typing" aria-label="Agent is typing"><i/><i/><i/></div>}</div>})}</div></div>
 }
 
 // Website tab: the real Steps AI "Shopper" widget. Customer on the right in blue, agent on the left in grey,

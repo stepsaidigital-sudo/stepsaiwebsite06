@@ -180,3 +180,15 @@ This uncommitted revision supersedes the visual layout above, but not the suppor
 
 ## Follow-up publish — 25 October 2026
 Revisions 15–18 are included in this follow-up commit on codex/meta-partnership-ui. The photographic hero now requires public/images/meta-person-hero-v15.webp in addition to the three story images. The current lower showcase uses those story images as subtle backgrounds behind code-built conversations. Final verification is recorded in revisions 17 and 18. The separate live main branch and unrelated Support work remain unchanged.
+
+## Revision 19 — supplied WhatsApp examples (local)
+- Added Broadcast, Products and Booking selectors to the WhatsApp showcase on the Meta page only. Hero conversations, Instagram and Messenger remain unchanged.
+- New user-supplied screenshots provide evidence for WhatsApp broadcast templates, product actions and appointment links, superseding the earlier text-only restriction for this lower WhatsApp showcase.
+- Adapted examples use neutral Linen & Co. demo content and existing imagery. No private customer names, real booking links or test Shopify domains were copied. Product price is illustrative.
+- Template actions are decorative mockup content, not live checkout or booking controls. The three example selectors work; the existing channel CTA remains the real destination.
+- Checked desktop 1440px and mobile 390px/320px. No page horizontal overflow; the example panel reserves 520px to prevent mode-switch layout shifts. Inspected rendered desktop products and mobile booking. TypeScript and diff checks passed. No production build or physical-device verification claimed.
+- Evidence: docs/qa-meta/v19-desktop.png, v19-showcase.png, v19-mobile-booking.png. Local only; not committed or pushed.
+
+## Main release integration - 26 October 2026
+Applied Meta-only changes on origin/main 3ffa6b1, preserving concurrent production changes. Includes WhatsApp broadcast, product and booking examples. Partnership, support and phone-first demo edits remain on the separate local working branch. TypeScript passed. Webpack build blocked by existing Sanity dependency errors: missing hls.js and AnimatePresence export from motion/react. Deployment success is not verified.
+

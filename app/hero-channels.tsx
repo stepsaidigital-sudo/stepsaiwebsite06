@@ -8,7 +8,7 @@ import {PhoneFrame,CallScreen} from '@/components/premium/kit';
 import { asset } from '@/lib/asset';
 // Hero copy is its own (not the journey section's), so each tab describes the conversation its mockup plays.
 // `panel` keeps each channel's original panel-N styling after the tabs were reordered.
-type Channel={name:string;href:string;cta:string;panel:number;label:string;title:string;description:string;messages?:string[];products?:Product[];result:string};
+type Channel={name:string;href:string;cta:string;panel:number;label:string;title:string;description:string;messages?:string[];agentFirst?:boolean;products?:Product[];result:string};
 const channels:Channel[]=[
   {name:'Website',href:'/channels/website-ai-agent/',cta:'Explore website agent',panel:3,label:'Help them buy',title:'Help shoppers choose and buy on your website',description:'Shoppers tell your agent what they need and how much they want to spend. It shows matching products from your catalogue, adds them to the cart and answers questions before checkout.',
     messages:['need a housewarming gift under ₹2,000','These two fit your budget. The Sol Ceramic Vase is the one most people pick for a new home.','add the sol vase. do you gift wrap?','Added to your cart. Gift wrap is ₹99, and you can add a note at checkout.'],
@@ -20,7 +20,7 @@ const channels:Channel[]=[
   {name:'Phone calls',href:'/channels/ai-calling-agent/',cta:'Explore AI calling agent',panel:4,label:'Pick up the phone',title:'Call your leads and answer every call',description:'Your AI calling agent calls new leads to check whether they’re interested. It also confirms orders, books appointments and answers when customers call you. Every call is saved with a transcript.',
     result:''},
   {name:'Instagram',href:'/channels/instagram-ai-agent/',cta:'Explore Instagram agent',panel:1,label:'From comment to DM',title:'Reply to Instagram comments in DMs',description:'When someone comments a word like PRICE on your post, your agent sends them a DM with the details. Then it keeps answering their questions.',
-    messages:['hi, commented on ur reel. price for the kantha jacket?','It’s ₹3,450 and comes in S to XL. Shipping is free on orders over ₹2,000. Need help with the size?','im usually M but shoulders are always tight on me','It’s a relaxed fit, so most people stay with their usual size. M fits up to a 40 inch chest. Here’s the link for M.'],
+    agentFirst:true,messages:['Hi! You commented PRICE on our kantha jacket reel. It’s ₹3,450 and comes in S to XL. Which size do you usually wear?','Usually M, but jackets are always tight on my shoulders.','This one has a relaxed fit, so the shoulders have some room. M fits up to a 40 inch chest. Want me to send the link for M?','Yes please, send it.'],
     result:'From a comment to an order link'},
   {name:'Messenger',href:'/channels/messenger-ai-agent/',cta:'Explore Messenger agent',panel:2,label:'Handle a return',title:'Handle exchanges on Messenger',description:'Your agent answers from your return policy and checks the delivery date. It then creates a ticket so your team can arrange the pickup.',
     messages:['The shoes are one size too small. Can I exchange them?','Please share your order ID, the size you need and whether the shoes are unworn.','Order #4821. I need UK 9, and they’re unworn.','Thanks. I checked order #4821: it was delivered 5 days ago, within our 15-day exchange window. UK 9 is in stock. Shall I raise an exchange request?','Yes, please.','I’ve created your exchange request for UK 9. Our team will message you here to arrange the pickup.'],
@@ -113,7 +113,7 @@ export function HeroChannels(){
         const arrived=call?true:t>=chatDuration(item.messages!.length);
         return <article id={`hero-channel-${i}`} key={item.name} className={`channel-presentation-panel panel-${item.panel} ${active===i?'is-current':''}`} aria-hidden={active!==i} inert={active!==i}>
           <div className="channel-explanation"><div className="channel-product-label"><span className="channel-story-number">0{i+1}</span><span>{item.label}</span></div><h2>{item.title}</h2><p>{item.description}</p><a href={item.href} className="channel-learn">{item.cta} <ArrowRight size={17}/></a></div>
-          <div className={`channel-demo-canvas ${call?'is-call':''}`}>{call?<CallPhone/>:<><div className="channel-demo-conversation"><LiveConversation channel={item.name} messages={item.messages!} products={item.products} time={t}/></div></>}<div key={result} className={`channel-demo-result ${arrived?'result-arrived':'result-waiting'}`} aria-hidden={!arrived}><span><Check size={15}/></span>{result}</div></div>
+          <div className={`channel-demo-canvas ${call?'is-call':''}`}>{call?<CallPhone/>:<><div className="channel-demo-conversation"><LiveConversation channel={item.name} messages={item.messages!} agentFirst={item.agentFirst} products={item.products} time={t}/></div></>}<div key={result} className={`channel-demo-result ${arrived?'result-arrived':'result-waiting'}`} aria-hidden={!arrived}><span><Check size={15}/></span>{result}</div></div>
         </article>})}</div>
     </div>
   </div>
