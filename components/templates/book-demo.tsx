@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react';
 import { CalendarDays, CircleCheck, Globe, ShoppingBag, UserPlus } from 'lucide-react';
 import { SiteFrame } from '@/components/site/shell';
 import { CALENDLY_URL } from '@/components/site/routes';
-import { Float, LivePhone } from '@/components/premium/kit';
+import styles from './book-demo.module.css';
+import { DemoDetails } from './demo-details';
 
 // /book-a-demo/: Calendly's inline scheduler, so visitors pick a time straight away.
 
@@ -71,5 +72,6 @@ export function BookDemoTemplate() {
 
       <div className="bd-card"><CalendlyInline /></div>
     </div></section>
+    <DemoDetails />
   </div>}</SiteFrame>;
 }
